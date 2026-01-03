@@ -41,7 +41,7 @@ const Navigation = () => {
                 <div className="nav-links">
                     <Link
                         to="/"
-                        className={`nav-link ${isActive('/') ? 'active' : ''}`}
+                        className={`nav-link nav-link-home ${isActive('/') ? 'active' : ''}`}
                     >
                         Anasayfa
                     </Link>

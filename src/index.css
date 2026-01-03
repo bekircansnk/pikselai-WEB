@@ -499,6 +499,8 @@ a:hover {
   font-weight: 500;
   color: var(--color-accent-tertiary);
   margin-bottom: var(--spacing-lg);
+  /* Breadcrumbs ile boşluk için */
+  margin-top: var(--spacing-xl);
 }
 
 .hero-badge-dot {
@@ -507,6 +509,22 @@ a:hover {
   background: var(--color-accent-primary);
   border-radius: 50%;
   animation: pulse 2s ease-in-out infinite;
+}
+
+/* Mobil hero-badge - breadcrumbs ile çakışmayı önle */
+@media (max-width: 768px) {
+  .hero-badge {
+    margin-top: var(--spacing-xl);
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-badge {
+    margin-top: calc(var(--spacing-xl) + 10px);
+    font-size: 0.75rem;
+    padding: 6px 12px;
+  }
 }
 
 .hero-title {
@@ -813,6 +831,36 @@ a:hover {
   border-radius: var(--radius-full);
 }
 
+/* Mobil Breadcrumbs - Daha yukarıda konumlandır */
+@media (max-width: 768px) {
+  .breadcrumbs {
+    top: calc(70px + var(--spacing-sm));
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.8rem;
+  }
+
+  .breadcrumbs-link,
+  .breadcrumbs-current {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .breadcrumbs {
+    top: 60px;
+    padding: 6px 12px;
+  }
+
+  .breadcrumbs-link,
+  .breadcrumbs-current {
+    font-size: 0.7rem;
+  }
+
+  .breadcrumbs-separator {
+    font-size: 0.7rem;
+  }
+}
+
 .breadcrumbs-list {
   display: flex;
   align-items: center;
@@ -1066,6 +1114,11 @@ a:hover {
   .nav-link {
     font-size: 0.75rem;
     padding: 4px 6px;
+  }
+
+  /* Küçük ekranlarda Anasayfa linki gizleniyor - Logo zaten ana sayfaya yönlendiriyor */
+  .nav-link-home {
+    display: none;
   }
 
   .theme-toggle {

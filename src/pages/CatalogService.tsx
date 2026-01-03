@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
+import Breadcrumbs from '../components/Breadcrumbs'
 
 /**
  * Katalog özellik kartı tipi
@@ -48,6 +49,37 @@ const features: Feature[] = [
 ]
 
 /**
+ * Service Schema JSON-LD
+ */
+const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Dijital Katalog Tasarımı",
+    "provider": {
+        "@type": "Organization",
+        "name": "Pikselai",
+        "url": "https://pikselai.com"
+    },
+    "description": "Google Drive tabanlı, arama özellikli profesyonel dijital katalog sistemi.",
+    "areaServed": "TR",
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Katalog Paketleri",
+        "itemListElement": [
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Tek Seferlik Katalog"
+                },
+                "price": "15000",
+                "priceCurrency": "TRY"
+            }
+        ]
+    }
+}
+
+/**
  * CatalogService - Dijital Katalog hizmet sayfası
  * SEO optimize edilmiş landing page
  */
@@ -72,16 +104,23 @@ const CatalogService = () => {
 
     return (
         <>
-            {/* SEO Meta Etiketleri */}
+            {/* SEO Meta Etiketleri ve Schema */}
             <Helmet>
                 <title>Dijital Katalog Tasarımı & Hızlı Arama | Pikselai</title>
                 <meta name="description" content="PDF katalog devri bitti. Pikselai dijital katalog ile ürünlerinize anında erişim, WhatsApp paylaşımı ve Google Drive entegrasyonu. Panel gerektirmez." />
+                <link rel="canonical" href="https://pikselai.com/profesyonel-katalog" />
+                <script type="application/ld+json">
+                    {JSON.stringify(serviceSchema)}
+                </script>
             </Helmet>
 
             {/* Hero Section */}
             <section className="hero">
-                <div className="hero-glow-1" />
-                <div className="hero-glow-2" />
+                <div className="hero-glow-1" aria-hidden="true" />
+                <div className="hero-glow-2" aria-hidden="true" />
+
+                {/* Breadcrumbs */}
+                <Breadcrumbs />
 
                 <motion.div
                     className="hero-content"

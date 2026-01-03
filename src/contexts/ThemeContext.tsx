@@ -60,16 +60,16 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
      */
     const updateFavicon = (currentTheme: Theme) => {
         const iconTypes = [
-            { id: 'favicon-32', fileName: 'favicon-32x32.png' },
-            { id: 'favicon-16', fileName: 'favicon-16x16.png' },
-            { id: 'apple-icon', fileName: 'apple-icon-180x180.png' },
+            { id: 'favicon-32', fileName: 'favicon-32x32.webp' },
+            { id: 'favicon-16', fileName: 'favicon-16x16.webp' },
+            { id: 'apple-icon', fileName: 'apple-icon-180x180.webp' },
             { id: 'favicon-ico', fileName: 'favicon.ico' }
         ]
 
         iconTypes.forEach(({ id, fileName }) => {
             const linkElement = document.getElementById(id) as HTMLLinkElement | null
             if (linkElement) {
-                // Örn: /dark/favicon-32x32.png veya /light/favicon-32x32.png
+                // Örn: /dark/favicon-32x32.webp veya /light/favicon-32x32.webp
                 linkElement.href = `/${currentTheme}/${fileName}`
             }
         })

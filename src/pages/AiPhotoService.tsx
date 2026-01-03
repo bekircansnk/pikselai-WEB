@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
+import Breadcrumbs from '../components/Breadcrumbs'
 
 /**
  * AI Fotoğraf özellik kartı tipi
@@ -48,6 +49,46 @@ const features: Feature[] = [
 ]
 
 /**
+ * Service Schema JSON-LD
+ */
+const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "AI Fotoğraf Çekimi",
+    "provider": {
+        "@type": "Organization",
+        "name": "Pikselai",
+        "url": "https://pikselai.com"
+    },
+    "description": "Sanal manken ve yapay zeka destekli ürün fotoğrafçılığı. Stüdyo masrafı olmadan profesyonel ürün görselleri.",
+    "areaServed": "TR",
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "AI Fotoğraf Paketleri",
+        "itemListElement": [
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Başlangıç Paket"
+                },
+                "price": "39",
+                "priceCurrency": "USD"
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Profesyonel Paket"
+                },
+                "price": "219",
+                "priceCurrency": "USD"
+            }
+        ]
+    }
+}
+
+/**
  * AiPhotoService - Yapay Zeka Fotoğraf hizmet sayfası
  * SEO optimize edilmiş landing page
  */
@@ -72,16 +113,23 @@ const AiPhotoService = () => {
 
     return (
         <>
-            {/* SEO Meta Etiketleri */}
+            {/* SEO Meta Etiketleri ve Schema */}
             <Helmet>
                 <title>Yapay Zeka ile Mankenli Fotoğraf Çekimi | Pikselai</title>
                 <meta name="description" content="Manken ve stüdyo masrafı olmadan, yapay zeka ile ürünlerinizi profesyonel mankenlere giydirin. Hızlı üretim, yüksek çözünürlük, tutarlı stil." />
+                <link rel="canonical" href="https://pikselai.com/yapay-zeka-fotograf-cekimi" />
+                <script type="application/ld+json">
+                    {JSON.stringify(serviceSchema)}
+                </script>
             </Helmet>
 
             {/* Hero Section */}
             <section className="hero">
-                <div className="hero-glow-1" />
-                <div className="hero-glow-2" />
+                <div className="hero-glow-1" aria-hidden="true" />
+                <div className="hero-glow-2" aria-hidden="true" />
+
+                {/* Breadcrumbs */}
+                <Breadcrumbs />
 
                 <motion.div
                     className="hero-content"

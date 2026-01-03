@@ -156,7 +156,7 @@ VITE_GOOGLE_CLIENT_ID=client-id-buraya
 | `npm run lint` | Kod kalitesini kontrol eder |
 npm run build
 npm run preview
----
+--
 
 ## 🤝 Katkıda Bulunma
 

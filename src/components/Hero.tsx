@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom'
 /**
  * Hero - Ana sayfa hero section bileşeni
  * Yapay Zeka Destekli Dijital Çözümler tanıtımı
+ * LCP optimize edilmiş, CLS için min-height sabitlenmiş
  */
 const Hero = () => {
     return (
-        <section className="hero">
-            {/* Dekoratif arka plan efektleri */}
-            <div className="hero-glow-1" />
-            <div className="hero-glow-2" />
+        <section className="hero" style={{ minHeight: '100vh' }}>
+            {/* Dekoratif arka plan efektleri - Erişilebilirlik için gizli */}
+            <div className="hero-glow-1" aria-hidden="true" />
+            <div className="hero-glow-2" aria-hidden="true" />
 
             <motion.div
                 className="hero-content"
@@ -25,7 +26,7 @@ const Hero = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
                 >
-                    <span className="hero-badge-dot" />
+                    <span className="hero-badge-dot" aria-hidden="true" />
                     Yapay Zeka Destekli Dijital Çözümler
                 </motion.div>
 
@@ -58,7 +59,7 @@ const Hero = () => {
                     transition={{ duration: 0.6, delay: 0.7 }}
                 >
                     <Link to="/ucretler" className="glass-button glow">
-                        <span>💎</span>
+                        <span aria-hidden="true">💎</span>
                         Fiyatları İncele
                     </Link>
                     <a
@@ -67,7 +68,7 @@ const Hero = () => {
                         rel="noopener noreferrer"
                         className="glass-button glass-button-secondary"
                     >
-                        <span>🚀</span>
+                        <span aria-hidden="true">🚀</span>
                         Canlı Demo
                     </a>
                 </motion.div>

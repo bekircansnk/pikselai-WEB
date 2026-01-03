@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
+import Breadcrumbs from '../components/Breadcrumbs'
 
 /**
  * Sosyal Medya özellik kartı tipi
@@ -48,6 +49,46 @@ const features: Feature[] = [
 ]
 
 /**
+ * Service Schema JSON-LD
+ */
+const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Sosyal Medya Yönetimi",
+    "provider": {
+        "@type": "Organization",
+        "name": "Pikselai",
+        "url": "https://pikselai.com"
+    },
+    "description": "Yapay zeka destekli profesyonel sosyal medya yönetimi. Düzenli içerik paylaşımı, reklam yönetimi ve marka kimliği oluşturma.",
+    "areaServed": "TR",
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Sosyal Medya Paketleri",
+        "itemListElement": [
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Standart Paket"
+                },
+                "price": "20000",
+                "priceCurrency": "TRY"
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Pro Paket"
+                },
+                "price": "30000",
+                "priceCurrency": "TRY"
+            }
+        ]
+    }
+}
+
+/**
  * SocialMediaService - Sosyal Medya Yönetimi hizmet sayfası
  * SEO optimize edilmiş landing page
  */
@@ -72,16 +113,23 @@ const SocialMediaService = () => {
 
     return (
         <>
-            {/* SEO Meta Etiketleri */}
+            {/* SEO Meta Etiketleri ve Schema */}
             <Helmet>
                 <title>Yapay Zeka Destekli Sosyal Medya Yönetimi | Pikselai</title>
                 <meta name="description" content="AI destekli profesyonel sosyal medya yönetimi. Düzenli içerik paylaşımı, Reels üretimi, reklam yönetimi ve marka kimliği oluşturma hizmetleri." />
+                <link rel="canonical" href="https://pikselai.com/sosyal-medya-yonetimi" />
+                <script type="application/ld+json">
+                    {JSON.stringify(serviceSchema)}
+                </script>
             </Helmet>
 
             {/* Hero Section */}
             <section className="hero">
-                <div className="hero-glow-1" />
-                <div className="hero-glow-2" />
+                <div className="hero-glow-1" aria-hidden="true" />
+                <div className="hero-glow-2" aria-hidden="true" />
+
+                {/* Breadcrumbs */}
+                <Breadcrumbs />
 
                 <motion.div
                     className="hero-content"

@@ -30,6 +30,10 @@ const Navigation = () => {
                         src={theme === 'dark' ? '/full-logo-dark-v2.webp' : '/full-logo-light-v2.webp'}
                         alt="Pikselai Logo"
                         className="nav-logo-image"
+                        width="160"
+                        height="40"
+                        loading="eager"
+                        fetchPriority="high"
                     />
                 </Link>
 
@@ -96,6 +100,13 @@ const Navigation = () => {
                         className={`nav-link ${isActive('/ucretler') ? 'active' : ''}`}
                     >
                         Ücretler
+                    </Link>
+
+                    <Link
+                        to="/blog/referanslar"
+                        className={`nav-link ${isActive('/blog/referanslar') ? 'active' : ''}`}
+                    >
+                        Referanslarımız
                     </Link>
 
                     {/* Tema Toggle Butonu */}

@@ -177,4 +177,4 @@ Bu proje özel kullanım içindir.
 ## 📞 İletişim
 
 Sorularınız için geliştirici ekibiyle iletişime geçin.
-bekircan
+bekircan sağnak +905531832344

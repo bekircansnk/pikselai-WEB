@@ -7,6 +7,7 @@ import Pricing from './pages/Pricing'
 import CatalogService from './pages/CatalogService'
 import AiPhotoService from './pages/AiPhotoService'
 import SocialMediaService from './pages/SocialMediaService'
+import CazadorCaseStudy from './pages/blog/CazadorCaseStudy'
 import NotFound from './pages/NotFound'
 import Footer from './components/Footer'
 
@@ -58,6 +59,8 @@ function App() {
           <Route path="/profesyonel-katalog" element={<CatalogService />} />
           <Route path="/yapay-zeka-fotograf-cekimi" element={<AiPhotoService />} />
           <Route path="/sosyal-medya-yonetimi" element={<SocialMediaService />} />
+          {/* Blog Sayfaları */}
+          <Route path="/blog/referanslar" element={<CazadorCaseStudy />} />
           {/* 404 - Tanımsız URL'ler */}
           <Route path="*" element={<NotFound />} />
         </Routes>

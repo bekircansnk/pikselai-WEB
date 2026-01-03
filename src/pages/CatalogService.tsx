@@ -19,7 +19,7 @@ const features: Feature[] = [
     {
         icon: '🔍',
         title: 'Anında Arama',
-        description: 'Binlerce ürün arasında saniyeler içinde arama yapın. PDF kataloğun aksine, aradığınız ürüne anında ulaşın.'
+        description: 'Binlerce ürün arasında saniyeler içinde arama yapın. Unutulan Drive linklerinin aksine, aradığınız ürüne anında ulaşın.'
     },
     {
         icon: '📱',
@@ -107,7 +107,7 @@ const CatalogService = () => {
             {/* SEO Meta Etiketleri ve Schema */}
             <Helmet>
                 <title>Dijital Katalog Tasarımı & Hızlı Arama | Pikselai</title>
-                <meta name="description" content="PDF katalog devri bitti. Pikselai dijital katalog ile ürünlerinize anında erişim, WhatsApp paylaşımı ve Google Drive entegrasyonu. Panel gerektirmez." />
+                <meta name="description" content="Dağınık Drive linkleri devri bitti. Pikselai dijital katalog ile ürünlerinize anında erişim, WhatsApp paylaşımı ve Google Drive entegrasyonu. Panel gerektirmez." />
                 <link rel="canonical" href="https://pikselai.com/profesyonel-katalog" />
                 <script type="application/ld+json">
                     {JSON.stringify(serviceSchema)}
@@ -135,7 +135,7 @@ const CatalogService = () => {
                         transition={{ duration: 0.5, delay: 0.4 }}
                     >
                         <span className="hero-badge-dot" />
-                        PDF Devri Bitti
+                        Dağınık Linkler Devri Bitti
                     </motion.div>
 
                     <motion.h1
@@ -153,7 +153,7 @@ const CatalogService = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.6 }}
                     >
-                        Ağır PDF'lere veda edin. Arama butonlu, mobil uyumlu ve Google Drive entegrasyonlu
+                        Kaybolmuş Drive linklerine veda edin. Arama butonlu, mobil uyumlu ve Google Drive entegrasyonlu
                         dijital katalog ile ürünlerinize saniyeler içinde ulaşın.
                     </motion.p>
 

@@ -144,7 +144,7 @@ const CazadorCaseStudy = () => {
                             Artık Cazador ekibi, yeni ürün eklemek için sadece Google Drive'a fotoğraf yüklüyor.
                             Geri kalanını sistem otomatik olarak halledip, anlık olarak kataloğa yansıtıyor.
                             <strong>Hızlı arama özelliği</strong> sayesinde bayiler, binlerce ürün arasından
-                            istediklerini dakikalar içinde buluyor.
+                            istediklerini saniyeler içinde buluyor.
                         </p>
 
                         <BlogImage
@@ -175,7 +175,7 @@ const CazadorCaseStudy = () => {
                         </p>
 
                         <p className="blog-paragraph">
-                            Oluşturulan <strong>yüksek çözünürlüklü görseller, saniyeler içinde direkt olarak
+                            Oluşturulan <strong>yüksek çözünürlüklü görseller, direkt olarak
                                 katalog uygulamasındaki ilgili albüme otomatik olarak düşüyor</strong>. Ekipler bu
                             görselleri anlık olarak panelden inceleyip eleyebiliyor.
                         </p>

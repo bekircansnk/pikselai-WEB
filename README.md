@@ -177,3 +177,4 @@ Bu proje özel kullanım içindir.
 ## 📞 İletişim
 
 Sorularınız için geliştirici ekibiyle iletişime geçin.
+bekircan

@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import Hero from '../components/Hero'
 import Features from '../components/Features'
 import SocialMediaHome from '../components/SocialMediaHome'
@@ -9,6 +10,12 @@ import SocialMediaHome from '../components/SocialMediaHome'
 const Home = () => {
     return (
         <>
+            {/* Sayfa bazlı SEO meta etiketleri */}
+            <Helmet>
+                <title>Pikselai | Profesyonel Katalog & Sosyal Medya Yönetimi</title>
+                <meta name="description" content="Yapay zeka destekli profesyonel katalog ve fotoğraf odaklı sosyal medya yönetimi. Pikselai ile markanızı dijitalde güçlendirin." />
+            </Helmet>
+
             {/* Hero Section - Ana tanıtım alanı */}
             <Hero />
 

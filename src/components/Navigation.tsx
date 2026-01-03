@@ -24,8 +24,8 @@ const Navigation = () => {
                 {/* Logo - Tema duyarlı full logo (ikon + yazı birlikte) */}
                 <Link to="/" className="nav-logo" aria-label="Ana Sayfa">
                     <img
-                        src={theme === 'dark' ? '/full-logo-dark.png' : '/full-logo-light.png'}
-                        alt="PikselAI"
+                        src={theme === 'dark' ? '/full-logo-dark-v2.png' : '/full-logo-light-v2.png'}
+                        alt="Pikselai Logo"
                         className="nav-logo-image"
                     />
                 </Link>

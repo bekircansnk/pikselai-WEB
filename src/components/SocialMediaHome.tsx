@@ -89,7 +89,7 @@ const SocialMediaHome = () => {
                         <span className="gradient-text">Yapay Zeka Destekli</span> Sosyal Medya Yönetimi
                     </h2>
                     <p className="features-subtitle">
-                        Markanızı dijitalde profesyonel şekilde büyütün.
+                        Pikselai ile markanızı dijitalde profesyonel şekilde büyütün.
                     </p>
                 </motion.div>
 

@@ -89,7 +89,7 @@ const Features = () => {
                         <span className="gradient-text">Yapay Zeka Destekli</span> Katalog Çözümleri
                     </h2>
                     <p className="features-subtitle">
-                        Müşterilerinizi etkileyen profesyonel katalog çözümleri
+                        Pikselai olarak sunduğumuz, müşterilerinizi etkileyen profesyonel katalog çözümleri
                     </p>
                 </motion.div>
 

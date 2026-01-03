@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Helmet } from 'react-helmet-async'
 import SocialMediaPackages from '../components/SocialMediaPackages'
 
 /**
@@ -133,6 +134,12 @@ const Pricing = () => {
 
     return (
         <>
+            {/* Sayfa bazlı SEO meta etiketleri */}
+            <Helmet>
+                <title>Ücretler | Pikselai - Profesyonel Katalog & AI Çözümleri</title>
+                <meta name="description" content="Pikselai fiyatlandırma: Profesyonel katalog, yapay zeka fotoğraf üretimi ve sosyal medya yönetimi paketleri. İşletmenize uygun planı seçin." />
+            </Helmet>
+
             {/* ========================================
                 BÖLÜM 1: PROFESYONEL KATALOG (TEK SEFERLİK)
                 ======================================== */}

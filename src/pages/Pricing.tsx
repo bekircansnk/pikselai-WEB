@@ -143,7 +143,7 @@ const Pricing = () => {
             {/* ========================================
                 BÖLÜM 1: PROFESYONEL KATALOG (TEK SEFERLİK)
                 ======================================== */}
-            <section className="pricing">
+            <section id="katalog-fiyat" className="pricing">
                 <div className="pricing-container">
                     {/* Section başlığı */}
                     <motion.div
@@ -233,7 +233,7 @@ const Pricing = () => {
             {/* ========================================
                 BÖLÜM 2: YAPAY ZEKA FOTOĞRAF ÜRETİM PAKETLERİ (AYLIK)
                 ======================================== */}
-            <section className="pricing" style={{ paddingTop: '2rem' }}>
+            <section id="ai-fotograf-fiyat" className="pricing" style={{ paddingTop: '2rem' }}>
                 <div className="pricing-container">
                     {/* Section başlığı */}
                     <motion.div

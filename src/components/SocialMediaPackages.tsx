@@ -100,7 +100,7 @@ const SocialMediaPackages = () => {
     }
 
     return (
-        <section id="social-media-packages" className="pricing" style={{ paddingTop: 0 }}>
+        <section id="sosyal-medya-fiyat" className="pricing" style={{ paddingTop: 0 }}>
             <div className="pricing-container">
                 {/* Section başlığı */}
                 <motion.div

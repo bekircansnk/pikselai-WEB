@@ -4,6 +4,9 @@ import { ThemeProvider } from './contexts/ThemeContext'
 import Navigation from './components/Navigation'
 import Home from './pages/Home'
 import Pricing from './pages/Pricing'
+import CatalogService from './pages/CatalogService'
+import AiPhotoService from './pages/AiPhotoService'
+import SocialMediaService from './pages/SocialMediaService'
 import Footer from './components/Footer'
 
 /**
@@ -33,7 +36,7 @@ function ScrollToHash() {
 }
 
 /**
- * Dijital Çözümler Sunum Uygulaması
+ * Pikselai Web Uygulaması
  * Ana uygulama bileşeni - Routing ve layout yönetimi
  * ThemeProvider ile tema yönetimi
  */
@@ -51,6 +54,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/ucretler" element={<Pricing />} />
+          <Route path="/profesyonel-katalog" element={<CatalogService />} />
+          <Route path="/yapay-zeka-fotograf-cekimi" element={<AiPhotoService />} />
+          <Route path="/sosyal-medya-yonetimi" element={<SocialMediaService />} />
         </Routes>
       </main>
 

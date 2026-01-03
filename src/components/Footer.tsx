@@ -9,13 +9,13 @@ const Footer = () => {
         <footer className="footer">
             <div className="footer-content">
                 <div className="footer-logo">
-                    Profesyonel Katalog & Sosyal Medya Yönetimi
+                    Pikselai
                 </div>
                 <p className="footer-text">
                     Yapay Zeka Destekli Dijital Katalog ve Sosyal Medya Çözümleri
                 </p>
                 <p className="footer-developer">
-                    © {currentYear} Profesyonel Katalog & Sosyal Medya Çözümleri
+                    © {currentYear} Pikselai - Profesyonel Katalog & Sosyal Medya Çözümleri
                     <br />
                     Destek için:{' '}
                     <a

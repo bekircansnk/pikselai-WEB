@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 /**
  * Özellik kartı veri tipi
@@ -77,7 +78,7 @@ const Features = () => {
     return (
         <section className="features">
             <div className="features-container">
-                {/* Section başlığı */}
+                {/* Section başlığı - Tıklanabilir */}
                 <motion.div
                     className="features-header"
                     initial={{ opacity: 0, y: 20 }}
@@ -85,9 +86,11 @@ const Features = () => {
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6 }}
                 >
-                    <h2 className="features-title">
-                        <span className="gradient-text">Yapay Zeka Destekli</span> Katalog Çözümleri
-                    </h2>
+                    <Link to="/profesyonel-katalog" className="section-title-link">
+                        <h2 className="features-title">
+                            <span className="gradient-text">Yapay Zeka Destekli</span> Katalog Çözümleri
+                        </h2>
+                    </Link>
                     <p className="features-subtitle">
                         Pikselai olarak sunduğumuz, müşterilerinizi etkileyen profesyonel katalog çözümleri
                     </p>

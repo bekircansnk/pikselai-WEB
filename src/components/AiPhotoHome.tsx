@@ -2,56 +2,56 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 
 /**
- * Sosyal medya özellik kartı veri tipi
+ * AI Fotoğraf özellik kartı tipi
  */
-interface SocialMediaFeature {
+interface AiPhotoFeature {
     icon: string
     title: string
     description: string
 }
 
 /**
- * Sosyal medya özellikleri listesi
+ * AI Fotoğraf Üretim özellikleri listesi
  */
-const socialMediaFeatures: SocialMediaFeature[] = [
+const aiPhotoFeatures: AiPhotoFeature[] = [
     {
-        icon: '🤖',
-        title: 'Yapay Zeka Destekli İçerik',
-        description: 'AI destekli fotoğraf üretimi ile markanıza özel, özgün ve dikkat çekici sosyal medya görselleri.'
+        icon: '👗',
+        title: 'Sanal Manken Çekimi',
+        description: 'Gerçek manken ve stüdyo masrafı olmadan, yapay zeka ile ürünlerinizi profesyonel mankenlere giydirin.'
     },
     {
-        icon: '📸',
-        title: 'Profesyonel Görsel Üretimi',
-        description: 'Markanıza özel, estetik ve dikkat çekici sosyal medya görselleri.'
+        icon: '🎨',
+        title: 'Özel Stüdyo Ortamları',
+        description: 'Farklı arka planlar, mekanlar ve ışık setleri ile ürünlerinizi istediğiniz ortamda sergileyin.'
     },
     {
-        icon: '🎯',
-        title: 'Stratejik Reklam Yönetimi',
-        description: 'Bütçenizi verimli kullanan, sonuç odaklı reklam kampanyaları.'
+        icon: '⚡',
+        title: 'Hızlı Üretim',
+        description: 'Geleneksel fotoğraf çekimlerine kıyasla çok daha hızlı. Günler değil, saatler içinde profesyonel görseller.'
     },
     {
-        icon: '📅',
-        title: 'Düzenli ve Planlı Paylaşım',
-        description: 'Haftalık ve aylık içerik takvimleriyle düzenli, sürdürülebilir sosyal medya yönetimi.'
+        icon: '📐',
+        title: 'Yüksek Çözünürlük',
+        description: 'Katalog, e-ticaret ve sosyal medya için uygun, yüksek kalite ve çözünürlükte görseller.'
     },
     {
-        icon: '📈',
-        title: 'Ölçülebilir Performans',
-        description: 'Erişim, etkileşim ve büyümeyi takip eden raporlarla şeffaf ve ölçülebilir sonuçlar.'
+        icon: '🔄',
+        title: 'Tutarlı Stil',
+        description: 'Tüm ürünleriniz için tutarlı görsel dil. Marka kimliğinize uygun profesyonel sonuçlar.'
     },
     {
-        icon: '🚀',
-        title: 'Reklam ve Büyüme Desteği',
-        description: 'Fotoğraf bazlı reklam kreatifleri, performans optimizasyonu ve büyüme odaklı yönetim.'
+        icon: '💰',
+        title: 'Maliyet Avantajı',
+        description: 'Manken, stüdyo, ekipman ve post-prodüksiyon masraflarından tasarruf edin.'
     }
 ]
 
 /**
- * SocialMediaHome - Ana sayfa sosyal medya tanıtım bölümü
- * Features bileşeniyle aynı görsel dil ve grid yapısı
+ * AiPhotoHome - Ana sayfa AI Fotoğraf tanıtım bölümü
+ * Features ve SocialMediaHome ile aynı görsel dil
  */
-const SocialMediaHome = () => {
-    // Animasyon varyantları - Features ile aynı
+const AiPhotoHome = () => {
+    // Animasyon varyantları
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -75,9 +75,9 @@ const SocialMediaHome = () => {
     }
 
     return (
-        <section id="social-media-home" className="features">
+        <section id="ai-photo-home" className="features">
             <div className="features-container">
-                {/* Section başlığı */}
+                {/* Section başlığı - Tıklanabilir */}
                 <motion.div
                     className="features-header"
                     initial={{ opacity: 0, y: 20 }}
@@ -85,17 +85,17 @@ const SocialMediaHome = () => {
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6 }}
                 >
-                    <Link to="/sosyal-medya-yonetimi" className="section-title-link">
+                    <Link to="/yapay-zeka-fotograf-cekimi" className="section-title-link">
                         <h2 className="features-title">
-                            <span className="gradient-text">Yapay Zeka Destekli</span> Sosyal Medya Yönetimi
+                            <span className="gradient-text">Yapay Zeka ile</span> Mankenli Fotoğraf Çekimi
                         </h2>
                     </Link>
                     <p className="features-subtitle">
-                        Pikselai ile markanızı dijitalde profesyonel şekilde büyütün.
+                        Pikselai AI fotoğraf üretimi ile stüdyo masraflarına son verin
                     </p>
                 </motion.div>
 
-                {/* Özellik kartları grid - Features ile aynı yapı */}
+                {/* Özellik kartları grid */}
                 <motion.div
                     className="features-grid"
                     variants={containerVariants}
@@ -103,7 +103,7 @@ const SocialMediaHome = () => {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-50px" }}
                 >
-                    {socialMediaFeatures.map((feature, index) => (
+                    {aiPhotoFeatures.map((feature, index) => (
                         <motion.div
                             key={index}
                             className="glass-card feature-card"
@@ -136,14 +136,14 @@ const SocialMediaHome = () => {
                         fontSize: '1.1rem',
                         maxWidth: '500px'
                     }}>
-                        Sosyal medya paketlerini inceleyerek markanız için en uygun çözümü seçin.
+                        AI fotoğraf paketlerini inceleyerek ürünleriniz için en uygun çözümü seçin.
                     </p>
                     <Link
-                        to="/ucretler#social-media-packages"
+                        to="/ucretler#ai-fotograf-fiyat"
                         className="glass-button glow"
                     >
-                        <span>📱</span>
-                        Sosyal Medya Paketlerini İncele
+                        <span>📸</span>
+                        AI Fotoğraf Paketlerini İncele
                     </Link>
                 </motion.div>
             </div>
@@ -151,4 +151,4 @@ const SocialMediaHome = () => {
     )
 }
 
-export default SocialMediaHome
+export default AiPhotoHome

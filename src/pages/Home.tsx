@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async'
 import Hero from '../components/Hero'
 import Features from '../components/Features'
+import AiPhotoHome from '../components/AiPhotoHome'
 import SocialMediaHome from '../components/SocialMediaHome'
 
 /**
@@ -21,6 +22,9 @@ const Home = () => {
 
             {/* Features Section - Katalog özellikleri */}
             <Features />
+
+            {/* AI Fotoğraf Section - Yapay zeka fotoğraf üretimi */}
+            <AiPhotoHome />
 
             {/* Sosyal Medya Section - AI destekli sosyal medya tanıtımı */}
             <SocialMediaHome />

@@ -604,6 +604,38 @@ a:hover {
   line-height: 1.7;
 }
 
+/* Feature başlık link stili */
+.feature-title-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.feature-title-link:hover .feature-title {
+  color: var(--color-accent-primary);
+  transition: color var(--transition-fast);
+}
+
+.feature-title-link .feature-title {
+  cursor: pointer;
+}
+
+/* Section başlık link stili */
+.section-title-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  transition: transform var(--transition-normal);
+}
+
+.section-title-link:hover {
+  transform: scale(1.02);
+}
+
+.section-title-link:hover .features-title {
+  filter: brightness(1.1);
+}
+
 /* === Pricing Section === */
 .pricing {
   padding: calc(80px + var(--spacing-2xl)) var(--spacing-lg) var(--spacing-2xl);

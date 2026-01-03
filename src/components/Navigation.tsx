@@ -68,18 +68,21 @@ const Navigation = () => {
                                     <Link
                                         to="/profesyonel-katalog"
                                         className={`nav-dropdown-item ${isActive('/profesyonel-katalog') ? 'active' : ''}`}
+                                        onClick={() => setIsServicesOpen(false)}
                                     >
                                         📁 Dijital Katalog
                                     </Link>
                                     <Link
                                         to="/yapay-zeka-fotograf-cekimi"
                                         className={`nav-dropdown-item ${isActive('/yapay-zeka-fotograf-cekimi') ? 'active' : ''}`}
+                                        onClick={() => setIsServicesOpen(false)}
                                     >
                                         📸 AI Fotoğraf
                                     </Link>
                                     <Link
                                         to="/sosyal-medya-yonetimi"
                                         className={`nav-dropdown-item ${isActive('/sosyal-medya-yonetimi') ? 'active' : ''}`}
+                                        onClick={() => setIsServicesOpen(false)}
                                     >
                                         📱 Sosyal Medya
                                     </Link>

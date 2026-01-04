@@ -14,7 +14,7 @@ const Home = () => {
         <>
             {/* Sayfa bazlı SEO meta etiketleri */}
             <Helmet>
-                <title>Pikselai | Profesyonel Katalog & Sosyal Medya Yönetimi</title>
+                <title>Pikselai | Profesyonel Katalog, E-Ticaret & Sosyal Medya Yönetimi</title>
                 <meta name="description" content="Yapay zeka destekli profesyonel katalog ve fotoğraf odaklı sosyal medya yönetimi. Pikselai ile markanızı dijitalde güçlendirin." />
             </Helmet>
 

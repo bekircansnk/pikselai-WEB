@@ -127,7 +127,7 @@ const SocialMediaPackages = () => {
                     transition={{ duration: 0.6 }}
                 >
                     <h2 className="pricing-title">
-                        <span className="gradient-text">Profesyonel</span> Sosyal Medya Yönetimi
+                        <span className="gradient-text">Yapay Zeka Destekli</span> Sosyal Medya Yönetimi
                     </h2>
                     <p style={{
                         color: 'var(--color-accent-tertiary)',
@@ -138,8 +138,7 @@ const SocialMediaPackages = () => {
                         Fotoğraf Odaklı • Stratejik • Ölçülebilir
                     </p>
                     <p className="pricing-subtitle">
-                        Markanız için profesyonel fotoğraf içerikleriyle
-                        sosyal medya hesaplarınızı düzenli, estetik ve doğru hedef kitleye uygun şekilde yönetiyoruz.
+                        Markanız için yapay zeka destekli, profesyonel fotoğraf içerikleriyle sosyal medya hesaplarınızı düzenli, estetik ve doğru hedef kitleye uygun şekilde yönetiyoruz.
                     </p>
                 </motion.div>
 

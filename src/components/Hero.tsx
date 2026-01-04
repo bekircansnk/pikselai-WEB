@@ -37,7 +37,7 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.5 }}
                 >
-                    <span className="gradient-text">Pikselai ile</span> Profesyonel Katalog & Sosyal Medya Yönetimi
+                    <span className="gradient-text">Pikselai ile</span> Profesyonel Katalog, E-Ticaret & Sosyal Medya Yönetimi
                 </motion.h1>
 
                 {/* Alt başlık */}

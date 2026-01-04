@@ -223,7 +223,7 @@ const Pricing = () => {
     return (
         <>
             <Helmet>
-                <title>Ücretler | Pikselai - Profesyonel Katalog & AI Çözümleri</title>
+                <title>Ücretler | Pikselai - Profesyonel Katalog, E-Ticaret & AI Çözümleri</title>
                 <meta name="description" content="Pikselai fiyatlandırma: Profesyonel katalog, yapay zeka fotoğraf üretimi, sosyal medya ve e-ticaret danışmanlığı paketleri." />
             </Helmet>
 
@@ -232,7 +232,8 @@ const Pricing = () => {
                 <div className="pricing-container">
                     <motion.div className="pricing-header" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
                         <h1 className="pricing-title"><span className="gradient-text">Profesyonel</span> Katalog Çözümü</h1>
-                        <p className="pricing-subtitle">Tek seferlik ödeme ile profesyonel katalog sistemine sahip olun</p>
+                        <p style={{ color: 'var(--color-accent-tertiary)', fontSize: '1rem', fontWeight: 500, marginBottom: '0.5rem' }}>Hızlı Arama • Modern Tasarım • Kolay Yönetim</p>
+                        <p className="pricing-subtitle">Kendi fotoğraflarınızı kullanmak istiyorsanız, tek seferlik ödeme ile profesyonel katalog sistemine sahip olun</p>
                     </motion.div>
 
                     <motion.div className="pricing-grid" style={{ maxWidth: '500px', margin: '0 auto' }} variants={containerVariants} initial="hidden" animate="visible">
@@ -252,8 +253,9 @@ const Pricing = () => {
             <section id="ai-fiyat" className="pricing" style={{ paddingTop: 0 }}>
                 <div className="pricing-container">
                     <motion.div className="pricing-header" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-                        <h2 className="pricing-title"><span className="gradient-text">Yapay Zeka</span> Fotoğraf Üretimi</h2>
-                        <p className="pricing-subtitle">Aylık abonelik ile AI destekli fotoğraf üretimi</p>
+                        <h2 className="pricing-title"><span className="gradient-text">Yapay Zeka</span> Fotoğraf Üretim Paketleri</h2>
+                        <p style={{ color: 'var(--color-accent-tertiary)', fontSize: '1rem', fontWeight: 500, marginBottom: '0.5rem' }}>AYLIK</p>
+                        <p className="pricing-subtitle">Her ay düzenli yapay zeka destekli fotoğraf üretimi ile katalog ve sosyal medya içeriklerinizi sürekli güncel tutun</p>
                     </motion.div>
 
                     <motion.div className="pricing-grid" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
@@ -278,7 +280,7 @@ const Pricing = () => {
             <section id="pricing-ecommerce-solution" className="pricing ecommerce-packages">
                 <div className="pricing-container">
                     <motion.div className="pricing-header" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-                        <h2 className="pricing-title"><span className="gradient-text">E-Ticaret</span> Yolculuğunuzda Kritik Anlarda Yanınızdayız</h2>
+                        <h2 className="pricing-title"><span className="gradient-text">E-Ticaret</span> Yolculuğunuzun Her Adımında Profesyonel Destek</h2>
                         <p className="pricing-subtitle">Shopify tabanlı profesyonel e-ticaret çözümleri</p>
                     </motion.div>
 

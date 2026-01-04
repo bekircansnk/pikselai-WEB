@@ -1,6 +1,6 @@
 /**
  * Footer - Alt bilgi alanı bileşeni
- * Profesyonel Katalog & Sosyal Medya Çözümleri
+ * Profesyonel Katalog, E-Ticaret & Sosyal Medya Çözümleri
  */
 const Footer = () => {
     const currentYear = new Date().getFullYear()
@@ -12,7 +12,7 @@ const Footer = () => {
                     Pikselai
                 </div>
                 <p className="footer-text">
-                    Yapay Zeka Destekli Dijital Katalog ve Sosyal Medya Çözümleri
+                    Yapay Zeka Destekli Dijital Katalog, E-Ticaret ve Sosyal Medya Çözümleri
                 </p>
 
                 {/* İletişim Butonları */}
@@ -81,7 +81,7 @@ const Footer = () => {
                 </div>
 
                 <p className="footer-developer" style={{ marginTop: '20px' }}>
-                    © {currentYear} Pikselai - Profesyonel Katalog & Sosyal Medya Çözümleri
+                    © {currentYear} Pikselai - Profesyonel Katalog, E-Ticaret & Sosyal Medya Çözümleri
                 </p>
             </div>
         </footer>

@@ -337,7 +337,7 @@ const Pricing = () => {
             },
             {
                 root: null, // viewport
-                rootMargin: '-35% 0px -55% 0px', // Orta bandı referans al
+                rootMargin: '-50% 0px -50% 0px', // Ekranın tam ortasını referans al
                 threshold: [0, 0.15, 0.3, 0.5, 0.7]
             }
         )
@@ -378,22 +378,21 @@ const Pricing = () => {
     }, [activeSection])
 
     // Section'a smooth scroll - Anchor'a git (label görünsün)
-    const HEADER_OFFSET = 120 // Header yüksekliği + güvenli pay
     const handleJumpToSection = (sectionId: string) => {
+        // Tıklama anında state'i hemen güncelle (gecikme olmasın)
+        setActiveSection(sectionId)
+        lastChangeRef.current = Date.now()
+
         // Anchor ID: 'anchor-' + section id
         const anchorId = `anchor-${sectionId}`
         const anchor = document.getElementById(anchorId)
         if (anchor) {
             anchor.scrollIntoView({ behavior: 'smooth', block: 'start' })
         } else {
-            // Fallback: section'a git
+            // Fallback: section'a git, center ile hizala
             const element = document.getElementById(sectionId)
             if (element) {
-                const elementTop = element.getBoundingClientRect().top + window.scrollY
-                window.scrollTo({
-                    top: elementTop - HEADER_OFFSET,
-                    behavior: 'smooth'
-                })
+                element.scrollIntoView({ behavior: 'smooth', block: 'center' })
             }
         }
     }

@@ -178,3 +178,4 @@ Bu proje özel kullanım içindir.
 
 Sorularınız için geliştirici ekibiyle iletişime geçin.
 bekircan sağnak +905531832344
+mail

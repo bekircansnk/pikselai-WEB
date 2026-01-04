@@ -20,27 +20,43 @@ interface SocialMediaPlan {
  */
 const socialMediaPlans: SocialMediaPlan[] = [
     {
+        name: 'Sosyal Medya – Temel Paket',
+        icon: '📷',
+        price: '₺18.000',
+        suffix: '/ aylık',
+        description: 'Kendi görselleriyle sosyal medya yönetimi isteyen markalar için.',
+        features: [
+            'Müşteri tarafından sağlanan görsellerle içerik paylaşımı',
+            'Haftalık 4 adet post (toplam 16 post / ay)',
+            'Haftalık 4 adet hikâye (toplam 16 hikâye / ay)',
+            'Paylaşım metinlerinin düzenlenmesi (caption + hashtag)',
+            'Aylık içerik planı',
+            'Feed düzeni ve paylaşım sırası planlaması',
+            'Temel raporlama (aylık)',
+            'Aylık kullanım – istenildiğinde iptal'
+        ],
+        cta: 'Temel Paketi Seç'
+    },
+    {
         name: 'Sosyal Medya – Standart Paket',
         icon: '📸',
-        price: '₺20.000',
+        price: '₺24.000',
         suffix: '/ aylık',
-        description: 'Profesyonel sosyal medya yönetimi için ideal başlangıç',
+        description: 'Yapay zeka destekli profesyonel sosyal medya yönetimi',
         features: [
             'Haftalık 6 adet AI destekli post (toplam 24 post / ay)',
             'Haftalık 6 adet AI destekli hikâye (toplam 24 hikâye / ay)',
             'Marka kimliğine uygun görsel stil',
             'Feed bütünlüğü ve estetik planlama',
             'Yapay zeka ile görsel üretimi ve düzenleme',
-            'Aylık içerik takvimi',
-            'Reklam görseli üretimi (fotoğraf bazlı)',
-            'WhatsApp / mail üzerinden iletişim'
+            'Aylık içerik takvimi'
         ],
         cta: 'Standart Paketi Seç'
     },
     {
         name: 'Sosyal Medya – Pro Paket',
         icon: '🚀',
-        price: '₺30.000',
+        price: '₺35.000',
         suffix: '/ aylık',
         description: 'Maksimum büyüme ve profesyonel yönetim',
         features: [
@@ -66,7 +82,7 @@ const socialMediaPlans: SocialMediaPlan[] = [
  */
 const notes = [
     'Reklam bütçesi paket fiyatlarına dahil değildir',
-    'Tüm içerikler yapay zeka destekli olarak üretilir',
+    'Yapay zeka destekli içerik yalnızca Standart ve Pro paketlerde sunulur',
     'Video üretimi bu paketlere dahil değildir',
     'Fotoğraf odaklı profesyonel sosyal medya yönetimi sunulur'
 ]
@@ -111,7 +127,7 @@ const SocialMediaPackages = () => {
                     transition={{ duration: 0.6 }}
                 >
                     <h2 className="pricing-title">
-                        <span className="gradient-text">Yapay Zeka Destekli</span> Sosyal Medya Yönetimi
+                        <span className="gradient-text">Profesyonel</span> Sosyal Medya Yönetimi
                     </h2>
                     <p style={{
                         color: 'var(--color-accent-tertiary)',
@@ -122,7 +138,7 @@ const SocialMediaPackages = () => {
                         Fotoğraf Odaklı • Stratejik • Ölçülebilir
                     </p>
                     <p className="pricing-subtitle">
-                        Markanız için yapay zeka destekli, profesyonel fotoğraf içerikleriyle
+                        Markanız için profesyonel fotoğraf içerikleriyle
                         sosyal medya hesaplarınızı düzenli, estetik ve doğru hedef kitleye uygun şekilde yönetiyoruz.
                     </p>
                 </motion.div>

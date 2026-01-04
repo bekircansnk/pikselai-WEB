@@ -3,6 +3,7 @@ import Hero from '../components/Hero'
 import Features from '../components/Features'
 import AiPhotoHome from '../components/AiPhotoHome'
 import SocialMediaHome from '../components/SocialMediaHome'
+import EcommerceHome from '../components/EcommerceHome'
 
 /**
  * Home - Ana sayfa bileşeni
@@ -28,8 +29,12 @@ const Home = () => {
 
             {/* Sosyal Medya Section - AI destekli sosyal medya tanıtımı */}
             <SocialMediaHome />
+
+            {/* E-Ticaret Danışmanlığı - 360° Çözüm */}
+            <EcommerceHome />
         </>
     )
 }
 
 export default Home
+

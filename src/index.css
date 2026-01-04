@@ -1217,3 +1217,809 @@ a:hover {
     margin-left: var(--spacing-xs);
   }
 }
+
+/* =====================================================
+   E-TİCARET DANIŞMANLIĞI SAYFASI STİLLERİ
+   ===================================================== */
+
+/* Hero Rozetleri */
+.ecommerce-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-xl);
+}
+
+.ecommerce-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  transition: all var(--transition-normal);
+}
+
+.ecommerce-badge:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
+  color: var(--color-accent-tertiary);
+}
+
+/* Timeline / Süreç Akışı */
+.ecommerce-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-lg);
+  position: relative;
+}
+
+.timeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+  min-width: 80px;
+}
+
+.timeline-icon {
+  font-size: 2rem;
+}
+
+.timeline-number {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-button);
+  border-radius: 50%;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-text-primary);
+}
+
+.timeline-content {
+  flex: 1;
+  padding: var(--spacing-lg);
+}
+
+.timeline-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-primary);
+}
+
+.timeline-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline-list li {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) 0;
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+}
+
+.timeline-list li::before {
+  content: '•';
+  color: var(--color-accent-primary);
+  font-weight: bold;
+}
+
+.timeline-connector {
+  position: absolute;
+  left: 57px;
+  top: 100%;
+  width: 2px;
+  height: var(--spacing-lg);
+  background: linear-gradient(to bottom, var(--color-accent-primary), transparent);
+}
+
+/* Paket Kartları - Hariç Liste */
+.pricing-excludes {
+  list-style: none;
+  text-align: left;
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--glass-border);
+}
+
+.pricing-exclude {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xs) 0;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.pricing-exclude-icon {
+  color: #ef4444;
+  font-size: 1rem;
+}
+
+/* Ecommerce Package Card özel stilleri */
+.ecommerce-package-card {
+  min-height: 500px;
+}
+
+.ecommerce-package-card .pricing-description {
+  min-height: 50px;
+}
+
+/* Aylık Hizmet Kartı */
+.ecommerce-monthly-card {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--spacing-xl);
+  text-align: center;
+}
+
+.ecommerce-monthly-header {
+  margin-bottom: var(--spacing-lg);
+}
+
+.ecommerce-monthly-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--spacing-lg) 0;
+  text-align: left;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-sm);
+}
+
+.ecommerce-monthly-list li {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  background: var(--glass-bg);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+}
+
+.ecommerce-monthly-note {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(124, 58, 237, 0.05));
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  color: var(--color-accent-tertiary);
+}
+
+.ecommerce-monthly-note strong {
+  color: var(--color-text-primary);
+}
+
+/* FAQ Stilleri */
+.ecommerce-faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.ecommerce-faq-item {
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.ecommerce-faq-item:hover {
+  transform: translateY(-2px);
+}
+
+.ecommerce-faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-lg);
+  gap: var(--spacing-md);
+}
+
+.ecommerce-faq-question h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+  text-align: left;
+}
+
+.ecommerce-faq-toggle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--color-accent-primary);
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--glass-bg);
+}
+
+.ecommerce-faq-answer {
+  padding: 0 var(--spacing-lg) var(--spacing-lg);
+  border-top: 1px solid var(--glass-border);
+}
+
+.ecommerce-faq-answer p {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+  padding-top: var(--spacing-md);
+}
+
+.ecommerce-faq-item.open {
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
+}
+
+/* Son CTA Kartı */
+.ecommerce-cta-card {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: var(--spacing-2xl);
+  text-align: center;
+  background: linear-gradient(145deg, rgba(168, 85, 247, 0.08) 0%, rgba(124, 58, 237, 0.03) 100%);
+  border-color: var(--color-accent-primary);
+}
+
+/* Responsive - E-Ticaret Sayfası */
+@media (max-width: 768px) {
+  .ecommerce-badges {
+    gap: var(--spacing-xs);
+  }
+
+  .ecommerce-badge {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .timeline-step {
+    flex-direction: row;
+    min-width: auto;
+  }
+
+  .timeline-connector {
+    display: none;
+  }
+
+  .timeline-list li {
+    justify-content: center;
+  }
+
+  .ecommerce-monthly-list {
+    grid-template-columns: 1fr;
+  }
+
+  .ecommerce-faq-question h3 {
+    font-size: 0.95rem;
+  }
+
+  .ecommerce-cta-card {
+    padding: var(--spacing-xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .ecommerce-badge {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+  }
+
+  .timeline-content {
+    padding: var(--spacing-md);
+  }
+
+  .ecommerce-faq-question {
+    padding: var(--spacing-md);
+  }
+
+  .ecommerce-faq-answer {
+    padding: 0 var(--spacing-md) var(--spacing-md);
+  }
+}
+
+/* =====================================================
+   E-TİCARET PAKET FİYAT VE PREMİUM KART STİLLERİ
+   ===================================================== */
+
+/* Fiyat Bloğu */
+.ecommerce-price-block {
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.ecommerce-price-block .pricing-price {
+  margin-bottom: var(--spacing-xs);
+}
+
+.ecommerce-price-block .pricing-price-suffix {
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+/* Aylık Fiyat (Paket 3) */
+.ecommerce-monthly-price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(124, 58, 237, 0.1));
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: var(--radius-md);
+}
+
+.ecommerce-plus {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-accent-primary);
+}
+
+.ecommerce-monthly-value {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+}
+
+.ecommerce-monthly-suffix {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.ecommerce-monthly-label {
+  width: 100%;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-accent-tertiary);
+  margin-top: 4px;
+}
+
+/* Premium Kart Özel Stilleri */
+.ecommerce-package-card.premium-card {
+  border-color: var(--color-accent-primary);
+  background: linear-gradient(145deg, rgba(168, 85, 247, 0.12) 0%, rgba(124, 58, 237, 0.06) 100%);
+  z-index: 10;
+}
+
+/* Premium Detaylar */
+.ecommerce-premium-details {
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--glass-border);
+}
+
+.ecommerce-premium-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(124, 58, 237, 0.15));
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  border-radius: var(--radius-md);
+}
+
+.ecommerce-premium-divider span {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+/* Kategori Grubu */
+.ecommerce-category {
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-sm);
+  background: var(--glass-bg);
+  border-radius: var(--radius-sm);
+}
+
+.ecommerce-category-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-accent-tertiary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.ecommerce-category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ecommerce-category-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-xs);
+  padding: 4px 0;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+.ecommerce-category-list li .pricing-feature-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Responsive - Premium Kart */
+@media (max-width: 768px) {
+  .ecommerce-monthly-value {
+    font-size: 1.5rem;
+  }
+
+  .ecommerce-category-title {
+    font-size: 0.9rem;
+  }
+
+  .ecommerce-category-list li {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ecommerce-monthly-price {
+    padding: var(--spacing-xs);
+  }
+
+  .ecommerce-monthly-value {
+    font-size: 1.25rem;
+  }
+
+  .ecommerce-category {
+    padding: var(--spacing-xs);
+  }
+}
+
+/* =====================================================
+   E-TİCARET MODAL VE TIKLANABILIR ALAN STİLLERİ
+   ===================================================== */
+
+/* Tıklanabilir Aylık Fiyat Alanı */
+.ecommerce-monthly-clickable {
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.ecommerce-monthly-clickable:hover {
+  transform: scale(1.03);
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.25), rgba(124, 58, 237, 0.18));
+  border-color: rgba(168, 85, 247, 0.6);
+  box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3);
+}
+
+.ecommerce-monthly-clickable::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(45deg, rgba(168, 85, 247, 0.4), transparent, rgba(124, 58, 237, 0.4));
+  opacity: 0;
+  z-index: -1;
+  transition: opacity var(--transition-normal);
+}
+
+.ecommerce-monthly-clickable:hover::after {
+  opacity: 1;
+  animation: pulse-border 1.5s infinite;
+}
+
+@keyframes pulse-border {
+
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.ecommerce-monthly-hint {
+  width: 100%;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-accent-primary);
+  margin-top: 8px;
+  animation: bounce-hint 2s infinite;
+}
+
+@keyframes bounce-hint {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Premium Özet Alanı */
+.ecommerce-premium-summary {
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--glass-border);
+}
+
+.ecommerce-gift-highlight {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(22, 163, 74, 0.1));
+  border: 2px solid rgba(34, 197, 94, 0.4);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  animation: gift-glow 3s infinite;
+}
+
+@keyframes gift-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 25px rgba(34, 197, 94, 0.4);
+  }
+}
+
+.ecommerce-gift-highlight:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(22, 163, 74, 0.15));
+  border-color: rgba(34, 197, 94, 0.7);
+}
+
+.ecommerce-gift-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.ecommerce-gift-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.ecommerce-gift-value {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #22c55e;
+  margin-top: 2px;
+}
+
+.ecommerce-gift-arrow {
+  font-size: 1.25rem;
+  color: #22c55e;
+  transition: transform var(--transition-normal);
+}
+
+.ecommerce-gift-highlight:hover .ecommerce-gift-arrow {
+  transform: translateX(5px);
+}
+
+.ecommerce-premium-note {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: var(--spacing-sm);
+  text-align: center;
+  font-style: italic;
+}
+
+/* Modal Overlay */
+.ecommerce-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--spacing-md);
+  overflow-y: auto;
+}
+
+/* Modal Box */
+.ecommerce-modal {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--color-bg-primary);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-2xl);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.ecommerce-modal-close {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  width: 40px;
+  height: 40px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  color: var(--color-text-secondary);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ecommerce-modal-close:hover {
+  background: var(--glass-bg-hover);
+  color: var(--color-text-primary);
+}
+
+.ecommerce-modal-title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: var(--spacing-xs);
+}
+
+.ecommerce-modal-subtitle {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.ecommerce-modal-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.ecommerce-modal-category {
+  padding: var(--spacing-md);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+}
+
+.ecommerce-modal-category-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-accent-tertiary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.ecommerce-modal-category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ecommerce-modal-category-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-xs);
+  padding: 4px 0;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+.ecommerce-modal-gift-link {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-xs);
+  color: #22c55e;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all var(--transition-normal);
+}
+
+.ecommerce-modal-gift-link:hover {
+  color: #16a34a;
+  text-decoration: underline;
+}
+
+.ecommerce-modal-cta {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+/* Modal Responsive */
+@media (max-width: 768px) {
+  .ecommerce-modal {
+    padding: var(--spacing-lg);
+    max-height: 85vh;
+  }
+
+  .ecommerce-modal-title {
+    font-size: 1.5rem;
+  }
+
+  .ecommerce-modal-content {
+    grid-template-columns: 1fr;
+  }
+
+  .ecommerce-gift-highlight {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .ecommerce-modal {
+    padding: var(--spacing-md);
+  }
+
+  .ecommerce-modal-title {
+    font-size: 1.25rem;
+    padding-right: var(--spacing-lg);
+  }
+}

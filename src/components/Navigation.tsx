@@ -14,7 +14,7 @@ const Navigation = () => {
 
     // Link aktif kontrolü
     const isActive = (path: string) => location.pathname === path
-    const isServiceActive = () => ['/profesyonel-katalog', '/yapay-zeka-fotograf-cekimi', '/sosyal-medya-yonetimi'].includes(location.pathname)
+    const isServiceActive = () => ['/profesyonel-katalog', '/yapay-zeka-fotograf-cekimi', '/sosyal-medya-yonetimi', '/e-ticaret-danismanligi'].includes(location.pathname)
 
     return (
         <motion.nav
@@ -89,6 +89,13 @@ const Navigation = () => {
                                         onClick={() => setIsServicesOpen(false)}
                                     >
                                         📱 Sosyal Medya
+                                    </Link>
+                                    <Link
+                                        to="/e-ticaret-danismanligi"
+                                        className={`nav-dropdown-item ${isActive('/e-ticaret-danismanligi') ? 'active' : ''}`}
+                                        onClick={() => setIsServicesOpen(false)}
+                                    >
+                                        🛒 E-Ticaret Danışmanlığı
                                     </Link>
                                 </motion.div>
                             )}

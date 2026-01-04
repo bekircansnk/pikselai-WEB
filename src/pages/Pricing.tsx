@@ -1,8 +1,111 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import SocialMediaPackages from '../components/SocialMediaPackages'
+import SectionNav from '../components/theme/SectionNav'
+import SectionBand from '../components/theme/SectionBand'
+import ThemeBg from '../components/theme/ThemeBg'
+
+/**
+ * Tema konfigürasyonları - 4 farklı section için (dark/light ayrı)
+ * LIGHT tema: Daha koyu/belirgin arka planlar, yüksek kontrast
+ * DARK tema: Mevcut kalite korunuyor
+ */
+const PRICING_SECTIONS = [
+    {
+        id: 'katalog-fiyat',
+        label: 'Katalog',
+        icon: '📁',
+        bandTitle: 'Profesyonel Katalog Çözümü',
+        bandSubtitle: 'Tek seferlik ödeme ile profesyonel katalog',
+        theme: {
+            dark: {
+                primary: '#A855F7',
+                accent: '#C084FC',
+                bg1: 'rgba(168, 85, 247, 0.18)',
+                bg2: 'rgba(139, 92, 246, 0.10)',
+                glow: 'rgba(168, 85, 247, 0.40)'
+            },
+            light: {
+                primary: '#7C3AED',
+                accent: '#8B5CF6',
+                bg1: 'rgba(124, 58, 237, 0.12)',
+                bg2: 'rgba(139, 92, 246, 0.08)',
+                glow: 'rgba(124, 58, 237, 0.20)'
+            }
+        }
+    },
+    {
+        id: 'ai-fiyat',
+        label: 'AI Fotoğraf',
+        icon: '📸',
+        bandTitle: 'Yapay Zeka Fotoğraf Üretimi',
+        bandSubtitle: 'Aylık AI destekli görsel üretimi',
+        theme: {
+            dark: {
+                primary: '#22D3EE',
+                accent: '#67E8F9',
+                bg1: 'rgba(34, 211, 238, 0.18)',
+                bg2: 'rgba(6, 182, 212, 0.10)',
+                glow: 'rgba(34, 211, 238, 0.40)'
+            },
+            light: {
+                primary: '#0891B2',
+                accent: '#06B6D4',
+                bg1: 'rgba(8, 145, 178, 0.12)',
+                bg2: 'rgba(6, 182, 212, 0.08)',
+                glow: 'rgba(8, 145, 178, 0.20)'
+            }
+        }
+    },
+    {
+        id: 'sosyal-medya-fiyat',
+        label: 'Sosyal Medya',
+        icon: '📱',
+        bandTitle: 'Sosyal Medya Yönetimi',
+        bandSubtitle: 'Fotoğraf odaklı profesyonel yönetim',
+        theme: {
+            dark: {
+                primary: '#F472B6',
+                accent: '#FB7185',
+                bg1: 'rgba(244, 114, 182, 0.18)',
+                bg2: 'rgba(236, 72, 153, 0.10)',
+                glow: 'rgba(244, 114, 182, 0.40)'
+            },
+            light: {
+                primary: '#DB2777',
+                accent: '#EC4899',
+                bg1: 'rgba(219, 39, 119, 0.12)',
+                bg2: 'rgba(236, 72, 153, 0.08)',
+                glow: 'rgba(219, 39, 119, 0.20)'
+            }
+        }
+    },
+    {
+        id: 'pricing-ecommerce-solution',
+        label: 'E-Ticaret',
+        icon: '🛒',
+        bandTitle: 'E-Ticaret Danışmanlığı',
+        bandSubtitle: 'Shopify tabanlı profesyonel çözümler',
+        theme: {
+            dark: {
+                primary: '#34D399',
+                accent: '#6EE7B7',
+                bg1: 'rgba(52, 211, 153, 0.18)',
+                bg2: 'rgba(16, 185, 129, 0.10)',
+                glow: 'rgba(52, 211, 153, 0.40)'
+            },
+            light: {
+                primary: '#059669',
+                accent: '#10B981',
+                bg1: 'rgba(5, 150, 105, 0.12)',
+                bg2: 'rgba(16, 185, 129, 0.08)',
+                glow: 'rgba(5, 150, 105, 0.20)'
+            }
+        }
+    }
+]
 
 /**
  * Profesyonel Katalog paketi (TEK SEFERLİK)
@@ -194,6 +297,106 @@ const ecommercePackages = [
 const Pricing = () => {
     const [openFaq, setOpenFaq] = useState<number | null>(null)
     const [isPremiumOpen, setIsPremiumOpen] = useState(false)
+    const [activeSection, setActiveSection] = useState('katalog-fiyat')
+    const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({})
+
+    // Dark mode kontrolü
+    const isDarkMode = () => {
+        return document.documentElement.classList.contains('dark') ||
+            document.body.classList.contains('dark') ||
+            window.matchMedia('(prefers-color-scheme: dark)').matches
+    }
+
+    // IntersectionObserver ile aktif section tespiti - STABİL, COOLDOWN İLE
+    const lastChangeRef = useRef<number>(0)
+    const COOLDOWN_MS = 300 // Minimum 300ms arasında değişim
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                // Cooldown kontrolü
+                const now = Date.now()
+                if (now - lastChangeRef.current < COOLDOWN_MS) return
+
+                // Tüm intersecting entries'i topla
+                const intersecting = entries.filter(e => e.isIntersecting)
+
+                if (intersecting.length > 0) {
+                    // En yüksek intersection ratio'ya sahip olanı bul
+                    const mostVisible = intersecting.reduce((prev, current) => {
+                        return (current.intersectionRatio > prev.intersectionRatio) ? current : prev
+                    })
+
+                    // Ratio farkı anlamlıysa değiştir (histerezis)
+                    const sectionId = mostVisible.target.getAttribute('id')
+                    if (sectionId && sectionId !== activeSection && mostVisible.intersectionRatio > 0.15) {
+                        lastChangeRef.current = now
+                        setActiveSection(sectionId)
+                    }
+                }
+            },
+            {
+                root: null, // viewport
+                rootMargin: '-35% 0px -55% 0px', // Orta bandı referans al
+                threshold: [0, 0.15, 0.3, 0.5, 0.7]
+            }
+        )
+
+        // Section'ları observe et
+        const observeTimeout = setTimeout(() => {
+            PRICING_SECTIONS.forEach((section) => {
+                const element = document.getElementById(section.id)
+                if (element) {
+                    observer.observe(element)
+                    sectionRefs.current[section.id] = element
+                }
+            })
+        }, 100)
+
+        return () => {
+            clearTimeout(observeTimeout)
+            observer.disconnect()
+        }
+    }, [activeSection])
+
+    // Aktif section değişince CSS variables güncelle - DARK/LIGHT DESTEKLI
+    useEffect(() => {
+        const section = PRICING_SECTIONS.find(s => s.id === activeSection)
+        if (section) {
+            const isDark = isDarkMode()
+            const theme = isDark ? section.theme.dark : section.theme.light
+
+            const root = document.documentElement
+            root.style.setProperty('--theme-primary', theme.primary)
+            root.style.setProperty('--theme-accent', theme.accent)
+            root.style.setProperty('--theme-bg-1', theme.bg1)
+            root.style.setProperty('--theme-bg-2', theme.bg2)
+            root.style.setProperty('--theme-glow', theme.glow)
+
+            console.log('THEME APPLIED:', activeSection, isDark ? 'DARK' : 'LIGHT', theme)
+        }
+    }, [activeSection])
+
+    // Section'a smooth scroll - Anchor'a git (label görünsün)
+    const HEADER_OFFSET = 120 // Header yüksekliği + güvenli pay
+    const handleJumpToSection = (sectionId: string) => {
+        // Anchor ID: 'anchor-' + section id
+        const anchorId = `anchor-${sectionId}`
+        const anchor = document.getElementById(anchorId)
+        if (anchor) {
+            anchor.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        } else {
+            // Fallback: section'a git
+            const element = document.getElementById(sectionId)
+            if (element) {
+                const elementTop = element.getBoundingClientRect().top + window.scrollY
+                window.scrollTo({
+                    top: elementTop - HEADER_OFFSET,
+                    behavior: 'smooth'
+                })
+            }
+        }
+    }
 
     // Süreç adımları (kısa)
     const processSteps = [
@@ -221,13 +424,24 @@ const Pricing = () => {
     const fadeInUp = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }
 
     return (
-        <>
+        <div className="pricing-page">
+            {/* Theme Background - 2 Katmanlı Crossfade */}
+            <ThemeBg activeSection={activeSection} isDark={isDarkMode()} />
+
+            {/* Section Navigator */}
+            <SectionNav
+                sections={PRICING_SECTIONS.map(s => ({ id: s.id, label: s.label, icon: s.icon }))}
+                activeId={activeSection}
+                onJump={handleJumpToSection}
+            />
+
             <Helmet>
                 <title>Ücretler | Pikselai - Profesyonel Katalog, E-Ticaret & AI Çözümleri</title>
                 <meta name="description" content="Pikselai fiyatlandırma: Profesyonel katalog, yapay zeka fotoğraf üretimi, sosyal medya ve e-ticaret danışmanlığı paketleri." />
             </Helmet>
 
             {/* BÖLÜM 1: PROFESYONEL KATALOG */}
+            <SectionBand icon="📁" title="Profesyonel Katalog Çözümü" subtitle="Tek seferlik ödeme" themeColor="#8B5CF6" anchorId="anchor-katalog-fiyat" />
             <section id="katalog-fiyat" className="pricing">
                 <div className="pricing-container">
                     <motion.div className="pricing-header" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
@@ -250,6 +464,7 @@ const Pricing = () => {
             </section>
 
             {/* BÖLÜM 2: YAPAY ZEKA FOTOĞRAF */}
+            <SectionBand icon="📸" title="Yapay Zeka Fotoğraf Üretimi" subtitle="Aylık AI destekli görsel" themeColor="#22D3EE" anchorId="anchor-ai-fiyat" />
             <section id="ai-fiyat" className="pricing" style={{ paddingTop: 0 }}>
                 <div className="pricing-container">
                     <motion.div className="pricing-header" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
@@ -274,9 +489,11 @@ const Pricing = () => {
             </section>
 
             {/* SOSYAL MEDYA */}
+            <SectionBand icon="📱" title="Sosyal Medya Yönetimi" subtitle="Fotoğraf odaklı profesyonel yönetim" themeColor="#F472B6" anchorId="anchor-sosyal-medya-fiyat" />
             <SocialMediaPackages />
 
             {/* E-TİCARET DANIŞMANLIĞI PAKETLERİ */}
+            <SectionBand icon="🛒" title="E-Ticaret Danışmanlığı" subtitle="Shopify tabanlı profesyonel çözümler" themeColor="#34D399" anchorId="anchor-pricing-ecommerce-solution" />
             <section id="pricing-ecommerce-solution" className="pricing ecommerce-packages">
                 <div className="pricing-container">
                     <motion.div className="pricing-header" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
@@ -544,7 +761,7 @@ const Pricing = () => {
                     </motion.div>
                 </div>
             </section>
-        </>
+        </div>
     )
 }
 

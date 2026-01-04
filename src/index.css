@@ -2023,3 +2023,386 @@ a:hover {
     padding-right: var(--spacing-lg);
   }
 }
+
+/* =====================================================
+   PRICING TEMA SİSTEMİ
+   Scroll bazlı dinamik tema değişimi
+   ===================================================== */
+
+/* Tema CSS Değişkenleri */
+:root {
+  --theme-primary: #A855F7;
+  --theme-accent: #C084FC;
+  --theme-bg-1: rgba(168, 85, 247, 0.15);
+  --theme-bg-2: rgba(139, 92, 246, 0.08);
+  --theme-glow: rgba(168, 85, 247, 0.35);
+  --theme-text-muted: rgba(255, 255, 255, 0.72);
+}
+
+/* Pricing Page Wrapper */
+.pricing-page {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  scroll-padding-top: 100px;
+  padding-top: 80px;
+  /* Header için boşluk */
+}
+
+/* Section scroll offset - başlık kırpılmasını önle */
+.pricing-page section,
+.pricing-page .section-band {
+  scroll-margin-top: 100px;
+}
+
+/* Theme Background Layers - 2 KATMANLI CROSSFADE */
+.theme-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -3;
+  pointer-events: none;
+}
+
+/* Layer A - Mevcut gradient (her zaman görünür) */
+.theme-bg-layer-a {
+  transition: background 800ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Layer B - Geçiş gradient'i (opacity ile göster/gizle) */
+.theme-bg-layer-b {
+  transition: opacity 800ms cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 0;
+}
+
+/* Dark modda daha yoğun orb'lar */
+.dark .theme-orb,
+[data-theme="dark"] .theme-orb {
+  opacity: 0.35;
+  filter: blur(50px);
+}
+
+/* Light modda hafif orb'lar */
+.light .theme-orb,
+[data-theme="light"] .theme-orb {
+  opacity: 0.25;
+  filter: blur(60px);
+}
+
+/* Glow Orbs - DAHA GÖRÜNÜR */
+.theme-orbs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.theme-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  mix-blend-mode: screen;
+  opacity: 0.25;
+  transition: background 500ms ease, transform 800ms ease, opacity 500ms ease;
+}
+
+/* Dark modda orb'lar daha parlak */
+.dark .theme-orb,
+[data-theme="dark"] .theme-orb {
+  opacity: 0.3;
+  filter: blur(50px);
+}
+
+.theme-orb-1 {
+  width: 500px;
+  height: 500px;
+  top: 5%;
+  left: 5%;
+  background: var(--theme-primary);
+  animation: float-orb-1 20s infinite ease-in-out;
+}
+
+.theme-orb-2 {
+  width: 400px;
+  height: 400px;
+  top: 50%;
+  right: 5%;
+  background: var(--theme-accent);
+  animation: float-orb-2 25s infinite ease-in-out;
+}
+
+@keyframes float-orb-1 {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(30px, 20px);
+  }
+
+  50% {
+    transform: translate(-20px, 40px);
+  }
+
+  75% {
+    transform: translate(40px, -20px);
+  }
+}
+
+@keyframes float-orb-2 {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(-40px, 30px);
+  }
+
+  50% {
+    transform: translate(30px, -20px);
+  }
+
+  75% {
+    transform: translate(-20px, -40px);
+  }
+}
+
+/* Theme Noise Overlay */
+.theme-noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Section Anchor - Scroll hedefi için görünmez anchor */
+.section-anchor {
+  position: relative;
+  display: block;
+  height: 0;
+  visibility: hidden;
+  scroll-margin-top: 120px;
+  /* Header + güvenli pay */
+}
+
+/* Section Band */
+.section-band {
+  padding: var(--spacing-xl) 0 var(--spacing-lg) 0;
+  margin-top: var(--spacing-2xl);
+  /* Bölümler arası ayrışma */
+  margin-bottom: var(--spacing-md);
+  position: relative;
+  text-align: center;
+}
+
+.section-band-content {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(10px);
+}
+
+.section-band-icon {
+  font-size: 1.5rem;
+}
+
+.section-band-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.section-band-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: 0.5px;
+}
+
+.section-band-subtitle {
+  font-size: 0.75rem;
+  color: var(--theme-text-muted);
+}
+
+.section-band-line {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--band-color, var(--theme-primary)), transparent);
+  transform-origin: center;
+  border-radius: 1px;
+}
+
+/* Section Navigator */
+.section-nav {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+}
+
+.section-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-nav-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.section-nav-item.active {
+  background: rgba(var(--theme-primary-rgb, 139, 92, 246), 0.15);
+  border-color: var(--theme-primary);
+  box-shadow: 0 0 20px var(--theme-glow);
+}
+
+.section-nav-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.section-nav-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.section-nav-item.active .section-nav-label {
+  color: var(--color-text-primary);
+}
+
+.section-nav-indicator {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 0;
+  background: var(--theme-primary);
+  border-radius: 2px;
+  transition: height 0.3s ease;
+}
+
+.section-nav-item.active .section-nav-indicator {
+  height: 60%;
+}
+
+/* Themed Section Edge */
+.themed-section {
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.themed-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--theme-primary), transparent);
+}
+
+/* Mobile Navigator */
+@media (max-width: 1024px) {
+  .section-nav {
+    position: fixed;
+    right: auto;
+    left: 50%;
+    top: auto;
+    bottom: 20px;
+    transform: translateX(-50%) translateY(0);
+    flex-direction: row;
+    padding: 8px 16px;
+    border-radius: var(--radius-full);
+  }
+
+  .section-nav-label {
+    display: none;
+  }
+
+  .section-nav-item {
+    padding: 10px;
+  }
+
+  .section-nav-indicator {
+    left: 50%;
+    top: auto;
+    bottom: 2px;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+  }
+
+  .section-nav-item.active .section-nav-indicator {
+    width: 60%;
+    height: 3px;
+  }
+
+  .theme-orb-1 {
+    width: 200px;
+    height: 200px;
+  }
+
+  .theme-orb-2 {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .theme-orb {
+    animation: none;
+  }
+
+  .theme-bg,
+  .theme-orb {
+    transition: none;
+  }
+}

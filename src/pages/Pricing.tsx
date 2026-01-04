@@ -423,8 +423,26 @@ const Pricing = () => {
     const itemVariants = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.4 } } }
     const fadeInUp = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }
 
+    // Aktif kategorinin tema renkleri
+    const getActiveCategoryStyle = () => {
+        const section = PRICING_SECTIONS.find(s => s.id === activeSection)
+        if (!section) return {}
+        const theme = isDarkMode() ? section.theme.dark : section.theme.light
+        return {
+            '--active-primary': theme.primary,
+            '--active-accent': theme.accent,
+            '--active-bg1': theme.bg1,
+            '--active-bg2': theme.bg2,
+            '--active-glow': theme.glow
+        } as React.CSSProperties
+    }
+
     return (
-        <div className="pricing-page">
+        <div
+            className="pricing-page"
+            data-active-category={activeSection}
+            style={getActiveCategoryStyle()}
+        >
             {/* Theme Background - 2 Katmanlı Crossfade */}
             <ThemeBg activeSection={activeSection} isDark={isDarkMode()} />
 
@@ -442,7 +460,7 @@ const Pricing = () => {
 
             {/* BÖLÜM 1: PROFESYONEL KATALOG */}
             <SectionBand icon="📁" title="Profesyonel Katalog Çözümü" subtitle="Tek seferlik ödeme" themeColor="#8B5CF6" anchorId="anchor-katalog-fiyat" />
-            <section id="katalog-fiyat" className="pricing">
+            <section id="katalog-fiyat" className="pricing" data-category="katalog">
                 <div className="pricing-container">
                     <motion.div className="pricing-header" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
                         <h1 className="pricing-title"><span className="gradient-text">Profesyonel</span> Katalog Çözümü</h1>
@@ -465,7 +483,7 @@ const Pricing = () => {
 
             {/* BÖLÜM 2: YAPAY ZEKA FOTOĞRAF */}
             <SectionBand icon="📸" title="Yapay Zeka Fotoğraf Üretimi" subtitle="Aylık AI destekli görsel" themeColor="#22D3EE" anchorId="anchor-ai-fiyat" />
-            <section id="ai-fiyat" className="pricing" style={{ paddingTop: 0 }}>
+            <section id="ai-fiyat" className="pricing" data-category="ai-fotograf" style={{ paddingTop: 0 }}>
                 <div className="pricing-container">
                     <motion.div className="pricing-header" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
                         <h2 className="pricing-title"><span className="gradient-text">Yapay Zeka</span> Fotoğraf Üretim Paketleri</h2>
@@ -494,7 +512,7 @@ const Pricing = () => {
 
             {/* E-TİCARET DANIŞMANLIĞI PAKETLERİ */}
             <SectionBand icon="🛒" title="E-Ticaret Danışmanlığı" subtitle="Shopify tabanlı profesyonel çözümler" themeColor="#34D399" anchorId="anchor-pricing-ecommerce-solution" />
-            <section id="pricing-ecommerce-solution" className="pricing ecommerce-packages">
+            <section id="pricing-ecommerce-solution" className="pricing ecommerce-packages" data-category="e-ticaret">
                 <div className="pricing-container">
                     <motion.div className="pricing-header" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
                         <h2 className="pricing-title"><span className="gradient-text">E-Ticaret</span> Yolculuğunuzun Her Adımında Profesyonel Destek</h2>

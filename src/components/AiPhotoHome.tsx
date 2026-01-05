@@ -138,11 +138,20 @@ const AiPhotoHome = () => {
                     }}>
                         AI fotoğraf paketlerini inceleyerek ürünleriniz için en uygun çözümü seçin.
                     </p>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%', maxWidth: '500px' }} className="md:flex-row">
+                    <div style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: '1rem',
+                        flexWrap: 'wrap',
+                        width: '100%',
+                        maxWidth: '600px'
+                    }}>
                         <Link
                             to="/ucretler#ai-fiyat"
                             className="glass-button glow"
-                            style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', flex: 1 }}
+                            style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', minWidth: '200px' }}
                         >
                             <span>💰</span>
                             Paketleri İncele
@@ -150,7 +159,7 @@ const AiPhotoHome = () => {
                         <Link
                             to="/yapay-zeka-fotograf-cekimi"
                             className="glass-button glass-button-secondary"
-                            style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', flex: 1 }}
+                            style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', minWidth: '200px' }}
                         >
                             <span>📋</span>
                             Detaylı İncele

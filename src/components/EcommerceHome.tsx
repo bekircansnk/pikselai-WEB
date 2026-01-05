@@ -142,7 +142,7 @@ const EcommerceHome = () => {
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
-                        gap: '1rem'
+                        gap: '1.5rem'
                     }}
                     className="cta-buttons-flex"
                     initial={{ opacity: 0, y: 20 }}
@@ -150,11 +150,20 @@ const EcommerceHome = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.3 }}
                 >
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%', maxWidth: '500px' }} className="md:flex-row">
+                    <div style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: '1rem',
+                        flexWrap: 'wrap',
+                        width: '100%',
+                        maxWidth: '600px'
+                    }}>
                         <Link
                             to="/ucretler#pricing-ecommerce-solution"
                             className="glass-button glow"
-                            style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', flex: 1 }}
+                            style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', minWidth: '200px' }}
                         >
                             <span>💰</span>
                             Paketleri İncele
@@ -162,7 +171,7 @@ const EcommerceHome = () => {
                         <Link
                             to="/e-ticaret-danismanligi"
                             className="glass-button glass-button-secondary"
-                            style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', flex: 1 }}
+                            style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', minWidth: '200px' }}
                         >
                             <span>📋</span>
                             Detaylı İncele

@@ -139,11 +139,20 @@ const Features = () => {
                     }}>
                         Katalog çözümlerimizi inceleyerek işletmeniz için en uygun paketi seçin.
                     </p>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%', maxWidth: '500px' }} className="md:flex-row">
+                    <div style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: '1rem',
+                        flexWrap: 'wrap',
+                        width: '100%',
+                        maxWidth: '600px'
+                    }}>
                         <Link
                             to="/ucretler#katalog-fiyat"
                             className="glass-button glow"
-                            style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', flex: 1 }}
+                            style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', minWidth: '200px' }}
                         >
                             <span>💰</span>
                             Paketleri İncele
@@ -151,7 +160,7 @@ const Features = () => {
                         <Link
                             to="/profesyonel-katalog"
                             className="glass-button glass-button-secondary"
-                            style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', flex: 1 }}
+                            style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', minWidth: '200px' }}
                         >
                             <span>📋</span>
                             Detaylı İncele

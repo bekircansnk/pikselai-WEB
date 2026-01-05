@@ -139,7 +139,8 @@ const aiPlans = [
         suffix: '/ aylık',
         description: 'Yapay zekayı düşük riskle denemek isteyen işletmeler için.',
         features: ['Ayda 200 adet AI fotoğraf', 'Profesyonel prompt altyapısı', 'Katalog ve sosyal medya uyumlu', 'Aylık kullanım – iptal edilebilir'],
-        cta: 'Paketi Seç'
+        cta: 'Paketi Seç',
+        featured: false
     },
     {
         name: 'En Popüler',
@@ -149,7 +150,7 @@ const aiPlans = [
         features: ['Ayda 700 adet AI fotoğraf', 'Gelişmiş prompt mühendisliği', 'Tutarlı stil ve görsel bütünlük', 'Öncelikli üretim sırası', 'Profesyonel kullanım için önerilir'],
         featured: true,
         cta: 'En Popüler Paketi Seç',
-        badge: '⭐ Önerilen ⭐'
+        badge: '⭐ EN POPÜLER ⭐'
     },
     {
         name: 'Profesyonel',
@@ -157,7 +158,8 @@ const aiPlans = [
         suffix: '/ aylık',
         description: 'Yüksek hacimli, sürekli görsel üretimi yapan markalar için.',
         features: ['Ayda 1.400 adet AI fotoğraf', 'Gelişmiş prompt + sahne varyasyonları', 'Büyük kataloglar için uygun', 'Öncelikli destek'],
-        cta: 'Profesyonel Paketi Seç'
+        cta: 'Profesyonel Paketi Seç',
+        featured: false
     }
 ]
 
@@ -180,7 +182,8 @@ const ecommercePackages = [
             'Anahtar teslim yayın',
             '3 ay teknik destek'
         ],
-        cta: 'Teklif Al'
+        cta: 'Teklif Al',
+        featured: false
     },
     {
         name: 'Profesyonel',

@@ -35,7 +35,8 @@ const socialMediaPlans: SocialMediaPlan[] = [
             'Temel raporlama (aylık)',
             'Aylık kullanım – istenildiğinde iptal'
         ],
-        cta: 'Temel Paketi Seç'
+        cta: 'Temel Paketi Seç',
+        featured: false
     },
     {
         name: 'Sosyal Medya – Standart Paket',
@@ -51,7 +52,8 @@ const socialMediaPlans: SocialMediaPlan[] = [
             'Yapay zeka ile görsel üretimi ve düzenleme',
             'Aylık içerik takvimi'
         ],
-        cta: 'Standart Paketi Seç'
+        cta: 'Standart Paketi Seç',
+        featured: true
     },
     {
         name: 'Sosyal Medya – Pro Paket',
@@ -72,7 +74,7 @@ const socialMediaPlans: SocialMediaPlan[] = [
             'Detaylı aylık rapor (erişim, etkileşim, büyüme)',
             'Öncelikli destek ve hızlı revize hakkı'
         ],
-        featured: true,
+        featured: false,
         cta: 'Pro Paketi Seç'
     }
 ]
@@ -157,9 +159,9 @@ const SocialMediaPackages = () => {
                             className={`glass-card pricing-card ${plan.featured ? 'featured' : ''}`}
                             variants={cardVariants}
                         >
-                            {/* Pro badge */}
+                            {/* Featured badge */}
                             {plan.featured && (
-                                <div className="pricing-badge">🚀 Önerilen</div>
+                                <div className="pricing-badge">⭐ EN POPÜLER ⭐</div>
                             )}
 
                             {/* Paket adı */}

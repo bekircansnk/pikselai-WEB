@@ -116,6 +116,48 @@ const Features = () => {
                         </motion.div>
                     ))}
                 </motion.div>
+
+                {/* CTA Butonları */}
+                <motion.div
+                    style={{
+                        textAlign: 'center',
+                        marginTop: '3rem',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        gap: '1.5rem'
+                    }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                >
+                    <p style={{
+                        color: 'var(--color-text-secondary)',
+                        fontSize: '1.1rem',
+                        maxWidth: '500px'
+                    }}>
+                        Katalog çözümlerimizi inceleyerek işletmeniz için en uygun paketi seçin.
+                    </p>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%', maxWidth: '500px' }} className="md:flex-row">
+                        <Link
+                            to="/ucretler#katalog-fiyat"
+                            className="glass-button glow"
+                            style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', flex: 1 }}
+                        >
+                            <span>💰</span>
+                            Paketleri İncele
+                        </Link>
+                        <Link
+                            to="/profesyonel-katalog"
+                            className="glass-button glass-button-secondary"
+                            style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', flex: 1 }}
+                        >
+                            <span>📋</span>
+                            Detaylı İncele
+                        </Link>
+                    </div>
+                </motion.div>
             </div>
         </section>
     )

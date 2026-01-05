@@ -134,23 +134,40 @@ const EcommerceHome = () => {
                     ))}
                 </motion.div>
 
-                {/* CTA Butonu */}
+                {/* CTA Butonları */}
                 <motion.div
-                    className="text-center"
-                    style={{ marginTop: '2rem' }}
+                    style={{
+                        textAlign: 'center',
+                        marginTop: '2rem',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        gap: '1rem'
+                    }}
+                    className="cta-buttons-flex"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.3 }}
                 >
-                    <Link
-                        to="/e-ticaret-danismanligi"
-                        className="glass-button glow"
-                        style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
-                    >
-                        <span>🚀</span>
-                        E-Ticaret Danışmanlığını İncele
-                    </Link>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%', maxWidth: '500px' }} className="md:flex-row">
+                        <Link
+                            to="/ucretler#pricing-ecommerce-solution"
+                            className="glass-button glow"
+                            style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', flex: 1 }}
+                        >
+                            <span>💰</span>
+                            Paketleri İncele
+                        </Link>
+                        <Link
+                            to="/e-ticaret-danismanligi"
+                            className="glass-button glass-button-secondary"
+                            style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', flex: 1 }}
+                        >
+                            <span>📋</span>
+                            Detaylı İncele
+                        </Link>
+                    </div>
                 </motion.div>
             </div>
         </section>

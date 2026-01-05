@@ -138,13 +138,24 @@ const SocialMediaHome = () => {
                     }}>
                         Sosyal medya paketlerini inceleyerek markanız için en uygun çözümü seçin.
                     </p>
-                    <Link
-                        to="/ucretler#social-media-packages"
-                        className="glass-button glow"
-                    >
-                        <span>📱</span>
-                        Sosyal Medya Paketlerini İncele
-                    </Link>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%', maxWidth: '500px' }} className="md:flex-row">
+                        <Link
+                            to="/ucretler#sosyal-medya-fiyat"
+                            className="glass-button glow"
+                            style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', flex: 1 }}
+                        >
+                            <span>💰</span>
+                            Paketleri İncele
+                        </Link>
+                        <Link
+                            to="/sosyal-medya-yonetimi"
+                            className="glass-button glass-button-secondary"
+                            style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', flex: 1 }}
+                        >
+                            <span>📋</span>
+                            Detaylı İncele
+                        </Link>
+                    </div>
                 </motion.div>
             </div>
         </section>

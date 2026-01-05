@@ -3,9 +3,7 @@ import { motion } from 'framer-motion'
 /**
  * SectionNav - Mini navigasyon bileşeni
  * Sağda (desktop) veya altta (mobile) sabit konumda
- * Aktif section'ı vurgular ve tıklanınca smooth scroll yapar
- * Aktif buton: scale-110, ring-2, tam opaklık
- * İnaktif butonlar: sönük görünüm (opacity-50)
+ * Aktif section'ı scale + border-glow ile vurgular
  */
 interface Section {
     id: string
@@ -30,22 +28,34 @@ const SectionNav = ({ sections, activeId, onJump }: SectionNavProps) => {
             {sections.map((section) => {
                 const isActive = activeId === section.id
                 return (
-                    <button
+                    <motion.button
                         key={section.id}
                         className={`section-nav-item ${isActive ? 'active' : ''}`}
                         onClick={() => onJump(section.id)}
                         title={section.label}
-                        style={{
-                            // Dinamik stil: aktif buton büyür ve parlak, inaktif buton sönük
-                            transform: isActive ? 'scale(1.1)' : 'scale(1)',
-                            opacity: isActive ? 1 : 0.5,
-                            transition: 'all 0.3s cubic-bezier(0.22, 1, 0.36, 1)'
+                        // Aktif kategori için scale + glow animasyonu
+                        animate={{
+                            scale: isActive ? 1.05 : 1,
+                            boxShadow: isActive
+                                ? '0 0 20px var(--active-glow, rgba(139, 92, 246, 0.4))'
+                                : '0 0 0px transparent'
                         }}
+                        transition={{ duration: 0.3, ease: 'easeOut' }}
+                        whileHover={{ scale: 1.08 }}
+                        whileTap={{ scale: 0.95 }}
                     >
                         <span className="section-nav-icon">{section.icon}</span>
                         <span className="section-nav-label">{section.label}</span>
-                        <span className="section-nav-indicator" />
-                    </button>
+                        {/* Aktif göstergesi */}
+                        <motion.span
+                            className="section-nav-indicator"
+                            animate={{
+                                opacity: isActive ? 1 : 0,
+                                scaleX: isActive ? 1 : 0
+                            }}
+                            transition={{ duration: 0.2 }}
+                        />
+                    </motion.button>
                 )
             })}
         </motion.nav>
@@ -53,4 +63,3 @@ const SectionNav = ({ sections, activeId, onJump }: SectionNavProps) => {
 }
 
 export default SectionNav
-

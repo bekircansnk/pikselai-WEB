@@ -364,6 +364,61 @@ const Pricing = () => {
         }
     }, []) // Dependency array boş - sadece mount'ta çalışsın
 
+    // FALLBACK: Manuel scroll dinleyicisi - Observer kaçırırsa koordinatlardan algıla
+    useEffect(() => {
+        const OFFSET_PAY = 200 // Bölüme yaklaşırken aktif olsun
+
+        const handleScroll = () => {
+            // Tıklama sırasında çalışmasın
+            if (isClickingRef.current) return
+
+            const scrollY = window.scrollY + window.innerHeight / 2 // Ekranın ortası
+
+            // Tüm section'ların pozisyonlarını al
+            const sectionPositions = PRICING_SECTIONS.map((section) => {
+                const element = document.getElementById(section.id)
+                if (!element) return { id: section.id, top: Infinity, bottom: Infinity }
+                const rect = element.getBoundingClientRect()
+                const top = rect.top + window.scrollY
+                const bottom = top + rect.height
+                return { id: section.id, top, bottom }
+            })
+
+            // Hangi section'ın içindeyiz?
+            for (let i = sectionPositions.length - 1; i >= 0; i--) {
+                const section = sectionPositions[i]
+                // scrollY, section'ın başlangıcına yaklaştıysa (offset pay ile)
+                if (scrollY >= section.top - OFFSET_PAY) {
+                    setActiveSection((prevSection) => {
+                        if (prevSection !== section.id) {
+                            return section.id
+                        }
+                        return prevSection
+                    })
+                    break
+                }
+            }
+        }
+
+        // Throttle ile performans optimizasyonu
+        let ticking = false
+        const throttledScroll = () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    handleScroll()
+                    ticking = false
+                })
+                ticking = true
+            }
+        }
+
+        window.addEventListener('scroll', throttledScroll, { passive: true })
+
+        return () => {
+            window.removeEventListener('scroll', throttledScroll)
+        }
+    }, []) // Sadece mount'ta çalışsın
+
     // Aktif section değişince CSS variables güncelle - DARK/LIGHT DESTEKLI
     useEffect(() => {
         const section = PRICING_SECTIONS.find(s => s.id === activeSection)

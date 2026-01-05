@@ -307,16 +307,16 @@ const Pricing = () => {
             window.matchMedia('(prefers-color-scheme: dark)').matches
     }
 
-    // IntersectionObserver ile aktif section tespiti - STABİL, COOLDOWN İLE
-    const lastChangeRef = useRef<number>(0)
-    const COOLDOWN_MS = 300 // Minimum 300ms arasında değişim
+    // Scroll Trigger için flag'ler
+    const isClickingRef = useRef<boolean>(false) // Tıklama sırasında observer'ı devre dışı bırak
+    const clickTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
+    // IntersectionObserver ile aktif section tespiti - GELİŞTİRİLMİŞ SCROLL TRIGGER
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
-                // Cooldown kontrolü
-                const now = Date.now()
-                if (now - lastChangeRef.current < COOLDOWN_MS) return
+                // Tıklama sırasında observer'ı devre dışı bırak (titreme önleme)
+                if (isClickingRef.current) return
 
                 // Tüm intersecting entries'i topla
                 const intersecting = entries.filter(e => e.isIntersecting)
@@ -327,18 +327,23 @@ const Pricing = () => {
                         return (current.intersectionRatio > prev.intersectionRatio) ? current : prev
                     })
 
-                    // Ratio farkı anlamlıysa değiştir (histerezis)
+                    // Algılanan section'ı güncelle
                     const sectionId = mostVisible.target.getAttribute('id')
-                    if (sectionId && sectionId !== activeSection && mostVisible.intersectionRatio > 0.15) {
-                        lastChangeRef.current = now
-                        setActiveSection(sectionId)
+                    if (sectionId && mostVisible.intersectionRatio > 0.1) {
+                        setActiveSection((prevSection) => {
+                            // Sadece farklıysa güncelle (gereksiz re-render önle)
+                            if (prevSection !== sectionId) {
+                                return sectionId
+                            }
+                            return prevSection
+                        })
                     }
                 }
             },
             {
                 root: null, // viewport
-                rootMargin: '-50% 0px -50% 0px', // Ekranın tam ortasını referans al
-                threshold: [0, 0.15, 0.3, 0.5, 0.7]
+                rootMargin: '-40% 0px -40% 0px', // Ekranın ortasına yakın alanı referans al
+                threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0] // Daha hassas algılama
             }
         )
 
@@ -357,7 +362,7 @@ const Pricing = () => {
             clearTimeout(observeTimeout)
             observer.disconnect()
         }
-    }, [activeSection])
+    }, []) // Dependency array boş - sadece mount'ta çalışsın
 
     // Aktif section değişince CSS variables güncelle - DARK/LIGHT DESTEKLI
     useEffect(() => {
@@ -379,9 +384,16 @@ const Pricing = () => {
 
     // Section'a smooth scroll - Anchor'a git (label görünsün)
     const handleJumpToSection = (sectionId: string) => {
-        // Tıklama anında state'i hemen güncelle (gecikme olmasın)
+        // Tıklama flag'ini aç - observer'ı devre dışı bırak
+        isClickingRef.current = true
+
+        // Önceki timeout'u temizle
+        if (clickTimeoutRef.current) {
+            clearTimeout(clickTimeoutRef.current)
+        }
+
+        // State'i hemen güncelle (gecikme olmasın)
         setActiveSection(sectionId)
-        lastChangeRef.current = Date.now()
 
         // Anchor ID: 'anchor-' + section id
         const anchorId = `anchor-${sectionId}`
@@ -395,6 +407,11 @@ const Pricing = () => {
                 element.scrollIntoView({ behavior: 'smooth', block: 'center' })
             }
         }
+
+        // Scroll tamamlandıktan sonra observer'ı tekrar aç (800ms sonra)
+        clickTimeoutRef.current = setTimeout(() => {
+            isClickingRef.current = false
+        }, 800)
     }
 
     // Süreç adımları (kısa)

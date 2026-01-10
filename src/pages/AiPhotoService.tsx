@@ -177,7 +177,7 @@ const AiPhotoService = () => {
                             Fotoğraf Paketlerini İncele
                         </Link>
                         <a
-                            href="https://katalog.pikselai.com/"
+                            href="https://katalog-demo-pikselai.netlify.app/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="glass-button glass-button-secondary"

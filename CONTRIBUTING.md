@@ -1,60 +1,49 @@
-# PikselAI-WEB Projesine Katkı Rehberi
+# PikselAI-WEB İşbirliği Rehberi
 
-PikselAI-WEB projesine hoş geldiniz! Geliştiriciler arasında sorunsuz bir işbirliği sağlamak için belirli bir Git iş akışını izliyoruz.
+Kardeşinizle birlikte aynı projede çalışırken işleri en basit ve hızlı şekilde yürütmek için aşağıdaki adımları takip edebilirsiniz.
 
-## Dallanma (Branch) Stratejisi
+## Temel Kural: İletişim
 
-Basit ama etkili bir strateji kullanıyoruz:
+Birbirinizden haberiniz olduğu sürece karmaşık kurallara gerek yok. Ancak kodların birbirine karışmaması (conflict) için şu basit sırayı izlemeniz yeterlidir.
 
-1.  **Ana Dal (`main`)**: Bu bizim üretim (production) dalımızdır. Buradaki kod her zaman kararlı ve yayına hazır olmalıdır.
-    - **Koruma**: `main` dalına doğrudan kod göndermek (push) yasaktır. Tüm değişiklikler bir "Pull Request" (PR) ile gelmelidir.
+## Günlük Çalışma Akışı
 
-2.  **Özellik Dalları (Feature Branches)**: Yeni özellikler, geliştirmeler veya acil olmayan düzeltmeler için.
-    - **İsimlendirme**: `feature/ozellik-isimi` (örn: `feature/giris-sayfasi`, `feature/banner-guncelleme`)
-    - **Kaynak**: Her zaman `main` dalından türetilmelidir.
-
-3.  **Hata Düzeltme Dalları (Bugfix Branches)**: Acil düzeltilmesi gereken hatalar için.
-    - **İsimlendirme**: `fix/hata-aciklamasi` (örn: `fix/header-kaymasi`)
-    - **Kaynak**: Her zaman `main` dalından türetilmelidir.
-
-## İş Akışı Adımları
-
-1.  **Eşitleme (Sync)**: Başlamadan önce yerel `main` dalınızın güncel olduğundan emin olun:
+1.  **İşe Başlamadan Önce (Çok Önemli):**
+    Her sabah veya projeyi açtığınızda ilk yapmanız gereken şey, diğer kişinin yaptığı değişiklikleri kendi bilgisayarınıza çekmektir.
     ```bash
-    git checkout main
-    git pull origin main
+    git pull
     ```
 
-2.  **Dal Oluşturma**: Yapacağınız iş için yeni bir dal oluşturun:
+2.  **Geliştirme Yapın:**
+    Kodlarınızı yazın, yeni özellikler ekleyin veya hataları düzeltin.
+
+3.  **Kaydetme (Commit):**
+    Yaptığınız işi kaydedin. Ne yaptığınızı kısaca yazın ki karışıklık olmasın.
     ```bash
-    git checkout -b feature/yeni-ozellik-isminiz
+    git add .
+    git commit -m "Ana sayfadaki logo düzeltildi"
+    ```
+    > **Not:** `commit` yaparken otomatik bir kontrol (lint) çalışır. Eğer kodda hata varsa sizi uyarır. Hataları düzeltip tekrar commit yapmanız gerekir.
+
+4.  **Gönderme (Push):**
+    Değişikliklerinizi GitHub'a gönderin.
+    ```bash
+    git push
     ```
 
-3.  **Geliştirme**: Kodunuzu yazın ve değişikliklerinizi yapın.
-    - **Otomatik Kontrol**: Her `commit` işleminden önce kodunuz otomatik olarak taranır (lint). Eğer hatalı kod varsa işlem engellenir. Hataları düzeltip tekrar deneyin.
+## Çakışma (Conflict) Olursa Ne Yapmalı?
 
-4.  **Commit**: Açıklayıcı mesajlar kullanın:
-    ```bash
-    git commit -m "Giriş formu bileşenleri ve stilleri eklendi"
-    ```
+Eğer ikiniz de aynı anda **aynı dosyanın aynı satırını** değiştirdiyseniz, `git push` yaparken hata alabilirsiniz. Korkmayın, çözümü basit:
 
-5.  **Gönderme (Push)**: Dalınızı GitHub'a gönderin:
-    ```bash
-    git push origin feature/yeni-ozellik-isminiz
-    ```
+1.  Önce `git pull` yapın.
+2.  VS Code size hangi dosyalarda çakışma olduğunu gösterecek.
+3.  Dosyayı açın, "Hangi değişikliği tutmak istiyorsunuz?" diye soracak (Sizin değişikliğiniz mi, gelen değişiklik mi, yoksa ikisi birden mi?).
+4.  Doğru olanı seçin.
+5.  Tekrar `git add .`, `git commit` ve `git push` yapın.
 
-6.  **Pull Request (PR)**:
-    - GitHub proje sayfasına gidin.
-    - "Compare & pull request" butonuna tıklayın.
-    - Yaptığınız değişiklikleri açıklayın.
-    - Diğer geliştiriciyi "Reviewer" (Gözden Geçiren) olarak atayın.
+## Özet
+- Paslaşın: "Ben şu dosyada çalışıyorum" diyerek haberleşin.
+- Çekin (`git pull`): Başlamadan önce daima güncelleyin.
+- Gönderin (`git push`): İşiniz bitince bekletmeden gönderin.
 
-7.  **İnceleme ve Birleştirme**:
-    - Gözden geçiren kişi kodu inceler.
-    - Onaylandıktan sonra "Merge" işlemi ile kod `main` dalına alınır.
-    - İşlem bitince özellik dalı silinir.
-
-## Kod Kalitesi
-
-- **Lint**: `npm run lint` komutunun hatasız çalıştığından emin olun.
-- **Format**: Kod düzenine dikkat edin.
+İyi çalışmalar!

@@ -1,905 +1,365 @@
-import { motion, AnimatePresence } from 'framer-motion'
-import { Helmet } from 'react-helmet-async'
-import { Link } from 'react-router-dom'
-import { useState } from 'react'
-import Breadcrumbs from '../components/Breadcrumbs'
+import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
+import { MainLayout } from '../layouts/MainLayout';
+import { Section } from '../components/ui/Section';
+import { Button } from '../components/ui/Button';
 
-/**
- * E-Ticaret Danışmanlığı (Shopify) Sayfası
- * Anahtar teslim mağaza kurulumu + AI destekli büyüme hizmeti
- */
-
-// Hedef kitle kartları
-interface TargetCard {
-    icon: string
-    title: string
-    description: string
-}
-
-const targetAudience: TargetCard[] = [
-    {
-        icon: '🚀',
-        title: 'İlk Kez E-Ticaret Mağazası Açacaklar',
-        description: 'Sıfırdan başlayıp satışa hazır bir Shopify mağazası isteyenler için eksiksiz kurulum ve rehberlik.'
-    },
-    {
-        icon: '🔄',
-        title: 'Mevcut Mağazasını Shopify\'a Taşımak İsteyenler',
-        description: 'Mevcut e-ticaret sitenizi Shopify altyapısına güvenli şekilde taşıyarak daha güçlü, ölçeklenebilir ve modern bir yapıya kavuşturuyoruz.'
-    },
-    {
-        icon: '🎨',
-        title: 'Görsel ve İçerik Üretiminde Zorlananlar',
-        description: 'Yapay zeka destekli görseller ve içeriklerle zamanınızı ve bütçenizi koruyun.'
-    },
-    {
-        icon: '🏷️',
-        title: 'Meta Alanlar & İçerik Yapısında Toplu Özelleştirme',
-        description: 'Ürün ve koleksiyonlar için meta alanlarda toplu düzenleme, başlık, açıklama ve yapı optimizasyonu ile mağazanızı SEO ve dönüşüm odaklı hale getiriyoruz.'
-    },
-    {
-        icon: '🛡️',
-        title: 'Risksiz ve Planlı Geçiş',
-        description: 'Mevcut platformunuzda aktif bir aboneliğiniz olabilir. Bu süreçte acele etmenizi istemiyoruz. PikselAI ile mağazanız, ödeme planı başlatılmadan Shopify altyapısında tamamen kurulur ve satışa hazır hale getirilir.'
-    },
-    {
-        icon: '🤝',
-        title: 'Anahtar Teslim Birlikte Yayına Alma',
-        description: 'Mağazanızı tek başınıza değil, birlikte yayına alıyoruz. Başlangıçta %50, anahtar teslimde kalan %50 ödeme yapılır. 3 aylık teknik destek, mağaza yayına alındıktan sonra başlar.'
-    }
-]
-
-// Süreç adımları
-interface ProcessStep {
-    step: number
-    title: string
-    items: string[]
-    icon: string
-}
-
-const processSteps: ProcessStep[] = [
-    {
-        step: 1,
-        title: 'İhtiyaç Analizi',
-        icon: '🔍',
-        items: ['Hedef kitle belirleme', 'Ürün yapısı inceleme', 'Marka dili oluşturma', '%50 ödeme ile sürece başlangıç']
-    },
-    {
-        step: 2,
-        title: 'Shopify Mağaza Kurulumu',
-        icon: '🏪',
-        items: ['Tema kurulumu', 'Sayfa yapıları', 'Navigasyon', 'Ödeme & kargo ayarları', 'Birlikte ilerleme – her adımda bilgilendirme']
-    },
-    {
-        step: 3,
-        title: 'İçerik & Görsel Süreç',
-        icon: '✨',
-        items: ['Ürün sayfaları', 'Banner alanları', 'Koleksiyon görselleri', 'Ön hazırlıklar tamamlanmadan satışa açılmaz']
-    },
-    {
-        step: 4,
-        title: 'Yayın & Destek',
-        icon: '🚀',
-        items: ['Anahtar teslim yayına alma', 'Kalan %50 ödeme teslimde', '3 ay teknik destek teslimden sonra başlar']
-    },
-    {
-        step: 5,
-        title: 'Ödeme Esnekliği & Güvenli Başlangıç',
-        icon: '💳',
-        items: ['Kurulum sürecinde %50 – anahtar teslimde %50', 'Mağaza açılış tarihi size özel', 'Ödeme planı mağaza hazır olunca başlar', 'Acele yok, risk yok, yalnız değilsiniz']
-    }
-]
-
-// Paket bilgileri
-interface Package {
-    name: string
-    badge?: string
-    title: string
-    price: string
-    priceSuffix: string
-    monthlyPrice?: string
-    monthlySuffix?: string
-    description: string
-    includes: string[]
-    excludes?: string[]
-    // Paket 3 için detaylı kategoriler
-    categories?: {
-        title: string
-        icon: string
-        items: string[]
-    }[]
-    cta: string
-    featured?: boolean
-    isPremium?: boolean
-}
-
-const packages: Package[] = [
-    {
-        name: 'Temel',
-        title: 'Temel Shopify Kurulum Paketi',
-        price: '₺29.000',
-        priceSuffix: 'Tek Seferlik',
-        description: 'Standart, temiz ve satışa hazır bir Shopify mağazası kurulumu. Bu paket sadece kurulum paketidir, aylık devam eden hizmet içermez.',
-        includes: [
-            'Shopify mağaza kurulumu',
-            'Tema kurulumu ve temel ayarlar',
-            'Ürünlerin müşteri tarafından sağlanan görsellerle eklenmesi',
-            'Sayfa yapıları (Hakkımızda, İletişim, Politikalar)',
-            'Ödeme ve kargo ayarları',
-            'Anahtar teslim yayın',
-            '3 ay teknik destek'
-        ],
-        excludes: [
-            'Özel kişiselleştirmeler',
-            'Yapay zeka görselleri',
-            'Ürün içerik geliştirme',
-            'Meta & SEO özelleştirmeleri'
-        ],
-        cta: 'Teklif Al'
-    },
-    {
-        name: 'Profesyonel',
-        badge: '⭐ EN POPÜLER ⭐',
-        title: 'AI Destekli Özel Shopify Kurulum Paketi',
-        price: '₺39.000',
-        priceSuffix: 'Tek Seferlik',
-        description: 'Markanıza özel, baştan sona kişiselleştirilmiş ve yapay zeka destekli profesyonel mağaza. Bu paket sadece kurulum paketidir, aylık devam eden hizmet içermez.',
-        includes: [
-            'Temel Shopify Kurulum Paketindeki Her Şey',
-            'Baştan sona kişisel danışmanlık',
-            'Özel alanların birlikte belirlenmesi',
-            'Ürünlere özel yapay zeka ile üretilmiş gerçekçi görseller',
-            'Banner ve alanlara özel AI tasarımlar',
-            'Koleksiyon ve vitrin alanları için özel görseller',
-            'Ürün sayfalarında özel alanlar',
-            'Meta alanlarda toplu özelleştirme desteği',
-            'İçerik, başlık ve yapı desteği',
-            'Yayın sonrası yönlendirme'
-        ],
-        cta: 'En Popüler Paketi Seç',
-        featured: true
-    },
-    {
-        name: 'Premium',
-        badge: '🔥 TAM KAPSAM 🔥',
-        title: 'PikselAI 360° E-Ticaret Çözüm Ortaklığı',
-        price: '₺49.000',
-        priceSuffix: 'Tek Seferlik Kurulum',
-        monthlyPrice: '₺25.000',
-        monthlySuffix: '/ ay',
-        description: 'Kurulum + Sürekli Yönetim + Sosyal Medya + Katalog — Tam Kapsamlı Çözüm. Bu paket iki aşamalıdır ve bölünemez.',
-        includes: [
-            'Temel Shopify Kurulum Paketindeki Her Şey',
-            'AI Destekli Özel Shopify Kurulum Paketindeki Her Şey',
-            'Yapay zeka ile toplu ürün açıklamaları oluşturma',
-            'SEO uyumlu ürün & kategori metinleri',
-            'Düşük performanslı ürünler için AI iyileştirme önerileri',
-            'Kampanya & indirim dönemleri için dinamik yapı kurulumu',
-            'Kurulum sonrası aktif yönetim süreci',
-            'Aylık performans takibi ve iyileştirme',
-            'Öncelikli destek & hızlı revize hakkı',
-            '"Kurduk bitti" değil, birlikte büyüme modeli'
-        ],
-        categories: [
-            {
-                title: 'Yapay Zeka Destekli E-Ticaret Yönetimi',
-                icon: '🧠',
-                items: [
-                    'Yapay zeka ile toplu ürün açıklamaları oluşturma',
-                    'Yapay zeka destekli meta title & meta description üretimi',
-                    'SEO uyumlu ürün ve kategori metinleri',
-                    'Koleksiyon & ürün sayfalarında gelişmiş AI optimizasyonu'
-                ]
-            },
-            {
-                title: 'Yapay Zeka Destekli Görsel & Katalog Çözümleri',
-                icon: '📸',
-                items: [
-                    '🎁 Dijital Katalog Çözümü – HEDİYE (₺15.000 değerinde)',
-                    '⭐ Markanıza özel dijital katalog – En popüler özellik',
-                    '🔍 Binlerce ürün arasında anında arama',
-                    '💬 Bayilere WhatsApp ile tek tıkla ürün paylaşımı'
-                ]
-            },
-            {
-                title: 'Yapay Zeka Destekli Reklam & Büyüme',
-                icon: '📢',
-                items: [
-                    'Yapay zeka destekli reklam araştırması',
-                    'Doğru hedef kitle analizi',
-                    'Ürün ve kampanya bazlı reklam stratejileri',
-                    'Reklam metni + kreatif üretimi'
-                ]
-            },
-            {
-                title: 'Sosyal Medya Pro Yönetimi (Aylık – Dahil)',
-                icon: '📱',
-                items: [
-                    'Haftalık 12 adet AI destekli post → 48 post / ay',
-                    'Haftalık 7 adet AI destekli hikâye → 28 hikâye / ay',
-                    'Gelişmiş yapay zeka görsel üretimi',
-                    'Özel konsept & kampanya tasarımları',
-                    'Feed & grid tasarımı',
-                    'Aylık + haftalık içerik planlaması'
-                ]
-            },
-            {
-                title: 'Reklam & Performans Yönetimi',
-                icon: '📈',
-                items: [
-                    'Reklam kreatifleri + varyasyonlar',
-                    'Reklam performans optimizasyonu',
-                    'Satış ve büyüme odaklı iyileştirme'
-                ]
-            },
-            {
-                title: 'Raporlama & Destek',
-                icon: '📑',
-                items: [
-                    'Detaylı aylık performans raporu',
-                    'Öncelikli destek',
-                    'Hızlı revize hakkı'
-                ]
-            }
-        ],
-        cta: '360° Çözüm Ortaklığı Başlat',
-        isPremium: true
-    }
-]
-
-// Neden PikselAI avantajları
-const advantages: TargetCard[] = [
-    {
-        icon: '💼',
-        title: 'Gerçek Projelerden Gelen Deneyim',
-        description: 'Farklı sektörlerden onlarca başarılı e-ticaret projesi deneyimi.'
-    },
-    {
-        icon: '🤖',
-        title: 'Yapay Zekayı Gerçekten Kullanan Yapı',
-        description: 'AI sadece bir slogan değil, tüm süreçlerimize entegre bir çözüm aracı.'
-    },
-    {
-        icon: '🤝',
-        title: 'Sadece Kurup Bırakmayan Yaklaşım',
-        description: '3 ay teknik destek ve sonrasında da ihtiyaç duyduğunuzda yanınızdayız.'
-    },
-    {
-        icon: '🛡️',
-        title: 'Risksiz ve Planlı Geçiş',
-        description: 'Mevcut platformunuzda aktif bir aboneliğiniz olabilir. Bu süreçte acele etmenizi istemiyoruz. PikselAI ile mağazanız, ödeme planı başlatılmadan Shopify altyapısında tamamen kurulur ve satışa hazır hale getirilir.'
-    },
-    {
-        icon: '🧩',
-        title: 'Ödeme Zamanı Size Ait',
-        description: 'Ürünleriniz, içerikleriniz, görselleriniz ve teknik yapı arka planda eksiksiz hazırlanır. Ödeme planı, siz ne zaman hazırsanız o zaman başlar. Böylece mevcut lisanslarınız yanmaz, ek platform maliyeti oluşmaz.'
-    },
-    {
-        icon: '🔑',
-        title: 'Anahtar Teslim Birlikte Yayına Alma',
-        description: 'Mağazanızı tek başınıza değil, birlikte yayına alıyoruz. Başlangıçta %50, anahtar teslimde kalan %50 ödeme yapılır. 3 aylık teknik destek, mağaza yayına alındıktan sonra başlar.'
-    }
-]
-
-// SSS
-interface FAQ {
-    question: string
-    answer: string
-}
-
-const faqs: FAQ[] = [
-    {
-        question: 'Shopify nedir, neden tercih ediyorsunuz?',
-        answer: 'Shopify, dünya genelinde en çok tercih edilen e-ticaret platformudur. Güvenilir altyapısı, kolay yönetim paneli, güçlü ödeme entegrasyonları ve sürekli güncellemeler ile işletmenizi büyütmenize olanak tanır. Teknik altyapıyla uğraşmadan satışa odaklanabilirsiniz.'
-    },
-    {
-        question: 'Görsellerim yoksa ne oluyor?',
-        answer: 'Yapay zeka destekli paketlerimizde (Paket 2 ve üzeri) ürün görsellerinizi AI ile oluşturuyoruz. Gerçekçi, profesyonel ve markanıza uygun görseller üretiyoruz. Temel pakette ise sizin sağladığınız görsellerle çalışıyoruz.'
-    },
-    {
-        question: 'Kurulum ne kadar sürer?',
-        answer: 'Paket ve içerik hacmine göre değişmekle birlikte, standart kurulum 2-4 hafta arasında tamamlanır. Süreç boyunca sizi bilgilendiriyor ve her aşamada onayınızı alıyoruz.'
-    },
-    {
-        question: '3 ay destek neleri kapsıyor?',
-        answer: 'Teknik sorunların çözümü, küçük düzenlemeler, ürün ekleme/güncelleme desteği, ödeme/kargo sorunlarında yönlendirme ve genel danışmanlık hizmetleri 3 aylık destek kapsamındadır.'
-    },
-    {
-        question: 'Aylık hizmet zorunlu mu?',
-        answer: 'Paket 1 ve Paket 2 yalnızca tek seferlik kurulum paketleridir, aylık hizmet içermez. Paket 3 (360° Çözüm Ortaklığı) ise kurulum + zorunlu aylık hizmet olarak birlikte sunulmaktadır. Bu paket bölünemez ve kurulum sonrası aylık hizmet paketin doğal devamıdır.'
-    }
-]
-
-// Service Schema JSON-LD
-const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "E-Ticaret Danışmanlığı - Shopify Mağaza Kurulumu",
-    "provider": {
-        "@type": "Organization",
-        "name": "Pikselai",
-        "url": "https://pikselai.com"
-    },
-    "description": "Anahtar teslim Shopify mağaza kurulumu, yapay zeka destekli görseller ve 3 ay teknik destek ile e-ticarete profesyonel başlangıç.",
-    "areaServed": "TR"
-}
-
-/**
- * EcommerceService - E-Ticaret Danışmanlığı Landing Page
- */
 const EcommerceService = () => {
-    // FAQ açık/kapalı state
-    const [openFaq, setOpenFaq] = useState<number | null>(null)
-    // Premium paket modal state
-    const [isPremiumModalOpen, setIsPremiumModalOpen] = useState(false)
-
-    // Animasyon varyantları
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: { staggerChildren: 0.1 }
-        }
-    }
-
-    const itemVariants = {
-        hidden: { opacity: 0, y: 30 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.5, ease: "easeOut" as const }
-        }
-    }
-
-    const fadeInUp = {
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-    }
+    const navigate = useNavigate();
 
     return (
-        <>
-            {/* SEO Meta Etiketleri ve Schema */}
-            <Helmet>
-                <title>E-Ticaret Danışmanlığı | Shopify Mağaza Kurulumu | Pikselai</title>
-                <meta name="description" content="Anahtar teslim Shopify mağaza kurulumu, yapay zeka destekli görseller ve 3 ay teknik destek. PikselAI ile e-ticarete profesyonel başlayın." />
-                <link rel="canonical" href="https://pikselai.com/e-ticaret-danismanligi" />
-                <script type="application/ld+json">
-                    {JSON.stringify(serviceSchema)}
-                </script>
-            </Helmet>
+        <MainLayout transparentHeader={true} headerLightText={true}>
 
-            {/* ========================================
-                BÖLÜM 1: HERO SECTION
-                ======================================== */}
-            <section className="hero ecommerce-hero">
-                <div className="hero-glow-1" aria-hidden="true" />
-                <div className="hero-glow-2" aria-hidden="true" />
-
-                {/* Breadcrumbs */}
-                <Breadcrumbs />
-
-                <motion.div
-                    className="hero-content"
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                >
-                    <motion.div
-                        className="hero-badge"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
+            {/* ═══════════════════════════════════════════
+       1. HERO SECTION — Video Arka Plan & Premium Tasarım
+       ═══════════════════════════════════════════ */}
+            <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-black text-white">
+                {/* Background Video — Güvenilir Kaynak */}
+                <div className="absolute inset-0 z-0">
+                    <video
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="w-full h-full object-cover opacity-50"
                     >
-                        <span className="hero-badge-dot" />
-                        Anahtar Teslim E-Ticaret Çözümü
-                    </motion.div>
-
-                    <motion.h1
-                        className="hero-title"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.5 }}
-                    >
-                        <span className="gradient-text">PikselAI</span> ile Shopify E-Ticaret Danışmanlığı
-                        <br />
-                        <span style={{ fontSize: '0.6em', fontWeight: 600, opacity: 0.9 }}>
-                            Anahtar Teslim Mağaza Kurulumu + Yapay Zeka Destekli Büyüme
-                        </span>
-                    </motion.h1>
-
-                    <motion.p
-                        className="hero-subtitle"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.6 }}
-                    >
-                        Sıfırdan satışa hazır, modern ve ölçeklenebilir bir Shopify mağazası kuruyoruz.
-                        Kurulumdan yayına, içerikten görsele, reklama kadar tüm süreçte yanınızdayız.
-                    </motion.p>
-
-                    <motion.div
-                        className="hero-buttons"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.7 }}
-                    >
-                        <a href="#paketler" className="glass-button glow">
-                            <span>📦</span>
-                            Paketleri İncele
-                        </a>
-                        <a
-                            href="https://api.whatsapp.com/send/?phone=%2B905531832344&text=Merhaba, E-Ticaret Danışmanlığı hakkında bilgi almak istiyorum.&type=phone_number&app_absent=0"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="glass-button glass-button-secondary"
-                        >
-                            <span>💬</span>
-                            Ücretsiz Ön Görüşme
-                        </a>
-                    </motion.div>
-
-                    {/* Hero Rozetleri */}
-                    <motion.div
-                        className="ecommerce-badges"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.9 }}
-                    >
-                        <span className="ecommerce-badge">🛍️ Shopify Uzmanlığı</span>
-                        <span className="ecommerce-badge">🔑 Anahtar Teslim Kurulum</span>
-                        <span className="ecommerce-badge">🛠️ 3 Ay Teknik Destek</span>
-                        <span className="ecommerce-badge">🤖 Yapay Zeka Destekli İçerikler</span>
-                    </motion.div>
-                </motion.div>
-            </section>
-
-            {/* ========================================
-                BÖLÜM 2: BU HİZMET KİMLER İÇİN?
-                ======================================== */}
-            <section className="features ecommerce-target">
-                <div className="features-container">
-                    <motion.div
-                        className="features-header"
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
-                        variants={fadeInUp}
-                    >
-                        <h2 className="features-title">
-                            Bu Hizmet <span className="gradient-text">Kimler İçin?</span>
-                        </h2>
-                        <p className="features-subtitle">
-                            E-ticaret yolculuğunuzun her aşamasında yanınızdayız
-                        </p>
-                    </motion.div>
-
-                    <motion.div
-                        className="features-grid"
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                    >
-                        {targetAudience.map((item, index) => (
-                            <motion.div
-                                key={index}
-                                className="glass-card feature-card"
-                                variants={itemVariants}
-                            >
-                                <span className="feature-icon">{item.icon}</span>
-                                <h3 className="feature-title">{item.title}</h3>
-                                <p className="feature-description">{item.description}</p>
-                            </motion.div>
-                        ))}
-                    </motion.div>
+                        {/* Google Cloud Tech Background - Yüksek Performanslı */}
+                        <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4" />
+                        {/* Yedek kaynak */}
+                        <source src="https://cdn.pixabay.com/video/2019/04/20/22908-331666453_large.mp4" type="video/mp4" />
+                    </video>
+                    {/* Dark Overlay — Metin Okunurluğu İçin */}
+                    <div className="absolute inset-0 bg-black/70 z-10" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50 z-10" />
                 </div>
-            </section>
 
-            {/* ========================================
-                BÖLÜM 3: PİKSELAI NASIL YANINIZDA?
-                ======================================== */}
-            <section className="features ecommerce-process">
-                <div className="features-container">
-                    <motion.div
-                        className="features-header"
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
-                        variants={fadeInUp}
-                    >
-                        <h2 className="features-title">
-                            <span className="gradient-text">PikselAI</span> Nasıl Yanınızda?
-                        </h2>
-                        <p className="features-subtitle">
-                            Baştan sona profesyonel destek ile e-ticaret yolculuğunuz
-                        </p>
-                    </motion.div>
-
-                    <motion.div
-                        className="ecommerce-timeline"
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                    >
-                        {processSteps.map((step, index) => (
-                            <motion.div
-                                key={index}
-                                className="timeline-item"
-                                variants={itemVariants}
+                <div className="container-custom relative z-20 pt-20">
+                    <div className="flex flex-col items-center justify-center text-center max-w-5xl mx-auto space-y-12">
+                        <div className="space-y-6">
+                            <motion.span
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.3em] text-bor-secondary bg-white/5 px-6 py-2.5 rounded-full border border-white/10 backdrop-blur-md"
                             >
-                                <div className="timeline-step">
-                                    <span className="timeline-icon">{step.icon}</span>
-                                    <span className="timeline-number">{step.step}</span>
-                                </div>
-                                <div className="timeline-content glass-card">
-                                    <h3 className="timeline-title">{step.title}</h3>
-                                    <ul className="timeline-list">
-                                        {step.items.map((item, i) => (
-                                            <li key={i}>{item}</li>
-                                        ))}
-                                    </ul>
-                                </div>
-                                {index < processSteps.length - 1 && (
-                                    <div className="timeline-connector" />
-                                )}
-                            </motion.div>
-                        ))}
-                    </motion.div>
-                </div>
-            </section>
+                                <span className="w-2 h-2 rounded-full bg-bor-secondary animate-pulse" />
+                                Profesyonel Shopify Ortaklığı
+                            </motion.span>
 
-            {/* ========================================
-                BÖLÜM 4: PAKETLER
-                ======================================== */}
-            <section id="paketler" className="pricing ecommerce-packages">
-                <div className="pricing-container">
-                    <motion.div
-                        className="pricing-header"
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
-                        variants={fadeInUp}
-                    >
-                        <h2 className="pricing-title">
-                            <span className="gradient-text">E-Ticaret</span> Paketlerimiz
-                        </h2>
-                        <p className="pricing-subtitle">
-                            İhtiyacınıza uygun paketi seçin, gerisini bize bırakın
-                        </p>
-                    </motion.div>
-
-                    <motion.div
-                        className="pricing-grid"
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                    >
-                        {packages.map((pkg, index) => (
-                            <motion.div
-                                key={index}
-                                className={`glass-card pricing-card ecommerce-package-card ${pkg.featured ? 'featured' : ''} ${pkg.isPremium ? 'premium-card' : ''}`}
-                                variants={itemVariants}
+                            <motion.h1
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8 }}
+                                className="text-6xl md:text-8xl font-display leading-[1.05] tracking-tight text-white drop-shadow-2xl"
                             >
-                                {pkg.badge && (
-                                    <div className="pricing-badge">{pkg.badge}</div>
-                                )}
+                                PikselAI ile <br />
+                                <span className="italic font-light text-bor-secondary">E-Ticaret Dönüşümü</span>
+                            </motion.h1>
 
-                                <h3 className="pricing-plan-name">{pkg.title}</h3>
+                            <motion.p
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.2, duration: 0.8 }}
+                                className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light"
+                            >
+                                Sadece mağaza kurmuyoruz; markanızı global pazarlarda <br className="hidden md:block" />
+                                <span className="text-white font-medium">satış rekorları kıran</span> bir operasyona dönüştürüyoruz.
+                            </motion.p>
+                        </div>
 
-                                {/* Fiyat Alanı */}
-                                <div className="ecommerce-price-block">
-                                    <div className="pricing-price">
-                                        {pkg.price}
-                                        <span className="pricing-price-suffix">{pkg.priceSuffix}</span>
-                                    </div>
-                                    {pkg.monthlyPrice && (
-                                        <div
-                                            className="ecommerce-monthly-price ecommerce-monthly-clickable"
-                                            onClick={() => setIsPremiumModalOpen(true)}
-                                        >
-                                            <span className="ecommerce-plus">+</span>
-                                            <span className="ecommerce-monthly-value">{pkg.monthlyPrice}</span>
-                                            <span className="ecommerce-monthly-suffix">{pkg.monthlySuffix}</span>
-                                            <span className="ecommerce-monthly-label">3 Ay Devam Etme Sözü</span>
-                                            <span className="ecommerce-monthly-hint">📋 Detaylar için tıklayınız</span>
-                                        </div>
-                                    )}
-                                </div>
-
-                                <p className="pricing-description">{pkg.description}</p>
-
-                                {/* Dahil olanlar - Temel liste */}
-                                <ul className="pricing-features">
-                                    {pkg.includes.map((item, i) => (
-                                        <li key={i} className="pricing-feature">
-                                            <span className="pricing-feature-icon">✓</span>
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
-
-                                {/* Premium Paket için kısa özet - detaylar modal'da */}
-                                {pkg.isPremium && (
-                                    <div className="ecommerce-premium-summary">
-                                        <Link
-                                            to="/profesyonel-katalog"
-                                            className="ecommerce-gift-highlight"
-                                        >
-                                            <span className="ecommerce-gift-icon">🎁</span>
-                                            <span className="ecommerce-gift-text">
-                                                Dijital Katalog Çözümü – HEDİYE
-                                                <span className="ecommerce-gift-value">₺15.000 değerinde</span>
-                                            </span>
-                                            <span className="ecommerce-gift-arrow">→</span>
-                                        </Link>
-                                        <p className="ecommerce-premium-note">
-                                            + Yapay Zeka Destekli E-Ticaret Yönetimi, Görsel Üretimi, Sosyal Medya Pro ve daha fazlası...
-                                        </p>
-                                    </div>
-                                )}
-
-                                {/* Hariç olanlar */}
-                                {pkg.excludes && pkg.excludes.length > 0 && (
-                                    <ul className="pricing-excludes">
-                                        {pkg.excludes.map((item, i) => (
-                                            <li key={i} className="pricing-exclude">
-                                                <span className="pricing-exclude-icon">✗</span>
-                                                {item}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                )}
-
-                                <a
-                                    href="https://api.whatsapp.com/send/?phone=%2B905531832344&text=Merhaba, E-Ticaret Danışmanlığı hakkında bilgi almak istiyorum.&type=phone_number&app_absent=0"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={`glass-button pricing-cta ${pkg.featured || pkg.isPremium ? 'glow' : 'glass-button-secondary'}`}
-                                >
-                                    {pkg.cta}
-                                </a>
-                            </motion.div>
-                        ))}
-                    </motion.div>
-                </div>
-            </section>
-
-            {/* Premium Paket Detay Modal */}
-            <AnimatePresence>
-                {isPremiumModalOpen && (
-                    <motion.div
-                        className="ecommerce-modal-overlay"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        onClick={() => setIsPremiumModalOpen(false)}
-                    >
                         <motion.div
-                            className="ecommerce-modal"
-                            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                            animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                            onClick={(e) => e.stopPropagation()}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.4 }}
+                            className="flex flex-wrap justify-center gap-6"
                         >
-                            <button
-                                className="ecommerce-modal-close"
-                                onClick={() => setIsPremiumModalOpen(false)}
+                            <Button
+                                variant="primary"
+                                size="lg"
+                                className="h-16 px-12 rounded-full text-lg shadow-[0_0_30px_rgba(45,106,79,0.3)] hover:scale-105 transition-all"
+                                onClick={() => navigate('/iletisim')}
                             >
-                                ✕
-                            </button>
+                                Hemen Başlayın
+                            </Button>
+                            <Button
+                                variant="outline"
+                                size="lg"
+                                className="h-16 px-12 rounded-full text-lg border-white/20 text-white backdrop-blur-sm hover:bg-white hover:text-black transition-all"
+                                onClick={() => document.getElementById('packages')?.scrollIntoView({ behavior: 'smooth' })}
+                            >
+                                Paketleri İncele
+                            </Button>
+                        </motion.div>
 
-                            <h2 className="ecommerce-modal-title">
-                                <span className="gradient-text">360°</span> Çözüm Ortaklığı Detayları
-                            </h2>
-                            <p className="ecommerce-modal-subtitle">
-                                Aylık ₺25.000 ile aldığınız tüm hizmetler
-                            </p>
+                        {/* Partner Logoları — SVG (Inline) Çözümü */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.8 }}
+                            className="pt-16 flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-60 text-white"
+                        >
+                            {/* Shopify Logo SVG */}
+                            <svg className="h-8 md:h-10 w-auto fill-current" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M96.34 27.67l-26.65-20.08a4.17 4.17 0 00-5.83.84L50 27.42l-13.86-18.99a4.17 4.17 0 00-5.83-.84L3.66 27.67a4.17 4.17 0 00-1.63 3.32v46.72c0 2.3 1.87 4.17 4.17 4.17h87.6a4.17 4.17 0 004.17-4.17V30.99a4.17 4.17 0 00-1.63-3.32zM33.33 75H10V33.33l23.33-17.5v59.17zm33.34 0H33.33V10l16.67 22.5L66.67 10v65zm23.33 0H66.67V15.83l23.33 17.5V75z" fill="currentColor" />
+                            </svg>
 
-                            <div className="ecommerce-modal-content">
-                                {packages[2].categories?.map((category, catIndex) => (
-                                    <div key={catIndex} className="ecommerce-modal-category">
-                                        <h4 className="ecommerce-modal-category-title">
-                                            <span>{category.icon}</span> {category.title}
-                                        </h4>
-                                        <ul className="ecommerce-modal-category-list">
-                                            {category.items.map((item, itemIndex) => (
-                                                <li key={itemIndex}>
-                                                    {item.includes('Dijital Katalog') ? (
-                                                        <Link
-                                                            to="/profesyonel-katalog"
-                                                            className="ecommerce-modal-gift-link"
-                                                            onClick={() => setIsPremiumModalOpen(false)}
-                                                        >
-                                                            <span className="pricing-feature-icon">🎁</span>
-                                                            {item}
-                                                        </Link>
-                                                    ) : (
-                                                        <>
-                                                            <span className="pricing-feature-icon">✓</span>
-                                                            {item}
-                                                        </>
-                                                    )}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                ))}
+                            {/* Google Logo SVG */}
+                            <svg className="h-7 md:h-9 w-auto fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z" fill="currentColor" />
+                            </svg>
+
+                            {/* Meta Logo SVG */}
+                            <svg className="h-6 md:h-8 w-auto fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.924 5.336c-2.057 0-3.844.97-4.924 2.464-1.08-1.494-2.867-2.464-4.924-2.464-3.374 0-6.076 2.702-6.076 6.076s2.702 6.076 6.076 6.076c2.057 0 3.844-.97 4.924-2.464 1.08 1.494 2.867 2.464 4.924 2.464 3.374 0 6.076-2.702 6.076-6.076s-2.702-6.076-6.076-6.076zm-9.848 9.924c-2.126 0-3.848-1.722-3.848-3.848s1.722-3.848 3.848-3.848c1.378 0 2.584.726 3.27 1.83.084.135.25.135.334 0 .686-1.104 1.892-1.83 3.27-1.83 2.126 0 3.848 1.722 3.848 3.848s-1.722 3.848-3.848 3.848c-1.378 0-2.584-.726-3.27-1.83-.084-.135-.25-.135-.334 0-.686 1.104-1.892 1.83-3.27 1.83z" fill="currentColor" />
+                            </svg>
+
+                            {/* TikTok Logo SVG */}
+                            <svg className="h-7 md:h-9 w-auto fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93v6.14c0 3.48-1.74 6.66-5.16 7.2-6.32 1.66-11.37-4.07-7.23-9.56 1.31-1.67 3.32-2.5 5.51-2.28v4.2c-1.66-.23-3.32 1.05-3.59 2.73-.2 1.31.63 2.72 1.95 3.12 1.93.52 3.87-1 3.81-2.93V.02h.63z" fill="currentColor" />
+                            </svg>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ═══════════════════════════════════════════
+       2. WHO IS IT FOR? — Bu Hizmet Kimler İçin?
+       ═══════════════════════════════════════════ */}
+            <Section mood="light" className="py-24 bg-bor-primary-50">
+                <div className="text-center mb-16 max-w-3xl mx-auto">
+                    <h2 className="text-4xl font-display text-bor-primary-900 mb-6">Bu Hizmet <span className="text-bor-secondary">Kimler İçin?</span></h2>
+                    <p className="text-bor-primary-500 text-lg leading-relaxed">
+                        E-ticaret yolculuğunuzun hangi aşamasında olursanız olun, size özel hazırlanmış, ölçülebilir ve ölçeklenebilir bir çözümümüz var.
+                    </p>
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+                    {[
+                        { icon: "🚀", title: "Yeni Girişimciler", desc: "Sıfırdan e-ticarete başlamak, doğru altyapı ve stratejiyle global pazara açılmak isteyenler." },
+                        { icon: "📈", title: "Büyümek İsteyenler", desc: "Mevcut mağazasının satışlarını, trafiğini ve dönüşüm oranlarını (CRO) artırmak isteyen işletmeler." },
+                        { icon: "🎨", title: "Marka Yenileyenler", desc: "Tasarım ve altyapı olarak modernizasyona ihtiyaç duyan, kurumsal kimliğini güçlendirmek isteyen köklü markalar." },
+                        { icon: "🌍", title: "E-İhracat Yapanlar", desc: "Yurtdışı pazarlarına (Amazon, Etsy, Shopify Global) dövizle satış yapmak ve operasyonunu yönetmek isteyenler." },
+                        { icon: "🔧", title: "Teknik Çözüm Arayanlar", desc: "Hız problemleri, entegrasyon hataları veya ödeme sistemi sorunlarıyla boğuşan mağaza sahipleri." },
+                        { icon: "⚡", title: "Operasyonel Liderler", desc: "Stok, sipariş ve kargo süreçlerini otomatize etmek, verimliliği artırmak isteyen yöneticiler." }
+                    ].map((item, i) => (
+                        <div key={i} className="bg-white p-8 rounded-2xl border border-bor-primary-100 hover:border-bor-secondary/30 transition-all hover:shadow-xl group flex flex-col items-start pb-10">
+                            <div className="w-14 h-14 rounded-xl bg-bor-primary-50 text-3xl flex items-center justify-center mb-6 group-hover:bg-bor-secondary/10 group-hover:scale-110 transition-transform duration-300">
+                                {item.icon}
+                            </div>
+                            <h3 className="text-xl font-bold text-bor-primary-900 mb-3">{item.title}</h3>
+                            <p className="text-bor-primary-500 leading-relaxed text-sm">{item.desc}</p>
+                        </div>
+                    ))}
+                </div>
+            </Section>
+
+            {/* ═══════════════════════════════════════════
+       3. PROCESS — Nasıl Yapıyoruz?
+       ═══════════════════════════════════════════ */}
+            <Section mood="dark" className="py-24 bg-bor-primary-900">
+                <div className="text-center mb-20">
+                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-bor-secondary block mb-4">SÜREÇ</span>
+                    <h2 className="text-4xl font-display text-white mb-4">PikselAI <span className="italic text-bor-secondary">Nasıl Yönetir?</span></h2>
+                    <p className="text-white/60">6 Adımda fikirlerinizi satışa dönüştüren sistem.</p>
+                </div>
+
+                <div className="max-w-5xl mx-auto space-y-12 relative px-4">
+                    {/* Central Line */}
+                    <div className="absolute left-[36px] md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-bor-secondary via-white/10 to-transparent transform md:-translate-x-1/2" />
+
+                    {[
+                        { step: "01", title: "Bilgi Toplama & Analiz", desc: "Markanızı, hedeflerinizi ve rakiplerinizi analiz ederek en doğru yol haritasını çıkarıyoruz." },
+                        { step: "02", title: "Strateji & Planlama", desc: "Teknik gereksinimler, site mimarisi ve UX/UI tasarım planlamasını yapıyoruz." },
+                        { step: "03", title: "Kurulum & Tasarım", desc: "Shopify altyapısı üzerine markanıza özel, mobil uyumlu ve hızlı bir tasarım giydiriyoruz." },
+                        { step: "04", title: "İçerik & Ürün Girişi", desc: "SEO uyumlu ürün açıklamaları, kategori yapıları ve görsel girişlerini tamamlıyoruz." },
+                        { step: "05", title: "Test & Entegrasyon", desc: "Ödeme sistemleri, kargo entegrasyonları ve tüm fonksiyonel testleri (Hız, Mobil) yapıyoruz." },
+                        { step: "06", title: "Lansman & Büyüme", desc: "Mağazayı yayına alıyor, reklam ve pazarlama stratejileriyle trafiği başlatıyoruz." }
+                    ].map((item, i) => (
+                        <div key={i} className={`flex flex-col md:flex-row gap-8 relative items-start md:items-center ${i % 2 !== 0 ? 'md:flex-row-reverse text-left md:text-right' : 'text-left'}`}>
+                            {/* Number Bubble */}
+                            <div className="w-16 h-16 rounded-full bg-bor-primary-900 border-4 border-bor-secondary text-white font-bold text-xl flex items-center justify-center shrink-0 z-10 relative shadow-[0_0_20px_rgba(45,106,79,0.5)]">
+                                {item.step}
                             </div>
 
-                            <a
-                                href="https://api.whatsapp.com/send/?phone=%2B905531832344&text=Merhaba, 360° E-Ticaret Çözüm Ortaklığı hakkında bilgi almak istiyorum.&type=phone_number&app_absent=0"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="glass-button glow ecommerce-modal-cta"
-                            >
-                                360° Çözüm Ortaklığı Başlat
-                            </a>
-                        </motion.div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-
-            {/* ========================================
-                BÖLÜM 6: NEDEN PİKSELAI?
-                ======================================== */}
-            <section className="features ecommerce-why">
-                <div className="features-container">
-                    <motion.div
-                        className="features-header"
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
-                        variants={fadeInUp}
-                    >
-                        <h2 className="features-title">
-                            Neden <span className="gradient-text">PikselAI?</span>
-                        </h2>
-                        <p className="features-subtitle">
-                            Fark yaratan yaklaşımımız
-                        </p>
-                    </motion.div>
-
-                    <motion.div
-                        className="features-grid"
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                    >
-                        {advantages.map((item, index) => (
-                            <motion.div
-                                key={index}
-                                className="glass-card feature-card"
-                                variants={itemVariants}
-                            >
-                                <span className="feature-icon">{item.icon}</span>
-                                <h3 className="feature-title">{item.title}</h3>
-                                <p className="feature-description">{item.description}</p>
-                            </motion.div>
-                        ))}
-                    </motion.div>
-                </div>
-            </section>
-
-            {/* ========================================
-                BÖLÜM 7: SIK SORULAN SORULAR
-                ======================================== */}
-            <section className="features ecommerce-faq">
-                <div className="features-container">
-                    <motion.div
-                        className="features-header"
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
-                        variants={fadeInUp}
-                    >
-                        <h2 className="features-title">
-                            Sık Sorulan <span className="gradient-text">Sorular</span>
-                        </h2>
-                        <p className="features-subtitle">
-                            Merak ettiklerinizi yanıtlıyoruz
-                        </p>
-                    </motion.div>
-
-                    <motion.div
-                        className="ecommerce-faq-list"
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                    >
-                        {faqs.map((faq, index) => (
-                            <motion.div
-                                key={index}
-                                className={`glass-card ecommerce-faq-item ${openFaq === index ? 'open' : ''}`}
-                                variants={itemVariants}
-                                onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                            >
-                                <div className="ecommerce-faq-question">
-                                    <h3>{faq.question}</h3>
-                                    <span className="ecommerce-faq-toggle">
-                                        {openFaq === index ? '−' : '+'}
-                                    </span>
-                                </div>
-                                {openFaq === index && (
-                                    <motion.div
-                                        className="ecommerce-faq-answer"
-                                        initial={{ opacity: 0, height: 0 }}
-                                        animate={{ opacity: 1, height: 'auto' }}
-                                        exit={{ opacity: 0, height: 0 }}
-                                        transition={{ duration: 0.3 }}
-                                    >
-                                        <p>{faq.answer}</p>
-                                    </motion.div>
-                                )}
-                            </motion.div>
-                        ))}
-                    </motion.div>
-                </div>
-            </section>
-
-            {/* ========================================
-                BÖLÜM 8: SON CTA
-                ======================================== */}
-            <section className="features ecommerce-final-cta">
-                <div className="features-container">
-                    <motion.div
-                        className="glass-card ecommerce-cta-card"
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
-                        variants={fadeInUp}
-                    >
-                        <h2 className="features-title" style={{ marginBottom: '1rem' }}>
-                            Mağazanızı <span className="gradient-text">Birlikte Kuralım</span>
-                        </h2>
-                        <p className="features-subtitle" style={{ marginBottom: '1.5rem' }}>
-                            E-ticaret yolculuğunuza profesyonel bir başlangıç yapın
-                        </p>
-
-                        {/* Mail Adresi */}
-                        <a
-                            href="mailto:bilgi@pikselai.com"
-                            style={{
-                                display: 'inline-flex',
-                                alignItems: 'center',
-                                gap: '8px',
-                                padding: '12px 24px',
-                                marginBottom: '1.5rem',
-                                background: 'linear-gradient(135deg, #a855f7 0%, #7c3aed 100%)',
-                                color: '#fff',
-                                textDecoration: 'none',
-                                fontWeight: 600,
-                                fontSize: '1rem',
-                                borderRadius: '12px',
-                                boxShadow: '0 4px 12px rgba(168, 85, 247, 0.3)'
-                            }}
-                        >
-                            ✉️ bilgi@pikselai.com
-                        </a>
-
-                        <div className="hero-buttons">
-                            <a
-                                href="https://api.whatsapp.com/send/?phone=%2B905531832344&text=Merhaba, E-Ticaret Danışmanlığı için ücretsiz görüşme yapmak istiyorum.&type=phone_number&app_absent=0"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="glass-button glow"
-                            >
-                                <span>💬</span>
-                                Ücretsiz Ön Görüşme
-                            </a>
-                            <Link to="#paketler" className="glass-button glass-button-secondary">
-                                <span>📦</span>
-                                Paketleri İncele
-                            </Link>
+                            {/* Text Content */}
+                            <div className={`w-full md:w-[calc(50%-40px)] bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-bor-secondary/50 transition-colors backdrop-blur-sm ${i % 2 !== 0 ? 'mr-auto' : 'ml-auto'}`}>
+                                <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                                <p className="text-white/60 leading-relaxed text-sm">{item.desc}</p>
+                            </div>
                         </div>
-                    </motion.div>
+                    ))}
                 </div>
-            </section>
-        </>
-    )
-}
+            </Section>
 
-export default EcommerceService
+            {/* ═══════════════════════════════════════════
+       4. PACKAGES — Paketler
+       ═══════════════════════════════════════════ */}
+            <Section mood="light" className="py-24 bg-white" id="packages">
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl font-display text-bor-primary-900 mb-4">E-Ticaret <span className="text-bor-secondary">Paketlerimiz</span></h2>
+                    <p className="text-bor-primary-500">İhtiyacınıza ve bütçenize uygun profesyonel çözümler.</p>
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
+                    {/* Paket 1 */}
+                    <div className="bg-white rounded-[2rem] p-8 border border-bor-primary-100 flex flex-col hover:shadow-2xl transition-all duration-300 relative group overflow-hidden">
+                        <div className="absolute top-0 left-0 w-full h-1 bg-bor-primary-200 group-hover:bg-bor-secondary transition-colors" />
+                        <h3 className="text-2xl font-bold text-bor-primary-900 mb-2">Başlangıç (Launch)</h3>
+                        <p className="text-sm text-bor-primary-500 mb-6">Yeni başlayanlar için temel kurulum paketi.</p>
+                        <div className="text-4xl font-display font-bold text-bor-primary-900 mb-8">₺39.000 <span className="text-sm font-sans font-normal text-bor-primary-400">/tek sefer</span></div>
+
+                        <div className="flex-1 mb-8">
+                            <ul className="space-y-4">
+                                {["Shopify Hesap Kurulumu", "Hazır Tema Özelleştirme", "Mobil Uyumlu Tasarım", "Ana Sayfa + 3 Alt Sayfa", "Basit SEO Ayarları", "Ödeme Sistemi Entegrasyonu", "1 Saat Eğitim"].map((feature, i) => (
+                                    <li key={i} className="flex items-start gap-3 text-sm text-bor-primary-600">
+                                        <span className="w-5 h-5 rounded-full bg-bor-primary-100 text-bor-secondary flex items-center justify-center text-xs font-bold shrink-0">✓</span>
+                                        {feature}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <Button variant="outline" className="w-full hover:bg-bor-secondary hover:text-white hover:border-bor-secondary" onClick={() => navigate('/iletisim')}>Bilgi Al</Button>
+                    </div>
+
+                    {/* Paket 2 (Featured) */}
+                    <div className="bg-bor-primary-900 rounded-[2rem] p-8 border border-bor-secondary flex flex-col shadow-2xl relative transform md:-translate-y-4 z-10">
+                        <div className="absolute top-0 right-0 bg-bor-secondary text-white text-xs font-bold px-4 py-2 rounded-bl-xl uppercase tracking-wider">En Popüler</div>
+                        <h3 className="text-2xl font-bold text-white mb-2">Büyüme (Growth)</h3>
+                        <p className="text-sm text-white/60 mb-6">Satışlarını artırmak isteyen markalar için.</p>
+                        <div className="text-4xl font-display font-bold text-white mb-8">₺69.000 <span className="text-sm font-sans font-normal text-white/40">/tek sefer</span></div>
+
+                        <div className="flex-1 mb-8">
+                            <ul className="space-y-4">
+                                {["Her Şey Dahil Kurulum", "Premium Tema Lisansı", "Gelişmiş UX/UI Düzenleme", "Kapsamlı SEO Optimizasyonu", "Hız & Performans Ayarları", "E-Mail Pazarlama (Klaviyo)", "Blog ve İçerik Yönetimi", "3 Saat Eğitim & 1 Ay Destek"].map((feature, i) => (
+                                    <li key={i} className="flex items-start gap-3 text-sm text-white/90">
+                                        <span className="w-5 h-5 rounded-full bg-bor-secondary text-white flex items-center justify-center text-xs font-bold shrink-0">✓</span>
+                                        {feature}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <Button variant="primary" className="w-full py-4 text-lg" onClick={() => navigate('/iletisim')}>Hemen Başlayın</Button>
+                    </div>
+
+                    {/* Paket 3 */}
+                    <div className="bg-white rounded-[2rem] p-8 border border-bor-primary-100 flex flex-col hover:shadow-2xl transition-all duration-300 relative group overflow-hidden">
+                        <div className="absolute top-0 left-0 w-full h-1 bg-bor-primary-200 group-hover:bg-[#7209b7] transition-colors" />
+                        <h3 className="text-2xl font-bold text-bor-primary-900 mb-2">Kurumsal (Pro)</h3>
+                        <p className="text-sm text-bor-primary-500 mb-6">Özel tasarım ve yüksek hacimli operasyonlar.</p>
+                        <div className="text-4xl font-display font-bold text-bor-primary-900 mb-8">₺109.000 <span className="text-sm font-sans font-normal text-bor-primary-400">/tek sefer</span></div>
+
+                        <div className="flex-1 mb-8">
+                            <ul className="space-y-4">
+                                {["Custom (Özel) Yazılım/Tasarım", "Pazaryeri Entegrasyonları", "ERP / CRM Bağlantıları", "Çoklu Dil & Para Birimi", "Gelişmiş Veri Analitiği (GA4)", "Dönüşüm Oranı Optimizasyonu", "Özel Ekip Desteği", "3 Ay Öncelikli Destek"].map((feature, i) => (
+                                    <li key={i} className="flex items-start gap-3 text-sm text-bor-primary-600">
+                                        <span className="w-5 h-5 rounded-full bg-bor-primary-100 text-[#7209b7] flex items-center justify-center text-xs font-bold shrink-0">✓</span>
+                                        {feature}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <Button variant="outline" className="w-full hover:bg-[#7209b7] hover:text-white hover:border-[#7209b7]" onClick={() => navigate('/iletisim')}>Teklif İste</Button>
+                    </div>
+                </div>
+            </Section>
+
+            {/* ═══════════════════════════════════════════
+       5. WHY PIKSELAI? — Neden Biz?
+       ═══════════════════════════════════════════ */}
+            <Section mood="dark" className="py-24 bg-bor-primary-900">
+                <div className="flex flex-col md:flex-row gap-16 items-center px-4">
+                    <div className="md:w-1/2 space-y-8">
+                        <div>
+                            <span className="text-xs font-bold uppercase tracking-[0.2em] text-bor-secondary block mb-4">NEDEN PİKSELAI?</span>
+                            <h2 className="text-4xl font-display text-white mb-6">Mühendislik ve Sanatın <br /> <span className="italic text-bor-secondary">Kusursuz Uyumu</span></h2>
+                        </div>
+
+                        <div className="space-y-6">
+                            {[
+                                { title: "Teknik Uzmanlık", desc: "Sadece tasarım değil; kod yapısı, hız ve SEO metriklerine hakim mühendislik yaklaşımı." },
+                                { title: "Satış Odaklılık", desc: "Güzel görünen değil, satış yapan mağazalar tasarlıyoruz. Her detayı dönüşüm (CRO) için kurguluyoruz." },
+                                { title: "AI Gücü", desc: "Ürün görsellerinden metin yazımına kadar yapay zeka araçlarıyla sürecinizi hızlandırıyoruz." }
+                            ].map((item, i) => (
+                                <div key={i} className="flex gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors group">
+                                    <div className="w-12 h-12 rounded-xl bg-bor-secondary/20 flex items-center justify-center shrink-0 group-hover:bg-bor-secondary group-hover:text-white transition-colors">
+                                        <div className="w-2 h-2 rounded-full bg-bor-secondary ring-4 ring-bor-secondary/20 group-hover:bg-white group-hover:ring-white/20" />
+                                    </div>
+                                    <div>
+                                        <h4 className="text-lg font-bold text-white mb-1">{item.title}</h4>
+                                        <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="md:w-1/2 relative">
+                        <div className="absolute -inset-4 bg-bor-secondary/20 rounded-[3rem] blur-2xl opacity-50" />
+                        <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl group">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80" alt="Dashboard" className="w-full transform group-hover:scale-105 transition-transform duration-700" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end p-10">
+                                <div className="text-white">
+                                    <div className="text-sm font-bold uppercase tracking-widest text-bor-secondary mb-2">Ölçülebilir Başarı</div>
+                                    <div className="text-3xl font-display font-bold">Verilerle Kanıtlanmış Büyüme</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Section>
+
+            {/* ═══════════════════════════════════════════
+       6. FAQ
+       ═══════════════════════════════════════════ */}
+            <Section mood="light" className="py-24 bg-bor-primary-50">
+                <div className="max-w-3xl mx-auto px-4">
+                    <div className="text-center mb-16">
+                        <span className="text-xs font-bold uppercase tracking-[0.2em] text-bor-primary-400 block mb-4">MERAK EDİLENLER</span>
+                        <h2 className="text-3xl font-display text-bor-primary-900 mb-4">Sıkça Sorulan <span className="text-bor-secondary">Sorular</span></h2>
+                    </div>
+                    <div className="space-y-4">
+                        {[
+                            { q: "Neden Shopify tercih etmeliyim?", a: "Shopify, dünyanın en güvenilir, hızlı ve ölçeklenebilir e-ticaret altyapısıdır. Sunucu bakımı, güvenlik güncellemeleri gibi teknik dertlerle uğraşmaz, sadece satışa odaklanırsınız. Google, Facebook ve Instagram ile kusursuz çalışır." },
+                            { q: "Mağazam ne kadar sürede açılır?", a: "Paket kapsamına göre değişmekle birlikte; Başlangıç paketi ortalama 3-5 iş günü, Büyüme paketi 10-14 gün, Kurumsal paket ise 3-4 hafta sürmektedir." },
+                            { q: "Mevcut sitemi Shopify'a taşıyabilir misiniz?", a: "Evet, Woocommerce, Opencart, İkas veya T-soft gibi altyapılardaki ürün, müşteri ve sipariş verilerinizi kayıpsız olarak Shopify'a taşıyoruz." },
+                            { q: "Kurulum sonrası destek veriyor musunuz?", a: "Kesinlikle. Her proje tesliminde yönetim paneli eğitimi veriyoruz. Ayrıca seçtiğiniz pakete göre 1 ila 3 ay arasında ücretsiz teknik destek sağlıyoruz." }
+                        ].map((item, i) => (
+                            <div key={i} className="group border border-bor-primary-200 rounded-2xl p-6 bg-white hover:border-bor-secondary/50 transition-all hover:shadow-md cursor-pointer">
+                                <h3 className="font-bold text-bor-primary-900 mb-2 flex justify-between items-center text-lg">
+                                    {item.q}
+                                    <span className="w-8 h-8 rounded-full bg-bor-primary-50 text-bor-primary-400 flex items-center justify-center group-hover:bg-bor-secondary group-hover:text-white transition-colors">?</span>
+                                </h3>
+                                <p className="text-bor-primary-600 text-sm leading-relaxed pr-8">{item.a}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </Section>
+
+            {/* ═══════════════════════════════════════════
+                7. CTA
+                ═══════════════════════════════════════════ */}
+            <Section mood="dark" className="py-20 bg-bor-primary-900">
+                <div className="bg-gradient-to-br from-bor-primary-800 to-bor-primary-900 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden border border-white/10 group">
+                    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-bor-secondary/10 rounded-full blur-[100px] -mr-32 -mt-32 group-hover:bg-bor-secondary/20 transition-colors duration-1000" />
+                    <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#7209b7]/10 rounded-full blur-[100px] -ml-32 -mb-32 group-hover:bg-[#7209b7]/20 transition-colors duration-1000" />
+
+                    <div className="relative z-10 max-w-2xl mx-auto space-y-8">
+                        <h2 className="text-4xl md:text-6xl font-display font-bold text-white leading-tight">
+                            Markanızı Büyütmeye <br />
+                            <span className="text-bor-secondary italic">Hazır mısınız?</span>
+                        </h2>
+                        <p className="text-bor-primary-200 text-lg">
+                            Ücretsiz dijital varlık analizi için hemen randevu alın.
+                            Potansiyelinizi birlikte keşfedelim.
+                        </p>
+                        <Button variant="primary" size="lg" className="min-w-[200px] h-14 text-lg" onClick={() => navigate('/iletisim')}>
+                            Ücretsiz Analiz Al
+                        </Button>
+                    </div>
+                </div>
+            </Section>
+
+        </MainLayout>
+    );
+};
+
+export default EcommerceService;

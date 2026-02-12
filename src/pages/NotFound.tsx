@@ -1,90 +1,49 @@
-import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
-import { Link } from 'react-router-dom'
+import { MainLayout } from '../layouts/MainLayout'
+import { Section } from '../components/ui/Section'
+import { Button } from '../components/ui/Button'
+import { useNavigate } from 'react-router-dom'
 
-/**
- * NotFound - 404 Sayfa Bulunamadı
- * SEO için noindex, kullanıcı için şık tasarım
- */
 const NotFound = () => {
+    const navigate = useNavigate()
+
     return (
-        <>
-            {/* SEO - Bu sayfa indexlenmemeli */}
+        <MainLayout transparentHeader={true} headerLightText={true}>
+
             <Helmet>
-                <title>404 - Sayfa Bulunamadı | Pikselai</title>
+                <title>Sayfa Bulunamadı | Pikselai</title>
                 <meta name="robots" content="noindex, nofollow" />
-                <meta name="description" content="Aradığınız sayfa bulunamadı. Pikselai ana sayfasına dönün." />
             </Helmet>
 
-            <section className="hero" style={{ minHeight: '80vh' }}>
-                <div className="hero-glow-1" aria-hidden="true" />
-                <div className="hero-glow-2" aria-hidden="true" />
+            <Section className="min-h-[80vh] flex flex-col items-center justify-center text-center" mood="dark">
+                <div className="relative">
+                    {/* Background Glow */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-bor-secondary/20 rounded-full blur-[100px] pointer-events-none" />
 
-                <motion.div
-                    className="hero-content"
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    style={{ textAlign: 'center' }}
-                >
-                    {/* 404 Büyük Numara */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.5 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.6, delay: 0.3 }}
-                        style={{
-                            fontSize: 'clamp(6rem, 20vw, 12rem)',
-                            fontWeight: 900,
-                            fontFamily: 'var(--font-display)',
-                            background: 'var(--gradient-text)',
-                            WebkitBackgroundClip: 'text',
-                            backgroundClip: 'text',
-                            WebkitTextFillColor: 'transparent',
-                            lineHeight: 1,
-                            marginBottom: '1rem'
-                        }}
-                    >
+                    <h1 className="text-[10rem] md:text-[15rem] font-bold font-display leading-none text-transparent bg-clip-text bg-gradient-to-b from-white/20 to-transparent select-none">
                         404
-                    </motion.div>
+                    </h1>
 
-                    <motion.h1
-                        className="hero-title"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.5 }}
-                        style={{ fontSize: 'clamp(1.5rem, 4vw, 2.5rem)' }}
-                    >
-                        Sayfa Bulunamadı
-                    </motion.h1>
+                    <div className="relative z-10 -mt-10 md:-mt-20">
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+                            Sayfa Bulunamadı
+                        </h2>
+                        <p className="text-lg text-bor-primary-300 max-w-lg mx-auto mb-10">
+                            Aradığınız sayfa silinmiş, taşınmış veya hiç var olmamış olabilir.
+                        </p>
 
-                    <motion.p
-                        className="hero-subtitle"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.6 }}
-                    >
-                        Aradığınız sayfa mevcut değil veya taşınmış olabilir.
-                        Ana sayfaya dönerek devam edebilirsiniz.
-                    </motion.p>
-
-                    <motion.div
-                        className="hero-buttons"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.7 }}
-                    >
-                        <Link to="/" className="glass-button glow">
-                            <span>🏠</span>
-                            Anasayfaya Dön
-                        </Link>
-                        <Link to="/ucretler" className="glass-button glass-button-secondary">
-                            <span>📋</span>
-                            Ücretler
-                        </Link>
-                    </motion.div>
-                </motion.div>
-            </section>
-        </>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <Button size="lg" onClick={() => navigate('/')}>
+                                Ana Sayfaya Dön
+                            </Button>
+                            <Button variant="outline" size="lg" onClick={() => navigate('/ucretler')} className="border-white/20 text-white hover:bg-white/10">
+                                Fiyatları İncele
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+            </Section>
+        </MainLayout>
     )
 }
 

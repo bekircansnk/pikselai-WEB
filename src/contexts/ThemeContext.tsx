@@ -49,16 +49,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
         // LocalStorage'a kaydet
         localStorage.setItem(STORAGE_KEY, theme)
 
-        // Dinamik favicon güncelleme - temaya göre ikon değiştir
-        updateFavicon(theme)
-    }, [theme])
-
-    /**
-     * Favicon ve uygulama ikonlarını temaya göre günceller
-     * public/dark ve public/light klasörlerindeki ilgili dosyaları kullanır.
-     * @param currentTheme 'dark' | 'light'
-     */
-    const updateFavicon = (currentTheme: Theme) => {
+        // Dinamik favicon güncelleme
         const iconTypes = [
             { id: 'favicon-32', fileName: 'favicon-32x32.webp' },
             { id: 'favicon-16', fileName: 'favicon-16x16.webp' },
@@ -69,11 +60,10 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
         iconTypes.forEach(({ id, fileName }) => {
             const linkElement = document.getElementById(id) as HTMLLinkElement | null
             if (linkElement) {
-                // Örn: /dark/favicon-32x32.webp veya /light/favicon-32x32.webp
-                linkElement.href = `/${currentTheme}/${fileName}`
+                linkElement.href = `/${theme}/${fileName}`
             }
         })
-    }
+    }, [theme])
 
     // Tema değiştirme fonksiyonu
     const toggleTheme = () => {
@@ -91,6 +81,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
  * useTheme - Tema hook'u
  * Tema değerini ve değiştirme fonksiyonunu döndürür
  */
+// eslint-disable-next-line react-refresh/only-export-components
 export function useTheme(): ThemeContextType {
     const context = useContext(ThemeContext)
 

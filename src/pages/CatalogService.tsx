@@ -1,239 +1,135 @@
-import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
-import { Link } from 'react-router-dom'
-import Breadcrumbs from '../components/Breadcrumbs'
+import { MainLayout } from '../layouts/MainLayout'
+import { Section } from '../components/ui/Section'
+import { Button } from '../components/ui/Button'
+import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/Card'
+import { useNavigate } from 'react-router-dom'
 
-/**
- * Katalog özellik kartı tipi
- */
-interface Feature {
-    icon: string
-    title: string
-    description: string
-}
-
-/**
- * Dijital katalog özellikleri
- */
-const features: Feature[] = [
-    {
-        icon: '🔍',
-        title: 'Anında Arama',
-        description: 'Binlerce ürün arasında saniyeler içinde arama yapın. Unutulan Drive linklerinin aksine, aradığınız ürüne anında ulaşın.'
-    },
-    {
-        icon: '📱',
-        title: 'Mobil Uyumlu',
-        description: 'Telefon, tablet veya bilgisayar fark etmez. Katalog her cihazda mükemmel görünür ve çalışır.'
-    },
-    {
-        icon: '☁️',
-        title: 'Google Drive Entegrasyonu',
-        description: 'Ek sunucu veya panel gerekmez. Mevcut Google Drive klasörlerinizi kataloga dönüştürün.'
-    },
-    {
-        icon: '💬',
-        title: 'WhatsApp Paylaşımı',
-        description: 'Bayilerinize veya müşterilerinize tek tıkla ürün fotoğrafı gönderin. Satış sürecinizi hızlandırın.'
-    },
-    {
-        icon: '🚀',
-        title: 'Hızlı Kurulum',
-        description: 'Karmaşık yazılım kurulumları yok. Size özel katalogunuz hızlıca hazırlanır ve kullanıma sunulur.'
-    },
-    {
-        icon: '✨',
-        title: 'Modern Tasarım',
-        description: 'Liquid Glass UI ile profesyonel ve çağdaş bir görünüm. Markanızı en iyi şekilde temsil edin.'
-    }
-]
-
-/**
- * Service Schema JSON-LD
- */
-const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Dijital Katalog Tasarımı",
-    "provider": {
-        "@type": "Organization",
-        "name": "Pikselai",
-        "url": "https://pikselai.com"
-    },
-    "description": "Google Drive tabanlı, arama özellikli profesyonel dijital katalog sistemi.",
-    "areaServed": "TR",
-    "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Katalog Paketleri",
-        "itemListElement": [
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "Tek Seferlik Katalog"
-                },
-                "price": "15000",
-                "priceCurrency": "TRY"
-            }
-        ]
-    }
-}
-
-/**
- * CatalogService - Dijital Katalog hizmet sayfası
- * SEO optimize edilmiş landing page
- */
 const CatalogService = () => {
-    // Animasyon varyantları
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: { staggerChildren: 0.1 }
-        }
-    }
+    const navigate = useNavigate()
 
-    const itemVariants = {
-        hidden: { opacity: 0, y: 30 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.5, ease: "easeOut" as const }
+    const features = [
+        {
+            icon: '🔍',
+            title: 'Hızlı Arama & Filtreleme',
+            description: 'Binlerce ürün arasında saniyeler içinde arama yapın. Renk, beden ve kategori filtreleriyle müşterileriniz aradığını hemen bulsun.'
+        },
+        {
+            icon: '📱',
+            title: 'Mobil Uyumlu Tasarım',
+            description: 'Her cihazda kusursuz görünen, uygulama kalitesinde bir deneyim. Müşterileriniz telefonlarından rahatça sipariş verebilir.'
+        },
+        {
+            icon: '⚡',
+            title: 'PWA Teknolojisi',
+            description: 'Uygulama marketlerine gerek kalmadan, tek tıkla telefon ana ekranına yüklenebilen modern web uygulaması.'
+        },
+        {
+            icon: '💬',
+            title: 'WhatsApp Entegrasyonu',
+            description: 'Müşterileriniz beğendikleri ürünleri veya oluşturdukları sepeti tek tıkla WhatsApp üzerinden size gönderebilir.'
+        },
+        {
+            icon: '🎥',
+            title: 'Video & Medya Desteği',
+            description: 'Sadece fotoğraf değil, ürün videolarını da kataloğunuza ekleyerek etkileşimi artırın.'
+        },
+        {
+            icon: '🔄',
+            title: 'Kolay Yönetim Paneli',
+            description: 'Ürünlerinizi, stok durumunu ve fiyatları kolayca güncelleyebileceğiniz kullanıcı dostu yönetim paneli.'
         }
-    }
+    ]
 
     return (
-        <>
-            {/* SEO Meta Etiketleri ve Schema */}
+        <MainLayout>
             <Helmet>
-                <title>Dijital Katalog Tasarımı & Hızlı Arama | Pikselai</title>
-                <meta name="description" content="Dağınık Drive linkleri devri bitti. Pikselai dijital katalog ile ürünlerinize anında erişim, WhatsApp paylaşımı ve Google Drive entegrasyonu. Panel gerektirmez." />
-                <link rel="canonical" href="https://pikselai.com/profesyonel-katalog" />
-                <script type="application/ld+json">
-                    {JSON.stringify(serviceSchema)}
-                </script>
+                <title>Dijital Katalog | Profesyonel Ürün Kataloğu | Pikselai</title>
+                <meta name="description" content="İşletmeniz için hızlı, mobil uyumlu ve modern dijital ürün kataloğu çözümleri. WhatsApp sipariş ve PWA özellikleri." />
             </Helmet>
 
             {/* Hero Section */}
-            <section className="hero">
-                <div className="hero-glow-1" aria-hidden="true" />
-                <div className="hero-glow-2" aria-hidden="true" />
-
-                {/* Breadcrumbs */}
-                <Breadcrumbs />
-
-                <motion.div
-                    className="hero-content"
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                >
-                    <motion.div
-                        className="hero-badge"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
-                    >
-                        <span className="hero-badge-dot" />
-                        Dağınık Linkler Devri Bitti
-                    </motion.div>
-
-                    <motion.h1
-                        className="hero-title"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.5 }}
-                    >
-                        <span className="gradient-text">Pikselai</span> ile Profesyonel Dijital Katalog
-                    </motion.h1>
-
-                    <motion.p
-                        className="hero-subtitle"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.6 }}
-                    >
-                        Kaybolmuş Drive linklerine veda edin. Arama butonlu, mobil uyumlu ve Google Drive entegrasyonlu
-                        dijital katalog ile ürünlerinize saniyeler içinde ulaşın.
-                    </motion.p>
-
-                    <motion.div
-                        className="hero-buttons"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.7 }}
-                    >
-                        <Link to="/ucretler#katalog-fiyat" className="glass-button glow">
-                            <span>💎</span>
-                            Katalog Fiyatlarını İncele
-                        </Link>
-                        <a
-                            href="https://katalog-demo-pikselai.netlify.app/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="glass-button glass-button-secondary"
-                        >
-                            <span>🚀</span>
-                            Canlı Demo
-                        </a>
-                    </motion.div>
-                </motion.div>
-            </section>
-
-            {/* Özellikler Section */}
-            <section className="features">
-                <div className="features-container">
-                    <motion.div
-                        className="features-header"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        <h2 className="features-title">
-                            <span className="gradient-text">Neden</span> Dijital Katalog?
-                        </h2>
-                        <p className="features-subtitle">
-                            Pikselai dijital katalog sistemi ile işletmenizi modernleştirin
-                        </p>
-                    </motion.div>
-
-                    <motion.div
-                        className="features-grid"
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                    >
-                        {features.map((feature, index) => (
-                            <motion.div
-                                key={index}
-                                className="glass-card feature-card"
-                                variants={itemVariants}
-                            >
-                                <span className="feature-icon">{feature.icon}</span>
-                                <h3 className="feature-title">{feature.title}</h3>
-                                <p className="feature-description">{feature.description}</p>
-                            </motion.div>
-                        ))}
-                    </motion.div>
-
-                    {/* CTA */}
-                    <motion.div
-                        style={{ textAlign: 'center', marginTop: '3rem' }}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.3 }}
-                    >
-                        <Link to="/ucretler#katalog-fiyat" className="glass-button glow">
-                            <span>💎</span>
-                            Katalog Fiyatlarını İncele
-                        </Link>
-                    </motion.div>
+            <Section className="py-24 text-center" mood="light">
+                <div className="max-w-4xl mx-auto space-y-8">
+                    <div className="inline-flex items-center rounded-full border border-bor-primary-200 bg-white px-3 py-1 text-sm font-medium text-bor-primary-600 dark:border-bor-primary-800 dark:bg-bor-primary-900 dark:text-bor-primary-300">
+                        📚 Yeni Nesil Katalog
+                    </div>
+                    <h1 className="text-4xl md:text-6xl font-bold font-display text-bor-primary-900 dark:text-white">
+                        Ürünlerinizi <span className="text-bor-secondary">Dijital Dünyaya</span> Taşıyın
+                    </h1>
+                    <p className="text-lg text-bor-primary-500 dark:text-bor-primary-400 max-w-2xl mx-auto">
+                        PDF katalogların hantallığından kurtulun. Müşterilerinize hızlı, etkileşimli ve her zaman güncel bir dijital katalog deneyimi sunun.
+                    </p>
+                    <div className="flex justify-center gap-4">
+                        <Button size="lg" onClick={() => navigate('/ucretler')}>
+                            Fiyatı Gör (Tek Seferlik)
+                        </Button>
+                        <Button variant="outline" size="lg" href="https://wa.me/905531832344">
+                            Demo Talep Et
+                        </Button>
+                    </div>
                 </div>
-            </section>
-        </>
+            </Section>
+
+            {/* Visual Showcase (Mockup Placeholder) */}
+            <Section mood="gray" className="overflow-hidden">
+                <div className="relative max-w-5xl mx-auto">
+                    <div className="aspect-[16/9] bg-white dark:bg-bor-primary-900 rounded-2xl shadow-2xl border border-bor-primary-200 dark:border-bor-primary-800 flex items-center justify-center overflow-hidden">
+                        <div className="text-center p-12">
+                            <span className="text-6xl mb-4 block">📱</span>
+                            <h3 className="text-2xl font-bold text-bor-primary-300">Katalog Arayüzü Önizleme</h3>
+                            <p className="text-bor-primary-200">Modern ve kullanıcı dostu arayüz tasarımı</p>
+                        </div>
+                        {/* Buraya gerçek bir ekran görüntüsü veya mockup görseli gelecek */}
+                    </div>
+                    {/* Decorative Elements */}
+                    <div className="absolute -top-10 -right-10 w-64 h-64 bg-bor-secondary/20 rounded-full blur-3xl pointer-events-none" />
+                    <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-bor-accent/20 rounded-full blur-3xl pointer-events-none" />
+                </div>
+            </Section>
+
+            {/* Features Grid */}
+            <Section mood="light">
+                <div className="text-center mb-16">
+                    <h2 className="text-3xl font-bold font-display mb-4">Öne Çıkan Özellikler</h2>
+                    <p className="text-bor-primary-500">Kataloğunuzu güçlendiren teknolojiler</p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {features.map((feature, index) => (
+                        <Card key={index} className="hover:shadow-lg transition-shadow">
+                            <CardHeader>
+                                <div className="text-4xl mb-4 w-16 h-16 rounded-2xl bg-bor-primary-50 dark:bg-bor-primary-800 flex items-center justify-center">
+                                    {feature.icon}
+                                </div>
+                                <CardTitle>{feature.title}</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <p className="text-bor-primary-500 dark:text-bor-primary-400 leading-relaxed">
+                                    {feature.description}
+                                </p>
+                            </CardContent>
+                        </Card>
+                    ))}
+                </div>
+            </Section>
+
+            {/* CTA */}
+            <Section mood="dark" className="text-center py-24">
+                <h2 className="text-3xl md:text-5xl font-bold font-display text-white mb-8">
+                    Kataloğunuzu Şimdi Oluşturun
+                </h2>
+                <p className="text-xl text-bor-primary-200 mb-10 max-w-2xl mx-auto">
+                    Tek seferlik ödeme ile ömür boyu kullanım. Aylık veya yıllık aidat yok.
+                </p>
+                <Button
+                    size="lg"
+                    className="bg-white text-bor-primary-900 h-14 px-10 text-lg hover:bg-gray-100"
+                    onClick={() => navigate('/ucretler')}
+                >
+                    Paketi Satın Al - ₺15.000
+                </Button>
+            </Section>
+        </MainLayout>
     )
 }
 

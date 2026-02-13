@@ -59,7 +59,7 @@ export function Header({ transparent = false, lightText = false }: HeaderProps) 
             )}
             onMouseLeave={handleMouseLeave}
         >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
                 {/* Logo */}
                 <Link to="/" className="z-50 flex items-center gap-2 group">
                     <span className={cn(
@@ -71,22 +71,28 @@ export function Header({ transparent = false, lightText = false }: HeaderProps) 
                 </Link>
 
                 {/* Desktop Nav */}
-                <nav className="hidden lg:flex items-center gap-8 h-full">
+                <nav className="hidden lg:flex items-center gap-8 h-full absolute left-1/2 -translate-x-1/2">
                     {/* Hizmetler - Mega Menu */}
                     <button
                         className={cn(
-                            "flex items-center gap-1 text-sm font-medium transition-colors py-2 border-b-2 hover:text-bor-secondary group",
+                            "relative flex items-center gap-1 text-sm font-medium transition-colors py-2 group",
                             (activeMegaMenu === "hizmetler" || isServicePath)
-                                ? (forceWhiteText ? "text-white border-white" : "text-bor-secondary border-bor-secondary")
-                                : (forceWhiteText ? "text-white/90 hover:text-white border-transparent" : "text-bor-primary-600 dark:text-bor-primary-300 border-transparent")
+                                ? (forceWhiteText ? "text-white" : "text-bor-secondary")
+                                : (forceWhiteText ? "text-white/90 hover:text-white" : "text-bor-primary-600 dark:text-bor-primary-300 hover:text-bor-primary-900")
                         )}
                         onMouseEnter={() => handleMouseEnter("hizmetler")}
                     >
-                        Hizmetler
+                        <span className="flex items-center gap-2">
+                            <span className={cn(
+                                "w-1.5 h-1.5 rounded-full bg-bor-secondary scale-0 transition-transform duration-200 group-hover:scale-100",
+                                (activeMegaMenu === "hizmetler" || isServicePath) && "scale-100"
+                            )} />
+                            Hizmetler
+                        </span>
                         <ChevronDown
                             size={14}
                             className={cn(
-                                "transition-transform duration-200",
+                                "transition-transform duration-200 ml-0.5",
                                 activeMegaMenu === "hizmetler" && "rotate-180"
                             )}
                         />
@@ -95,18 +101,24 @@ export function Header({ transparent = false, lightText = false }: HeaderProps) 
                     {/* Kaynaklar - Resources Menu */}
                     <button
                         className={cn(
-                            "flex items-center gap-1 text-sm font-medium transition-colors py-2 border-b-2 hover:text-bor-secondary group",
+                            "relative flex items-center gap-1 text-sm font-medium transition-colors py-2 group",
                             (activeMegaMenu === "kaynaklar" || location.pathname.startsWith('/blog') || location.pathname.startsWith('/musteri-hikayeleri'))
-                                ? (forceWhiteText ? "text-white border-white" : "text-bor-secondary border-bor-secondary")
-                                : (forceWhiteText ? "text-white/90 hover:text-white border-transparent" : "text-bor-primary-600 dark:text-bor-primary-300 border-transparent")
+                                ? (forceWhiteText ? "text-white" : "text-bor-secondary")
+                                : (forceWhiteText ? "text-white/90 hover:text-white" : "text-bor-primary-600 dark:text-bor-primary-300 hover:text-bor-primary-900")
                         )}
                         onMouseEnter={() => handleMouseEnter("kaynaklar")}
                     >
-                        Kaynaklar
+                        <span className="flex items-center gap-2">
+                            <span className={cn(
+                                "w-1.5 h-1.5 rounded-full bg-bor-secondary scale-0 transition-transform duration-200 group-hover:scale-100",
+                                (activeMegaMenu === "kaynaklar" || location.pathname.startsWith('/blog') || location.pathname.startsWith('/musteri-hikayeleri')) && "scale-100"
+                            )} />
+                            Kaynaklar
+                        </span>
                         <ChevronDown
                             size={14}
                             className={cn(
-                                "transition-transform duration-200",
+                                "transition-transform duration-200 ml-0.5",
                                 activeMegaMenu === "kaynaklar" && "rotate-180"
                             )}
                         />
@@ -114,26 +126,41 @@ export function Header({ transparent = false, lightText = false }: HeaderProps) 
 
                     {/* Links */}
                     {[
-                        { path: "/yapitigimiz-isler", label: "Yaptığımız İşler" },
                         { path: "/islerimiz", label: "İşlerimiz" },
                         { path: "/hakkimizda", label: "Hakkımızda" },
-                        { path: "/referanslar", label: "Referanslar" },
                         { path: "/ucretler", label: "Ücretler" },
                     ].map((link) => (
                         <Link
                             key={link.path}
                             to={link.path}
                             className={cn(
-                                "text-sm font-medium transition-colors py-2 border-b-2 hover:text-bor-secondary",
+                                "relative flex items-center gap-2 text-sm font-medium transition-colors py-2 group",
                                 isActive(link.path)
-                                    ? (forceWhiteText ? "text-white border-white" : "text-bor-secondary border-bor-secondary")
-                                    : (forceWhiteText ? "text-white/90 hover:text-white border-transparent" : "text-bor-primary-600 dark:text-bor-primary-300 border-transparent")
+                                    ? (forceWhiteText ? "text-white" : "text-bor-secondary")
+                                    : (forceWhiteText ? "text-white/90 hover:text-white" : "text-bor-primary-600 dark:text-bor-primary-300 hover:text-bor-primary-900")
                             )}
                             onMouseEnter={handleMouseLeave}
                         >
+                            <span className={cn(
+                                "w-1.5 h-1.5 rounded-full bg-bor-secondary scale-0 transition-transform duration-200 group-hover:scale-100",
+                                isActive(link.path) && "scale-100"
+                            )} />
                             {link.label}
                         </Link>
                     ))}
+
+                    {/* Sosyal - Statik HTML Sayfa */}
+                    <a
+                        href="/social-media-creative.html"
+                        className={cn(
+                            "relative flex items-center gap-2 text-sm font-medium transition-colors py-2 group",
+                            forceWhiteText ? "text-white/90 hover:text-white" : "text-bor-primary-600 dark:text-bor-primary-300 hover:text-bor-primary-900"
+                        )}
+                        onMouseEnter={handleMouseLeave}
+                    >
+                        <span className="w-1.5 h-1.5 rounded-full bg-bor-secondary scale-0 transition-transform duration-200 group-hover:scale-100" />
+                        Sosyal
+                    </a>
                 </nav>
 
                 {/* Actions */}

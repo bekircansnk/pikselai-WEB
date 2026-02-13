@@ -8,16 +8,15 @@ import AiProduction from './pages/AiProduction'
 import DigitalGrowth from './pages/DigitalGrowth'
 import CatalogWeb from './pages/CatalogWeb'
 import About from './pages/About'
-import References from './pages/References'
 import Contact from './pages/Contact'
 import CazadorCaseStudy from './pages/blog/CazadorCaseStudy'
-import OurWork from './pages/OurWork'
 import Islerimiz from './pages/Islerimiz'
 import NotFound from './pages/NotFound'
 import Blog from './pages/Blog'
 import CustomerStories from './pages/CustomerStories'
 import EcommerceService from './pages/EcommerceService'
 import SocialMediaService from './pages/SocialMediaService'
+import SocialMediaCreative from './pages/SocialMediaCreative'
 
 function ScrollToHash() {
   const { pathname, hash } = useLocation()
@@ -49,13 +48,12 @@ function App() {
           <Route path="/hizmetler/ai-produksiyon" element={<AiProduction />} />
           <Route path="/hizmetler/e-ticaret" element={<EcommerceService />} />
           <Route path="/hizmetler/sosyal-medya" element={<SocialMediaService />} />
+          <Route path="/social-media-creative" element={<SocialMediaCreative />} />
           <Route path="/hizmetler/dijital-buyume" element={<DigitalGrowth />} />
           <Route path="/hizmetler/katalog-web" element={<CatalogWeb />} />
           <Route path="/hakkimizda" element={<About />} />
-          <Route path="/referanslar" element={<References />} />
           <Route path="/iletisim" element={<Contact />} />
           <Route path="/ucretler" element={<Pricing />} />
-          <Route path="/yapitigimiz-isler" element={<OurWork />} />
           <Route path="/islerimiz" element={<Islerimiz />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/musteri-hikayeleri" element={<CustomerStories />} />

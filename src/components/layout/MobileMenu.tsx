@@ -63,7 +63,8 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                                     <MobileMenuItem title="Tüm Dijital Büyüme" href="/hizmetler/dijital-buyume" onClick={onClose} />
                                     <MobileMenuItem title="E-Ticaret Yönetimi" href="/hizmetler/dijital-buyume" onClick={onClose} />
                                     <MobileMenuItem title="SEO & İçerik" href="/hizmetler/dijital-buyume" onClick={onClose} />
-                                    <MobileMenuItem title="Sosyal Medya" href="/hizmetler/dijital-buyume" onClick={onClose} />
+                                    <MobileMenuItem title="Sosyal Medya" href="/hizmetler/sosyal-medya" onClick={onClose} />
+                                    <MobileMenuItem title="Social Media (English)" href="/social-media-creative" onClick={onClose} />
                                 </div>
 
                                 <div className="space-y-3">
@@ -81,11 +82,16 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
                                 <div className="w-full h-px bg-bor-primary-100 dark:bg-bor-primary-800" />
 
-                                <MobileMenuItem title="Yaptığımız İşler" href="/yapitigimiz-isler" onClick={onClose} />
                                 <MobileMenuItem title="İşlerimiz" href="/islerimiz" onClick={onClose} />
                                 <MobileMenuItem title="Hakkımızda" href="/hakkimizda" onClick={onClose} />
-                                <MobileMenuItem title="Referanslar" href="/referanslar" onClick={onClose} />
                                 <MobileMenuItem title="Ücretler" href="/ucretler" onClick={onClose} />
+                                <a
+                                    href="/social-media-creative.html"
+                                    className="block text-lg font-medium text-bor-primary-600 hover:text-bor-primary-900 dark:text-bor-primary-300 dark:hover:text-white transition-colors"
+                                    onClick={onClose}
+                                >
+                                    Sosyal
+                                </a>
                                 <MobileMenuItem title="İletişim" href="/iletisim" onClick={onClose} />
                             </div>
 

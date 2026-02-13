@@ -21,7 +21,7 @@ export function ResourcesMenu({ isOpen, activeMenu, onClose }: ResourcesMenuProp
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
-                    transition={{ duration: 0.2 }}
+                    transition={{ duration: 0.15, ease: "easeInOut" }}
                     className="absolute left-0 top-full w-full z-40 border-b border-bor-primary-200 bg-[#F9F9F7] backdrop-blur-xl shadow-2xl dark:border-bor-primary-800 dark:bg-bor-primary-900/98"
                     onMouseLeave={onClose}
                 >

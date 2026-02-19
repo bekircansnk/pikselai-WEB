@@ -1,18 +1,26 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/', // Asset yollarını mutlak (absolute) yapar - nested route'larda beyaz ekran sorununu çözer
+  base: '/',
   build: {
-    chunkSizeWarningLimit: 1000, // Uyarı limitini 1MB'a çıkar
+    target: 'esnext',
+    minify: 'esbuild',
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom', 'framer-motion', 'lucide-react'],
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          'vendor-ui': ['framer-motion', 'lucide-react'],
         },
       },
     },
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom'],
+  },
+  ssr: {
+    noExternal: ['framer-motion', 'lucide-react'],
   },
 })

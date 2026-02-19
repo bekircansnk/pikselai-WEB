@@ -8,6 +8,11 @@ interface MobileMenuProps {
     onClose: () => void
 }
 
+/**
+ * Mobil Menü Bileşeni
+ * Küçük ekranlarda görüntülenen, sağdan açılan navigasyon menüsü.
+ * Tüm site haritasına erişim sağlar.
+ */
 export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     useEffect(() => {
         if (isOpen) {
@@ -64,7 +69,6 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                                     <MobileMenuItem title="E-Ticaret Yönetimi" href="/hizmetler/dijital-buyume" onClick={onClose} />
                                     <MobileMenuItem title="SEO & İçerik" href="/hizmetler/dijital-buyume" onClick={onClose} />
                                     <MobileMenuItem title="Sosyal Medya" href="/hizmetler/sosyal-medya" onClick={onClose} />
-                                    <MobileMenuItem title="Social Media (English)" href="/social-media-creative" onClick={onClose} />
                                 </div>
 
                                 <div className="space-y-3">
@@ -85,13 +89,6 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                                 <MobileMenuItem title="İşlerimiz" href="/islerimiz" onClick={onClose} />
                                 <MobileMenuItem title="Hakkımızda" href="/hakkimizda" onClick={onClose} />
                                 <MobileMenuItem title="Ücretler" href="/ucretler" onClick={onClose} />
-                                <a
-                                    href="/social-media-creative.html"
-                                    className="block text-lg font-medium text-bor-primary-600 hover:text-bor-primary-900 dark:text-bor-primary-300 dark:hover:text-white transition-colors"
-                                    onClick={onClose}
-                                >
-                                    Sosyal
-                                </a>
                                 <MobileMenuItem title="İletişim" href="/iletisim" onClick={onClose} />
                             </div>
 

@@ -9,7 +9,7 @@ const routeNames: Record<string, string> = {
     '/ucretler': 'Ücretler',
     '/profesyonel-katalog': 'Dijital Katalog',
     '/yapay-zeka-fotograf-cekimi': 'AI Fotoğraf',
-    '/sosyal-medya-yonetimi': 'Sosyal Medya',
+    '/hizmetler/sosyal-medya': 'Sosyal Medya',
     '/blog/referanslar': 'Referanslarımız'
 }
 

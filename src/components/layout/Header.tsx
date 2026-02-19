@@ -12,6 +12,11 @@ interface HeaderProps {
     lightText?: boolean
 }
 
+/**
+ * Ana Başlık Bileşeni (Header)
+ * Sayfanın en üstünde yer alan navigasyon ve logo alanını içerir.
+ * Scroll durumuna ve sayfa tipine göre şeffaflık/renk değiştirir.
+ */
 export function Header({ transparent = false, lightText = false }: HeaderProps) {
     const [isScrolled, setIsScrolled] = useState(false)
     const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null)
@@ -39,14 +44,14 @@ export function Header({ transparent = false, lightText = false }: HeaderProps) 
     const isActive = (path: string) => location.pathname === path
     const isServicePath = location.pathname.startsWith('/hizmetler')
 
-    // Logic: 
-    // If not scrolled and transparent prop is true -> bg-transparent
-    // Else -> bg-white/90 (or dark equiv)
+    // Mantık:
+    // Eğer scroll edilmediyse ve transparent prop true ise -> bg-transparent
+    // Aksi halde -> bg-white/90 (veya dark mod karşılığı)
     const showGlass = !transparent || isScrolled
 
-    // Text color logic:
-    // If not scrolled and lightText prop is true -> force white text
-    // Else -> standard text colors (dark in light mode, white in dark mode)
+    // Metin Rengi Mantığı:
+    // Eğer scroll edilmediyse ve lightText prop true ise -> beyaz metin zorla
+    // Aksi halde -> standart metin renkleri (açık modda koyu, koyu modda beyaz)
     const forceWhiteText = lightText && !isScrolled
 
     return (
@@ -149,18 +154,6 @@ export function Header({ transparent = false, lightText = false }: HeaderProps) 
                         </Link>
                     ))}
 
-                    {/* Sosyal - Statik HTML Sayfa */}
-                    <a
-                        href="/social-media-creative.html"
-                        className={cn(
-                            "relative flex items-center gap-2 text-sm font-medium transition-colors py-2 group",
-                            forceWhiteText ? "text-white/90 hover:text-white" : "text-bor-primary-600 dark:text-bor-primary-300 hover:text-bor-primary-900"
-                        )}
-                        onMouseEnter={handleMouseLeave}
-                    >
-                        <span className="w-1.5 h-1.5 rounded-full bg-bor-secondary scale-0 transition-transform duration-200 group-hover:scale-100" />
-                        Sosyal
-                    </a>
                 </nav>
 
                 {/* Actions */}

@@ -1,10 +1,12 @@
-# 📚 Katalog Web - Dijital Katalog Çözümleri
+# 📚 PikselAI-WEB - Kurumsal Katalog ve Geliştirici Rehberi
 
-Profesyonel dijital katalog ve yapay zeka destekli içerik yönetimi için modern web uygulaması.
+Bu dosya projenin kurulumu, yapısı ve YZ çalışma prensipleri hakkında tüm bilgileri tek bir yerde toplar.
 
 ---
+sadasadllkdkkdd
+## 🚀 1. Genel Bakış ve Özellikler
 
-## 🚀 Özellikler
+Profesyonel dijital katalog ve yapay zeka destekli içerik yönetimi için modern web uygulaması.
 
 - **Yapay Zeka Desteği** - AI destekli fotoğraf üretimi ile profesyonel içerikler
 - **Hızlı Arama** - IndexedDB tabanlı kalıcı arama indeksi
@@ -13,169 +15,92 @@ Profesyonel dijital katalog ve yapay zeka destekli içerik yönetimi için moder
 - **Modern Tasarım** - Liquid Glass UI ve akıcı animasyonlar
 - **Hızlı Paylaşım** - Bayilerle tek tıkla fotoğraf paylaşımı
 
----
+### 🛠️ Teknolojiler
 
-## 🛠️ Teknolojiler
-
-| Teknoloji | Açıklama |
-|-----------|----------|
-| React 19 | Modern kullanıcı arayüzü |
-| TypeScript | Tip güvenli geliştirme |
-| Vite | Hızlı geliştirme ortamı |
-| Framer Motion | Akıcı animasyonlar |
-| React Router | Sayfa yönlendirme |
+| Teknoloji       | Açıklama                 |
+| --------------- | ------------------------ |
+| React 19        | Modern kullanıcı arayüzü |
+| TypeScript      | Tip güvenli geliştirme   |
+| Vite            | Hızlı geliştirme ortamı  |
+| Framer Motion   | Akıcı animasyonlar       |
+| Tailwind CSS v4 | Modern tasarım sistemi   |
 
 ---
 
-## 📦 Kurulum
+## 🏗️ 2. Proje Yapısı ve Dosya Rehberi
 
-### Gereksinimler
+Projeniz hem bir web uygulaması hem de otomasyon araçları içeren hibrit bir yapıdadır.
 
-- Node.js 18 veya üzeri
-- npm veya yarn paket yöneticisi
+### 🌲 Dizin Ağacı
 
-### Bağımlılıkları Yükleme
-
-```bash
-# Proje klasörüne git
-cd Katalog-Web
-
-# Bağımlılıkları yükle
-npm install
+```text
+pikselai-WEB/
+├── src/                  # 🚀 Uygulamanın ana kaynak kodları (React + TS)
+│   ├── components/       # Kullanıcı arayüzü bileşenleri
+│   ├── pages/            # Sayfa bileşenleri
+│   ├── assets/           # Resimler ve logolar
+│   └── _arsiv/           # Eski/Yedek kodlar
+├── public/               # Statik varlıklar
+├── scripts/              # 🐍 Python yardımcı robotları (Otomasyon)
+├── .agent/               # YZ Geliştirici yetenek ve kuralları
+├── www.superside.com/    # Referans materyalleri
+└── index.html            # Giriş kapısı
 ```
 
+### 📂 Klasör Detayları
+
+- **`src/`:** Web sayfasının tüm görsel ve mantıksal kodları buradadır.
+- **`scripts/`:** Web sitesinin parçası olmayan, sadece geliştirme sırasında kullanılan Python araçlarıdır (Resim optimizasyonu, içerik ayıklama vb.).
+- **`.agent/`:** Antigravity (YZ) için özel yetenekleri barındırır.
+
 ---
 
-## 💻 Geliştirme Komutları
+## 🤖 3. Yapay Zeka (Maestro) Yapılandırması
 
-### Geliştirme Sunucusunu Başlatma
+Bu proje, Antigravity (YZ) asistanının davranışlarını ve kodlama standartlarını belirleyen özel bir yapılandırmaya sahiptir.
+
+### 🇹🇷 Temel Kurallar ve Standartlar
+
+Sistem kuralları, dil zorunluluğu ve performans standartları için lütfen ana kural dosyasını inceleyin:
+👉 **[GEMINI.md](file:///Users/bekir/Music/KİŞİSEL PROJELER/pikselai-WEB/GEMINI.md)**
+
+> [!IMPORTANT]
+> Projedeki tüm iletişim ve **KOD YORUMLARI** her zaman **TÜRKÇE** olmak zorundadır. Bu kural sistem geneline yayılmıştır.
+
+---
+
+## 💻 4. Geliştirici Rehberi
+
+### 📦 Kurulum ve Çalıştırma
 
 ```bash
+# Bağımlılıkları yükle
+npm install
+
+# Geliştirme sunucusunu başlat
 npm run dev
 ```
 
-> Varsayılan olarak `http://localhost:5173` adresinde çalışır.
-
-### Kod Kalitesi Kontrolü (Lint)
+### 🚀 Derleme ve Dağıtım
 
 ```bash
-npm run lint
-```
-
----
-
-## 🏗️ Derleme (Build) Komutları
-
-### Üretim İçin Derleme
-
-```bash
+# Üretim için derle
 npm run build
-npm run preview
 
-```
-
-> `dist/` klasörüne derlenmiş dosyalar oluşturulur.
-
-### Derlenmiş Dosyaları Önizleme
-
-```bash
+# Önizleme yap
 npm run preview
 ```
 
-> Derleme sonrası oluşan dosyaları yerel sunucuda test eder.
-
----
-
-## 🚀 Dağıtım (Deploy)
-
-### Manuel Dağıtım
-
-1. Projeyi derleyin:
-   ```bash
-   npm run build
-   ```
-
-2. `dist/` klasöründeki dosyaları sunucunuza yükleyin.
-
-### Netlify ile Dağıtım
-
-1. [Netlify](https://netlify.com) hesabı oluşturun
-2. GitHub reposunu bağlayın
-3. Derleme ayarları:
-   - **Derleme Komutu:** `npm run build`
-   - **Yayın Klasörü:** `dist`
-
-### Vercel ile Dağıtım
-
-1. [Vercel](https://vercel.com) hesabı oluşturun
-2. GitHub reposunu içe aktarın
-3. Vite projesi otomatik algılanır
-
----
-
-## 📁 Proje Yapısı
-
-```
-Katalog-Web/
-├── public/              # Statik dosyalar
-├── src/
-│   ├── components/      # React bileşenleri
-│   ├── pages/           # Sayfa bileşenleri
-│   ├── styles/          # CSS dosyaları
-│   ├── App.tsx          # Ana uygulama bileşeni
-│   └── main.tsx         # Giriş noktası
-├── index.html           # Ana HTML dosyası
-├── package.json         # Proje bağımlılıkları
-├── vite.config.ts       # Vite yapılandırması
-└── tsconfig.json        # TypeScript yapılandırması
-```
-
----
-
-## 🔧 Ortam Değişkenleri
-
-Proje kök dizininde `.env` dosyası oluşturun:
+### 🔧 Ortam Değişkenleri (.env)
 
 ```env
 VITE_API_URL=https://api.orneksite.com
 VITE_GOOGLE_CLIENT_ID=client-id-buraya
 ```
 
-> `.env` dosyası `.gitignore`'da olmalıdır, asla repoya eklemeyin!
-
 ---
 
-## 📝 Sık Kullanılan Komutlar Özeti
-
-| Komut | Açıklama |
-|-------|----------|
-| `npm install` | Bağımlılıkları yükler |
-| `npm run dev` | Geliştirme sunucusunu başlatır |
-| `npm run build` | Üretim için derler |
-| `npm run preview` | Derlenmiş dosyaları önizler |
-| `npm run lint` | Kod kalitesini kontrol eder |
-npm run build
-npm run preview
---
-
-## 🤝 Katkıda Bulunma
-
-1. Projeyi fork edin
-2. Yeni bir dal oluşturun (`git checkout -b yeni-ozellik`)
-3. Değişikliklerinizi commit edin (`git commit -m 'Yeni özellik eklendi'`)
-4. Dalınıza push edin (`git push origin yeni-ozellik`)
-5. Pull Request açın
-
----
-
-## 📄 Lisans
+## 🤝 5. İletişim ve Lisans
 
 Bu proje özel kullanım içindir.
-
----
-
-## 📞 İletişim
-
-Sorularınız için geliştirici ekibiyle iletişime geçin.
-bekircan sağnak +905531832344
-mail
+Sorularınız için: **Bekircan Sağnak (+90 553 183 2344)**

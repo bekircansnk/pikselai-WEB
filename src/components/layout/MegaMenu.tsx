@@ -4,7 +4,7 @@ import {
     Bot, Sparkles, Video, Aperture, Wand2, // AI Icons
     Search, Calendar, Target, BarChart3, Camera, // Growth Icons
     Store, Paintbrush, Zap, Plug, Mail, // Ecommerce Icons
-    Layout, Code, Palette, BookOpen, Layers, Globe // Web Icons
+    Layout, Code, Palette, BookOpen, Layers // Web Icons
 } from "lucide-react"
 import { cn } from "../../lib/utils"
 
@@ -14,6 +14,11 @@ interface MegaMenuProps {
     onClose: () => void
 }
 
+/**
+ * Masaüstü Mega Menü Bileşeni
+ * Hizmetler ve kaynaklar için genişletilmiş açılır menüyü görüntüler.
+ * Animasyonlu geçişler ve kategorize edilmiş linkler içerir.
+ */
 export function MegaMenu({ isOpen, activeMenu, onClose }: MegaMenuProps) {
     if (!isOpen) return null
 
@@ -182,13 +187,6 @@ export function MegaMenu({ isOpen, activeMenu, onClose }: MegaMenuProps) {
                                             title="Fotoğraf Odaklı"
                                             href="/hizmetler/sosyal-medya"
                                             desc="Görsel kalite öncelikli yönetim"
-                                            onClose={onClose}
-                                        />
-                                        <MenuItem
-                                            icon={<Globe size={16} />}
-                                            title="Social Media (English)"
-                                            href="/social-media-creative"
-                                            desc="Original English version"
                                             onClose={onClose}
                                         />
                                     </div>

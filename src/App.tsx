@@ -1,22 +1,29 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useEffect, lazy, Suspense } from 'react'
 import { ThemeProvider } from './contexts/ThemeContext'
-import Home from './pages/Home'
-import Pricing from './pages/Pricing'
-import ServicesHub from './pages/ServicesHub'
-import AiProduction from './pages/AiProduction'
-import DigitalGrowth from './pages/DigitalGrowth'
-import CatalogWeb from './pages/CatalogWeb'
-import About from './pages/About'
-import Contact from './pages/Contact'
-import CazadorCaseStudy from './pages/blog/CazadorCaseStudy'
-import Islerimiz from './pages/Islerimiz'
-import NotFound from './pages/NotFound'
-import Blog from './pages/Blog'
-import CustomerStories from './pages/CustomerStories'
-import EcommerceService from './pages/EcommerceService'
-import SocialMediaService from './pages/SocialMediaService'
-import SocialMediaCreative from './pages/SocialMediaCreative'
+
+const Home = lazy(() => import('./pages/Home'))
+const Pricing = lazy(() => import('./pages/Pricing'))
+const ServicesHub = lazy(() => import('./pages/ServicesHub'))
+const AiProduction = lazy(() => import('./pages/AiProduction'))
+const DigitalGrowth = lazy(() => import('./pages/DigitalGrowth'))
+const About = lazy(() => import('./pages/About'))
+const Contact = lazy(() => import('./pages/Contact'))
+const CazadorCaseStudy = lazy(() => import('./pages/blog/CazadorCaseStudy'))
+const Islerimiz = lazy(() => import('./pages/Islerimiz'))
+const NotFound = lazy(() => import('./pages/NotFound'))
+const Blog = lazy(() => import('./pages/Blog'))
+const CustomerStories = lazy(() => import('./pages/CustomerStories'))
+const EcommerceService = lazy(() => import('./pages/EcommerceService'))
+const SocialMediaCreative = lazy(() => import('./pages/SocialMediaCreative'))
+
+function Loading() {
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="animate-pulse bg-gray-200 dark:bg-gray-700 h-8 w-8 rounded-full"></div>
+    </div>
+  )
+}
 
 function ScrollToHash() {
   const { pathname, hash } = useLocation()
@@ -37,20 +44,23 @@ function ScrollToHash() {
   return null
 }
 
+/**
+ * Ana Uygulama Bileşeni
+ * Tüm rota tanımları ve tema sağlayıcısı burada yapılandırılır.
+ */
 function App() {
   return (
     <ThemeProvider>
       <ScrollToHash />
       <main>
-        <Routes>
+        <Suspense fallback={<Loading />}>
+          <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/hizmetler" element={<ServicesHub />} />
           <Route path="/hizmetler/ai-produksiyon" element={<AiProduction />} />
           <Route path="/hizmetler/e-ticaret" element={<EcommerceService />} />
-          <Route path="/hizmetler/sosyal-medya" element={<SocialMediaService />} />
-          <Route path="/social-media-creative" element={<SocialMediaCreative />} />
+          <Route path="/hizmetler/sosyal-medya" element={<SocialMediaCreative />} />
           <Route path="/hizmetler/dijital-buyume" element={<DigitalGrowth />} />
-          <Route path="/hizmetler/katalog-web" element={<CatalogWeb />} />
           <Route path="/hakkimizda" element={<About />} />
           <Route path="/iletisim" element={<Contact />} />
           <Route path="/ucretler" element={<Pricing />} />
@@ -60,6 +70,7 @@ function App() {
           <Route path="/blog/referanslar" element={<CazadorCaseStudy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </Suspense>
       </main>
     </ThemeProvider>
   )

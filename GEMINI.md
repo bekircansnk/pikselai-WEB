@@ -7,7 +7,7 @@
 
 ## 🇹🇷 KESİN KURAL: DİL ZORUNLULUĞU (CRITICAL: LANGUAGE RULE)
 
-> **MANDATORY:** Bu projedeki tüm iletişim, planlama, düşünme (thought process hariç kullanıcıya görünen kısımlar), dosya isimleri (kod hariç) ve açıklamalar **TÜRKÇE** olmak zorundadır.
+> **MANDATORY:** Bu projedeki tüm iletişim, planlama, düşünme (thought process hariç kullanıcıya görünen kısımlar), dosya isimleri (kod hariç), **KOD YORUMLARI VE KOD İÇİ AÇIKLAMALAR** dahil her şey **TÜRKÇE** olmak zorundadır. Antigravity her zaman bu kurala uymalıdır.
 
 ---
 
@@ -16,6 +16,7 @@
 > **MANDATORY:** You MUST read the appropriate agent file and its skills BEFORE performing any implementation. This is the highest priority rule.
 
 ### 1. Modular Skill Loading Protocol
+
 ```
 Agent activated → Check frontmatter "skills:" field
     │
@@ -29,6 +30,7 @@ Agent activated → Check frontmatter "skills:" field
 - **Rule Priority:** P0 (GEMINI.md) > P1 (Agent .md) > P2 (SKILL.md). All rules are binding.
 
 ### 2. Enforcement Protocol
+
 1. **When agent is activated:**
    - ✅ READ all rules inside the agent file.
    - ✅ CHECK frontmatter `skills:` list.
@@ -42,14 +44,14 @@ Agent activated → Check frontmatter "skills:" field
 
 **Before ANY action, classify the request:**
 
-| Request Type | Trigger Keywords | Active Tiers | Result |
-|--------------|------------------|--------------|--------|
-| **QUESTION** | "what is", "how does", "explain" | TIER 0 only | Text Response |
-| **SURVEY/INTEL**| "analyze", "list files", "overview" | TIER 0 + Explorer | Session Intel (No File) |
-| **SIMPLE CODE** | "fix", "add", "change" (single file) | TIER 0 + TIER 1 (lite) | Inline Edit |
-| **COMPLEX CODE**| "build", "create", "implement", "refactor" | TIER 0 + TIER 1 (full) + Agent | **{task-slug}.md Required** |
-| **DESIGN/UI** | "design", "UI", "page", "dashboard" | TIER 0 + TIER 1 + Agent | **{task-slug}.md Required** |
-| **SLASH CMD** | /create, /orchestrate, /debug | Command-specific flow | Variable |
+| Request Type     | Trigger Keywords                           | Active Tiers                   | Result                      |
+| ---------------- | ------------------------------------------ | ------------------------------ | --------------------------- |
+| **QUESTION**     | "what is", "how does", "explain"           | TIER 0 only                    | Text Response               |
+| **SURVEY/INTEL** | "analyze", "list files", "overview"        | TIER 0 + Explorer              | Session Intel (No File)     |
+| **SIMPLE CODE**  | "fix", "add", "change" (single file)       | TIER 0 + TIER 1 (lite)         | Inline Edit                 |
+| **COMPLEX CODE** | "build", "create", "implement", "refactor" | TIER 0 + TIER 1 (full) + Agent | **{task-slug}.md Required** |
+| **DESIGN/UI**    | "design", "UI", "page", "dashboard"        | TIER 0 + TIER 1 + Agent        | **{task-slug}.md Required** |
+| **SLASH CMD**    | /create, /orchestrate, /debug              | Command-specific flow          | Variable                    |
 
 ---
 
@@ -76,6 +78,7 @@ Valuing the NEW rule above:
 ### 📁 File Dependency Awareness
 
 **Before modifying ANY file:**
+
 1. Check `CODEBASE.md` → File Dependencies
 2. Identify dependent files
 3. Update ALL affected files together
@@ -85,10 +88,10 @@ Valuing the NEW rule above:
 > 🔴 **MANDATORY:** Read `ARCHITECTURE.md` at session start to understand Agents, Skills, and Scripts.
 
 **Path Awareness:**
+
 - Agents: `.agent/` (Project)
 - Skills: `.agent/skills/` (Project)
 - Runtime Scripts: `.agent/skills/<skill>/scripts/`
-
 
 ### 🧠 Read → Understand → Apply
 
@@ -98,6 +101,7 @@ Valuing the NEW rule above:
 ```
 
 **Before coding, answer:**
+
 1. What is the GOAL of this agent/skill?
 2. What PRINCIPLES must I apply?
 3. How does this DIFFER from generic output?

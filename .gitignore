@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Agent files
+.agent/
+GEMINI.md
+ARCHITECTURE.md
+CODEBASE.md

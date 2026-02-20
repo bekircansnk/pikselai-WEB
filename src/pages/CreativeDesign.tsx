@@ -222,12 +222,12 @@ export default function CreativeDesign() {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6 }}
-                                className="relative rounded-[2rem] overflow-hidden aspect-square lg:aspect-[4/5] bg-bor-primary-100 dark:bg-bor-primary-800 shadow-2xl border border-white/20"
+                                className="relative rounded-[2rem] overflow-hidden bg-bor-primary-100 dark:bg-bor-primary-800 shadow-2xl border border-white/20 p-2 lg:p-4 flex items-center justify-center"
                             >
                                 <img
-                                    src="https://cdn.sanity.io/images/k0dlbavy/production/ab01cd9dfaa3cf82aee1d5d1c2d9eecbedaa8612-1400x1646.jpg?q=100&auto=format&w=1200&h=1411&fit=min"
+                                    src="/arama-ekrani.webp"
                                     alt="Katalog Arama Ekranı"
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-auto rounded-[1.5rem] object-contain"
                                 />
                             </motion.div>
 

@@ -117,19 +117,19 @@ export default function CreativeDesign() {
             {/* ═══════════════════════════════════════════
        3. WHAT WE OFFER — Bento Grid (Ana Özellikler)
        ═══════════════════════════════════════════ */}
-            <Section mood="light" className="py-24 bg-bor-background">
-                <div className="container-custom">
+            <Section mood="dark" className="py-24 bg-[#0A2624] text-white relative overflow-hidden">
+                <div className="container-custom relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         className="text-center max-w-4xl mx-auto mb-16"
                     >
-                        <h4 className="text-sm font-bold tracking-[0.2em] text-bor-primary-400 mb-6 uppercase">Ana Özellikler</h4>
+                        <h4 className="text-sm font-bold tracking-[0.2em] text-[#E2FF65] mb-6 uppercase">Ana Özellikler</h4>
                         <h2 className="text-4xl lg:text-5xl font-display mb-6">
-                            İhtiyacınız Olan Her Şey <br /> <span className="italic font-light text-bor-secondary">Tek Bir Platformda</span>
+                            İhtiyacınız Olan Her Şey <br /> <span className="italic font-light text-[#E2FF65]">Tek Bir Platformda</span>
                         </h2>
-                        <p className="text-lg text-bor-primary-600 dark:text-bor-primary-400 font-light mt-4 max-w-2xl mx-auto">
+                        <p className="text-lg text-white/80 font-light mt-4 max-w-2xl mx-auto">
                             Sadece ürünlerinizi sergilemekle kalmaz; operasyonel süreçlerinizi hızlandırmak ve senkronizasyon sağlamak için modüller sunar.
                         </p>
                     </motion.div>
@@ -138,33 +138,33 @@ export default function CreativeDesign() {
                         <BentoCard
                             title="Gelişmiş Albüm Yönetimi"
                             desc="Hiyerarşik akıllı klasörleme ile sezonlara veya kategorilere göre ürün gruplandırma ve anında sunum."
-                            img="https://cdn.sanity.io/images/k0dlbavy/production/29e4fadd842063016b83c80145d445daec740abf-1584x880.png?q=100&auto=format&fit=min"
+                            img="/katalog-assets/klasorleme.webp"
                             className="md:col-span-2 lg:col-span-2 min-h-[350px]"
                         />
                         <BentoCard
                             title="Etkileşimli Galeri"
                             desc="Cihaz bağımsız çalışan, pürüzsüz lightbox geçişlerine sahip modern görsel sergileme alanı."
-                            img="https://cdn.sanity.io/images/k0dlbavy/production/0bc1fcbe5aac0bec68b6193db358c1d0370890e0-768x880.png?q=100&auto=format&fit=min"
+                            img="/katalog-assets/filtre.webp"
                             className="lg:col-span-1 min-h-[350px]"
                         />
 
                         <BentoCard
                             title="Akıllı Çoklu İndirme"
                             desc="Seçtiğiniz yüzlerce medyayı otomatik ZIP arşivine çevirip optimize edilmiş boyutlarla cihazınıza aktarın."
-                            img="https://cdn.sanity.io/images/k0dlbavy/production/d061fc203765d8af2a7b9c88ab4d93ec8963b848-1040x1808.png?q=100&auto=format&fit=min"
+                            img="/katalog-assets/indir.webp"
                             className="lg:col-span-1 min-h-[350px] lg:min-h-[440px]"
                         />
                         <BentoCard
                             title="Medya Oynatıcı"
                             desc="İndirme gerektirmeden en ağır videoları anında oynatan, harici programa ihtiyaç bırakmayan entegre sistem."
-                            img="https://cdn.sanity.io/images/k0dlbavy/production/6737db1e51268f8ded474ed1b5d0577c1023facc-1040x880.png?q=100&auto=format&fit=min"
+                            video="/katalog-assets/video-player-opt.mp4"
                             className="lg:col-span-1 min-h-[350px] lg:min-h-[440px]"
                             textDark={true}
                         />
                         <BentoCard
                             title="Yönetici ve Erişim Kontrolü"
                             desc="Yeni sezon ürünleri gibi gizli kalması gereken koleksiyonlar için şifreli özel paneller."
-                            img="https://cdn.sanity.io/images/k0dlbavy/production/f344ad12eb0fa8e750de216cf58b5dbb41519fba-1040x880.png?q=100&auto=format&fit=min"
+                            img="/katalog-assets/sifre.webp"
                             className="lg:col-span-1 min-h-[350px] lg:min-h-[440px]"
                             textDark={true}
                         />
@@ -310,28 +310,45 @@ export default function CreativeDesign() {
     )
 }
 
-function BentoCard({ title, desc, img, className, textDark = false }: { title: string; desc: string; img: string; className?: string; textDark?: boolean }) {
+function BentoCard({ title, desc, img, video, className, textDark = false }: { title: string; desc: string; img?: string; video?: string; className?: string; textDark?: boolean }) {
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className={`relative overflow-hidden rounded-[20px] lg:rounded-[32px] group bg-bor-background shadow-sm hover:shadow-xl transition-shadow duration-300 ${className}`}
+            className={`relative overflow-hidden rounded-[20px] lg:rounded-[32px] group bg-white/5 border border-white/10 shadow-lg hover:shadow-2xl transition-all duration-500 ${className}`}
         >
-            <div className="absolute inset-0 w-full h-full z-0">
-                <img
-                    src={img}
-                    alt={title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
+            <div className="absolute inset-0 w-full h-full z-0 bg-transparent flex items-center justify-center p-0">
+                {video ? (
+                    <video
+                        src={video}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-full object-contain transition-all duration-700 group-hover:scale-105 group-hover:blur-[8px]"
+                    />
+                ) : img ? (
+                    <img
+                        src={img}
+                        alt={title}
+                        className="w-full h-full object-contain transition-all duration-700 group-hover:scale-105 group-hover:blur-[8px]"
+                    />
+                ) : null}
             </div>
 
-            <div className={`relative z-10 p-6 lg:p-8 flex flex-col h-full pointer-events-none ${textDark ? 'text-bor-primary-900' : 'text-white'}`}>
-                <h3 className="text-2xl font-bold mb-3 leading-tight">{title}</h3>
-                <p className="text-sm lg:text-base opacity-95 leading-relaxed max-w-[90%] md:max-w-[70%]">
-                    {desc}
-                </p>
+            {/* Dark overlay that appears on hover to make text readable */}
+            <div className="absolute inset-0 bg-black/0 transition-colors duration-700 group-hover:bg-black/30 z-0 pointer-events-none"></div>
+
+            {/* Hidden by default, appears perfectly centered on hover */}
+            <div className="absolute inset-0 z-10 flex flex-col items-center justify-center p-6 lg:p-8 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-8 group-hover:translate-y-0 pointer-events-none">
+                <div className={`backdrop-blur-md rounded-2xl p-6 lg:p-8 text-center w-full shadow-2xl transition-transform duration-700 scale-95 group-hover:scale-100 ${textDark ? 'bg-white/60 text-bor-primary-900 border border-white/50' : 'bg-black/40 text-white border border-white/20'}`}>
+                    <h3 className="text-2xl lg:text-3xl font-bold mb-3 leading-tight drop-shadow-md">{title}</h3>
+                    <p className="text-sm lg:text-base opacity-95 leading-relaxed font-medium drop-shadow-md">
+                        {desc}
+                    </p>
+                </div>
             </div>
         </motion.div>
     );

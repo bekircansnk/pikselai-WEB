@@ -2,7 +2,6 @@
 
 Geleneksel ve karmaşık ürün sergileme yöntemlerini geride bırakın. Binlerce görsel ve ürün arasında kaybolmadan, koleksiyonlarınızı müşterilerinize kusursuz bir akıcılıkla sunun ve iş akışınızı baştan yaratın.
 
-**[Sistemi Keşfetmeye Başla]** *(Eyleme Çağrı Butonu)*
 
 ---
 

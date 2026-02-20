@@ -1,128 +1,104 @@
-# GEMINI.md - Maestro Configuration
+# E-Ticaret Potansiyelinizi Maksimuma Çıkarın: Uçtan Uca Dijital Dönüşüm
 
-> Maestro AI Development Orchestrator
-> This file defines how the AI behaves in this workspace.
+Büyüme yolculuğunuzda sadece bir site kurmuyor; markanızın e-ticaret ekosistemini sıfırdan inşa ediyor ve yönetiyoruz. Karmaşık operasyonel süreçlerinizi hafifleten, satışlarınızı ölçeklendiren ve dijital dünyada aradığınız o "uçtan uca çözüm ortağı" olarak yanınızdayız.
 
----
-
-## 🇹🇷 KESİN KURAL: DİL ZORUNLULUĞU (CRITICAL: LANGUAGE RULE)
-
-> **MANDATORY:** Bu projedeki tüm iletişim, planlama, düşünme (thought process hariç kullanıcıya görünen kısımlar), dosya isimleri (kod hariç), **KOD YORUMLARI VE KOD İÇİ AÇIKLAMALAR** dahil her şey **TÜRKÇE** olmak zorundadır. Antigravity her zaman bu kurala uymalıdır.
+**[Hemen Projenizi Konuşalım](#iletisim)**
 
 ---
 
-## CRITICAL: AGENT & SKILL PROTOCOL (START HERE)
+## Danışmanlık ve Hizmet Kapsamımız
 
-> **MANDATORY:** You MUST read the appropriate agent file and its skills BEFORE performing any implementation. This is the highest priority rule.
+E-ticaret başarısı, yalnızca şık bir vitrine sahip olmaktan geçmez; arka planda tıkır tıkır işleyen, hatasız bir operasyon gerektirir. Markanızın her bir temas noktasını optimize eden kapsamlı modüllerimizle tanışın.
 
-### 1. Modular Skill Loading Protocol
+### Altyapı ve ERP Entegrasyonları
+Güçlü bir e-ticaret operasyonunun kalbi, sağlam bir veritabanı yönetimi ve kusursuz çalışan entegrasyonlardır. 
+* **Kusursuz Veri Akışı:** Nebim V3 gibi köklü ve kapsamlı ERP sistemleriyle e-ticaret altyapınızı pürüzsüz bir şekilde konuşturuyoruz.
+* **Gelişmiş Veritabanı Yönetimi:** SQL Server bakım planlamaları, veri yedekleme stratejileri ve sorunsuz veri taşıma/göç işlemleriyle IT altyapınızı güvence altına alıyoruz.
+* **Stok ve Ürün Optimizasyonu:** Fiziksel mağazalarınız ile dijital kanallarınız arasındaki stok senkronizasyonunu milisaniyeler içinde yöneterek "yok satma" veya "hatalı stok" problemlerini ortadan kaldırıyoruz.
 
-```
-Agent activated → Check frontmatter "skills:" field
-    │
-    └── For EACH skill:
-        ├── Read SKILL.md (INDEX only)
-        ├── Find relevant sections from content map
-        └── Read ONLY those section files
-```
+### Yapay Zeka Destekli Operasyonlar
+Teknolojinin en keskin ucunu kullanarak operasyonel maliyetlerinizi düşürüyor, üretim hızınızı katlıyoruz.
+* **Görsel ve İçerik Üretimi:** E-ticaret siteniz ve sosyal medyanız için yapay zeka destekli, yüksek kaliteli ürün fotoğrafçılığı ve kreatif video kurguları hazırlıyoruz.
+* **Akıllı Metinler:** Ürün açıklamalarından kampanya sloganlarına kadar, dönüşüm odaklı metinleri saniyeler içinde yayına alıyoruz.
+* **Özelleştirilmiş Asistanlar:** İşletmenizin günlük e-ticaret süreçlerini ve müşteri iletişimini hızlandıracak, markanıza özel yapay zeka araçları ve asistanları geliştiriyoruz.
 
-- **Selective Reading:** DO NOT read ALL files in a skill folder. Read `SKILL.md` first, then only read sections matching the user's request.
-- **Rule Priority:** P0 (GEMINI.md) > P1 (Agent .md) > P2 (SKILL.md). All rules are binding.
+### Global Pazaryeri Açılımları (E-İhracat)
+Sınırları ortadan kaldırıyor, Türkiye'deki operasyon gücünüzü global arenaya taşıyoruz.
+* **Uluslararası Vitrin:** Ürünlerinizi dünya çapındaki alıcılarla buluşturmak için Etsy gibi global pazaryerlerinde mağaza kurulumunuzu ve entegrasyonunuzu gerçekleştiriyoruz.
+* **Operasyonel Rehberlik:** Yurt dışı kargo süreçleri, uluslararası ödeme ağ geçitleri ve e-ihracatın gerektirdiği yasal gereksinimler konusunda stratejik yönetim sağlıyoruz.
 
-### 2. Enforcement Protocol
-
-1. **When agent is activated:**
-   - ✅ READ all rules inside the agent file.
-   - ✅ CHECK frontmatter `skills:` list.
-   - ✅ LOAD each skill's `SKILL.md`.
-   - ✅ APPLY all rules from agent AND skills.
-2. **Forbidden:** Never skip reading agent rules or skill instructions. "Read → Understand → Apply" is mandatory.
-
----
-
-## 📥 REQUEST CLASSIFIER (STEP 2)
-
-**Before ANY action, classify the request:**
-
-| Request Type     | Trigger Keywords                           | Active Tiers                   | Result                      |
-| ---------------- | ------------------------------------------ | ------------------------------ | --------------------------- |
-| **QUESTION**     | "what is", "how does", "explain"           | TIER 0 only                    | Text Response               |
-| **SURVEY/INTEL** | "analyze", "list files", "overview"        | TIER 0 + Explorer              | Session Intel (No File)     |
-| **SIMPLE CODE**  | "fix", "add", "change" (single file)       | TIER 0 + TIER 1 (lite)         | Inline Edit                 |
-| **COMPLEX CODE** | "build", "create", "implement", "refactor" | TIER 0 + TIER 1 (full) + Agent | **{task-slug}.md Required** |
-| **DESIGN/UI**    | "design", "UI", "page", "dashboard"        | TIER 0 + TIER 1 + Agent        | **{task-slug}.md Required** |
-| **SLASH CMD**    | /create, /orchestrate, /debug              | Command-specific flow          | Variable                    |
+### Dijital Pazarlama ve Kampanya Yönetimi
+Hedef kitlenizi nokta atışı analiz ediyor, bütçenizi en yüksek ROI (Yatırım Getirisi) ile yönetiyoruz.
+* **Stratejik Kurgular:** Tüm ürünlerde kontrolsüz indirimler yapmak yerine, karlılığınızı koruyan stratejiler geliştiriyoruz. Örneğin; kış sezonunu kapatırken yeni sezonu zedelemeden, doğrudan kış ürünlerine özel %50 indirim kurguları gibi spesifik ve stok eritmeye yönelik nokta atışı kampanyalar tasarlıyoruz.
+* **360 Derece Sosyal Medya:** Performans odaklı reklam yönetimi ve marka kimliğinizi yansıtan estetik içerik planlamasıyla dijitaldeki sesinizi gürleştiriyoruz.
 
 ---
 
-## TIER 0: UNIVERSAL RULES (Always Active)
+## E-Ticaret Çözümlerimiz (Sıkça Sorulan Sorular ve Detaylar)
 
-### 🌐 Dil Protokolü (Language Protocol)
+Aşağıdaki hizmet modüllerimize tıklayarak operasyonel yükünüzü nasıl hafiflettiğimizi detaylıca inceleyebilirsiniz:
 
-**Varsayılan Dil:** Türkçe (Turkish)
+<details>
+  <summary><b>Sıfırdan Mağaza Kurulumu</b></summary>
+  <p>Markanızın ihtiyaçlarına en uygun altyapıyı seçerek, kullanıcı deneyimi (UX/UI) yüksek, mobil uyumlu ve satışa hazır e-ticaret sitenizi anahtar teslim olarak hayata geçiriyoruz.</p>
+</details>
 
-1. **İletişim ve Sistem:** Tarafımdan üretilen tüm sistem mesajları, yanıtlar, açıklamalar ve proje planları **TÜRKÇE** olmak zorundadır. Kullanıcı farklı bir dilde yazsa dahi cevap dili Türkçedir.
-2. **Git Commitleri ve Versiyonlama (ÖNEMLİ):** Git'e kod yüklerken yazılan **TÜM COMMIT MESAJLARI** kesinlikle **TÜRKÇE** olmak zorundadır (Örn: `git commit -m "düzeltme: menüdeki kayma sorunu çözüldü"`). Asla İngilizce commit mesajı (fix, feat, chore vb. terimler içeren İngilizce metinler) kullanılamaz.
-3. **Kodlama:** Değişken isimleri gibi temel kod bileşenleri uluslararası standartlar gereği İngilizce kalabilir, ancak koda eklenecek tüm yorum satırları ve belgeler Türkçe olmalıdır.
+<details>
+  <summary><b>Farklı Bir Altyapıdaki Mağazanızı Taşıma</b></summary>
+  <p>Mevcut mağazanızı veri kaybı yaşamadan (müşteri, sipariş, ürün ve SEO link yapısı korunarak) daha modern, hızlı ve ölçeklenebilir yeni e-ticaret altyapılarına sorunsuz bir şekilde migrate ediyoruz.</p>
+</details>
 
-### 🧹 Clean Code (Global Mandatory)
+<details>
+  <summary><b>Geçmiş Siparişlerin ve Verilerin Aktarımı</b></summary>
+  <p>Veritabanınızdaki geçmiş yıllara ait kritik sipariş datasını ve müşteri hareketlerini, yeni sisteminize SQL bazlı güvenli taşıma yöntemleriyle eksiksiz entegre ediyoruz.</p>
+</details>
 
-**ALL code MUST follow `@[skills/clean-code]` rules. No exceptions.**
+<details>
+  <summary><b>Kargo ve Ödeme Sistemi Entegrasyonları</b></summary>
+  <p>Sanal POS kurulumları, alternatif ödeme yöntemleri ve kargo firmalarının API entegrasyonlarını sağlayarak sepet terk oranlarını minimuma indiriyoruz.</p>
+</details>
 
-- Concise, direct, solution-focused
-- No verbose explanations
-- No over-commenting
-- No over-engineering
-- **Self-Documentation:** Every agent is responsible for documenting their own changes in relevant `.md` files.
-- **Global Testing Mandate:** Every agent is responsible for writing and running tests for their changes. Follow the "Testing Pyramid" (Unit > Integration > E2E) and the "AAA Pattern" (Arrange, Act, Assert).
-- **Global Performance Mandate:** "Measure first, optimize second." Every agent must ensure their changes adhere to 2025 performance standards (Core Web Vitals for Web, query optimization for DB, bundle limits for FS).
-- **Infrastructure & Safety Mandate:** Every agent is responsible for the deployability and operational safety of their changes. Follow the "5-Phase Deployment Process" (Prepare, Backup, Deploy, Verify, Confirm/Rollback). Always verify environment variables and secrets security.
+<details>
+  <summary><b>Dijital Performans Araçlarının Eksiksiz Kurulumu</b></summary>
+  <p>Google Analytics 4, Meta Pixel, Tag Manager ve diğer tüm dönüşüm izleme araçlarını kurarak, sitenizdeki her bir tıklamayı ölçülebilir verilere dönüştürüyoruz.</p>
+</details>
 
-### 📁 File Dependency Awareness
+<details>
+  <summary><b>E-İhracat ve Pazaryeri Entegrasyonları</b></summary>
+  <p>Yurt içi pazaryerlerinin (Trendyol, Hepsiburada vb.) yanı sıra, mikro ihracat ve global pazar yeri operasyonlarınız için tek bir panelden çoklu yönetim imkanı sağlayan sistemleri devreye alıyoruz.</p>
+</details>
 
-**Before modifying ANY file:**
-
-1. Check `CODEBASE.md` → File Dependencies
-2. Identify dependent files
-3. Update ALL affected files together
-
-### 🗺️ System Map Read
-
-> 🔴 **MANDATORY:** Read `ARCHITECTURE.md` at session start to understand Agents, Skills, and Scripts.
-
-**Path Awareness:**
-
-- Agents: `.agent/` (Project)
-- Skills: `.agent/skills/` (Project)
-- Runtime Scripts: `.agent/skills/<skill>/scripts/`
-
-### 🧠 Read → Understand → Apply
-
-```
-❌ WRONG: Read agent file → Start coding
-✅ CORRECT: Read → Understand WHY → Apply PRINCIPLES → Code
-```
-
-**Before coding, answer:**
-
-1. What is the GOAL of this agent/skill?
-2. What PRINCIPLES must I apply?
-3. How does this DIFFER from generic output?
-
-### 🚀 Git & GitHub Yükleme Kuralı (Critical Override)
-
-> 🔴 **MANDATORY:** Git işlemlerinde (add, commit, push), projeyi indirecek **diğer geliştiricilerin** ihtiyacı olmayan ve SADECE mevcut kullanıcının lokal ortamına/ai asistanına özel olan dosyaları **KESİNLİKLE yükleme**.
-
-**Özel Dosyalar ve Klasörler YASAK:**
-- `node_modules/` (Zaten .gitignore'da olmalı)
-- `.agent/` klasörü ve içindeki tüm yapay zeka/otomasyon yetenekleri, promptlar
-- `GEMINI.md`, `ARCHITECTURE.md`, `CODEBASE.md` gibi lokal ajana hizmet eden rehber dosyalar
-- `.env` ve benzeri gizli yapılandırmalar
-- İşletim sistemi kalıntıları (DS_Store vb.)
-
-**Uygulama Adımları (Git Push Öncesi):**
-1. `git status` veya `git add` yapmadan önce, projenin *çalışması için* gerekli olmayan dosyaların dahil olup olmadığını kontrol et.
-2. Gereksiz bir dosya varsa onlara dokunma, hatta `.gitignore` içerisine ekle.
-3. Her zaman kendini sorgula: *"Bu dosya benim lokal LLM işlemlerim için mi var, yoksa takım arkadaşımın/projenin yaşamı için şart mı?"* Cevap ilk seçenekse onu repo'dan ayır.
+<details>
+  <summary><b>ERP (Muhasebe Programları) Entegrasyonu</b></summary>
+  <p>Muhasebe ve stok yönetim programlarınızın e-ticaret sitenizle tam zamanlı, çift yönlü olarak haberleşmesini sağlıyoruz. Manuel veri girişi hatalarına son veriyoruz.</p>
+</details>
 
 ---
+
+## Nasıl Çalışıyoruz? 
+
+Başarı, şeffaf ve planlı bir sürecin eseridir. Sizinle yürüdüğümüz yol haritası:
+
+1.  **Tanışma ve İhtiyaç Analizi:** İşletmenizin mevcut durumunu, altyapısını, dijital ayak izini ve ulaşmak istediğiniz hedefleri derinlemesine inceleriz.
+2.  **Strateji ve Altyapı Mimarisi:** İhtiyacınız olan ERP bağlantılarından, kampanya takvimlerine ve global açılış planlarına kadar size özel bir dijital strateji haritası çizeriz.
+3.  **Teknik Kurulum ve Entegrasyon:** Veritabanı düzenlemeleri, site inşası, yapay zeka araçlarının sisteme dahil edilmesi ve üçüncü parti (kargo/ödeme) bağlantılarını kusursuzca tamamlarız.
+4.  **Büyüme ve Sürekli Optimizasyon:** Sistem canlıya alındıktan sonra operasyonu kaderine terk etmeyiz. Kampanya performanslarını ölçer, IT destek ihtiyaçlarınızı giderir ve cironuzu artıracak yeni nesil çözümlerle sitenizi sürekli güncel tutarız.
+
+---
+
+## Neden PikselAI? Fark Yaratan Değerlerimiz
+
+Biz, standart bir reklam ajansının ötesindeyiz. E-ticaretin hem mutfağını hem de vitrinini çok iyi biliyoruz.
+
+* **Teknik ve Kreatif Güç Bir Arada:** Bir yanda SQL veritabanı sorunlarını çözen ve karmaşık ERP mimarilerini kurgulayan analitik bir zeka; diğer yanda yapay zeka ile göz alıcı görseller ve kreatif kampanyalar üreten estetik bir vizyon. İkisini aynı masada bulacaksınız.
+* **Operasyonel Hafiflik:** Siz sadece yeni koleksiyonlarınıza ve markanızın vizyonuna odaklanın. Kargo entegrasyonundan sunucu yedeklemesine, sosyal medya metninden pazaryeri eşleştirmesine kadar tüm teknik ve operasyonel yükü biz üstleniyoruz.
+* **Hızlı Aksiyon, Doğru Teknoloji:** Yenilikleri sonradan takip eden değil, iş süreçlerine ilk entegre edenlerdeniz. Yapay zeka otomasyonlarımız sayesinde standart ajansların günlerce süren işlerini saatler içinde, maliyet avantajıyla teslim ediyoruz.
+* **Veriye Dayalı Satış Artışı:** Varsayımlarla değil, verilerle hareket ederiz. Doğru kampanya, doğru zamanlama ve sorunsuz çalışan bir altyapı ile dönüşüm oranlarınızı maksimize ederiz.
+
+---
+
+## Birlikte Büyümeye Hazır Mısınız?
+
+E-ticaret ekosisteminde kalıcı bir yer edinmek, operasyonel zorlukları aşmak ve satışlarınızı bir sonraki seviyeye taşımak için güçlü bir temele ihtiyacınız var. Teknik uzmanlığımız, vizyoner yaklaşımımız ve yapay zeka destekli altyapımızla bu temeli birlikte atalım. Aklınızdaki o büyük projeyi hayata geçirme zamanı geldi.
+
+**[Hemen İletişime Geçin ve Büyüme Yolculuğunuzu Başlatalım](#iletisim)**

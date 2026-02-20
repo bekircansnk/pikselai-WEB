@@ -18,6 +18,7 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
+    entries: ['index.html'],
     include: ['react', 'react-dom', 'react-router-dom'],
   },
   ssr: {

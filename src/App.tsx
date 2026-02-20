@@ -16,6 +16,7 @@ const Blog = lazy(() => import('./pages/Blog'))
 const CustomerStories = lazy(() => import('./pages/CustomerStories'))
 const EcommerceService = lazy(() => import('./pages/EcommerceService'))
 const SocialMediaCreative = lazy(() => import('./pages/SocialMediaCreative'))
+const CreativeDesign = lazy(() => import('./pages/CreativeDesign'))
 
 function Loading() {
   return (
@@ -55,21 +56,22 @@ function App() {
       <main>
         <Suspense fallback={<Loading />}>
           <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/hizmetler" element={<ServicesHub />} />
-          <Route path="/hizmetler/ai-produksiyon" element={<AiProduction />} />
-          <Route path="/hizmetler/e-ticaret" element={<EcommerceService />} />
-          <Route path="/hizmetler/sosyal-medya" element={<SocialMediaCreative />} />
-          <Route path="/hizmetler/dijital-buyume" element={<DigitalGrowth />} />
-          <Route path="/hakkimizda" element={<About />} />
-          <Route path="/iletisim" element={<Contact />} />
-          <Route path="/ucretler" element={<Pricing />} />
-          <Route path="/islerimiz" element={<Islerimiz />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/musteri-hikayeleri" element={<CustomerStories />} />
-          <Route path="/blog/referanslar" element={<CazadorCaseStudy />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/hizmetler" element={<ServicesHub />} />
+            <Route path="/hizmetler/ai-produksiyon" element={<AiProduction />} />
+            <Route path="/hizmetler/e-ticaret" element={<EcommerceService />} />
+            <Route path="/hizmetler/sosyal-medya" element={<SocialMediaCreative />} />
+            <Route path="/hizmetler/dijital-buyume" element={<DigitalGrowth />} />
+            <Route path="/hizmetler/kreatif-tasarim" element={<CreativeDesign />} />
+            <Route path="/hakkimizda" element={<About />} />
+            <Route path="/iletisim" element={<Contact />} />
+            <Route path="/ucretler" element={<Pricing />} />
+            <Route path="/islerimiz" element={<Islerimiz />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/musteri-hikayeleri" element={<CustomerStories />} />
+            <Route path="/blog/referanslar" element={<CazadorCaseStudy />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </Suspense>
       </main>
     </ThemeProvider>

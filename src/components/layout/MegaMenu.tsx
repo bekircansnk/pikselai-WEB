@@ -197,42 +197,42 @@ export function MegaMenu({ isOpen, activeMenu, onClose }: MegaMenuProps) {
                                     <MenuHeader
                                         title="Kreatif Tasarım"
                                         color="bg-[#7209b7] text-white"
-                                        href="/hizmetler/katalog-web"
+                                        href="/hizmetler/kreatif-tasarim"
                                         onClose={onClose}
                                     />
                                     <div className="space-y-0.5">
                                         <MenuItem
                                             icon={<BookOpen size={16} />}
                                             title="İnteraktif Kataloglar"
-                                            href="/hizmetler/katalog-web"
+                                            href="/hizmetler/kreatif-tasarim"
                                             desc="Dijital yayın çözümleri"
                                             onClose={onClose}
                                         />
                                         <MenuItem
                                             icon={<Layout size={16} />}
                                             title="Landing Page"
-                                            href="/hizmetler/katalog-web"
+                                            href="/hizmetler/kreatif-tasarim"
                                             desc="Dönüşüm odaklı tasarım"
                                             onClose={onClose}
                                         />
                                         <MenuItem
                                             icon={<Code size={16} />}
                                             title="Web Geliştirme"
-                                            href="/hizmetler/katalog-web"
+                                            href="/hizmetler/kreatif-tasarim"
                                             desc="Modern teknoloji siteleri"
                                             onClose={onClose}
                                         />
                                         <MenuItem
                                             icon={<Palette size={16} />}
                                             title="UI/UX Tasarım"
-                                            href="/hizmetler/katalog-web"
+                                            href="/hizmetler/kreatif-tasarim"
                                             desc="Kullanıcı deneyimi odaklı"
                                             onClose={onClose}
                                         />
                                         <MenuItem
                                             icon={<Layers size={16} />}
                                             title="Tasarım Sistemleri"
-                                            href="/hizmetler/katalog-web"
+                                            href="/hizmetler/kreatif-tasarim"
                                             desc="Marka dili bütünlüğü"
                                             onClose={onClose}
                                         />

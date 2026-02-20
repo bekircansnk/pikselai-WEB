@@ -72,8 +72,8 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                                 </div>
 
                                 <div className="space-y-3">
-                                    <h4 className="text-sm font-semibold uppercase text-bor-primary-400">Katalog & Web</h4>
-                                    <MobileMenuItem title="Tüm Katalog & Web" href="/hizmetler/katalog-web" onClick={onClose} />
+                                    <h4 className="text-sm font-semibold uppercase text-bor-primary-400">Kreatif Tasarım</h4>
+                                    <MobileMenuItem title="Tüm Tasarım Hizmetleri" href="/hizmetler/kreatif-tasarim" onClick={onClose} />
                                 </div>
 
                                 <div className="w-full h-px bg-bor-primary-100 dark:bg-bor-primary-800" />

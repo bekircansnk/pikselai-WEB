@@ -319,20 +319,29 @@ const EticaretYeni = () => {
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-serif italic text-[#F4EFE6]">Dünya genelinde devasa başarı</h3>
             </div>
 
-            <div className={`border-t border-b ${colors.borderColorDark} py-12 grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x ${colors.borderColorDark}`}>
-              <div className="flex flex-col items-center justify-center text-center px-4 pt-4 md:pt-0">
-                <span className="text-6xl md:text-7xl font-sans font-medium text-[#caf265] mb-2">2M+</span>
-                <span className="text-[#a8b8af] uppercase tracking-wider text-sm">Aktif İşletme</span>
+            <div className={`border-t border-b ${colors.borderColorDark} py-16 grid grid-cols-1 md:grid-cols-3 gap-12 divide-y md:divide-y-0 md:divide-x ${colors.borderColorDark}`}>
+              <div className="flex flex-col items-center text-center px-4 pt-4 md:pt-0">
+                <span className="text-5xl md:text-6xl font-sans font-medium text-[#caf265] mb-4">Sınırsız</span>
+                <span className="text-white uppercase tracking-widest text-sm font-bold mb-3">Trafik Kapasitesi</span>
+                <p className="text-[#a8b8af] font-light text-sm max-w-[260px] leading-relaxed">
+                  İndirim dönemlerinde, binlerce anlık müşteride bile siteniz asla yavaşlamaz veya çökmez.
+                </p>
               </div>
 
-              <div className="flex flex-col items-center justify-center text-center px-4 pt-8 md:pt-0">
-                <span className="text-6xl md:text-7xl font-sans font-medium text-[#caf265] mb-2">%99.9</span>
-                <span className="text-[#a8b8af] uppercase tracking-wider text-sm">Uptime / Çalışma Süresi</span>
+              <div className="flex flex-col items-center text-center px-4 pt-12 md:pt-0">
+                <span className="text-5xl md:text-6xl font-sans font-medium text-[#caf265] mb-4">Sıfır</span>
+                <span className="text-white uppercase tracking-widest text-sm font-bold mb-3">Sunucu Maliyeti</span>
+                <p className="text-[#a8b8af] font-light text-sm max-w-[260px] leading-relaxed">
+                  Aylık harici hosting, güvenlik sertifikası veya bitmeyen teknik bakım ücretleri ödemezsiniz.
+                </p>
               </div>
 
-              <div className="flex flex-col items-center justify-center text-center px-4 pt-8 md:pt-0">
-                <span className="text-6xl md:text-7xl font-sans font-medium text-[#caf265] mb-2">175+</span>
-                <span className="text-[#a8b8af] uppercase tracking-wider text-sm">Ülkede Satış</span>
+              <div className="flex flex-col items-center text-center px-4 pt-12 md:pt-0">
+                <span className="text-5xl md:text-6xl font-sans font-medium text-[#caf265] mb-4">170+</span>
+                <span className="text-white uppercase tracking-widest text-sm font-bold mb-3">Ülkeye Küresel Satış</span>
+                <p className="text-[#a8b8af] font-light text-sm max-w-[260px] leading-relaxed">
+                  Farklı para birimleri ve dillerle markanızı ekstra yazılımlara ihtiyaç duymadan dünyaya açın.
+                </p>
               </div>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, type Variants } from 'framer-motion';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
@@ -11,7 +11,9 @@ import {
   ArrowRight,
   TrendingUp,
   Layers,
-  MessageSquare
+  MessageSquare,
+  Plus,
+  Minus
 } from 'lucide-react';
 
 // Animasyon Değişkenleri
@@ -43,6 +45,48 @@ const EticaretYeni = () => {
     borderColor: "border-[#e0dcd3]",
     borderColorDark: "border-[#1e3b2b]"
   };
+
+  // Accordion State
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
+  };
+
+  const faqs = [
+    {
+      question: "Shopify nedir, neden tercih ediyoruz?",
+      answer: "Shopify, teknik altyapıyla veya sunucu çökmeleriyle uğraşmadan sadece satışa odaklanmanızı sağlayan dünyanın en büyük e-ticaret altyapısı. Güvenli, çok hızlı ve ödeme sistemleriyle baştan entegre geldiği için müşterilerimize özellikle bunu tavsiye ediyoruz."
+    },
+    {
+      question: "Ürün görsellerim yoksa ne yapacağız?",
+      answer: "Elinizde görsel yoksa dert değil. Yapay zeka destekli paketlerimizde (Paket 2 ve üstü) ürünleriniz için markanıza tam uyan, çok gerçekçi stüdyo görsellerini sıfırdan biz üretiyoruz."
+    },
+    {
+      question: "3 aylık kurulum sonrası destek neleri kapsıyor?",
+      answer: "Sektördeki en büyük sorun sitenin yapılıp bırakılması. Biz teslimden sonra 3 ay boyunca yanınızdayız. Ufak tasarım revizyonları, ürün eklerken takıldığınız yerler, kargo veya ödeme altyapısındaki aksaklıklar gibi teknik her konuda direkt bize ulaşabiliyorsunuz."
+    },
+    {
+      question: "Aylık hizmet zorunluluğu var mı?",
+      answer: "Hayır, ilk iki paketimiz \"anahtar teslim\" şeklindedir; siteyi kurar, teslim ederiz ve aylık bir meblağ ödemezsiniz. Ancak 360° Çözüm Ortaklığı (Paket 3) devamlı bir büyüme modeli olduğu için kurulumdan sonra da aylık bir çalışma gerektiriyor."
+    },
+    {
+      question: "Kurulum ortalama ne kadar sürüyor?",
+      answer: "Standart bir mağazayı 10 ila 15 iş günü içinde baştan aşağı satışa hazır hale getiriyoruz. Tabii projeye çok özel entegrasyonlar veya tasarım detayları eklenecekse bu süre biraz esneyebiliyor."
+    },
+    {
+      question: "İş bitiminde site tamamen bana mı ait oluyor?",
+      answer: "Evet. Tüm domain, Shopify hesabı ve satın alınan uygulama lisansları direkt sizin adınıza kaydediliyor. Anahtarı teslim ettiğimizde tam kontrol ve mülkiyet sizde oluyor."
+    },
+    {
+      question: "Sistemin Türkçe desteği var mı?",
+      answer: "Hem sizin kullanacağınız yönetim paneli Türkçe, hem de müşterilerin göreceği arayüz, iade adımları, kargo mesajları tamamen Türkçeleştirilmiş şekilde teslim ediliyor."
+    },
+    {
+      question: "E-ihracat veya yurtdışına satış yapabilir miyim?",
+      answer: "Shopify zaten bunun için üretilmiş bir platform. Farklı dillere, ülkelere ve para birimlerine göre fiyatlandırma yapıp yurtdışı pazarlarına kolayca açılabiliyorsunuz."
+    }
+  ];
 
   return (
     <div className={`font-sans ${colors.beige} ${colors.textDark} min-h-screen selection:bg-[#caf265] selection:text-[#0b2117]`}>
@@ -437,7 +481,69 @@ const EticaretYeni = () => {
         </section>
 
 
-        {/* 7. BOTTOM CTA - İletişim Vurgusu */}
+        {/* 7. SIKÇA SORULAN SORULAR (Superside Accordion Style) */}
+        <section className={`${colors.darkGreen} py-32 px-6 md:px-16 lg:px-24 border-t border-[#1e3b2b]`}>
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+
+              {/* Sol Taraf: Büyük Başlık */}
+              <div className="lg:col-span-5 relative">
+                <div className="sticky top-32">
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif italic text-[#F4EFE6] leading-tight mb-6">
+                    Sıkça sorulan <br />
+                    <span className="font-sans not-italic font-medium text-white">sorular</span>
+                  </h2>
+                  <p className="text-[#a8b8af] text-lg font-light leading-relaxed mb-8 max-w-sm">
+                    Süreç, teknik altyapı ve çalışma prensiplerimiz hakkında en çok merak edilenler.
+                  </p>
+                </div>
+              </div>
+
+              {/* Sağ Taraf: Accordion Listesi */}
+              <div className="lg:col-span-7">
+                <div className="border-t border-[#1e3b2b]">
+                  {faqs.map((faq, index) => {
+                    const isOpen = openFaqIndex === index;
+                    return (
+                      <div key={index} className="border-b border-[#1e3b2b]">
+                        <button
+                          onClick={() => toggleFaq(index)}
+                          className="w-full py-8 flex items-start justify-between text-left group gap-8"
+                        >
+                          <h3 className={`text-xl md:text-2xl font-medium transition-colors duration-300 ${isOpen ? 'text-[#caf265]' : 'text-[#F4EFE6] group-hover:text-white'}`}>
+                            {faq.question}
+                          </h3>
+                          <div className={`mt-1 shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 ${isOpen ? 'bg-[#caf265] text-[#0b2117]' : 'text-[#a8b8af] group-hover:text-white'}`}>
+                            {isOpen ? <Minus size={18} /> : <Plus size={18} />}
+                          </div>
+                        </button>
+
+                        <motion.div
+                          initial={false}
+                          animate={{
+                            height: isOpen ? "auto" : 0,
+                            opacity: isOpen ? 1 : 0,
+                            marginBottom: isOpen ? 32 : 0
+                          }}
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                          className="overflow-hidden"
+                        >
+                          <p className="text-[#a8b8af] text-lg leading-relaxed font-light pr-12">
+                            {faq.answer}
+                          </p>
+                        </motion.div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+
+        {/* 8. BOTTOM CTA - İletişim Vurgusu */}
         <section className={`${colors.beige} py-32 px-6 md:px-16 lg:px-24 mb-1`}>
           <div className="max-w-7xl mx-auto bg-[#0b2117] rounded-[3rem] p-10 md:p-24 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12">
             {/* Soft Glow Effect */}

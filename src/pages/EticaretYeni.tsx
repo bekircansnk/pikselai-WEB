@@ -67,14 +67,19 @@ const EticaretYeni = () => {
               </div>
 
               <h1 className={`text-4xl md:text-6xl lg:text-7xl font-serif italic ${colors.textLight} leading-[1.05] tracking-tight mb-8`}>
-                Markanızı her dilde <br />
-                dünyaya açan e-ticaret <br />
-                vizyonu
+                Shopify E-Ticaret <br />
+                Danışmanlığı
               </h1>
 
-              <p className="text-lg md:text-xl text-[#a8b8af] mb-10 leading-relaxed font-light italic">
-                "Bekir Can Sağnak ve PikselAI ile e-ticaret mağazanızı global standartlarda kuruyor, profesyonel içeriklerle satışa hazırlıyoruz. Teknik yükü bize bırakın, siz sadece büyümeye odaklanın."
-              </p>
+              <div className="mb-10 space-y-4">
+                <h3 className="text-xl md:text-2xl text-white font-medium leading-tight">
+                  Anahtar Teslim Mağaza Kurulumu + <br />
+                  Yapay Zeka Destekli Büyüme
+                </h3>
+                <p className="text-lg text-[#a8b8af] leading-relaxed font-light">
+                  Sıfırdan satışa hazır, modern ve ölçeklenebilir bir Shopify mağazası kuruyoruz. Kurulumdan yayına, içerikten görsele, hatta reklam yönetimine kadar her adımda bizzat yanınızdayız. Teknik yükü bize bırakın, siz sadece markanızı büyütmeye odaklanın.
+                </p>
+              </div>
 
               <button className={`${colors.limeBtn} ${colors.textDark} hover:bg-[#b5dc57] transition-colors duration-300 rounded-full px-8 py-4 text-base font-bold flex items-center gap-2 w-fit group shadow-lg shadow-black/20`}>
                 Projenizi Başlatalım
@@ -114,14 +119,14 @@ const EticaretYeni = () => {
               >
                 <motion.div variants={fadeInUp} className="mb-12">
                   <div className="border-t border-[#0b2117]/20 pt-4 mb-8">
-                    <span className="text-xs tracking-widest uppercase text-[#0b2117]/60 font-medium">SHOPIFY ALTYAPISI İÇİN ÇÖZÜMLER</span>
+                    <span className="text-xs tracking-widest uppercase text-[#0b2117]/60 font-medium">MAĞAZA ALTYAPISI</span>
                   </div>
                   <h2 className="text-4xl md:text-5xl lg:text-5xl font-serif italic text-[#0b2117] leading-tight mb-6">
-                    Güçlü bir altyapı, <br />
-                    <span className="font-sans not-italic font-medium">kesintisiz bir operasyon.</span>
+                    Sadece bir site değil, <br />
+                    <span className="font-sans not-italic font-medium text-black">satış odaklı bir sistem.</span>
                   </h2>
                   <p className="text-[#3a5245] md:text-lg leading-relaxed max-w-lg">
-                    PikselAI olarak Shopify'ı sadece bir araç değil, işletmenizin büyüme motoru olarak kurguluyoruz. Aynı zamanda veri güvenliği ve performanstan ödün vermeden nasıl ilerleyeceğinizi bulmanız gerekiyor. İşte tam da bu noktada devreye giriyoruz.
+                    Shopify'ı sadece bir araç olarak değil, işletmenizin büyüme motoru olarak kurguluyoruz. Veri güvenliği, hız ve kullanıcı deneyimini birleştirerek markanızı geleceğe hazırlıyoruz. Karışık teknik süreçlerde kaybolmanıza gerek yok; biz tüm altyapı yükünü üstleniyoruz.
                   </p>
                 </motion.div>
 

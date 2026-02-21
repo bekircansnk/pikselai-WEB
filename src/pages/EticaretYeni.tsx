@@ -97,59 +97,60 @@ const EticaretYeni = () => {
 
       <main>
 
-        {/* 1. HERO SECTION - Shopify Partner Vurgulu */}
-        <section className={`relative flex flex-col-reverse lg:grid lg:grid-cols-2 lg:min-h-[85vh] ${colors.darkGreen} pt-20 lg:pt-0`}>
-          <div className="flex flex-col justify-center px-6 md:px-16 lg:px-24 py-16 lg:py-24 z-10 lg:border-r border-[#1e3b2b]/50 w-full">
+        {/* 1. HERO SECTION - Shopify Partner Vurgulu (Full Banner layout) */}
+        <section className={`relative flex flex-col justify-center min-h-[85vh] ${colors.darkGreen} pt-20 lg:pt-0 overflow-hidden`}>
+          {/* Tam Ekran Arka Plan Görseli */}
+          <motion.div
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="absolute inset-0 z-0"
+          >
+            <img
+              src="/images/shopify-hero-banner-v2.webp"
+              alt="Profesyonel Shopify Mağazası Banner"
+              className="w-full h-full object-cover object-center"
+            />
+            {/* Görünürlüğü artırmak için koyu degrade katmanları */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0b2117]/90 via-[#0b2117]/60 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0b2117]/10 to-[#0b2117]/90" />
+            <div className="absolute inset-0 shadow-[inset_0_0_100px_rgba(11,33,23,0.8)] pointer-events-none" />
+          </motion.div>
+
+          {/* İçerik */}
+          <div className="relative z-10 flex flex-col justify-center px-6 md:px-16 lg:px-24 py-16 lg:py-24 w-full h-full">
             <motion.div
               initial="hidden"
               animate="visible"
               variants={fadeInUp}
-              className="max-w-[36rem] mt-4 lg:mt-8"
+              className="max-w-[38rem] mt-4 lg:mt-8"
             >
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#caf265]/30 bg-[#caf265]/10 text-[#caf265] text-[10px] font-bold tracking-widest uppercase mb-5 shadow-[0_0_15px_rgba(202,242,101,0.05)]">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#caf265]/30 bg-[#caf265]/10 text-[#caf265] text-[10px] font-bold tracking-widest uppercase mb-5 shadow-[0_0_15px_rgba(202,242,101,0.05)] backdrop-blur-sm">
                 <ShieldCheck size={14} className="opacity-80 shrink-0" />
                 SHOPIFY TÜRKİYE RESMİ PARTNERİ
               </div>
 
-              <h1 className={`text-5xl md:text-6xl lg:text-[4rem] font-serif italic ${colors.textLight} leading-[1.05] tracking-tight mb-5`}>
+              <h1 className={`text-5xl md:text-6xl lg:text-[4.5rem] font-serif italic ${colors.textLight} leading-[1.1] tracking-tight mb-6 drop-shadow-xl`}>
                 Shopify <span className="whitespace-nowrap">E-Ticaret</span> <br />
                 Danışmanlığı
               </h1>
 
-              <div className="mb-8 space-y-3">
-                <h3 className="text-lg md:text-xl text-white font-medium leading-tight">
+              <div className="mb-10 space-y-4">
+                <h3 className="text-xl md:text-2xl text-white font-medium leading-tight drop-shadow-md">
                   Anahtar Teslim Mağaza Kurulumu + <br className="hidden sm:block" />
                   Yapay Zeka Destekli Büyüme
                 </h3>
-                <p className="text-sm md:text-base text-[#a8b8af] leading-relaxed font-light max-w-lg">
+                <p className="text-base md:text-lg text-[#F4EFE6]/90 leading-relaxed font-light max-w-lg drop-shadow-md">
                   Sıfırdan satışa hazır, modern ve ölçeklenebilir bir Shopify mağazası kuruyoruz. Kurulumdan yayına, içerikten görsele her adımda bizzat yanınızdayız. Teknik yükü bize bırakın.
                 </p>
               </div>
 
-              <button className={`${colors.limeBtn} ${colors.textDark} hover:bg-[#b5dc57] transition-all duration-300 rounded-full px-6 py-3 text-[14px] font-semibold flex items-center gap-2 w-fit group shadow-[0_4px_20px_rgba(202,242,101,0.15)]`}>
+              <button className={`${colors.limeBtn} ${colors.textDark} hover:bg-[#b5dc57] transition-all duration-300 rounded-full px-8 py-4 text-[15px] font-semibold flex items-center gap-3 w-fit group shadow-[0_8px_30px_rgba(202,242,101,0.25)]`}>
                 Projenizi Başlatalım
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={18} className="group-hover:translate-x-1.5 transition-transform" />
               </button>
             </motion.div>
           </div>
-
-          {/* Sağ Görsel - E-ticaret Odaklı */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-            className="relative h-[40vh] lg:h-auto overflow-hidden w-full lg:block"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80"
-
-              alt="Profesyonel Shopify Mağazası"
-              className="absolute inset-0 w-full h-full object-cover object-center"
-            />
-            {/* Smooth Vignette and Gradient Blend to content side */}
-            <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#0b2117] via-[#0b2117]/60 to-[#0b2117]/10 lg:via-[#0b2117]/40" />
-            <div className="absolute inset-0 shadow-[inset_0_0_100px_rgba(11,33,23,0.8)] pointer-events-none" />
-          </motion.div>
         </section>
 
 
@@ -233,11 +234,11 @@ const EticaretYeni = () => {
                 whileInView={{ scale: 1 }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
                 viewport={{ once: true }}
-                src="/superside-astronaut.png"
-                alt="AI ve E-ticaret Operasyonu"
-                className="absolute inset-0 w-full h-full object-cover object-center opacity-90"
+                src="/images/shopify-infrastructure.webp"
+                alt="E-ticaret Operasyonu"
+                className="absolute inset-0 w-full h-full object-cover object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0b2117]/60 via-transparent to-[#0b2117]/20"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0b2117]/20 via-transparent to-transparent pointer-events-none"></div>
             </div>
           </div>
         </section>
@@ -263,8 +264,8 @@ const EticaretYeni = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Card 1 - Kurulum */}
-              <motion.div variants={fadeInUp} className="group relative aspect-[4/5] overflow-hidden rounded-3xl bg-[#0b2117] cursor-pointer shadow-xl">
-                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80" alt="Sıfırdan Mağaza Kurulumu" className="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
+              <motion.div variants={fadeInUp} className="group relative aspect-[9/16] overflow-hidden rounded-3xl bg-[#0b2117] cursor-pointer shadow-xl">
+                <img src="/images/shopify-setup.webp" alt="Sıfırdan Mağaza Kurulumu" className="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
                 <div className="absolute top-8 left-8">
                   <Layers className="text-[#caf265]" size={32} />
@@ -278,8 +279,8 @@ const EticaretYeni = () => {
               </motion.div>
 
               {/* Card 2 - Migration */}
-              <motion.div variants={fadeInUp} className="group relative aspect-[4/5] overflow-hidden rounded-3xl bg-[#0b2117] cursor-pointer shadow-xl">
-                <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80" alt="Platform Taşıma" className="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
+              <motion.div variants={fadeInUp} className="group relative aspect-[9/16] overflow-hidden rounded-3xl bg-[#0b2117] cursor-pointer shadow-xl">
+                <video src="/images/shopify-migration.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
                 <div className="absolute top-8 left-8">
                   <TrendingUp className="text-[#caf265]" size={32} />
@@ -293,8 +294,8 @@ const EticaretYeni = () => {
               </motion.div>
 
               {/* Card 3 - Entegrasyonlar */}
-              <motion.div variants={fadeInUp} className="group relative aspect-[4/5] overflow-hidden rounded-3xl bg-[#0b2117] cursor-pointer shadow-xl">
-                <img src="https://images.unsplash.com/photo-1551288049-bbbda5366392?auto=format&fit=crop&q=80" alt="Entegrasyonlar" className="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
+              <motion.div variants={fadeInUp} className="group relative aspect-[9/16] overflow-hidden rounded-3xl bg-[#0b2117] cursor-pointer shadow-xl">
+                <img src="/images/shopify-integrations.webp" alt="Entegrasyonlar" className="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
                 <div className="absolute top-8 left-8">
                   <Zap className="text-[#caf265]" size={32} />
@@ -347,41 +348,6 @@ const EticaretYeni = () => {
           </div>
         </section>
 
-
-        {/* AI VISION BANNER - Cinematic Intermission */}
-        <section className="relative h-[50vh] md:h-[80vh] overflow-hidden flex items-center justify-center bg-[#0b2117]">
-          <motion.div
-            initial={{ scale: 1.1, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1.5 }}
-            className="absolute inset-0 w-full h-full"
-          >
-            <img
-              src="/images/ai-ecommerce-banner.webp"
-              alt="AI E-Ticaret Vizyonu"
-              className="w-full h-full object-cover object-center"
-            />
-            {/* Smooth blend gradients for top and bottom */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0b2117] via-transparent to-[#F4EFE6]" />
-            <div className="absolute inset-0 bg-black/20" />
-          </motion.div>
-
-          <div className="relative z-10 text-center px-6 max-w-5xl">
-            <motion.div
-              initial={{ y: 30, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.5, duration: 1 }}
-            >
-              <h2 className="text-4xl md:text-7xl lg:text-[5.5rem] font-serif italic text-white mb-6 drop-shadow-[0_4px_15px_rgba(0,0,0,0.6)] leading-tight">
-                Yapay Zeka ile <br />
-                <span className="font-sans not-italic font-medium text-[#caf265]">Sınırları Ortadan Kaldırın</span>
-              </h2>
-              <p className="text-white/90 text-lg md:text-2xl font-light italic max-w-3xl mx-auto drop-shadow-md">
-                "Hayal ettiğiniz her detayı gerçeğe, her ürünü bir hikayeye dönüştürüyoruz."
-              </p>
-            </motion.div>
-          </div>
-        </section>
 
 
         {/* 5. SÜREÇ - Adım Adım Mağaza Kurulumu */}

@@ -349,7 +349,7 @@ const EticaretYeni = () => {
 
 
         {/* AI VISION BANNER - Cinematic Intermission */}
-        <section className="relative h-[50vh] md:h-[70vh] overflow-hidden flex items-center justify-center bg-[#0b2117]">
+        <section className="relative h-[50vh] md:h-[80vh] overflow-hidden flex items-center justify-center bg-[#0b2117]">
           <motion.div
             initial={{ scale: 1.1, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
@@ -357,26 +357,26 @@ const EticaretYeni = () => {
             className="absolute inset-0 w-full h-full"
           >
             <img
-              src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80" // User's AI Desert Image Placeholder
+              src="/images/ai-ecommerce-banner.webp"
               alt="AI E-Ticaret Vizyonu"
               className="w-full h-full object-cover object-center"
             />
-            {/* Smooth blend gradients */}
+            {/* Smooth blend gradients for top and bottom */}
             <div className="absolute inset-0 bg-gradient-to-b from-[#0b2117] via-transparent to-[#F4EFE6]" />
-            <div className="absolute inset-0 bg-black/30" />
+            <div className="absolute inset-0 bg-black/20" />
           </motion.div>
 
-          <div className="relative z-10 text-center px-6 max-w-4xl">
+          <div className="relative z-10 text-center px-6 max-w-5xl">
             <motion.div
               initial={{ y: 30, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
+              transition={{ delay: 0.5, duration: 1 }}
             >
-              <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif italic text-white mb-6 drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]">
+              <h2 className="text-4xl md:text-7xl lg:text-[5.5rem] font-serif italic text-white mb-6 drop-shadow-[0_4px_15px_rgba(0,0,0,0.6)] leading-tight">
                 Yapay Zeka ile <br />
                 <span className="font-sans not-italic font-medium text-[#caf265]">Sınırları Ortadan Kaldırın</span>
               </h2>
-              <p className="text-white/80 text-lg md:text-xl font-light italic max-w-2xl mx-auto">
+              <p className="text-white/90 text-lg md:text-2xl font-light italic max-w-3xl mx-auto drop-shadow-md">
                 "Hayal ettiğiniz her detayı gerçeğe, her ürünü bir hikayeye dönüştürüyoruz."
               </p>
             </motion.div>

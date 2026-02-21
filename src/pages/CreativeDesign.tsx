@@ -52,7 +52,7 @@ export default function CreativeDesign() {
                             className="relative rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 bg-bor-primary-900 flex items-center justify-center p-2 lg:p-4"
                         >
                             <img
-                                src="/katalog-hero.webp"
+                                src="/images/katalog-hero.webp"
                                 alt="PikselAI Katalog Uygulaması"
                                 className="w-full h-auto rounded-[1.5rem] object-contain"
                             />
@@ -225,7 +225,7 @@ export default function CreativeDesign() {
                                 className="relative rounded-[2rem] overflow-hidden bg-bor-primary-100 dark:bg-bor-primary-800 shadow-2xl border border-white/20 p-2 lg:p-4 flex items-center justify-center"
                             >
                                 <img
-                                    src="/arama-ekrani.webp"
+                                    src="/images/arama-ekrani.webp"
                                     alt="Katalog Arama Ekranı"
                                     className="w-full h-auto rounded-[1.5rem] object-contain"
                                 />

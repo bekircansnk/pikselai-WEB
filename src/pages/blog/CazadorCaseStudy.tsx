@@ -67,7 +67,7 @@ const CazadorCaseStudy = () => {
                             binlerce ürünü içeren profesyonel katalog <strong>rekor sürede yayına alındı</strong>.
                         </p>
                         <BlogImage
-                            src="/katalog-cazador.webp"
+                            src="/images/katalog-cazador.webp"
                             alt="Cazador Dijital Katalog Arayüzü"
                             href="https://katalog.cazador.com.tr/"
                             caption="Cazador Dijital Katalog Arayüzü"
@@ -84,7 +84,7 @@ const CazadorCaseStudy = () => {
                             kendisinin kurguladığı <strong>"Otomatik Senaryo"</strong> moduyla üretim yapabiliyor.
                         </p>
                         <BlogImage
-                            src="/AI-cazador.webp"
+                            src="/images/AI-cazador.webp"
                             alt="Cazador AI Fotoğraf Üretimi Örnekleri"
                             href="https://www.instagram.com/cazadorglobal/"
                             caption="Cazador AI Fotoğraf Üretimi Örnekleri"
@@ -100,7 +100,7 @@ const CazadorCaseStudy = () => {
                             AI fotoğraf üretimi, içerik planlama ve sosyal medya paylaşımları.
                         </p>
                         <BlogImage
-                            src="/instagram-cazador.webp"
+                            src="/images/instagram-cazador.webp"
                             alt="Cazador Instagram Akışı"
                             href="https://www.instagram.com/cazadorglobal/"
                             caption="@cazadorglobal Instagram Akışı"

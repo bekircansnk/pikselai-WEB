@@ -1,12 +1,14 @@
 import { motion } from 'framer-motion';
+import { Layers, Search, Share2, Zap, Timer, Smartphone } from 'lucide-react';
 import { MainLayout } from '../layouts/MainLayout';
+import { Footer } from '../components/layout/Footer';
 import { Section } from '../components/ui/Section';
 import { Button } from '../components/ui/Button';
 
 export default function CreativeDesign() {
 
     return (
-        <MainLayout transparentHeader={true} headerLightText={true}>
+        <MainLayout transparentHeader={true} headerLightText={true} showFooter={false}>
             {/* ═══════════════════════════════════════════
        1. HERO SECTION — Koyu Arka Plan & Animasyonlu Başlık
        ═══════════════════════════════════════════ */}
@@ -22,12 +24,12 @@ export default function CreativeDesign() {
                             transition={{ duration: 0.6 }}
                             className="max-w-2xl"
                         >
-                            <h1 className="text-5xl lg:text-7xl font-bold font-display mb-6 leading-[1.1] tracking-tight text-white drop-shadow-2xl">
-                                Kusursuz Dijital <br />
-                                <span className="italic font-light text-[#E2FF65]">Katalog Deneyimi</span>
+                            <h1 className="text-4xl lg:text-5xl font-bold font-display mb-4 leading-tight tracking-tight text-white drop-shadow-2xl">
+                                Tek Merkez: <br />
+                                <span className="italic font-light text-[#E2FF65]">Hem Ekibinize Arşiv, Hem Müşterinize Katalog</span>
                             </h1>
-                            <p className="text-xl lg:text-2xl text-white/80 mb-8 font-light leading-relaxed">
-                                Geleneksel ve karmaşık ürün sergileme yöntemlerini geride bırakın. Binlerce görsel ve ürün arasında kaybolmadan, koleksiyonlarınızı müşterilerinize kusursuz bir akıcılıkla sunun.
+                            <p className="text-lg lg:text-xl text-white/80 mb-8 font-light leading-relaxed">
+                                Binlerce ürün görseli arasında neyin nerede olduğunu aramakla vakit kaybetmeyin. Bu sistem sadece müşterinize şık bir sunum yapmanız için değil; kendi ekibinizin de ne arıyorsa saniyeler içinde ulaşıp yönetebilmesi için tasarlandı. Siz içeride dev bir arama motoru hızıyla dilediğinizi bulurken, müşteriniz vitrinde sadece netliği ve sadeliği görsün.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 items-center">
                                 <a href="https://katalog-pikselai.netlify.app/" target="_blank" rel="noreferrer" className="w-full sm:w-auto">
@@ -49,12 +51,12 @@ export default function CreativeDesign() {
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            className="relative rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 bg-bor-primary-900 flex items-center justify-center p-2 lg:p-4"
+                            className="relative rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 bg-bor-primary-900 flex items-center justify-center p-2 lg:p-4 group cursor-pointer"
                         >
                             <img
                                 src="/images/katalog-hero.webp"
                                 alt="PikselAI Katalog Uygulaması"
-                                className="w-full h-auto rounded-[1.5rem] object-contain"
+                                className="w-full h-auto rounded-[1.5rem] object-contain transition-transform duration-700 group-hover:scale-105"
                             />
                         </motion.div>
                     </div>
@@ -86,9 +88,13 @@ export default function CreativeDesign() {
                             viewport={{ once: true }}
                             transition={{ delay: 0 }}
                         >
-                            <div className="w-16 h-16 mx-auto bg-bor-secondary/10 text-bor-secondary rounded-2xl flex items-center justify-center text-3xl mb-6">✨</div>
-                            <h3 className="font-bold text-xl mb-3">Minimalist ve Sezgisel</h3>
-                            <p className="text-bor-primary-500">Hiçbir eğitime veya kullanım kılavuzuna ihtiyaç duymadan herkesin kullanabileceği, karmaşadan uzak tasarım.</p>
+                            <div className="w-16 h-16 mx-auto bg-bor-primary-100 dark:bg-bor-primary-800 text-bor-primary-900 dark:text-bor-primary-100 rounded-[1.25rem] flex items-center justify-center mb-6 shadow-sm border border-bor-primary-200/50 dark:border-white/10">
+                                <Layers className="w-7 h-7" strokeWidth={1.5} />
+                            </div>
+                            <h3 className="font-bold text-xl mb-3 text-bor-primary-900 dark:text-white">Minimalist ve Sezgisel</h3>
+                            <p className="text-bor-primary-600 dark:text-bor-primary-400 leading-relaxed font-light">
+                                Karmaşık menülerden kurtulun. Hiçbir eğitime veya kılavuza ihtiyaç duymadan, ekibinizin ve müşterilerinizin ilk saniyeden itibaren rahatça kullanabileceği bir tasarım.
+                            </p>
                         </motion.div>
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -96,9 +102,13 @@ export default function CreativeDesign() {
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
                         >
-                            <div className="w-16 h-16 mx-auto bg-bor-secondary/10 text-bor-secondary rounded-2xl flex items-center justify-center text-3xl mb-6">👉</div>
-                            <h3 className="font-bold text-xl mb-3">Dokunsal Geri Bildirim</h3>
-                            <p className="text-bor-primary-500">Mobil cihazlarda menüler arası geçişlerde hissettiğiniz hafif titreşimlerle donatılmış premium etkileşim.</p>
+                            <div className="w-16 h-16 mx-auto bg-bor-primary-100 dark:bg-bor-primary-800 text-bor-primary-900 dark:text-bor-primary-100 rounded-[1.25rem] flex items-center justify-center mb-6 shadow-sm border border-bor-primary-200/50 dark:border-white/10">
+                                <Search className="w-7 h-7" strokeWidth={1.5} />
+                            </div>
+                            <h3 className="font-bold text-xl mb-3 text-bor-primary-900 dark:text-white">Hızlı ve Akıllı Arama</h3>
+                            <p className="text-bor-primary-600 dark:text-bor-primary-400 leading-relaxed font-light">
+                                Yüzlerce klasör arasında kaybolmayın. Hem siz hem de müşterileriniz, bakmak istedikleri modele, renge veya spesifik bir ürüne anında, saniyeler içinde ulaşabilir.
+                            </p>
                         </motion.div>
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -106,9 +116,13 @@ export default function CreativeDesign() {
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
                         >
-                            <div className="w-16 h-16 mx-auto bg-bor-secondary/10 text-bor-secondary rounded-2xl flex items-center justify-center text-3xl mb-6">📦</div>
-                            <h3 className="font-bold text-xl mb-3">Kolay İndirme ve Paylaşım</h3>
-                            <p className="text-bor-primary-500">Görselleri tek tıkla indirebilir veya bir bağlantı aracılığıyla takım arkadaşlarınızla pürüzsüzce paylaşabilirsiniz.</p>
+                            <div className="w-16 h-16 mx-auto bg-bor-primary-100 dark:bg-bor-primary-800 text-bor-primary-900 dark:text-bor-primary-100 rounded-[1.25rem] flex items-center justify-center mb-6 shadow-sm border border-bor-primary-200/50 dark:border-white/10">
+                                <Share2 className="w-7 h-7" strokeWidth={1.5} />
+                            </div>
+                            <h3 className="font-bold text-xl mb-3 text-bor-primary-900 dark:text-white">Kolay İndirme ve Paylaşım</h3>
+                            <p className="text-bor-primary-600 dark:text-bor-primary-400 leading-relaxed font-light">
+                                Beğendiğiniz görselleri doğrudan cihazınıza hızlıca indirebilir veya tek bir paylaşma butonu ile ekip arkadaşlarınızla ve müşterilerinizle anında paylaşabilirsiniz.
+                            </p>
                         </motion.div>
                     </div>
                 </div>
@@ -130,40 +144,40 @@ export default function CreativeDesign() {
                             İhtiyacınız Olan Her Şey <br /> <span className="italic font-light text-[#E2FF65]">Tek Bir Platformda</span>
                         </h2>
                         <p className="text-lg text-white/80 font-light mt-4 max-w-2xl mx-auto">
-                            Sadece ürünlerinizi sergilemekle kalmaz; operasyonel süreçlerinizi hızlandırmak ve senkronizasyon sağlamak için modüller sunar.
+                            Sadece müşterilerinize şık bir vitrin sunmuyoruz. Sahne arkasında, binlerce görsel arasında kaybolmadan kendi işinizi hızla yürütebileceğiniz sağlam bir altyapı inşa ettik.
                         </p>
                     </motion.div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-min gap-4 lg:gap-6">
                         <BentoCard
                             title="Gelişmiş Albüm Yönetimi"
-                            desc="Hiyerarşik akıllı klasörleme ile sezonlara veya kategorilere göre ürün gruplandırma ve anında sunum."
+                            desc="Ürünlerinizi sezon, kampanya veya kategorilere göre dilediğiniz gibi klasörleyip aynı dakika içinde sunuma hazır hale getirin."
                             img="/katalog-assets/klasorleme.webp"
                             className="md:col-span-2 lg:col-span-2 min-h-[350px]"
                         />
                         <BentoCard
                             title="Etkileşimli Galeri"
-                            desc="Cihaz bağımsız çalışan, pürüzsüz lightbox geçişlerine sahip modern görsel sergileme alanı."
+                            desc="Kolay kullanım için filtreleme seçenekleri ve farklı görünüm seçenekleri sunmaktadır."
                             img="/katalog-assets/filtre.webp"
                             className="lg:col-span-1 min-h-[350px]"
                         />
 
                         <BentoCard
-                            title="Akıllı Çoklu İndirme"
-                            desc="Seçtiğiniz yüzlerce medyayı otomatik ZIP arşivine çevirip optimize edilmiş boyutlarla cihazınıza aktarın."
+                            title="Toplu İndirme Kolaylığı"
+                            desc="Beğendiğiniz tüm görselleri seçin ve tek tıkla bilgisayarınıza indirin. Arşiv formatında düzenli bir şekilde anında cihazınızda."
                             img="/katalog-assets/indir.webp"
                             className="lg:col-span-1 min-h-[350px] lg:min-h-[440px]"
                         />
                         <BentoCard
-                            title="Medya Oynatıcı"
-                            desc="İndirme gerektirmeden en ağır videoları anında oynatan, harici programa ihtiyaç bırakmayan entegre sistem."
+                            title="Dahili Medya Oynatıcı"
+                            desc="Videoları izlemek için cihazınıza indirmenize gerek yok. Tüm kampanya veya ürün videolarını doğrudan galeri üzerinden akıcı biçimde oynatın."
                             video="/katalog-assets/video-player-opt.mp4"
                             className="lg:col-span-1 min-h-[350px] lg:min-h-[440px]"
                             textDark={true}
                         />
                         <BentoCard
-                            title="Yönetici ve Erişim Kontrolü"
-                            desc="Yeni sezon ürünleri gibi gizli kalması gereken koleksiyonlar için şifreli özel paneller."
+                            title="Özel Erişim Kontrolü"
+                            desc="Henüz herkese açık olmayan yeni sezon ürünleriniz veya özel müşterileriniz için şifrelenmiş, güvenli paylaşım alanları."
                             img="/katalog-assets/sifre.webp"
                             className="lg:col-span-1 min-h-[350px] lg:min-h-[440px]"
                             textDark={true}
@@ -184,32 +198,33 @@ export default function CreativeDesign() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            <h2 className="text-4xl lg:text-5xl font-bold font-display mb-6">
-                                Odak Noktası: <span className="italic font-light text-bor-secondary">Işık Hızında Akıllı Arama</span>
+                            <h2 className="text-4xl lg:text-5xl font-bold font-display mb-6 text-bor-primary-900 dark:text-white">
+                                Odak Noktası: <br className="hidden lg:block" />
+                                <span className="italic font-light text-[#86AA00] dark:text-[#E2FF65]">Işık Hızında Akıllı Arama</span>
                             </h2>
-                            <p className="text-lg text-bor-primary-600 mb-8 max-w-xl">
-                                Sadece bulmayı değil, hissedilebilir bir hızla anında ulaşmayı vadediyoruz. Siz yazarken, binlerce görsel ve veri anlık olarak filtrelenir ve ekranınız akıcılıkla güncellenir.
+                            <p className="text-lg text-bor-primary-600 dark:text-bor-primary-400 mb-8 max-w-xl font-light">
+                                Müşterinize o an tam da sormuş olduğu ürünü göstermeniz gerekiyor. İşte bu noktada hız her şeydir. Siz arama çubuğuna yazarken sonuçların nasıl anında döküldüğünü gördüğünüzde klavyeye dokunmaktan keyif alacaksınız.
                             </p>
                             <div className="space-y-8 mt-10">
                                 <FeatureItem
-                                    title="Tam Hakimiyet ve Güven"
-                                    desc="Arka planda çalışan lokal veritabanı senkronizasyonu sayesinde, sanki tüm ürünler cihazınızın içindeymiş gibi muazzam bir tepki hızı elde edersiniz."
-                                    icon="⚡"
+                                    title="Kesintisiz Akış"
+                                    desc="Veritabanı cihazınıza senkronize olarak arka planda çalışır. Böylece bir şeyler aradığınızda 'yükleniyor' çemberini izlemek yerine direkt sonuca ulaşırsınız."
+                                    icon={<Zap className="w-6 h-6" strokeWidth={1.5} />}
                                 />
                                 <FeatureItem
-                                    title="Zamanla Yarışılan Anlar"
-                                    desc="Müşterinize aradığını hemen gösterin. Arama çubuğuna sadece birkaç harf yazarak sonuçları anında ekrana getirin. Klasörler içinde kaybolmayın."
-                                    icon="⏱️"
+                                    title="Zamanınızı Geri Kazanın"
+                                    desc="İç içe geçmiş onlarca klasör veya drive linkleri arasında doğru görseli arama devri bitti. Sadece birkaç harf yazın ve aradığınızı anında ekranınıza getirin."
+                                    icon={<Timer className="w-6 h-6" strokeWidth={1.5} />}
                                 />
                                 <FeatureItem
-                                    title="PWA ile Hızlı Kurulum"
-                                    desc="İnternet bağlantısının zayıf olduğu durumlarda bile uygulamanın önbelleği sayesinde kesintisiz çalışmayı sürdürebilirsiniz."
-                                    icon="📱"
+                                    title="Her Yerde Sizinle"
+                                    desc="İnternet çekmeyen depo veya fuar alanlarına mı gidiyorsunuz? Sunacağınız koleksiyonları cihazınıza indirerek bağlantı olmadan da çalışmaya kesintisiz devam edebilirsiniz."
+                                    icon={<Smartphone className="w-6 h-6" strokeWidth={1.5} />}
                                 />
                             </div>
                             <div className="mt-12">
                                 <a href="https://katalog-pikselai.netlify.app/" target="_blank" rel="noreferrer">
-                                    <Button size="lg" className="shadow-lg shadow-bor-secondary/20 rounded-full px-8">
+                                    <Button size="lg" className="bg-[#0A2624] text-white hover:bg-[#0A2624]/90 border-none shadow-lg px-8 rounded-full font-medium">
                                         Canlı Demoyu İncele
                                     </Button>
                                 </a>
@@ -222,12 +237,12 @@ export default function CreativeDesign() {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6 }}
-                                className="relative rounded-[2rem] overflow-hidden bg-bor-primary-100 dark:bg-bor-primary-800 shadow-2xl border border-white/20 p-2 lg:p-4 flex items-center justify-center"
+                                className="relative rounded-[2rem] overflow-hidden bg-bor-primary-100 dark:bg-bor-primary-800 shadow-2xl border border-white/20 p-2 lg:p-4 flex items-center justify-center group cursor-pointer"
                             >
                                 <img
                                     src="/images/arama-ekrani.webp"
                                     alt="Katalog Arama Ekranı"
-                                    className="w-full h-auto rounded-[1.5rem] object-contain"
+                                    className="w-full h-auto rounded-[1.5rem] object-contain transition-transform duration-700 group-hover:scale-105"
                                 />
                             </motion.div>
 
@@ -240,20 +255,20 @@ export default function CreativeDesign() {
                                 className="absolute -bottom-8 -left-8 bg-white dark:bg-bor-primary-900 p-6 rounded-2xl shadow-xl w-72 border border-bor-primary-100 dark:border-bor-primary-800"
                             >
                                 <div className="flex items-center gap-4 mb-4">
-                                    <div className="w-12 h-12 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                                    <div className="w-12 h-12 rounded-full bg-[#0A2624] text-[#E2FF65] flex items-center justify-center shrink-0 shadow-sm">
+                                        <Search strokeWidth={2} className="w-5 h-5" />
                                     </div>
                                     <div>
-                                        <div className="font-bold text-bor-primary-900 dark:text-white">Anında Sonuç</div>
-                                        <div className="text-xs text-bor-primary-500">Oms gecikme (0 ms)</div>
+                                        <div className="font-bold text-bor-primary-900 dark:text-white">Ekranınızda</div>
+                                        <div className="text-xs text-bor-primary-500 font-medium">Bekleme yok, yükleme yok</div>
                                     </div>
                                 </div>
-                                <div className="w-full h-2 bg-bor-primary-100 rounded-full overflow-hidden">
+                                <div className="w-full h-2 bg-bor-primary-100 dark:bg-bor-primary-800 rounded-full overflow-hidden">
                                     <motion.div
                                         initial={{ width: "0%" }}
                                         whileInView={{ width: "100%" }}
                                         transition={{ duration: 0.3, delay: 0.5 }}
-                                        className="h-full bg-blue-500"
+                                        className="h-full bg-[#0A2624] dark:bg-[#E2FF65]"
                                     />
                                 </div>
                             </motion.div>
@@ -263,30 +278,36 @@ export default function CreativeDesign() {
             </Section>
 
             {/* ═══════════════════════════════════════════
-       5. CTA SECTION
+       5. CTA SECTION & FOOTER
        ═══════════════════════════════════════════ */}
-            <section className="py-32 bg-[#0A2624] text-white overflow-hidden relative">
-                <div className="absolute inset-0 opacity-10 flex items-center justify-center pointer-events-none">
-                    <div className="w-[800px] h-[800px] bg-[#E2FF65] rounded-full blur-[120px] mix-blend-screen animate-pulse duration-[5000ms]"></div>
+            <div className="relative bg-[#0A2624] text-white flex flex-col pt-24 lg:pt-40 overflow-hidden">
+
+                {/* Full Bleed Background Image - Anchored at the top so the dense forest shows, falling naturally into black/dark green at the bottom */}
+                <div className="absolute inset-0 z-0 pointer-events-none">
+                    {/* Hiding the natural dark bottom part seamlessly with the UI's brand green (#0A2624) */}
+                    <div className="absolute inset-0 bg-[url('/images/katalog-cta-bg.png')] bg-cover bg-top bg-no-repeat opacity-90"></div>
+                    <div className="absolute inset-x-0 bottom-0 h-96 bg-gradient-to-t from-[#0A2624] via-[#0A2624]/80 to-transparent"></div>
                 </div>
 
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                {/* The text block pushes into the dark, negative space generated by the AI photo and CSS gradient */}
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 flex-1 flex flex-col justify-end pb-24 lg:pb-32 mt-[40vh]">
                     <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-5xl lg:text-7xl font-bold font-display mb-8"
+                        className="text-5xl lg:text-7xl font-bold font-display mb-6 drop-shadow-2xl"
                     >
-                        Hazır mısınız?
+                        Hazır mısınız? <br className="hidden md:block" />
+                        <span className="italic font-light text-[#E2FF65]">Sistemi hemen deneyin</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-xl text-white/80 mb-12 font-light max-w-2xl mx-auto"
+                        className="text-xl text-white/90 mb-12 font-light max-w-2xl mx-auto drop-shadow-md"
                     >
-                        Büyük dosyalarla ve karmaşık arşivlerle boğuşmaya son verin. Sizinle aynı hızda çalışan, modern, güvenli ve zarif medya yönetimi deneyimine bugün adım atın.
+                        Büyük dosyalarla ve karmaşık arşivlerle boğuşmaya son verin. Sizinle aynı hızda çalışan, modern, güvenli ve zarif ürün yönetimi deneyimine bugün adım atın.
                     </motion.p>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -297,14 +318,19 @@ export default function CreativeDesign() {
                         <a href="https://katalog-pikselai.netlify.app/" target="_blank" rel="noreferrer">
                             <Button
                                 size="lg"
-                                className="bg-[#E2FF65] text-black hover:bg-[#D4F054] border-none text-xl px-12 h-16 rounded-full hover:scale-105 transition-transform font-medium"
+                                className="bg-[#E2FF65] text-[#0A2624] hover:bg-[#D4F054] border-none text-xl px-12 h-16 rounded-full hover:scale-105 transition-transform font-bold shadow-xl"
                             >
                                 Platformu Keşfedin
                             </Button>
                         </a>
                     </motion.div>
                 </div>
-            </section>
+
+                {/* Clean inline footer without its own black blur background */}
+                <div className="relative z-10">
+                    <Footer transparent={true} />
+                </div>
+            </div>
 
         </MainLayout>
     )
@@ -327,13 +353,13 @@ function BentoCard({ title, desc, img, video, className, textDark = false }: { t
                         loop
                         muted
                         playsInline
-                        className="w-full h-full object-contain transition-all duration-700 group-hover:scale-105 group-hover:blur-[8px]"
+                        className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                     />
                 ) : img ? (
                     <img
                         src={img}
                         alt={title}
-                        className="w-full h-full object-contain transition-all duration-700 group-hover:scale-105 group-hover:blur-[8px]"
+                        className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                     />
                 ) : null}
             </div>
@@ -354,16 +380,16 @@ function BentoCard({ title, desc, img, video, className, textDark = false }: { t
     );
 }
 
-function FeatureItem({ title, desc, icon }: { title: string, desc: string, icon: string }) {
+function FeatureItem({ title, desc, icon }: { title: string, desc: string, icon: React.ReactNode }) {
     return (
         <div className="flex gap-5 group">
             <div className="flex-shrink-0 mt-1">
-                <div className="w-12 h-12 rounded-2xl bg-bor-primary-50 dark:bg-bor-primary-800 flex items-center justify-center text-xl group-hover:bg-bor-secondary group-hover:text-white transition-colors duration-300">
+                <div className="w-12 h-12 rounded-2xl bg-white dark:bg-bor-primary-800 border border-bor-primary-100 dark:border-bor-primary-700 flex items-center justify-center text-[#0A2624] dark:text-[#E2FF65] group-hover:bg-[#0A2624] group-hover:text-[#E2FF65] dark:group-hover:bg-[#E2FF65] dark:group-hover:text-[#0A2624] transition-colors duration-300 shadow-sm">
                     {icon}
                 </div>
             </div>
             <div>
-                <h4 className="text-xl font-bold mb-2 text-bor-primary-900 dark:text-white">{title}</h4>
+                <h4 className="text-xl font-bold mb-2 text-[#2B544E] dark:text-[#E2FF65]">{title}</h4>
                 <p className="text-bor-primary-600 dark:text-bor-primary-400 leading-relaxed text-sm">
                     {desc}
                 </p>

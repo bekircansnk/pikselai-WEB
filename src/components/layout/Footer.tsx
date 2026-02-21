@@ -1,10 +1,14 @@
 import { Link } from 'react-router-dom';
 
-export function Footer() {
+interface FooterProps {
+    transparent?: boolean;
+}
+
+export function Footer({ transparent = false }: FooterProps) {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-bor-primary-900 text-white">
+        <footer className={`${transparent ? 'bg-transparent' : 'bg-bor-primary-900'} text-white`}>
             <div className="container-custom py-16">
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
                     {/* Brand */}

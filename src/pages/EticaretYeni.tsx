@@ -348,6 +348,42 @@ const EticaretYeni = () => {
         </section>
 
 
+        {/* AI VISION BANNER - Cinematic Intermission */}
+        <section className="relative h-[50vh] md:h-[70vh] overflow-hidden flex items-center justify-center bg-[#0b2117]">
+          <motion.div
+            initial={{ scale: 1.1, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1.5 }}
+            className="absolute inset-0 w-full h-full"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80" // User's AI Desert Image Placeholder
+              alt="AI E-Ticaret Vizyonu"
+              className="w-full h-full object-cover object-center"
+            />
+            {/* Smooth blend gradients */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0b2117] via-transparent to-[#F4EFE6]" />
+            <div className="absolute inset-0 bg-black/30" />
+          </motion.div>
+
+          <div className="relative z-10 text-center px-6 max-w-4xl">
+            <motion.div
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+            >
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif italic text-white mb-6 drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]">
+                Yapay Zeka ile <br />
+                <span className="font-sans not-italic font-medium text-[#caf265]">Sınırları Ortadan Kaldırın</span>
+              </h2>
+              <p className="text-white/80 text-lg md:text-xl font-light italic max-w-2xl mx-auto">
+                "Hayal ettiğiniz her detayı gerçeğe, her ürünü bir hikayeye dönüştürüyoruz."
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
+
         {/* 5. SÜREÇ - Adım Adım Mağaza Kurulumu */}
         <section className={`${colors.beige} py-32 px-6 md:px-16 lg:px-24 border-b ${colors.borderColor}`}>
           <div className="max-w-7xl mx-auto">

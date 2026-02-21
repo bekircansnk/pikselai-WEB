@@ -443,20 +443,20 @@ const EticaretYeni = () => {
                 </ul>
               </div>
 
-              {/* Card 2: Sahiplik (Lime) */}
+              {/* Card 2: AI İçerik (Lime) */}
               <div className="min-w-[85vw] sm:min-w-[400px] md:min-w-0 bg-[#caf265] rounded-3xl p-8 md:p-10 snap-center shrink-0">
-                <h3 className="text-3xl font-serif italic text-[#0b2117] mb-4">Mülkiyet & Güvenlik</h3>
+                <h3 className="text-3xl font-serif italic text-[#0b2117] mb-4">AI ile İçerik & Tasarım</h3>
                 <p className="text-[#0b2117]/80 leading-relaxed mb-10 min-h-[48px]">
-                  Site sahibinin asil yetkileri. Kurulum tamamlandığında anahtarı size koşulsuz teslim ediyoruz.
+                  "Bize görsel gönderin" devri bitti. Yapay zeka ile stüdyo kalitesinde fotoğraflar, bannerlar ve ürün açıklamaları üretiyoruz. Müşterinizi ikna etme yükünü biz alıyoruz.
                 </p>
 
                 <ul className="space-y-0">
                   {[
-                    "Sitenin %100 tam kullanım ve mülkiyet hakkı",
-                    "Kendi kurumsal domaininiz üzerinden yayın",
-                    "Yüksek performanslı Shopify bulut altyapısı",
-                    "Güvenli ödeme - PCI uyumlu standartlar",
-                    "Hesabınıza tanımlı lisanslar ve yetkiler"
+                    "Stüdyo çekimine gerek kalmadan markaya özel görsel üretimi",
+                    "Ürün özelliklerini satışa çeviren profesyonel açıklamalar",
+                    "Kurumsal kimliğinize uygun anahtar teslim banner tasarımları",
+                    "Ekstra metin yazarı veya ajans maliyetinden kurtulun",
+                    "Satışa, reklama ve global pazara %100 hazır bir vitrin"
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-4 py-4 border-t border-[#0b2117]/10 text-[#0b2117]">
                       <div className="flex-1 text-[15px] font-medium">{item}</div>

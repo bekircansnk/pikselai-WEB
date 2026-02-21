@@ -15,6 +15,7 @@ const NotFound = lazy(() => import('./pages/NotFound'))
 const Blog = lazy(() => import('./pages/Blog'))
 const CustomerStories = lazy(() => import('./pages/CustomerStories'))
 const EcommerceService = lazy(() => import('./pages/EcommerceService'))
+const EticaretYeni = lazy(() => import('./pages/EticaretYeni'))
 const SocialMediaCreative = lazy(() => import('./pages/SocialMediaCreative'))
 const CreativeDesign = lazy(() => import('./pages/CreativeDesign'))
 
@@ -60,6 +61,7 @@ function App() {
             <Route path="/hizmetler" element={<ServicesHub />} />
             <Route path="/hizmetler/ai-produksiyon" element={<AiProduction />} />
             <Route path="/hizmetler/e-ticaret" element={<EcommerceService />} />
+            <Route path="/hizmetler/e-ticaret-yeni" element={<EticaretYeni />} />
             <Route path="/hizmetler/sosyal-medya" element={<SocialMediaCreative />} />
             <Route path="/hizmetler/dijital-buyume" element={<DigitalGrowth />} />
             <Route path="/hizmetler/kreatif-tasarim" element={<CreativeDesign />} />

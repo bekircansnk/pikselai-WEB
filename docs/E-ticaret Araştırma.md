@@ -61,7 +61,7 @@ Evet. [cite_start]Shopify Markets ile farklı diller ve fiyatlandırmalar oluşt
 [cite_start]Shopify'ın indirilmesine gerek yoktur, bulut sistemler üzerinden çalışır[cite: 216]. [cite_start]İndirilmesine gerek olmadığı gibi kurulum/sunucu da gerektirmez[cite: 218]. Hiçbir teknik bilgi ile uğraşmadan mağazanızı yönetebilirsiniz.
 
 **Kurulum sonrası destek veriyor musunuz?**
-Evet. [cite_start]yayınlanma sonrası 30 gün ücretsiz teknik destek sunuyorum[cite: 204, 205].
+Evet. [cite_start]Lansman sonrası 30 gün ücretsiz teknik destek sunuyorum[cite: 204, 205].
 
 ---
 **İletişim & Randevu:** bilgi@pikselai.com

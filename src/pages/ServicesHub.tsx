@@ -45,6 +45,34 @@ const services = [
             { value: "%95", label: "Memnuniyet" },
         ],
         color: "from-amber-600/20 to-orange-600/20",
+    },
+    {
+        category: "E-TİCARET YÖNETİMİ",
+        href: "/hizmetler/e-ticaret",
+        title: "E-Ticaret Yönetimi (Klasik)",
+        description: "Shopify kurulumu, tema entegrasyonu, dönüşüm oranı optimizasyonu ve Klaviyo entegrasyonu hizmetleri ile mağazanızı satışa hazırlayın.",
+        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80",
+        features: ["Shopify Kurulum", "Görsel Tasarım", "Dönüşüm Optimizasyonu", "Teknik SEO", "Entegrasyon", "Email Pazarlama"],
+        stats: [
+            { value: "Full", label: "Destek" },
+            { value: "Hızlı", label: "Kurulum" },
+            { value: "Uçtanuca", label: "Yönetim" },
+        ],
+        color: "from-teal-600/20 to-emerald-600/20",
+    },
+    {
+        category: "E-TİCARET YENİ",
+        href: "/hizmetler/e-ticaret-yeni",
+        title: "Kapsamlı E-Ticaret (Yeni)",
+        description: "Modern, dönüşüm odaklı ve YZ destekli yeni e-ticaret çözümlerimiz. İşinizi global ölçeğe taşıyın.",
+        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80",
+        features: ["Global Satış", "YZ Destek", "Dönüşüm Optimizasyonu", "Kampanya Yönetimi", "API Entegrasyon", "Premium UI"],
+        stats: [
+            { value: "Yeni", label: "Altyapı" },
+            { value: "Özel", label: "Tasarım" },
+            { value: "Oto", label: "Büyüme" },
+        ],
+        color: "from-lime-600/20 to-green-600/20",
     }
 ];
 

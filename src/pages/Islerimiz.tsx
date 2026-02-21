@@ -17,7 +17,7 @@ interface Project {
     client: string;
     category: string;
     thumbnail: string;
-    thumbnailType?: 'single' | 'collage'; // New property for grid display
+    thumbnailType?: 'single'; // Removed 'collage' for grid display
     collageImages?: string[]; // Array of 4 images if thumbnailType is 'collage'
     images: ProjectImage[];
     description: string;
@@ -69,13 +69,7 @@ const projects: Project[] = [
         client: 'Cazador',
         category: 'E-Ticaret',
         thumbnail: '/projects/cazador-local/10600-SİYAH_2K_4_5_Editorial fashion medium shot. The specific male model with curly brown hair stands confidently against a textured gray concrete wall in a quiet city alley. He is wearing a matte black hooded puffer jacket, slightly (16).webp',
-        thumbnailType: 'collage',
-        collageImages: [
-            '/projects/cazador-local/10600-SİYAH_2K_4_5_Editorial fashion medium shot. The specific male model with curly brown hair stands confidently against a textured gray concrete wall in a quiet city alley. He is wearing a matte black hooded puffer jacket, slightly (16).webp',
-            '/projects/cazador-local/10600-SİYAH_2K_Auto_Editorial fashion photography, medium shot. The male model stands confidently against a textured light grey concrete wall. He is wearing the black hooded puffer jacket, zipped halfway up to reveal the white crewneck (2).webp',
-            '/projects/cazador-local/53320-KIRMIZI (1)_undefined(53).webp',
-            '/projects/cazador-local/10200-KIRMIZI (1)_scene1_car_detail.webp'
-        ],
+        thumbnailType: 'single',
         images: [
             { url: '/projects/cazador-local/10600-SİYAH_2K_4_5_Editorial fashion medium shot. The specific male model with curly brown hair stands confidently against a textured gray concrete wall in a quiet city alley. He is wearing a matte black hooded puffer jacket, slightly (16).webp', type: 'image', aspect: 'tall' },
             { url: '/projects/cazador-local/10600-SİYAH_2K_Auto_Editorial fashion photography, medium shot. The male model stands confidently against a textured light grey concrete wall. He is wearing the black hooded puffer jacket, zipped halfway up to reveal the white crewneck (2).webp', type: 'image', aspect: 'tall' },
@@ -120,13 +114,7 @@ const projects: Project[] = [
         client: 'Oceanic',
         category: 'Doğa',
         thumbnail: 'https://cdn.pixabay.com/photo/2016/11/29/09/49/underwater-1868814_1280.jpg',
-        thumbnailType: 'collage',
-        collageImages: [
-            'https://cdn.pixabay.com/photo/2016/11/29/09/49/underwater-1868814_1280.jpg',
-            'https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-2049567_1280.jpg',
-            'https://cdn.pixabay.com/photo/2016/11/18/14/39/beans-1834984_1280.jpg',
-            'https://cdn.pixabay.com/photo/2023/03/13/13/21/colorful-7849818_1280.jpg'
-        ],
+        thumbnailType: 'single',
         images: [
             { url: 'https://cdn.pixabay.com/video/2021/11/14/95662-646702662_large.mp4', type: 'video', aspect: 'wide' },
             { url: 'https://cdn.pixabay.com/photo/2016/11/29/09/49/underwater-1868814_1280.jpg', type: 'image', aspect: 'wide' }
@@ -171,6 +159,8 @@ const Islerimiz = () => {
     const [isPlaying, setIsPlaying] = useState(true);
     const videoRef = useRef<HTMLVideoElement>(null);
     const [isHovering, setIsHovering] = useState(false);
+    const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+    const [cursorType, setCursorType] = useState<'dot' | 'exit'>('dot');
 
     // Cursor Motion
     const cursorX = useMotionValue(-100);
@@ -320,53 +310,37 @@ const Islerimiz = () => {
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
                                 transition={{ duration: 0.4 }}
-                                className={`group relative cursor-pointer overflow-hidden bg-white ${project.thumbnailType === 'collage' ? 'md:col-span-1 aspect-square' : 'aspect-[4/3] md:aspect-auto md:h-[600px]'
-                                    }`}
+                                className={`group relative cursor-pointer overflow-hidden bg-white aspect-[4/3] md:aspect-auto md:h-[600px]`}
                                 onClick={() => setSelectedProject(project)}
                                 onMouseMove={handleMouseMove}
                                 onMouseEnter={() => setIsHovering(true)}
                                 onMouseLeave={() => setIsHovering(false)}
                             >
-                                {project.thumbnailType === 'collage' && project.collageImages ? (
-                                    <div className="grid grid-cols-2 grid-rows-2 w-full h-full gap-0.5 bg-gray-100">
-                                        {project.collageImages.map((img, i) => (
-                                            <div key={i} className="relative w-full h-full overflow-hidden">
-                                                <img
-                                                    src={img}
-                                                    alt={`${project.title} - ${i}`}
-                                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                                    loading="lazy"
-                                                />
-                                            </div>
-                                        ))}
-                                    </div>
-                                ) : (
-                                    <motion.div
-                                        className="w-full h-full"
-                                        whileHover={{ scale: 1.05 }}
-                                        transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1] }}
-                                    >
-                                        <img
-                                            src={project.thumbnail}
-                                            alt={project.title}
-                                            className="w-full h-full object-cover"
-                                            loading="lazy"
-                                        />
-                                    </motion.div>
-                                )}
+                                <motion.div
+                                    className="w-full h-full"
+                                    whileHover={{ scale: 1.05 }}
+                                    transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1] }}
+                                >
+                                    <img
+                                        src={project.thumbnail}
+                                        alt={project.title}
+                                        className="w-full h-full object-cover"
+                                        loading="lazy"
+                                    />
+                                </motion.div>
 
                                 {/* Overlay gradient */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300" />
 
                                 {/* Info */}
-                                <div className="absolute bottom-0 left-0 p-8 md:p-12 z-20 text-white w-full">
+                                <div className="absolute bottom-0 left-0 p-8 z-20 text-white w-full">
                                     <motion.h3
                                         layoutId={`project-title-${project.id}`}
-                                        className="text-3xl md:text-4xl font-serif italic mb-2"
+                                        className="text-3xl md:text-5xl font-serif mb-2"
                                     >
-                                        {project.client}
+                                        {project.client} <span className="text-white/50 text-2xl font-sans inline-block align-middle">+</span>
                                     </motion.h3>
-                                    <p className="text-xs md:text-sm font-bold tracking-widest uppercase text-white/70">
+                                    <p className="text-xs md:text-xs tracking-wider text-white/70">
                                         {project.category}
                                     </p>
                                 </div>
@@ -383,15 +357,35 @@ const Islerimiz = () => {
                 </div>
             </div>
 
-            {/* ── Project Modal (Redesigned - Superside Style) ── */}
+            {/* ── Project Modal (Redesigned - Superside Style) */}
             <AnimatePresence>
                 {selectedProject && (
                     <motion.div
+                        key="modal"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/98"
+                        className="fixed inset-0 z-[100] bg-[#050505]"
+                        style={{ cursor: 'none' }}
+                        onMouseMove={(e) => {
+                            setCursorPos({ x: e.clientX, y: e.clientY });
+                        }}
                     >
+                        {/* Custom Cursor */}
+                        <motion.div
+                            className="fixed pointer-events-none z-[100]"
+                            animate={{ x: cursorPos.x - (cursorType === 'exit' ? 50 : 12), y: cursorPos.y - (cursorType === 'exit' ? 50 : 12) }}
+                            transition={{ type: 'tween', duration: 0.05, ease: 'linear' }}
+                        >
+                            {cursorType === 'exit' ? (
+                                <div className="w-[100px] h-[100px] rounded-full bg-white flex items-center justify-center shadow-2xl">
+                                    <span className="text-black text-sm font-medium">Çıkış</span>
+                                </div>
+                            ) : (
+                                <div className="w-[24px] h-[24px] rounded-full bg-white shadow-lg" />
+                            )}
+                        </motion.div>
+
                         {/* Close Button */}
                         <motion.button
                             initial={{ opacity: 0, y: -20 }}
@@ -399,6 +393,9 @@ const Islerimiz = () => {
                             exit={{ opacity: 0, y: -20 }}
                             onClick={() => setSelectedProject(null)}
                             className="fixed top-8 right-8 z-50 p-4 rounded-full bg-white/10 text-white hover:bg-white hover:text-black transition-all group"
+                            style={{ cursor: 'none' }} // Hide native cursor for this button too
+                            onMouseEnter={() => setCursorType('exit')}
+                            onMouseLeave={() => setCursorType('dot')}
                         >
                             <X size={24} className="group-hover:rotate-90 transition-transform duration-300" />
                             <span className="sr-only">Kapat</span>
@@ -406,91 +403,169 @@ const Islerimiz = () => {
 
                         <motion.div
                             layoutId={`project-container-${selectedProject.id}`}
-                            className="w-full h-full overflow-y-auto custom-scrollbar"
+                            className="w-full h-full flex flex-col bg-[#050505]"
+                            style={{ cursor: 'none' }}
                         >
-                            <div className="max-w-7xl mx-auto px-4 py-24 md:py-32">
-                                {/* Header Info */}
-                                <div className="text-center mb-16 md:mb-24">
-                                    <motion.p
-                                        initial={{ opacity: 0, y: 20 }}
-                                        animate={{ opacity: 1, y: 0 }}
+                            {/* TOP: Horizontal Photo Strip */}
+                            <div
+                                className="flex-1 overflow-x-auto overflow-y-hidden custom-scrollbar"
+                                style={{ cursor: 'none' }}
+                                onWheel={(e) => {
+                                    if (e.currentTarget) {
+                                        e.currentTarget.scrollLeft += e.deltaY;
+                                    }
+                                }}
+                            >
+                                <div className="h-full px-6 md:px-16 py-6 flex items-center space-x-3 md:space-x-6 min-w-max" style={{ cursor: 'none' }}>
+
+                                    {/* Column 1: Large Wide Block */}
+                                    <motion.div
+                                        initial={{ opacity: 0, scale: 0.95 }}
+                                        animate={{ opacity: 1, scale: 1 }}
                                         transition={{ delay: 0.1 }}
-                                        className="text-blue-500 font-bold tracking-[0.2em] uppercase text-sm mb-6"
+                                        className="h-full w-[350px] md:w-[600px] shrink-0 relative rounded-xl md:rounded-2xl overflow-hidden bg-blue-900"
                                     >
-                                        {selectedProject.category}
-                                    </motion.p>
-                                    <motion.h2
-                                        layoutId={`project-title-${selectedProject.id}`}
-                                        className="text-5xl md:text-7xl lg:text-9xl font-serif italic text-white mb-8"
+                                        <img src="https://images.unsplash.com/photo-1572297837096-7fc11c435520?q=80&w=1200&auto=format&fit=crop" alt="Large Intro" className="w-full h-full object-cover" />
+                                        <div className="absolute inset-0 bg-blue-900/40 mix-blend-multiply"></div>
+                                        <div className="absolute top-6 left-6 text-white z-10 w-2/3">
+                                            <h3 className="text-2xl md:text-3xl font-serif uppercase leading-tight">A Blend <br /> Ahead</h3>
+                                        </div>
+                                    </motion.div>
+
+                                    {/* Column 2: Two Stacked */}
+                                    <div className="h-full w-[220px] md:w-[300px] flex flex-col space-y-3 md:space-y-6 shrink-0">
+                                        <motion.div
+                                            initial={{ opacity: 0, scale: 0.95 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            transition={{ delay: 0.2 }}
+                                            className="flex-1 rounded-xl md:rounded-2xl overflow-hidden relative"
+                                        >
+                                            <img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=600&auto=format&fit=crop" alt="Square 1" className="w-full h-full object-cover" />
+                                        </motion.div>
+                                        <motion.div
+                                            initial={{ opacity: 0, scale: 0.95 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            transition={{ delay: 0.3 }}
+                                            className="flex-1 rounded-xl md:rounded-2xl overflow-hidden relative bg-[#c6e9a7]"
+                                        >
+                                            <div className="absolute inset-0 flex items-center justify-center p-4">
+                                                <div className="w-20 h-20 md:w-28 md:h-28 bg-black rounded-3xl relative overflow-hidden">
+                                                    <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=400&auto=format&fit=crop" className="absolute -bottom-2 -right-2 w-14 h-14 md:w-18 md:h-18 rounded-full border-4 border-[#c6e9a7] object-cover" />
+                                                </div>
+                                            </div>
+                                        </motion.div>
+                                    </div>
+
+                                    {/* Column 3: One Tall Image */}
+                                    <motion.div
+                                        initial={{ opacity: 0, scale: 0.95 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        transition={{ delay: 0.4 }}
+                                        className="h-full w-[260px] md:w-[350px] shrink-0 relative rounded-xl md:rounded-2xl overflow-hidden"
                                     >
-                                        {selectedProject.client}
-                                    </motion.h2>
+                                        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=800&auto=format&fit=crop" alt="Tall Portrait" className="w-full h-full object-cover" />
+                                    </motion.div>
+
+                                    {/* Column 4: Two Stacked */}
+                                    <div className="h-full w-[220px] md:w-[300px] flex flex-col space-y-3 md:space-y-6 shrink-0">
+                                        <motion.div
+                                            initial={{ opacity: 0, scale: 0.95 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            transition={{ delay: 0.5 }}
+                                            className="flex-1 rounded-xl md:rounded-2xl overflow-hidden relative bg-purple-200 flex items-center justify-center"
+                                        >
+                                            <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=400&auto=format&fit=crop" alt="Circle Graphic" className="w-full max-w-[100px] aspect-square object-cover rounded-full" />
+                                        </motion.div>
+                                        <motion.div
+                                            initial={{ opacity: 0, scale: 0.95 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            transition={{ delay: 0.6 }}
+                                            className="flex-1 rounded-xl md:rounded-2xl overflow-hidden relative"
+                                        >
+                                            <img src="https://images.unsplash.com/photo-1574096079513-d8259312b785?q=80&w=600&auto=format&fit=crop" alt="Square 2" className="w-full h-full object-cover" />
+                                        </motion.div>
+                                    </div>
+
+                                    {/* Column 5: Wide Image */}
+                                    <motion.div
+                                        initial={{ opacity: 0, scale: 0.95 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        transition={{ delay: 0.7 }}
+                                        className="h-full w-[400px] md:w-[550px] shrink-0 relative rounded-xl md:rounded-2xl overflow-hidden"
+                                    >
+                                        <img src="https://images.unsplash.com/photo-1544026261-71fbdfb548eb?q=80&w=1200&auto=format&fit=crop" alt="Wide Content" className="w-full h-full object-cover" />
+                                    </motion.div>
+
+                                    {/* Column 6: Final Stacked Block */}
+                                    <div className="h-full w-[260px] md:w-[400px] flex flex-col space-y-3 md:space-y-6 shrink-0">
+                                        <motion.div
+                                            initial={{ opacity: 0, scale: 0.95 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            transition={{ delay: 0.8 }}
+                                            className="flex-1 rounded-xl md:rounded-2xl overflow-hidden relative"
+                                        >
+                                            <img src="https://images.unsplash.com/photo-1497534446932-c925b458314e?q=80&w=800&auto=format&fit=crop" alt="Bottom Wide" className="w-full h-full object-cover" />
+                                        </motion.div>
+                                        <div className="flex-1 flex gap-3 md:gap-6 items-stretch">
+                                            <motion.div
+                                                initial={{ opacity: 0, scale: 0.95 }}
+                                                animate={{ opacity: 1, scale: 1 }}
+                                                transition={{ delay: 0.9 }}
+                                                className="flex-1 rounded-xl md:rounded-2xl overflow-hidden relative bg-[#1a1a1a] p-5 text-white flex flex-col justify-end"
+                                            >
+                                                <h4 className="text-base font-bold">Details</h4>
+                                                <p className="text-xs opacity-50 mt-1">More specs</p>
+                                            </motion.div>
+                                            <motion.div
+                                                initial={{ opacity: 0, scale: 0.95 }}
+                                                animate={{ opacity: 1, scale: 1 }}
+                                                transition={{ delay: 1.0 }}
+                                                className="flex-1 rounded-xl md:rounded-2xl overflow-hidden relative"
+                                            >
+                                                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=600&auto=format&fit=crop" alt="Final Square" className="w-full h-full object-cover" />
+                                            </motion.div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            {/* BOTTOM: Fixed Typography Section */}
+                            <div
+                                className="shrink-0 px-8 md:px-16 py-6 md:py-8 border-t border-white/5"
+                                style={{ cursor: 'none' }}
+                                onMouseEnter={() => setCursorType('exit')}
+                                onMouseLeave={() => setCursorType('dot')}
+                                onClick={() => setSelectedProject(null)}
+                            >
+                                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 md:gap-16 max-w-screen-2xl mx-auto">
+                                    {/* Left: Title */}
+                                    <div className="shrink-0">
+                                        <motion.h2
+                                            layoutId={`project-title-${selectedProject.id}`}
+                                            className="text-3xl md:text-5xl font-serif italic text-white mb-1"
+                                        >
+                                            {selectedProject.client}
+                                        </motion.h2>
+                                        <motion.p
+                                            initial={{ opacity: 0, y: 10 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            transition={{ delay: 0.2 }}
+                                            className="text-gray-500 text-sm tracking-wide"
+                                        >
+                                            {selectedProject.title}
+                                        </motion.p>
+                                    </div>
+
+                                    {/* Right: Description */}
                                     <motion.p
-                                        initial={{ opacity: 0, y: 20 }}
+                                        initial={{ opacity: 0, y: 10 }}
                                         animate={{ opacity: 1, y: 0 }}
-                                        transition={{ delay: 0.2 }}
-                                        className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto leading-relaxed font-light"
+                                        transition={{ delay: 0.3 }}
+                                        className="text-base md:text-lg text-gray-400 leading-relaxed font-light max-w-2xl"
                                     >
                                         {selectedProject.description}
                                     </motion.p>
-
-                                    <motion.div
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        transition={{ delay: 0.3 }}
-                                        className="flex flex-wrap justify-center gap-2 mt-8"
-                                    >
-                                        {selectedProject.tags.map(tag => (
-                                            <span key={tag} className="px-4 py-1.5 rounded-full border border-white/10 text-white/60 text-xs uppercase tracking-wider">
-                                                {tag}
-                                            </span>
-                                        ))}
-                                    </motion.div>
-                                </div>
-
-                                {/* Media Grid */}
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
-                                    {selectedProject.images.map((img, idx) => (
-                                        <motion.div
-                                            key={idx}
-                                            initial={{ opacity: 0, y: 50 }}
-                                            whileInView={{ opacity: 1, y: 0 }}
-                                            viewport={{ once: true, margin: "-10%" }}
-                                            transition={{ delay: idx * 0.1 }}
-                                            className={`relative rounded-none md:rounded-lg overflow-hidden ${img.aspect === 'wide' ? 'md:col-span-2 aspect-video' : 'aspect-[3/4]'
-                                                }`}
-                                        >
-                                            {img.type === 'video' ? (
-                                                <video
-                                                    src={img.url}
-                                                    autoPlay
-                                                    loop
-                                                    muted
-                                                    playsInline
-                                                    className="w-full h-full object-cover"
-                                                />
-                                            ) : (
-                                                <img
-                                                    src={img.url}
-                                                    alt=""
-                                                    className="w-full h-full object-cover"
-                                                />
-                                            )}
-                                        </motion.div>
-                                    ))}
-                                </div>
-
-                                {/* Next Project CTA */}
-                                <div className="mt-32 text-center">
-                                    <button
-                                        onClick={() => setSelectedProject(null)}
-                                        className="text-white fill-current hover:text-blue-500 transition-colors duration-300"
-                                    >
-                                        <div className="text-sm font-bold tracking-[0.2em] uppercase mb-4 opacity-50">Back to Grid</div>
-                                        <div className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center mx-auto hover:bg-white hover:text-black transition-all">
-                                            <X size={24} />
-                                        </div>
-                                    </button>
                                 </div>
                             </div>
                         </motion.div>

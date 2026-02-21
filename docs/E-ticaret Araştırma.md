@@ -1,104 +1,67 @@
-# E-Ticaret Potansiyelinizi Maksimuma Çıkarın: Uçtan Uca Dijital Dönüşüm
+# PikselAI - Kapsamlı E-Ticaret ve Shopify Danışmanlığı
 
-Büyüme yolculuğunuzda sadece bir site kurmuyor; markanızın e-ticaret ekosistemini sıfırdan inşa ediyor ve yönetiyoruz. Karmaşık operasyonel süreçlerinizi hafifleten, satışlarınızı ölçeklendiren ve dijital dünyada aradığınız o "uçtan uca çözüm ortağı" olarak yanınızdayız.
+Ben Bekir Can Sağnak, PikselAI çatısı altında e-ticaret markanızı global standartlarda kuruyor ve yönetiyorum. Shopify Türkiye Resmi Partneri olarak sıfırdan kurulumdan, veri taşıma ve yapay zeka destekli büyümeye kadar tüm süreçleri bizzat üstleniyorum. E-ticaret sitenizi kuruyor, tasarımınızı kurguluyor, içeriklerinizi profesyonel şekilde oluşturuyor ve dünyanın her yerine satış yapabilmeniz için tüm teknik yükü omuzlarınızdan alıyorum.
 
-**[Hemen Projenizi Konuşalım](#iletisim)**
+## Neden Shopify Altyapısını Tercih Ediyoruz?
 
----
+* [cite_start]Shopify, dünya genelinde 2 milyondan fazla işletmenin tercih ettiği güçlü ve güvenilir bir e-ticaret platformudur[cite: 173].
+* [cite_start]Kod bilgisine gerek kalmadan ürünlerinizi, siparişlerinizi ve müşterilerinizi tek panelden yönetebilirsiniz[cite: 176].
+* Güvenlik yükünü tek başına karşılar; [cite_start]SSL sertifikası ve PCI uyumu ile müşterilerinizin verilerini korur[cite: 180].
+* [cite_start]Temaları responsive (mobil uyumlu) olup Google'ın Core Web Vitals standartlarına uygun çalışır[cite: 178].
+* [cite_start]Bulut tabanlı olarak çalışan bir sisteme sahiptir[cite: 213]. [cite_start]Hosting veya sunucu kurulumu gibi ihtiyaçlara kafa yormanıza gerek kalmaz[cite: 214].
+* [cite_start]Shopify Markets ile farklı dillere, ülkelere ve para birimlerine (Dolar, Euro) e-ihracat yapabilirsiniz[cite: 182, 183].
 
-## Danışmanlık ve Hizmet Kapsamımız
+## Hizmet Kapsamım (Neler Yapıyorum?)
 
-E-ticaret başarısı, yalnızca şık bir vitrine sahip olmaktan geçmez; arka planda tıkır tıkır işleyen, hatasız bir operasyon gerektirir. Markanızın her bir temas noktasını optimize eden kapsamlı modüllerimizle tanışın.
+### 1. Sıfırdan Mağaza Kurulumu ve Tasarım
+[cite_start]İhtiyacınıza en uygun premium temaları seçip kurulumunu yapıyorum[cite: 278]. [cite_start]Renk, tipografi ve görselleri markanıza uyarlıyorum[cite: 235]. [cite_start]Tasarım detaylarını ve kullanıcı deneyimini (UX) ön planda tutarak profesyonel bir mağaza oluşturuyorum[cite: 279]. Gerekli HTML ve CSS düzenlemeleri ile e-ticaret sitenizi en uygun hale getiriyor; slider ve banner tasarımları ile ürünlerinizi ön plana çıkarıyorum.
 
-### Altyapı ve ERP Entegrasyonları
-Güçlü bir e-ticaret operasyonunun kalbi, sağlam bir veritabanı yönetimi ve kusursuz çalışan entegrasyonlardır. 
-* **Kusursuz Veri Akışı:** Nebim V3 gibi köklü ve kapsamlı ERP sistemleriyle e-ticaret altyapınızı pürüzsüz bir şekilde konuşturuyoruz.
-* **Gelişmiş Veritabanı Yönetimi:** SQL Server bakım planlamaları, veri yedekleme stratejileri ve sorunsuz veri taşıma/göç işlemleriyle IT altyapınızı güvence altına alıyoruz.
-* **Stok ve Ürün Optimizasyonu:** Fiziksel mağazalarınız ile dijital kanallarınız arasındaki stok senkronizasyonunu milisaniyeler içinde yöneterek "yok satma" veya "hatalı stok" problemlerini ortadan kaldırıyoruz.
+### 2. Platform ve Veri Taşıma (Migration)
+[cite_start]Mevcut e-ticaret altyapınızı sorunsuz bir şekilde Shopify platformuna taşıyorum[cite: 257]. [cite_start]E-ticaret mağazanızın Shopify'a taşınma sürecinde, geçmiş sipariş bilgilerinizin eksiksiz bir şekilde aktarılmasını sağlıyorum[cite: 259]. [cite_start]Böylece müşteri ve satış verilerinizi yeni platformda kullanarak kesintisiz bir operasyon yürütmenizi mümkün hale getiriyorum[cite: 260].
 
-### Yapay Zeka Destekli Operasyonlar
-Teknolojinin en keskin ucunu kullanarak operasyonel maliyetlerinizi düşürüyor, üretim hızınızı katlıyoruz.
-* **Görsel ve İçerik Üretimi:** E-ticaret siteniz ve sosyal medyanız için yapay zeka destekli, yüksek kaliteli ürün fotoğrafçılığı ve kreatif video kurguları hazırlıyoruz.
-* **Akıllı Metinler:** Ürün açıklamalarından kampanya sloganlarına kadar, dönüşüm odaklı metinleri saniyeler içinde yayına alıyoruz.
-* **Özelleştirilmiş Asistanlar:** İşletmenizin günlük e-ticaret süreçlerini ve müşteri iletişimini hızlandıracak, markanıza özel yapay zeka araçları ve asistanları geliştiriyoruz.
+### 3. Kategori, İçerik ve Katalog Yönetimi
+[cite_start]Ziyaretçilerin doğru ürüne hızlıca ulaşabilmesi için ürünlerinizi SEO uyumlu biçimde ekliyor, varyantlar, koleksiyonlar ve filtreleme sistemini oluşturuyorum[cite: 228, 229]. Kurumsal sayfalarınızı (Hakkımızda vb.), yasal sözleşmelerinizi ve SEO için kritik olan blog içeriklerinizi tamamen markanıza özel kurguluyorum. 
 
-### Global Pazaryeri Açılımları (E-İhracat)
-Sınırları ortadan kaldırıyor, Türkiye'deki operasyon gücünüzü global arenaya taşıyoruz.
-* **Uluslararası Vitrin:** Ürünlerinizi dünya çapındaki alıcılarla buluşturmak için Etsy gibi global pazaryerlerinde mağaza kurulumunuzu ve entegrasyonunuzu gerçekleştiriyoruz.
-* **Operasyonel Rehberlik:** Yurt dışı kargo süreçleri, uluslararası ödeme ağ geçitleri ve e-ihracatın gerektirdiği yasal gereksinimler konusunda stratejik yönetim sağlıyoruz.
+### 4. Gelişmiş Entegrasyonlar (Ödeme, Kargo, Yazılım)
+[cite_start]İyzico, PayTR, Stripe, PayU ve Garanti Bankası gibi ödeme sistemlerini entegre ediyorum[cite: 238, 239]. [cite_start]Yurtiçi, MNG, DHL, ShipEntegra gibi kargo firmalarıyla bağlantı kuruyorum[cite: 239]. İhtiyaç halinde Logo yazılımı gibi sistemlerle test edilmiş ve çalışan özel API entegrasyonları yazıyorum. [cite_start]Mağazanızın mobil uygulamalarla uyumlu hale gelmesini sağlayarak müşteri deneyiminizi bir adım öteye taşıyorum[cite: 286, 287].
 
-### Dijital Pazarlama ve Kampanya Yönetimi
-Hedef kitlenizi nokta atışı analiz ediyor, bütçenizi en yüksek ROI (Yatırım Getirisi) ile yönetiyoruz.
-* **Stratejik Kurgular:** Tüm ürünlerde kontrolsüz indirimler yapmak yerine, karlılığınızı koruyan stratejiler geliştiriyoruz. Örneğin; kış sezonunu kapatırken yeni sezonu zedelemeden, doğrudan kış ürünlerine özel %50 indirim kurguları gibi spesifik ve stok eritmeye yönelik nokta atışı kampanyalar tasarlıyoruz.
-* **360 Derece Sosyal Medya:** Performans odaklı reklam yönetimi ve marka kimliğinizi yansıtan estetik içerik planlamasıyla dijitaldeki sesinizi gürleştiriyoruz.
+### 5. Dijital Pazarlama, SEO ve Kampanya Yönetimi
+[cite_start]Google Analytics, Yandex Metrica, Meta Ads ve Google Ads gibi performans ölçüm araçlarını mağazanızla entegre ediyorum[cite: 284]. Google Merchant, Facebook Store ve Instashop bağlantılarınızı kurarak çok kanallı satışı aktifleştiriyorum. Kış ürünlerinde uyguladığımız özel indirimler veya sezon sonu fırsatları gibi spesifik kampanya kurgularını karlılık analizi yaparak sisteme tanımlıyor ve reklamlarınızı bizzat yönetiyorum.
 
----
+## Shopify Mağaza Kurulum Sürecim Adım Adım Nasıl İşler?
 
-## E-Ticaret Çözümlerimiz (Sıkça Sorulan Sorular ve Detaylar)
-
-Aşağıdaki hizmet modüllerimize tıklayarak operasyonel yükünüzü nasıl hafiflettiğimizi detaylıca inceleyebilirsiniz:
-
-<details>
-  <summary><b>Sıfırdan Mağaza Kurulumu</b></summary>
-  <p>Markanızın ihtiyaçlarına en uygun altyapıyı seçerek, kullanıcı deneyimi (UX/UI) yüksek, mobil uyumlu ve satışa hazır e-ticaret sitenizi anahtar teslim olarak hayata geçiriyoruz.</p>
-</details>
-
-<details>
-  <summary><b>Farklı Bir Altyapıdaki Mağazanızı Taşıma</b></summary>
-  <p>Mevcut mağazanızı veri kaybı yaşamadan (müşteri, sipariş, ürün ve SEO link yapısı korunarak) daha modern, hızlı ve ölçeklenebilir yeni e-ticaret altyapılarına sorunsuz bir şekilde migrate ediyoruz.</p>
-</details>
-
-<details>
-  <summary><b>Geçmiş Siparişlerin ve Verilerin Aktarımı</b></summary>
-  <p>Veritabanınızdaki geçmiş yıllara ait kritik sipariş datasını ve müşteri hareketlerini, yeni sisteminize SQL bazlı güvenli taşıma yöntemleriyle eksiksiz entegre ediyoruz.</p>
-</details>
-
-<details>
-  <summary><b>Kargo ve Ödeme Sistemi Entegrasyonları</b></summary>
-  <p>Sanal POS kurulumları, alternatif ödeme yöntemleri ve kargo firmalarının API entegrasyonlarını sağlayarak sepet terk oranlarını minimuma indiriyoruz.</p>
-</details>
-
-<details>
-  <summary><b>Dijital Performans Araçlarının Eksiksiz Kurulumu</b></summary>
-  <p>Google Analytics 4, Meta Pixel, Tag Manager ve diğer tüm dönüşüm izleme araçlarını kurarak, sitenizdeki her bir tıklamayı ölçülebilir verilere dönüştürüyoruz.</p>
-</details>
-
-<details>
-  <summary><b>E-İhracat ve Pazaryeri Entegrasyonları</b></summary>
-  <p>Yurt içi pazaryerlerinin (Trendyol, Hepsiburada vb.) yanı sıra, mikro ihracat ve global pazar yeri operasyonlarınız için tek bir panelden çoklu yönetim imkanı sağlayan sistemleri devreye alıyoruz.</p>
-</details>
-
-<details>
-  <summary><b>ERP (Muhasebe Programları) Entegrasyonu</b></summary>
-  <p>Muhasebe ve stok yönetim programlarınızın e-ticaret sitenizle tam zamanlı, çift yönlü olarak haberleşmesini sağlıyoruz. Manuel veri girişi hatalarına son veriyoruz.</p>
-</details>
+1. [cite_start]**Analiz & Planlama:** Markanızı, hedef kitlenizi ve ürün yapınızı analiz ediyorum[cite: 226]. [cite_start]Rakip analizi ve stratejilerle yol haritamızı belirliyorum[cite: 226].
+2. [cite_start]**Yapılandırma & Tasarım:** Shopify'ın profesyonel temalarından markanıza en uygun olanı seçiyor, arayüzü kurguluyor ve ürünlerinizi sisteme dahil ediyorum[cite: 234, 235].
+3. [cite_start]**Test & Yayına Hazırlık:** Ödeme, stok, kargo, sepet ve bildirim süreçlerini test ediyorum[cite: 231, 232]. Ön hazırlıklar tamamlanmadan kesinlikle satışı açmıyorum.
+4. [cite_start]**Eğitim & Eğitim:** Shopify paneli kullanımı, ürün ekleme, sipariş yönetimi ve kampanya oluşturma gibi temel konularda eğitim veriyorum[cite: 241, 242]. 
 
 ---
 
-## Nasıl Çalışıyoruz? 
+## Sıkça Sorulan Sorular
 
-Başarı, şeffaf ve planlı bir sürecin eseridir. Sizinle yürüdüğümüz yol haritası:
+**Kurulum ne kadar sürer?**
+[cite_start]Standart bir kurulum 10 ila 15 iş günü sürer[cite: 190]. [cite_start]Tema özelleştirmeleri veya özel entegrasyonlar eklenirse süre değişebilir[cite: 190].
 
-1.  **Tanışma ve İhtiyaç Analizi:** İşletmenizin mevcut durumunu, altyapısını, dijital ayak izini ve ulaşmak istediğiniz hedefleri derinlemesine inceleriz.
-2.  **Strateji ve Altyapı Mimarisi:** İhtiyacınız olan ERP bağlantılarından, kampanya takvimlerine ve global açılış planlarına kadar size özel bir dijital strateji haritası çizeriz.
-3.  **Teknik Kurulum ve Entegrasyon:** Veritabanı düzenlemeleri, site inşası, yapay zeka araçlarının sisteme dahil edilmesi ve üçüncü parti (kargo/ödeme) bağlantılarını kusursuzca tamamlarız.
-4.  **Büyüme ve Sürekli Optimizasyon:** Sistem canlıya alındıktan sonra operasyonu kaderine terk etmeyiz. Kampanya performanslarını ölçer, IT destek ihtiyaçlarınızı giderir ve cironuzu artıracak yeni nesil çözümlerle sitenizi sürekli güncel tutarız.
+**Kurulumdan sonra site tamamen bana mı ait olacak?**
+Evet. Mağaza tamamen size aittir; [cite_start]Shopify hesabı, domain ve uygulama lisansları sizin adınıza açılır[cite: 192].
+
+**Shopify Türkçe destekli mi?**
+Evet. [cite_start]Arayüz Türkçe kullanılabilir, ayrıca ödeme ve kargo sistemleri yerel olarak entegre edilir[cite: 195]. [cite_start]Müşteriler siteyi baştan sona Türkçe kullanabilir[cite: 195].
+
+**Shopify aylık ücretli mi? Komisyon alıyor mu?**
+Evet. [cite_start]Shopify planları aylık bazda çalışır (Basic, Shopify, Advanced, Plus)[cite: 200]. [cite_start]Kurulum sürecinde size en uygun planı seçmenize yardımcı oluyorum[cite: 200]. [cite_start]Aylık ücretin yanı sıra paketlere göre farklı komisyon oranları bulunur[cite: 201].
+
+**E-ihracat için mağazam çok dilli olabilir mi?**
+Evet. [cite_start]Shopify Markets ile farklı diller ve fiyatlandırmalar oluşturabilirsiniz[cite: 203]. [cite_start]Ayrıca SEO uyumunu da gözeterek, globalleşmenize yardımcı oluyorum[cite: 203].
+
+**Shopify dropshipping için uygun mu?**
+[cite_start]Evet, Shopify ile dropshipping yaparak stoksuz satış kolaylığıyla tanışabilirsiniz[cite: 210, 211].
+
+**Yazılım bilgisi veya ayrı bir sunucu gerekiyor mu?**
+[cite_start]Shopify'ın indirilmesine gerek yoktur, bulut sistemler üzerinden çalışır[cite: 216]. [cite_start]İndirilmesine gerek olmadığı gibi kurulum/sunucu da gerektirmez[cite: 218]. Hiçbir teknik bilgi ile uğraşmadan mağazanızı yönetebilirsiniz.
+
+**Kurulum sonrası destek veriyor musunuz?**
+Evet. [cite_start]yayınlanma sonrası 30 gün ücretsiz teknik destek sunuyorum[cite: 204, 205].
 
 ---
-
-## Neden PikselAI? Fark Yaratan Değerlerimiz
-
-Biz, standart bir reklam ajansının ötesindeyiz. E-ticaretin hem mutfağını hem de vitrinini çok iyi biliyoruz.
-
-* **Teknik ve Kreatif Güç Bir Arada:** Bir yanda SQL veritabanı sorunlarını çözen ve karmaşık ERP mimarilerini kurgulayan analitik bir zeka; diğer yanda yapay zeka ile göz alıcı görseller ve kreatif kampanyalar üreten estetik bir vizyon. İkisini aynı masada bulacaksınız.
-* **Operasyonel Hafiflik:** Siz sadece yeni koleksiyonlarınıza ve markanızın vizyonuna odaklanın. Kargo entegrasyonundan sunucu yedeklemesine, sosyal medya metninden pazaryeri eşleştirmesine kadar tüm teknik ve operasyonel yükü biz üstleniyoruz.
-* **Hızlı Aksiyon, Doğru Teknoloji:** Yenilikleri sonradan takip eden değil, iş süreçlerine ilk entegre edenlerdeniz. Yapay zeka otomasyonlarımız sayesinde standart ajansların günlerce süren işlerini saatler içinde, maliyet avantajıyla teslim ediyoruz.
-* **Veriye Dayalı Satış Artışı:** Varsayımlarla değil, verilerle hareket ederiz. Doğru kampanya, doğru zamanlama ve sorunsuz çalışan bir altyapı ile dönüşüm oranlarınızı maksimize ederiz.
-
----
-
-## Birlikte Büyümeye Hazır Mısınız?
-
-E-ticaret ekosisteminde kalıcı bir yer edinmek, operasyonel zorlukları aşmak ve satışlarınızı bir sonraki seviyeye taşımak için güçlü bir temele ihtiyacınız var. Teknik uzmanlığımız, vizyoner yaklaşımımız ve yapay zeka destekli altyapımızla bu temeli birlikte atalım. Aklınızdaki o büyük projeyi hayata geçirme zamanı geldi.
-
-**[Hemen İletişime Geçin ve Büyüme Yolculuğunuzu Başlatalım](#iletisim)**
+**İletişim & Randevu:** bilgi@pikselai.com

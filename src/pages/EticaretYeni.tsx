@@ -98,34 +98,35 @@ const EticaretYeni = () => {
       <main>
 
         {/* 1. HERO SECTION - Shopify Partner Vurgulu */}
-        <section className={`relative grid grid-cols-1 lg:grid-cols-2 min-h-[85vh] ${colors.darkGreen}`}>
-          <div className="flex flex-col justify-center px-6 md:px-16 lg:px-24 pt-32 pb-20 lg:pt-40 lg:pb-0 z-10">
+        <section className={`relative flex flex-col-reverse lg:grid lg:grid-cols-2 min-h-screen ${colors.darkGreen} pt-20 md:pt-24 lg:pt-0`}>
+          <div className="flex flex-col justify-center px-6 md:px-16 lg:px-24 py-16 lg:py-32 z-10 lg:border-r border-[#1e3b2b]/50 w-full">
             <motion.div
               initial="hidden"
               animate="visible"
               variants={fadeInUp}
-              className="max-w-xl"
+              className="max-w-[40rem]"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#caf265]/30 bg-[#caf265]/10 text-[#caf265] text-xs font-bold tracking-widest uppercase mb-8">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#caf265]/30 bg-[#caf265]/10 text-[#caf265] text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-6 shadow-[0_0_15px_rgba(202,242,101,0.05)]">
+                <ShieldCheck size={14} className="opacity-80 shrink-0" />
                 SHOPIFY TÜRKİYE RESMİ PARTNERİ
               </div>
 
-              <h1 className={`text-4xl md:text-6xl lg:text-7xl font-serif italic ${colors.textLight} leading-[1.05] tracking-tight mb-8`}>
-                Shopify E-Ticaret <br />
+              <h1 className={`text-5xl md:text-[4rem] lg:text-[4.5rem] font-serif italic ${colors.textLight} leading-[1.05] tracking-tight mb-6`}>
+                Shopify <span className="whitespace-nowrap">E-Ticaret</span> <br />
                 Danışmanlığı
               </h1>
 
-              <div className="mb-10 space-y-4">
+              <div className="mb-8 space-y-3">
                 <h3 className="text-xl md:text-2xl text-white font-medium leading-tight">
-                  Anahtar Teslim Mağaza Kurulumu + <br />
+                  Anahtar Teslim Mağaza Kurulumu + <br className="hidden sm:block" />
                   Yapay Zeka Destekli Büyüme
                 </h3>
-                <p className="text-lg text-[#a8b8af] leading-relaxed font-light">
-                  Sıfırdan satışa hazır, modern ve ölçeklenebilir bir Shopify mağazası kuruyoruz. Kurulumdan yayına, içerikten görsele, hatta reklam yönetimine kadar her adımda bizzat yanınızdayız. Teknik yükü bize bırakın, siz sadece markanızı büyütmeye odaklanın.
+                <p className="text-base md:text-lg text-[#a8b8af] leading-relaxed font-light max-w-lg">
+                  Sıfırdan satışa hazır, modern ve ölçeklenebilir bir Shopify mağazası kuruyoruz. Kurulumdan yayına, içerikten görsele her adımda bizzat yanınızdayız. Teknik yükü bize bırakın.
                 </p>
               </div>
 
-              <button className={`${colors.limeBtn} ${colors.textDark} hover:bg-[#b5dc57] transition-colors duration-300 rounded-full px-8 py-4 text-base font-bold flex items-center gap-2 w-fit group shadow-lg shadow-black/20`}>
+              <button className={`${colors.limeBtn} ${colors.textDark} hover:bg-[#b5dc57] transition-all duration-300 rounded-full px-7 py-3.5 text-[15px] font-semibold flex items-center gap-2 w-fit group shadow-[0_4px_20px_rgba(202,242,101,0.15)]`}>
                 Projenizi Başlatalım
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </button>
@@ -134,17 +135,19 @@ const EticaretYeni = () => {
 
           {/* Sağ Görsel - E-ticaret Odaklı */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="relative h-[50vh] lg:h-auto overflow-hidden hidden md:block"
+            className="relative h-[45vh] lg:h-auto overflow-hidden w-full lg:block"
           >
             <img
               src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80"
               alt="Profesyonel Shopify Mağazası"
               className="absolute inset-0 w-full h-full object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0b2117] via-[#0b2117]/40 to-transparent lg:via-[#0b2117]/20" />
+            {/* Smooth Vignette and Gradient Blend to content side */}
+            <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#0b2117] via-[#0b2117]/60 to-[#0b2117]/10 lg:via-[#0b2117]/40" />
+            <div className="absolute inset-0 shadow-[inset_0_0_100px_rgba(11,33,23,0.8)] pointer-events-none" />
           </motion.div>
         </section>
 

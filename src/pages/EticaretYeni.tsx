@@ -99,7 +99,7 @@ const EticaretYeni = () => {
 
         {/* 1. HERO SECTION - Shopify Partner Vurgulu */}
         <section className={`relative grid grid-cols-1 lg:grid-cols-2 min-h-[85vh] ${colors.darkGreen}`}>
-          <div className="flex flex-col justify-center px-6 md:px-16 lg:px-24 py-20 lg:py-0 z-10">
+          <div className="flex flex-col justify-center px-6 md:px-16 lg:px-24 pt-32 pb-20 lg:pt-40 lg:pb-0 z-10">
             <motion.div
               initial="hidden"
               animate="visible"

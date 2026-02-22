@@ -23,18 +23,19 @@ export default {
           900: 'var(--bor-primary-900)',
         },
         'bor-secondary': {
-            DEFAULT: 'var(--bor-secondary-default)',
+          DEFAULT: 'var(--bor-secondary-default)',
         },
         'bor-accent': 'var(--bor-accent)',
         'glass': {
-            bg: 'var(--glass-bg)',
-            border: 'var(--glass-border)',
+          bg: 'var(--glass-bg)',
+          border: 'var(--glass-border)',
         }
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         serif: ['Instrument Serif', 'serif'],
         display: ['Outfit', 'sans-serif'],
+        raleway: ['Raleway', 'Arial', 'sans-serif'],
       },
       spacing: {
         'header-height': 'var(--header-height)',

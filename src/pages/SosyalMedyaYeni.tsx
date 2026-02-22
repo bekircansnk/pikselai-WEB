@@ -229,7 +229,7 @@ const SosyalMedyaYeni = () => {
                 transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
                 className="relative h-[500px] lg:h-[600px] w-full hidden md:block"
               >
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[url('/images/noise.png')] opacity-20 pointer-events-none" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')] opacity-20 pointer-events-none" />
 
                 {/* Floating Image Cards */}
                 <motion.div

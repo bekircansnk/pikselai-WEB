@@ -95,16 +95,9 @@ export function MegaMenu({ isOpen, activeMenu, onClose }: MegaMenuProps) {
                                     <div className="space-y-0.5">
                                         <MenuItem
                                             icon={<Store size={16} />}
-                                            title="Kapsamlı E-Ticaret (Yeni)"
-                                            href="/hizmetler/e-ticaret-yeni"
-                                            desc="Yapay Zeka Destekli Operasyonlar"
-                                            onClose={onClose}
-                                        />
-                                        <MenuItem
-                                            icon={<Store size={16} />}
-                                            title="Shopify Kurulum"
+                                            title="Kapsamlı E-Ticaret"
                                             href="/hizmetler/e-ticaret"
-                                            desc="Anahtar teslim mağaza açılışı"
+                                            desc="Yapay Zeka Destekli Operasyonlar"
                                             onClose={onClose}
                                         />
                                         <MenuItem

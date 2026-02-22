@@ -2,38 +2,86 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
       <loc>https://pikselai.com/</loc>
-      <lastmod>2026-01-03</lastmod>
+      <lastmod>2026-02-22</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
+      <loc>https://pikselai.com/hizmetler</loc>
+      <lastmod>2026-02-22</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://pikselai.com/hizmetler/ai-produksiyon</loc>
+      <lastmod>2026-02-22</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://pikselai.com/hizmetler/e-ticaret</loc>
+      <lastmod>2026-02-22</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://pikselai.com/hizmetler/sosyal-medya</loc>
+      <lastmod>2026-02-22</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://pikselai.com/hizmetler/dijital-buyume</loc>
+      <lastmod>2026-02-22</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://pikselai.com/hizmetler/kreatif-tasarim</loc>
+      <lastmod>2026-02-22</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
       <loc>https://pikselai.com/ucretler</loc>
-      <lastmod>2026-01-03</lastmod>
+      <lastmod>2026-02-22</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
-      <loc>https://pikselai.com/profesyonel-katalog</loc>
-      <lastmod>2026-01-03</lastmod>
+      <loc>https://pikselai.com/hakkimizda</loc>
+      <lastmod>2026-02-22</lastmod>
       <changefreq>monthly</changefreq>
-      <priority>0.9</priority>
+      <priority>0.7</priority>
    </url>
    <url>
-      <loc>https://pikselai.com/yapay-zeka-fotograf-cekimi</loc>
-      <lastmod>2026-01-03</lastmod>
+      <loc>https://pikselai.com/iletisim</loc>
+      <lastmod>2026-02-22</lastmod>
       <changefreq>monthly</changefreq>
-      <priority>0.9</priority>
+      <priority>0.7</priority>
    </url>
    <url>
-      <loc>https://pikselai.com/sosyal-medya-yonetimi</loc>
-      <lastmod>2026-01-03</lastmod>
+      <loc>https://pikselai.com/islerimiz</loc>
+      <lastmod>2026-02-22</lastmod>
       <changefreq>monthly</changefreq>
-      <priority>0.9</priority>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://pikselai.com/blog</loc>
+      <lastmod>2026-02-22</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.7</priority>
+   </url>
+   <url>
+      <loc>https://pikselai.com/musteri-hikayeleri</loc>
+      <lastmod>2026-02-22</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/referanslar</loc>
-      <lastmod>2026-01-03</lastmod>
+      <lastmod>2026-02-22</lastmod>
       <changefreq>monthly</changefreq>
-      <priority>0.7</priority>
+      <priority>0.6</priority>
    </url>
 </urlset>

@@ -66,8 +66,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                                 <div className="space-y-3">
                                     <h4 className="text-sm font-semibold uppercase text-bor-primary-400">E-Ticaret & Büyüme</h4>
                                     <MobileMenuItem title="Tüm Dijital Büyüme" href="/hizmetler/dijital-buyume" onClick={onClose} />
-                                    <MobileMenuItem title="E-Ticaret (Yeni)" href="/hizmetler/e-ticaret-yeni" onClick={onClose} />
-                                    <MobileMenuItem title="E-Ticaret Yönetimi" href="/hizmetler/e-ticaret" onClick={onClose} />
+                                    <MobileMenuItem title="Kapsamlı E-Ticaret" href="/hizmetler/e-ticaret" onClick={onClose} />
                                     <MobileMenuItem title="SEO & İçerik" href="/hizmetler/dijital-buyume" onClick={onClose} />
                                     <MobileMenuItem title="Sosyal Medya" href="/hizmetler/sosyal-medya" onClick={onClose} />
                                 </div>

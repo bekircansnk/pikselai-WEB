@@ -2,7 +2,12 @@ import { useState } from "react";
 import { Check, Settings, Image as ImageIcon, Box, PieChart, Info, Copy, Zap } from "lucide-react";
 import { Header } from "../components/layout/Header";
 import { Footer } from "../components/layout/Footer";
-import { IMAGES_PER_RUN } from "../lib/calculatorConstants";
+import {
+  DEFAULT_SOCIAL,
+  DEFAULT_BANNERS,
+  DEFAULT_BULK,
+  IMAGES_PER_RUN,
+} from "../lib/calculatorConstants";
 import {
   calculateSocialMedia,
   calculateBanners,
@@ -74,9 +79,9 @@ const EMPTY_BULK = { totalProducts: 0, imagesPerProduct: 0, errorBase: 500, erro
 
 const CostCalculator = () => {
   // States
-  const [social, setSocial] = useState(EMPTY_SOCIAL);
-  const [banner, setBanner] = useState(EMPTY_BANNERS);
-  const [bulk, setBulk] = useState(EMPTY_BULK);
+  const [social, setSocial] = useState(DEFAULT_SOCIAL);
+  const [banner, setBanner] = useState(DEFAULT_BANNERS);
+  const [bulk, setBulk] = useState(DEFAULT_BULK);
 
 
   const [isCopied, setIsCopied] = useState(false);

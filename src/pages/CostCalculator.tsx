@@ -104,7 +104,7 @@ PikselAI Gelişmiş Üretim Özeti:
 ----------------------------------
 Sosyal Medya Aylık: $${socialCalc.totalCost.toFixed(2)} (${socialCalc.monthlyTotal} Görsel)
 Banner Üretimi Sezonluk: $${bannerCalc.totalCost.toFixed(2)} (${bannerCalc.seasonTotal} Görsel)
-Toplu Kapsam / Bayi: $${bulkCalc.totalCost.toFixed(2)} (${bulkCalc.billableImages} Görsel)
+Toplu Üretim (Sezonluk): $${bulkCalc.totalCost.toFixed(2)} (${bulkCalc.billableImages} Görsel)
 ----------------------------------
 Genel Toplam Bütçe: $${overallCost.toFixed(2)}
     `.trim();

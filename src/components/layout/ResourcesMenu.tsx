@@ -76,7 +76,7 @@ export function ResourcesMenu({ isOpen, activeMenu, onClose }: ResourcesMenuProp
                                     <MenuHeader title="Müşteri Hikayeleri" href="/musteri-hikayeleri" onClose={onClose} />
                                     <div className="mt-4 space-y-3">
                                         <ImageCard
-                                            image="/projects/cazador-local/13300-Siyah (8)_scene_1_pose_5(3).webp"
+                                            image="/projects/cazador-local/cazador-siyah-pose.webp"
                                             title="Cazador: Moda Fotoğrafçılığında AI Dönüşümü"
                                             href="/blog/referanslar"
                                             onClose={onClose}

@@ -12,7 +12,7 @@ const stories = [
         industry: "Moda & Tekstil",
         title: "Yapay Zeka ile Moda Fotoğrafçılığında Devrim",
         description: "Geleneksel fotoğraf çekimi maliyetlerini %80 düşürürken, ürün görselleştirme hızını 10 kat artırdık.",
-        image: "/projects/cazador-local/13300-Siyah (8)_scene_1_pose_5(3).webp",
+        image: "/projects/cazador-local/cazador-siyah-pose.webp",
         tags: ["AI Prodüksiyon", "Katalog", "Verimlilik"],
         link: "/blog/referanslar" // Mevcut Cazador case study sayfasına yönlendirme
     },
@@ -78,7 +78,7 @@ export default function CustomerStories() {
                     <div className="flex flex-col md:flex-row items-center gap-12 rounded-3xl overflow-hidden bg-white dark:bg-bor-primary-900 shadow-xl border border-bor-primary-100 dark:border-bor-primary-800">
                         <div className="md:w-1/2 h-full min-h-[400px]">
                             <img
-                                src="/projects/cazador-local/10600-HAKİ_2K_4_5_Editorial fashion photography. Exterior location, winter day. The specific male model stands naturally beside a frosted black iron park railing covered in thick snow. He wears the olive green Cazador puffer jacket, b (10).webp"
+                                src="/projects/cazador-local/cazador-moda-haki.webp"
                                 alt="Cazador Case Study"
                                 className="w-full h-full object-cover"
                             />

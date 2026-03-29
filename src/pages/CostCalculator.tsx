@@ -2,12 +2,7 @@ import { useState } from "react";
 import { Check, Settings, Image as ImageIcon, Box, PieChart, Info, Copy, Zap } from "lucide-react";
 import { Header } from "../components/layout/Header";
 import { Footer } from "../components/layout/Footer";
-import {
-  DEFAULT_SOCIAL,
-  DEFAULT_BANNERS,
-  DEFAULT_BULK,
-  IMAGES_PER_RUN,
-} from "../lib/calculatorConstants";
+import { IMAGES_PER_RUN } from "../lib/calculatorConstants";
 import {
   calculateSocialMedia,
   calculateBanners,
@@ -73,11 +68,15 @@ const InputField = ({ label, value, onChange, type = "number", suffix = "", tool
   </div>
 );
 
+const EMPTY_SOCIAL = { storiesPerDay: 0, postsPerDay: 0, storyTryCount: 0, postTryCount: 0, daysPerMonth: 30 };
+const EMPTY_BANNERS = { mobileCount: 0, desktopCount: 0, categoryCount: 0, tryCount: 0, imagesPerRun: 4, mobileMultiplier: 1, desktopMultiplier: 2, categoryMultiplier: 2 };
+const EMPTY_BULK = { totalProducts: 0, imagesPerProduct: 0, errorBase: 500, errorAmount: 10 };
+
 const CostCalculator = () => {
   // States
-  const [social, setSocial] = useState(DEFAULT_SOCIAL);
-  const [banner, setBanner] = useState(DEFAULT_BANNERS);
-  const [bulk, setBulk] = useState(DEFAULT_BULK);
+  const [social, setSocial] = useState(EMPTY_SOCIAL);
+  const [banner, setBanner] = useState(EMPTY_BANNERS);
+  const [bulk, setBulk] = useState(EMPTY_BULK);
 
 
   const [isCopied, setIsCopied] = useState(false);
@@ -135,22 +134,35 @@ Genel Toplam Bütçe: $${overallCost.toFixed(2)}
             </div>
           </div>
 
-          {/* Quick Scenario Buttons */}
-          <div className="flex flex-wrap gap-2 p-1.5 bg-gray-200/50 dark:bg-black/40 rounded-2xl w-fit mb-8 backdrop-blur-xl border border-gray-300/50 dark:border-white/5">
-            {[
-              { id: "social-section", label: "Sosyal Medya", icon: PieChart },
-              { id: "banner-section", label: "Banner", icon: ImageIcon },
-              { id: "bulk-section", label: "Toplu Üretim", icon: Box },
-            ].map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => document.getElementById(tab.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-                className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm transition-all bg-white dark:bg-[#1a1c23] hover:bg-gray-50 dark:hover:bg-white/5 text-gray-900 dark:text-white shadow-sm border border-gray-200 dark:border-white/10"
-              >
-                <tab.icon className="w-4 h-4 text-bor-secondary" />
-                <span>{tab.label}</span>
-              </button>
-            ))}
+          {/* Quick Scenario Buttons & Reset */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+            <div className="flex flex-wrap gap-2 p-1.5 bg-gray-200/50 dark:bg-black/40 rounded-2xl w-fit backdrop-blur-xl border border-gray-300/50 dark:border-white/5">
+              {[
+                { id: "social-section", label: "Sosyal Medya", icon: PieChart },
+                { id: "banner-section", label: "Banner", icon: ImageIcon },
+                { id: "bulk-section", label: "Toplu Üretim", icon: Box },
+              ].map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => document.getElementById(tab.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                  className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm transition-all bg-white dark:bg-[#1a1c23] hover:bg-gray-50 dark:hover:bg-white/5 text-gray-900 dark:text-white shadow-sm border border-gray-200 dark:border-white/10"
+                >
+                  <tab.icon className="w-4 h-4 text-bor-secondary" />
+                  <span>{tab.label}</span>
+                </button>
+              ))}
+            </div>
+
+            <button
+              onClick={() => {
+                setSocial(EMPTY_SOCIAL);
+                setBanner(EMPTY_BANNERS);
+                setBulk(EMPTY_BULK);
+              }}
+              className="flex items-center gap-2 px-5 py-2.5 w-fit rounded-xl font-medium text-sm bg-red-50 text-red-600 hover:bg-red-100 dark:bg-red-500/10 dark:text-red-400 dark:hover:bg-red-500/20 transition-all border border-red-100 dark:border-red-500/20 shadow-sm"
+            >
+              Tümünü Sıfırla
+            </button>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">

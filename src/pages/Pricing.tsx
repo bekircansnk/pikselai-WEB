@@ -150,11 +150,32 @@ const Pricing = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -20 }}
-                                className="grid grid-cols-1 md:grid-cols-3 gap-8"
+                                className="flex flex-col gap-10"
                             >
-                                {aiPlans.map((plan, i) => (
-                                    <PricingCard key={i} plan={plan} />
-                                ))}
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                    {aiPlans.map((plan, i) => (
+                                        <PricingCard key={i} plan={plan} />
+                                    ))}
+                                </div>
+                                
+                                {/* Cost Calculator Banner CTA */}
+                                <div className="w-full bg-white dark:bg-bor-primary-900/50 rounded-3xl p-8 lg:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 dark:border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 transition-transform hover:-translate-y-1 duration-300">
+                                    <div className="text-left flex-1">
+                                        <h3 className="text-2xl lg:text-3xl font-bold font-display text-gray-900 dark:text-white mb-3">
+                                            Hangi paketin size uygun olduğundan emin değil misiniz?
+                                        </h3>
+                                        <p className="text-gray-500 dark:text-gray-400 text-lg">
+                                            AI üretim maliyet hesaplama motorumuzu kullanarak projenizin tahmini bütçesini anında görün.
+                                        </p>
+                                    </div>
+                                    <Button 
+                                        size="lg" 
+                                        className="w-full md:w-auto md:min-w-[280px] text-lg py-6 bg-bor-secondary text-white hover:bg-bor-secondary/90 shadow-xl shadow-bor-secondary/20"
+                                        href="/fiyat-hesapla"
+                                    >
+                                        En Uygun Paketi Hesapla
+                                    </Button>
+                                </div>
                             </motion.div>
                         )}
 

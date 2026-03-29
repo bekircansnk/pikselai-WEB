@@ -34,3 +34,6 @@ _arsiv/
 
 # Virtual environments
 .venv*/
+
+# LLM temporary configuration
+*spec.md

@@ -27,78 +27,58 @@ export function ResourcesMenu({ isOpen, activeMenu, onClose }: ResourcesMenuProp
                 >
                     <div className="max-w-7xl mx-auto px-6 py-6">
                         {activeMenu === "kaynaklar" && (
-                            <div className="grid grid-cols-1 md:grid-cols-12 gap-0 border-bor-primary-100 dark:border-bor-primary-800">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-bor-primary-100 dark:border-bor-primary-800">
 
-                                {/* Sütun 1: Öğrenim Merkezi (4/12) */}
-                                <div className="md:col-span-4 pr-8 border-r border-bor-primary-100 dark:border-bor-primary-800">
-                                    <MenuHeader title="Öğrenim Merkezi" href="#" onClose={onClose} />
+                                {/* Sütun 1: Öğrenim Merkezi (1/2) */}
+                                <div className="pr-8 border-r border-bor-primary-100 dark:border-bor-primary-800">
+                                    <MenuHeader title="Öğrenim Merkezi & Blog" href="/blog" onClose={onClose} />
                                     <div className="mt-4 space-y-0.5">
                                         <TextItem
                                             title="Etkinlikler ve Zirveler"
                                             desc="Yaklaşan etkinliklerimiz ve kayıtlar"
                                             icon={<Mic size={16} />}
+                                            href="/blog"
                                             onClose={onClose}
                                         />
                                         <TextItem
                                             title="Rehberler"
                                             desc="Pazarlama liderlerinden içgörüler"
                                             icon={<BookOpen size={16} />}
+                                            href="/blog"
                                             onClose={onClose}
                                         />
                                         <TextItem
                                             title="Raporlar"
                                             desc="Daha akıllı kararlar için veri"
                                             icon={<PieChart size={16} />}
+                                            href="/blog"
                                             onClose={onClose}
                                         />
                                         <TextItem
                                             title="Video kütüphanesi"
                                             desc="PikselAI'nın en yeni videoları"
                                             icon={<PlayCircle size={16} />}
+                                            href="/blog"
                                             onClose={onClose}
                                         />
                                         <TextItem
                                             title="Oyun kılavuzları"
                                             desc="Stratejik büyüme metotları"
                                             icon={<FolderArchive size={16} />}
-                                            onClose={onClose}
-                                        />
-                                    </div>
-                                </div>
-
-                                {/* Sütun 2: Blog (4/12) */}
-                                <div className="md:col-span-4 px-8 border-r border-bor-primary-100 dark:border-bor-primary-800">
-                                    <MenuHeader title="Blog" href="/blog" onClose={onClose} />
-                                    <div className="mt-4 space-y-3">
-                                        <ImageCard
-                                            image="https://images.unsplash.com/photo-1551288049-bbbda5366391?q=80&w=2070&auto=format&fit=crop"
-                                            title="SaaS için tasarım sistemleri: En iyi 6 ajans"
-                                            href="/blog"
-                                            onClose={onClose}
-                                        />
-                                        <ImageCard
-                                            image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
-                                            title="2026 Markalarından 10 Yaratıcı Hizmet Örneği"
                                             href="/blog"
                                             onClose={onClose}
                                         />
                                     </div>
                                 </div>
 
-                                {/* Sütun 3: Müşteri Hikayeleri (4/12) */}
-                                <div className="md:col-span-4 pl-8">
+                                {/* Sütun 2: Müşteri Hikayeleri (1/2) */}
+                                <div className="pl-8">
                                     <MenuHeader title="Müşteri Hikayeleri" href="/musteri-hikayeleri" onClose={onClose} />
                                     <div className="mt-4 space-y-3">
                                         <ImageCard
-                                            image="https://images.unsplash.com/photo-1611162617263-4ec3060a058e?q=80&w=1974&auto=format&fit=crop"
-                                            title="Vimeo'da AI ile yaratıcı iş akışları"
-                                            href="/musteri-hikayeleri"
-                                            onClose={onClose}
-                                        />
-                                        <ImageCard
-                                            image="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop"
-                                            title="Fortune 500 şirketi AI kullanımını katladı"
-                                            href="/musteri-hikayeleri"
+                                            image="/Cazador-Foto/13300-Siyah (8)_scene_1_pose_5(3).webp"
+                                            title="Cazador: Moda Fotoğrafçılığında AI Dönüşümü"
+                                            href="/blog/referanslar"
                                             onClose={onClose}
                                         />
                                     </div>
@@ -125,10 +105,10 @@ function MenuHeader({ title, href, onClose }: { title: string, href: string, onC
     )
 }
 
-function TextItem({ title, desc, icon, onClose }: { title: string, desc: string, icon: React.ReactNode, onClose: () => void }) {
+function TextItem({ title, desc, icon, href, onClose }: { title: string, desc: string, icon: React.ReactNode, href: string, onClose: () => void }) {
     return (
         <Link
-            to="#"
+            to={href}
             className="group flex items-center justify-between py-2 px-3 -mx-3 rounded-lg hover:bg-white dark:hover:bg-bor-primary-800 transition-all duration-200"
             onClick={onClose}
         >

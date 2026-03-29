@@ -15,26 +15,6 @@ const stories = [
         image: "/Cazador-Foto/13300-Siyah (8)_scene_1_pose_5(3).webp",
         tags: ["AI Prodüksiyon", "Katalog", "Verimlilik"],
         link: "/blog/referanslar" // Mevcut Cazador case study sayfasına yönlendirme
-    },
-    {
-        id: "tech-flow",
-        client: "TechFlow",
-        industry: "Yazılım",
-        title: "B2B SaaS Pazarlamasında %200 Lead Artışı",
-        description: "Programatik SEO ve AI destekli içerik stratejisi ile organik trafikte rekor büyüme.",
-        image: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop",
-        tags: ["Dijital Büyüme", "SEO", "Lead Gen"],
-        link: "#"
-    },
-    {
-        id: "green-life",
-        client: "GreenLife",
-        industry: "E-Ticaret",
-        title: "Dönüşüm Odaklı UX Tasarımı ve Sepet İyileştirme",
-        description: "Kullanıcı deneyimini yeniden tasarlayarak sepet terk oranlarını %45 azalttık.",
-        image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop",
-        tags: ["UX/UI", "Web Geliştirme", "E-Ticaret"],
-        link: "#"
     }
 ]
 

@@ -80,7 +80,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
                                 <div className="space-y-3">
                                     <h4 className="text-sm font-semibold uppercase text-bor-primary-400">Kaynaklar</h4>
-                                    <MobileMenuItem title="Blog" href="/blog" onClick={onClose} />
+                                    <MobileMenuItem title="Öğrenim Merkezi & Blog" href="/blog" onClick={onClose} />
                                     <MobileMenuItem title="Müşteri Hikayeleri" href="/musteri-hikayeleri" onClick={onClose} />
                                 </div>
 

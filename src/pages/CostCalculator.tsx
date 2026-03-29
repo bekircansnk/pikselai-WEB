@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { Check, Settings, Image as ImageIcon, Box, PieChart, Info, Copy, Zap, Calculator } from "lucide-react";
+import { Check, Settings, Image as ImageIcon, Box, PieChart, Info, Copy, Zap } from "lucide-react";
 import { Header } from "../components/layout/Header";
 import { Footer } from "../components/layout/Footer";
 import {
@@ -80,7 +79,7 @@ const CostCalculator = () => {
   const [banner, setBanner] = useState(DEFAULT_BANNERS);
   const [bulk, setBulk] = useState(DEFAULT_BULK);
 
-  const [activeTab, setActiveTab] = useState<"social" | "banner" | "bulk">("social");
+
   const [isCopied, setIsCopied] = useState(false);
 
   // Calculations
@@ -122,12 +121,8 @@ Genel Toplam Bütçe: $${overallCost.toFixed(2)}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           
           {/* Hero Section */}
-          <div className="flex flex-col lg:flex-row items-end justify-between mb-12 gap-8">
+          <div className="flex flex-col mb-12 gap-8">
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-bor-secondary/10 border border-bor-secondary/20 text-bor-secondary text-sm font-semibold mb-6">
-                <Calculator className="w-4 h-4" />
-                <span>Tek Sayfa Maliyet Motoru</span>
-              </div>
               <h1 className="text-4xl md:text-6xl font-display font-bold text-gray-900 dark:text-white leading-tight">
                 Zamanı Kısaltın,<br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-bor-primary-400 to-bor-secondary">
@@ -138,43 +133,22 @@ Genel Toplam Bütçe: $${overallCost.toFixed(2)}
                 AI görsel üretim operasyonlarınız için tahmini hacmi ve bütçeyi anında planlayın. Şeffaf, hızlı ve güçlü.
               </p>
             </div>
-
-            {/* Total Mini Dashboard */}
-            <div className="w-full lg:w-auto p-[1px] rounded-3xl bg-gradient-to-b from-white/40 to-white/10 dark:from-white/10 dark:to-white/5">
-              <div className="bg-white/80 dark:bg-black/60 backdrop-blur-2xl rounded-[23px] p-6 lg:min-w-[320px] shadow-2xl shadow-black/5 dark:shadow-black/40 border border-white/50 dark:border-white/5">
-                <p className="text-sm text-gray-500 dark:text-gray-400 font-medium mb-1">Tahmini Genel Toplam</p>
-                <div className="flex items-baseline gap-2">
-                  <span className="text-4xl font-display font-bold text-gray-900 dark:text-white">${overallCost.toFixed(2)}</span>
-                  <span className="text-sm font-medium text-bor-secondary">/ genel</span>
-                </div>
-                <div className="mt-4 pt-4 border-t border-gray-200 dark:border-white/10 flex justify-between items-center text-sm">
-                  <span className="text-gray-500">Toplam Üretim</span>
-                  <span className="font-semibold text-gray-900 dark:text-white px-2 py-1 bg-gray-100 dark:bg-white/10 rounded-md">
-                    {overallImages} Görsel
-                  </span>
-                </div>
-              </div>
-            </div>
           </div>
 
-          {/* Quick Scenario Toggles (Mobile mainly, but visible as segment control) */}
-          <div className="flex gap-2 p-1.5 bg-gray-200/50 dark:bg-black/40 rounded-2xl w-fit mb-8 backdrop-blur-xl border border-gray-300/50 dark:border-white/5">
+          {/* Quick Scenario Buttons */}
+          <div className="flex flex-wrap gap-2 p-1.5 bg-gray-200/50 dark:bg-black/40 rounded-2xl w-fit mb-8 backdrop-blur-xl border border-gray-300/50 dark:border-white/5">
             {[
-              { id: "social", label: "Sosyal Medya", icon: PieChart },
-              { id: "banner", label: "Banner", icon: ImageIcon },
-              { id: "bulk", label: "Toplu Üretim", icon: Box },
+              { id: "social-section", label: "Sosyal Medya", icon: PieChart },
+              { id: "banner-section", label: "Banner", icon: ImageIcon },
+              { id: "bulk-section", label: "Toplu Üretim", icon: Box },
             ].map((tab) => (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id as "social" | "banner" | "bulk")}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm transition-all ${
-                  activeTab === tab.id
-                    ? "bg-white dark:bg-[#1a1c23] text-gray-900 dark:text-white shadow-lg border border-gray-200 dark:border-white/10"
-                    : "text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-white"
-                }`}
+                onClick={() => document.getElementById(tab.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm transition-all bg-white dark:bg-[#1a1c23] hover:bg-gray-50 dark:hover:bg-white/5 text-gray-900 dark:text-white shadow-sm border border-gray-200 dark:border-white/10"
               >
-                <tab.icon className="w-4 h-4" />
-                <span className="hidden sm:inline">{tab.label}</span>
+                <tab.icon className="w-4 h-4 text-bor-secondary" />
+                <span>{tab.label}</span>
               </button>
             ))}
           </div>
@@ -185,11 +159,9 @@ Genel Toplam Bütçe: $${overallCost.toFixed(2)}
             <div className="lg:col-span-8 space-y-8">
               
               {/* Social Media Calculator */}
-              <motion.div 
-                layout
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: activeTab === 'social' || window.innerWidth > 1024 ? 1 : 0, display: activeTab === 'social' || window.innerWidth > 1024 ? 'block' : 'none' }}
-                className="bg-white/70 dark:bg-[#15171e]/80 backdrop-blur-3xl rounded-[2.5rem] p-8 border border-white/50 dark:border-white/5 shadow-2xl shadow-gray-200/50 dark:shadow-none"
+              <div 
+                id="social-section"
+                className="bg-white/70 dark:bg-[#15171e]/80 backdrop-blur-3xl rounded-[2.5rem] p-8 border border-white/50 dark:border-white/5 shadow-2xl shadow-gray-200/50 dark:shadow-none scroll-mt-32"
               >
                 <CardHeader 
                   icon={PieChart} 
@@ -197,18 +169,8 @@ Genel Toplam Bütçe: $${overallCost.toFixed(2)}
                   description="Aylık düzenli Instagram/TikTok vb. senaryoları için görsel üretimi." 
                   badge="Aylık"
                 />
-                
-                {/* Presets */}
-                <div className="flex gap-3 mb-8">
-                  <button onClick={() => setSocial({...social, storiesPerDay: 5, postsPerDay: 2})} className="px-4 py-2 rounded-xl text-sm font-medium bg-bor-secondary/10 hover:bg-bor-secondary/20 text-bor-secondary transition-colors border border-bor-secondary/20">
-                    Yoğun: 5 Story / 2 Post
-                  </button>
-                  <button onClick={() => setSocial({...social, storiesPerDay: 4, postsPerDay: 1})} className="px-4 py-2 rounded-xl text-sm font-medium bg-gray-100 dark:bg-white/5 hover:bg-gray-200 dark:hover:bg-white/10 text-gray-700 dark:text-white transition-colors border border-gray-200 dark:border-white/10">
-                    Standart: 4 Story / 1 Post
-                  </button>
-                </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-8">
                   <InputField label="Günlük Story" value={social.storiesPerDay} onChange={(e) => setSocial({...social, storiesPerDay: Number(e.target.value)})} type="number" tooltip="1 günde paylaşılacak ortalama story adedi." />
                   <InputField label="Günlük Post" value={social.postsPerDay} onChange={(e) => setSocial({...social, postsPerDay: Number(e.target.value)})} type="number" />
                   <InputField label="Story Başı Deneme" value={social.storyTryCount} onChange={(e) => setSocial({...social, storyTryCount: Number(e.target.value)})} type="number" tooltip="Kaç kez AI üretim tetiklenecek?" />
@@ -229,20 +191,18 @@ Genel Toplam Bütçe: $${overallCost.toFixed(2)}
                     <span className="text-3xl font-display font-bold text-gray-900 dark:text-white">${socialCalc.totalCost.toFixed(2)}</span>
                   </div>
                 </div>
-              </motion.div>
+              </div>
 
               {/* Banner Calculator */}
-              <motion.div 
-                layout
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: activeTab === 'banner' || window.innerWidth > 1024 ? 1 : 0, display: activeTab === 'banner' || window.innerWidth > 1024 ? 'block' : 'none' }}
-                className="bg-white/70 dark:bg-[#15171e]/80 backdrop-blur-3xl rounded-[2.5rem] p-8 border border-white/50 dark:border-white/5 shadow-2xl shadow-gray-200/50 dark:shadow-none"
+              <div 
+                id="banner-section"
+                className="bg-white/70 dark:bg-[#15171e]/80 backdrop-blur-3xl rounded-[2.5rem] p-8 border border-white/50 dark:border-white/5 shadow-2xl shadow-gray-200/50 dark:shadow-none scroll-mt-32"
               >
                 <CardHeader 
                   icon={ImageIcon} 
                   title="Banner Üretimi" 
                   description="Kampanya ve e-ticaret siteleri için mobil, desktop banner ihtiyaçları." 
-                  badge="Sezonluk / 6-Aylık"
+                  badge="Sezonluk"
                 />
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-2 mb-6">
@@ -269,27 +229,23 @@ Genel Toplam Bütçe: $${overallCost.toFixed(2)}
                     <span className="text-3xl font-display font-bold text-gray-900 dark:text-white">${bannerCalc.totalCost.toFixed(2)}</span>
                   </div>
                 </div>
-              </motion.div>
+              </div>
 
               {/* Bulk Calculator */}
-              <motion.div 
-                layout
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: activeTab === 'bulk' || window.innerWidth > 1024 ? 1 : 0, display: activeTab === 'bulk' || window.innerWidth > 1024 ? 'block' : 'none' }}
-                className="bg-white/70 dark:bg-[#15171e]/80 backdrop-blur-3xl rounded-[2.5rem] p-8 border border-white/50 dark:border-white/5 shadow-2xl shadow-gray-200/50 dark:shadow-none"
+              <div 
+                id="bulk-section"
+                className="bg-white/70 dark:bg-[#15171e]/80 backdrop-blur-3xl rounded-[2.5rem] p-8 border border-white/50 dark:border-white/5 shadow-2xl shadow-gray-200/50 dark:shadow-none scroll-mt-32"
               >
                 <CardHeader 
                   icon={Box} 
-                  title="Toplu Üretim & Bayi Senaryosu" 
+                  title="Toplu Üretim" 
                   description="Katalog, seri kıyafet üretimi ve yüzlerce varyasyonu planlamak için." 
-                  badge="Proje Bazlı"
+                  badge="Sezonluk"
                 />
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-8">
                   <InputField label="Toplam Ana Ürün" value={bulk.totalProducts} onChange={(e) => setBulk({...bulk, totalProducts: Number(e.target.value)})} type="number" tooltip="Toplam render alınacak model veya kıyafet sayısı. (Varyasyonlar dahil)" />
                   <InputField label="Ürün Başı Final Görsel" value={bulk.imagesPerProduct} onChange={(e) => setBulk({...bulk, imagesPerProduct: Number(e.target.value)})} type="number" />
-                  <InputField label="Hata Toleransı (Referans Hacim)" value={bulk.errorBase} onChange={(e) => setBulk({...bulk, errorBase: Number(e.target.value)})} type="number" suffix="Örn: 500'de" tooltip="Her X görsel üretiminde."/>
-                  <InputField label="Hata Toleransı (Pay)" value={bulk.errorAmount} onChange={(e) => setBulk({...bulk, errorAmount: Number(e.target.value)})} type="number" suffix="Örn: 10 fire" tooltip="X görselde ortalama Y fire."/>
                 </div>
 
                 <div className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-white/5 dark:to-transparent border border-gray-200 dark:border-white/5 flex flex-wrap gap-6 justify-between items-center">
@@ -308,7 +264,7 @@ Genel Toplam Bütçe: $${overallCost.toFixed(2)}
                     <span className="text-3xl font-display font-bold text-gray-900 dark:text-white">${bulkCalc.totalCost.toFixed(2)}</span>
                   </div>
                 </div>
-              </motion.div>
+              </div>
 
             </div>
 

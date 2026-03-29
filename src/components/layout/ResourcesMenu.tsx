@@ -81,6 +81,24 @@ export function ResourcesMenu({ isOpen, activeMenu, onClose }: ResourcesMenuProp
                                             href="/blog/referanslar"
                                             onClose={onClose}
                                         />
+                                        <ImageCard
+                                            image="/BLOG/mina-drinks/id_scenario_1_end_frame_prompt_2k_20.webp"
+                                            title="Mina Drinks: Ürün Prodüksiyonunda %90 Tasarruf"
+                                            href="/blog/mina-drinks"
+                                            onClose={onClose}
+                                        />
+                                        <ImageCard
+                                            image="/BLOG/venus/ella-1_1_2k_4_5_03_portrait_mid.webp"
+                                            title="Venüs Giyim: E-Ticarette Sanal Manken Teknolojisi"
+                                            href="/blog/venus"
+                                            onClose={onClose}
+                                        />
+                                        <ImageCard
+                                            image="/BLOG/campandmap/1_2k_4_5_undefined__1_.webp"
+                                            title="Camp and Map: Açık Hava Stüdyoları AI'a Taşındı"
+                                            href="/blog/campandmap"
+                                            onClose={onClose}
+                                        />
                                     </div>
                                 </div>
 

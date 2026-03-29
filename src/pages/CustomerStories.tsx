@@ -15,6 +15,36 @@ const stories = [
         image: "/Cazador-Foto/13300-Siyah (8)_scene_1_pose_5(3).webp",
         tags: ["AI Prodüksiyon", "Katalog", "Verimlilik"],
         link: "/blog/referanslar" // Mevcut Cazador case study sayfasına yönlendirme
+    },
+    {
+        id: "mina-drinks",
+        client: "Mina Drinks",
+        industry: "Yiyecek & İçecek",
+        title: "Görsel Üretim Maliyetlerinde %90 Tasarruf",
+        description: "İçecek fotoğrafçılığını stüdyolardan AI altyapılarına taşıyarak sınırsız yaratıcılık kazandık.",
+        image: "/BLOG/mina-drinks/id_scenario_1_end_frame_prompt_2k_20.webp",
+        tags: ["AI Prodüksiyon", "CGI", "Yaratıcılık"],
+        link: "/blog/mina-drinks"
+    },
+    {
+        id: "venus",
+        client: "Venüs Giyim",
+        industry: "Moda & Tekstil",
+        title: "Sanal Manken Teknolojisi ile E-Ticarette Hız",
+        description: "Hayalet manken görsellerini saniyeler içinde uluslararası modellere dönüştürerek süreci %85 oranında hızlandırdık.",
+        image: "/BLOG/venus/ella-1_1_2k_4_5_03_portrait_mid.webp",
+        tags: ["Ghost Mannequin", "AI Model", "Moda"],
+        link: "/blog/venus"
+    },
+    {
+        id: "campandmap",
+        client: "Camp and Map",
+        industry: "Outdoor Giyim & Ekipman",
+        title: "Saha Prodüksiyonu Olmadan Profesyonel Doğa Çekimleri",
+        description: "Ağır kamp ekipmanlarını taşımadan, yapay zeka ortam arka plan üretimiyle kusursuz doğa vitrinleri inşa ettik.",
+        image: "/BLOG/campandmap/1_2k_4_5_undefined__1_.webp",
+        tags: ["AI Background", "Outdoor", "Lojistik"],
+        link: "/blog/campandmap"
     }
 ]
 

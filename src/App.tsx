@@ -19,6 +19,10 @@ const SosyalMedyaYeni = lazy(() => import('./pages/SosyalMedyaYeni'))
 const CreativeDesign = lazy(() => import('./pages/CreativeDesign'))
 const CostCalculator = lazy(() => import('./pages/CostCalculator'))
 
+const MinaDrinksCaseStudy = lazy(() => import('./pages/blog/MinaDrinksCaseStudy'))
+const VenusCaseStudy = lazy(() => import('./pages/blog/VenusCaseStudy'))
+const CampAndMapCaseStudy = lazy(() => import('./pages/blog/CampAndMapCaseStudy'))
+
 function Loading() {
   return (
     <div className="min-h-screen flex items-center justify-center">
@@ -71,6 +75,9 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/musteri-hikayeleri" element={<CustomerStories />} />
             <Route path="/blog/referanslar" element={<CazadorCaseStudy />} />
+            <Route path="/blog/mina-drinks" element={<MinaDrinksCaseStudy />} />
+            <Route path="/blog/venus" element={<VenusCaseStudy />} />
+            <Route path="/blog/campandmap" element={<CampAndMapCaseStudy />} />
             <Route path="/fiyat-hesapla" element={<CostCalculator />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

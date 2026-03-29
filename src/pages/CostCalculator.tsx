@@ -1,0 +1,395 @@
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Check, Settings, Image as ImageIcon, Box, PieChart, Info, Copy, Zap, Calculator } from "lucide-react";
+import { Header } from "../components/layout/Header";
+import { Footer } from "../components/layout/Footer";
+import {
+  DEFAULT_SOCIAL,
+  DEFAULT_BANNERS,
+  DEFAULT_BULK,
+  IMAGES_PER_RUN,
+} from "../lib/calculatorConstants";
+import {
+  calculateSocialMedia,
+  calculateBanners,
+  calculateBulkProduction,
+} from "../lib/calculatorUtils";
+
+interface CardHeaderProps {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+  badge?: string;
+}
+
+const CardHeader = ({ icon: Icon, title, description, badge }: CardHeaderProps) => (
+  <div className="flex flex-col mb-6">
+    <div className="flex justify-between items-start mb-2">
+      <div className="p-3 bg-white/5 dark:bg-black/20 rounded-2xl shadow-inner border border-white/10">
+        <Icon className="w-6 h-6 text-bor-secondary" />
+      </div>
+      {badge && (
+        <span className="px-3 py-1 text-xs font-semibold uppercase tracking-wider bg-bor-secondary/20 text-bor-secondary rounded-full border border-bor-secondary/30">
+          {badge}
+        </span>
+      )}
+    </div>
+    <h3 className="text-2xl font-display font-semibold text-gray-900 dark:text-white mt-4">{title}</h3>
+    <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">{description}</p>
+  </div>
+);
+
+interface InputFieldProps {
+  label: string;
+  value: number;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  type?: string;
+  suffix?: string;
+  tooltip?: string;
+}
+
+const InputField = ({ label, value, onChange, type = "number", suffix = "", tooltip = "" }: InputFieldProps) => (
+  <div className="flex flex-col gap-1.5 mb-4 group relative">
+    <div className="flex justify-between items-center">
+      <label className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center gap-1.5">
+        {label}
+        {tooltip && (
+          <div className="group/tip relative flex cursor-help">
+            <Info className="w-3.5 h-3.5 text-gray-400" />
+            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2 bg-gray-900 text-xs text-white rounded-lg opacity-0 invisible group-hover/tip:opacity-100 group-hover/tip:visible transition-all z-10 shadow-xl">
+              {tooltip}
+              <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+            </div>
+          </div>
+        )}
+      </label>
+      {suffix && <span className="text-xs text-gray-400 font-medium">{suffix}</span>}
+    </div>
+    <input
+      type={type}
+      value={value}
+      onChange={onChange}
+      className="w-full bg-black/5 dark:bg-black/40 border border-gray-200 dark:border-white/10 rounded-xl px-4 py-3 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-bor-secondary/50 focus:border-bor-secondary transition-all"
+    />
+  </div>
+);
+
+const CostCalculator = () => {
+  // States
+  const [social, setSocial] = useState(DEFAULT_SOCIAL);
+  const [banner, setBanner] = useState(DEFAULT_BANNERS);
+  const [bulk, setBulk] = useState(DEFAULT_BULK);
+
+  const [activeTab, setActiveTab] = useState<"social" | "banner" | "bulk">("social");
+  const [isCopied, setIsCopied] = useState(false);
+
+  // Calculations
+  const socialCalc = calculateSocialMedia({ ...social, imagesPerRun: IMAGES_PER_RUN });
+  const bannerCalc = calculateBanners({ ...banner, imagesPerRun: IMAGES_PER_RUN });
+  const bulkCalc = calculateBulkProduction({ ...bulk });
+
+  const totalMonthlyCost = socialCalc.totalCost;
+  const totalSeasonCost = bannerCalc.totalCost + bulkCalc.totalCost;
+  const overallCost = totalMonthlyCost + totalSeasonCost;
+  const overallImages = socialCalc.monthlyTotal + bannerCalc.seasonTotal + bulkCalc.billableImages;
+
+  const handleCopy = () => {
+    const text = `
+PikselAI Gelişmiş Üretim Özeti:
+----------------------------------
+Sosyal Medya Aylık: $${socialCalc.totalCost.toFixed(2)} (${socialCalc.monthlyTotal} Görsel)
+Banner Üretimi Sezonluk: $${bannerCalc.totalCost.toFixed(2)} (${bannerCalc.seasonTotal} Görsel)
+Toplu Kapsam / Bayi: $${bulkCalc.totalCost.toFixed(2)} (${bulkCalc.billableImages} Görsel)
+----------------------------------
+Genel Toplam Bütçe: $${overallCost.toFixed(2)}
+    `.trim();
+    navigator.clipboard.writeText(text);
+    setIsCopied(true);
+    setTimeout(() => setIsCopied(false), 2000);
+  };
+
+  return (
+    <>
+      <Header />
+      <div className="min-h-screen pt-24 pb-20 bg-[#f8f9fa] dark:bg-[#0a0a0c] selection:bg-bor-secondary/30 transition-colors duration-300">
+        
+        {/* Background Ambient SVG */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-[20%] -right-[10%] w-[70vw] h-[70vw] rounded-full bg-bor-secondary/10 dark:bg-bor-secondary/5 blur-[120px]" />
+          <div className="absolute top-[40%] -left-[10%] w-[50vw] h-[50vw] rounded-full bg-bor-primary-500/10 dark:bg-bor-primary-500/5 blur-[100px]" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+          
+          {/* Hero Section */}
+          <div className="flex flex-col lg:flex-row items-end justify-between mb-12 gap-8">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-bor-secondary/10 border border-bor-secondary/20 text-bor-secondary text-sm font-semibold mb-6">
+                <Calculator className="w-4 h-4" />
+                <span>Tek Sayfa Maliyet Motoru</span>
+              </div>
+              <h1 className="text-4xl md:text-6xl font-display font-bold text-gray-900 dark:text-white leading-tight">
+                Zamanı Kısaltın,<br/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-bor-primary-400 to-bor-secondary">
+                  Görsel Üretimi Hesaplayın.
+                </span>
+              </h1>
+              <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
+                AI görsel üretim operasyonlarınız için tahmini hacmi ve bütçeyi anında planlayın. Şeffaf, hızlı ve güçlü.
+              </p>
+            </div>
+
+            {/* Total Mini Dashboard */}
+            <div className="w-full lg:w-auto p-[1px] rounded-3xl bg-gradient-to-b from-white/40 to-white/10 dark:from-white/10 dark:to-white/5">
+              <div className="bg-white/80 dark:bg-black/60 backdrop-blur-2xl rounded-[23px] p-6 lg:min-w-[320px] shadow-2xl shadow-black/5 dark:shadow-black/40 border border-white/50 dark:border-white/5">
+                <p className="text-sm text-gray-500 dark:text-gray-400 font-medium mb-1">Tahmini Genel Toplam</p>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-4xl font-display font-bold text-gray-900 dark:text-white">${overallCost.toFixed(2)}</span>
+                  <span className="text-sm font-medium text-bor-secondary">/ genel</span>
+                </div>
+                <div className="mt-4 pt-4 border-t border-gray-200 dark:border-white/10 flex justify-between items-center text-sm">
+                  <span className="text-gray-500">Toplam Üretim</span>
+                  <span className="font-semibold text-gray-900 dark:text-white px-2 py-1 bg-gray-100 dark:bg-white/10 rounded-md">
+                    {overallImages} Görsel
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick Scenario Toggles (Mobile mainly, but visible as segment control) */}
+          <div className="flex gap-2 p-1.5 bg-gray-200/50 dark:bg-black/40 rounded-2xl w-fit mb-8 backdrop-blur-xl border border-gray-300/50 dark:border-white/5">
+            {[
+              { id: "social", label: "Sosyal Medya", icon: PieChart },
+              { id: "banner", label: "Banner", icon: ImageIcon },
+              { id: "bulk", label: "Toplu Üretim", icon: Box },
+            ].map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id as "social" | "banner" | "bulk")}
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm transition-all ${
+                  activeTab === tab.id
+                    ? "bg-white dark:bg-[#1a1c23] text-gray-900 dark:text-white shadow-lg border border-gray-200 dark:border-white/10"
+                    : "text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-white"
+                }`}
+              >
+                <tab.icon className="w-4 h-4" />
+                <span className="hidden sm:inline">{tab.label}</span>
+              </button>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            {/* Left Column: Calculators */}
+            <div className="lg:col-span-8 space-y-8">
+              
+              {/* Social Media Calculator */}
+              <motion.div 
+                layout
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: activeTab === 'social' || window.innerWidth > 1024 ? 1 : 0, display: activeTab === 'social' || window.innerWidth > 1024 ? 'block' : 'none' }}
+                className="bg-white/70 dark:bg-[#15171e]/80 backdrop-blur-3xl rounded-[2.5rem] p-8 border border-white/50 dark:border-white/5 shadow-2xl shadow-gray-200/50 dark:shadow-none"
+              >
+                <CardHeader 
+                  icon={PieChart} 
+                  title="Sosyal Medya İçerikleri" 
+                  description="Aylık düzenli Instagram/TikTok vb. senaryoları için görsel üretimi." 
+                  badge="Aylık"
+                />
+                
+                {/* Presets */}
+                <div className="flex gap-3 mb-8">
+                  <button onClick={() => setSocial({...social, storiesPerDay: 5, postsPerDay: 2})} className="px-4 py-2 rounded-xl text-sm font-medium bg-bor-secondary/10 hover:bg-bor-secondary/20 text-bor-secondary transition-colors border border-bor-secondary/20">
+                    Yoğun: 5 Story / 2 Post
+                  </button>
+                  <button onClick={() => setSocial({...social, storiesPerDay: 4, postsPerDay: 1})} className="px-4 py-2 rounded-xl text-sm font-medium bg-gray-100 dark:bg-white/5 hover:bg-gray-200 dark:hover:bg-white/10 text-gray-700 dark:text-white transition-colors border border-gray-200 dark:border-white/10">
+                    Standart: 4 Story / 1 Post
+                  </button>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
+                  <InputField label="Günlük Story" value={social.storiesPerDay} onChange={(e) => setSocial({...social, storiesPerDay: Number(e.target.value)})} type="number" tooltip="1 günde paylaşılacak ortalama story adedi." />
+                  <InputField label="Günlük Post" value={social.postsPerDay} onChange={(e) => setSocial({...social, postsPerDay: Number(e.target.value)})} type="number" />
+                  <InputField label="Story Başı Deneme" value={social.storyTryCount} onChange={(e) => setSocial({...social, storyTryCount: Number(e.target.value)})} type="number" tooltip="Kaç kez AI üretim tetiklenecek?" />
+                  <InputField label="Post Başı Deneme" value={social.postTryCount} onChange={(e) => setSocial({...social, postTryCount: Number(e.target.value)})} type="number" />
+                </div>
+
+                <div className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-white/5 dark:to-transparent border border-gray-200 dark:border-white/5 flex flex-wrap gap-6 justify-between items-center">
+                  <div>
+                    <span className="text-gray-500 dark:text-gray-400 text-sm block mb-1">Aylık Görsel Hacmi</span>
+                    <span className="text-2xl font-bold text-gray-900 dark:text-white">{socialCalc.monthlyTotal}</span>
+                  </div>
+                  <div>
+                    <span className="text-gray-500 dark:text-gray-400 text-sm block mb-1">Uygulanan Birim Fiyat</span>
+                    <span className="text-2xl font-bold text-bor-secondary">${socialCalc.unitPrice.toFixed(3)}</span>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-gray-500 dark:text-gray-400 text-sm block mb-1">Aylık Maliyet</span>
+                    <span className="text-3xl font-display font-bold text-gray-900 dark:text-white">${socialCalc.totalCost.toFixed(2)}</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Banner Calculator */}
+              <motion.div 
+                layout
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: activeTab === 'banner' || window.innerWidth > 1024 ? 1 : 0, display: activeTab === 'banner' || window.innerWidth > 1024 ? 'block' : 'none' }}
+                className="bg-white/70 dark:bg-[#15171e]/80 backdrop-blur-3xl rounded-[2.5rem] p-8 border border-white/50 dark:border-white/5 shadow-2xl shadow-gray-200/50 dark:shadow-none"
+              >
+                <CardHeader 
+                  icon={ImageIcon} 
+                  title="Banner Üretimi" 
+                  description="Kampanya ve e-ticaret siteleri için mobil, desktop banner ihtiyaçları." 
+                  badge="Sezonluk / 6-Aylık"
+                />
+                
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-2 mb-6">
+                  <InputField label="Mobil Banner" value={banner.mobileCount} onChange={(e) => setBanner({...banner, mobileCount: Number(e.target.value)})} type="number" suffix="x1 Standart" />
+                  <InputField label="Desktop Banner" value={banner.desktopCount} onChange={(e) => setBanner({...banner, desktopCount: Number(e.target.value)})} type="number" suffix="x2 (4K)" tooltip="Desktop bannerlar 4K render alındığı için x2 kalite çarpanı uygulanır."/>
+                  <InputField label="Kategori Banner" value={banner.categoryCount} onChange={(e) => setBanner({...banner, categoryCount: Number(e.target.value)})} type="number" suffix="x2 (4K)" />
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">
+                   <InputField label="Deneme Sayısı" value={banner.tryCount} onChange={(e) => setBanner({...banner, tryCount: Number(e.target.value)})} type="number" />
+                </div>
+
+                <div className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-white/5 dark:to-transparent border border-gray-200 dark:border-white/5 flex flex-wrap gap-6 justify-between items-center">
+                  <div>
+                    <span className="text-gray-500 dark:text-gray-400 text-sm block mb-1">Sezonluk Hacim</span>
+                    <span className="text-2xl font-bold text-gray-900 dark:text-white">{bannerCalc.seasonTotal}</span>
+                  </div>
+                  <div>
+                    <span className="text-gray-500 dark:text-gray-400 text-sm block mb-1">Birim Fiyat</span>
+                    <span className="text-2xl font-bold text-bor-secondary">${bannerCalc.unitPrice.toFixed(3)}</span>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-gray-500 dark:text-gray-400 text-sm block mb-1">Sezonluk Maliyet</span>
+                    <span className="text-3xl font-display font-bold text-gray-900 dark:text-white">${bannerCalc.totalCost.toFixed(2)}</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Bulk Calculator */}
+              <motion.div 
+                layout
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: activeTab === 'bulk' || window.innerWidth > 1024 ? 1 : 0, display: activeTab === 'bulk' || window.innerWidth > 1024 ? 'block' : 'none' }}
+                className="bg-white/70 dark:bg-[#15171e]/80 backdrop-blur-3xl rounded-[2.5rem] p-8 border border-white/50 dark:border-white/5 shadow-2xl shadow-gray-200/50 dark:shadow-none"
+              >
+                <CardHeader 
+                  icon={Box} 
+                  title="Toplu Üretim & Bayi Senaryosu" 
+                  description="Katalog, seri kıyafet üretimi ve yüzlerce varyasyonu planlamak için." 
+                  badge="Proje Bazlı"
+                />
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
+                  <InputField label="Toplam Ana Ürün" value={bulk.totalProducts} onChange={(e) => setBulk({...bulk, totalProducts: Number(e.target.value)})} type="number" tooltip="Toplam render alınacak model veya kıyafet sayısı. (Varyasyonlar dahil)" />
+                  <InputField label="Ürün Başı Final Görsel" value={bulk.imagesPerProduct} onChange={(e) => setBulk({...bulk, imagesPerProduct: Number(e.target.value)})} type="number" />
+                  <InputField label="Hata Toleransı (Referans Hacim)" value={bulk.errorBase} onChange={(e) => setBulk({...bulk, errorBase: Number(e.target.value)})} type="number" suffix="Örn: 500'de" tooltip="Her X görsel üretiminde."/>
+                  <InputField label="Hata Toleransı (Pay)" value={bulk.errorAmount} onChange={(e) => setBulk({...bulk, errorAmount: Number(e.target.value)})} type="number" suffix="Örn: 10 fire" tooltip="X görselde ortalama Y fire."/>
+                </div>
+
+                <div className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-white/5 dark:to-transparent border border-gray-200 dark:border-white/5 flex flex-wrap gap-6 justify-between items-center">
+                  <div>
+                    <span className="text-gray-500 dark:text-gray-400 text-sm block mb-1">Faturalandırılan Hacim</span>
+                    <span className="text-2xl font-bold text-gray-900 dark:text-white">
+                      {bulkCalc.billableImages} <span className="text-sm font-normal text-gray-500">({bulkCalc.errorTolerance} Fire Payı)</span>
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-gray-500 dark:text-gray-400 text-sm block mb-1">Ürün Başı Maliyet</span>
+                    <span className="text-2xl font-bold text-bor-secondary">${bulkCalc.productUnitCost.toFixed(2)}</span>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-gray-500 dark:text-gray-400 text-sm block mb-1">Maliyet (Proje)</span>
+                    <span className="text-3xl font-display font-bold text-gray-900 dark:text-white">${bulkCalc.totalCost.toFixed(2)}</span>
+                  </div>
+                </div>
+              </motion.div>
+
+            </div>
+
+            {/* Right Column: Sticky Summary Panel */}
+            <div className="lg:col-span-4 transition-opacity">
+              <div className="sticky top-32 space-y-6">
+                
+                {/* Summary Card */}
+                <div className="bg-bor-primary-900 text-white rounded-[2.5rem] p-8 shadow-2xl relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-bor-secondary/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+                  
+                  <h3 className="text-xl font-display font-semibold mb-6 flex items-center gap-2">
+                    <Zap className="w-5 h-5 text-bor-secondary" />
+                    Bütçe Özeti
+                  </h3>
+
+                  <div className="space-y-4 mb-8">
+                    <div className="flex justify-between items-center pb-4 border-b border-white/10">
+                      <span className="text-gray-400">Sosyal Medya (Aylık)</span>
+                      <span className="font-semibold">${socialCalc.totalCost.toFixed(2)}</span>
+                    </div>
+                    <div className="flex justify-between items-center pb-4 border-b border-white/10">
+                      <span className="text-gray-400">Banner (Sezonluk)</span>
+                      <span className="font-semibold">${bannerCalc.totalCost.toFixed(2)}</span>
+                    </div>
+                    <div className="flex justify-between items-center pb-4 border-b border-white/10">
+                      <span className="text-gray-400">Toplu Üretim</span>
+                      <span className="font-semibold">${bulkCalc.totalCost.toFixed(2)}</span>
+                    </div>
+                  </div>
+
+                  <div className="mb-8">
+                    <span className="text-sm text-gray-400 block mb-1">Genel Maliyet Profiliniz</span>
+                    <div className="text-4xl font-display font-bold text-white mb-2">
+                       ${overallCost.toFixed(2)}
+                    </div>
+                    <div className="text-sm text-bor-secondary">
+                      Toplam {overallImages} görsel baz alınmıştır.
+                    </div>
+                  </div>
+
+                  <button 
+                    onClick={handleCopy}
+                    className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-white text-bor-primary-900 font-semibold hover:bg-gray-100 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+                  >
+                    {isCopied ? <Check className="w-5 h-5 text-green-600" /> : <Copy className="w-5 h-5" />}
+                    {isCopied ? "Kopyalandı!" : "Özeti Kopyala"}
+                  </button>
+                </div>
+
+                {/* Explanation Card */}
+                <div className="bg-white/50 dark:bg-black/20 backdrop-blur-xl rounded-[2rem] p-6 border border-gray-200 dark:border-white/5 shadow-lg">
+                  <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                    <Settings className="w-4 h-4 text-gray-500" />
+                    Hesaplama Mantığı
+                  </h4>
+                  <ul className="text-xs text-gray-600 dark:text-gray-400 space-y-2">
+                    <li className="flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-bor-secondary mt-1 shrink-0" />
+                      Fiyatlandırma üretilen görsel sayısına göre kümülatif azalır. (0.195$ → 0.155$)
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-bor-secondary mt-1 shrink-0" />
+                      Standart tek deneme {IMAGES_PER_RUN} adet varyasyon görseli çıkarır.
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-orange-400 mt-1 shrink-0" />
+                      Sonuçlar tahmini maliyetlerdir, satış temsilcisiyle kesinleştirilir.
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <Footer />
+    </>
+  );
+};
+
+export default CostCalculator;

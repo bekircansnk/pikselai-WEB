@@ -132,8 +132,8 @@ export function Header({ transparent = false, lightText = false }: HeaderProps) 
                     {/* Links */}
                     {[
                         { path: "/islerimiz", label: "İşlerimiz" },
-                        { path: "/hakkimizda", label: "Hakkımızda" },
-                        { path: "/ucretler", label: "Ücretler" },
+                        { path: "/ucretler", label: "Paketler" },
+                        { path: "/fiyat-hesapla", label: "Fiyat Hesapla" },
                     ].map((link) => (
                         <Link
                             key={link.path}

@@ -17,6 +17,7 @@ const CustomerStories = lazy(() => import('./pages/CustomerStories'))
 const EticaretYeni = lazy(() => import('./pages/EticaretYeni'))
 const SosyalMedyaYeni = lazy(() => import('./pages/SosyalMedyaYeni'))
 const CreativeDesign = lazy(() => import('./pages/CreativeDesign'))
+const CostCalculator = lazy(() => import('./pages/CostCalculator'))
 
 function Loading() {
   return (
@@ -70,6 +71,7 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/musteri-hikayeleri" element={<CustomerStories />} />
             <Route path="/blog/referanslar" element={<CazadorCaseStudy />} />
+            <Route path="/fiyat-hesapla" element={<CostCalculator />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

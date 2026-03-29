@@ -45,9 +45,10 @@ interface InputFieldProps {
   type?: string;
   suffix?: string;
   tooltip?: string;
+  min?: number;
 }
 
-const InputField = ({ label, value, onChange, type = "number", suffix = "", tooltip = "" }: InputFieldProps) => (
+const InputField = ({ label, value, onChange, type = "number", suffix = "", tooltip = "", min = 0 }: InputFieldProps) => (
   <div className="flex flex-col gap-1.5 mb-4 group relative">
     <div className="flex justify-between items-center">
       <label className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center gap-1.5">
@@ -66,16 +67,17 @@ const InputField = ({ label, value, onChange, type = "number", suffix = "", tool
     </div>
     <input
       type={type}
-      value={value}
+      value={value === 0 && min > 0 ? min : value}
+      min={min}
       onChange={onChange}
       className="w-full bg-black/5 dark:bg-black/40 border border-gray-200 dark:border-white/10 rounded-xl px-4 py-3 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-bor-secondary/50 focus:border-bor-secondary transition-all"
     />
   </div>
 );
 
-const EMPTY_SOCIAL = { storiesPerDay: 0, postsPerDay: 0, storyTryCount: 0, postTryCount: 0, daysPerMonth: 30 };
-const EMPTY_BANNERS = { mobileCount: 0, desktopCount: 0, categoryCount: 0, tryCount: 0, imagesPerRun: 4, mobileMultiplier: 1, desktopMultiplier: 2, categoryMultiplier: 2 };
-const EMPTY_BULK = { totalProducts: 0, imagesPerProduct: 0, errorBase: 500, errorAmount: 10 };
+const EMPTY_SOCIAL = { storiesPerDay: 0, postsPerDay: 0, storyTryCount: 1, postTryCount: 1, daysPerMonth: 30 };
+const EMPTY_BANNERS = { mobileCount: 0, desktopCount: 0, categoryCount: 0, tryCount: 1, imagesPerRun: 4, mobileMultiplier: 1, desktopMultiplier: 2, categoryMultiplier: 2 };
+const EMPTY_BULK = { totalProducts: 0, imagesPerProduct: 1, errorBase: 500, errorAmount: 10 };
 
 const CostCalculator = () => {
   // States
@@ -188,10 +190,10 @@ Genel Toplam Bütçe: $${overallCost.toFixed(2)}
                 />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-8">
-                  <InputField label="Günlük Story" value={social.storiesPerDay} onChange={(e) => setSocial({...social, storiesPerDay: Number(e.target.value)})} type="number" tooltip="1 günde paylaşılacak ortalama story adedi." />
-                  <InputField label="Günlük Post" value={social.postsPerDay} onChange={(e) => setSocial({...social, postsPerDay: Number(e.target.value)})} type="number" tooltip="1 günde paylaşılacak ortalama post/reel adedi." />
-                  <InputField label="Story Başı Deneme" value={social.storyTryCount} onChange={(e) => setSocial({...social, storyTryCount: Number(e.target.value)})} type="number" tooltip="Kaç kez AI üretim tetiklenecek?" />
-                  <InputField label="Post Başı Deneme" value={social.postTryCount} onChange={(e) => setSocial({...social, postTryCount: Number(e.target.value)})} type="number" tooltip="Bir post/reel için yapay zeka tarafından denenecek varyasyon turu sayısı." />
+                  <InputField label="Günlük Story" value={social.storiesPerDay} onChange={(e) => setSocial({...social, storiesPerDay: Math.max(0, Number(e.target.value))})} min={0} type="number" tooltip="1 günde paylaşılacak ortalama story adedi." />
+                  <InputField label="Günlük Post" value={social.postsPerDay} onChange={(e) => setSocial({...social, postsPerDay: Math.max(0, Number(e.target.value))})} min={0} type="number" tooltip="1 günde paylaşılacak ortalama post/reel adedi." />
+                  <InputField label="Story Başı Deneme" value={social.storyTryCount} onChange={(e) => setSocial({...social, storyTryCount: Math.max(1, Number(e.target.value))})} min={1} type="number" tooltip="Kaç kez AI üretim tetiklenecek?" />
+                  <InputField label="Post Başı Deneme" value={social.postTryCount} onChange={(e) => setSocial({...social, postTryCount: Math.max(1, Number(e.target.value))})} min={1} type="number" tooltip="Bir post/reel için yapay zeka tarafından denenecek varyasyon turu sayısı." />
                 </div>
 
                 <div className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-white/5 dark:to-transparent border border-gray-200 dark:border-white/5 flex flex-wrap gap-6 justify-between items-center">
@@ -223,13 +225,13 @@ Genel Toplam Bütçe: $${overallCost.toFixed(2)}
                 />
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-2 mb-6">
-                  <InputField label="Mobil Banner" value={banner.mobileCount} onChange={(e) => setBanner({...banner, mobileCount: Number(e.target.value)})} type="number" suffix="x1 Standart" tooltip="Mobil cihazlarda gösterilecek dikey veya kare formatlı kampanya görselleri." />
-                  <InputField label="Desktop Banner" value={banner.desktopCount} onChange={(e) => setBanner({...banner, desktopCount: Number(e.target.value)})} type="number" suffix="x2 (4K)" tooltip="Desktop bannerlar 4K render alındığı için x2 kalite çarpanı uygulanır."/>
-                  <InputField label="Kategori Banner" value={banner.categoryCount} onChange={(e) => setBanner({...banner, categoryCount: Number(e.target.value)})} type="number" suffix="x2 (4K)" tooltip="Kategori bannerlar 4K render alındığı için x2 kalite çarpanı uygulanır." />
+                  <InputField label="Mobil Banner" value={banner.mobileCount} onChange={(e) => setBanner({...banner, mobileCount: Math.max(0, Number(e.target.value))})} min={0} type="number" suffix="x1 Standart" tooltip="Mobil cihazlarda gösterilecek dikey veya kare formatlı kampanya görselleri." />
+                  <InputField label="Desktop Banner" value={banner.desktopCount} onChange={(e) => setBanner({...banner, desktopCount: Math.max(0, Number(e.target.value))})} min={0} type="number" suffix="x2 (4K)" tooltip="Desktop bannerlar 4K render alındığı için x2 kalite çarpanı uygulanır."/>
+                  <InputField label="Kategori Banner" value={banner.categoryCount} onChange={(e) => setBanner({...banner, categoryCount: Math.max(0, Number(e.target.value))})} min={0} type="number" suffix="x2 (4K)" tooltip="Kategori bannerlar 4K render alındığı için x2 kalite çarpanı uygulanır." />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">
-                   <InputField label="Deneme Sayısı" value={banner.tryCount} onChange={(e) => setBanner({...banner, tryCount: Number(e.target.value)})} type="number" tooltip="Her bir ölçü formatı için oluşturulacak alternatif tasarım denemelerinin sayısı." />
+                   <InputField label="Deneme Sayısı" value={banner.tryCount} onChange={(e) => setBanner({...banner, tryCount: Math.max(1, Number(e.target.value))})} min={1} type="number" tooltip="Her bir ölçü formatı için oluşturulacak alternatif tasarım denemelerinin sayısı." />
                 </div>
 
                 <div className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-white/5 dark:to-transparent border border-gray-200 dark:border-white/5 flex flex-wrap gap-6 justify-between items-center">
@@ -261,8 +263,8 @@ Genel Toplam Bütçe: $${overallCost.toFixed(2)}
                 />
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-8">
-                  <InputField label="Toplam Ana Ürün" value={bulk.totalProducts} onChange={(e) => setBulk({...bulk, totalProducts: Number(e.target.value)})} type="number" tooltip="Toplam render alınacak model veya kıyafet sayısı. (Varyasyonlar dahil)" />
-                  <InputField label="Ürün Başı Final Görsel" value={bulk.imagesPerProduct} onChange={(e) => setBulk({...bulk, imagesPerProduct: Number(e.target.value)})} type="number" tooltip="Her bir ürün veya obje için teslim edilecek nihai (final) fotoğraf adedi." />
+                  <InputField label="Toplam Ana Ürün" value={bulk.totalProducts} onChange={(e) => setBulk({...bulk, totalProducts: Math.max(0, Number(e.target.value))})} min={0} type="number" tooltip="Toplam render alınacak model veya kıyafet sayısı. (Varyasyonlar dahil)" />
+                  <InputField label="Ürün Başı Final Görsel" value={bulk.imagesPerProduct} onChange={(e) => setBulk({...bulk, imagesPerProduct: Math.max(1, Number(e.target.value))})} min={1} type="number" tooltip="Her bir ürün veya obje için teslim edilecek nihai (final) fotoğraf adedi." />
                 </div>
 
                 <div className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-white/5 dark:to-transparent border border-gray-200 dark:border-white/5 flex flex-wrap gap-6 justify-between items-center">
@@ -280,6 +282,14 @@ Genel Toplam Bütçe: $${overallCost.toFixed(2)}
                     <span className="text-gray-500 dark:text-gray-400 text-sm block mb-1">Maliyet (Proje)</span>
                     <span className="text-3xl font-display font-bold text-gray-900 dark:text-white">${bulkCalc.totalCost.toFixed(2)}</span>
                   </div>
+                </div>
+
+                {/* Error Tolerance Description */}
+                <div className="mt-6 p-4 rounded-xl bg-orange-50/50 dark:bg-orange-900/10 border border-orange-100 dark:border-orange-900/30">
+                  <p className="text-xs text-orange-700 dark:text-orange-400 flex items-start gap-2">
+                    <Info className="w-4 h-4 shrink-0 mt-0.5" />
+                    <span><strong>Fire Payı Sistem Notu:</strong> Yapay zeka varyasyonlarındaki olası hataları telafi edebilmek adına, sisteme girilen her {bulk.errorBase} ana ürün üretimine karşılık {bulk.errorAmount} adet ekstra "fire/telafi payı" bütçesi otomatik olarak eklenmektedir.</span>
+                  </p>
                 </div>
               </div>
 

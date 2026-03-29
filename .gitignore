@@ -37,3 +37,6 @@ _arsiv/
 
 # LLM temporary configuration
 *spec.md
+
+# Removed large files and trash
+.silinecekler_cop_kutusu/

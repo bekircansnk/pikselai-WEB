@@ -184,9 +184,9 @@ Genel Toplam Bütçe: $${overallCost.toFixed(2)}
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-8">
                   <InputField label="Günlük Story" value={social.storiesPerDay} onChange={(e) => setSocial({...social, storiesPerDay: Number(e.target.value)})} type="number" tooltip="1 günde paylaşılacak ortalama story adedi." />
-                  <InputField label="Günlük Post" value={social.postsPerDay} onChange={(e) => setSocial({...social, postsPerDay: Number(e.target.value)})} type="number" />
+                  <InputField label="Günlük Post" value={social.postsPerDay} onChange={(e) => setSocial({...social, postsPerDay: Number(e.target.value)})} type="number" tooltip="1 günde paylaşılacak ortalama post/reel adedi." />
                   <InputField label="Story Başı Deneme" value={social.storyTryCount} onChange={(e) => setSocial({...social, storyTryCount: Number(e.target.value)})} type="number" tooltip="Kaç kez AI üretim tetiklenecek?" />
-                  <InputField label="Post Başı Deneme" value={social.postTryCount} onChange={(e) => setSocial({...social, postTryCount: Number(e.target.value)})} type="number" />
+                  <InputField label="Post Başı Deneme" value={social.postTryCount} onChange={(e) => setSocial({...social, postTryCount: Number(e.target.value)})} type="number" tooltip="Bir post/reel için yapay zeka tarafından denenecek varyasyon turu sayısı." />
                 </div>
 
                 <div className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-white/5 dark:to-transparent border border-gray-200 dark:border-white/5 flex flex-wrap gap-6 justify-between items-center">
@@ -218,13 +218,13 @@ Genel Toplam Bütçe: $${overallCost.toFixed(2)}
                 />
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-2 mb-6">
-                  <InputField label="Mobil Banner" value={banner.mobileCount} onChange={(e) => setBanner({...banner, mobileCount: Number(e.target.value)})} type="number" suffix="x1 Standart" />
+                  <InputField label="Mobil Banner" value={banner.mobileCount} onChange={(e) => setBanner({...banner, mobileCount: Number(e.target.value)})} type="number" suffix="x1 Standart" tooltip="Mobil cihazlarda gösterilecek dikey veya kare formatlı kampanya görselleri." />
                   <InputField label="Desktop Banner" value={banner.desktopCount} onChange={(e) => setBanner({...banner, desktopCount: Number(e.target.value)})} type="number" suffix="x2 (4K)" tooltip="Desktop bannerlar 4K render alındığı için x2 kalite çarpanı uygulanır."/>
-                  <InputField label="Kategori Banner" value={banner.categoryCount} onChange={(e) => setBanner({...banner, categoryCount: Number(e.target.value)})} type="number" suffix="x2 (4K)" />
+                  <InputField label="Kategori Banner" value={banner.categoryCount} onChange={(e) => setBanner({...banner, categoryCount: Number(e.target.value)})} type="number" suffix="x2 (4K)" tooltip="Kategori bannerlar 4K render alındığı için x2 kalite çarpanı uygulanır." />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">
-                   <InputField label="Deneme Sayısı" value={banner.tryCount} onChange={(e) => setBanner({...banner, tryCount: Number(e.target.value)})} type="number" />
+                   <InputField label="Deneme Sayısı" value={banner.tryCount} onChange={(e) => setBanner({...banner, tryCount: Number(e.target.value)})} type="number" tooltip="Her bir ölçü formatı için oluşturulacak alternatif tasarım denemelerinin sayısı." />
                 </div>
 
                 <div className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-white/5 dark:to-transparent border border-gray-200 dark:border-white/5 flex flex-wrap gap-6 justify-between items-center">
@@ -257,7 +257,7 @@ Genel Toplam Bütçe: $${overallCost.toFixed(2)}
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-8">
                   <InputField label="Toplam Ana Ürün" value={bulk.totalProducts} onChange={(e) => setBulk({...bulk, totalProducts: Number(e.target.value)})} type="number" tooltip="Toplam render alınacak model veya kıyafet sayısı. (Varyasyonlar dahil)" />
-                  <InputField label="Ürün Başı Final Görsel" value={bulk.imagesPerProduct} onChange={(e) => setBulk({...bulk, imagesPerProduct: Number(e.target.value)})} type="number" />
+                  <InputField label="Ürün Başı Final Görsel" value={bulk.imagesPerProduct} onChange={(e) => setBulk({...bulk, imagesPerProduct: Number(e.target.value)})} type="number" tooltip="Her bir ürün veya obje için teslim edilecek nihai (final) fotoğraf adedi." />
                 </div>
 
                 <div className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-white/5 dark:to-transparent border border-gray-200 dark:border-white/5 flex flex-wrap gap-6 justify-between items-center">

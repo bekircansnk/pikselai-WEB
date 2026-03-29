@@ -24,11 +24,11 @@ const DigitalGrowth = () => {
                             <span className="w-2 h-2 rounded-full bg-bor-secondary animate-pulse" />
                             Dijital Büyüme Çözümleri
                         </span>
-                        <h1 className="text-5xl md:text-7xl font-display font-bold text-white leading-[1.1]">
+                        <h1 className="text-5xl md:text-7xl font-bold font-display leading-tight tracking-tight text-white mb-6 drop-shadow-2xl">
                             Sadece görsel değil, <br />
-                            <span className="italic text-bor-secondary">satış</span> üretiyoruz
+                            <span className="italic font-light text-[#E2FF65]">satış üretiyoruz</span>
                         </h1>
-                        <p className="text-xl text-bor-primary-300 max-w-xl leading-relaxed">
+                        <p className="text-lg md:text-xl font-light text-white/80 leading-relaxed max-w-xl mb-8">
                             E-ticaret yönetimi, SEO optimizasyonu, sosyal medya stratejisi ve
                             AI content factory — dijital kanallarınızı uçtan uca yönetiyoruz.
                         </p>
@@ -90,17 +90,18 @@ const DigitalGrowth = () => {
                         <span className="text-xs font-bold uppercase tracking-[0.2em] text-bor-secondary block mb-6">
                             Neden Dijital Büyüme?
                         </span>
-                        <h2 className="text-3xl md:text-5xl font-display font-bold text-bor-primary-900 mb-6 leading-tight">
-                            Güzel görseller <span className="italic">tek başına</span> satmaz
+                        <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-bor-primary-900 mb-6">
+                            Güzel görseller <br className="hidden lg:block" />
+                            <span className="italic font-light text-[#86AA00]">tek başına satmaz</span>
                         </h2>
-                        <div className="space-y-6 text-bor-primary-600 leading-relaxed">
+                        <div className="space-y-6 text-lg font-light text-bor-primary-600 leading-relaxed">
                             <p>
                                 Mükemmel ürün fotoğraflarınız var. Ama doğru kişilere ulaşamıyorsanız, SEO'nuz
                                 çalışmıyorsa, sosyal medyanız sessizse — <strong className="text-bor-primary-900">o görseller sadece hard diskte kalır.</strong>
                             </p>
                             <p>
                                 PikselAI olarak görsel üretimin ötesine geçip, o görsellerin nerede, nasıl ve kime
-                                gösterilmesi gerektiğini de yönettiyoruz. <strong className="text-bor-secondary">Görsel + dijital strateji = satış.</strong>
+                                gösterilmesi gerektiğini de yönetiyoruz. <strong className="text-[#86AA00] italic">Görsel + dijital strateji = satış.</strong>
                             </p>
                         </div>
                     </div>
@@ -120,8 +121,9 @@ const DigitalGrowth = () => {
             <Section mood="dark" className="py-24">
                 <div className="text-center mb-16">
                     <span className="text-xs font-bold uppercase tracking-[0.2em] text-bor-secondary block mb-4">Hizmetler</span>
-                    <h2 className="text-3xl md:text-5xl font-display text-white">
-                        Uçtan uca <span className="italic">dijital büyüme</span>
+                    <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-white mb-6">
+                        Uçtan uca <br className="hidden lg:block" />
+                        <span className="italic font-light text-[#E2FF65]">dijital büyüme</span>
                     </h2>
                 </div>
 
@@ -280,8 +282,11 @@ const DigitalGrowth = () => {
             <Section mood="light" className="py-24">
                 <div className="text-center mb-16">
                     <span className="text-xs font-bold uppercase tracking-[0.2em] text-bor-secondary block mb-4">Karşılaştırma</span>
-                    <h2 className="text-3xl md:text-4xl font-display font-bold text-bor-primary-900">Neden PikselAI farklı?</h2>
-                    <p className="text-bor-primary-500 mt-4 max-w-xl mx-auto">
+                    <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-bor-primary-900 mb-6">
+                        Neden PikselAI <br className="hidden lg:block" />
+                        <span className="italic font-light text-[#86AA00]">farklı?</span>
+                    </h2>
+                    <p className="text-lg md:text-xl font-light text-bor-primary-600 leading-relaxed max-w-xl mx-auto mb-10 mt-4">
                         Geleneksel ajanslar ya görsel üretir ya da dijital strateji yapar. Biz ikisini birleştiriyoruz.
                     </p>
                 </div>
@@ -317,11 +322,11 @@ const DigitalGrowth = () => {
                         <span className="text-xs font-bold uppercase tracking-[0.2em] text-bor-secondary block mb-6">
                             Nasıl Başlıyoruz?
                         </span>
-                        <h2 className="text-3xl md:text-5xl font-display text-white mb-4 leading-tight">
-                            Sonuç odaklı bir süreç, <br />
-                            <span className="italic">veri odaklı kararlar</span>
+                        <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-white mb-6">
+                            Sonuç odaklı bir süreç, <br className="hidden lg:block" />
+                            <span className="italic font-light text-[#E2FF65]">veri odaklı kararlar</span>
                         </h2>
-                        <p className="text-bor-primary-400 leading-relaxed mb-8">
+                        <p className="text-lg md:text-xl font-light text-white/80 leading-relaxed mb-8">
                             Her müşteriyle 30 dakikalık bir keşif toplantısıyla başlıyoruz. Mevcut durumunuzu analiz edip,
                             ölçülebilir hedefler belirliyoruz.
                         </p>
@@ -352,8 +357,9 @@ const DigitalGrowth = () => {
             <Section mood="light" className="py-24">
                 <div className="text-center mb-16">
                     <span className="text-xs font-bold uppercase tracking-[0.2em] text-bor-secondary block mb-4">Müşterilerimiz</span>
-                    <h2 className="text-3xl md:text-4xl font-display font-bold text-bor-primary-900">
-                        Sonuçlar kendini anlatıyor
+                    <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-bor-primary-900 mb-6">
+                        Sonuçlar <br className="hidden lg:block" />
+                        <span className="italic font-light text-[#86AA00]">kendini anlatıyor</span>
                     </h2>
                 </div>
 
@@ -385,7 +391,10 @@ const DigitalGrowth = () => {
             <Section mood="light" className="py-24 border-t border-bor-primary-100">
                 <div className="max-w-3xl mx-auto">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-display font-bold text-bor-primary-900">Sık Sorulan Sorular</h2>
+                        <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-bor-primary-900 mb-6">
+                            Sık Sorulan <br className="hidden lg:block" />
+                            <span className="italic font-light text-[#86AA00]">Sorular</span>
+                        </h2>
                     </div>
                     <div className="space-y-4">
                         <FaqItem question="Minimum kontrat süresi var mı?" answer="3 aylık minimum çalışma süresi öneriyoruz çünkü dijital büyüme sonuçları zaman alır. Ancak aylık planlar da mevcuttur." />
@@ -402,11 +411,11 @@ const DigitalGrowth = () => {
 			    ═══════════════════════════════════════════ */}
             <Section mood="dark" className="py-32 text-center">
                 <div className="max-w-3xl mx-auto space-y-8">
-                    <h2 className="text-4xl md:text-6xl font-display text-white leading-tight">
+                    <h2 className="text-5xl lg:text-7xl font-bold font-display leading-tight tracking-tight text-white mb-6">
                         Dijital büyümeyi <br />
-                        <span className="italic">şansa bırakmayın</span>
+                        <span className="italic font-light text-[#E2FF65]">şansa bırakmayın</span>
                     </h2>
-                    <p className="text-xl text-bor-primary-300 max-w-xl mx-auto">
+                    <p className="text-lg md:text-xl font-light text-white/80 leading-relaxed max-w-xl mx-auto mb-10">
                         Ücretsiz bir strateji toplantısıyla fırsat alanlarınızı keşfedin.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

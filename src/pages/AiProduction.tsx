@@ -24,11 +24,11 @@ const AiProduction = () => {
                             <span className="w-2 h-2 rounded-full bg-bor-secondary animate-pulse" />
                             AI-Powered Creative Production
                         </span>
-                        <h1 className="text-5xl md:text-7xl font-display font-bold text-white leading-[1.1]">
+                        <h1 className="text-5xl md:text-7xl font-bold font-display leading-tight tracking-tight text-white mb-6 drop-shadow-2xl">
                             Fiziksel çekim dönemine <br />
-                            <span className="italic text-bor-secondary">son</span>
+                            <span className="italic font-light text-[#E2FF65]">son</span>
                         </h1>
-                        <p className="text-xl text-bor-primary-300 max-w-xl leading-relaxed">
+                        <p className="text-lg md:text-xl font-light text-white/80 leading-relaxed max-w-xl mb-8">
                             Ürün fotoğrafçılığından sanal manken tasarımına, AI video üretiminden görsel A/B testine —
                             stüdyo yok, manken yok, haftalarca bekleme yok.
                         </p>
@@ -91,9 +91,9 @@ const AiProduction = () => {
                         <span className="text-xs font-bold uppercase tracking-[0.2em] text-bor-secondary block mb-6">
                             Neden AI Prodüksiyon?
                         </span>
-                        <h2 className="text-3xl md:text-5xl font-display font-bold text-bor-primary-900 mb-6 leading-tight">
-                            Geleneksel çekim süreci <br />
-                            <span className="italic">ölçeklenemiyor</span>
+                        <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-bor-primary-900 mb-6">
+                            Geleneksel çekim süreci <br className="hidden lg:block" />
+                            <span className="italic font-light text-[#86AA00]">ölçeklenemiyor</span>
                         </h2>
                         <div className="space-y-6 text-bor-primary-600 leading-relaxed">
                             <p>
@@ -154,8 +154,9 @@ const AiProduction = () => {
                     <span className="text-xs font-bold uppercase tracking-[0.2em] text-bor-secondary block mb-4">
                         Ne Yapıyoruz?
                     </span>
-                    <h2 className="text-3xl md:text-5xl font-display text-white">
-                        Her ihtiyaca özel <span className="italic">AI çözümü</span>
+                    <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-white mb-6">
+                        Her ihtiyaca özel <br className="hidden lg:block" />
+                        <span className="italic font-light text-[#E2FF65]">AI çözümü</span>
                     </h2>
                 </div>
 
@@ -334,11 +335,11 @@ const AiProduction = () => {
                         <span className="text-xs font-bold uppercase tracking-[0.2em] text-bor-secondary block mb-6">
                             Nasıl Çalışır?
                         </span>
-                        <h2 className="text-3xl md:text-5xl font-display text-white mb-4 leading-tight">
-                            Markanızın hak ettiği <br />
-                            <span className="italic">desteği sunmak için tasarlandı</span>
+                        <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-white mb-6">
+                            Markanızın hak ettiği <br className="hidden lg:block" />
+                            <span className="italic font-light text-[#E2FF65]">desteği sunmak için tasarlandı</span>
                         </h2>
-                        <p className="text-bor-primary-400 leading-relaxed mb-8">
+                        <p className="text-lg md:text-xl font-light text-white/80 leading-relaxed mb-8">
                             Doğru insanları bulmak sadece ilk adım. Sürecimiz de en az ekibimiz kadar kaliteli —
                             onboarding'den teslimata, her aşamada sorunsuz iş birliği.
                         </p>
@@ -393,10 +394,11 @@ const AiProduction = () => {
             <Section mood="light" className="py-24">
                 <div className="text-center mb-16">
                     <span className="text-xs font-bold uppercase tracking-[0.2em] text-bor-secondary block mb-4">Portfolyo</span>
-                    <h2 className="text-3xl md:text-5xl font-display font-bold text-bor-primary-900">
-                        Çalışmalarımızdan örnekler
+                    <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-bor-primary-900 mb-6">
+                        Çalışmalarımızdan <br className="hidden lg:block" />
+                        <span className="italic font-light text-[#86AA00]">örnekler</span>
                     </h2>
-                    <p className="text-bor-primary-500 mt-4 max-w-xl mx-auto">
+                    <p className="text-lg md:text-xl font-light text-bor-primary-600 leading-relaxed max-w-xl mx-auto mb-10 mt-4">
                         Bu görseller gerçek müşteri projelerindendir. Fotoğraflar gerçek ürünler yüklendiğinde güncellenecektir.
                     </p>
                 </div>
@@ -428,7 +430,10 @@ const AiProduction = () => {
             <Section mood="light" className="py-24 border-t border-bor-primary-100">
                 <div className="max-w-3xl mx-auto">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-display font-bold text-bor-primary-900">Sık Sorulan Sorular</h2>
+                        <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-bor-primary-900 mb-6">
+                            Sık Sorulan <br className="hidden lg:block" />
+                            <span className="italic font-light text-[#86AA00]">Sorular</span>
+                        </h2>
                     </div>
 
                     <div className="space-y-4">
@@ -465,11 +470,11 @@ const AiProduction = () => {
 			    ═══════════════════════════════════════════ */}
             <Section mood="dark" className="py-32 text-center">
                 <div className="max-w-3xl mx-auto space-y-8">
-                    <h2 className="text-4xl md:text-6xl font-display text-white leading-tight">
+                    <h2 className="text-5xl lg:text-7xl font-bold font-display leading-tight tracking-tight text-white mb-6">
                         Hangi fotoğrafın sattıracağını <br />
-                        <span className="italic">tahmin etmeyin</span>
+                        <span className="italic font-light text-[#E2FF65]">tahmin etmeyin</span>
                     </h2>
-                    <p className="text-xl text-bor-primary-300 max-w-xl mx-auto">
+                    <p className="text-lg md:text-xl font-light text-white/80 leading-relaxed max-w-xl mx-auto mb-10">
                         10 farklı varyasyonu üretip test edelim. Ücretsiz demo ile farkı görün.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

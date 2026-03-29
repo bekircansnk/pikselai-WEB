@@ -201,9 +201,9 @@ const SosyalMedyaYeni = () => {
                 </motion.div>
 
                 <motion.div variants={fadeInUp}>
-                  <h1 className={`text-[3.5rem] md:text-6xl lg:text-[5rem] font-display font-normal italic ${colors.textLight} leading-[1.05] tracking-tight mb-8`}>
-                    Sosyal Medya <br />
-                    <span className="font-display not-italic font-normal text-white">kreatiflerini</span> <br className="hidden sm:block" /> ölçeklendirin
+                  <h1 className="text-5xl md:text-7xl font-bold font-display leading-tight tracking-tight text-white mb-6 drop-shadow-2xl">
+                    Sosyal Medya kreatiflerini <br />
+                    <span className="italic font-light text-[#E2FF65]">ölçeklendirin</span>
                   </h1>
                 </motion.div>
 
@@ -305,8 +305,11 @@ const SosyalMedyaYeni = () => {
         <section className={`${colors.beige} py-32 border-b ${colors.borderColor}`}>
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
             <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-5xl font-display font-normal italic text-[#0b2117] mb-6">İhtiyacınız olan hız ve kalite <br /><span className="font-display font-normal not-italic text-black">Aynı çatı altında.</span></h2>
-              <p className="text-[#3a5245] max-w-2xl mx-auto text-lg">Yetersiz araçlar veya yavaş ajans süreçleriyle vakit kaybetmeyin. Dünyanın en iyi kreatif üretim modelini sunuyoruz.</p>
+              <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-[#0b2117] mb-6">
+                İhtiyacınız olan hız ve kalite <br className="hidden lg:block" />
+                <span className="italic font-light text-[#86AA00]">Aynı çatı altında.</span>
+              </h2>
+              <p className="text-[#3a5245] max-w-2xl mx-auto text-lg md:text-xl font-light leading-relaxed">Yetersiz araçlar veya yavaş ajans süreçleriyle vakit kaybetmeyin. Dünyanın en iyi kreatif üretim modelini sunuyoruz.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
@@ -379,8 +382,9 @@ const SosyalMedyaYeni = () => {
                   <div className="w-full h-px bg-[#0b2117]/10"></div>
                 </motion.div>
 
-                <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-[4rem] font-display font-normal text-[#0b2117] leading-[1.05] mb-8 tracking-tight">
-                  Tasarım, video, hareketli grafik <span className="italic">ve daha fazlası</span>
+                <motion.h2 variants={fadeInUp} className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-[#0b2117] mb-6">
+                  Tasarım, video, hareketli grafik <br className="hidden lg:block" />
+                  <span className="italic font-light text-[#86AA00]">ve daha fazlası</span>
                 </motion.h2>
 
                 <motion.p variants={fadeInUp} className="text-[#3a5245] text-[1.1rem] font-medium leading-relaxed mb-6">
@@ -502,8 +506,9 @@ const SosyalMedyaYeni = () => {
             <section className={`${colors.darkGreen} py-32 pt-20 border-t border-[#1e3b2b]`}>
               <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
                 <div className="text-center mb-16">
-                  <h2 className="text-4xl md:text-5xl lg:text-[4rem] font-display font-normal text-[#F4EFE6] leading-tight">
-                    Her platform için <br className="md:hidden" /><span className="italic">özelleşmiş üretim</span>
+                  <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-[#F4EFE6] mb-6">
+                    Her platform için <br className="hidden lg:block" />
+                    <span className="italic font-light text-[#E2FF65]">özelleşmiş üretim</span>
                   </h2>
                 </div>
 
@@ -550,7 +555,10 @@ const SosyalMedyaYeni = () => {
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
             <div className="text-center mb-24 max-w-3xl mx-auto">
               <h3 className="text-[#caf265] text-sm font-bold tracking-widest uppercase mb-6">NASIL ÇALIŞIYORUZ?</h3>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-normal italic text-[#F4EFE6] leading-tight">Zamanınızı geri kazanın,<br /> <span className="font-display font-normal not-italic text-white">tasarımı bize bırakın.</span></h2>
+              <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-[#F4EFE6] mb-6">
+                Zamanınızı geri kazanın,<br />
+                <span className="italic font-light text-[#E2FF65]">tasarımı bize bırakın.</span>
+              </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
@@ -609,10 +617,11 @@ const SosyalMedyaYeni = () => {
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
               <div className="sticky top-32">
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-normal italic text-[#0b2117] leading-tight mb-6">
-                  Mükemmel çözüm<br /> <span className="font-display font-normal not-italic text-black">uzaklarda değil</span>
+                <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-[#0b2117] mb-6">
+                  Mükemmel çözüm<br className="hidden lg:block" />
+                  <span className="italic font-light text-[#86AA00]">uzaklarda değil</span>
                 </h2>
-                <p className="text-[#3a5245] text-lg font-light leading-relaxed mb-8 max-w-md">
+                <p className="text-lg md:text-xl font-light text-[#3a5245] leading-relaxed mb-8 max-w-md">
                   Geleneksel reklam ajanslarının bürokrasisinden ve serbest çalışanların belirsizliğinden yoruldunuz mu? Yeni nesil kreatif ajans modelimizle tanışın.
                 </p>
 
@@ -698,8 +707,8 @@ const SosyalMedyaYeni = () => {
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
             <div className="text-center mb-24 max-w-3xl mx-auto">
               <h3 className="text-[#3a5245] text-[13px] font-bold tracking-widest uppercase mb-6">BİZİM FARKIMIZ</h3>
-              <h2 className="text-4xl md:text-5xl lg:text-[4rem] font-display font-normal text-[#0b2117] leading-tight">
-                Piksel AI, <span className="italic">hızlı büyüyen</span> <br className="hidden md:block" /> markalar için kusursuz çözümdür
+              <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-[#0b2117] mb-6">
+                Piksel AI, <span className="italic font-light text-[#86AA00]">hızlı büyüyen</span> <br className="hidden lg:block" /> markalar için kusursuz çözümdür
               </h2>
             </div>
 
@@ -767,8 +776,9 @@ const SosyalMedyaYeni = () => {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
               <div className="max-w-2xl">
                 <h3 className="text-[#3a5245] text-[13px] font-bold tracking-widest uppercase mb-4">ÇALIŞMAMIZ</h3>
-                <h2 className="text-4xl md:text-5xl lg:text-show font-display font-normal italic text-[#0b2117] leading-tight">
-                  Önde gelen markaların <br /> <span className="font-display font-normal not-italic text-black">Piksel AI'ı nasıl kullandığını görün.</span>
+                <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-[#0b2117] mb-6">
+                  Önde gelen markaların <br className="hidden lg:block" />
+                  <span className="italic font-light text-[#86AA00]">Piksel AI'ı nasıl kullandığını görün.</span>
                 </h2>
               </div>
               <button className="text-[#0b2117] hover:bg-[#e3decf] transition-colors rounded-full px-8 py-3 border border-[#0b2117]/20 text-sm font-medium w-fit shrink-0">
@@ -814,9 +824,9 @@ const SosyalMedyaYeni = () => {
               <div className="lg:col-span-5 relative">
                 <div className="sticky top-32">
                   <h3 className="text-[#a8b8af] text-xs font-bold tracking-widest uppercase mb-4">SORULARINIZ MI VAR?</h3>
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-normal italic text-[#F4EFE6] leading-tight mb-6">
+                  <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-[#F4EFE6] mb-6">
                     Sıkça sorulan <br />
-                    <span className="font-display not-italic font-normal text-white">sorular</span>
+                    <span className="italic font-light text-[#E2FF65]">sorular</span>
                   </h2>
                   <p className="text-[#a8b8af] text-lg font-light leading-relaxed mb-8 max-w-sm">
                     Süreç, teslimat hızları ve işleyişimiz hakkında aklınıza takılan her şeyi yanıtladık.
@@ -875,8 +885,9 @@ const SosyalMedyaYeni = () => {
               <div className="w-16 h-16 bg-[#caf265] rounded-2xl flex items-center justify-center text-[#0b2117] mb-8 shadow-[0_0_30px_rgba(202,242,101,0.3)]">
                 <Zap size={32} />
               </div>
-              <h2 className="text-4xl md:text-6xl lg:text-[5rem] font-display font-normal italic text-[#F4EFE6] mb-8 leading-[1.1]">
-                Markanızı birlikte <br /> <span className="text-white font-display font-normal not-italic">büyütmeye hazır mısınız?</span>
+              <h2 className="text-5xl lg:text-7xl font-bold font-display leading-tight tracking-tight text-[#F4EFE6] mb-8">
+                Markanızı birlikte <br />
+                <span className="italic font-light text-[#E2FF65]">büyütmeye hazır mısınız?</span>
               </h2>
               <p className="text-[#a8b8af] mb-12 text-lg md:text-xl font-light max-w-xl">
                 Ajans hantallığına son verin. Kaliteli, hızlı ve veri odaklı kreatif süreçlerimize bugün katılın.

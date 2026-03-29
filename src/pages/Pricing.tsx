@@ -93,10 +93,11 @@ const Pricing = () => {
 
             {/* Hero Section */}
             <Section className="py-24 text-center" mood="light">
-                <h1 className="text-4xl md:text-6xl font-bold font-display text-bor-primary-900 dark:text-white mb-6">
-                    Şeffaf ve Esnek <span className="text-bor-secondary">Fiyatlandırma</span>
+                <h1 className="text-5xl md:text-7xl font-bold font-display leading-tight tracking-tight text-bor-primary-900 dark:text-white mb-6">
+                    Şeffaf ve Esnek <br className="hidden lg:block" />
+                    <span className="italic font-light text-[#86AA00] dark:text-[#E2FF65]">Fiyatlandırma</span>
                 </h1>
-                <p className="text-lg text-bor-primary-500 dark:text-bor-primary-400 max-w-2xl mx-auto mb-10">
+                <p className="text-lg md:text-xl font-light text-bor-primary-600 dark:text-bor-primary-400 leading-relaxed max-w-2xl mx-auto mb-10">
                     İhtiyacınıza en uygun paketi seçin, işletmenizi büyütmeye hemen başlayın. Gizli ücret yok, sürpriz yok.
                 </p>
 
@@ -177,11 +178,11 @@ const Pricing = () => {
             </Section>
 
             {/* CTA Section */}
-            <Section mood="dark" className="text-center py-20">
-                <h2 className="text-3xl font-bold font-display text-white mb-6">
-                    Karar veremediniz mi?
+            <Section mood="dark" className="text-center py-24">
+                <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-white mb-6">
+                    Karar <span className="italic font-light text-[#E2FF65]">veremediniz mi?</span>
                 </h2>
-                <p className="text-bor-primary-200 mb-8 max-w-xl mx-auto">
+                <p className="text-lg md:text-xl font-light text-white/80 leading-relaxed max-w-xl mx-auto mb-8">
                     İşletmeniz için en doğru çözümü belirlemek adına ücretsiz bir analiz görüşmesi yapalım.
                 </p>
                 <Button size="lg" className="bg-white text-bor-primary-900 hover:bg-gray-100">

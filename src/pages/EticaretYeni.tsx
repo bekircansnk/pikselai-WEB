@@ -130,17 +130,17 @@ const EticaretYeni = () => {
                 SHOPIFY TÜRKİYE RESMİ PARTNERİ
               </div>
 
-              <h1 className={`text-5xl md:text-6xl lg:text-[4.5rem] font-serif italic ${colors.textLight} leading-[1.1] tracking-tight mb-6 drop-shadow-xl`}>
+              <h1 className="text-5xl md:text-7xl font-bold font-display leading-tight tracking-tight text-white mb-6 drop-shadow-2xl">
                 Shopify <span className="whitespace-nowrap">E-Ticaret</span> <br />
-                Danışmanlığı
+                <span className="italic font-light text-[#E2FF65]">Danışmanlığı</span>
               </h1>
 
               <div className="mb-10 space-y-4">
-                <h3 className="text-xl md:text-2xl text-white font-medium leading-tight drop-shadow-md">
+                <h3 className="text-2xl text-white font-bold mb-2">
                   Anahtar Teslim Mağaza Kurulumu + <br className="hidden sm:block" />
-                  Yapay Zeka Destekli Büyüme
+                  <span className="italic font-light text-[#E2FF65]">Yapay Zeka Destekli Büyüme</span>
                 </h3>
-                <p className="text-base md:text-lg text-[#F4EFE6]/90 leading-relaxed font-light max-w-lg drop-shadow-md">
+                <p className="text-lg md:text-xl font-light text-[#F4EFE6]/90 leading-relaxed max-w-lg drop-shadow-md">
                   Sıfırdan satışa hazır, modern ve ölçeklenebilir bir Shopify mağazası kuruyoruz. Kurulumdan yayına, içerikten görsele her adımda bizzat yanınızdayız. Teknik yükü bize bırakın.
                 </p>
               </div>
@@ -170,11 +170,11 @@ const EticaretYeni = () => {
                   <div className="border-t border-[#0b2117]/20 pt-4 mb-8">
                     <span className="text-xs tracking-widest uppercase text-[#0b2117]/60 font-medium">MAĞAZA ALTYAPISI</span>
                   </div>
-                  <h2 className="text-4xl md:text-5xl lg:text-5xl font-serif italic text-[#0b2117] leading-tight mb-6">
-                    Sadece bir site değil, <br />
-                    <span className="font-sans not-italic font-medium text-black">satış odaklı bir sistem.</span>
+                  <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-[#0b2117] mb-6">
+                    Sadece bir site değil, <br className="hidden lg:block" />
+                    <span className="italic font-light text-[#86AA00]">satış odaklı bir sistem.</span>
                   </h2>
-                  <p className="text-[#3a5245] md:text-lg leading-relaxed max-w-lg">
+                  <p className="text-[#3a5245] font-light text-lg md:text-xl leading-relaxed max-w-lg">
                     Shopify'ı sadece bir araç olarak değil, işletmenizin büyüme motoru olarak kurguluyoruz. Veri güvenliği, hız ve kullanıcı deneyimini birleştirerek markanızı geleceğe hazırlıyoruz. Karışık teknik süreçlerde kaybolmanıza gerek yok; biz tüm altyapı yükünü üstleniyoruz.
                   </p>
                 </motion.div>
@@ -254,10 +254,11 @@ const EticaretYeni = () => {
               variants={fadeInUp}
               className="text-center md:text-left mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8"
             >
-              <h2 className="text-4xl md:text-5xl font-serif italic text-[#0b2117] leading-tight max-w-xl">
-                E-Ticaretin her aşamasında <br /> yanınızdayız
+              <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-[#0b2117] max-w-xl mb-6 md:mb-0">
+                E-Ticaretin her aşamasında <br className="hidden lg:block" />
+                <span className="italic font-light text-[#86AA00]">yanınızdayız</span>
               </h2>
-              <p className="text-[#3a5245] font-light md:max-w-sm italic">
+              <p className="text-[#3a5245] font-light text-lg leading-relaxed md:max-w-sm">
                 Shopify partnerliğimizle sıfırdan kuruluma, veri taşımadan ileri düzey entegrasyonlara kadar her şeyi bizzat üstleniyoruz.
               </p>
             </motion.div>
@@ -317,7 +318,10 @@ const EticaretYeni = () => {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-[#caf265] text-sm font-bold tracking-widest uppercase mb-4">RAKAMLARLA SHOPIFY</h2>
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-serif italic text-[#F4EFE6]">Dünya genelinde devasa başarı</h3>
+              <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-[#F4EFE6]">
+                Dünya genelinde <br className="hidden lg:block" />
+                <span className="italic font-light text-[#E2FF65]">devasa başarı</span>
+              </h2>
             </div>
 
             <div className={`border-t border-b ${colors.borderColorDark} py-16 grid grid-cols-1 md:grid-cols-3 gap-12 divide-y md:divide-y-0 md:divide-x ${colors.borderColorDark}`}>
@@ -354,8 +358,10 @@ const EticaretYeni = () => {
         <section className={`${colors.beige} py-32 px-6 md:px-16 lg:px-24 border-b ${colors.borderColor}`}>
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-24">
-              <h2 className="text-4xl md:text-6xl font-serif italic text-[#0b2117]">Nasıl çalışıyoruz?</h2>
-              <p className="mt-6 text-[#3a5245] max-w-2xl mx-auto text-lg italic">"Analizle başlıyor, sonuç odaklı testlerle yayına giriyoruz. Sizi asla teknik karmaşada yalnız bırakmıyoruz."</p>
+              <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-[#0b2117] mb-6">
+                Nasıl <span className="italic font-light text-[#86AA00]">çalışıyoruz?</span>
+              </h2>
+              <p className="mt-6 text-[#3a5245] font-light text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">"Analizle başlıyor, sonuç odaklı testlerle yayına giriyoruz. Sizi asla teknik karmaşada yalnız bırakmıyoruz."</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -409,8 +415,9 @@ const EticaretYeni = () => {
             <h3 className="text-[#a8b8af] text-xs font-bold tracking-widest uppercase mb-6">
               AI & SHOPIFY YAKLAŞIMINIZI SEÇİN
             </h3>
-            <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif italic text-[#F4EFE6] mb-6">
-              Akıllardakiler, <span className="font-sans font-medium not-italic text-white">Cevaplar</span>
+            <h2 className="text-5xl lg:text-7xl font-bold font-display leading-tight tracking-tight text-[#F4EFE6] mb-6">
+              Akıllardakiler, <br className="hidden lg:block" />
+              <span className="italic font-light text-[#E2FF65]">Cevaplar</span>
             </h2>
             <p className="text-[#a8b8af] max-w-2xl mx-auto md:text-lg leading-relaxed font-light">
               Müşterilerimizin en çok merak ettiği soruları ve süreç detaylarını şeffaf paketler halinde sunuyoruz.
@@ -504,11 +511,11 @@ const EticaretYeni = () => {
               {/* Sol Taraf: Büyük Başlık */}
               <div className="lg:col-span-5 relative">
                 <div className="sticky top-32">
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif italic text-[#F4EFE6] leading-tight mb-6">
+                  <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-[#F4EFE6] mb-6">
                     Sıkça sorulan <br />
-                    <span className="font-sans not-italic font-medium text-white">sorular</span>
+                    <span className="italic font-light text-[#E2FF65]">sorular</span>
                   </h2>
-                  <p className="text-[#a8b8af] text-lg font-light leading-relaxed mb-8 max-w-sm">
+                  <p className="text-lg md:text-xl font-light text-[#a8b8af] leading-relaxed mb-8 max-w-sm">
                     Süreç, teknik altyapı ve çalışma prensiplerimiz hakkında en çok merak edilenler.
                   </p>
                 </div>
@@ -566,8 +573,9 @@ const EticaretYeni = () => {
             <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-[#caf265]/5 blur-[80px] rounded-full"></div>
 
             <div className="relative z-10 max-w-xl text-center md:text-left">
-              <h2 className="text-4xl md:text-6xl font-serif italic text-[#F4EFE6] mb-8 leading-tight">
-                Mağazanızın geleceği bir <br /> mesaj uzağınızda
+              <h2 className="text-5xl lg:text-7xl font-bold font-display leading-tight tracking-tight text-[#F4EFE6] mb-8">
+                Mağazanızın geleceği <br />
+                <span className="italic font-light text-[#E2FF65]">bir mesaj uzağınızda</span>
               </h2>
               <p className="text-[#a8b8af] mb-10 text-lg">
                 Hemen bir ücretsiz danışmanlık görüşmesi planlayalım ve e-ticaret hedeflerinizi global standartlarda gerçeğe dönüştürelim.

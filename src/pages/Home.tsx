@@ -29,14 +29,13 @@ const Home = () => {
 							AI Excellence
 						</span>
 
-						<h1 className="text-5xl md:text-7xl font-display leading-[1.1]">
-							<span className="text-white italic">AI</span>
-							<span className="text-white"> is the new</span>
+						<h1 className="text-5xl md:text-7xl font-bold font-display leading-tight tracking-tight text-white mb-6 drop-shadow-2xl">
+							<span className="text-white">AI is the new</span>
 							<br />
-							<span className="text-bor-secondary italic">creative standard</span>
+							<span className="italic font-light text-[#E2FF65]">creative standard</span>
 						</h1>
 
-						<p className="text-lg md:text-xl text-bor-primary-300 max-w-lg leading-relaxed">
+						<p className="text-lg md:text-xl font-light text-white/80 leading-relaxed max-w-lg mb-8">
 							Stüdyo yok, manken yok, beklemek yok. Yapay zeka ile e-ticaret görsellerinizde devrim.
 							Dünya standartlarında kreatif üretim, geleneksel maliyetin %80 altında.
 						</p>
@@ -73,8 +72,9 @@ const Home = () => {
 			<Section mood="light" className="py-20 md:py-28">
 				<div className="text-center mb-16">
 					<span className="text-xs font-bold uppercase tracking-[0.2em] text-bor-secondary block mb-4">Neden PikselAI?</span>
-					<h2 className="text-3xl md:text-5xl font-display font-bold text-bor-primary-900">
-						Geleneksel ajansların yapamadığını yapıyoruz
+					<h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-bor-primary-900 mb-6">
+						Geleneksel ajansların <br className="hidden lg:block"/>
+						<span className="italic font-light text-[#86AA00]">yapamadığını yapıyoruz</span>
 					</h2>
 				</div>
 
@@ -107,11 +107,11 @@ const Home = () => {
 						<span className="text-xs font-bold uppercase tracking-[0.2em] text-bor-secondary mb-6">
 							Modern Ekipler İçin Çözümler
 						</span>
-						<h2 className="text-3xl md:text-5xl font-display leading-tight text-white mb-6">
+						<h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-white mb-6">
 							AI'nin yaratıcı <br />
-							<span className="italic">avantajına kısayolunuz</span>
+							<span className="italic font-light text-[#E2FF65]">avantajına kısayolunuz</span>
 						</h2>
-						<p className="text-lg text-bor-primary-300 leading-relaxed mb-10 max-w-lg">
+						<p className="text-lg md:text-xl font-light text-white/80 leading-relaxed mb-10 max-w-lg">
 							Daha hızlı, daha ucuz ve daha az kaynak ile daha fazlasını yapma baskısı altındasınız.
 							İşte tam burada devreye giriyoruz.
 						</p>
@@ -147,10 +147,11 @@ const Home = () => {
 					<span className="text-xs font-bold uppercase tracking-[0.2em] text-bor-primary-500 block mb-4">
 						HAYDI KONUŞALIM
 					</span>
-					<h2 className="text-3xl md:text-5xl font-display text-bor-primary-900">
-						<span className="italic">AI-powered</span> creative production
+					<h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-bor-primary-900 mb-6">
+						AI-powered <br className="hidden lg:block"/>
+						<span className="italic font-light text-[#86AA00]">creative production</span>
 					</h2>
-					<p className="text-bor-primary-500 mt-4 max-w-2xl mx-auto">
+					<p className="text-lg md:text-xl font-light text-bor-primary-600 leading-relaxed max-w-2xl mx-auto mb-10">
 						Görsel düzenlemeden video üretimine kadar AI, gerçek yaratıcı zorlukları nasıl çözdüğümüzün temel parçası.
 					</p>
 					<div className="mt-6">
@@ -230,8 +231,9 @@ const Home = () => {
 					<span className="text-xs font-bold uppercase tracking-[0.2em] text-bor-secondary block mb-4">
 						Hizmetlerimiz
 					</span>
-					<h2 className="text-3xl md:text-5xl font-display text-white">
-						İhtiyacınıza özel <span className="italic">çözümler</span>
+					<h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-white mb-6">
+						İhtiyacınıza özel <br className="hidden lg:block"/>
+						<span className="italic font-light text-[#E2FF65]">çözümler</span>
 					</h2>
 				</div>
 
@@ -266,8 +268,9 @@ const Home = () => {
 			<Section mood="light" className="py-24">
 				<div className="text-center mb-16">
 					<span className="text-xs font-bold uppercase tracking-[0.2em] text-bor-primary-500 block mb-4">SEKTÖRLER</span>
-					<h2 className="text-3xl md:text-5xl font-display text-bor-primary-900">
-						Hangi sektörde olursanız olun
+					<h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-bor-primary-900 mb-6">
+						Hangi sektörde <br className="hidden lg:block"/>
+						<span className="italic font-light text-[#86AA00]">olursanız olun</span>
 					</h2>
 				</div>
 
@@ -297,7 +300,9 @@ const Home = () => {
 			<Section mood="dark" className="py-24">
 				<div className="text-center mb-16">
 					<span className="text-xs font-bold uppercase tracking-[0.2em] text-bor-secondary block mb-4">SÜREÇ</span>
-					<h2 className="text-3xl md:text-5xl font-display text-white">Nasıl çalışır?</h2>
+					<h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-white mb-6">
+						Nasıl <span className="italic font-light text-[#E2FF65]">çalışır?</span>
+					</h2>
 				</div>
 
 				<div className="grid md:grid-cols-4 gap-8">
@@ -328,7 +333,7 @@ const Home = () => {
 					<div className="md:col-span-8">
 						<h3 className="text-2xl font-bold text-bor-primary-900 uppercase tracking-widest mb-8">CAZADOR</h3>
 						<blockquote className="text-3xl md:text-4xl font-display font-medium leading-tight text-bor-primary-900 mb-8">
-							"PikselAI ile çalışmak bizim için kritik öneme sahipti. Zamanında kaliteli iş teslim edebilen, kısa süreli bildirimlerde bile <span className="text-bor-secondary font-bold">güvenebileceğimiz bir ekip.</span>"
+							"PikselAI ile çalışmak bizim için kritik öneme sahipti. Zamanında kaliteli iş teslim edebilen, kısa süreli bildirimlerde bile <span className="italic font-light text-[#86AA00]">güvenebileceğimiz bir ekip.</span>"
 						</blockquote>
 						<div>
 							<cite className="not-italic text-lg font-bold text-bor-primary-900 block">Fatih Erdoğan</cite>
@@ -358,8 +363,9 @@ const Home = () => {
 			<Section mood="dark" className="py-24">
 				<div className="text-center mb-16">
 					<span className="text-xs font-bold uppercase tracking-[0.2em] text-bor-secondary block mb-4">NEDEN PİKSELAI</span>
-					<h2 className="text-3xl md:text-5xl font-display text-white">
-						En iyi ekiplerin neden <span className="italic">PikselAI kullandığını</span> görün
+					<h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-white mb-6">
+						En iyi ekiplerin neden <br className="hidden lg:block"/>
+						<span className="italic font-light text-[#E2FF65]">PikselAI kullandığını görün</span>
 					</h2>
 				</div>
 
@@ -390,10 +396,11 @@ const Home = () => {
 			    ═══════════════════════════════════════════════════════════════ */}
 			<Section className="pt-24 pb-0 text-center relative z-10" mood="dark">
 				<div className="max-w-4xl mx-auto space-y-8 mb-24">
-					<h2 className="text-4xl md:text-6xl font-display font-medium text-white italic">
-						Better rates <span className="not-italic font-sans font-bold">than hiring <br /> designers in-house</span>
+					<h2 className="text-5xl lg:text-7xl font-bold font-display leading-tight tracking-tight text-white mb-6">
+						Better rates <br />
+						<span className="italic font-light text-[#E2FF65]">than hiring designers in-house</span>
 					</h2>
-					<p className="text-xl text-bor-primary-300 max-w-2xl mx-auto">
+					<p className="text-lg md:text-xl font-light text-white/80 leading-relaxed mb-10 max-w-2xl mx-auto">
 						Kurum içi tasarımcı işe almanın maliyetiyle karşılaştırıldığında, PikselAI çok daha ekonomik bir alternatif.
 					</p>
 					<div className="flex flex-col sm:flex-row items-center justify-center gap-4">

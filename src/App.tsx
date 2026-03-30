@@ -16,6 +16,8 @@ const Blog = lazy(() => import('./pages/Blog'))
 const CustomerStories = lazy(() => import('./pages/CustomerStories'))
 const EticaretYeni = lazy(() => import('./pages/EticaretYeni'))
 const SosyalMedyaYeni = lazy(() => import('./pages/SosyalMedyaYeni'))
+const AiProductionYeni = lazy(() => import('./pages/AiProductionYeni'))
+const HomeYeni = lazy(() => import('./pages/HomeYeni'))
 const CreativeDesign = lazy(() => import('./pages/CreativeDesign'))
 const CostCalculator = lazy(() => import('./pages/CostCalculator'))
 
@@ -61,11 +63,13 @@ function App() {
       <main>
         <Suspense fallback={<Loading />}>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<HomeYeni />} />
             <Route path="/hizmetler" element={<ServicesHub />} />
-            <Route path="/hizmetler/ai-produksiyon" element={<AiProduction />} />
+            <Route path="/hizmetler/ai-produksiyon" element={<AiProductionYeni />} />
             <Route path="/hizmetler/e-ticaret" element={<EticaretYeni />} />
             <Route path="/hizmetler/sosyal-medya" element={<SosyalMedyaYeni />} />
+            <Route path="/hizmetler/ai-produksiyon-yeni" element={<AiProduction />} />
+            <Route path="/home-yeni" element={<Home />} />
             <Route path="/hizmetler/dijital-buyume" element={<DigitalGrowth />} />
             <Route path="/hizmetler/kreatif-tasarim" element={<CreativeDesign />} />
             <Route path="/hakkimizda" element={<About />} />

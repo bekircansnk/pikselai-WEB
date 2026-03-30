@@ -49,14 +49,14 @@ export function MegaMenu({ isOpen, activeMenu, onClose }: MegaMenuProps) {
                                         <MenuItem
                                             icon={<Aperture size={16} />}
                                             title="Ürün Fotoğrafçılığı"
-                                            href="/hizmetler/ai-produksiyon"
+                                            href="/hizmetler/ai-produksiyon-yeni"
                                             desc="Dekupe, ghost mannequin"
                                             onClose={onClose}
                                         />
                                         <MenuItem
                                             icon={<Bot size={16} />}
                                             title="Sanal Manken Ajansı"
-                                            href="/hizmetler/ai-produksiyon"
+                                            href="/home-yeni"
                                             desc="Size özel dijital manken"
                                             onClose={onClose}
                                         />

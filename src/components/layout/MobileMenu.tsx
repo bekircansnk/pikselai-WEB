@@ -58,8 +58,8 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                                 <div className="space-y-3">
                                     <h4 className="text-sm font-semibold uppercase text-bor-primary-400">AI Prodüksiyon</h4>
                                     <MobileMenuItem title="Tüm AI Prodüksiyon" href="/hizmetler/ai-produksiyon" onClick={onClose} />
-                                    <MobileMenuItem title="Ürün Fotoğrafçılığı" href="/hizmetler/ai-produksiyon" onClick={onClose} />
-                                    <MobileMenuItem title="Sanal Manken" href="/hizmetler/ai-produksiyon" onClick={onClose} />
+                                    <MobileMenuItem title="Ürün Fotoğrafçılığı" href="/hizmetler/ai-produksiyon-yeni" onClick={onClose} />
+                                    <MobileMenuItem title="Sanal Manken" href="/home-yeni" onClick={onClose} />
                                     <MobileMenuItem title="AI Video & Reels" href="/hizmetler/ai-produksiyon" onClick={onClose} />
                                 </div>
 

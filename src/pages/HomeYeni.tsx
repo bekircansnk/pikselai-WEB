@@ -76,7 +76,7 @@ const Home = () => {
       <main className="bg-[#0b2117] min-h-screen font-sans selection:bg-[#caf265] selection:text-[#0b2117] overflow-hidden">
         
         {/* 1. HERO SECTION */}
-        <section className={`relative min-h-[100vh] flex items-center justify-center pt-32 pb-20 ${colors.darkGreen}`}>
+        <section className={`relative min-h-[75vh] 2xl:min-h-[70vh] flex items-center justify-center pt-32 pb-16 lg:pt-40 lg:pb-24 ${colors.darkGreen}`}>
           {/* Subtle bg effects */}
           <div className="absolute inset-0 bg-[#0b2117] z-0">
             <div className="absolute top-0 right-0 w-[60vw] h-[60vw] bg-[#caf265]/5 blur-[150px] rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none" />
@@ -141,7 +141,7 @@ const Home = () => {
         </section>
 
         {/* 2. EN HIZLI ÇÖZÜMLER BANNER (Marquee & Large Text) */}
-        <section className={`py-24 border-t ${colors.borderColorDark} relative overflow-hidden`}>
+        <section className={`py-16 md:py-24 border-t ${colors.borderColorDark} relative overflow-hidden`}>
            <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
              <div className="flex flex-col md:flex-row gap-12 items-center justify-between">
                 <div className="md:w-1/2">
@@ -157,7 +157,7 @@ const Home = () => {
         </section>
 
         {/* 3. MASONRY SERVICES GRID */}
-        <section id="services" className={`py-32 border-t ${colors.borderColorDark}`}>
+        <section id="services" className={`py-20 md:py-32 border-t ${colors.borderColorDark}`}>
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
             
             <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
@@ -214,7 +214,7 @@ const Home = () => {
         </section>
 
         {/* 4. METRICS / NUMBERS SECTION */}
-        <section className={`py-32 border-t ${colors.borderColorDark}`}>
+        <section className={`py-20 md:py-32 border-t ${colors.borderColorDark}`}>
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
              <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 divide-y md:divide-y-0 md:divide-x divide-[#1e3b2b]">
                 <div className="flex flex-col items-center md:items-start pt-12 md:pt-0 pr-0 md:pr-12 text-center md:text-left">
@@ -237,7 +237,7 @@ const Home = () => {
         </section>
 
         {/* 5. BOTTOM CTA */}
-        <section className={`py-32 px-6 md:px-16 lg:px-24 border-t ${colors.borderColorDark}`}>
+        <section className={`py-20 md:py-32 px-6 md:px-16 lg:px-24 border-t ${colors.borderColorDark}`}>
           <div className="max-w-[1400px] mx-auto bg-[#caf265] rounded-[3rem] p-10 md:p-24 relative overflow-hidden flex flex-col items-center justify-center text-center gap-8 shadow-2xl">
             {/* Ambient Lighting */}
             <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-white/40 via-transparent to-black/5 pointer-events-none" />

@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { motion, type Variants } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { motion, AnimatePresence, useMotionValue, type Variants } from 'framer-motion';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
 import {
@@ -12,7 +12,8 @@ import {
   Image as ImageIcon,
   Layout,
   Target,
-  Compass
+  Compass,
+  X
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
@@ -30,29 +31,58 @@ const staggerContainer: Variants = {
   }
 };
 
-const IMG_POOL = [
-  "/sosyal_medya_resimler/venüs/venus1.webp",
-  "/sosyal_medya_resimler/cazador/cazador1.webp",
-  "/sosyal_medya_resimler/camp and map/camp1.webp",
-  "/sosyal_medya_resimler/mina drinks/mina1.webp",
-  "/sosyal_medya_resimler/image1.webp",
-  "/sosyal_medya_resimler/image2.webp",
-  "/sosyal_medya_resimler/image3.webp",
-  "/sosyal_medya_resimler/image4.webp",
-  "/sosyal_medya_resimler/image5.webp",
-  "/sosyal_medya_resimler/image6.webp",
-  "/sosyal_medya_resimler/sosyal_medya_partlar/1.webp",
-  "/sosyal_medya_resimler/sosyal_medya_partlar/2.webp",
-  "/sosyal_medya_resimler/sosyal_medya_partlar/3.webp",
-  "/sosyal_medya_resimler/sosyal_medya_partlar/4.webp",
-  "/sosyal_medya_resimler/sosyal_medya_partlar/5.webp"
-];
+export interface AiProject {
+  id: number;
+  client: string;
+  category: string;
+  thumbnail: string;
+  description: string;
+  spanClass: string;
+  aspectClass: string;
+  images: string[];
+}
 
-const aiProjects = [
-  { id: 1, client: "AI Manken Çalışmamız", category: "Virtual Model & Styling", thumbnail: IMG_POOL[0], spanClass: "md:col-span-4", aspectClass: "aspect-[3/4]" },
-  { id: 2, client: "E-TİCARET ÜRETİMİ", category: "Product Photography", thumbnail: IMG_POOL[3], spanClass: "md:col-span-8", aspectClass: "aspect-square md:aspect-video" },
-  { id: 3, client: "REKLAM & POSTER", category: "Brand Campaigns", thumbnail: IMG_POOL[6], spanClass: "md:col-span-6", aspectClass: "aspect-[4/3]" },
-  { id: 4, client: "DIŞ ÇEKİM & LIFESTYLE", category: "Creative Concepts", thumbnail: IMG_POOL[7], spanClass: "md:col-span-6", aspectClass: "aspect-[4/3]" }
+const aiProjects: AiProject[] = [
+  {
+    id: 1,
+    client: "Cazador",
+    category: "Reklam Yaratıcılığı",
+    thumbnail: "/sosyal_medya_resimler/cazador/cazador2.webp",
+    description: "Cazador'un yeni sezon koleksiyonu için dinamik ve dikkat çekici sosyal medya kurguları.",
+    spanClass: "md:col-span-4",
+    aspectClass: "aspect-[3/4]",
+    images: ["/sosyal_medya_resimler/cazador/cazador1.webp", "/sosyal_medya_resimler/cazador/cazador2.webp", "/sosyal_medya_resimler/cazador/cazador3.webp", "/sosyal_medya_resimler/cazador/cazador4.webp"]
+  },
+  {
+    id: 2,
+    client: "Venüs Ayakkabı",
+    category: "Sosyal Medya Çekimleri",
+    thumbnail: "/sosyal_medya_resimler/venüs/venus2.webp",
+    description: "Venüs Ayakkabı'nın yeni modelleri için etkileşim odaklı reklam kreatifleri.",
+    spanClass: "md:col-span-8",
+    aspectClass: "aspect-square md:aspect-video",
+    images: ["/sosyal_medya_resimler/venüs/venus1.webp", "/sosyal_medya_resimler/venüs/venus2.webp", "/sosyal_medya_resimler/venüs/venus3.webp", "/sosyal_medya_resimler/venüs/venus4.webp"]
+  },
+  {
+    id: 3,
+    client: "Camp and Map",
+    category: "E-ticaret için Çekimler",
+    thumbnail: "/sosyal_medya_resimler/camp and map/camp1.webp",
+    description: "Doğa tutkunları için outdoor ruhunu yansıtan etkileyici görsel kurgular.",
+    spanClass: "md:col-span-6",
+    aspectClass: "aspect-[4/3]",
+    images: ["/sosyal_medya_resimler/camp and map/camp1.webp", "/sosyal_medya_resimler/camp and map/camp2.webp", "/sosyal_medya_resimler/camp and map/camp3.webp", "/sosyal_medya_resimler/camp and map/camp4.webp"]
+  },
+  {
+    id: 4,
+    client: "Mina Drinks",
+    category: "Katalog Çekimleri",
+    thumbnail: "/sosyal_medya_resimler/mina drinks/mina1.webp",
+    description: "Mina Drinks'in ferahlatıcı kimliğini öne çıkaran yapay zeka destekli görseller.",
+    spanClass: "md:col-span-6",
+    aspectClass: "aspect-[4/3]",
+    images: ["/sosyal_medya_resimler/mina drinks/mina1.webp", "/sosyal_medya_resimler/mina drinks/mina2.webp", "/sosyal_medya_resimler/mina drinks/mina3.webp", "/sosyal_medya_resimler/mina drinks/mina4.webp"]
+  }
 ];
 
 const AiProduction = () => {
@@ -62,15 +92,33 @@ const AiProduction = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const [selectedProject, setSelectedProject] = useState<AiProject | null>(null);
+  const [cursorType, setCursorType] = useState<'dot' | 'exit'>('dot');
+  const cursorX = useMotionValue(-100);
+  const cursorY = useMotionValue(-100);
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    cursorX.set(e.clientX);
+    cursorY.set(e.clientY);
+  };
+
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }, [selectedProject]);
+
   // Designer Color Code
 
 
   const services = [
-    { title: "Sanal Manken", desc: "Markanıza özel bir AI manken tasarlayın. Her kampanyada tutarlı yüz, profesyonel pozlar ve markanıza özel stil ile personanızı güçlendirin.", img: IMG_POOL[0], icon: <User size={24} />, badge: "Özel Yüz Tasarımı" },
-    { title: "Ürün Fotoğrafçılığı", desc: "Stüdyo ortamına gerek kalmadan, sadece ürününüzün bir karesiyle dünya standartlarında, yüksek çözünürlüklü ürün fotoğrafları üretiyoruz.", img: IMG_POOL[3], icon: <ImageIcon size={24} />, badge: "Stüdyo Kalitesi" },
-    { title: "Ghost Mannequin", desc: "Ürünlerinizi 3D formda, sanki görünmez bir manken üzerindeymiş gibi sergileyin. İç dikiş detayları ve dikiş detaylarıyla gerçekliği yansıtın.", img: IMG_POOL[6], icon: <Layout size={24} />, badge: "3D Form & Detay" },
-    { title: "Reklam Kampanyaları", desc: "Yaratıcı posterler ve sosyal medya reklamlarınıza özel dönüşüm odaklı kreatifler. Sınırları sadece hayal gücünüzle belirleyin.", img: IMG_POOL[8], icon: <Target size={24} />, badge: "Dönüşüm Odaklı" },
-    { title: "Konsept Lifestyle", desc: "Ürünlerinizin hikayesini anlatan çarpıcı yaşam tarzı çekimleri. Ürünü istediğiniz her mekanda yüksek gerçekçilikle sahneleyin.", img: IMG_POOL[5], icon: <Compass size={24} />, badge: "Özel Konsept" }
+    { title: "Sanal Manken", desc: "Markanıza özel bir AI manken tasarlayın. Her kampanyada tutarlı yüz, profesyonel pozlar ve markanıza özel stil ile personanızı güçlendirin.", img: "/sosyal_medya_resimler/venüs/venus1.webp", icon: <User size={24} />, badge: "Özel Yüz Tasarımı" },
+    { title: "Ürün Fotoğrafçılığı", desc: "Stüdyo ortamına gerek kalmadan, sadece ürününüzün bir karesiyle dünya standartlarında, yüksek çözünürlüklü ürün fotoğrafları üretiyoruz.", img: "/sosyal_medya_resimler/mina drinks/mina1.webp", icon: <ImageIcon size={24} />, badge: "Stüdyo Kalitesi" },
+    { title: "Ghost Mannequin", desc: "Ürünlerinizi 3D formda, sanki görünmez bir manken üzerindeymiş gibi sergileyin. İç dikiş detayları ve dikiş detaylarıyla gerçekliği yansıtın.", img: "/sosyal_medya_resimler/image3.webp", icon: <Layout size={24} />, badge: "3D Form & Detay" },
+    { title: "Reklam Kampanyaları", desc: "Yaratıcı posterler ve sosyal medya reklamlarınıza özel dönüşüm odaklı kreatifler. Sınırları sadece hayal gücünüzle belirleyin.", img: "/sosyal_medya_resimler/image5.webp", icon: <Target size={24} />, badge: "Dönüşüm Odaklı" },
+    { title: "Konsept Lifestyle", desc: "Ürünlerinizin hikayesini anlatan çarpıcı yaşam tarzı çekimleri. Ürünü istediğiniz her mekanda yüksek gerçekçilikle sahneleyin.", img: "/sosyal_medya_resimler/image2.webp", icon: <Compass size={24} />, badge: "Özel Konsept" }
   ];
 
   return (
@@ -228,7 +276,15 @@ const AiProduction = () => {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-10 md:gap-14">
               {aiProjects.map((project, idx) => (
-                <motion.div key={project.id} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, scale: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: idx * 0.1 }} className={`group relative cursor-pointer ${project.spanClass} flex flex-col`}>
+                <motion.div 
+                  key={project.id} 
+                  initial={{ opacity: 0, y: 40 }} 
+                  whileInView={{ opacity: 1, scale: 1, y: 0 }} 
+                  viewport={{ once: true }} 
+                  transition={{ duration: 0.6, delay: idx * 0.1 }} 
+                  className={`group relative cursor-pointer ${project.spanClass} flex flex-col`}
+                  onClick={() => setSelectedProject(project)}
+                >
                   <div className={`w-full rounded-[3rem] overflow-hidden bg-black/5 relative ${project.aspectClass} mb-8 shadow-sm group-hover:shadow-2xl transition-all duration-700`}>
                     <img src={project.thumbnail} alt={project.client} className="w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-1000" />
                   </div>
@@ -269,6 +325,164 @@ const AiProduction = () => {
       </main>
 
       <Footer />
+
+      {/* PROJECT MODAL (Superside Horizontal Slider overlay) */}
+      <AnimatePresence>
+        {selectedProject && (
+          <motion.div
+            key="modal"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-[100] bg-[#F4EFE6]"
+            style={{ cursor: 'none' }}
+            onMouseMove={handleMouseMove}
+          >
+            {/* Custom Cursor Inside Modal */}
+            <motion.div
+              className="fixed top-0 left-0 pointer-events-none z-[100] hidden md:flex items-center justify-center"
+              style={{
+                x: cursorX,
+                y: cursorY,
+                translateX: '-50%',
+                translateY: '-50%'
+              }}
+            >
+              {cursorType === 'exit' ? (
+                <div className="w-[100px] h-[100px] rounded-full bg-[#1A1A1A] flex items-center justify-center shadow-2xl">
+                  <span className="text-[#F4EFE6] text-sm font-bold">Çıkış</span>
+                </div>
+              ) : (
+                <div className="w-[24px] h-[24px] rounded-full bg-[#D97941] shadow-[0_0_20px_rgba(217,121,65,0.5)]" />
+              )}
+            </motion.div>
+
+            {/* Close Button */}
+            <motion.button
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              onClick={() => setSelectedProject(null)}
+              className="fixed top-6 right-6 z-50 p-4 rounded-full bg-black/10 text-[#1A1A1A] hover:bg-black hover:text-[#F4EFE6] transition-all group"
+              style={{ cursor: 'none' }}
+              onMouseEnter={() => setCursorType('exit')}
+              onMouseLeave={() => setCursorType('dot')}
+            >
+              <X size={24} className="group-hover:rotate-90 transition-transform duration-300" />
+              <span className="sr-only">Kapat</span>
+            </motion.button>
+
+            <div
+              className="w-full h-full flex flex-col bg-[#F4EFE6]"
+              style={{ cursor: 'none' }}
+            >
+              {/* TOP: Horizontal Photo Strip */}
+              <div
+                className="flex-1 overflow-x-auto overflow-y-hidden custom-scrollbar"
+                onWheel={(e) => {
+                  if (e.currentTarget) {
+                    e.currentTarget.scrollLeft += e.deltaY;
+                  }
+                }}
+              >
+                <div className="h-full px-6 md:px-16 py-6 md:py-12 flex items-center space-x-3 md:space-x-8 min-w-max">
+
+                  {/* Col: Intro Block */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.1 }}
+                    className="h-full w-[350px] md:w-[500px] shrink-0 relative rounded-2xl md:rounded-[2rem] overflow-hidden bg-black/5"
+                  >
+                    <img src={selectedProject.images[0]} alt={selectedProject.client} className="w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-[#D97941]/20 mix-blend-multiply"></div>
+                    <div className="absolute top-10 left-10 text-white z-10 font-bold tracking-widest uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                      {selectedProject.client}
+                    </div>
+                  </motion.div>
+
+                  {/* Col: Mixed */}
+                  <div className="h-full w-[260px] md:w-[350px] flex flex-col space-y-3 md:space-y-6 shrink-0">
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.2 }}
+                      className="flex-1 rounded-2xl md:rounded-[2rem] overflow-hidden relative bg-black/5"
+                    >
+                      <img src={selectedProject.images[1]} className="w-full h-full object-cover object-top" />
+                    </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.3 }}
+                      className="flex-1 rounded-2xl md:rounded-[2rem] overflow-hidden relative bg-[#D97941]/20"
+                    >
+                      <img src={selectedProject.images[2]} className="w-full h-full object-cover object-top" />
+                    </motion.div>
+                  </div>
+
+                  {/* Col: Wide image */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.4 }}
+                    className="h-full w-[400px] md:w-[650px] shrink-0 relative rounded-2xl md:rounded-[2rem] overflow-hidden bg-black/5"
+                  >
+                    <img src={selectedProject.images[3]} className="w-full h-full object-cover object-center" />
+                  </motion.div>
+
+                </div>
+              </div>
+
+              {/* BOTTOM: Fixed Typography Section */}
+              <div
+                className="shrink-0 px-8 md:px-16 py-8 md:py-12 border-t border-black/10 bg-[#F4EFE6]"
+                onMouseEnter={() => setCursorType('exit')}
+                onMouseLeave={() => setCursorType('dot')}
+                onClick={() => setSelectedProject(null)}
+              >
+                <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 max-w-screen-2xl mx-auto">
+                  {/* Left: Title */}
+                  <div className="shrink-0 max-w-md">
+                    <h2 className="text-4xl md:text-5xl font-display font-normal italic text-[#1A1A1A] mb-3">
+                      {selectedProject.client}
+                    </h2>
+                    <motion.p
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.2 }}
+                      className="text-[#D97941] text-sm tracking-widest font-bold uppercase"
+                    >
+                      {selectedProject.category}
+                    </motion.p>
+                  </div>
+
+                  {/* Right: Description */}
+                  <motion.p
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                    className="text-base md:text-lg text-[#1A1A1A]/70 leading-relaxed font-light max-w-xl"
+                  >
+                    {selectedProject.description}
+                  </motion.p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <style>{`
+          .custom-scrollbar::-webkit-scrollbar {
+              width: 0px;
+          }
+          .custom-scrollbar {
+              -ms-overflow-style: none;
+              scrollbar-width: none;
+          }
+      `}</style>
     </div>
   );
 };

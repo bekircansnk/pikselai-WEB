@@ -51,44 +51,44 @@ const socialProjects: SocialProject[] = [
     client: "Cazador",
     title: "Sokak Modası Çekimleri",
     category: "Reklam Yaratıcılığı",
-    thumbnail: "/sosyal_medya_resimler/cazador/cazador2.jpg",
+    thumbnail: "/sosyal_medya_resimler/cazador/cazador2.webp",
     description: "Cazador'un yeni sezon koleksiyonu için dinamik ve dikkat çekici sosyal medya kurguları.",
     spanClass: "md:col-span-4",
     aspectClass: "aspect-[3/4]",
-    images: ["/sosyal_medya_resimler/cazador/cazador1.jpg", "/sosyal_medya_resimler/cazador/cazador2.jpg", "/sosyal_medya_resimler/cazador/cazador3.jpg", "/sosyal_medya_resimler/cazador/cazador4.png"]
+    images: ["/sosyal_medya_resimler/cazador/cazador1.webp", "/sosyal_medya_resimler/cazador/cazador2.webp", "/sosyal_medya_resimler/cazador/cazador3.webp", "/sosyal_medya_resimler/cazador/cazador4.webp"]
   },
   {
     id: 2,
     client: "Venüs Ayakkabı",
     title: "Ürün Lansmanı",
     category: "Sosyal Medya Çekimleri",
-    thumbnail: "/sosyal_medya_resimler/venüs/venus2.jpg",
+    thumbnail: "/sosyal_medya_resimler/venüs/venus2.webp",
     description: "Venüs Ayakkabı'nın yeni modelleri için etkileşim odaklı reklam kreatifleri.",
     spanClass: "md:col-span-4",
     aspectClass: "aspect-[3/4]",
-    images: ["/sosyal_medya_resimler/venüs/venus1.jpg", "/sosyal_medya_resimler/venüs/venus2.jpg", "/sosyal_medya_resimler/venüs/venus3.jpg", "/sosyal_medya_resimler/venüs/venus4.jpg"]
+    images: ["/sosyal_medya_resimler/venüs/venus1.webp", "/sosyal_medya_resimler/venüs/venus2.webp", "/sosyal_medya_resimler/venüs/venus3.webp", "/sosyal_medya_resimler/venüs/venus4.webp"]
   },
   {
     id: 3,
     client: "Camp and Map",
     title: "Doğa Kampanyası",
     category: "E-ticaret için Çekimler",
-    thumbnail: "/sosyal_medya_resimler/camp and map/camp1.jpg",
+    thumbnail: "/sosyal_medya_resimler/camp and map/camp1.webp",
     description: "Doğa tutkunları için outdoor ruhunu yansıtan etkileyici görsel kurgular.",
     spanClass: "md:col-span-4",
     aspectClass: "aspect-square md:aspect-[3/4] md:h-full lg:aspect-auto",
-    images: ["/sosyal_medya_resimler/camp and map/camp1.jpg", "/sosyal_medya_resimler/camp and map/camp2.jpg", "/sosyal_medya_resimler/camp and map/camp3.jpg", "/sosyal_medya_resimler/camp and map/camp4.jpg"]
+    images: ["/sosyal_medya_resimler/camp and map/camp1.webp", "/sosyal_medya_resimler/camp and map/camp2.webp", "/sosyal_medya_resimler/camp and map/camp3.webp", "/sosyal_medya_resimler/camp and map/camp4.webp"]
   },
   {
     id: 4,
     client: "Mina Drinks",
     title: "Enerji ve Ferahlık",
     category: "Katalog Çekimleri",
-    thumbnail: "/sosyal_medya_resimler/mina drinks/mina1.png",
+    thumbnail: "/sosyal_medya_resimler/mina drinks/mina1.webp",
     description: "Mina Drinks'in ferahlatıcı kimliğini öne çıkaran yapay zeka destekli görseller.",
     spanClass: "md:col-span-8",
     aspectClass: "aspect-square md:aspect-video",
-    images: ["/sosyal_medya_resimler/mina drinks/mina1.png", "/sosyal_medya_resimler/mina drinks/mina2.png", "/sosyal_medya_resimler/mina drinks/mina3.png", "/sosyal_medya_resimler/mina drinks/mina4.png"]
+    images: ["/sosyal_medya_resimler/mina drinks/mina1.webp", "/sosyal_medya_resimler/mina drinks/mina2.webp", "/sosyal_medya_resimler/mina drinks/mina3.webp", "/sosyal_medya_resimler/mina drinks/mina4.webp"]
   }
 ];
 

@@ -28,3 +28,8 @@ Projedeki tüm önemli değişiklikler bu dosyada belgelenecektir.
 
 - **AiProductionYeni:** Kullanıcı geribildirimi üzerine hero video alanı tekrar `min-h-screen` (tam ekran) yapıldı. Videonun alt kısmındaki yazıları gizlemek için video `scale-[1.15]` ve `translate-y-8` ile ekran dışına itildi.
 - **Tüm Yeni Sayfalar:** Renk geçişleri sonrası çok fazla aşağı kaydırma gereksinimi (`py-20 md:py-32`) tamamen daraltılarak (`py-12 md:py-16`) ekranda daha bütünleşik bir okuma sağlandı.
+
+### 30 Mart 2026 - Portfolyo Modal Entegrasyonu (Cazador ve Diğer Markalar)
+
+- **AiProductionYeni:** Dışa aktarılan asıl pakette bulunmayan "Projeler (Portfolyo)" Modal sistemi (tıklamayla tam ekran galeri açma özelliği) sayfaya sıfırdan entegre edildi. Cazador, Venüs, Camp and Map ve Mina Drinks markaları için çoklu resim galeri yapısı eklendi.
+- **SosyalMedyaYeni:** Projelerde bulunan `.jpg`/`.png` uzantılı görsel hedefleri, önceden optimize edilen hafif, hızlı ve yüksek performanslı WebP `.webp` görseller olacak şekilde değiştirildi.

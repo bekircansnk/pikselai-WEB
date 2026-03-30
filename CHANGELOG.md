@@ -23,3 +23,8 @@ Projedeki tüm önemli değişiklikler bu dosyada belgelenecektir.
 - **AiProductionYeni:** Hero video alanı yüksekliği kısaltıldı (min-h-[75vh] -> min-h-[50vh]) ve ekrana sığma sorunları giderildi.
 - **HomeYeni & SosyalMedyaYeni:** Devasa boşluklar yaratan eski (py-32, py-40) padding değerleri, ekran boyutuna göre optimize edilmiş (py-20 md:py-32) yapılarla değiştirildi.
 - Kapsamlı görsel alan iyileştirmesi yapıldı.
+
+### 30 Mart 2026 - Video ve Yükseklik Revizyonları
+
+- **AiProductionYeni:** Kullanıcı geribildirimi üzerine hero video alanı tekrar `min-h-screen` (tam ekran) yapıldı. Videonun alt kısmındaki yazıları gizlemek için video `scale-[1.15]` ve `translate-y-8` ile ekran dışına itildi.
+- **Tüm Yeni Sayfalar:** Renk geçişleri sonrası çok fazla aşağı kaydırma gereksinimi (`py-20 md:py-32`) tamamen daraltılarak (`py-12 md:py-16`) ekranda daha bütünleşik bir okuma sağlandı.

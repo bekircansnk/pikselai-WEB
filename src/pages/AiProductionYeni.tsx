@@ -79,13 +79,13 @@ const AiProduction = () => {
 
       <main>
         {/* 1. HERO SECTION - Video Background */}
-        <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-24 px-6 md:px-16 lg:px-24 overflow-hidden min-h-[60vh] lg:min-h-[50vh] flex items-center bg-black">
+        <section className="relative pt-24 pb-12 lg:pt-32 lg:pb-16 px-6 md:px-16 lg:px-24 overflow-hidden min-h-screen flex items-center bg-black">
           <video 
             autoPlay 
             loop 
             muted 
             playsInline 
-            className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none opacity-80 brightness-[0.7] contrast-[1.1]"
+            className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none opacity-80 brightness-[0.7] contrast-[1.1] scale-[1.15] translate-y-8"
           >
             <source src="/as.mp4" type="video/mp4" />
           </video>
@@ -126,10 +126,10 @@ const AiProduction = () => {
         </section>
 
         {/* TRANSITION ZONE 1: Orange to Beige */}
-        <div className="h-24 md:h-32 bg-[#D97941] bg-gradient-to-b from-transparent to-[#F4EFE6]" />
+        <div className="h-12 md:h-16 bg-[#D97941] bg-gradient-to-b from-transparent to-[#F4EFE6]" />
 
         {/* 2. VALUE PROPS - Beige */}
-        <section className={`py-20 md:py-32 flex items-center bg-[#F4EFE6]`}>
+        <section className={`py-12 md:py-16 flex items-center bg-[#F4EFE6]`}>
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer} className="text-center mb-16 md:mb-24">
               <motion.h2 className="text-5xl md:text-7xl font-display font-normal italic text-[#1A1A1A] mb-10 leading-tight">Zamanın ötesinde <br /><span className="not-italic font-normal">bir prodüksiyon akışı.</span></motion.h2>
@@ -160,14 +160,14 @@ const AiProduction = () => {
             <div key={idx}>
               {/* TRANSITION ZONE BEFORE EACH SERVICE (except the first one which follows Values section) */}
               <div 
-                className={`h-24 md:h-32`} 
+                className={`h-12 md:h-16`} 
                 style={{ 
                   backgroundColor: idx === 0 ? "#F4EFE6" : (idx % 2 === 1 ? "#D97941" : "#F4EFE6"),
                   backgroundImage: `linear-gradient(to bottom, transparent, ${currentBg})`
                 }} 
               />
               
-              <section className={`py-20 md:py-32 overflow-hidden flex items-center`} style={{ backgroundColor: currentBg }}>
+              <section className={`py-12 md:py-16 overflow-hidden flex items-center`} style={{ backgroundColor: currentBg }}>
                 <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 w-full">
                   <div className={`grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-24 items-center`}>
                     <motion.div
@@ -214,10 +214,10 @@ const AiProduction = () => {
 
         {/* TRANSITION FROM LAST SERVICE TO PORTFOLIO (Beige) */}
         {/* Since the last service (idx 4) is Orange, we need Orange to Beige */}
-        <div className="h-24 md:h-32 bg-[#D97941] bg-gradient-to-b from-transparent to-[#F4EFE6]" />
+        <div className="h-12 md:h-16 bg-[#D97941] bg-gradient-to-b from-transparent to-[#F4EFE6]" />
 
         {/* 4. PORTFOLIO - Beige */}
-        <section className={`py-20 md:py-32 flex items-center bg-[#F4EFE6]`}>
+        <section className={`py-12 md:py-16 flex items-center bg-[#F4EFE6]`}>
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 w-full">
             <div className="flex flex-col md:flex-row items-end justify-between mb-16 md:mb-24 gap-8">
               <div className="max-w-2xl">
@@ -241,10 +241,10 @@ const AiProduction = () => {
         </section>
 
         {/* TRANSITION PORTFOLIO TO PROCESS (Orange) */}
-        <div className="h-24 md:h-32 bg-[#F4EFE6] bg-gradient-to-b from-transparent to-[#D97941]" />
+        <div className="h-12 md:h-16 bg-[#F4EFE6] bg-gradient-to-b from-transparent to-[#D97941]" />
 
         {/* 5. PROCESS - Orange */}
-        <section className={`py-20 md:py-32 overflow-hidden flex items-center bg-[#D97941]`}>
+        <section className={`py-12 md:py-16 overflow-hidden flex items-center bg-[#D97941]`}>
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 w-full">
             <div className="text-center mb-16 md:mb-24 max-w-4xl mx-auto">
               <h3 className="text-black/40 text-sm font-bold tracking-widest uppercase mb-8 font-sans">SİSTEM NASIL İŞLER?</h3>

@@ -167,7 +167,7 @@ const SosyalMedyaYeni = () => {
       <main>
 
         {/* 1. HERO SECTION - Superside Style Split Layout */}
-        <section className={`relative pt-32 pb-16 lg:py-24 px-6 md:px-16 lg:px-24 overflow-hidden ${colors.darkGreen}`}>
+        <section className={`relative pt-24 pb-12 lg:py-16 px-6 md:px-16 lg:px-24 overflow-hidden ${colors.darkGreen}`}>
           <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-[#caf265]/10 via-transparent to-transparent rounded-full blur-[100px] pointer-events-none" />
 
           <div className="max-w-[1400px] mx-auto relative z-10">
@@ -286,7 +286,7 @@ const SosyalMedyaYeni = () => {
         </section>
 
         {/* 3. VALUE PROPS (3 Columns) */}
-        <section className={`${colors.beige} py-20 md:py-32 border-b ${colors.borderColor}`}>
+        <section className={`${colors.beige} py-12 md:py-16 border-b ${colors.borderColor}`}>
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
             <div className="text-center mb-20">
               <h2 className="text-4xl md:text-5xl font-display font-normal italic text-[#0b2117] mb-6">İhtiyacınız olan hız ve kalite <br /><span className="font-display font-normal not-italic text-black">Aynı çatı altında.</span></h2>
@@ -346,7 +346,7 @@ const SosyalMedyaYeni = () => {
         </section>
 
         {/* YENİ BÖLÜM: PARMAĞINIZIN UCUNDAKİ KREATİF ÇEŞİTLİLİK */}
-        <section className={`${colors.beige} py-20 md:py-32 border-b ${colors.borderColor}`}>
+        <section className={`${colors.beige} py-12 md:py-16 border-b ${colors.borderColor}`}>
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
@@ -483,7 +483,7 @@ const SosyalMedyaYeni = () => {
           ];
 
           return (
-            <section className={`${colors.darkGreen} py-20 md:py-32 border-t border-[#1e3b2b]`}>
+            <section className={`${colors.darkGreen} py-12 md:py-16 border-t border-[#1e3b2b]`}>
               <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
                 <div className="text-center mb-16">
                   <h2 className="text-4xl md:text-5xl lg:text-[4rem] font-display font-normal text-[#F4EFE6] leading-tight">
@@ -530,7 +530,7 @@ const SosyalMedyaYeni = () => {
         })()}
 
         {/* 5. PROCESS (How it works - 1, 2, 3) */}
-        <section className={`${colors.darkGreen} py-20 md:py-32 border-t ${colors.borderColorDark} overflow-hidden`}>
+        <section className={`${colors.darkGreen} py-12 md:py-16 border-t ${colors.borderColorDark} overflow-hidden`}>
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
             <div className="text-center mb-24 max-w-3xl mx-auto">
               <h3 className="text-[#caf265] text-sm font-bold tracking-widest uppercase mb-6">NASIL ÇALIŞIYORUZ?</h3>
@@ -589,7 +589,7 @@ const SosyalMedyaYeni = () => {
         </section>
 
         {/* 6. COMPARISON (Why Us?) */}
-        <section className={`${colors.beige} py-20 md:py-32 border-t ${colors.borderColor}`}>
+        <section className={`${colors.beige} py-12 md:py-16 border-t ${colors.borderColor}`}>
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
               <div className="sticky top-32">
@@ -678,7 +678,7 @@ const SosyalMedyaYeni = () => {
         </section>
 
         {/* OUR DIFFERENCE BLOCK */}
-        <section className={`${colors.beige} py-20 md:py-32 border-t ${colors.borderColor}`}>
+        <section className={`${colors.beige} py-12 md:py-16 border-t ${colors.borderColor}`}>
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
             <div className="text-center mb-24 max-w-3xl mx-auto">
               <h3 className="text-[#3a5245] text-[13px] font-bold tracking-widest uppercase mb-6">BİZİM FARKIMIZ</h3>
@@ -746,7 +746,7 @@ const SosyalMedyaYeni = () => {
         </section>
 
         {/* ÇALIŞMALARIMIZ (WORKS GRID) */}
-        <section className={`${colors.beige} py-20 md:py-32 border-t ${colors.borderColor}`}>
+        <section className={`${colors.beige} py-12 md:py-16 border-t ${colors.borderColor}`}>
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
               <div className="max-w-2xl">
@@ -792,7 +792,7 @@ const SosyalMedyaYeni = () => {
         </section>
 
         {/* 7. FAQ ACCORDION */}
-        <section className={`${colors.darkGreen} py-20 md:py-32 border-t ${colors.borderColorDark}`}>
+        <section className={`${colors.darkGreen} py-12 md:py-16 border-t ${colors.borderColorDark}`}>
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
               <div className="lg:col-span-5 relative">

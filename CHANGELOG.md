@@ -17,3 +17,9 @@ Projedeki tüm önemli değişiklikler bu dosyada belgelenecektir.
 ### 🧹 Temizlenenler (Removed)
 - Eski, şişkin görsellerin ve devasa videoların tamamı `.silinecekler_cop_kutusu/` isimli güvenli klasöre taşındı (ve `.gitignore` dahil edilerek sunucu performansı ve Kitap arşivi gereksiz yükten kurtarıldı).
 - Sayfalarda ESLint uyarılarına sebep olan kullanılmayan `framer-motion` değişkenleri, fazla ve ölü modüler bileşenler kaldırıldı.
+
+### 30 Mart 2026 - Sayfa Oranları ve Responsive Optimizasyonu
+
+- **AiProductionYeni:** Hero video alanı yüksekliği kısaltıldı (min-h-[75vh] -> min-h-[50vh]) ve ekrana sığma sorunları giderildi.
+- **HomeYeni & SosyalMedyaYeni:** Devasa boşluklar yaratan eski (py-32, py-40) padding değerleri, ekran boyutuna göre optimize edilmiş (py-20 md:py-32) yapılarla değiştirildi.
+- Kapsamlı görsel alan iyileştirmesi yapıldı.

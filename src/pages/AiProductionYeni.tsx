@@ -11,8 +11,6 @@ import {
   User,
   Image as ImageIcon,
   Layout,
-  Target,
-  Compass,
   X,
   Plus
 } from 'lucide-react';
@@ -546,6 +544,31 @@ const LifestyleShowcase = () => {
     </div>
   );
 };
+
+const AiProduction = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const [selectedProject, setSelectedProject] = useState<AiProject | null>(null);
+  const [cursorType, setCursorType] = useState<'dot' | 'exit'>('dot');
+  const cursorX = useMotionValue(-100);
+  const cursorY = useMotionValue(-100);
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    cursorX.set(e.clientX);
+    cursorY.set(e.clientY);
+  };
+
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }, [selectedProject]);
 
   return (
     <div className={`font-sans min-h-screen selection:bg-black selection:text-white`}>

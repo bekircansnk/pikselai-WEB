@@ -88,35 +88,35 @@ const aiProjects: AiProject[] = [
 
 const MANKEN_ASSETS = [
   // Anna
-  { name: "Anna", img: "/sosyal_medya_resimler/sanal_manken/Anna/Anna-1.jpg" },
-  { name: "Anna", img: "/sosyal_medya_resimler/sanal_manken/Anna/Anna-2.jpg" },
-  { name: "Anna", img: "/sosyal_medya_resimler/sanal_manken/Anna/Anna-imaj-1.jpg" },
-  { name: "Anna", img: "/sosyal_medya_resimler/sanal_manken/Anna/Anna-imaj-2.jpg" },
+  { name: "Anna", img: "/sosyal_medya_resimler/sanal_manken/Anna/Anna-1.webp" },
+  { name: "Anna", img: "/sosyal_medya_resimler/sanal_manken/Anna/Anna-2.webp" },
+  { name: "Anna", img: "/sosyal_medya_resimler/sanal_manken/Anna/Anna-imaj-1.webp" },
+  { name: "Anna", img: "/sosyal_medya_resimler/sanal_manken/Anna/Anna-imaj-2.webp" },
   // Mike
-  { name: "Mike", img: "/sosyal_medya_resimler/sanal_manken/Mike/mike_1.jpg" },
-  { name: "Mike", img: "/sosyal_medya_resimler/sanal_manken/Mike/mike_2.jpg" },
-  { name: "Mike", img: "/sosyal_medya_resimler/sanal_manken/Mike/mike_3.jpg" },
-  { name: "Mike", img: "/sosyal_medya_resimler/sanal_manken/Mike/mike_4.jpg" },
+  { name: "Mike", img: "/sosyal_medya_resimler/sanal_manken/Mike/mike_1.webp" },
+  { name: "Mike", img: "/sosyal_medya_resimler/sanal_manken/Mike/mike_2.webp" },
+  { name: "Mike", img: "/sosyal_medya_resimler/sanal_manken/Mike/mike_3.webp" },
+  { name: "Mike", img: "/sosyal_medya_resimler/sanal_manken/Mike/mike_4.webp" },
   // Nia
-  { name: "Nia", img: "/sosyal_medya_resimler/sanal_manken/Nia/Nia-1.jpg" },
-  { name: "Nia", img: "/sosyal_medya_resimler/sanal_manken/Nia/Nia-2.jpg" },
-  { name: "Nia", img: "/sosyal_medya_resimler/sanal_manken/Nia/Nia-imaj-4.jpg" },
-  { name: "Nia", img: "/sosyal_medya_resimler/sanal_manken/Nia/Nia-imaj-6.jpg" },
+  { name: "Nia", img: "/sosyal_medya_resimler/sanal_manken/Nia/Nia-1.webp" },
+  { name: "Nia", img: "/sosyal_medya_resimler/sanal_manken/Nia/Nia-2.webp" },
+  { name: "Nia", img: "/sosyal_medya_resimler/sanal_manken/Nia/Nia-imaj-4.webp" },
+  { name: "Nia", img: "/sosyal_medya_resimler/sanal_manken/Nia/Nia-imaj-6.webp" },
   // Nora
-  { name: "Nora", img: "/sosyal_medya_resimler/sanal_manken/Nora/Nora-1.jpg" },
-  { name: "Nora", img: "/sosyal_medya_resimler/sanal_manken/Nora/Nora-3.jpg" },
-  { name: "Nora", img: "/sosyal_medya_resimler/sanal_manken/Nora/Nora-1_imaj.png" },
-  { name: "Nora", img: "/sosyal_medya_resimler/sanal_manken/Nora/Nora-1_imaj_2.png" },
+  { name: "Nora", img: "/sosyal_medya_resimler/sanal_manken/Nora/Nora-1.webp" },
+  { name: "Nora", img: "/sosyal_medya_resimler/sanal_manken/Nora/Nora-3.webp" },
+  { name: "Nora", img: "/sosyal_medya_resimler/sanal_manken/Nora/Nora-1_imaj.webp" },
+  { name: "Nora", img: "/sosyal_medya_resimler/sanal_manken/Nora/Nora-1_imaj_2.webp" },
   // Sora
-  { name: "Sora", img: "/sosyal_medya_resimler/sanal_manken/Sora/sora_1.jpg" },
-  { name: "Sora", img: "/sosyal_medya_resimler/sanal_manken/Sora/sora_3.jpg" },
-  { name: "Sora", img: "/sosyal_medya_resimler/sanal_manken/Sora/Sora-imaj-11.jpg" },
-  { name: "Sora", img: "/sosyal_medya_resimler/sanal_manken/Sora/Sora-imaj-5.jpg" },
+  { name: "Sora", img: "/sosyal_medya_resimler/sanal_manken/Sora/sora_1.webp" },
+  { name: "Sora", img: "/sosyal_medya_resimler/sanal_manken/Sora/sora_3.webp" },
+  { name: "Sora", img: "/sosyal_medya_resimler/sanal_manken/Sora/Sora-imaj-11.webp" },
+  { name: "Sora", img: "/sosyal_medya_resimler/sanal_manken/Sora/Sora-imaj-5.webp" },
   // Zoe
-  { name: "Zoe", img: "/sosyal_medya_resimler/sanal_manken/Zoe/Zoe-1.jpg" },
-  { name: "Zoe", img: "/sosyal_medya_resimler/sanal_manken/Zoe/Zoe-5.jpg" },
-  { name: "Zoe", img: "/sosyal_medya_resimler/sanal_manken/Zoe/Zoe-imaj-1.jpg" },
-  { name: "Zoe", img: "/sosyal_medya_resimler/sanal_manken/Zoe/Zoe-imaj-5.jpg" }
+  { name: "Zoe", img: "/sosyal_medya_resimler/sanal_manken/Zoe/Zoe-1.webp" },
+  { name: "Zoe", img: "/sosyal_medya_resimler/sanal_manken/Zoe/Zoe-5.webp" },
+  { name: "Zoe", img: "/sosyal_medya_resimler/sanal_manken/Zoe/Zoe-imaj-1.webp" },
+  { name: "Zoe", img: "/sosyal_medya_resimler/sanal_manken/Zoe/Zoe-imaj-5.webp" }
 ];
 
 const MankenRow = ({ items, reverse = false, duration = 40 }: { items: typeof MANKEN_ASSETS, reverse?: boolean, duration?: number }) => (
@@ -143,73 +143,73 @@ const MankenRow = ({ items, reverse = false, duration = 40 }: { items: typeof MA
 
 
 const GHOST_ASSETS = [
-  { img1: "/sosyal_medya_resimler/ghost_v2/1_ön.png", img2: "/sosyal_medya_resimler/ghost_v2/1_arka.png" },
-  { img1: "/sosyal_medya_resimler/ghost_v2/2_ön.png", img2: "/sosyal_medya_resimler/ghost_v2/2_arka.png" },
-  { img1: "/sosyal_medya_resimler/ghost_v2/3_ön.png", img2: "/sosyal_medya_resimler/ghost_v2/3_arka.png" },
-  { img1: "/sosyal_medya_resimler/ghost_v2/4_ön.png", img2: "/sosyal_medya_resimler/ghost_v2/4_arka.png" },
-  { img1: "/sosyal_medya_resimler/ghost_v2/5_ön.png", img2: "/sosyal_medya_resimler/ghost_v2/5_arka.png" },
-  { img1: "/sosyal_medya_resimler/ghost_v2/6_ön.png", img2: "/sosyal_medya_resimler/ghost_v2/6_arka.png" },
-  { img1: "/sosyal_medya_resimler/ghost_v2/7_ön.png", img2: "/sosyal_medya_resimler/ghost_v2/7_arka.png" },
-  { img1: "/sosyal_medya_resimler/ghost_v2/8_ön.png", img2: "/sosyal_medya_resimler/ghost_v2/8_arka.png" },
-  { img1: "/sosyal_medya_resimler/ghost_v2/9_ön.png", img2: "/sosyal_medya_resimler/ghost_v2/9_arka.png" }
+  { img1: "/sosyal_medya_resimler/ghost_v2/1_ön.webp", img2: "/sosyal_medya_resimler/ghost_v2/1_arka.webp" },
+  { img1: "/sosyal_medya_resimler/ghost_v2/2_ön.webp", img2: "/sosyal_medya_resimler/ghost_v2/2_arka.webp" },
+  { img1: "/sosyal_medya_resimler/ghost_v2/3_ön.webp", img2: "/sosyal_medya_resimler/ghost_v2/3_arka.webp" },
+  { img1: "/sosyal_medya_resimler/ghost_v2/4_ön.webp", img2: "/sosyal_medya_resimler/ghost_v2/4_arka.webp" },
+  { img1: "/sosyal_medya_resimler/ghost_v2/5_ön.webp", img2: "/sosyal_medya_resimler/ghost_v2/5_arka.webp" },
+  { img1: "/sosyal_medya_resimler/ghost_v2/6_ön.webp", img2: "/sosyal_medya_resimler/ghost_v2/6_arka.webp" },
+  { img1: "/sosyal_medya_resimler/ghost_v2/7_ön.webp", img2: "/sosyal_medya_resimler/ghost_v2/7_arka.webp" },
+  { img1: "/sosyal_medya_resimler/ghost_v2/8_ön.webp", img2: "/sosyal_medya_resimler/ghost_v2/8_arka.webp" },
+  { img1: "/sosyal_medya_resimler/ghost_v2/9_ön.webp", img2: "/sosyal_medya_resimler/ghost_v2/9_arka.webp" }
 ];
 
 const LIFESTYLE_PROJECTS = [
   {
     name: "Ella-1 Full Body",
     images: [
-      "/sosyal_medya_resimler/konsept/1/Ella-1_1_2K_4_5_01_Full_Body.png",
-      "/sosyal_medya_resimler/konsept/1/Ella-1_1_2K_4_5_01_Full_Body_Power_Stride (1).png",
-      "/sosyal_medya_resimler/konsept/1/Ella-1_1_2K_4_5_02_Full_Body.png",
-      "/sosyal_medya_resimler/konsept/1/Ella-1_1_2K_4_5_03_Full_Body_Sitting_Step.png",
-      "/sosyal_medya_resimler/konsept/1/Ella-1_1_2K_4_5_04_Close_Up_Side_Profile.png",
-      "/sosyal_medya_resimler/konsept/1/Ella-1_1_2K_4_5_04_Mid_Shot_mid_walk_legs.png"
+      "/sosyal_medya_resimler/konsept/1/Ella-1_1_2K_4_5_01_Full_Body.webp",
+      "/sosyal_medya_resimler/konsept/1/Ella-1_1_2K_4_5_01_Full_Body_Power_Stride (1).webp",
+      "/sosyal_medya_resimler/konsept/1/Ella-1_1_2K_4_5_02_Full_Body.webp",
+      "/sosyal_medya_resimler/konsept/1/Ella-1_1_2K_4_5_03_Full_Body_Sitting_Step.webp",
+      "/sosyal_medya_resimler/konsept/1/Ella-1_1_2K_4_5_04_Close_Up_Side_Profile.webp",
+      "/sosyal_medya_resimler/konsept/1/Ella-1_1_2K_4_5_04_Mid_Shot_mid_walk_legs.webp"
     ]
   },
   {
     name: "Mila-1 Studio",
     images: [
-      "/sosyal_medya_resimler/konsept/2/Mila-1_image00004_2K_4_5_01_Hero_Full (2).png",
-      "/sosyal_medya_resimler/konsept/2/Mila-1_image00004_2K_4_5_02_Story_Full (2).png",
-      "/sosyal_medya_resimler/konsept/2/Mila-1_image00004_2K_4_5_03_Portrait_Mid (2).png",
-      "/sosyal_medya_resimler/konsept/2/Mila-1_image00004_2K_4_5_04_CloseUp_Knee (2).png"
+      "/sosyal_medya_resimler/konsept/2/Mila-1_image00004_2K_4_5_01_Hero_Full (2).webp",
+      "/sosyal_medya_resimler/konsept/2/Mila-1_image00004_2K_4_5_02_Story_Full (2).webp",
+      "/sosyal_medya_resimler/konsept/2/Mila-1_image00004_2K_4_5_03_Portrait_Mid (2).webp",
+      "/sosyal_medya_resimler/konsept/2/Mila-1_image00004_2K_4_5_04_CloseUp_Knee (2).webp"
     ]
   },
   {
     name: "Ella-1 Portrait",
     images: [
-      "/sosyal_medya_resimler/konsept/3/Ella-1_1_2K_4_5_02_Story_Full.png",
-      "/sosyal_medya_resimler/konsept/3/Ella-1_1_2K_4_5_03_Portrait_Mid (1).png",
-      "/sosyal_medya_resimler/konsept/3/Ella-1_1_2K_4_5_03_Portrait_Mid.png",
-      "/sosyal_medya_resimler/konsept/3/Ella-1_1_2K_4_5_04_CloseUp_Knee.png"
+      "/sosyal_medya_resimler/konsept/3/Ella-1_1_2K_4_5_02_Story_Full.webp",
+      "/sosyal_medya_resimler/konsept/3/Ella-1_1_2K_4_5_03_Portrait_Mid (1).webp",
+      "/sosyal_medya_resimler/konsept/3/Ella-1_1_2K_4_5_03_Portrait_Mid.webp",
+      "/sosyal_medya_resimler/konsept/3/Ella-1_1_2K_4_5_04_CloseUp_Knee.webp"
     ]
   },
   {
     name: "Anna-1 Cinematic",
     images: [
-      "/sosyal_medya_resimler/konsept/4/Anna-1_1_2K_4_5_02_Full_Body_Sitting (3).png",
-      "/sosyal_medya_resimler/konsept/4/Anna-1_1_2K_4_5_02_Full_Body_Sitting (4).png",
-      "/sosyal_medya_resimler/konsept/4/Anna-1_1_2K_4_5_03_Full_Body_Leaning (2).png",
-      "/sosyal_medya_resimler/konsept/4/Anna-1_1_2K_4_5_06_Extreme_Close_Up_Crossed_Ankles.png"
+      "/sosyal_medya_resimler/konsept/4/Anna-1_1_2K_4_5_02_Full_Body_Sitting (3).webp",
+      "/sosyal_medya_resimler/konsept/4/Anna-1_1_2K_4_5_02_Full_Body_Sitting (4).webp",
+      "/sosyal_medya_resimler/konsept/4/Anna-1_1_2K_4_5_03_Full_Body_Leaning (2).webp",
+      "/sosyal_medya_resimler/konsept/4/Anna-1_1_2K_4_5_06_Extreme_Close_Up_Crossed_Ankles.webp"
     ]
   },
   {
     name: "20220-SİYAH Pro",
     images: [
-      "/sosyal_medya_resimler/konsept/5/20220-SİYAH_2K_4_5_scene_02_shot_07_hero.jpg",
-      "/sosyal_medya_resimler/konsept/5/20220-SİYAH_2K_4_5_scene_02_shot_08_macro.jpg",
-      "/sosyal_medya_resimler/konsept/5/20220-SİYAH_2K_4_5_scene_02_shot_09_action.jpg",
-      "/sosyal_medya_resimler/konsept/5/20220-SİYAH_2K_4_5_scene_02_shot_10_profile.jpg",
-      "/sosyal_medya_resimler/konsept/5/20220-SİYAH_2K_4_5_scene_02_shot_12_american.jpg"
+      "/sosyal_medya_resimler/konsept/5/20220-SİYAH_2K_4_5_scene_02_shot_07_hero.webp",
+      "/sosyal_medya_resimler/konsept/5/20220-SİYAH_2K_4_5_scene_02_shot_08_macro.webp",
+      "/sosyal_medya_resimler/konsept/5/20220-SİYAH_2K_4_5_scene_02_shot_09_action.webp",
+      "/sosyal_medya_resimler/konsept/5/20220-SİYAH_2K_4_5_scene_02_shot_10_profile.webp",
+      "/sosyal_medya_resimler/konsept/5/20220-SİYAH_2K_4_5_scene_02_shot_12_american.webp"
     ]
   },
   {
     name: "10200-KIRMIZI Life",
     images: [
-      "/sosyal_medya_resimler/konsept/6/10200-KIRMIZI_2K_2_3_shot_02_macro.jpg",
-      "/sosyal_medya_resimler/konsept/6/10200-KIRMIZI_2K_2_3_shot_03_lifestyle.jpg",
-      "/sosyal_medya_resimler/konsept/6/10200-KIRMIZI_2K_2_3_shot_04_side_profile.jpg",
-      "/sosyal_medya_resimler/konsept/6/10200-KIRMIZI_2K_2_3_shot_06_american_plan.jpg"
+      "/sosyal_medya_resimler/konsept/6/10200-KIRMIZI_2K_2_3_shot_02_macro.webp",
+      "/sosyal_medya_resimler/konsept/6/10200-KIRMIZI_2K_2_3_shot_03_lifestyle.webp",
+      "/sosyal_medya_resimler/konsept/6/10200-KIRMIZI_2K_2_3_shot_04_side_profile.webp",
+      "/sosyal_medya_resimler/konsept/6/10200-KIRMIZI_2K_2_3_shot_06_american_plan.webp"
     ]
   }
 ];
@@ -234,12 +234,12 @@ const ExpandableProductShowcase = () => {
       title: "Mina Drinks",
       category: "GASTRONOMİ",
       desc: "Gastronomik kurgu ve yüksek çözünürlüklü detaylar.",
-      mainImg: "/sosyal_medya_resimler/ürün_fotoğraf/mina_drink_1.png",
+      mainImg: "/sosyal_medya_resimler/ürün_fotoğraf/mina_drink_1.webp",
       gridImgs: [
-        "/sosyal_medya_resimler/ürün_fotoğraf/mina_drink_1.png",
-        "/sosyal_medya_resimler/ürün_fotoğraf/mina_drink_2.png",
-        "/sosyal_medya_resimler/ürün_fotoğraf/mina_drink_3.png",
-        "/sosyal_medya_resimler/ürün_fotoğraf/mina_drink_4.png",
+        "/sosyal_medya_resimler/ürün_fotoğraf/mina_drink_1.webp",
+        "/sosyal_medya_resimler/ürün_fotoğraf/mina_drink_2.webp",
+        "/sosyal_medya_resimler/ürün_fotoğraf/mina_drink_3.webp",
+        "/sosyal_medya_resimler/ürün_fotoğraf/mina_drink_4.webp",
       ]
     },
     {
@@ -247,14 +247,14 @@ const ExpandableProductShowcase = () => {
       title: "ROSSEA",
       category: "MODA & TEKSTİL",
       desc: "Tekstil dokusunu ve ışık oyunlarını vurgulayan stüdyo çekimi.",
-      mainImg: "/sosyal_medya_resimler/ürün_fotoğraf/esarp_1.png",
+      mainImg: "/sosyal_medya_resimler/ürün_fotoğraf/esarp_1.webp",
       gridImgs: [
-        "/sosyal_medya_resimler/ürün_fotoğraf/esarp_1.png",
-        "/sosyal_medya_resimler/ürün_fotoğraf/esarp_2.png",
-        "/sosyal_medya_resimler/ürün_fotoğraf/esarp_3.png",
-        "/sosyal_medya_resimler/ürün_fotoğraf/esarp_4.png",
-        "/sosyal_medya_resimler/ürün_fotoğraf/esarp_5.png",
-        "/sosyal_medya_resimler/ürün_fotoğraf/esarp_6.png",
+        "/sosyal_medya_resimler/ürün_fotoğraf/esarp_1.webp",
+        "/sosyal_medya_resimler/ürün_fotoğraf/esarp_2.webp",
+        "/sosyal_medya_resimler/ürün_fotoğraf/esarp_3.webp",
+        "/sosyal_medya_resimler/ürün_fotoğraf/esarp_4.webp",
+        "/sosyal_medya_resimler/ürün_fotoğraf/esarp_5.webp",
+        "/sosyal_medya_resimler/ürün_fotoğraf/esarp_6.webp",
       ]
     },
     {
@@ -262,13 +262,13 @@ const ExpandableProductShowcase = () => {
       title: "CAZADOR Kazak",
       category: "ERKEK GİYİM",
       desc: "Modern erkek giyim siluetleri ve profesyonel mekan kurgusu.",
-      mainImg: "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak.jpg",
+      mainImg: "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak.webp",
       gridImgs: [
-        "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak.jpg",
-        "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak_2.jpg",
-        "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak_3.jpg",
-        "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak_4.jpg",
-        "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak_5.jpg",
+        "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak.webp",
+        "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak_2.webp",
+        "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak_3.webp",
+        "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak_4.webp",
+        "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak_5.webp",
       ]
     },
     {
@@ -276,12 +276,12 @@ const ExpandableProductShowcase = () => {
       title: "CAMP and MAP",
       category: "LIFESTYLE",
       desc: "Doğa ile ürünün kusursuz uyumu ve atmosferik çekimler.",
-      mainImg: "/sosyal_medya_resimler/ürün_fotoğraf/ca.jpg",
+      mainImg: "/sosyal_medya_resimler/ürün_fotoğraf/ca.webp",
       gridImgs: [
-        "/sosyal_medya_resimler/ürün_fotoğraf/ca.jpg",
+        "/sosyal_medya_resimler/ürün_fotoğraf/ca.webp",
         "/sosyal_medya_resimler/ürün_fotoğraf/CAMPANDMAP%20LOGO%203_4_5_2K%20(4)%202.jpg",
         "/sosyal_medya_resimler/ürün_fotoğraf/Camp-imaj_Magic%20Hamak_4x5_scene_1_shot_1_arrival.png",
-        "/sosyal_medya_resimler/ürün_fotoğraf/Camp-imaj_Set1_4x5_scene_1_shot_3_wide.png",
+        "/sosyal_medya_resimler/ürün_fotoğraf/Camp-imaj_Set1_4x5_scene_1_shot_3_wide.webp",
       ]
     }
   ];

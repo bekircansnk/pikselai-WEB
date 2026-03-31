@@ -9,11 +9,12 @@ const Contact = () => {
             {/* Hero */}
             <Section mood="dark" className="pt-32 pb-20 md:pt-44 md:pb-28">
                 <div className="max-w-3xl">
-                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-bor-secondary block mb-6">İletişim</span>
-                    <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-6">
-                        Projenizi <span className="italic text-bor-secondary">anlatın</span>
+                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#E2FF65] block mb-6">İletişim</span>
+                    <h1 className="text-5xl md:text-7xl font-bold font-display leading-tight tracking-tight text-white mb-6 drop-shadow-2xl">
+                        Projenizi <br className="hidden lg:block" />
+                        <span className="italic font-light text-[#E2FF65]">anlatın</span>
                     </h1>
-                    <p className="text-xl text-bor-primary-300 max-w-xl">
+                    <p className="text-lg md:text-xl font-light text-white/80 max-w-xl leading-relaxed">
                         Ücretsiz demo ve fiyat teklifi için bizimle iletişime geçin.
                     </p>
                 </div>
@@ -24,7 +25,7 @@ const Contact = () => {
                 <div className="grid md:grid-cols-2 gap-16">
                     {/* Form */}
                     <div>
-                        <h2 className="text-2xl font-bold text-bor-primary-900 mb-8">Teklif Talep Formu</h2>
+                        <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-bor-primary-900 mb-8">Teklif Talep Formu</h2>
                         <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                             <div className="grid grid-cols-2 gap-4">
                                 <div>
@@ -72,8 +73,8 @@ const Contact = () => {
                     {/* Contact Info */}
                     <div className="space-y-8">
                         <div>
-                            <h2 className="text-2xl font-bold text-bor-primary-900 mb-8">Hızlı İletişim</h2>
-                            <p className="text-bor-primary-500 mb-8 leading-relaxed">
+                            <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-bor-primary-900 mb-6">Hızlı İletişim</h2>
+                            <p className="text-bor-primary-600 text-lg font-light leading-relaxed mb-8">
                                 Form doldurmak yerine direkt iletişime geçmek mi tercih edersiniz?
                                 WhatsApp üzerinden hızlıca ulaşabilirsiniz.
                             </p>

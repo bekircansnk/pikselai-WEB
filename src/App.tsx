@@ -16,7 +16,14 @@ const Blog = lazy(() => import('./pages/Blog'))
 const CustomerStories = lazy(() => import('./pages/CustomerStories'))
 const EticaretYeni = lazy(() => import('./pages/EticaretYeni'))
 const SosyalMedyaYeni = lazy(() => import('./pages/SosyalMedyaYeni'))
+const AiProductionYeni = lazy(() => import('./pages/AiProductionYeni'))
+const HomeYeni = lazy(() => import('./pages/HomeYeni'))
 const CreativeDesign = lazy(() => import('./pages/CreativeDesign'))
+const CostCalculator = lazy(() => import('./pages/CostCalculator'))
+
+const MinaDrinksCaseStudy = lazy(() => import('./pages/blog/MinaDrinksCaseStudy'))
+const VenusCaseStudy = lazy(() => import('./pages/blog/VenusCaseStudy'))
+const CampAndMapCaseStudy = lazy(() => import('./pages/blog/CampAndMapCaseStudy'))
 
 function Loading() {
   return (
@@ -56,11 +63,13 @@ function App() {
       <main>
         <Suspense fallback={<Loading />}>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<HomeYeni />} />
             <Route path="/hizmetler" element={<ServicesHub />} />
-            <Route path="/hizmetler/ai-produksiyon" element={<AiProduction />} />
+            <Route path="/hizmetler/ai-produksiyon" element={<AiProductionYeni />} />
             <Route path="/hizmetler/e-ticaret" element={<EticaretYeni />} />
             <Route path="/hizmetler/sosyal-medya" element={<SosyalMedyaYeni />} />
+            <Route path="/hizmetler/ai-produksiyon-yeni" element={<AiProduction />} />
+            <Route path="/home-yeni" element={<Home />} />
             <Route path="/hizmetler/dijital-buyume" element={<DigitalGrowth />} />
             <Route path="/hizmetler/kreatif-tasarim" element={<CreativeDesign />} />
             <Route path="/hakkimizda" element={<About />} />
@@ -70,6 +79,10 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/musteri-hikayeleri" element={<CustomerStories />} />
             <Route path="/blog/referanslar" element={<CazadorCaseStudy />} />
+            <Route path="/blog/mina-drinks" element={<MinaDrinksCaseStudy />} />
+            <Route path="/blog/venus" element={<VenusCaseStudy />} />
+            <Route path="/blog/campandmap" element={<CampAndMapCaseStudy />} />
+            <Route path="/fiyat-hesapla" element={<CostCalculator />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

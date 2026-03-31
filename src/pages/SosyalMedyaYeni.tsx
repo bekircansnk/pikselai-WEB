@@ -43,68 +43,53 @@ export interface SocialProject {
   description: string;
   spanClass: string;
   aspectClass: string;
+  images: string[];
 }
 
 const socialProjects: SocialProject[] = [
   {
     id: 1,
-    client: "Amazon Eczanesi",
-    title: "Video Prodüksiyonu",
+    client: "Cazador",
+    title: "Sokak Modası Çekimleri",
     category: "Reklam Yaratıcılığı",
-    thumbnail: "/images/social-hero-1.webp",
-    description: "Amazon'un yerel eczane hizmetleri için dikkat çekici CGI destekli reklam kampanyası.",
+    thumbnail: "/sosyal_medya_resimler/cazador/cazador2.webp",
+    description: "Cazador'un yeni sezon koleksiyonu için dinamik ve dikkat çekici sosyal medya kurguları.",
     spanClass: "md:col-span-4",
-    aspectClass: "aspect-[3/4]"
+    aspectClass: "aspect-[3/4]",
+    images: ["/sosyal_medya_resimler/cazador/cazador1.webp", "/sosyal_medya_resimler/cazador/cazador2.webp", "/sosyal_medya_resimler/cazador/cazador3.webp", "/sosyal_medya_resimler/cazador/cazador4.webp"]
   },
   {
     id: 2,
-    client: "Treatwell",
-    title: "E-Posta Tasarımı",
-    category: "Mobil Uygulama",
-    thumbnail: "/images/social-hero-3.webp",
-    description: "Güzellik ve rezervasyon platformu Treatwell'in mobil pazarlama ekranları.",
+    client: "Venüs Ayakkabı",
+    title: "Ürün Lansmanı",
+    category: "Sosyal Medya Çekimleri",
+    thumbnail: "/sosyal_medya_resimler/venüs/venus2.webp",
+    description: "Venüs Ayakkabı'nın yeni modelleri için etkileşim odaklı reklam kreatifleri.",
     spanClass: "md:col-span-4",
-    aspectClass: "aspect-[3/4]"
+    aspectClass: "aspect-[3/4]",
+    images: ["/sosyal_medya_resimler/venüs/venus1.webp", "/sosyal_medya_resimler/venüs/venus2.webp", "/sosyal_medya_resimler/venüs/venus3.webp", "/sosyal_medya_resimler/venüs/venus4.webp"]
   },
   {
     id: 3,
-    client: "Wilson",
-    title: "Basketbol Kampanyası",
-    category: "Sosyal Medya Yaratıcılığı",
-    thumbnail: "https://images.unsplash.com/photo-1542744094-3a31f272c490?q=80&w=800",
-    description: "Yeni nesil basketbol topları için dinamik tipografi ve görsel efektlerle harmanlanmış sosyal ağ kampanyası.",
+    client: "Camp and Map",
+    title: "Doğa Kampanyası",
+    category: "E-ticaret için Çekimler",
+    thumbnail: "/sosyal_medya_resimler/camp and map/camp1.webp",
+    description: "Doğa tutkunları için outdoor ruhunu yansıtan etkileyici görsel kurgular.",
     spanClass: "md:col-span-4",
-    aspectClass: "aspect-square md:aspect-[3/4] md:h-full lg:aspect-auto"
+    aspectClass: "aspect-square md:aspect-[3/4] md:h-full lg:aspect-auto",
+    images: ["/sosyal_medya_resimler/camp and map/camp1.webp", "/sosyal_medya_resimler/camp and map/camp2.webp", "/sosyal_medya_resimler/camp and map/camp3.webp", "/sosyal_medya_resimler/camp and map/camp4.webp"]
   },
   {
     id: 4,
-    client: "Yüceltme",
-    title: "Lansman Tasarımları",
-    category: "Marka Kimliği",
-    thumbnail: "/images/social-carousel.webp",
-    description: "Cesur renk blokları ve kalın tipografinin birleştiği modern bir marka hikayesi.",
-    spanClass: "md:col-span-6",
-    aspectClass: "aspect-square md:aspect-video"
-  },
-  {
-    id: 5,
-    client: "Pernod Ricard",
-    title: "Dijital Raporlar",
-    category: "E-Kitap",
-    thumbnail: "/images/social-strategy.webp",
-    description: "Kurumsal dokümanların ve PDF tabanlı raporların tamamen baştan ve çekici hale getirilmesi.",
-    spanClass: "md:col-span-3",
-    aspectClass: "aspect-[3/4]"
-  },
-  {
-    id: 6,
-    client: "Collabera",
-    title: "Marka Yenileme",
-    category: "Görsel Kimlik",
-    thumbnail: "https://images.unsplash.com/photo-1541560052-5e137f229371?q=80&w=800",
-    description: "Kurumsal tabelalar ve ofis içi materyallerin uyumlu yeni tasarımı.",
-    spanClass: "md:col-span-3",
-    aspectClass: "aspect-[3/4]"
+    client: "Mina Drinks",
+    title: "Enerji ve Ferahlık",
+    category: "Katalog Çekimleri",
+    thumbnail: "/sosyal_medya_resimler/mina drinks/mina1.webp",
+    description: "Mina Drinks'in ferahlatıcı kimliğini öne çıkaran yapay zeka destekli görseller.",
+    spanClass: "md:col-span-8",
+    aspectClass: "aspect-square md:aspect-video",
+    images: ["/sosyal_medya_resimler/mina drinks/mina1.webp", "/sosyal_medya_resimler/mina drinks/mina2.webp", "/sosyal_medya_resimler/mina drinks/mina3.webp", "/sosyal_medya_resimler/mina drinks/mina4.webp"]
   }
 ];
 
@@ -222,84 +207,84 @@ const SosyalMedyaYeni = () => {
                 </motion.div>
               </motion.div>
 
-              {/* Sağ Görsel Alanı (Superside stili hareketli / asimetrik kartlar) */}
+              {/* Sağ Görsel Alanı (Yeni Animasyonlu Masonry Grid) */}
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-                className="relative h-[500px] lg:h-[600px] w-full hidden md:block"
+                className="relative h-[500px] lg:h-[650px] w-full hidden md:block overflow-hidden rounded-3xl"
               >
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')] opacity-20 pointer-events-none" />
 
-                {/* Floating Image Cards */}
-                <motion.div
-                  animate={{ y: [0, -15, 0] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute top-[10%] left-[5%] w-[45%] aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border border-white/10"
-                >
-                  <img src="/images/social-hero-1.webp" alt="Creative Video" className="w-full h-full object-cover" />
-                </motion.div>
+                {/* Solma efektleri */}
+                <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0b2117] to-transparent z-10 pointer-events-none" />
+                <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0b2117] to-transparent z-10 pointer-events-none" />
 
-                <motion.div
-                  animate={{ y: [0, 20, 0] }}
-                  transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                  className="absolute bottom-[5%] right-[5%] w-[50%] aspect-square rounded-2xl overflow-hidden shadow-2xl border border-white/10 z-20 bg-[#caf265]"
-                >
-                  <img src="/images/social-hero-2.webp" alt="Social Post" className="w-full h-full object-cover mix-blend-multiply opacity-80" />
-                  <div className="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/60 to-transparent">
-                    <p className="text-white font-medium text-lg">Yüksek CTR Optimizasyonu</p>
-                  </div>
-                </motion.div>
+                <div className="grid grid-cols-3 gap-5 h-[120%] -mt-10 rotate-[-5deg] scale-[1.15]">
+                  {/* Column 1 - Downward scroll */}
+                  <motion.div
+                    animate={{ y: ["0%", "-50%"] }}
+                    transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+                    className="flex flex-col gap-5"
+                  >
+                    {[
+                      "/sosyal_medya_resimler/image1.webp",
+                      "/sosyal_medya_resimler/image2.webp",
+                      "/sosyal_medya_resimler/image7.webp",
+                      "/sosyal_medya_resimler/image1.webp",
+                      "/sosyal_medya_resimler/image2.webp",
+                      "/sosyal_medya_resimler/image7.webp"
+                    ].map((src, i) => (
+                      <div key={`col1-${i}`} className="rounded-2xl overflow-hidden shadow-2xl relative border-2 border-white/5 bg-white/5 backdrop-blur-sm">
+                        <img src={src} className="w-full object-cover scale-[1.02]" alt="" />
+                      </div>
+                    ))}
+                  </motion.div>
 
-                <motion.div
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                  className="absolute top-[20%] right-[15%] w-[35%] aspect-square rounded-full overflow-hidden shadow-xl border-4 border-[#0b2117] z-10"
-                >
-                  <img src="/images/social-hero-3.webp" alt="Reels" className="w-full h-full object-cover" />
-                </motion.div>
+                  {/* Column 2 - Upward scroll */}
+                  <motion.div
+                    animate={{ y: ["-50%", "0%"] }}
+                    transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
+                    className="flex flex-col gap-5 -mt-32"
+                  >
+                    {[
+                      "/sosyal_medya_resimler/image4.webp",
+                      "/sosyal_medya_resimler/image5.webp",
+                      "/sosyal_medya_resimler/image3.webp",
+                      "/sosyal_medya_resimler/image4.webp",
+                      "/sosyal_medya_resimler/image5.webp",
+                      "/sosyal_medya_resimler/image3.webp"
+                    ].map((src, i) => (
+                      <div key={`col2-${i}`} className="rounded-2xl overflow-hidden shadow-xl relative border-2 border-white/5 bg-white/5 backdrop-blur-sm">
+                        <img src={src} className="w-full object-cover scale-[1.02]" alt="" />
+                      </div>
+                    ))}
+                  </motion.div>
 
-                {/* Floating Badge */}
-                <motion.div
-                  animate={{ rotate: [0, 5, -5, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute top-[45%] left-[-5%] bg-white rounded-xl p-4 shadow-xl z-30 flex items-center gap-3"
-                >
-                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600">
-                    <TrendingUp size={20} />
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 font-medium">Büyüme Oranı</p>
-                    <p className="text-sm font-bold text-gray-900">+340%</p>
-                  </div>
-                </motion.div>
+                  {/* Column 3 - Downward scroll */}
+                  <motion.div
+                    animate={{ y: ["0%", "-50%"] }}
+                    transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+                    className="flex flex-col gap-5 mt-16"
+                  >
+                    {[
+                      "/sosyal_medya_resimler/image6.webp",
+                      "/sosyal_medya_resimler/image3.webp",
+                      "/sosyal_medya_resimler/image1.webp",
+                      "/sosyal_medya_resimler/image6.webp",
+                      "/sosyal_medya_resimler/image3.webp",
+                      "/sosyal_medya_resimler/image1.webp"
+                    ].map((src, i) => (
+                      <div key={`col3-${i}`} className="rounded-2xl overflow-hidden shadow-2xl relative border-2 border-white/5 bg-white/5 backdrop-blur-sm">
+                        <img src={src} className="w-full object-cover scale-[1.02]" alt="" />
+                      </div>
+                    ))}
+                  </motion.div>
+                </div>
               </motion.div>
             </div>
           </div>
         </section>
-
-        {/* 2. LOGO MARQUEE */}
-        <div className={`py-12 border-b ${colors.borderColorDark} ${colors.darkGreen} overflow-hidden`}>
-          <div className="max-w-[1400px] mx-auto px-6 mb-6">
-            <p className="text-[#a8b8af] text-sm font-medium text-center uppercase tracking-widest">Global & Yerel 100+ Markanın Tercihi</p>
-          </div>
-          <div className="relative flex overflow-x-hidden group">
-            <div className="py-4 animate-marquee whitespace-nowrap flex items-center gap-16 px-8">
-              {/* Dummy Logos (Replace with actual SVG/Image later) */}
-              {[1, 2, 3, 4, 5, 6, 7].map((i) => (
-                <div key={i} className="text-[#F4EFE6]/40 font-display font-normal italic text-2xl">BrandLogo {i}</div>
-              ))}
-            </div>
-            <div className="absolute top-0 py-4 animate-marquee2 whitespace-nowrap flex items-center gap-16 px-8">
-              {[1, 2, 3, 4, 5, 6, 7].map((i) => (
-                <div key={i} className="text-[#F4EFE6]/40 font-display font-normal italic text-2xl">BrandLogo {i}</div>
-              ))}
-            </div>
-            {/* Fade Gradients */}
-            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#0b2117] to-transparent pointer-events-none"></div>
-            <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#0b2117] to-transparent pointer-events-none"></div>
-          </div>
-        </div>
 
         {/* 3. VALUE PROPS (3 Columns) */}
         <section className={`${colors.beige} py-32 border-b ${colors.borderColor}`}>
@@ -441,60 +426,60 @@ const SosyalMedyaYeni = () => {
         {(() => {
           const creativeServices = [
             {
-              title: "Reklam Kreatifleri",
-              desc: "Sosyal medya kanallarınız için orijinal tasarımlar. Instagram'dan YouTube'a veya Facebook'a statik, animasyonlu veya video formatta.",
-              img: "/images/social-reels.webp",
+              title: "Görsel Üretimi",
+              desc: "Instagram'dan LinkedIn'e, her platformun kendi dinamiklerine uygun ve marka kimliğinizi yansıtan estetik statik görseller.",
+              img: "/sosyal_medya_resimler/sosyal_medya_partlar/1.webp",
               span: "md:col-span-1 md:row-span-2 min-h-[380px] md:min-h-[776px]",
               bgClass: "bg-[#18201d]",
-              imageClass: "absolute bottom-0 right-0 w-full h-[65%] object-cover object-top opacity-90 group-hover:scale-105 transition-transform duration-700",
+              imageClass: "absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700",
             },
             {
-              title: "Kurumsal Kimlik",
-              desc: "İhtiyacınız olan marka uzmanlığını elde edin, temel marka geliştirmelerinden özel marka çözümlerine kadar her detay kontrol altında.",
-              img: "/images/social-hero-3.webp",
+              title: "Video & Reels Üretimi",
+              desc: "TikTok ve Reels trendlerine özel; hızlı, akıcı ve yüksek etkileşim potansiyeli taşıyan dinamik video kurguları.",
+              img: "/sosyal_medya_resimler/sosyal_medya_partlar/2.webp",
               span: "md:col-span-1 md:row-span-1 min-h-[380px]",
               bgClass: "bg-[#336b9c]",
-              imageClass: "absolute bottom-0 right-0 w-[85%] h-[60%] object-cover object-left-top shadow-2xl group-hover:scale-105 transition-transform duration-700",
+              imageClass: "absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700",
             },
             {
-              title: "Web Tasarım",
-              desc: "Özenle tasarlanmış UI/UX tel kafesleri ve tasarımlarıyla, sıfırdan oluşturulmuş veya mevcut materyallere dayanan açılış sayfaları edinin.",
-              img: "/images/social-hero-1.webp",
+              title: "İnfografik Üretimi",
+              desc: "Bilgi yoğun içeriklerinizi ve verilerinizi takipçilerinizin tek bakışta anlayabileceği şık, akılda kalıcı infografiklere çeviriyoruz.",
+              img: "/sosyal_medya_resimler/sosyal_medya_partlar/3.webp",
               span: "md:col-span-1 md:row-span-1 min-h-[380px]",
               bgClass: "bg-[#1f1614]",
-              imageClass: "absolute bottom-0 right-0 w-[80%] h-[75%] object-cover opacity-80 rounded-tl-xl group-hover:scale-105 transition-transform duration-700",
+              imageClass: "absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700",
             },
             {
-              title: "Sosyal Medya Kreatifleri",
-              desc: "Sosyal medya genelinde daha iyi sonuçlar elde etmenizi sağlayan statik, hareketli reklam kreatifleri ve konsept ivmeleri edinin.",
-              img: "/images/social-carousel.webp",
+              title: "Trendlere Özel Hızlı Üretim",
+              desc: "Gündeme düşen viral bir akım mı var? Klasik ajansların onay sürecini beklemeden, aynı gün saatler içinde trene dahil olmanızı sağlayan hızlı kreatifler.",
+              img: "/sosyal_medya_resimler/sosyal_medya_partlar/4.webp",
               span: "md:col-span-2 md:row-span-1 min-h-[380px]",
               bgClass: "bg-[#0b1426]",
-              imageClass: "absolute bottom-0 right-0 w-[60%] h-[85%] object-cover object-left shadow-2xl rounded-tl-xl group-hover:scale-105 transition-transform duration-700",
+              imageClass: "absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700",
             },
             {
-              title: "E-Posta Tasarımı",
-              desc: "Tasarım kalıpları, yenilikçi şablonlar ve kreatif yaklaşımlarla kitlelerinizin ilgisini çeken kurumsal iletişim kanalları tasarlayın.",
-              img: "/images/social-hero-2.webp",
+              title: "Gelecek Odaklı Planlama",
+              desc: "Stüdyo veya üretim sıkıntısı yaşamadan 1 ay ileriye dönük içerik takviminizi oluşturuyoruz. Hiçbir aksaklık olmadan tüm paylaşımlarınız tıkır tıkır işliyor.",
+              img: "/sosyal_medya_resimler/sosyal_medya_partlar/5.webp",
               span: "md:col-span-1 md:row-span-1 min-h-[380px]",
               bgClass: "bg-[#102a1d]",
-              imageClass: "absolute bottom-0 left-0 w-[70%] h-[75%] object-cover rounded-tr-xl opacity-90 group-hover:scale-105 transition-transform duration-700",
+              imageClass: "absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700",
             },
             {
-              title: "E-Kitap & Rapor Tasarımı",
-              desc: "İlgiyi merkezinde toplayan, kurumsal PDF'lerinizi okutmayı baştan başlatan e-kitap ve özelleştirilmiş rapor tasarım çözümleri.",
-              img: "/images/social-strategy.webp",
+              title: "Platforma Özel Optimizasyon",
+              desc: "Instagram'ın estetiği, TikTok'un hız ve doğallığı, LinkedIn'in kurumsallığı. Her mecra için içeriği kanalın ruhuna uygun uyarlıyoruz.",
+              img: "/sosyal_medya_resimler/sosyal_medya_partlar/6.webp",
               span: "md:col-span-1 md:row-span-1 min-h-[380px]",
               bgClass: "bg-[#6d5b4a]",
               imageClass: "absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-overlay group-hover:scale-105 transition-transform duration-700",
             },
             {
-              title: "İllüstrasyon Tasarımı",
-              desc: "Şirketinizin doğrudan ve güçlü bir yansıması olarak hareket eden ve pazarlama operasyonlarını destekleyen on-brand çizimler.",
-              img: "/images/social-motion.webp",
+              title: "Marka Kimliği Entegrasyonu",
+              desc: "Kullanılan paletlerden tipografiye kadar, markanıza özgü görsel kimliğin tüm sosyal medyada tek ve güçlü bir ses olmasını sağlıyoruz.",
+              img: "/sosyal_medya_resimler/sosyal_medya_partlar/7.webp",
               span: "md:col-span-1 md:row-span-1 min-h-[380px]",
-              bgClass: "bg-[#1c38e6]",
-              imageClass: "absolute right-0 bottom-0 w-[65%] h-[85%] object-cover object-left-top opacity-50 mix-blend-screen group-hover:scale-105 transition-transform duration-700",
+              bgClass: "bg-[#0b2117]",
+              imageClass: "absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-screen group-hover:scale-105 transition-transform duration-700",
             }
           ];
 
@@ -970,9 +955,9 @@ const SosyalMedyaYeni = () => {
                     transition={{ delay: 0.1 }}
                     className="h-full w-[350px] md:w-[500px] shrink-0 relative rounded-2xl md:rounded-[2rem] overflow-hidden bg-[#1e3b2b]"
                   >
-                    <img src={selectedProject.thumbnail} alt={selectedProject.client} className="w-full h-full object-cover" />
+                    <img src={selectedProject.images[0]} alt={selectedProject.client} className="w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-[#0b2117]/30 mix-blend-multiply"></div>
-                    <div className="absolute top-10 left-10 text-[#caf265] z-10 font-bold tracking-widest uppercase">
+                    <div className="absolute top-10 left-10 text-[#caf265] z-10 font-bold tracking-widest uppercase shadow-black drop-shadow-md">
                       {selectedProject.client}
                     </div>
                   </motion.div>
@@ -985,8 +970,7 @@ const SosyalMedyaYeni = () => {
                       transition={{ delay: 0.2 }}
                       className="flex-1 rounded-2xl md:rounded-[2rem] overflow-hidden relative"
                     >
-                      <img src="/images/social-carousel.webp" className="w-full h-full object-cover"
-                        onError={(e) => (e.currentTarget.src = 'https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=600&auto=format&fit=crop')} />
+                      <img src={selectedProject.images[1]} className="w-full h-full object-cover object-top" />
                     </motion.div>
                     <motion.div
                       initial={{ opacity: 0, scale: 0.95 }}
@@ -994,11 +978,7 @@ const SosyalMedyaYeni = () => {
                       transition={{ delay: 0.3 }}
                       className="flex-1 rounded-2xl md:rounded-[2rem] overflow-hidden relative bg-[#caf265]"
                     >
-                      <div className="absolute inset-0 flex items-center justify-center p-6">
-                        <div className="w-24 h-24 md:w-32 md:h-32 bg-[#0b2117] rounded-[2rem] relative overflow-hidden flex items-center justify-center text-[#caf265] font-display font-normal italic text-2xl">
-                          AI
-                        </div>
-                      </div>
+                      <img src={selectedProject.images[2]} className="w-full h-full object-cover object-top" />
                     </motion.div>
                   </div>
 
@@ -1009,8 +989,7 @@ const SosyalMedyaYeni = () => {
                     transition={{ delay: 0.4 }}
                     className="h-full w-[400px] md:w-[650px] shrink-0 relative rounded-2xl md:rounded-[2rem] overflow-hidden"
                   >
-                    <img src="/images/social-hero-3.webp" className="w-full h-full object-cover"
-                      onError={(e) => (e.currentTarget.src = 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=800&auto=format&fit=crop')} />
+                    <img src={selectedProject.images[3]} className="w-full h-full object-cover object-center" />
                   </motion.div>
 
                 </div>

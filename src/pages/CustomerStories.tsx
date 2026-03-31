@@ -12,29 +12,39 @@ const stories = [
         industry: "Moda & Tekstil",
         title: "Yapay Zeka ile Moda Fotoğrafçılığında Devrim",
         description: "Geleneksel fotoğraf çekimi maliyetlerini %80 düşürürken, ürün görselleştirme hızını 10 kat artırdık.",
-        image: "/Cazador-Foto/13300-Siyah (8)_scene_1_pose_5(3).webp",
+        image: "/projects/cazador-local/cazador-siyah-pose.webp",
         tags: ["AI Prodüksiyon", "Katalog", "Verimlilik"],
         link: "/blog/referanslar" // Mevcut Cazador case study sayfasına yönlendirme
     },
     {
-        id: "tech-flow",
-        client: "TechFlow",
-        industry: "Yazılım",
-        title: "B2B SaaS Pazarlamasında %200 Lead Artışı",
-        description: "Programatik SEO ve AI destekli içerik stratejisi ile organik trafikte rekor büyüme.",
-        image: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop",
-        tags: ["Dijital Büyüme", "SEO", "Lead Gen"],
-        link: "#"
+        id: "mina-drinks",
+        client: "Mina Drinks",
+        industry: "Yiyecek & İçecek",
+        title: "Görsel Üretim Maliyetlerinde %90 Tasarruf",
+        description: "İçecek fotoğrafçılığını stüdyolardan AI altyapılarına taşıyarak sınırsız yaratıcılık kazandık.",
+        image: "/BLOG/mina-drinks/id_scenario_1_end_frame_prompt_2k_20.webp",
+        tags: ["AI Prodüksiyon", "CGI", "Yaratıcılık"],
+        link: "/blog/mina-drinks"
     },
     {
-        id: "green-life",
-        client: "GreenLife",
-        industry: "E-Ticaret",
-        title: "Dönüşüm Odaklı UX Tasarımı ve Sepet İyileştirme",
-        description: "Kullanıcı deneyimini yeniden tasarlayarak sepet terk oranlarını %45 azalttık.",
-        image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop",
-        tags: ["UX/UI", "Web Geliştirme", "E-Ticaret"],
-        link: "#"
+        id: "venus",
+        client: "Venüs Giyim",
+        industry: "Moda & Tekstil",
+        title: "Sanal Manken Teknolojisi ile E-Ticarette Hız",
+        description: "Hayalet manken görsellerini saniyeler içinde uluslararası modellere dönüştürerek süreci %85 oranında hızlandırdık.",
+        image: "/BLOG/venus/ella-1_1_2k_4_5_03_portrait_mid.webp",
+        tags: ["Ghost Mannequin", "AI Model", "Moda"],
+        link: "/blog/venus"
+    },
+    {
+        id: "campandmap",
+        client: "Camp and Map",
+        industry: "Outdoor Giyim & Ekipman",
+        title: "Saha Prodüksiyonu Olmadan Profesyonel Doğa Çekimleri",
+        description: "Ağır kamp ekipmanlarını taşımadan, yapay zeka ortam arka plan üretimiyle kusursuz doğa vitrinleri inşa ettik.",
+        image: "/BLOG/campandmap/1_2k_4_5_undefined__1_.webp",
+        tags: ["AI Background", "Outdoor", "Lojistik"],
+        link: "/blog/campandmap"
     }
 ]
 
@@ -68,7 +78,7 @@ export default function CustomerStories() {
                     <div className="flex flex-col md:flex-row items-center gap-12 rounded-3xl overflow-hidden bg-white dark:bg-bor-primary-900 shadow-xl border border-bor-primary-100 dark:border-bor-primary-800">
                         <div className="md:w-1/2 h-full min-h-[400px]">
                             <img
-                                src="Cazador-Foto/10600-HAKİ_2K_4_5_Editorial fashion photography. Exterior location, winter day. The specific male model stands naturally beside a frosted black iron park railing covered in thick snow. He wears the olive green Cazador puffer jacket, b (10).webp"
+                                src="/projects/cazador-local/cazador-moda-haki.webp"
                                 alt="Cazador Case Study"
                                 className="w-full h-full object-cover"
                             />

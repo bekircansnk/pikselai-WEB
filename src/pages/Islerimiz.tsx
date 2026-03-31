@@ -217,12 +217,12 @@ const Islerimiz = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <p className="text-sm md:text-base font-bold tracking-[0.3em] uppercase mb-6 text-blue-400">
+                        <p className="text-sm md:text-base font-bold tracking-[0.3em] uppercase mb-6 text-[#E2FF65]">
                             YAPTIĞIMIZ İŞLER
                         </p>
-                        <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif italic mb-8 leading-tight">
+                        <h1 className="text-5xl md:text-7xl font-bold font-display leading-tight tracking-tight text-white mb-6 drop-shadow-2xl">
                             Yaratıcılık <br />
-                            <span className="not-italic text-blue-500">işe yarar</span>
+                            <span className="italic font-light text-[#E2FF65]">işe yarar</span>
                         </h1>
 
                         <button
@@ -246,13 +246,13 @@ const Islerimiz = () => {
             </div>
 
             {/* ─── SUBTITLE & STATS ─── */}
-            <Section mood="light" width="narrow">
+            <Section mood="light" width="narrow" className="py-24">
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="text-xl md:text-2xl lg:text-3xl text-center text-gray-700 leading-relaxed font-light"
+                    className="text-lg md:text-xl font-light text-bor-primary-600 leading-relaxed text-center"
                 >
                     Türkiye'nin lider markalarına, AI destekli yaratıcı çözümlerle
                     hız ve kalitede fark yaratan prodüksiyonlar sunuyoruz — konseptten
@@ -271,7 +271,7 @@ const Islerimiz = () => {
                             transition={{ delay: i * 0.1, duration: 0.5 }}
                             className="text-center"
                         >
-                            <div className="text-3xl md:text-5xl font-bold text-blue-600 mb-2">{stat.value}</div>
+                            <div className="text-3xl md:text-5xl font-bold text-[#86AA00] mb-2">{stat.value}</div>
                             <div className="text-sm font-medium text-gray-500 uppercase tracking-wider">{stat.label}</div>
                         </motion.div>
                     ))}
@@ -336,7 +336,7 @@ const Islerimiz = () => {
                                 <div className="absolute bottom-0 left-0 p-8 z-20 text-white w-full">
                                     <motion.h3
                                         layoutId={`project-title-${project.id}`}
-                                        className="text-3xl md:text-5xl font-serif mb-2"
+                                        className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-white mb-2"
                                     >
                                         {project.client} <span className="text-white/50 text-2xl font-sans inline-block align-middle">+</span>
                                     </motion.h3>
@@ -543,7 +543,7 @@ const Islerimiz = () => {
                                     <div className="shrink-0">
                                         <motion.h2
                                             layoutId={`project-title-${selectedProject.id}`}
-                                            className="text-3xl md:text-5xl font-serif italic text-white mb-1"
+                                            className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-white mb-1"
                                         >
                                             {selectedProject.client}
                                         </motion.h2>
@@ -621,10 +621,11 @@ const IslerimizFooter = () => {
                     viewport={{ once: true }}
                     className="space-y-8"
                 >
-                    <h2 className="text-5xl md:text-7xl lg:text-8xl font-serif italic leading-tight">
-                        Markanı <span className="text-blue-400 not-italic uppercase font-bold tracking-tighter">Geleceğe</span> taşıyalım.
+                    <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-white mb-6">
+                        Markanı <br className="hidden lg:block" />
+                        <span className="italic font-light text-[#E2FF65]">geleceğe taşıyalım.</span>
                     </h2>
-                    <p className="text-xl md:text-2xl text-white/60 font-light max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-lg md:text-xl font-light text-white/80 leading-relaxed max-w-2xl mx-auto mb-8">
                         Yapay zeka prodüksiyonu ile tanışın. Süreçleri hızlandırın, maliyetleri düşürün ve etkileyici sonuçlar alın.
                     </p>
 

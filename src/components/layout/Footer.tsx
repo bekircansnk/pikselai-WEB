@@ -50,9 +50,9 @@ export function Footer({ transparent = false }: FooterProps) {
                     <div>
                         <h4 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">Dijital Büyüme</h4>
                         <ul className="space-y-2 text-sm text-bor-primary-400">
-                            <li><Link to="/hizmetler/dijital-buyume" className="hover:text-bor-secondary transition-colors">E-Ticaret Yönetimi</Link></li>
+                            <li><Link to="/hizmetler/e-ticaret" className="hover:text-bor-secondary transition-colors">E-Ticaret Yönetimi</Link></li>
                             <li><Link to="/hizmetler/dijital-buyume" className="hover:text-bor-secondary transition-colors">SEO & İçerik Otomasyonu</Link></li>
-                            <li><Link to="/hizmetler/dijital-buyume" className="hover:text-bor-secondary transition-colors">Sosyal Medya</Link></li>
+                            <li><Link to="/hizmetler/sosyal-medya" className="hover:text-bor-secondary transition-colors">Sosyal Medya</Link></li>
                             <li><Link to="/hizmetler/dijital-buyume" className="hover:text-bor-secondary transition-colors">AI Content Factory</Link></li>
                         </ul>
                     </div>
@@ -62,17 +62,24 @@ export function Footer({ transparent = false }: FooterProps) {
                         <h4 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">Şirket</h4>
                         <ul className="space-y-2 text-sm text-bor-primary-400">
                             <li><Link to="/hakkimizda" className="hover:text-bor-secondary transition-colors">Hakkımızda</Link></li>
-                            <li><Link to="/referanslar" className="hover:text-bor-secondary transition-colors">Referanslar</Link></li>
+                            <li><Link to="/musteri-hikayeleri" className="hover:text-bor-secondary transition-colors">Referanslar</Link></li>
                             <li><Link to="/ucretler" className="hover:text-bor-secondary transition-colors">Ücretler</Link></li>
                             <li><Link to="/iletisim" className="hover:text-bor-secondary transition-colors">İletişim</Link></li>
-                            <li><Link to="/hizmetler/katalog-web" className="hover:text-bor-secondary transition-colors">Katalog & Web</Link></li>
+                            <li><Link to="/hizmetler/kreatif-tasarim" className="hover:text-bor-secondary transition-colors">Kreatif Tasarım</Link></li>
                         </ul>
                     </div>
                 </div>
 
-                {/* Copyright */}
-                <div className="mt-12 pt-8 border-t border-white/10 text-center text-sm text-bor-primary-500">
-                    © {currentYear} PikselAI. Tüm hakları saklıdır.
+                {/* İletişim Bilgileri */}
+                <div className="mt-12 pt-8 border-t border-white/10">
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-bor-primary-400">
+                        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+                            <a href="mailto:info@pikselai.com" className="hover:text-bor-secondary transition-colors">info@pikselai.com</a>
+                            <a href="tel:+905531832344" className="hover:text-bor-secondary transition-colors">+90 553 183 23 44</a>
+                            <span>İstanbul, Türkiye</span>
+                        </div>
+                        <span className="text-bor-primary-500">© {currentYear} PikselAI. Tüm hakları saklıdır.</span>
+                    </div>
                 </div>
             </div>
         </footer>

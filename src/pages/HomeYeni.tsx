@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { MainLayout } from '../layouts/MainLayout';
-import { ArrowRight, ChevronRight, Zap, Play, Box, TrendingUp, Layers } from 'lucide-react';
+import { ArrowRight, ChevronRight, ChevronDown, Zap, Play, Box, TrendingUp, Layers } from 'lucide-react';
 
 
 
@@ -111,7 +111,7 @@ const Home = () => {
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="text-xl md:text-2xl text-[#a8b8af] max-w-2xl font-light mb-12"
             >
-              Dağınık ajanslar, karmaşık süreçler ve belirsiz maliyetlere son. Tasarım, yazılım, yapay zeka ve dijital pazarlama... İhtiyacınız olan her şey PikselAI'da.
+              Bir ajans, bir fatura, sınırsız çözüm. Yapay zeka destekli görsel üretimden e-ticaret yönetimine, sosyal medyadan kreatif tasarıma — her şey tek çatıda.
             </motion.p>
 
             <motion.div
@@ -150,7 +150,7 @@ const Home = () => {
                    </h2>
                 </div>
                 <div className="md:w-1/2 text-lg text-[#a8b8af] font-light leading-relaxed">
-                   Geleneksel iletişim ajanslarının haftalar süren onay süreçlerini rafa kaldırıyoruz. Yepyeni bir çağa yapay zeka ve yenilikçi teknolojilerle adım atın. Zaman ve bütçe verimliliğinde kuralları yeniden yazıyoruz.
+                   Geleneksel ajansların haftalar süren süreçlerini saatlere indiriyoruz. Yapay zeka teknolojimizle zamanınızı ve bütçenizi en verimli şekilde kullanın.
                 </div>
              </div>
            </div>
@@ -219,24 +219,123 @@ const Home = () => {
              <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 divide-y md:divide-y-0 md:divide-x divide-[#1e3b2b]">
                 <div className="flex flex-col items-center md:items-start pt-12 md:pt-0 pr-0 md:pr-12 text-center md:text-left">
                   <div className="text-6xl md:text-7xl font-display font-medium text-[#caf265] mb-4">∞</div>
-                  <h4 className="text-2xl font-display text-white mb-3">Sınırsız Ölçek</h4>
-                  <p className="text-[#a8b8af] font-light">Tüm dijital operasyonlarınızı aynı anda başlatıp, senkronize biçimde yönetin.</p>
+                  <h4 className="text-2xl font-display text-white mb-3">Sınırsız Varyasyon</h4>
+                  <p className="text-[#a8b8af] font-light">Tek ürün için onlarca farklı konsept, arka plan ve sahne. Her birini test edip en iyisini seçin.</p>
                 </div>
                 <div className="flex flex-col items-center md:items-start pt-12 md:pt-0 px-0 md:px-12 text-center md:text-left">
                   <div className="text-6xl md:text-7xl font-display font-medium text-[#caf265] mb-4">%80</div>
-                  <h4 className="text-2xl font-display text-white mb-3">Hız Avantajı</h4>
-                  <p className="text-[#a8b8af] font-light">Geleneksel ajans sürelerinin küçük bir kesitinde yüksek kaliteli sonuca ulaşın.</p>
+                  <h4 className="text-2xl font-display text-white mb-3">Daha Düşük Maliyet</h4>
+                  <p className="text-[#a8b8af] font-light">Fiziksel stüdyo, manken ve ekip maliyetini ortadan kaldırın. Aynı kalite, çok daha düşük bütçe.</p>
                 </div>
                 <div className="flex flex-col items-center md:items-start pt-12 md:pt-0 pl-0 md:pl-12 text-center md:text-left">
-                  <div className="text-6xl md:text-7xl font-display font-medium text-[#caf265] mb-4">1</div>
-                  <h4 className="text-2xl font-display text-white mb-3">Tek Merkez</h4>
-                  <p className="text-[#a8b8af] font-light">Tek faturayla birden fazla departmanı şirketinizin içine sorunsuz entegre edin.</p>
+                  <div className="text-6xl md:text-7xl font-display font-medium text-[#caf265] mb-4">48s</div>
+                  <h4 className="text-2xl font-display text-white mb-3">İçinde Teslim</h4>
+                  <p className="text-[#a8b8af] font-light">Haftalar süren süreçleri saatlere indirdik. Profesyonel görselleriniz aynı gün hazır.</p>
                 </div>
              </div>
           </div>
         </section>
 
-        {/* 5. BOTTOM CTA */}
+        {/* 5. NASIL ÇALIŞIR — 4 Adım */}
+        <section className={`py-16 md:py-24 border-t ${colors.borderColorDark}`}>
+          <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
+            <div className="text-center mb-16">
+              <span className="text-[#caf265] text-xs font-bold uppercase tracking-widest mb-4 block">SÜREÇ</span>
+              <h2 className="text-4xl md:text-6xl font-display text-white">
+                Nasıl <span className="italic">çalışır?</span>
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              {[
+                { step: "01", title: "Bize Ulaşın", desc: "İhtiyaçlarınızı anlatalım. Ücretsiz keşif görüşmesiyle projenizin kapsamını birlikte belirleyelim." },
+                { step: "02", title: "Strateji & Plan", desc: "Size özel bir yol haritası çıkarıyoruz. Zaman, bütçe ve hedefler netleştirilir." },
+                { step: "03", title: "Üretim Başlasın", desc: "AI destekli süreçlerimizle görsel üretim, içerik ve teknik çalışmalar eş zamanlı ilerler." },
+                { step: "04", title: "Teslim & Büyüme", desc: "Projelerinizi zamanında teslim eder, performans takibiyle sürekli iyileştirmeler yaparız." }
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.15 }}
+                  className="text-center group"
+                >
+                  <div className="text-6xl font-display font-medium text-[#caf265]/20 group-hover:text-[#caf265] transition-colors duration-500 mb-4">{item.step}</div>
+                  <h4 className="text-xl font-display text-white mb-3 font-medium">{item.title}</h4>
+                  <p className="text-[#a8b8af] font-light leading-relaxed text-sm">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 6. MÜŞTERİ YORUMU (Testimonial) */}
+        <section className={`py-16 md:py-24 border-t ${colors.borderColorDark}`}>
+          <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
+            <div className="max-w-4xl mx-auto text-center">
+              <span className="text-[#caf265] text-xs font-bold uppercase tracking-widest mb-8 block">MÜŞTERİ YORUMU</span>
+              
+              <motion.blockquote
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="text-2xl md:text-4xl font-display italic text-[#F4EFE6] leading-snug mb-10"
+              >
+                "PikselAI ile çalışmak bizim için kritik öneme sahipti. Zamanında kaliteli iş teslim edebilen, kısa süreli bildirimlerde bile <span className="text-[#caf265] not-italic">güvenebileceğimiz bir ekip.</span>"
+              </motion.blockquote>
+
+              <div className="flex flex-col items-center gap-2">
+                <span className="text-white font-bold text-lg">Fatih Erdoğan</span>
+                <span className="text-[#a8b8af] text-sm">Pazarlama ve İletişim Müdürü — Cazador</span>
+              </div>
+
+              <div className="flex justify-center gap-16 mt-12 pt-12 border-t border-[#1e3b2b]">
+                <div>
+                  <div className="text-4xl font-display font-medium text-[#caf265]">100+</div>
+                  <div className="text-sm text-[#a8b8af] mt-1">Tasarım Projesi</div>
+                </div>
+                <div>
+                  <div className="text-4xl font-display font-medium text-[#caf265]">48s</div>
+                  <div className="text-sm text-[#a8b8af] mt-1">Ort. Teslim Süresi</div>
+                </div>
+                <div>
+                  <div className="text-4xl font-display font-medium text-[#caf265]">%95</div>
+                  <div className="text-sm text-[#a8b8af] mt-1">Memnuniyet</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 7. SSS – Sıkça Sorulan Sorular */}
+        <section className={`py-16 md:py-24 border-t ${colors.borderColorDark}`}>
+          <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
+            <div className="max-w-3xl mx-auto">
+              <div className="text-center mb-16">
+                <span className="text-[#caf265] text-xs font-bold uppercase tracking-widest mb-4 block">SSS</span>
+                <h2 className="text-4xl md:text-5xl font-display text-white">
+                  Sıkça <span className="italic">sorulan sorular</span>
+                </h2>
+              </div>
+
+              <div className="space-y-4">
+                {[
+                  { q: "Minimum sipariş miktarı var mı?", a: "Hayır, tek bir ürün görseli için bile çalışabiliriz. Paketlerimiz her bütçeye uygun esnek seçenekler sunar." },
+                  { q: "Teslim süresi ne kadar?", a: "Proje tipine göre değişmekle birlikte, ürün görselleri için ortalama 24-48 saat, kapsamlı projeler için 1-2 hafta süre öngörüyoruz." },
+                  { q: "Yapay zeka ile üretilen görseller gerçekçi mi?", a: "Evet, fotorealistik kalitede görseller üretiyoruz. Her görsel profesyonel kreatif ekibimiz tarafından kontrol edilir ve gerekirse ince ayar yapılır." },
+                  { q: "Hangi sektörlere hizmet veriyorsunuz?", a: "Moda & tekstil, kozmetik, aksesuar, mobilya, gıda ve daha birçok sektörde deneyimimiz var. İhtiyacınıza özel çözümler sunuyoruz." },
+                  { q: "E-ticaret yönetimi ile birlikte görsel üretim de yapıyor musunuz?", a: "Evet, tam entegre hizmet sunuyoruz. E-ticaret mağazanızın yönetiminden ürün görsellerine, sosyal medya içeriklerinden reklam yönetimine kadar her şey tek çatı altında." }
+                ].map((faq, idx) => (
+                  <FaqItem key={idx} question={faq.q} answer={faq.a} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 8. BOTTOM CTA */}
         <section className={`py-12 md:py-16 px-6 md:px-16 lg:px-24 border-t ${colors.borderColorDark}`}>
           <div className="max-w-[1400px] mx-auto bg-[#caf265] rounded-[3rem] p-10 md:p-24 relative overflow-hidden flex flex-col items-center justify-center text-center gap-8 shadow-2xl">
             {/* Ambient Lighting */}
@@ -268,3 +367,32 @@ const Home = () => {
 };
 
 export default Home;
+
+function FaqItem({ question, answer }: { question: string; answer: string }) {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div
+      className={`border rounded-2xl transition-colors duration-300 ${
+        isOpen ? 'border-[#caf265]/30 bg-white/5' : 'border-[#1e3b2b] hover:border-[#caf265]/20'
+      }`}
+    >
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex items-center justify-between p-6 text-left"
+      >
+        <span className="text-lg font-medium text-white pr-4">{question}</span>
+        <ChevronDown
+          size={20}
+          className={`text-[#caf265] shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+        />
+      </button>
+      <div
+        className={`overflow-hidden transition-all duration-300 ${
+          isOpen ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <p className="px-6 pb-6 text-[#a8b8af] font-light leading-relaxed">{answer}</p>
+      </div>
+    </div>
+  );
+}

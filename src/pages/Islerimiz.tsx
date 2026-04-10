@@ -30,13 +30,7 @@ const categories = [
     'Tümü',
     'AI Fotoğraf',
     'E-Ticaret',
-    'Social Media',
-    'Video',
-    '3D & Motion',
-    'Mimari',
-    'Gastronomi',
-    'Doğa',
-    'Teknoloji'
+    'Social Media'
 ];
 
 const stats = [
@@ -49,107 +43,248 @@ const stats = [
 const projects: Project[] = [
     {
         id: 1,
-        title: 'Cazador AI Kış Kampanyası',
+        title: 'AI Kış Kampanyası',
         client: 'Cazador',
         category: 'AI Fotoğraf',
-        thumbnail: '/projects/cazador-local/10600-HAKİ_2K_4_5_A candid, full-body editorial shot captured with a 35mm lens, observing a male model with curly brown hair standing on a snow-covered sidewalk against a textured grey stone façade. He wears a matte olive green hooded (1).webp',
+        thumbnail: '/sosyal_medya_resimler/cazador/cazador1.webp',
         thumbnailType: 'single',
         images: [
             { url: '/projects/cazador-local/VID_20251125_203429_529.mp4', type: 'video', aspect: 'wide' },
-            { url: '/projects/cazador-local/10600-HAKİ_2K_4_5_A candid, full-body editorial shot captured with a 35mm lens, observing a male model with curly brown hair standing on a snow-covered sidewalk against a textured grey stone façade. He wears a matte olive green hooded (1).webp', type: 'image', aspect: 'tall' },
-            { url: '/projects/cazador-local/10600-HAKİ_2K_4_5_A candid, full-body editorial shot captured with a 35mm lens, observing a male model with curly brown hair standing on a snow-covered sidewalk against a textured grey stone façade. He wears a matte olive green hooded (5).webp', type: 'image', aspect: 'tall' },
-            { url: '/projects/cazador-local/10600-HAKİ_2K_4_5_A wide, observational editorial photograph of the subject standing quietly on a snow-dusted concrete sidewalk against a minimalist gray architectural wall. He is wearing the olive green hooded puffer jacket, zipped halfwa.webp', type: 'image', aspect: 'wide' }
+            { url: '/sosyal_medya_resimler/cazador/cazador1.webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/cazador/cazador2.webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/cazador/cazador3.webp', type: 'image', aspect: 'wide' },
+            { url: '/sosyal_medya_resimler/cazador/cazador4.webp', type: 'image', aspect: 'tall' }
         ],
-        description: "Türkiye'nin tekstil devi Cazador için hazırladığımız, tamamen yapay zeka tarafından generate edilen dış mekan kış koleksiyonu çekimleri.",
-        tags: ['AI', 'Moda', 'Outdoor']
+        description: "Cazador için tamamen yapay zeka ile üretilen dış mekan kış koleksiyonu çekimleri. Stüdyo ve manken olmadan, AI ile fotorealistik editorial görseller.",
+        tags: ['AI', 'Moda', 'Outdoor'],
+        bgColor: '#1a2a1f'
     },
     {
         id: 2,
-        title: 'Modern Koleksiyon Lansmanı',
+        title: 'E-Ticaret Koleksiyon Lansmanı',
         client: 'Cazador',
         category: 'E-Ticaret',
-        thumbnail: '/projects/cazador-local/10600-SİYAH_2K_4_5_Editorial fashion medium shot. The specific male model with curly brown hair stands confidently against a textured gray concrete wall in a quiet city alley. He is wearing a matte black hooded puffer jacket, slightly (16).webp',
+        thumbnail: '/sosyal_medya_resimler/cazador/cazador3.webp',
         thumbnailType: 'single',
         images: [
-            { url: '/projects/cazador-local/10600-SİYAH_2K_4_5_Editorial fashion medium shot. The specific male model with curly brown hair stands confidently against a textured gray concrete wall in a quiet city alley. He is wearing a matte black hooded puffer jacket, slightly (16).webp', type: 'image', aspect: 'tall' },
-            { url: '/projects/cazador-local/10600-SİYAH_2K_Auto_Editorial fashion photography, medium shot. The male model stands confidently against a textured light grey concrete wall. He is wearing the black hooded puffer jacket, zipped halfway up to reveal the white crewneck (2).webp', type: 'image', aspect: 'tall' },
-            { url: '/projects/cazador-local/53320-KIRMIZI (1)_undefined(53).webp', type: 'image', aspect: 'tall' }
+            { url: '/sosyal_medya_resimler/cazador/cazador3.webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/cazador/cazador4.webp', type: 'image', aspect: 'tall' },
+            { url: '/projects/cazador-local/iasmag.webp', type: 'image', aspect: 'wide' }
         ],
-        description: "Cazador'un yeni sezon koleksiyonu için hazırlanan ürün çekimleri.",
-        tags: ['E-Ticaret', 'Fashion']
+        description: "Cazador'un yeni sezon koleksiyonu için e-ticaret platformlarına yönelik ürün görselleri ve katalog çekimleri.",
+        tags: ['E-Ticaret', 'Fashion'],
+        bgColor: '#0d1b2a'
     },
     {
         id: 3,
-        title: 'Premium Streetwear',
-        client: 'Cazador',
-        category: 'Social Media',
-        thumbnail: '/projects/cazador-local/53320-EKRU_2K_4_5_Professional fashion catalog photo of the specific Caucasian male model provided, walking confidently down a historic Nişantaşı street in winter. He is wearing a premium white crewneck sweatshirt with \'CAZADOR\' outl (6).jpg',
+        title: 'AI Moda Çekimleri',
+        client: 'Venus',
+        category: 'AI Fotoğraf',
+        thumbnail: '/sosyal_medya_resimler/venüs/venus2.webp',
         thumbnailType: 'single',
         images: [
-            { url: '/projects/cazador-local/53320-EKRU_2K_4_5_Professional fashion catalog photo of the specific Caucasian male model provided, walking confidently down a historic Nişantaşı street in winter. He is wearing a premium white crewneck sweatshirt with \'CAZADOR\' outl (6).jpg', type: 'image', aspect: 'tall' },
-            { url: '/projects/cazador-local/10200-KIRMIZI (1)_scene1_car_detail.webp', type: 'image', aspect: 'wide' },
-            { url: '/projects/cazador-local/10400-SİYAH (1)_scene_1_pier_leaning.webp', type: 'image', aspect: 'tall' }
+            { url: '/sosyal_medya_resimler/venüs/venus1.webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/venüs/venus2.webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/venüs/venus3.webp', type: 'image', aspect: 'wide' },
+            { url: '/sosyal_medya_resimler/venüs/venus4.webp', type: 'image', aspect: 'tall' }
         ],
-        description: "Sosyal medya için kurgulanan sokak stili çekimler.",
-        tags: ['Instagram', 'Lifestyle']
+        description: "Venus için hazırlanan yapay zeka destekli kadın moda koleksiyonu çekimleri. Ayakkabı, çanta ve aksesuar görselleri.",
+        tags: ['AI', 'Kadın Moda', 'Aksesuar'],
+        bgColor: '#2d1b36'
     },
     {
         id: 4,
-        title: 'Atmosferik Kış Hikayesi',
-        client: 'Cazador',
-        category: 'Video',
-        thumbnail: '/projects/cazador-local/13300-Siyah (8)_scene_1_pose_4(2).webp',
+        title: 'Sanal Manken Lookbook',
+        client: 'Venus',
+        category: 'AI Fotoğraf',
+        thumbnail: '/BLOG/venus/mila-1_image00004_2k_4_5_01_hero_full__2_.webp',
         thumbnailType: 'single',
         images: [
-            { url: '/projects/cazador-local/VID_20251125_203429_529.mp4', type: 'video', aspect: 'tall' },
-            { url: '/projects/cazador-local/13300-Siyah (8)_scene_1_pose_4(2).webp', type: 'image', aspect: 'tall' },
-            { url: '/projects/cazador-local/13300-Siyah (8)_scene_28_exterior_night_cabin_glow.webp', type: 'image', aspect: 'wide' }
+            { url: '/BLOG/venus/mila-1_image00004_2k_4_5_01_hero_full__2_.webp', type: 'image', aspect: 'tall' },
+            { url: '/BLOG/venus/mila-1_image00004_2k_4_5_03_portrait_mid__2_.webp', type: 'image', aspect: 'tall' },
+            { url: '/BLOG/venus/ella-1_1_2k_4_5_03_portrait_mid.webp', type: 'image', aspect: 'tall' },
+            { url: '/BLOG/venus/ella-1_1_4k_4_5_02_story_full.webp', type: 'image', aspect: 'wide' },
+            { url: '/BLOG/venus/mila-1_image00004_2k_4_5_05_closeup_creative__2_.webp', type: 'image', aspect: 'square' }
         ],
-        description: "Kışın ruhunu anlatan sinematik video prodüksiyonu.",
-        tags: ['Video', 'Cinematic']
+        description: "Venus markası için oluşturulan sanal manken lookbook'u. Tutarlı yüz ve beden yapısıyla farklı koleksiyonlar tek bir dijital mankenle sergileniyor.",
+        tags: ['Sanal Manken', 'Lookbook', 'Editorial'],
+        bgColor: '#1a1a2e'
     },
     {
         id: 5,
-        title: 'Deep Blue Explorations',
-        client: 'Oceanic',
-        category: 'Doğa',
-        thumbnail: 'https://cdn.pixabay.com/photo/2016/11/29/09/49/underwater-1868814_1280.jpg',
+        title: 'Ürün Fotoğrafçılığı',
+        client: 'Mina Drinks',
+        category: 'AI Fotoğraf',
+        thumbnail: '/sosyal_medya_resimler/mina drinks/mina1.webp',
         thumbnailType: 'single',
         images: [
-            { url: 'https://cdn.pixabay.com/video/2021/11/14/95662-646702662_large.mp4', type: 'video', aspect: 'wide' },
-            { url: 'https://cdn.pixabay.com/photo/2016/11/29/09/49/underwater-1868814_1280.jpg', type: 'image', aspect: 'wide' }
+            { url: '/sosyal_medya_resimler/mina drinks/mina1.webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/mina drinks/mina2.webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/mina drinks/mina3.webp', type: 'image', aspect: 'wide' },
+            { url: '/sosyal_medya_resimler/mina drinks/mina4.webp', type: 'image', aspect: 'tall' }
         ],
-        description: "Okyanusun derinliklerindeki gizemli dünya.",
-        tags: ['Underwater', 'Nature']
+        description: "Mina Drinks içecek markası için hazırlanan AI destekli yaratıcı ürün görselleri. Doğal ortam ve stüdyo konseptlerinde çekim.",
+        tags: ['İçecek', 'Ürün', 'AI'],
+        bgColor: '#1c3a13'
     },
     {
         id: 6,
-        title: 'Neon Nights',
-        client: 'Cyber Studio',
-        category: 'Teknoloji',
-        thumbnail: 'https://cdn.pixabay.com/photo/2016/11/29/05/27/night-1867540_1280.jpg',
+        title: 'Sosyal Medya Konsept',
+        client: 'Mina Drinks',
+        category: 'Social Media',
+        thumbnail: '/sosyal_medya_resimler/ürün_fotoğraf/mina_drink_1.webp',
         thumbnailType: 'single',
         images: [
-            { url: 'https://cdn.pixabay.com/video/2020/07/25/45607-440478144_large.mp4', type: 'video', aspect: 'wide' },
-            { url: 'https://cdn.pixabay.com/photo/2016/11/29/05/27/night-1867540_1280.jpg', type: 'image', aspect: 'wide' }
+            { url: '/sosyal_medya_resimler/ürün_fotoğraf/mina_drink_1.webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/ürün_fotoğraf/mina_drink_2.webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/ürün_fotoğraf/mina_drink_3.webp', type: 'image', aspect: 'wide' },
+            { url: '/sosyal_medya_resimler/ürün_fotoğraf/mina_drink_4.webp', type: 'image', aspect: 'tall' }
         ],
-        description: "Neon ışıkları altında dijital dünya.",
-        tags: ['Neon', 'Night']
+        description: "Mina Drinks için sosyal medya platformlarına yönelik yaratıcı içerik üretimi ve görsel dil oluşturma.",
+        tags: ['Sosyal Medya', 'İçerik', 'Branding'],
+        bgColor: '#2a1a0e'
     },
     {
-        id: 17,
-        title: 'B2B Katalog Otomasyonu',
-        client: 'Cazador',
-        category: 'E-Ticaret',
-        thumbnail: '/projects/cazador-local/iasmag.webp',
+        id: 7,
+        title: 'Outdoor Koleksiyon',
+        client: 'CampAndMap',
+        category: 'AI Fotoğraf',
+        thumbnail: '/sosyal_medya_resimler/camp and map/camp1.webp',
         thumbnailType: 'single',
         images: [
-            { url: '/projects/cazador-local/iasmag.webp', type: 'image', aspect: 'tall' },
-            { url: '/projects/cazador-local/imaj g2örsel1.webp', type: 'image', aspect: 'wide' },
-            { url: '/projects/cazador-local/imaj görsel12.webp', type: 'image', aspect: 'tall' }
+            { url: '/sosyal_medya_resimler/camp and map/camp1.webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/camp and map/camp2.webp', type: 'image', aspect: 'wide' },
+            { url: '/sosyal_medya_resimler/camp and map/camp3.webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/camp and map/camp4.webp', type: 'image', aspect: 'tall' }
         ],
-        description: "B2B platformları için otomatik katalog oluşturma süreçleri.",
-        tags: ['B2B', 'Automation']
+        description: "CampAndMap outdoor ekipman markası için AI ile üretilen doğa ve kamp temalı ürün görselleri.",
+        tags: ['Outdoor', 'Kamp', 'AI'],
+        bgColor: '#1a2612'
+    },
+    {
+        id: 8,
+        title: 'Kamp Ekipman Çekimleri',
+        client: 'CampAndMap',
+        category: 'E-Ticaret',
+        thumbnail: '/sosyal_medya_resimler/ürün_fotoğraf/Camp-imaj_Magic Hamak_4x5_scene_1_shot_1_arrival.webp',
+        thumbnailType: 'single',
+        images: [
+            { url: '/sosyal_medya_resimler/ürün_fotoğraf/Camp-imaj_Magic Hamak_4x5_scene_1_shot_1_arrival.webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/ürün_fotoğraf/Camp-imaj_Set1_4x5_scene_1_shot_3_wide.webp', type: 'image', aspect: 'wide' },
+            { url: '/sosyal_medya_resimler/ürün_fotoğraf/CAMPANDMAP LOGO 3_4_5_2K (4) 2.webp', type: 'image', aspect: 'tall' },
+            { url: '/BLOG/campandmap/1_2k_4_5_undefined.webp', type: 'image', aspect: 'tall' }
+        ],
+        description: "CampAndMap kamp ürünleri için e-ticaret platformlarına yönelik profesyonel ürün fotoğrafçılığı.",
+        tags: ['E-Ticaret', 'Outdoor', 'Ürün'],
+        bgColor: '#0f1a0a'
+    },
+    {
+        id: 9,
+        title: 'Ghost Mannequin Çekimleri',
+        client: 'Cazador',
+        category: 'AI Fotoğraf',
+        thumbnail: '/sosyal_medya_resimler/ghost_v2/1_ön.webp',
+        thumbnailType: 'single',
+        images: [
+            { url: '/sosyal_medya_resimler/ghost_v2/1_ön.webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/ghost_v2/1_arka.webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/ghost_v2/3_ön.webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/ghost_v2/3_arka.webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/ghost_v2/5_ön.webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/ghost_v2/5_arka.webp', type: 'image', aspect: 'tall' }
+        ],
+        description: "Cazador ürünleri için hazırlanan ghost mannequin çekimleri. Ürün formunu tamamen gösteren ön-arka profesyonel katalog görselleri.",
+        tags: ['Ghost', 'Katalog', 'E-Ticaret'],
+        bgColor: '#1a1a1a'
+    },
+    {
+        id: 10,
+        title: 'Sanal Manken Ajansı',
+        client: 'PikselAI',
+        category: 'AI Fotoğraf',
+        thumbnail: '/sosyal_medya_resimler/sanal_manken/Anna/Anna-imaj-1.webp',
+        thumbnailType: 'single',
+        images: [
+            { url: '/sosyal_medya_resimler/sanal_manken/Anna/Anna-imaj-1.webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/sanal_manken/Anna/Anna-imaj-2.webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/sanal_manken/Anna/Anna-1.webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/sanal_manken/Anna/Anna-2.webp', type: 'image', aspect: 'tall' }
+        ],
+        description: "PikselAI'ın kendi sanal manken ajansı. AI ile oluşturulan tutarlı dijital modeller, farklı marka ve koleksiyonlar için kullanılabiliyor.",
+        tags: ['Sanal Manken', 'AI', 'Moda'],
+        bgColor: '#2a1a2e'
+    },
+    {
+        id: 11,
+        title: 'Editorial Konsept Çekim',
+        client: 'Venus',
+        category: 'Social Media',
+        thumbnail: '/sosyal_medya_resimler/konsept/1/Ella-1_1_2K_4_5_01_Full_Body.webp',
+        thumbnailType: 'single',
+        images: [
+            { url: '/sosyal_medya_resimler/konsept/1/Ella-1_1_2K_4_5_01_Full_Body.webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/konsept/1/Ella-1_1_2K_4_5_02_Full_Body.webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/konsept/1/Ella-1_1_2K_4_5_03_Full_Body_Sitting_Step.webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/konsept/1/Ella-1_1_2K_4_5_04_Close_Up_Side_Profile.webp', type: 'image', aspect: 'square' }
+        ],
+        description: "Venus markası için hazırlanan editorial konsept çekim serileri. Sokak modası ve premium lifestyle görselleri.",
+        tags: ['Editorial', 'Konsept', 'Lifestyle'],
+        bgColor: '#1b2838'
+    },
+    {
+        id: 12,
+        title: 'E-Ticaret Dönüşümü',
+        client: 'Cazador',
+        category: 'E-Ticaret',
+        thumbnail: '/e_ticaret_images/15.webp',
+        thumbnailType: 'single',
+        images: [
+            { url: '/e_ticaret_images/video_e_ticaret.mp4', type: 'video', aspect: 'wide' },
+            { url: '/e_ticaret_images/15.webp', type: 'image', aspect: 'wide' },
+            { url: '/e_ticaret_images/16.webp', type: 'image', aspect: 'wide' },
+            { url: '/e_ticaret_images/11.webp', type: 'image', aspect: 'wide' }
+        ],
+        description: "Cazador'un e-ticaret altyapısının uçtan uca dönüşümü. Shopify entegrasyonu, ürün optimize ve satış artırıcı UX iyileştirmeleri.",
+        tags: ['Shopify', 'E-Ticaret', 'UX'],
+        bgColor: '#0a1628'
+    },
+    {
+        id: 13,
+        title: 'Eşarp Koleksiyonu',
+        client: 'Rossea',
+        category: 'AI Fotoğraf',
+        thumbnail: '/sosyal_medya_resimler/ürün_fotoğraf/esarp_1.webp',
+        thumbnailType: 'single',
+        images: [
+            { url: '/sosyal_medya_resimler/ürün_fotoğraf/esarp_1.webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/ürün_fotoğraf/esarp_2.webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/ürün_fotoğraf/esarp_3.webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/ürün_fotoğraf/esarp_4.webp', type: 'image', aspect: 'wide' },
+            { url: '/sosyal_medya_resimler/ürün_fotoğraf/esarp_5.webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/ürün_fotoğraf/esarp_6.webp', type: 'image', aspect: 'tall' }
+        ],
+        description: "Rossea eşarp markası için yapay zeka ile üretilen sanal manken üzerinde ürün çekimleri. Otantik Türk lokasyonlarında editorial tarz.",
+        tags: ['Eşarp', 'AI', 'Moda'],
+        bgColor: '#2e1a1a'
+    },
+    {
+        id: 14,
+        title: 'Kazak Katalog Çekimleri',
+        client: 'Cazador',
+        category: 'E-Ticaret',
+        thumbnail: '/sosyal_medya_resimler/ghost_cekim/35195-Kiremit (1).webp',
+        thumbnailType: 'single',
+        images: [
+            { url: '/sosyal_medya_resimler/ghost_cekim/35195-Kiremit (1).webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/ghost_cekim/35195-Kiremit (2).webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/ghost_cekim/55035-Siyah (1).webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/ghost_cekim/55035-Siyah (2).webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/ghost_cekim/35325-Haki (1).webp', type: 'image', aspect: 'tall' },
+            { url: '/sosyal_medya_resimler/ghost_cekim/35325-Haki (2).webp', type: 'image', aspect: 'tall' }
+        ],
+        description: "Cazador kazak koleksiyonu için ghost mannequin tekniğiyle hazırlanan e-ticaret katalog görselleri.",
+        tags: ['Ghost', 'Kazak', 'Katalog'],
+        bgColor: '#1e1410'
     }
 ];
 

@@ -271,6 +271,7 @@ const Home = () => {
         </section>
 
         {/* 6. MÜŞTERİ YORUMU (Testimonial) */}
+        {/*
         <section className={`py-16 md:py-24 border-t ${colors.borderColorDark}`}>
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
             <div className="max-w-4xl mx-auto text-center">
@@ -308,6 +309,7 @@ const Home = () => {
             </div>
           </div>
         </section>
+        */}
 
         {/* 7. SSS – Sıkça Sorulan Sorular */}
         <section className={`py-16 md:py-24 border-t ${colors.borderColorDark}`}>

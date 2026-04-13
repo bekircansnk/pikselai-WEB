@@ -316,6 +316,7 @@ const Home = () => {
 			{/* ═══════════════════════════════════════════════════════════════
 			    TESTİMONİAL
 			    ═══════════════════════════════════════════════════════════════ */}
+			{/*
 			<Section mood="light" className="py-24">
 				<div className="grid md:grid-cols-12 gap-12 items-center">
 					<div className="md:col-span-4 flex flex-col items-center gap-6">
@@ -356,6 +357,7 @@ const Home = () => {
 					</div>
 				</div>
 			</Section>
+			*/}
 
 			{/* ═══════════════════════════════════════════════════════════════
 			    WHY PIKSELAI — 3 big cards

@@ -382,6 +382,7 @@ const Islerimiz = () => {
                                 exit={{ opacity: 0 }}
                                 transition={{ duration: 0.4 }}
                                 className={`group relative cursor-none overflow-hidden bg-white aspect-[4/3] md:aspect-auto md:h-[600px]`}
+                                style={{ cursor: 'none' }}
                                 onClick={() => setSelectedProject(project)}
                                 onMouseMove={handleMouseMove}
                                 onMouseEnter={() => setIsHovering(true)}
@@ -401,10 +402,10 @@ const Islerimiz = () => {
                                 </motion.div>
 
                                 {/* Overlay gradient */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300" />
+                                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300" />
 
                                 {/* Info */}
-                                <div className="absolute bottom-0 left-0 p-8 z-20 text-white w-full">
+                                <div className="absolute bottom-0 left-0 p-8 z-20 text-white w-full pointer-events-none">
                                     <motion.h3
                                         layoutId={`project-title-${project.id}`}
                                         className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-white mb-2"

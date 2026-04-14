@@ -797,12 +797,12 @@ const AiProduction = () => {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-10 md:gap-14">
               {aiProjects.map((project, idx) => (
-                <motion.div key={project.id} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }} className={`group relative cursor-pointer ${project.spanClass} flex flex-col`} onClick={() => setSelectedProject(project)} onMouseMove={handleMouseMove} onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
-                  <div className={`w-full rounded-[3rem] overflow-hidden bg-black/5 relative ${project.aspectClass} mb-8 shadow-sm group-hover:shadow-2xl transition-all duration-700`}>
+                <motion.div key={project.id} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }} className={`group relative cursor-none ${project.spanClass} flex flex-col`} style={{ cursor: 'none' }} onClick={() => setSelectedProject(project)} onMouseMove={handleMouseMove} onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
+                  <div className={`w-full pointer-events-none rounded-[3rem] overflow-hidden bg-black/5 relative ${project.aspectClass} mb-8 shadow-sm group-hover:shadow-2xl transition-all duration-700`}>
                     <img src={project.thumbnail} alt={project.client} className="w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-1000" />
                   </div>
-                  <h3 className="text-3xl font-display font-normal italic text-[#1A1A1A] mb-3">{project.client}</h3>
-                  <p className="text-[#1A1A1A] opacity-40 text-sm font-bold tracking-widest uppercase">{project.category}</p>
+                  <h3 className="text-3xl font-display font-normal italic text-[#1A1A1A] mb-3 pointer-events-none">{project.client}</h3>
+                  <p className="text-[#1A1A1A] opacity-40 text-sm font-bold tracking-widest uppercase pointer-events-none">{project.category}</p>
                 </motion.div>
               ))}
             </div>

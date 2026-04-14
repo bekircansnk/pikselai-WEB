@@ -107,7 +107,7 @@ const EticaretYeni = () => {
             className="absolute inset-0 z-0"
           >
             <img
-              src="/images/shopify-hero-banner-v2.webp"
+              src="/assets/pages/eticaretyeni/shopify_hero_banner_v2.webp"
               alt="Profesyonel Shopify Mağazası Banner"
               className="w-full h-full object-cover object-center"
             />
@@ -234,7 +234,7 @@ const EticaretYeni = () => {
                 whileInView={{ scale: 1 }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
                 viewport={{ once: true }}
-                src="/images/shopify-infrastructure.webp"
+                src="/assets/pages/eticaretyeni/shopify_infrastructure.webp"
                 alt="E-ticaret Operasyonu"
                 className="absolute inset-0 w-full h-full object-cover object-center"
               />
@@ -266,7 +266,7 @@ const EticaretYeni = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Card 1 - Kurulum */}
               <motion.div variants={fadeInUp} className="group relative aspect-[9/16] overflow-hidden rounded-3xl bg-[#0b2117] cursor-pointer shadow-xl">
-                <img src="/images/shopify-setup.webp" alt="Sıfırdan Mağaza Kurulumu" className="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
+                <img src="/assets/pages/eticaretyeni/shopify_setup.webp" alt="Sıfırdan Mağaza Kurulumu" className="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
                 <div className="absolute top-8 left-8">
                   <Layers className="text-[#caf265]" size={32} />
@@ -281,7 +281,7 @@ const EticaretYeni = () => {
 
               {/* Card 2 - Migration */}
               <motion.div variants={fadeInUp} className="group relative aspect-[9/16] overflow-hidden rounded-3xl bg-[#0b2117] cursor-pointer shadow-xl">
-                <video src="/images/shopify-migration.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
+                <video src="/assets/common/shopify_migration.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
                 <div className="absolute top-8 left-8">
                   <TrendingUp className="text-[#caf265]" size={32} />
@@ -296,7 +296,7 @@ const EticaretYeni = () => {
 
               {/* Card 3 - Entegrasyonlar */}
               <motion.div variants={fadeInUp} className="group relative aspect-[9/16] overflow-hidden rounded-3xl bg-[#0b2117] cursor-pointer shadow-xl">
-                <img src="/images/shopify-integrations.webp" alt="Entegrasyonlar" className="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
+                <img src="/assets/pages/eticaretyeni/shopify_integrations.webp" alt="Entegrasyonlar" className="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
                 <div className="absolute top-8 left-8">
                   <Zap className="text-[#caf265]" size={32} />

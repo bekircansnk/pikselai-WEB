@@ -76,25 +76,25 @@ export function ResourcesMenu({ isOpen, activeMenu, onClose }: ResourcesMenuProp
                                     <MenuHeader title="Müşteri Hikayeleri" href="/musteri-hikayeleri" onClose={onClose} />
                                     <div className="mt-4 space-y-3">
                                         <ImageCard
-                                            image="/projects/cazador-local/cazador-siyah-pose.webp"
+                                            image="/assets/brands/cazador/cazador_siyah_pose.webp"
                                             title="Cazador: Moda Fotoğrafçılığında AI Dönüşümü"
                                             href="/blog/referanslar"
                                             onClose={onClose}
                                         />
                                         <ImageCard
-                                            image="/BLOG/mina-drinks/id_scenario_1_end_frame_prompt_2k_20.webp"
+                                            image="/assets/blog/id_scenario_1_end_frame_prompt_2k_20.webp"
                                             title="Mina Drinks: Ürün Prodüksiyonunda %90 Tasarruf"
                                             href="/blog/mina-drinks"
                                             onClose={onClose}
                                         />
                                         <ImageCard
-                                            image="/BLOG/venus/ella-1_1_2k_4_5_03_portrait_mid.webp"
+                                            image="/assets/brands/venus/ella_1_1_2k_4_5_03_portrait_mid.webp"
                                             title="Venüs Giyim: E-Ticarette Sanal Manken Teknolojisi"
                                             href="/blog/venus"
                                             onClose={onClose}
                                         />
                                         <ImageCard
-                                            image="/BLOG/campandmap/1_2k_4_5_undefined__1_.webp"
+                                            image="/assets/brands/camp_and_map/1_2k_4_5_undefined__1_.webp"
                                             title="Camp and Map: Açık Hava Stüdyoları AI'a Taşındı"
                                             href="/blog/campandmap"
                                             onClose={onClose}

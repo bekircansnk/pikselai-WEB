@@ -39,7 +39,7 @@ const VenusCaseStudy = () => {
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0 opacity-30">
                     <img 
-                        src="/BLOG/venus/mila-1_image00004_4k_16_9_01_hero_full.webp" 
+                        src="/assets/brands/venus/mila_1_image00004_4k_16_9_01_hero_full.webp" 
                         alt="Venüs Hero Background" 
                         className="w-full h-full object-cover"
                     />
@@ -73,9 +73,9 @@ const VenusCaseStudy = () => {
                             <strong>Pikselai Ghost Mannequin & AI Model Altyapısı</strong> sayesinde, "Hayalet Manken" (veya askıda/cansız mankende) çekilen tüm kıyafetler dakikalar içinde yüksek kaliteli, insansı görünüme sahip fotorealistik karakterlerin üzerine giydirildi.
                         </p>
                         <BlogImage
-                            src="/BLOG/venus/ella-1_1_2k_4_5_03_portrait_mid.webp"
+                            src="/assets/brands/venus/ella_1_1_2k_4_5_03_portrait_mid.webp"
                             alt="Venüs AI Manken Giyindirilmesi"
-                            href="/BLOG/venus/ella-1_1_2k_4_5_03_portrait_mid.webp"
+                            href="/assets/brands/venus/ella_1_1_2k_4_5_03_portrait_mid.webp"
                             caption="Yapay Zeka Destekli Mid-shot (Portre) Görsel"
                         />
                     </motion.div>
@@ -87,15 +87,15 @@ const VenusCaseStudy = () => {
                             Venüs'ün global pazara açılırken her hedef ülke için ayrı etnik kökene sahip modeller bulması ve çekim yapması oldukça maliyetliydi. Geliştirdiğimiz "Sanal Manken" kütüphanesi sayesinde, Ortadoğu'dan Avrupa'ya kadar her bölgeye özgü karakterler kurgulandı. Aynı ürün, saniyeler içinde farklı demografilerden modellere uygun şekilde uyarlandı.
                         </p>
                         <BlogImage
-                            src="/BLOG/venus/ella-1_1_4k_4_5_02_story_full.webp"
+                            src="/assets/brands/venus/ella_1_1_4k_4_5_02_story_full.webp"
                             alt="Venüs Küresel Müşteri Portföyü Modelleri"
-                            href="/BLOG/venus/ella-1_1_4k_4_5_02_story_full.webp"
+                            href="/assets/brands/venus/ella_1_1_4k_4_5_02_story_full.webp"
                             caption="Full-body E-Ticaret ve Lifestyle Katalog Çalışması"
                         />
                         <BlogImage
-                            src="/BLOG/venus/mila-1_image00004_2k_4_5_03_portrait_mid__2_.webp"
+                            src="/assets/brands/venus/mila_1_image00004_2k_4_5_03_portrait_mid__2_.webp"
                             alt="Farklı Kültürel Modellerin Portrelendirilmesi"
-                            href="/BLOG/venus/mila-1_image00004_2k_4_5_03_portrait_mid__2_.webp"
+                            href="/assets/brands/venus/mila_1_image00004_2k_4_5_03_portrait_mid__2_.webp"
                             caption="Her pazar için doğru yüz ve etnik köken modeli"
                         />
                     </motion.div>
@@ -107,9 +107,9 @@ const VenusCaseStudy = () => {
                             Yeni bir ürün stoklara girdiğinde çekim süreci günler değil, sadece 15 dakika sürüyor. Bu da e-ticaret ekibine her sezon koleksiyonu vitrine çıkarırken <strong>%85 zaman tasarrufu</strong> ve daha hızlı satışa çıkarma olanağı sağladı. Müşteri deneyimini dönüştüren bu adım, Venüs'ün geri dönüşüm (conversion) oranlarında belirgin bir artı yarattı.
                         </p>
                         <BlogImage
-                            src="/BLOG/venus/mila-1_image00004_2k_4_5_01_hero_full__2_.webp"
+                            src="/assets/brands/venus/mila_1_image00004_2k_4_5_01_hero_full__2_.webp"
                             alt="Venüs E-Ticaret Sayfa Vitrini"
-                            href="/BLOG/venus/mila-1_image00004_2k_4_5_01_hero_full__2_.webp"
+                            href="/assets/brands/venus/mila_1_image00004_2k_4_5_01_hero_full__2_.webp"
                             caption="Dönüşümü Arttıran Yüksek Kaliteli Stüdyo Standardı"
                         />
                     </motion.div>

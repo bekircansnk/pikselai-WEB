@@ -54,7 +54,7 @@ export default function CreativeDesign() {
                             className="relative rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 bg-bor-primary-900 flex items-center justify-center p-2 lg:p-4 group cursor-pointer"
                         >
                             <img
-                                src="/images/katalog-hero.webp"
+                                src="/assets/common/katalog_hero.webp"
                                 alt="PikselAI Katalog Uygulaması"
                                 className="w-full h-auto rounded-[1.5rem] object-contain transition-transform duration-700 group-hover:scale-105"
                             />
@@ -152,33 +152,33 @@ export default function CreativeDesign() {
                         <BentoCard
                             title="Gelişmiş Albüm Yönetimi"
                             desc="Ürünlerinizi sezon, kampanya veya kategorilere göre dilediğiniz gibi klasörleyip aynı dakika içinde sunuma hazır hale getirin."
-                            img="/katalog-assets/klasorleme.webp"
+                            img="/assets/pages/creativedesign/klasorleme.webp"
                             className="md:col-span-2 lg:col-span-2 min-h-[350px]"
                         />
                         <BentoCard
                             title="Etkileşimli Galeri"
                             desc="Kolay kullanım için filtreleme seçenekleri ve farklı görünüm seçenekleri sunmaktadır."
-                            img="/katalog-assets/filtre.webp"
+                            img="/assets/pages/creativedesign/filtre.webp"
                             className="lg:col-span-1 min-h-[350px]"
                         />
 
                         <BentoCard
                             title="Toplu İndirme Kolaylığı"
                             desc="Beğendiğiniz tüm görselleri seçin ve tek tıkla bilgisayarınıza indirin. Arşiv formatında düzenli bir şekilde anında cihazınızda."
-                            img="/katalog-assets/indir.webp"
+                            img="/assets/pages/creativedesign/indir.webp"
                             className="lg:col-span-1 min-h-[350px] lg:min-h-[440px]"
                         />
                         <BentoCard
                             title="Dahili Medya Oynatıcı"
                             desc="Videoları izlemek için cihazınıza indirmenize gerek yok. Tüm kampanya veya ürün videolarını doğrudan galeri üzerinden akıcı biçimde oynatın."
-                            video="/katalog-assets/video-player-opt.mp4"
+                            video="/assets/pages/creativedesign/video_player_opt.mp4"
                             className="lg:col-span-1 min-h-[350px] lg:min-h-[440px]"
                             textDark={true}
                         />
                         <BentoCard
                             title="Özel Erişim Kontrolü"
                             desc="Henüz herkese açık olmayan yeni sezon ürünleriniz veya özel müşterileriniz için şifrelenmiş, güvenli paylaşım alanları."
-                            img="/katalog-assets/sifre.webp"
+                            img="/assets/pages/creativedesign/sifre.webp"
                             className="lg:col-span-1 min-h-[350px] lg:min-h-[440px]"
                             textDark={true}
                         />
@@ -240,7 +240,7 @@ export default function CreativeDesign() {
                                 className="relative rounded-[2rem] overflow-hidden bg-bor-primary-100 dark:bg-bor-primary-800 shadow-2xl border border-white/20 p-2 lg:p-4 flex items-center justify-center group cursor-pointer"
                             >
                                 <img
-                                    src="/images/arama-ekrani.webp"
+                                    src="/assets/pages/creativedesign/arama_ekrani.webp"
                                     alt="Katalog Arama Ekranı"
                                     className="w-full h-auto rounded-[1.5rem] object-contain transition-transform duration-700 group-hover:scale-105"
                                 />
@@ -285,7 +285,7 @@ export default function CreativeDesign() {
                 {/* Full Bleed Background Image - Anchored at the top so the dense forest shows, falling naturally into black/dark green at the bottom */}
                 <div className="absolute inset-0 z-0 pointer-events-none">
                     {/* Hiding the natural dark bottom part seamlessly with the UI's brand green (#0A2624) */}
-                    <div className="absolute inset-0 bg-[url('/images/katalog-cta-bg.png')] bg-cover bg-top bg-no-repeat opacity-90"></div>
+                    <div className="absolute inset-0 bg-[url('/assets/pages/creativedesign/katalog_cta_bg.png')] bg-cover bg-top bg-no-repeat opacity-90"></div>
                     <div className="absolute inset-x-0 bottom-0 h-96 bg-gradient-to-t from-[#0A2624] via-[#0A2624]/80 to-transparent"></div>
                 </div>
 

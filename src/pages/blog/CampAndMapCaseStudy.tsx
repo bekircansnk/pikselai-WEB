@@ -39,7 +39,7 @@ const CampAndMapCaseStudy = () => {
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0 opacity-30">
                     <img 
-                        src="/BLOG/campandmap/1_2k_auto_undefined.webp" 
+                        src="/assets/brands/camp_and_map/1_2k_auto_undefined.webp" 
                         alt="Camp and Map Hero Background" 
                         className="w-full h-full object-cover"
                     />
@@ -73,9 +73,9 @@ const CampAndMapCaseStudy = () => {
                             <strong>Pikselai Ekipman Geliştirme AI Ajansı</strong> (Background AI Studio) konsepti ile ürünler sadece basit bir stüdyoda temiz nền veya izole olarak çekildi. Geri kalanı tamamıyla yapay zeka tarafından kusursuz şekilde inşa edildi ve ürün doğa içerisine yerleştirildi.
                         </p>
                         <BlogImage
-                            src="/BLOG/campandmap/1_2k_4_5_undefined__1_.webp"
+                            src="/assets/brands/camp_and_map/1_2k_4_5_undefined__1_.webp"
                             alt="Campandmap AI Ürün Katalog Çalışması"
-                            href="/BLOG/campandmap/1_2k_4_5_undefined__1_.webp"
+                            href="/assets/brands/camp_and_map/1_2k_4_5_undefined__1_.webp"
                             caption="Yapay Zeka Destekli Karlı / Dağ Konsepti Üretimi"
                         />
                     </motion.div>
@@ -87,9 +87,9 @@ const CampAndMapCaseStudy = () => {
                             Yapay zeka sistemi sayesinde; aynı kamp ekipmanını saniyeler içinde sisli bir dağ yamacında, yağmurlu bir orman kampında ya da güneşli bir göl kenarında konumlandırmak mümkün hale geldi. Bu esneklik, marka kreatif süreçlerine <strong>inanılmaz bir özgürlük</strong> kattı.
                         </p>
                         <BlogImage
-                            src="/BLOG/campandmap/1_2k_4_5_undefined.webp"
+                            src="/assets/brands/camp_and_map/1_2k_4_5_undefined.webp"
                             alt="Campandmap Atmosferik Dönüşüm"
-                            href="/BLOG/campandmap/1_2k_4_5_undefined.webp"
+                            href="/assets/brands/camp_and_map/1_2k_4_5_undefined.webp"
                             caption="Farklı İklim ve Aydınlatma Olgusu ile Geliştirilmiş Background"
                         />
                     </motion.div>
@@ -101,9 +101,9 @@ const CampAndMapCaseStudy = () => {
                             Marka yüzbinlerce liralık lojistik ve saha kiralama (çekim alanı) maliyetinden %100 tasarruf sağlarken, marka algısına son derece yüksek bir premium etki kattı. Pazarlama performansında artan etkileşim, Campandmap'in e-ticaret vitrininde ziyaretçi sitelerinde daha uzun süre kalmasını sağladı.
                         </p>
                         <BlogImage
-                            src="/BLOG/campandmap/1_2k_auto_undefined.webp"
+                            src="/assets/brands/camp_and_map/1_2k_auto_undefined.webp"
                             alt="Campandmap Kusursuz E-Ticaret"
-                            href="/BLOG/campandmap/1_2k_auto_undefined.webp"
+                            href="/assets/brands/camp_and_map/1_2k_auto_undefined.webp"
                             caption="Marka Kampanyalarına Yönelik Final Çıktılar"
                         />
                     </motion.div>

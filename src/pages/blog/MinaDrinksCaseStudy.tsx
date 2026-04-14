@@ -39,7 +39,7 @@ const MinaDrinksCaseStudy = () => {
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0 opacity-30">
                     <img 
-                        src="/BLOG/mina-drinks/_id_scenario_1_corn_field_dream_2k_202.webp" 
+                        src="/assets/pages/minadrinkscasestudy/_id_scenario_1_corn_field_dream_2k_202.webp" 
                         alt="Mina Drinks Hero Background" 
                         className="w-full h-full object-cover"
                     />
@@ -74,9 +74,9 @@ const MinaDrinksCaseStudy = () => {
                             değişime uğradı. Ürün fotoğrafları saniyeler içinde doğal ortam ve yüksek kaliteyle entegre edilerek, <strong>markanın üretim maliyetleri %90'a varan oranda düşürüldü</strong>.
                         </p>
                         <BlogImage
-                            src="/BLOG/mina-drinks/id_scenario_1_end_frame_prompt_2k_20.webp"
+                            src="/assets/blog/id_scenario_1_end_frame_prompt_2k_20.webp"
                             alt="Mina Drinks Dijital Katalog Arayüzü"
-                            href="/BLOG/mina-drinks/id_scenario_1_end_frame_prompt_2k_20.webp"
+                            href="/assets/blog/id_scenario_1_end_frame_prompt_2k_20.webp"
                             caption="Mina Drinks İlk AI Konsept Tasarımı"
                         />
                     </motion.div>
@@ -88,9 +88,9 @@ const MinaDrinksCaseStudy = () => {
                             İçecekleri farklı kurgusal sahnelerde göstermek hiç bu kadar kolay olmamıştı. Orijinal şişe görsellerini baz alan sistem, saniyeler içinde <strong>gerçekçi sıvı efektleri, buzlar ve canlı yaz konseptleriyle</strong> bütünleşen görseller oluşturdu. Marka bu sayede pazarlama kampanyalarına özel içerikleri anında üretme yeteneği kazandı.
                         </p>
                         <BlogImage
-                            src="/BLOG/mina-drinks/id_scenario_3_end_frame_prompt_2k_20.webp"
+                            src="/assets/pages/minadrinkscasestudy/id_scenario_3_end_frame_prompt_2k_20.webp"
                             alt="Mina Drinks AI Fotoğraf Üretimi Örnekleri"
-                            href="/BLOG/mina-drinks/id_scenario_3_end_frame_prompt_2k_20.webp"
+                            href="/assets/pages/minadrinkscasestudy/id_scenario_3_end_frame_prompt_2k_20.webp"
                             caption="Farklı Senaryolara Özel Esnek Görsel Çıktıları"
                         />
                     </motion.div>
@@ -102,9 +102,9 @@ const MinaDrinksCaseStudy = () => {
                             Üretilen yüksek kaliteli AI görseller, reklam kampanyalarında doğrudan kullanıldı. Ürünlerin ışık, yansıma ve perspektif açısından kusursuzluğu, Mina Drinks'in yeni dijital varlığında premium bir hissiyat sağladı. Artık markanın her yeni ürünü, pazara eşzamanlı profesyonel prodüksiyon hızında sunulabiliyor.
                         </p>
                         <BlogImage
-                            src="/BLOG/mina-drinks/id_scenario_creative_01_start_frame_pr__1_.webp"
+                            src="/assets/pages/minadrinkscasestudy/id_scenario_creative_01_start_frame_pr__1_.webp"
                             alt="Mina Drinks Instagram Akışı"
-                            href="/BLOG/mina-drinks/id_scenario_creative_01_start_frame_pr__1_.webp"
+                            href="/assets/pages/minadrinkscasestudy/id_scenario_creative_01_start_frame_pr__1_.webp"
                             caption="Mina Drinks Yüksek Etkileşimli Görsel Kalitesi"
                         />
                     </motion.div>

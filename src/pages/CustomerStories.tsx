@@ -12,7 +12,7 @@ const stories = [
         industry: "Moda & Tekstil",
         title: "Yapay Zeka ile Moda Fotoğrafçılığında Devrim",
         description: "Geleneksel fotoğraf çekimi maliyetlerini %80 düşürürken, ürün görselleştirme hızını 10 kat artırdık.",
-        image: "/projects/cazador-local/cazador-siyah-pose.webp",
+        image: "/assets/brands/cazador/cazador_siyah_pose.webp",
         tags: ["AI Prodüksiyon", "Katalog", "Verimlilik"],
         link: "/blog/referanslar" // Mevcut Cazador case study sayfasına yönlendirme
     },
@@ -22,7 +22,7 @@ const stories = [
         industry: "Yiyecek & İçecek",
         title: "Görsel Üretim Maliyetlerinde %90 Tasarruf",
         description: "İçecek fotoğrafçılığını stüdyolardan AI altyapılarına taşıyarak sınırsız yaratıcılık kazandık.",
-        image: "/BLOG/mina-drinks/id_scenario_1_end_frame_prompt_2k_20.webp",
+        image: "/assets/blog/id_scenario_1_end_frame_prompt_2k_20.webp",
         tags: ["AI Prodüksiyon", "CGI", "Yaratıcılık"],
         link: "/blog/mina-drinks"
     },
@@ -32,7 +32,7 @@ const stories = [
         industry: "Moda & Tekstil",
         title: "Sanal Manken Teknolojisi ile E-Ticarette Hız",
         description: "Hayalet manken görsellerini saniyeler içinde uluslararası modellere dönüştürerek süreci %85 oranında hızlandırdık.",
-        image: "/BLOG/venus/ella-1_1_2k_4_5_03_portrait_mid.webp",
+        image: "/assets/brands/venus/ella_1_1_2k_4_5_03_portrait_mid.webp",
         tags: ["Ghost Mannequin", "AI Model", "Moda"],
         link: "/blog/venus"
     },
@@ -42,7 +42,7 @@ const stories = [
         industry: "Outdoor Giyim & Ekipman",
         title: "Saha Prodüksiyonu Olmadan Profesyonel Doğa Çekimleri",
         description: "Ağır kamp ekipmanlarını taşımadan, yapay zeka ortam arka plan üretimiyle kusursuz doğa vitrinleri inşa ettik.",
-        image: "/BLOG/campandmap/1_2k_4_5_undefined__1_.webp",
+        image: "/assets/brands/camp_and_map/1_2k_4_5_undefined__1_.webp",
         tags: ["AI Background", "Outdoor", "Lojistik"],
         link: "/blog/campandmap"
     }
@@ -78,7 +78,7 @@ export default function CustomerStories() {
                     <div className="flex flex-col md:flex-row items-center gap-12 rounded-3xl overflow-hidden bg-white dark:bg-bor-primary-900 shadow-xl border border-bor-primary-100 dark:border-bor-primary-800">
                         <div className="md:w-1/2 h-full min-h-[400px]">
                             <img
-                                src="/projects/cazador-local/cazador-moda-haki.webp"
+                                src="/assets/brands/cazador/cazador_moda_haki.webp"
                                 alt="Cazador Case Study"
                                 className="w-full h-full object-cover"
                             />

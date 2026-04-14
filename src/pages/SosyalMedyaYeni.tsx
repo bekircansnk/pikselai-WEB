@@ -51,44 +51,44 @@ const socialProjects: SocialProject[] = [
     client: "Cazador",
     title: "Sokak Modası Çekimleri",
     category: "Reklam Yaratıcılığı",
-    thumbnail: "/sosyal_medya_resimler/cazador/cazador2.webp",
+    thumbnail: "/assets/brands/cazador/cazador2.webp",
     description: "Cazador'un yeni sezon koleksiyonu için dinamik ve dikkat çekici sosyal medya kurguları.",
     spanClass: "md:col-span-4",
     aspectClass: "aspect-[3/4]",
-    images: ["/sosyal_medya_resimler/cazador/cazador1.webp", "/sosyal_medya_resimler/cazador/cazador2.webp", "/sosyal_medya_resimler/cazador/cazador3.webp", "/sosyal_medya_resimler/cazador/cazador4.webp"]
+    images: ["/assets/brands/cazador/cazador1.webp", "/assets/brands/cazador/cazador2.webp", "/assets/brands/cazador/cazador3.webp", "/assets/brands/cazador/cazador4.webp"]
   },
   {
     id: 2,
     client: "Venüs Ayakkabı",
     title: "Ürün Lansmanı",
     category: "Sosyal Medya Çekimleri",
-    thumbnail: "/sosyal_medya_resimler/venus/venus2.webp",
+    thumbnail: "/assets/brands/venus/venus2.webp",
     description: "Venüs Ayakkabı'nın yeni modelleri için etkileşim odaklı reklam kreatifleri.",
     spanClass: "md:col-span-4",
     aspectClass: "aspect-[3/4]",
-    images: ["/sosyal_medya_resimler/venus/venus1.webp", "/sosyal_medya_resimler/venus/venus2.webp", "/sosyal_medya_resimler/venus/venus3.webp", "/sosyal_medya_resimler/venus/venus4.webp"]
+    images: ["/assets/brands/venus/venus1.webp", "/assets/brands/venus/venus2.webp", "/assets/brands/venus/venus3.webp", "/assets/brands/venus/venus4.webp"]
   },
   {
     id: 3,
     client: "Camp and Map",
     title: "Doğa Kampanyası",
     category: "E-ticaret için Çekimler",
-    thumbnail: "/sosyal_medya_resimler/camp_and_map/camp1.webp",
+    thumbnail: "/assets/brands/camp_and_map/camp1.webp",
     description: "Doğa tutkunları için outdoor ruhunu yansıtan etkileyici görsel kurgular.",
     spanClass: "md:col-span-4",
     aspectClass: "aspect-square md:aspect-[3/4] md:h-full lg:aspect-auto",
-    images: ["/sosyal_medya_resimler/camp_and_map/camp1.webp", "/sosyal_medya_resimler/camp_and_map/camp2.webp", "/sosyal_medya_resimler/camp_and_map/camp3.webp", "/sosyal_medya_resimler/camp_and_map/camp4.webp"]
+    images: ["/assets/brands/camp_and_map/camp1.webp", "/assets/brands/camp_and_map/camp2.webp", "/assets/brands/camp_and_map/camp3.webp", "/assets/brands/camp_and_map/camp4.webp"]
   },
   {
     id: 4,
     client: "Mina Drinks",
     title: "Enerji ve Ferahlık",
     category: "Katalog Çekimleri",
-    thumbnail: "/sosyal_medya_resimler/mina_drinks/mina1.webp",
+    thumbnail: "/assets/brands/mina_drinks/mina1.webp",
     description: "Mina Drinks'in ferahlatıcı kimliğini öne çıkaran yapay zeka destekli görseller.",
     spanClass: "md:col-span-8",
     aspectClass: "aspect-square md:aspect-video",
-    images: ["/sosyal_medya_resimler/mina_drinks/mina1.webp", "/sosyal_medya_resimler/mina_drinks/mina2.webp", "/sosyal_medya_resimler/mina_drinks/mina3.webp", "/sosyal_medya_resimler/mina_drinks/mina4.webp"]
+    images: ["/assets/brands/mina_drinks/mina1.webp", "/assets/brands/mina_drinks/mina2.webp", "/assets/brands/mina_drinks/mina3.webp", "/assets/brands/mina_drinks/mina4.webp"]
   }
 ];
 
@@ -237,12 +237,12 @@ const SosyalMedyaYeni = () => {
                     className="flex flex-col gap-5"
                   >
                     {[
-                      "/sosyal_medya_resimler/standart_gorseller/image1.webp",
-                      "/sosyal_medya_resimler/standart_gorseller/image2.webp",
-                      "/sosyal_medya_resimler/standart_gorseller/image7.webp",
-                      "/sosyal_medya_resimler/standart_gorseller/image1.webp",
-                      "/sosyal_medya_resimler/standart_gorseller/image2.webp",
-                      "/sosyal_medya_resimler/standart_gorseller/image7.webp"
+                      "/assets/common/image1.webp",
+                      "/assets/common/image2.webp",
+                      "/assets/pages/sosyalmedyayeni/image7.webp",
+                      "/assets/common/image1.webp",
+                      "/assets/common/image2.webp",
+                      "/assets/pages/sosyalmedyayeni/image7.webp"
                     ].map((src, i) => (
                       <div key={`col1-${i}`} className="rounded-2xl overflow-hidden shadow-2xl relative border-2 border-white/5 bg-white/5 backdrop-blur-sm">
                         <img src={src} className="w-full object-cover scale-[1.02]" alt="" />
@@ -257,12 +257,12 @@ const SosyalMedyaYeni = () => {
                     className="flex flex-col gap-5 -mt-32"
                   >
                     {[
-                      "/sosyal_medya_resimler/standart_gorseller/image4.webp",
-                      "/sosyal_medya_resimler/standart_gorseller/image5.webp",
-                      "/sosyal_medya_resimler/standart_gorseller/image3.webp",
-                      "/sosyal_medya_resimler/standart_gorseller/image4.webp",
-                      "/sosyal_medya_resimler/standart_gorseller/image5.webp",
-                      "/sosyal_medya_resimler/standart_gorseller/image3.webp"
+                      "/assets/pages/sosyalmedyayeni/image4.webp",
+                      "/assets/pages/sosyalmedyayeni/image5.webp",
+                      "/assets/pages/sosyalmedyayeni/image3.webp",
+                      "/assets/pages/sosyalmedyayeni/image4.webp",
+                      "/assets/pages/sosyalmedyayeni/image5.webp",
+                      "/assets/pages/sosyalmedyayeni/image3.webp"
                     ].map((src, i) => (
                       <div key={`col2-${i}`} className="rounded-2xl overflow-hidden shadow-xl relative border-2 border-white/5 bg-white/5 backdrop-blur-sm">
                         <img src={src} className="w-full object-cover scale-[1.02]" alt="" />
@@ -277,12 +277,12 @@ const SosyalMedyaYeni = () => {
                     className="flex flex-col gap-5 mt-16"
                   >
                     {[
-                      "/sosyal_medya_resimler/standart_gorseller/image6.webp",
-                      "/sosyal_medya_resimler/standart_gorseller/image3.webp",
-                      "/sosyal_medya_resimler/standart_gorseller/image1.webp",
-                      "/sosyal_medya_resimler/standart_gorseller/image6.webp",
-                      "/sosyal_medya_resimler/standart_gorseller/image3.webp",
-                      "/sosyal_medya_resimler/standart_gorseller/image1.webp"
+                      "/assets/pages/sosyalmedyayeni/image6.webp",
+                      "/assets/pages/sosyalmedyayeni/image3.webp",
+                      "/assets/common/image1.webp",
+                      "/assets/pages/sosyalmedyayeni/image6.webp",
+                      "/assets/pages/sosyalmedyayeni/image3.webp",
+                      "/assets/common/image1.webp"
                     ].map((src, i) => (
                       <div key={`col3-${i}`} className="rounded-2xl overflow-hidden shadow-2xl relative border-2 border-white/5 bg-white/5 backdrop-blur-sm">
                         <img src={src} className="w-full object-cover scale-[1.02]" alt="" />
@@ -437,7 +437,7 @@ const SosyalMedyaYeni = () => {
             {
               title: "Görsel Üretimi",
               desc: "Instagram'dan LinkedIn'e, her platformun kendi dinamiklerine uygun ve marka kimliğinizi yansıtan estetik statik görseller.",
-              img: "/sosyal_medya_resimler/sosyal_medya_partlar/1.webp",
+              img: "/assets/common/1.webp",
               span: "md:col-span-1 md:row-span-2 min-h-[380px] md:min-h-[776px]",
               bgClass: "bg-[#18201d]",
               imageClass: "absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700",
@@ -445,7 +445,7 @@ const SosyalMedyaYeni = () => {
             {
               title: "Video & Reels Üretimi",
               desc: "TikTok ve Reels trendlerine özel; hızlı, akıcı ve yüksek etkileşim potansiyeli taşıyan dinamik video kurguları.",
-              img: "/sosyal_medya_resimler/sosyal_medya_partlar/2.webp",
+              img: "/assets/common/2.webp",
               span: "md:col-span-1 md:row-span-1 min-h-[380px]",
               bgClass: "bg-[#336b9c]",
               imageClass: "absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700",
@@ -453,7 +453,7 @@ const SosyalMedyaYeni = () => {
             {
               title: "İnfografik Üretimi",
               desc: "Bilgi yoğun içeriklerinizi ve verilerinizi takipçilerinizin tek bakışta anlayabileceği şık, akılda kalıcı infografiklere çeviriyoruz.",
-              img: "/sosyal_medya_resimler/sosyal_medya_partlar/3.webp",
+              img: "/assets/common/3.webp",
               span: "md:col-span-1 md:row-span-1 min-h-[380px]",
               bgClass: "bg-[#1f1614]",
               imageClass: "absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700",
@@ -461,7 +461,7 @@ const SosyalMedyaYeni = () => {
             {
               title: "Trendlere Özel Hızlı Üretim",
               desc: "Gündeme düşen viral bir akım mı var? Klasik ajansların onay sürecini beklemeden, aynı gün saatler içinde trene dahil olmanızı sağlayan hızlı kreatifler.",
-              img: "/sosyal_medya_resimler/sosyal_medya_partlar/4.webp",
+              img: "/assets/common/4.webp",
               span: "md:col-span-2 md:row-span-1 min-h-[380px]",
               bgClass: "bg-[#0b1426]",
               imageClass: "absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700",
@@ -469,7 +469,7 @@ const SosyalMedyaYeni = () => {
             {
               title: "Gelecek Odaklı Planlama",
               desc: "Stüdyo veya üretim sıkıntısı yaşamadan 1 ay ileriye dönük içerik takviminizi oluşturuyoruz. Hiçbir aksaklık olmadan tüm paylaşımlarınız tıkır tıkır işliyor.",
-              img: "/sosyal_medya_resimler/sosyal_medya_partlar/5.webp",
+              img: "/assets/common/5.webp",
               span: "md:col-span-1 md:row-span-1 min-h-[380px]",
               bgClass: "bg-[#102a1d]",
               imageClass: "absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700",
@@ -477,7 +477,7 @@ const SosyalMedyaYeni = () => {
             {
               title: "Platforma Özel Optimizasyon",
               desc: "Instagram'ın estetiği, TikTok'un hız ve doğallığı, LinkedIn'in kurumsallığı. Her mecra için içeriği kanalın ruhuna uygun uyarlıyoruz.",
-              img: "/sosyal_medya_resimler/sosyal_medya_partlar/6.webp",
+              img: "/assets/common/6.webp",
               span: "md:col-span-1 md:row-span-1 min-h-[380px]",
               bgClass: "bg-[#6d5b4a]",
               imageClass: "absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-overlay group-hover:scale-105 transition-transform duration-700",
@@ -485,7 +485,7 @@ const SosyalMedyaYeni = () => {
             {
               title: "Marka Kimliği Entegrasyonu",
               desc: "Kullanılan paletlerden tipografiye kadar, markanıza özgü görsel kimliğin tüm sosyal medyada tek ve güçlü bir ses olmasını sağlıyoruz.",
-              img: "/sosyal_medya_resimler/sosyal_medya_partlar/7.webp",
+              img: "/assets/common/7.webp",
               span: "md:col-span-1 md:row-span-1 min-h-[380px]",
               bgClass: "bg-[#0b2117]",
               imageClass: "absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-screen group-hover:scale-105 transition-transform duration-700",

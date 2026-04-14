@@ -13,92 +13,92 @@ const colors = {
 
 // --- DATA ---
 const HERO_IMAGES = [
-  "/sosyal_medya_resimler/hero/02_story_scene.webp",
-  "/sosyal_medya_resimler/hero/03085_haki_2k_4_5_shot_03_action_muddy_step.webp",
-  "/sosyal_medya_resimler/hero/03085_haki_2k_4_5_shot_06_american_plan_rain_2k_16_9_shot_03_lifestyle_action_1.webp",
-  "/sosyal_medya_resimler/hero/03085_haki_2k_4_5_shot_13_action_brushing_foliage.webp",
-  "/sosyal_medya_resimler/hero/10600_kar2.webp",
-  "/sosyal_medya_resimler/hero/1_2k_4_5_undefined.webp",
-  "/sosyal_medya_resimler/hero/1_2k_auto_undefined.webp",
-  "/sosyal_medya_resimler/hero/20220_bej_2k_4_5_shot_1_1.webp",
-  "/sosyal_medya_resimler/hero/20220_bej_2k_4_5_shot_5.webp",
-  "/sosyal_medya_resimler/hero/20251220_kive_image_1766252478437.webp",
-  "/sosyal_medya_resimler/hero/20251220_kive_image_1766252663631.webp",
-  "/sosyal_medya_resimler/hero/20251223_kive_image_1766488770214.webp",
-  "/sosyal_medya_resimler/hero/20251223_kive_image_1766489186478.webp",
-  "/sosyal_medya_resimler/hero/53320_kirmizi_undefined_16x9_2k.webp",
-  "/sosyal_medya_resimler/hero/53320_kirmiziscene_2_exterior_06_prompt_wide_environmental_shot_the_model_is_walking_slowly_past_the_vintage_car_on_the_snowy_sidewalk_hands_relaxed_at_his_sides_he_wears_the_red_sweatshirt_and_black_trousers_the_scene_captures_the_ful.webp",
-  "/sosyal_medya_resimler/hero/53920_imaj.webp",
-  "/sosyal_medya_resimler/hero/gemini_generated_image_arjcizarjcizarjc_3.webp",
-  "/sosyal_medya_resimler/hero/img_20251214_162518.webp",
-  "/sosyal_medya_resimler/hero/img_20251214_162551.webp",
-  "/sosyal_medya_resimler/hero/id_scenario_2_end_frame_prompt_2k_20.webp",
-  "/sosyal_medya_resimler/hero/id_scenario_creative_01_start_frame_pr_1.webp",
-  "/sosyal_medya_resimler/hero/whatsapp_image_2026_03_25_at_144305_1_2k_4_5_01_hero_wide.webp",
-  "/sosyal_medya_resimler/hero/whatsapp_image_2026_03_25_at_144305_1_2k_4_5_05_macro_texture.webp",
-  "/sosyal_medya_resimler/hero/whatsapp_image_2026_03_25_at_144311_1_2k_4_5_02_story_scene_1.webp",
-  "/sosyal_medya_resimler/hero/whatsapp_image_2026_03_25_at_144311_1_2k_4_5_02_story_scene.webp",
-  "/sosyal_medya_resimler/hero/whatsapp_image_2026_03_25_at_144311_1_2k_4_5_06_macro_fabric.webp",
-  "/sosyal_medya_resimler/hero/whatsapp_image_2026_03_25_at_144311_2_2k_4_5_02_story_full.webp",
-  "/sosyal_medya_resimler/hero/whatsapp_image_2026_03_25_at_144311_2_2k_4_5_04_drape_semiback.webp",
-  "/sosyal_medya_resimler/hero/whatsapp_image_2026_03_25_at_144311_2_2k_4_5_05_creative_close.webp",
-  "/sosyal_medya_resimler/hero/whatsapp_image_2026_03_25_at_222638_2k_4_5_01_hero_wide.webp",
-  "/sosyal_medya_resimler/hero/whatsapp_image_2026_03_25_at_222638_2k_4_5_05_creative_close.webp",
-  "/sosyal_medya_resimler/hero/whatsapp_image_2026_03_25_at_222638_2k_4_5_06_macro_pattern.webp",
-  "/sosyal_medya_resimler/hero/whatsapp_image_2026_03_25_at_222652_2k_4_5_04_flatlay_topdown.webp",
-  "/sosyal_medya_resimler/hero/whatsapp_image_2026_03_25_at_222652_2k_4_5_05_macro_texture.webp",
-  "/sosyal_medya_resimler/hero/detay_ayakkab2.webp",
-  "/sosyal_medya_resimler/hero/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined10.webp",
-  "/sosyal_medya_resimler/hero/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined16.webp",
-  "/sosyal_medya_resimler/hero/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined18.webp",
-  "/sosyal_medya_resimler/hero/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined2.webp",
-  "/sosyal_medya_resimler/hero/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined4.webp"
+  "/assets/pages/homeyeni/02_story_scene.webp",
+  "/assets/pages/homeyeni/03085_haki_2k_4_5_shot_03_action_muddy_step.webp",
+  "/assets/pages/homeyeni/03085_haki_2k_4_5_shot_06_american_plan_rain_2k_16_9_shot_03_lifestyle_action_1.webp",
+  "/assets/pages/homeyeni/03085_haki_2k_4_5_shot_13_action_brushing_foliage.webp",
+  "/assets/pages/homeyeni/10600_kar2.webp",
+  "/assets/common/1_2k_4_5_undefined.webp",
+  "/assets/common/1_2k_auto_undefined.webp",
+  "/assets/pages/homeyeni/20220_bej_2k_4_5_shot_1_1.webp",
+  "/assets/pages/homeyeni/20220_bej_2k_4_5_shot_5.webp",
+  "/assets/pages/homeyeni/20251220_kive_image_1766252478437.webp",
+  "/assets/pages/homeyeni/20251220_kive_image_1766252663631.webp",
+  "/assets/pages/homeyeni/20251223_kive_image_1766488770214.webp",
+  "/assets/pages/homeyeni/20251223_kive_image_1766489186478.webp",
+  "/assets/pages/homeyeni/53320_kirmizi_undefined_16x9_2k.webp",
+  "/assets/pages/homeyeni/53320_kirmiziscene_2_exterior_06_prompt_wide_environmental_shot_the_model_is_walking_slowly_past_the_vintage_car_on_the_snowy_sidewalk_hands_relaxed_at_his_sides_he_wears_the_red_sweatshirt_and_black_trousers_the_scene_captures_the_ful.webp",
+  "/assets/pages/homeyeni/53920_imaj.webp",
+  "/assets/pages/homeyeni/gemini_generated_image_arjcizarjcizarjc_3.webp",
+  "/assets/pages/homeyeni/img_20251214_162518.webp",
+  "/assets/pages/homeyeni/img_20251214_162551.webp",
+  "/assets/pages/homeyeni/id_scenario_2_end_frame_prompt_2k_20.webp",
+  "/assets/pages/homeyeni/id_scenario_creative_01_start_frame_pr_1.webp",
+  "/assets/pages/homeyeni/whatsapp_image_2026_03_25_at_144305_1_2k_4_5_01_hero_wide.webp",
+  "/assets/pages/homeyeni/whatsapp_image_2026_03_25_at_144305_1_2k_4_5_05_macro_texture.webp",
+  "/assets/pages/homeyeni/whatsapp_image_2026_03_25_at_144311_1_2k_4_5_02_story_scene_1.webp",
+  "/assets/pages/homeyeni/whatsapp_image_2026_03_25_at_144311_1_2k_4_5_02_story_scene.webp",
+  "/assets/pages/homeyeni/whatsapp_image_2026_03_25_at_144311_1_2k_4_5_06_macro_fabric.webp",
+  "/assets/pages/homeyeni/whatsapp_image_2026_03_25_at_144311_2_2k_4_5_02_story_full.webp",
+  "/assets/pages/homeyeni/whatsapp_image_2026_03_25_at_144311_2_2k_4_5_04_drape_semiback.webp",
+  "/assets/pages/homeyeni/whatsapp_image_2026_03_25_at_144311_2_2k_4_5_05_creative_close.webp",
+  "/assets/pages/homeyeni/whatsapp_image_2026_03_25_at_222638_2k_4_5_01_hero_wide.webp",
+  "/assets/pages/homeyeni/whatsapp_image_2026_03_25_at_222638_2k_4_5_05_creative_close.webp",
+  "/assets/pages/homeyeni/whatsapp_image_2026_03_25_at_222638_2k_4_5_06_macro_pattern.webp",
+  "/assets/pages/homeyeni/whatsapp_image_2026_03_25_at_222652_2k_4_5_04_flatlay_topdown.webp",
+  "/assets/pages/homeyeni/whatsapp_image_2026_03_25_at_222652_2k_4_5_05_macro_texture.webp",
+  "/assets/pages/homeyeni/detay_ayakkab2.webp",
+  "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined10.webp",
+  "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined16.webp",
+  "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined18.webp",
+  "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined2.webp",
+  "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined4.webp"
 ];
 
 const BRAND_LOGOS = [
-    "/sosyal_medya_resimler/marka_logo/cazador-logo.webp",
-    "/sosyal_medya_resimler/marka_logo/venus_logo.webp",
-    "/sosyal_medya_resimler/marka_logo/minadrinks_logo.webp",
-    "/sosyal_medya_resimler/marka_logo/campandmap_logo.webp"
+    "/assets/brands/cazador/cazador_logo.webp",
+    "/assets/brands/venus/venus_logo.webp",
+    "/assets/brands/mina_drinks/minadrinks_logo.webp",
+    "/assets/brands/camp_and_map/campandmap_logo.webp"
 ];
 
 const COMPARE_TABS = [
   { id: "ghost", label: "Ghost → E-Ticaret", before: "/sosyal_medya_resimler/Hayalet öncesi sonrası/L0000000751458 (1).jpg", after: "/sosyal_medya_resimler/Hayalet öncesi sonrası/L0000000751458 (6).jpg" },
-  { id: "flat", label: "Düz Ürün → Kampanya", before: "/sosyal_medya_resimler/hero/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined18.webp", after: "/sosyal_medya_resimler/hero/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined16.webp" },
-  { id: "lifestyle", label: "Ham → Lifestyle", before: "/sosyal_medya_resimler/Hayalet öncesi sonrası/L0000000758648 (1).jpg", after: "/sosyal_medya_resimler/hero/03085_haki_2k_4_5_shot_13_action_brushing_foliage.webp" }
+  { id: "flat", label: "Düz Ürün → Kampanya", before: "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined18.webp", after: "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined16.webp" },
+  { id: "lifestyle", label: "Ham → Lifestyle", before: "/sosyal_medya_resimler/Hayalet öncesi sonrası/L0000000758648 (1).jpg", after: "/assets/pages/homeyeni/03085_haki_2k_4_5_shot_13_action_brushing_foliage.webp" }
 ];
 
 const SERVICES = [
-  { title: "AI Prodüksiyon", desc: "Stüdyo maliyetlerini sıfırlayın. Kusursuz sanal mankenler ve ürün görselleri oluşturun.", icon: <Zap size={32} />, path: "/hizmetler/ai-produksiyon", bg: "bg-[#18201d]", img: "/sosyal_medya_resimler/standart_gorseller/image1.webp", cols: "md:col-span-8" },
-  { title: "E-Ticaret Yönetimi", desc: "Satışlarınızı en üst düzeye çıkaran kapsamlı mağaza kurulumları ve optimizasyonlar.", icon: <Box size={32} />, path: "/hizmetler/ai-produksiyon", bg: "bg-[#336b9c]", img: "/sosyal_medya_resimler/standart_gorseller/image2.webp", cols: "md:col-span-4" },
-  { title: "Sosyal Medya", desc: "Markanızı öne çıkaran etkili içerikler, Reels videoları ve kreatif yönetim.", icon: <Play size={32} />, path: "/hizmetler/sosyal-medya", bg: "bg-[#1f1614]", img: "/sosyal_medya_resimler/sosyal_medya_partlar/1.webp", cols: "md:col-span-4" },
-  { title: "Dijital Büyüme", desc: "Veri odaklı metrikler ve dönüşüm optimizasyonlarıyla satış grafiklerinizi hızlıca artırın.", icon: <TrendingUp size={32} />, path: "/hizmetler/sosyal-medya", bg: "bg-[#6d5b4a]", img: "/sosyal_medya_resimler/sosyal_medya_partlar/2.webp", cols: "md:col-span-4" },
-  { title: "Kreatif Tasarım", desc: "Marka kimliğinizi A'dan Z'ye güçlendiren benzersiz kurumsal kimlik ve UI/UX çözümleri.", icon: <Layers size={32} />, path: "/hizmetler/ai-produksiyon", bg: "bg-[#0b1426]", img: "/sosyal_medya_resimler/sosyal_medya_partlar/3.webp", cols: "md:col-span-4" }
+  { title: "AI Prodüksiyon", desc: "Stüdyo maliyetlerini sıfırlayın. Kusursuz sanal mankenler ve ürün görselleri oluşturun.", icon: <Zap size={32} />, path: "/hizmetler/ai-produksiyon", bg: "bg-[#18201d]", img: "/assets/common/image1.webp", cols: "md:col-span-8" },
+  { title: "E-Ticaret Yönetimi", desc: "Satışlarınızı en üst düzeye çıkaran kapsamlı mağaza kurulumları ve optimizasyonlar.", icon: <Box size={32} />, path: "/hizmetler/ai-produksiyon", bg: "bg-[#336b9c]", img: "/assets/common/image2.webp", cols: "md:col-span-4" },
+  { title: "Sosyal Medya", desc: "Markanızı öne çıkaran etkili içerikler, Reels videoları ve kreatif yönetim.", icon: <Play size={32} />, path: "/hizmetler/sosyal-medya", bg: "bg-[#1f1614]", img: "/assets/common/1.webp", cols: "md:col-span-4" },
+  { title: "Dijital Büyüme", desc: "Veri odaklı metrikler ve dönüşüm optimizasyonlarıyla satış grafiklerinizi hızlıca artırın.", icon: <TrendingUp size={32} />, path: "/hizmetler/sosyal-medya", bg: "bg-[#6d5b4a]", img: "/assets/common/2.webp", cols: "md:col-span-4" },
+  { title: "Kreatif Tasarım", desc: "Marka kimliğinizi A'dan Z'ye güçlendiren benzersiz kurumsal kimlik ve UI/UX çözümleri.", icon: <Layers size={32} />, path: "/hizmetler/ai-produksiyon", bg: "bg-[#0b1426]", img: "/assets/common/3.webp", cols: "md:col-span-4" }
 ];
 
 const MANKEN_ASSETS = [
-    { name: "Anna", img: "/sosyal_medya_resimler/sanal_manken/Anna/Anna-1.webp" },
-    { name: "Anna", img: "/sosyal_medya_resimler/sanal_manken/Anna/Anna-2.webp" },
-    { name: "Mike", img: "/sosyal_medya_resimler/sanal_manken/Mike/mike_1.webp" },
-    { name: "Mike", img: "/sosyal_medya_resimler/sanal_manken/Mike/mike_2.webp" },
-    { name: "Nia", img: "/sosyal_medya_resimler/sanal_manken/Nia/Nia-1.webp" },
-    { name: "Nia", img: "/sosyal_medya_resimler/sanal_manken/Nia/Nia-2.webp" },
-    { name: "Nora", img: "/sosyal_medya_resimler/sanal_manken/Nora/Nora-1.webp" },
-    { name: "Nora", img: "/sosyal_medya_resimler/sanal_manken/Nora/Nora-3.webp" }
+    { name: "Anna", img: "/assets/common/anna_1.webp" },
+    { name: "Anna", img: "/assets/common/anna_2.webp" },
+    { name: "Mike", img: "/assets/common/mike_1.webp" },
+    { name: "Mike", img: "/assets/common/mike_2.webp" },
+    { name: "Nia", img: "/assets/common/nia_1.webp" },
+    { name: "Nia", img: "/assets/common/nia_2.webp" },
+    { name: "Nora", img: "/assets/common/nora_1.webp" },
+    { name: "Nora", img: "/assets/common/nora_3.webp" }
 ];
 
 const PORTFOLIO = [
-  { id: 1, client: "Cazador", category: "Reklam Yaratıcılığı", thumbnail: "/sosyal_medya_resimler/cazador/cazador2.webp", spanClass: "md:col-span-4", aspectClass: "aspect-[3/4]" },
-  { id: 2, client: "Venüs Ayakkabı", category: "Sosyal Medya Çekimleri", thumbnail: "/sosyal_medya_resimler/venus/venus2.webp", spanClass: "md:col-span-8", aspectClass: "aspect-square md:aspect-video" },
-  { id: 3, client: "Camp and Map", category: "E-ticaret için Çekimler", thumbnail: "/sosyal_medya_resimler/camp_and_map/camp1.webp", spanClass: "md:col-span-6", aspectClass: "aspect-[4/3]" },
-  { id: 4, client: "Mina Drinks", category: "Katalog Çekimleri", thumbnail: "/sosyal_medya_resimler/mina_drinks/mina1.webp", spanClass: "md:col-span-6", aspectClass: "aspect-[4/3]" }
+  { id: 1, client: "Cazador", category: "Reklam Yaratıcılığı", thumbnail: "/assets/brands/cazador/cazador2.webp", spanClass: "md:col-span-4", aspectClass: "aspect-[3/4]" },
+  { id: 2, client: "Venüs Ayakkabı", category: "Sosyal Medya Çekimleri", thumbnail: "/assets/brands/venus/venus2.webp", spanClass: "md:col-span-8", aspectClass: "aspect-square md:aspect-video" },
+  { id: 3, client: "Camp and Map", category: "E-ticaret için Çekimler", thumbnail: "/assets/brands/camp_and_map/camp1.webp", spanClass: "md:col-span-6", aspectClass: "aspect-[4/3]" },
+  { id: 4, client: "Mina Drinks", category: "Katalog Çekimleri", thumbnail: "/assets/brands/mina_drinks/mina1.webp", spanClass: "md:col-span-6", aspectClass: "aspect-[4/3]" }
 ];
 
 const INFINITE_FORMATS = [
-  { id: 1, title: "Orijinal Çekim (Düz)", img: "/sosyal_medya_resimler/hero/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined18.webp" },
-  { id: 2, title: "E-Ticaret Katalog", img: "/sosyal_medya_resimler/hero/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined2.webp" },
-  { id: 3, title: "Sosyal Medya Post", img: "/sosyal_medya_resimler/hero/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined10.webp" },
-  { id: 4, title: "Kampanya Görseli", img: "/sosyal_medya_resimler/hero/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined16.webp" }
+  { id: 1, title: "Orijinal Çekim (Düz)", img: "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined18.webp" },
+  { id: 2, title: "E-Ticaret Katalog", img: "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined2.webp" },
+  { id: 3, title: "Sosyal Medya Post", img: "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined10.webp" },
+  { id: 4, title: "Kampanya Görseli", img: "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined16.webp" }
 ];
 
 // --- COMPONENTS ---
@@ -546,7 +546,7 @@ const Home = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-auto md:h-[650px]">
                   <div className="bg-[#18201d] rounded-3xl p-10 md:p-12 border border-white/10 relative overflow-hidden group hover:border-[#caf265]/50 hover:shadow-[0_0_50px_rgba(202,242,101,0.05)] transition-all cursor-pointer" onClick={() => navigate('/hizmetler/ai-produksiyon')}>
-                      <img src="/sosyal_medya_resimler/sanal_manken/Anna/Anna-2.webp" className="absolute right-0 bottom-0 w-2/3 h-full object-cover object-[center_20%] mask-fade opacity-50 group-hover:scale-105 group-hover:opacity-60 transition-all duration-1000" alt="Manken" />
+                      <img src="/assets/common/anna_2.webp" className="absolute right-0 bottom-0 w-2/3 h-full object-cover object-[center_20%] mask-fade opacity-50 group-hover:scale-105 group-hover:opacity-60 transition-all duration-1000" alt="Manken" />
                       <div className="relative z-10 w-2/3 h-full flex flex-col">
                          <div className="w-16 h-16 bg-[#caf265] text-[#0b2117] rounded-[1.5rem] flex items-center justify-center mb-8 shadow-xl"><User size={28} /></div>
                          <h3 className="text-4xl md:text-5xl font-display text-white mb-6 leading-tight">Sanal Manken Yaratımı</h3>
@@ -566,7 +566,7 @@ const Home = () => {
                          </div>
                      </div>
                      <div className="bg-[#241a15] rounded-3xl p-10 border border-white/10 relative overflow-hidden group hover:border-white/30 transition-all cursor-pointer" onClick={() => navigate('/hizmetler/ai-produksiyon')}>
-                         <img src="/sosyal_medya_resimler/hero/03085_haki_2k_4_5_shot_13_action_brushing_foliage.webp" className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 group-hover:opacity-60 transition-all duration-700" />
+                         <img src="/assets/pages/homeyeni/03085_haki_2k_4_5_shot_13_action_brushing_foliage.webp" className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 group-hover:opacity-60 transition-all duration-700" />
                          <div className="absolute inset-0 bg-gradient-to-t from-[#110c0a] via-black/50 to-transparent" />
                          <div className="relative z-10 h-full flex flex-col justify-end">
                              <h3 className="text-3xl font-display text-white mb-3">Konsept Lifestyle</h3>

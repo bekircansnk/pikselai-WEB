@@ -46,75 +46,75 @@ const aiProjects: AiProject[] = [
     id: 1,
     client: "Cazador",
     category: "Reklam Yaratıcılığı",
-    thumbnail: "/sosyal_medya_resimler/cazador/cazador2.webp",
+    thumbnail: "/assets/brands/cazador/cazador2.webp",
     description: "Cazador'un yeni sezon koleksiyonu için dinamik ve dikkat çekici sosyal medya kurguları.",
     spanClass: "md:col-span-4",
     aspectClass: "aspect-[3/4]",
-    images: ["/sosyal_medya_resimler/cazador/cazador1.webp", "/sosyal_medya_resimler/cazador/cazador2.webp", "/sosyal_medya_resimler/cazador/cazador3.webp", "/sosyal_medya_resimler/cazador/cazador4.webp"]
+    images: ["/assets/brands/cazador/cazador1.webp", "/assets/brands/cazador/cazador2.webp", "/assets/brands/cazador/cazador3.webp", "/assets/brands/cazador/cazador4.webp"]
   },
   {
     id: 2,
     client: "Venüs Ayakkabı",
     category: "Sosyal Medya Çekimleri",
-    thumbnail: "/sosyal_medya_resimler/venus/venus2.webp",
+    thumbnail: "/assets/brands/venus/venus2.webp",
     description: "Venüs Ayakkabı'nın yeni modelleri için etkileşim odaklı reklam kreatifleri.",
     spanClass: "md:col-span-8",
     aspectClass: "aspect-square md:aspect-video",
-    images: ["/sosyal_medya_resimler/venus/venus1.webp", "/sosyal_medya_resimler/venus/venus2.webp", "/sosyal_medya_resimler/venus/venus3.webp", "/sosyal_medya_resimler/venus/venus4.webp"]
+    images: ["/assets/brands/venus/venus1.webp", "/assets/brands/venus/venus2.webp", "/assets/brands/venus/venus3.webp", "/assets/brands/venus/venus4.webp"]
   },
   {
     id: 3,
     client: "Camp and Map",
     category: "E-ticaret için Çekimler",
-    thumbnail: "/sosyal_medya_resimler/camp_and_map/camp1.webp",
+    thumbnail: "/assets/brands/camp_and_map/camp1.webp",
     description: "Doğa tutkunları için outdoor ruhunu yansıtan etkileyici görsel kurgular.",
     spanClass: "md:col-span-6",
     aspectClass: "aspect-[4/3]",
-    images: ["/sosyal_medya_resimler/camp_and_map/camp1.webp", "/sosyal_medya_resimler/camp_and_map/camp2.webp", "/sosyal_medya_resimler/camp_and_map/camp3.webp", "/sosyal_medya_resimler/camp_and_map/camp4.webp"]
+    images: ["/assets/brands/camp_and_map/camp1.webp", "/assets/brands/camp_and_map/camp2.webp", "/assets/brands/camp_and_map/camp3.webp", "/assets/brands/camp_and_map/camp4.webp"]
   },
   {
     id: 4,
     client: "Mina Drinks",
     category: "Katalog Çekimleri",
-    thumbnail: "/sosyal_medya_resimler/mina_drinks/mina1.webp",
+    thumbnail: "/assets/brands/mina_drinks/mina1.webp",
     description: "Mina Drinks'in ferahlatıcı kimliğini öne çıkaran yapay zeka destekli görseller.",
     spanClass: "md:col-span-6",
     aspectClass: "aspect-[4/3]",
-    images: ["/sosyal_medya_resimler/mina_drinks/mina1.webp", "/sosyal_medya_resimler/mina_drinks/mina2.webp", "/sosyal_medya_resimler/mina_drinks/mina3.webp", "/sosyal_medya_resimler/mina_drinks/mina4.webp"]
+    images: ["/assets/brands/mina_drinks/mina1.webp", "/assets/brands/mina_drinks/mina2.webp", "/assets/brands/mina_drinks/mina3.webp", "/assets/brands/mina_drinks/mina4.webp"]
   }
 ];
 
 const MANKEN_ASSETS = [
   // Anna
-  { name: "Anna", img: "/sosyal_medya_resimler/sanal_manken/Anna/Anna-1.webp" },
-  { name: "Anna", img: "/sosyal_medya_resimler/sanal_manken/Anna/Anna-2.webp" },
-  { name: "Anna", img: "/sosyal_medya_resimler/sanal_manken/Anna/Anna-imaj-1.webp" },
-  { name: "Anna", img: "/sosyal_medya_resimler/sanal_manken/Anna/Anna-imaj-2.webp" },
+  { name: "Anna", img: "/assets/common/anna_1.webp" },
+  { name: "Anna", img: "/assets/common/anna_2.webp" },
+  { name: "Anna", img: "/assets/common/anna_imaj_1.webp" },
+  { name: "Anna", img: "/assets/common/anna_imaj_2.webp" },
   // Mike
-  { name: "Mike", img: "/sosyal_medya_resimler/sanal_manken/Mike/mike_1.webp" },
-  { name: "Mike", img: "/sosyal_medya_resimler/sanal_manken/Mike/mike_2.webp" },
-  { name: "Mike", img: "/sosyal_medya_resimler/sanal_manken/Mike/mike_3.webp" },
-  { name: "Mike", img: "/sosyal_medya_resimler/sanal_manken/Mike/mike_4.webp" },
+  { name: "Mike", img: "/assets/common/mike_1.webp" },
+  { name: "Mike", img: "/assets/common/mike_2.webp" },
+  { name: "Mike", img: "/assets/pages/aiproductionyeni/mike_3.webp" },
+  { name: "Mike", img: "/assets/pages/aiproductionyeni/mike_4.webp" },
   // Nia
-  { name: "Nia", img: "/sosyal_medya_resimler/sanal_manken/Nia/Nia-1.webp" },
-  { name: "Nia", img: "/sosyal_medya_resimler/sanal_manken/Nia/Nia-2.webp" },
-  { name: "Nia", img: "/sosyal_medya_resimler/sanal_manken/Nia/Nia-imaj-4.webp" },
-  { name: "Nia", img: "/sosyal_medya_resimler/sanal_manken/Nia/Nia-imaj-6.webp" },
+  { name: "Nia", img: "/assets/common/nia_1.webp" },
+  { name: "Nia", img: "/assets/common/nia_2.webp" },
+  { name: "Nia", img: "/assets/pages/aiproductionyeni/nia_imaj_4.webp" },
+  { name: "Nia", img: "/assets/pages/aiproductionyeni/nia_imaj_6.webp" },
   // Nora
-  { name: "Nora", img: "/sosyal_medya_resimler/sanal_manken/Nora/Nora-1.webp" },
-  { name: "Nora", img: "/sosyal_medya_resimler/sanal_manken/Nora/Nora-3.webp" },
-  { name: "Nora", img: "/sosyal_medya_resimler/sanal_manken/Nora/Nora-1_imaj.webp" },
-  { name: "Nora", img: "/sosyal_medya_resimler/sanal_manken/Nora/Nora-1_imaj_2.webp" },
+  { name: "Nora", img: "/assets/common/nora_1.webp" },
+  { name: "Nora", img: "/assets/common/nora_3.webp" },
+  { name: "Nora", img: "/assets/pages/aiproductionyeni/nora_1_imaj.webp" },
+  { name: "Nora", img: "/assets/pages/aiproductionyeni/nora_1_imaj_2.webp" },
   // Sora
-  { name: "Sora", img: "/sosyal_medya_resimler/sanal_manken/Sora/sora_1.webp" },
-  { name: "Sora", img: "/sosyal_medya_resimler/sanal_manken/Sora/sora_3.webp" },
-  { name: "Sora", img: "/sosyal_medya_resimler/sanal_manken/Sora/Sora-imaj-11.webp" },
-  { name: "Sora", img: "/sosyal_medya_resimler/sanal_manken/Sora/Sora-imaj-5.webp" },
+  { name: "Sora", img: "/assets/pages/aiproductionyeni/sora_1.webp" },
+  { name: "Sora", img: "/assets/pages/aiproductionyeni/sora_3.webp" },
+  { name: "Sora", img: "/assets/pages/aiproductionyeni/sora_imaj_11.webp" },
+  { name: "Sora", img: "/assets/pages/aiproductionyeni/sora_imaj_5.webp" },
   // Zoe
-  { name: "Zoe", img: "/sosyal_medya_resimler/sanal_manken/Zoe/Zoe-1.webp" },
-  { name: "Zoe", img: "/sosyal_medya_resimler/sanal_manken/Zoe/Zoe-5.webp" },
-  { name: "Zoe", img: "/sosyal_medya_resimler/sanal_manken/Zoe/Zoe-imaj-1.webp" },
-  { name: "Zoe", img: "/sosyal_medya_resimler/sanal_manken/Zoe/Zoe-imaj-5.webp" }
+  { name: "Zoe", img: "/assets/pages/aiproductionyeni/zoe_1.webp" },
+  { name: "Zoe", img: "/assets/pages/aiproductionyeni/zoe_5.webp" },
+  { name: "Zoe", img: "/assets/pages/aiproductionyeni/zoe_imaj_1.webp" },
+  { name: "Zoe", img: "/assets/pages/aiproductionyeni/zoe_imaj_5.webp" }
 ];
 
 const MankenRow = ({ items, reverse = false, duration = 40 }: { items: typeof MANKEN_ASSETS, reverse?: boolean, duration?: number }) => (
@@ -141,73 +141,73 @@ const MankenRow = ({ items, reverse = false, duration = 40 }: { items: typeof MA
 
 
 const GHOST_ASSETS = [
-  { img1: "/sosyal_medya_resimler/ghost_v2/1_ön.webp", img2: "/sosyal_medya_resimler/ghost_v2/1_arka.webp" },
-  { img1: "/sosyal_medya_resimler/ghost_v2/2_ön.webp", img2: "/sosyal_medya_resimler/ghost_v2/2_arka.webp" },
-  { img1: "/sosyal_medya_resimler/ghost_v2/3_ön.webp", img2: "/sosyal_medya_resimler/ghost_v2/3_arka.webp" },
-  { img1: "/sosyal_medya_resimler/ghost_v2/4_ön.webp", img2: "/sosyal_medya_resimler/ghost_v2/4_arka.webp" },
-  { img1: "/sosyal_medya_resimler/ghost_v2/5_ön.webp", img2: "/sosyal_medya_resimler/ghost_v2/5_arka.webp" },
-  { img1: "/sosyal_medya_resimler/ghost_v2/6_ön.webp", img2: "/sosyal_medya_resimler/ghost_v2/6_arka.webp" },
-  { img1: "/sosyal_medya_resimler/ghost_v2/7_ön.webp", img2: "/sosyal_medya_resimler/ghost_v2/7_arka.webp" },
-  { img1: "/sosyal_medya_resimler/ghost_v2/8_ön.webp", img2: "/sosyal_medya_resimler/ghost_v2/8_arka.webp" },
-  { img1: "/sosyal_medya_resimler/ghost_v2/9_ön.webp", img2: "/sosyal_medya_resimler/ghost_v2/9_arka.webp" }
+  { img1: "/assets/common/1_n.webp", img2: "/assets/common/1_arka.webp" },
+  { img1: "/assets/pages/aiproductionyeni/2_n.webp", img2: "/assets/pages/aiproductionyeni/2_arka.webp" },
+  { img1: "/assets/common/3_n.webp", img2: "/assets/common/3_arka.webp" },
+  { img1: "/assets/pages/aiproductionyeni/4_n.webp", img2: "/assets/pages/aiproductionyeni/4_arka.webp" },
+  { img1: "/assets/common/5_n.webp", img2: "/assets/common/5_arka.webp" },
+  { img1: "/assets/pages/aiproductionyeni/6_n.webp", img2: "/assets/pages/aiproductionyeni/6_arka.webp" },
+  { img1: "/assets/pages/aiproductionyeni/7_n.webp", img2: "/assets/pages/aiproductionyeni/7_arka.webp" },
+  { img1: "/assets/pages/aiproductionyeni/8_n.webp", img2: "/assets/pages/aiproductionyeni/8_arka.webp" },
+  { img1: "/assets/pages/aiproductionyeni/9_n.webp", img2: "/assets/pages/aiproductionyeni/9_arka.webp" }
 ];
 
 const LIFESTYLE_PROJECTS = [
   {
     name: "Ella-1 Full Body",
     images: [
-      "/sosyal_medya_resimler/konsept/1/Ella-1_1_2K_4_5_01_Full_Body.webp",
-      "/sosyal_medya_resimler/konsept/1/Ella-1_1_2K_4_5_01_Full_Body_Power_Stride (1).webp",
-      "/sosyal_medya_resimler/konsept/1/Ella-1_1_2K_4_5_02_Full_Body.webp",
-      "/sosyal_medya_resimler/konsept/1/Ella-1_1_2K_4_5_03_Full_Body_Sitting_Step.webp",
-      "/sosyal_medya_resimler/konsept/1/Ella-1_1_2K_4_5_04_Close_Up_Side_Profile.webp",
-      "/sosyal_medya_resimler/konsept/1/Ella-1_1_2K_4_5_04_Mid_Shot_mid_walk_legs.webp"
+      "/assets/common/ella_1_1_2k_4_5_01_full_body.webp",
+      "/assets/pages/aiproductionyeni/ella_1_1_2k_4_5_01_full_body_power_stride_1.webp",
+      "/assets/common/ella_1_1_2k_4_5_02_full_body.webp",
+      "/assets/common/ella_1_1_2k_4_5_03_full_body_sitting_step.webp",
+      "/assets/common/ella_1_1_2k_4_5_04_close_up_side_profile.webp",
+      "/assets/pages/aiproductionyeni/ella_1_1_2k_4_5_04_mid_shot_mid_walk_legs.webp"
     ]
   },
   {
     name: "Mila-1 Studio",
     images: [
-      "/sosyal_medya_resimler/konsept/2/Mila-1_image00004_2K_4_5_01_Hero_Full (2).webp",
-      "/sosyal_medya_resimler/konsept/2/Mila-1_image00004_2K_4_5_02_Story_Full (2).webp",
-      "/sosyal_medya_resimler/konsept/2/Mila-1_image00004_2K_4_5_03_Portrait_Mid (2).webp",
-      "/sosyal_medya_resimler/konsept/2/Mila-1_image00004_2K_4_5_04_CloseUp_Knee (2).webp"
+      "/assets/pages/aiproductionyeni/mila_1_image00004_2k_4_5_01_hero_full_2.webp",
+      "/assets/pages/aiproductionyeni/mila_1_image00004_2k_4_5_02_story_full_2.webp",
+      "/assets/pages/aiproductionyeni/mila_1_image00004_2k_4_5_03_portrait_mid_2.webp",
+      "/assets/pages/aiproductionyeni/mila_1_image00004_2k_4_5_04_closeup_knee_2.webp"
     ]
   },
   {
     name: "Ella-1 Portrait",
     images: [
-      "/sosyal_medya_resimler/konsept/3/Ella-1_1_2K_4_5_02_Story_Full.webp",
-      "/sosyal_medya_resimler/konsept/3/Ella-1_1_2K_4_5_03_Portrait_Mid (1).webp",
-      "/sosyal_medya_resimler/konsept/3/Ella-1_1_2K_4_5_03_Portrait_Mid.webp",
-      "/sosyal_medya_resimler/konsept/3/Ella-1_1_2K_4_5_04_CloseUp_Knee.webp"
+      "/assets/pages/aiproductionyeni/ella_1_1_2k_4_5_02_story_full.webp",
+      "/assets/pages/aiproductionyeni/ella_1_1_2k_4_5_03_portrait_mid_1.webp",
+      "/assets/pages/aiproductionyeni/ella_1_1_2k_4_5_03_portrait_mid.webp",
+      "/assets/pages/aiproductionyeni/ella_1_1_2k_4_5_04_closeup_knee.webp"
     ]
   },
   {
     name: "Anna-1 Cinematic",
     images: [
-      "/sosyal_medya_resimler/konsept/4/Anna-1_1_2K_4_5_02_Full_Body_Sitting (3).webp",
-      "/sosyal_medya_resimler/konsept/4/Anna-1_1_2K_4_5_02_Full_Body_Sitting (4).webp",
-      "/sosyal_medya_resimler/konsept/4/Anna-1_1_2K_4_5_03_Full_Body_Leaning (2).webp",
-      "/sosyal_medya_resimler/konsept/4/Anna-1_1_2K_4_5_06_Extreme_Close_Up_Crossed_Ankles.webp"
+      "/assets/pages/aiproductionyeni/anna_1_1_2k_4_5_02_full_body_sitting_3.webp",
+      "/assets/pages/aiproductionyeni/anna_1_1_2k_4_5_02_full_body_sitting_4.webp",
+      "/assets/pages/aiproductionyeni/anna_1_1_2k_4_5_03_full_body_leaning_2.webp",
+      "/assets/pages/aiproductionyeni/anna_1_1_2k_4_5_06_extreme_close_up_crossed_ankles.webp"
     ]
   },
   {
     name: "20220-SİYAH Pro",
     images: [
-      "/sosyal_medya_resimler/konsept/5/20220-SİYAH_2K_4_5_scene_02_shot_07_hero.webp",
-      "/sosyal_medya_resimler/konsept/5/20220-SİYAH_2K_4_5_scene_02_shot_08_macro.webp",
-      "/sosyal_medya_resimler/konsept/5/20220-SİYAH_2K_4_5_scene_02_shot_09_action.webp",
-      "/sosyal_medya_resimler/konsept/5/20220-SİYAH_2K_4_5_scene_02_shot_10_profile.webp",
-      "/sosyal_medya_resimler/konsept/5/20220-SİYAH_2K_4_5_scene_02_shot_12_american.webp"
+      "/assets/pages/aiproductionyeni/20220_siyah_2k_4_5_scene_02_shot_07_hero.webp",
+      "/assets/pages/aiproductionyeni/20220_siyah_2k_4_5_scene_02_shot_08_macro.webp",
+      "/assets/pages/aiproductionyeni/20220_siyah_2k_4_5_scene_02_shot_09_action.webp",
+      "/assets/pages/aiproductionyeni/20220_siyah_2k_4_5_scene_02_shot_10_profile.webp",
+      "/assets/pages/aiproductionyeni/20220_siyah_2k_4_5_scene_02_shot_12_american.webp"
     ]
   },
   {
     name: "10200-KIRMIZI Life",
     images: [
-      "/sosyal_medya_resimler/konsept/6/10200-KIRMIZI_2K_2_3_shot_02_macro.webp",
-      "/sosyal_medya_resimler/konsept/6/10200-KIRMIZI_2K_2_3_shot_03_lifestyle.webp",
-      "/sosyal_medya_resimler/konsept/6/10200-KIRMIZI_2K_2_3_shot_04_side_profile.webp",
-      "/sosyal_medya_resimler/konsept/6/10200-KIRMIZI_2K_2_3_shot_06_american_plan.webp"
+      "/assets/pages/aiproductionyeni/10200_kirmizi_2k_2_3_shot_02_macro.webp",
+      "/assets/pages/aiproductionyeni/10200_kirmizi_2k_2_3_shot_03_lifestyle.webp",
+      "/assets/pages/aiproductionyeni/10200_kirmizi_2k_2_3_shot_04_side_profile.webp",
+      "/assets/pages/aiproductionyeni/10200_kirmizi_2k_2_3_shot_06_american_plan.webp"
     ]
   }
 ];
@@ -249,12 +249,12 @@ const ExpandableProductShowcase = () => {
       title: "Mina Drinks",
       category: "GASTRONOMİ",
       desc: "Gastronomik kurgu ve yüksek çözünürlüklü detaylar.",
-      mainImg: "/sosyal_medya_resimler/urun_fotograf/mina_drink_1.webp",
+      mainImg: "/assets/common/mina_drink_1.webp",
       gridImgs: [
-        "/sosyal_medya_resimler/urun_fotograf/mina_drink_1.webp",
-        "/sosyal_medya_resimler/urun_fotograf/mina_drink_2.webp",
-        "/sosyal_medya_resimler/urun_fotograf/mina_drink_3.webp",
-        "/sosyal_medya_resimler/urun_fotograf/mina_drink_4.webp",
+        "/assets/common/mina_drink_1.webp",
+        "/assets/common/mina_drink_2.webp",
+        "/assets/common/mina_drink_3.webp",
+        "/assets/common/mina_drink_4.webp",
       ]
     },
     {
@@ -262,14 +262,14 @@ const ExpandableProductShowcase = () => {
       title: "ROSSEA",
       category: "MODA & TEKSTİL",
       desc: "Tekstil dokusunu ve ışık oyunlarını vurgulayan stüdyo çekimi.",
-      mainImg: "/sosyal_medya_resimler/urun_fotograf/esarp_1.webp",
+      mainImg: "/assets/common/esarp_1.webp",
       gridImgs: [
-        "/sosyal_medya_resimler/urun_fotograf/esarp_1.webp",
-        "/sosyal_medya_resimler/urun_fotograf/esarp_2.webp",
-        "/sosyal_medya_resimler/urun_fotograf/esarp_3.webp",
-        "/sosyal_medya_resimler/urun_fotograf/esarp_4.webp",
-        "/sosyal_medya_resimler/urun_fotograf/esarp_5.webp",
-        "/sosyal_medya_resimler/urun_fotograf/esarp_6.webp",
+        "/assets/common/esarp_1.webp",
+        "/assets/common/esarp_2.webp",
+        "/assets/common/esarp_3.webp",
+        "/assets/common/esarp_4.webp",
+        "/assets/common/esarp_5.webp",
+        "/assets/common/esarp_6.webp",
       ]
     },
     {
@@ -277,13 +277,13 @@ const ExpandableProductShowcase = () => {
       title: "CAZADOR Kazak",
       category: "ERKEK GİYİM",
       desc: "Modern erkek giyim siluetleri ve profesyonel mekan kurgusu.",
-      mainImg: "/sosyal_medya_resimler/urun_fotograf/man_kazak.webp",
+      mainImg: "/assets/common/man_kazak.webp",
       gridImgs: [
-        "/sosyal_medya_resimler/urun_fotograf/man_kazak.webp",
-        "/sosyal_medya_resimler/urun_fotograf/man_kazak_2.webp",
-        "/sosyal_medya_resimler/urun_fotograf/man_kazak_3.webp",
+        "/assets/common/man_kazak.webp",
+        "/assets/common/man_kazak_2.webp",
+        "/assets/common/man_kazak_3.webp",
         "/sosyal_medya_resimler/urun_fotograf/man_kazak_4.webp",
-        "/sosyal_medya_resimler/urun_fotograf/man_kazak_5.webp",
+        "/assets/pages/aiproductionyeni/man_kazak_5.webp",
       ]
     },
     {
@@ -291,12 +291,12 @@ const ExpandableProductShowcase = () => {
       title: "CAMP and MAP",
       category: "LIFESTYLE",
       desc: "Doğa ile ürünün kusursuz uyumu ve atmosferik çekimler.",
-      mainImg: "/sosyal_medya_resimler/urun_fotograf/ca.webp",
+      mainImg: "/assets/common/ca.webp",
       gridImgs: [
-        "/sosyal_medya_resimler/urun_fotograf/ca.webp",
+        "/assets/common/ca.webp",
         "/sosyal_medya_resimler/urun_fotograf/CAMPANDMAP%20LOGO%203_4_5_2K%20(4)%202.jpg",
         "/sosyal_medya_resimler/urun_fotograf/Camp-imaj_Magic%20Hamak_4x5_scene_1_shot_1_arrival.png",
-        "/sosyal_medya_resimler/urun_fotograf/Camp-imaj_Set1_4x5_scene_1_shot_3_wide.webp",
+        "/assets/common/camp_imaj_set1_4x5_scene_1_shot_3_wide.webp",
       ]
     }
   ];
@@ -635,7 +635,7 @@ const AiProduction = () => {
         {/* 1. HERO SECTION */}
         <section className="relative pt-24 pb-12 lg:pt-32 lg:pb-16 px-6 md:px-16 lg:px-24 overflow-hidden min-h-screen flex items-center bg-black">
           <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none opacity-80 brightness-[0.7] contrast-[1.1] scale-[1.15] translate-y-8">
-            <source src="/as.mp4" type="video/mp4" />
+            <source src="/assets/pages/aiproductionyeni/as.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-b from-[#D97941]/20 via-transparent to-transparent z-[1] pointer-events-none" />
           <div className="max-w-[1400px] mx-auto relative z-10 w-full">

@@ -108,6 +108,16 @@ const SosyalMedyaYeni = () => {
     cursorY.set(e.clientY);
   };
 
+  const [isHovering, setIsHovering] = useState(false);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelectedProject(null);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   useEffect(() => {
     if (selectedProject) {
       document.body.style.overflow = 'hidden';
@@ -771,6 +781,8 @@ const SosyalMedyaYeni = () => {
                   className={`group relative cursor-pointer ${project.spanClass} flex flex-col`}
                   onClick={() => setSelectedProject(project)}
                   onMouseMove={handleMouseMove}
+                  onMouseEnter={() => setIsHovering(true)}
+                  onMouseLeave={() => setIsHovering(false)}
                 >
                   <div className={`w-full rounded-[2rem] overflow-hidden bg-[#e0dcd3] relative ${project.aspectClass} mb-6 shadow-sm group-hover:shadow-xl transition-shadow duration-500`}>
                     <img src={project.thumbnail} alt={project.client} className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"
@@ -900,7 +912,7 @@ const SosyalMedyaYeni = () => {
           >
             {/* Custom Cursor Inside Modal */}
             <motion.div
-              className="fixed top-0 left-0 pointer-events-none z-[100] hidden md:flex items-center justify-center"
+              className="fixed top-0 left-0 pointer-events-none z-[1000] hidden md:flex items-center justify-center transform-gpu"
               style={{
                 x: cursorX,
                 y: cursorY,
@@ -1053,6 +1065,20 @@ const SosyalMedyaYeni = () => {
               letter-spacing: 0.1px;
           }
       `}</style>
+      {/* İncele Custom Cursor for Projects */}
+      <motion.div
+          className="fixed top-0 left-0 w-24 h-24 bg-gray-400/80 backdrop-blur-sm rounded-full pointer-events-none z-[9999] flex items-center justify-center text-white font-bold text-sm tracking-widest uppercase transform-gpu"
+          style={{
+              x: cursorX,
+              y: cursorY,
+              translateX: '-50%',
+              translateY: '-50%',
+              scale: isHovering ? 1 : 0,
+              opacity: isHovering ? 1 : 0
+          }}
+      >
+          İncele
+      </motion.div>
     </div>
   );
 };

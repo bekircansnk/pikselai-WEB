@@ -251,6 +251,14 @@ const Islerimiz = () => {
     };
 
     useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') setSelectedProject(null);
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, []);
+
+    useEffect(() => {
         if (selectedProject) {
             document.body.style.overflow = 'hidden';
         } else {
@@ -431,15 +439,12 @@ const Islerimiz = () => {
                         exit={{ opacity: 0 }}
                         className="fixed inset-0 z-[100] bg-[#050505]"
                         style={{ cursor: 'none' }}
-                        onMouseMove={(e) => {
-                            setCursorPos({ x: e.clientX, y: e.clientY });
-                        }}
+                        onMouseMove={handleMouseMove}
                     >
                         {/* Custom Cursor */}
                         <motion.div
-                            className="fixed pointer-events-none z-[100]"
-                            animate={{ x: cursorPos.x - (cursorType === 'exit' ? 50 : 12), y: cursorPos.y - (cursorType === 'exit' ? 50 : 12) }}
-                            transition={{ type: 'tween', duration: 0.05, ease: 'linear' }}
+                            className="fixed top-0 left-0 pointer-events-none z-[100] hidden md:flex items-center justify-center transform-gpu"
+                            style={{ x: cursorX, y: cursorY, translateX: '-50%', translateY: '-50%' }}
                         >
                             {cursorType === 'exit' ? (
                                 <div className="w-[100px] h-[100px] rounded-full bg-white flex items-center justify-center shadow-2xl">
@@ -650,7 +655,7 @@ const Islerimiz = () => {
             `}</style>
             {/* ── Custom Cursor ── */}
             <motion.div
-                className="fixed top-0 left-0 w-24 h-24 bg-gray-400/80 backdrop-blur-sm rounded-full pointer-events-none z-[9999] flex items-center justify-center text-white font-bold text-sm tracking-widest uppercase"
+                className="fixed top-0 left-0 w-24 h-24 bg-gray-400/80 backdrop-blur-sm rounded-full pointer-events-none z-[9999] flex items-center justify-center text-white font-bold text-sm tracking-widest uppercase transform-gpu"
                 style={{
                     x: cursorX,
                     y: cursorY,

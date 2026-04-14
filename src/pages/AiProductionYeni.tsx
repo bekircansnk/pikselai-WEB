@@ -215,6 +215,23 @@ const LIFESTYLE_PROJECTS = [
 // --- Bento Detail Overlay (Exact Match with Islerimiz.tsx) ---
 const ExpandableProductShowcase = () => {
   const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
+  const [cursorType, setCursorType] = useState<'dot' | 'exit'>('dot');
+  const [isHovering, setIsHovering] = useState(false);
+  const cursorX = useMotionValue(-100);
+  const cursorY = useMotionValue(-100);
+
+  const handleMouseMoveGlobal = (e: React.MouseEvent) => {
+    cursorX.set(e.clientX);
+    cursorY.set(e.clientY);
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelectedIdx(null);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   // Body Scroll Lock logic
   useEffect(() => {
@@ -293,6 +310,9 @@ const ExpandableProductShowcase = () => {
             key={project.id}
             layoutId={`project-${project.id}`}
             onClick={() => setSelectedIdx(idx)}
+            onMouseMove={handleMouseMoveGlobal}
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
             className="relative group cursor-pointer rounded-2xl md:rounded-[2.5rem] overflow-hidden shadow-2xl bg-[#1A1A1A] aspect-[3/2] md:aspect-[4/3] lg:aspect-[3/2]"
           >
             <motion.img
@@ -322,20 +342,28 @@ const ExpandableProductShowcase = () => {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[999] bg-[#050505] flex flex-col"
             style={{ cursor: 'none' }}
-            onMouseMove={(e) => {
-              const cursor = document.getElementById('custom-modal-cursor');
-              if (cursor) {
-                cursor.style.transform = `translate3d(${e.clientX - 12}px, ${e.clientY - 12}px, 0)`;
-              }
-            }}
+            onMouseMove={handleMouseMoveGlobal}
           >
             {/* Custom Cursor */}
-            <div id="custom-modal-cursor" className="fixed w-6 h-6 rounded-full bg-white shadow-lg pointer-events-none z-[1000] transition-transform duration-75" style={{ top: 0, left: 0 }} />
+            <motion.div
+                className="fixed top-0 left-0 pointer-events-none z-[1000] hidden md:flex items-center justify-center transform-gpu"
+                style={{ x: cursorX, y: cursorY, translateX: '-50%', translateY: '-50%' }}
+            >
+                {cursorType === 'exit' ? (
+                    <div className="w-[100px] h-[100px] rounded-full bg-white flex items-center justify-center shadow-2xl">
+                        <span className="text-black text-sm font-medium">Çıkış</span>
+                    </div>
+                ) : (
+                    <div className="w-[24px] h-[24px] rounded-full bg-white shadow-lg" />
+                )}
+            </motion.div>
 
             {/* Close Button */}
             <motion.button
               initial={{ opacity: 0 }} animate={{ opacity: 1 }}
               onClick={() => setSelectedIdx(null)}
+              onMouseEnter={() => setCursorType('exit')}
+              onMouseLeave={() => setCursorType('dot')}
               className="fixed top-8 right-8 z-[1001] p-4 rounded-full bg-white/10 text-white hover:bg-white hover:text-black transition-all group"
               style={{ cursor: 'none' }}
             >
@@ -395,7 +423,12 @@ const ExpandableProductShowcase = () => {
               </div>
 
               {/* BOTTOM: Compact Typography Section */}
-              <div className="shrink-0 px-8 md:px-24 py-4 md:py-6 border-t border-white/5 bg-[#050505]">
+              <div
+                className="shrink-0 px-8 md:px-24 py-4 md:py-6 border-t border-white/5 bg-[#050505]"
+                onClick={() => setSelectedIdx(null)}
+                onMouseEnter={() => setCursorType('exit')}
+                onMouseLeave={() => setCursorType('dot')}
+              >
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-16 max-w-screen-2xl mx-auto">
                   <div className="shrink-0">
                     <h2 className="text-4xl md:text-6xl font-display italic leading-none text-white">{projects[selectedIdx].title.split(' ')[0]}</h2>
@@ -410,6 +443,23 @@ const ExpandableProductShowcase = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      </AnimatePresence>
+
+      {/* İncele Custom Cursor */}
+      <motion.div
+          className="fixed top-0 left-0 w-24 h-24 bg-gray-400/80 backdrop-blur-sm rounded-full pointer-events-none z-[9999] flex items-center justify-center text-white font-bold text-sm tracking-widest uppercase transform-gpu"
+          style={{
+              x: cursorX,
+              y: cursorY,
+              translateX: '-50%',
+              translateY: '-50%',
+              scale: isHovering ? 1 : 0,
+              opacity: isHovering ? 1 : 0
+          }}
+      >
+          İncele
+      </motion.div>
 
       <style>{`
                 .custom-scrollbar::-webkit-scrollbar { width: 0px; }
@@ -554,6 +604,7 @@ const AiProduction = () => {
 
   const [selectedProject, setSelectedProject] = useState<AiProject | null>(null);
   const [cursorType, setCursorType] = useState<'dot' | 'exit'>('dot');
+  const [isHovering, setIsHovering] = useState(false);
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
 
@@ -561,6 +612,14 @@ const AiProduction = () => {
     cursorX.set(e.clientX);
     cursorY.set(e.clientY);
   };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelectedProject(null);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   useEffect(() => {
     if (selectedProject) {
@@ -740,7 +799,7 @@ const AiProduction = () => {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-10 md:gap-14">
               {aiProjects.map((project, idx) => (
-                <motion.div key={project.id} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }} className={`group relative cursor-pointer ${project.spanClass} flex flex-col`} onClick={() => setSelectedProject(project)}>
+                <motion.div key={project.id} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }} className={`group relative cursor-pointer ${project.spanClass} flex flex-col`} onClick={() => setSelectedProject(project)} onMouseMove={handleMouseMove} onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
                   <div className={`w-full rounded-[3rem] overflow-hidden bg-black/5 relative ${project.aspectClass} mb-8 shadow-sm group-hover:shadow-2xl transition-all duration-700`}>
                     <img src={project.thumbnail} alt={project.client} className="w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-1000" />
                   </div>
@@ -782,10 +841,10 @@ const AiProduction = () => {
       <AnimatePresence>
         {selectedProject && (
           <motion.div key="modal" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[100] bg-[#F4EFE6]" style={{ cursor: 'none' }} onMouseMove={handleMouseMove}>
-            <motion.div className="fixed top-0 left-0 pointer-events-none z-[100] hidden md:flex items-center justify-center" style={{ x: cursorX, y: cursorY, translateX: '-50%', translateY: '-50%' }}>
+            <motion.div className="fixed top-0 left-0 pointer-events-none z-[1000] hidden md:flex items-center justify-center transform-gpu" style={{ x: cursorX, y: cursorY, translateX: '-50%', translateY: '-50%' }}>
               {cursorType === 'exit' ? <div className="w-[100px] h-[100px] rounded-full bg-[#1A1A1A] flex items-center justify-center shadow-2xl"><span className="text-[#F4EFE6] text-sm font-bold">Çıkış</span></div> : <div className="w-[24px] h-[24px] rounded-full bg-[#D97941] shadow-[0_0_20px_rgba(217,121,65,0.5)]" />}
             </motion.div>
-            <button onClick={() => setSelectedProject(null)} className="fixed top-6 right-6 z-50 p-4 rounded-full bg-black/10 text-[#1A1A1A] hover:bg-black hover:text-[#F4EFE6] transition-all group" onMouseEnter={() => setCursorType('exit')} onMouseLeave={() => setCursorType('dot')}>
+            <button onClick={() => setSelectedProject(null)} className="fixed top-6 right-6 z-50 p-4 rounded-full bg-black/10 text-[#1A1A1A] hover:bg-black hover:text-[#F4EFE6] transition-all group" style={{ cursor: 'none' }} onMouseEnter={() => setCursorType('exit')} onMouseLeave={() => setCursorType('dot')}>
               <X size={24} className="group-hover:rotate-90 transition-transform duration-300" />
             </button>
             <div className="w-full h-full flex flex-col bg-[#F4EFE6]">
@@ -803,7 +862,12 @@ const AiProduction = () => {
                   ))}
                 </div>
               </div>
-              <div className="shrink-0 px-8 md:px-16 py-8 md:py-12 border-t border-black/10 bg-[#F4EFE6]" onClick={() => setSelectedProject(null)}>
+              <div
+                className="shrink-0 px-8 md:px-16 py-8 md:py-12 border-t border-black/10 bg-[#F4EFE6]"
+                onClick={() => setSelectedProject(null)}
+                onMouseEnter={() => setCursorType('exit')}
+                onMouseLeave={() => setCursorType('dot')}
+              >
                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 max-w-screen-2xl mx-auto text-[#1A1A1A]">
                   <div className="shrink-0 max-w-md">
                     <h2 className="text-4xl md:text-5xl font-display font-normal italic mb-3">{selectedProject.client}</h2>
@@ -821,6 +885,20 @@ const AiProduction = () => {
           .custom-scrollbar::-webkit-scrollbar { width: 0px; }
           .custom-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
       `}</style>
+      {/* İncele Custom Cursor for Projects */}
+      <motion.div
+          className="fixed top-0 left-0 w-24 h-24 bg-gray-400/80 backdrop-blur-sm rounded-full pointer-events-none z-[9999] flex items-center justify-center text-white font-bold text-sm tracking-widest uppercase transform-gpu"
+          style={{
+              x: cursorX,
+              y: cursorY,
+              translateX: '-50%',
+              translateY: '-50%',
+              scale: isHovering ? 1 : 0,
+              opacity: isHovering ? 1 : 0
+          }}
+      >
+          İncele
+      </motion.div>
     </div>
   );
 };

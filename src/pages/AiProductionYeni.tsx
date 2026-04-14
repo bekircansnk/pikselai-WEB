@@ -56,31 +56,31 @@ const aiProjects: AiProject[] = [
     id: 2,
     client: "Venüs Ayakkabı",
     category: "Sosyal Medya Çekimleri",
-    thumbnail: "/sosyal_medya_resimler/venüs/venus2.webp",
+    thumbnail: "/sosyal_medya_resimler/venus/venus2.webp",
     description: "Venüs Ayakkabı'nın yeni modelleri için etkileşim odaklı reklam kreatifleri.",
     spanClass: "md:col-span-8",
     aspectClass: "aspect-square md:aspect-video",
-    images: ["/sosyal_medya_resimler/venüs/venus1.webp", "/sosyal_medya_resimler/venüs/venus2.webp", "/sosyal_medya_resimler/venüs/venus3.webp", "/sosyal_medya_resimler/venüs/venus4.webp"]
+    images: ["/sosyal_medya_resimler/venus/venus1.webp", "/sosyal_medya_resimler/venus/venus2.webp", "/sosyal_medya_resimler/venus/venus3.webp", "/sosyal_medya_resimler/venus/venus4.webp"]
   },
   {
     id: 3,
     client: "Camp and Map",
     category: "E-ticaret için Çekimler",
-    thumbnail: "/sosyal_medya_resimler/camp and map/camp1.webp",
+    thumbnail: "/sosyal_medya_resimler/camp_and_map/camp1.webp",
     description: "Doğa tutkunları için outdoor ruhunu yansıtan etkileyici görsel kurgular.",
     spanClass: "md:col-span-6",
     aspectClass: "aspect-[4/3]",
-    images: ["/sosyal_medya_resimler/camp and map/camp1.webp", "/sosyal_medya_resimler/camp and map/camp2.webp", "/sosyal_medya_resimler/camp and map/camp3.webp", "/sosyal_medya_resimler/camp and map/camp4.webp"]
+    images: ["/sosyal_medya_resimler/camp_and_map/camp1.webp", "/sosyal_medya_resimler/camp_and_map/camp2.webp", "/sosyal_medya_resimler/camp_and_map/camp3.webp", "/sosyal_medya_resimler/camp_and_map/camp4.webp"]
   },
   {
     id: 4,
     client: "Mina Drinks",
     category: "Katalog Çekimleri",
-    thumbnail: "/sosyal_medya_resimler/mina drinks/mina1.webp",
+    thumbnail: "/sosyal_medya_resimler/mina_drinks/mina1.webp",
     description: "Mina Drinks'in ferahlatıcı kimliğini öne çıkaran yapay zeka destekli görseller.",
     spanClass: "md:col-span-6",
     aspectClass: "aspect-[4/3]",
-    images: ["/sosyal_medya_resimler/mina drinks/mina1.webp", "/sosyal_medya_resimler/mina drinks/mina2.webp", "/sosyal_medya_resimler/mina drinks/mina3.webp", "/sosyal_medya_resimler/mina drinks/mina4.webp"]
+    images: ["/sosyal_medya_resimler/mina_drinks/mina1.webp", "/sosyal_medya_resimler/mina_drinks/mina2.webp", "/sosyal_medya_resimler/mina_drinks/mina3.webp", "/sosyal_medya_resimler/mina_drinks/mina4.webp"]
   }
 ];
 
@@ -249,12 +249,12 @@ const ExpandableProductShowcase = () => {
       title: "Mina Drinks",
       category: "GASTRONOMİ",
       desc: "Gastronomik kurgu ve yüksek çözünürlüklü detaylar.",
-      mainImg: "/sosyal_medya_resimler/ürün_fotoğraf/mina_drink_1.webp",
+      mainImg: "/sosyal_medya_resimler/urun_fotograf/mina_drink_1.webp",
       gridImgs: [
-        "/sosyal_medya_resimler/ürün_fotoğraf/mina_drink_1.webp",
-        "/sosyal_medya_resimler/ürün_fotoğraf/mina_drink_2.webp",
-        "/sosyal_medya_resimler/ürün_fotoğraf/mina_drink_3.webp",
-        "/sosyal_medya_resimler/ürün_fotoğraf/mina_drink_4.webp",
+        "/sosyal_medya_resimler/urun_fotograf/mina_drink_1.webp",
+        "/sosyal_medya_resimler/urun_fotograf/mina_drink_2.webp",
+        "/sosyal_medya_resimler/urun_fotograf/mina_drink_3.webp",
+        "/sosyal_medya_resimler/urun_fotograf/mina_drink_4.webp",
       ]
     },
     {
@@ -262,14 +262,14 @@ const ExpandableProductShowcase = () => {
       title: "ROSSEA",
       category: "MODA & TEKSTİL",
       desc: "Tekstil dokusunu ve ışık oyunlarını vurgulayan stüdyo çekimi.",
-      mainImg: "/sosyal_medya_resimler/ürün_fotoğraf/esarp_1.webp",
+      mainImg: "/sosyal_medya_resimler/urun_fotograf/esarp_1.webp",
       gridImgs: [
-        "/sosyal_medya_resimler/ürün_fotoğraf/esarp_1.webp",
-        "/sosyal_medya_resimler/ürün_fotoğraf/esarp_2.webp",
-        "/sosyal_medya_resimler/ürün_fotoğraf/esarp_3.webp",
-        "/sosyal_medya_resimler/ürün_fotoğraf/esarp_4.webp",
-        "/sosyal_medya_resimler/ürün_fotoğraf/esarp_5.webp",
-        "/sosyal_medya_resimler/ürün_fotoğraf/esarp_6.webp",
+        "/sosyal_medya_resimler/urun_fotograf/esarp_1.webp",
+        "/sosyal_medya_resimler/urun_fotograf/esarp_2.webp",
+        "/sosyal_medya_resimler/urun_fotograf/esarp_3.webp",
+        "/sosyal_medya_resimler/urun_fotograf/esarp_4.webp",
+        "/sosyal_medya_resimler/urun_fotograf/esarp_5.webp",
+        "/sosyal_medya_resimler/urun_fotograf/esarp_6.webp",
       ]
     },
     {
@@ -277,13 +277,13 @@ const ExpandableProductShowcase = () => {
       title: "CAZADOR Kazak",
       category: "ERKEK GİYİM",
       desc: "Modern erkek giyim siluetleri ve profesyonel mekan kurgusu.",
-      mainImg: "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak.webp",
+      mainImg: "/sosyal_medya_resimler/urun_fotograf/man_kazak.webp",
       gridImgs: [
-        "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak.webp",
-        "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak_2.webp",
-        "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak_3.webp",
-        "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak_4.webp",
-        "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak_5.webp",
+        "/sosyal_medya_resimler/urun_fotograf/man_kazak.webp",
+        "/sosyal_medya_resimler/urun_fotograf/man_kazak_2.webp",
+        "/sosyal_medya_resimler/urun_fotograf/man_kazak_3.webp",
+        "/sosyal_medya_resimler/urun_fotograf/man_kazak_4.webp",
+        "/sosyal_medya_resimler/urun_fotograf/man_kazak_5.webp",
       ]
     },
     {
@@ -291,12 +291,12 @@ const ExpandableProductShowcase = () => {
       title: "CAMP and MAP",
       category: "LIFESTYLE",
       desc: "Doğa ile ürünün kusursuz uyumu ve atmosferik çekimler.",
-      mainImg: "/sosyal_medya_resimler/ürün_fotoğraf/ca.webp",
+      mainImg: "/sosyal_medya_resimler/urun_fotograf/ca.webp",
       gridImgs: [
-        "/sosyal_medya_resimler/ürün_fotoğraf/ca.webp",
-        "/sosyal_medya_resimler/ürün_fotoğraf/CAMPANDMAP%20LOGO%203_4_5_2K%20(4)%202.jpg",
-        "/sosyal_medya_resimler/ürün_fotoğraf/Camp-imaj_Magic%20Hamak_4x5_scene_1_shot_1_arrival.png",
-        "/sosyal_medya_resimler/ürün_fotoğraf/Camp-imaj_Set1_4x5_scene_1_shot_3_wide.webp",
+        "/sosyal_medya_resimler/urun_fotograf/ca.webp",
+        "/sosyal_medya_resimler/urun_fotograf/CAMPANDMAP%20LOGO%203_4_5_2K%20(4)%202.jpg",
+        "/sosyal_medya_resimler/urun_fotograf/Camp-imaj_Magic%20Hamak_4x5_scene_1_shot_1_arrival.png",
+        "/sosyal_medya_resimler/urun_fotograf/Camp-imaj_Set1_4x5_scene_1_shot_3_wide.webp",
       ]
     }
   ];

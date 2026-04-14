@@ -62,33 +62,33 @@ const socialProjects: SocialProject[] = [
     client: "Venüs Ayakkabı",
     title: "Ürün Lansmanı",
     category: "Sosyal Medya Çekimleri",
-    thumbnail: "/sosyal_medya_resimler/venüs/venus2.webp",
+    thumbnail: "/sosyal_medya_resimler/venus/venus2.webp",
     description: "Venüs Ayakkabı'nın yeni modelleri için etkileşim odaklı reklam kreatifleri.",
     spanClass: "md:col-span-4",
     aspectClass: "aspect-[3/4]",
-    images: ["/sosyal_medya_resimler/venüs/venus1.webp", "/sosyal_medya_resimler/venüs/venus2.webp", "/sosyal_medya_resimler/venüs/venus3.webp", "/sosyal_medya_resimler/venüs/venus4.webp"]
+    images: ["/sosyal_medya_resimler/venus/venus1.webp", "/sosyal_medya_resimler/venus/venus2.webp", "/sosyal_medya_resimler/venus/venus3.webp", "/sosyal_medya_resimler/venus/venus4.webp"]
   },
   {
     id: 3,
     client: "Camp and Map",
     title: "Doğa Kampanyası",
     category: "E-ticaret için Çekimler",
-    thumbnail: "/sosyal_medya_resimler/camp and map/camp1.webp",
+    thumbnail: "/sosyal_medya_resimler/camp_and_map/camp1.webp",
     description: "Doğa tutkunları için outdoor ruhunu yansıtan etkileyici görsel kurgular.",
     spanClass: "md:col-span-4",
     aspectClass: "aspect-square md:aspect-[3/4] md:h-full lg:aspect-auto",
-    images: ["/sosyal_medya_resimler/camp and map/camp1.webp", "/sosyal_medya_resimler/camp and map/camp2.webp", "/sosyal_medya_resimler/camp and map/camp3.webp", "/sosyal_medya_resimler/camp and map/camp4.webp"]
+    images: ["/sosyal_medya_resimler/camp_and_map/camp1.webp", "/sosyal_medya_resimler/camp_and_map/camp2.webp", "/sosyal_medya_resimler/camp_and_map/camp3.webp", "/sosyal_medya_resimler/camp_and_map/camp4.webp"]
   },
   {
     id: 4,
     client: "Mina Drinks",
     title: "Enerji ve Ferahlık",
     category: "Katalog Çekimleri",
-    thumbnail: "/sosyal_medya_resimler/mina drinks/mina1.webp",
+    thumbnail: "/sosyal_medya_resimler/mina_drinks/mina1.webp",
     description: "Mina Drinks'in ferahlatıcı kimliğini öne çıkaran yapay zeka destekli görseller.",
     spanClass: "md:col-span-8",
     aspectClass: "aspect-square md:aspect-video",
-    images: ["/sosyal_medya_resimler/mina drinks/mina1.webp", "/sosyal_medya_resimler/mina drinks/mina2.webp", "/sosyal_medya_resimler/mina drinks/mina3.webp", "/sosyal_medya_resimler/mina drinks/mina4.webp"]
+    images: ["/sosyal_medya_resimler/mina_drinks/mina1.webp", "/sosyal_medya_resimler/mina_drinks/mina2.webp", "/sosyal_medya_resimler/mina_drinks/mina3.webp", "/sosyal_medya_resimler/mina_drinks/mina4.webp"]
   }
 ];
 
@@ -237,12 +237,12 @@ const SosyalMedyaYeni = () => {
                     className="flex flex-col gap-5"
                   >
                     {[
-                      "/sosyal_medya_resimler/image1.webp",
-                      "/sosyal_medya_resimler/image2.webp",
-                      "/sosyal_medya_resimler/image7.webp",
-                      "/sosyal_medya_resimler/image1.webp",
-                      "/sosyal_medya_resimler/image2.webp",
-                      "/sosyal_medya_resimler/image7.webp"
+                      "/sosyal_medya_resimler/standart_gorseller/image1.webp",
+                      "/sosyal_medya_resimler/standart_gorseller/image2.webp",
+                      "/sosyal_medya_resimler/standart_gorseller/image7.webp",
+                      "/sosyal_medya_resimler/standart_gorseller/image1.webp",
+                      "/sosyal_medya_resimler/standart_gorseller/image2.webp",
+                      "/sosyal_medya_resimler/standart_gorseller/image7.webp"
                     ].map((src, i) => (
                       <div key={`col1-${i}`} className="rounded-2xl overflow-hidden shadow-2xl relative border-2 border-white/5 bg-white/5 backdrop-blur-sm">
                         <img src={src} className="w-full object-cover scale-[1.02]" alt="" />
@@ -257,12 +257,12 @@ const SosyalMedyaYeni = () => {
                     className="flex flex-col gap-5 -mt-32"
                   >
                     {[
-                      "/sosyal_medya_resimler/image4.webp",
-                      "/sosyal_medya_resimler/image5.webp",
-                      "/sosyal_medya_resimler/image3.webp",
-                      "/sosyal_medya_resimler/image4.webp",
-                      "/sosyal_medya_resimler/image5.webp",
-                      "/sosyal_medya_resimler/image3.webp"
+                      "/sosyal_medya_resimler/standart_gorseller/image4.webp",
+                      "/sosyal_medya_resimler/standart_gorseller/image5.webp",
+                      "/sosyal_medya_resimler/standart_gorseller/image3.webp",
+                      "/sosyal_medya_resimler/standart_gorseller/image4.webp",
+                      "/sosyal_medya_resimler/standart_gorseller/image5.webp",
+                      "/sosyal_medya_resimler/standart_gorseller/image3.webp"
                     ].map((src, i) => (
                       <div key={`col2-${i}`} className="rounded-2xl overflow-hidden shadow-xl relative border-2 border-white/5 bg-white/5 backdrop-blur-sm">
                         <img src={src} className="w-full object-cover scale-[1.02]" alt="" />
@@ -277,12 +277,12 @@ const SosyalMedyaYeni = () => {
                     className="flex flex-col gap-5 mt-16"
                   >
                     {[
-                      "/sosyal_medya_resimler/image6.webp",
-                      "/sosyal_medya_resimler/image3.webp",
-                      "/sosyal_medya_resimler/image1.webp",
-                      "/sosyal_medya_resimler/image6.webp",
-                      "/sosyal_medya_resimler/image3.webp",
-                      "/sosyal_medya_resimler/image1.webp"
+                      "/sosyal_medya_resimler/standart_gorseller/image6.webp",
+                      "/sosyal_medya_resimler/standart_gorseller/image3.webp",
+                      "/sosyal_medya_resimler/standart_gorseller/image1.webp",
+                      "/sosyal_medya_resimler/standart_gorseller/image6.webp",
+                      "/sosyal_medya_resimler/standart_gorseller/image3.webp",
+                      "/sosyal_medya_resimler/standart_gorseller/image1.webp"
                     ].map((src, i) => (
                       <div key={`col3-${i}`} className="rounded-2xl overflow-hidden shadow-2xl relative border-2 border-white/5 bg-white/5 backdrop-blur-sm">
                         <img src={src} className="w-full object-cover scale-[1.02]" alt="" />

@@ -13,13 +13,54 @@ const colors = {
 
 // --- DATA ---
 const HERO_IMAGES = [
-  "/sosyal_medya_resimler/Hero/20251220-kive-image-1766252478437.jpg",
-  "/sosyal_medya_resimler/Hero/20251223-kive-image-1766488770214.jpg",
+  "/sosyal_medya_resimler/Hero/02_Story_Scene.png",
   "/sosyal_medya_resimler/Hero/03085-Haki_2K_4_5_shot_03_action_muddy_step.jpg",
+  "/sosyal_medya_resimler/Hero/03085-Haki_2K_4_5_shot_06_american_plan_rain_2K_16_9_shot_03_lifestyle_action (1).jpg",
+  "/sosyal_medya_resimler/Hero/03085-Haki_2K_4_5_shot_13_action_brushing_foliage.jpg",
+  "/sosyal_medya_resimler/Hero/10600-kar2.jpeg",
+  "/sosyal_medya_resimler/Hero/1_2K_4_5_undefined.jpg",
+  "/sosyal_medya_resimler/Hero/1_2K_Auto_undefined.jpg",
+  "/sosyal_medya_resimler/Hero/20220-BEJ_2K_4_5_shot_1 (1).jpg",
+  "/sosyal_medya_resimler/Hero/20220-BEJ_2K_4_5_shot_5.jpg",
+  "/sosyal_medya_resimler/Hero/20251220-kive-image-1766252478437.jpg",
+  "/sosyal_medya_resimler/Hero/20251220-kive-image-1766252663631.jpg",
+  "/sosyal_medya_resimler/Hero/20251223-kive-image-1766488770214.jpg",
+  "/sosyal_medya_resimler/Hero/20251223-kive-image-1766489186478.jpg",
+  "/sosyal_medya_resimler/Hero/53320-KIRMIZI_undefined_16x9_2K.jpg",
+  "/sosyal_medya_resimler/Hero/53320-KIRMIZIscene_2_exterior_06_PROMPT_ Wide environmental shot. The model is walking slowly past the vintage car on the snowy sidewalk, hands relaxed at his sides. He wears the red sweatshirt and black trousers. The scene captures the ful.jpg",
+  "/sosyal_medya_resimler/Hero/53920-imaj.jpg",
+  "/sosyal_medya_resimler/Hero/Gemini_Generated_Image_arjcizarjcizarjc (3).png",
+  "/sosyal_medya_resimler/Hero/IMG_20251214_162518.jpg",
+  "/sosyal_medya_resimler/Hero/IMG_20251214_162551.jpg",
+  "/sosyal_medya_resimler/Hero/Id_scenario_2_end_frame_prompt_2k_20.jpeg",
+  "/sosyal_medya_resimler/Hero/Id_scenario_creative_01_start_frame_pr (1).jpeg",
+  "/sosyal_medya_resimler/Hero/WhatsApp Image 2026-03-25 at 14.43.05 (1)_2K_4_5_01_Hero_Wide.png",
+  "/sosyal_medya_resimler/Hero/WhatsApp Image 2026-03-25 at 14.43.05 (1)_2K_4_5_05_Macro_Texture.png",
+  "/sosyal_medya_resimler/Hero/WhatsApp Image 2026-03-25 at 14.43.11 (1)_2K_4_5_02_Story_Scene (1).png",
+  "/sosyal_medya_resimler/Hero/WhatsApp Image 2026-03-25 at 14.43.11 (1)_2K_4_5_02_Story_Scene.png",
+  "/sosyal_medya_resimler/Hero/WhatsApp Image 2026-03-25 at 14.43.11 (1)_2K_4_5_06_Macro_Fabric.png",
+  "/sosyal_medya_resimler/Hero/WhatsApp Image 2026-03-25 at 14.43.11 (2)_2K_4_5_02_Story_Full.png",
+  "/sosyal_medya_resimler/Hero/WhatsApp Image 2026-03-25 at 14.43.11 (2)_2K_4_5_04_Drape_SemiBack.png",
+  "/sosyal_medya_resimler/Hero/WhatsApp Image 2026-03-25 at 14.43.11 (2)_2K_4_5_05_Creative_Close.png",
+  "/sosyal_medya_resimler/Hero/WhatsApp Image 2026-03-25 at 22.26.38_2K_4_5_01_Hero_Wide.png",
+  "/sosyal_medya_resimler/Hero/WhatsApp Image 2026-03-25 at 22.26.38_2K_4_5_05_Creative_Close.png",
+  "/sosyal_medya_resimler/Hero/WhatsApp Image 2026-03-25 at 22.26.38_2K_4_5_06_Macro_Pattern.png",
+  "/sosyal_medya_resimler/Hero/WhatsApp Image 2026-03-25 at 22.26.52_2K_4_5_04_Flatlay_TopDown.png",
+  "/sosyal_medya_resimler/Hero/WhatsApp Image 2026-03-25 at 22.26.52_2K_4_5_05_Macro_Texture.png",
+  "/sosyal_medya_resimler/Hero/detay-ayakkabı2.jpg",
+  "/sosyal_medya_resimler/Hero/kadin-kol-cantasi-siyah-bordo-c2490807k-canta-venus-c2490807k-16356-23-B_undefined(10).png",
+  "/sosyal_medya_resimler/Hero/kadin-kol-cantasi-siyah-bordo-c2490807k-canta-venus-c2490807k-16356-23-B_undefined(16).png",
+  "/sosyal_medya_resimler/Hero/kadin-kol-cantasi-siyah-bordo-c2490807k-canta-venus-c2490807k-16356-23-B_undefined(18).png",
+  "/sosyal_medya_resimler/Hero/kadin-kol-cantasi-siyah-bordo-c2490807k-canta-venus-c2490807k-16356-23-B_undefined(2).png",
   "/sosyal_medya_resimler/Hero/kadin-kol-cantasi-siyah-bordo-c2490807k-canta-venus-c2490807k-16356-23-B_undefined(4).png"
 ];
 
-const BRANDS = ["CAZADOR", "VENÜS", "MINA DRINKS", "CAMP & MAP", "ROSSEA", "PİKSELAI", "RETAIL LABS"];
+const BRAND_LOGOS = [
+    "/sosyal_medya_resimler/marka-logo/cazador-logo.webp",
+    "/sosyal_medya_resimler/marka-logo/venus_logo.png",
+    "/sosyal_medya_resimler/marka-logo/minadrinks-logo.png",
+    "/sosyal_medya_resimler/marka-logo/campandmap-logo.png"
+];
 
 const COMPARE_TABS = [
   { id: "ghost", label: "Ghost → E-Ticaret", before: "/sosyal_medya_resimler/Hayalet öncesi sonrası/L0000000751458 (1).jpg", after: "/sosyal_medya_resimler/Hayalet öncesi sonrası/L0000000751458 (6).jpg" },
@@ -281,13 +322,8 @@ const Home = () => {
                     />
                     </AnimatePresence>
                  </div>
-                 <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-black/60 backdrop-blur-md border border-white/10 flex items-center justify-between shadow-lg">
-                     <span className="text-white/90 text-xs tracking-widest font-bold uppercase drop-shadow-md">✨ YZ ile Üretildi</span>
-                     <div className="flex gap-1">
-                         {HERO_IMAGES.map((_, i) => (
-                             <div key={i} className={`w-1.5 h-1.5 rounded-full transition-all ${i === heroIndex ? 'bg-[#caf265] w-3' : 'bg-white/30'}`} />
-                         ))}
-                     </div>
+                 <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-black/60 backdrop-blur-md border border-white/10 flex items-center justify-center shadow-lg">
+                     <span className="text-white/90 text-xs tracking-widest font-bold uppercase drop-shadow-md">✨ PikselAI ile Üretildi</span>
                  </div>
             </motion.div>
 
@@ -302,10 +338,8 @@ const Home = () => {
                  transition={{ duration: 30, ease: "linear", repeat: Infinity }} 
                  className="flex flex-nowrap items-center gap-20 md:gap-32 shrink-0"
                >
-                  {[...BRANDS, ...BRANDS, ...BRANDS, ...BRANDS].map((brand, i) => (
-                      <span key={i} className="text-xl md:text-3xl font-display font-medium uppercase tracking-[0.2em] text-white/30 hover:text-white transition-colors duration-500 cursor-default whitespace-nowrap drop-shadow-sm">
-                          {brand}
-                      </span>
+                  {[...BRAND_LOGOS, ...BRAND_LOGOS, ...BRAND_LOGOS, ...BRAND_LOGOS, ...BRAND_LOGOS, ...BRAND_LOGOS].map((logo, i) => (
+                      <img key={i} src={logo} alt="Marka Logo" className="h-10 md:h-14 object-contain opacity-50 hover:opacity-100 transition-opacity duration-500 grayscale hover:grayscale-0" />
                   ))}
                </motion.div>
             </div>

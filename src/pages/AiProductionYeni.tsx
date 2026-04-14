@@ -444,8 +444,6 @@ const ExpandableProductShowcase = () => {
         )}
       </AnimatePresence>
 
-      </AnimatePresence>
-
       {/* İncele Custom Cursor */}
       <motion.div
           className="fixed top-0 left-0 w-24 h-24 bg-gray-400/80 backdrop-blur-sm rounded-full pointer-events-none z-[9999] flex items-center justify-center text-white font-bold text-sm tracking-widest uppercase transform-gpu"

@@ -778,7 +778,7 @@ const SosyalMedyaYeni = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className={`group relative cursor-pointer ${project.spanClass} flex flex-col`}
+                  className={`group relative cursor-none ${project.spanClass} flex flex-col`}
                   onClick={() => setSelectedProject(project)}
                   onMouseMove={handleMouseMove}
                   onMouseEnter={() => setIsHovering(true)}
@@ -787,13 +787,6 @@ const SosyalMedyaYeni = () => {
                   <div className={`w-full rounded-[2rem] overflow-hidden bg-[#e0dcd3] relative ${project.aspectClass} mb-6 shadow-sm group-hover:shadow-xl transition-shadow duration-500`}>
                     <img src={project.thumbnail} alt={project.client} className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"
                       onError={(e) => (e.currentTarget.src = 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop')} />
-                    <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors" />
-                    {/* Hover Circle */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100 pointer-events-none z-10 hidden md:block">
-                      <div className="w-24 h-24 rounded-full bg-[#caf265] text-[#0b2117] flex items-center justify-center font-bold text-xs uppercase tracking-widest shadow-2xl">
-                        İncele
-                      </div>
-                    </div>
                   </div>
                   <h3 className="text-3xl font-display font-normal italic text-[#0b2117] mb-2">{project.client}</h3>
                   <p className="text-[#4a6355] text-[13px] font-medium tracking-wide uppercase">{project.category}</p>

@@ -381,7 +381,7 @@ const Islerimiz = () => {
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
                                 transition={{ duration: 0.4 }}
-                                className={`group relative cursor-pointer overflow-hidden bg-white aspect-[4/3] md:aspect-auto md:h-[600px]`}
+                                className={`group relative cursor-none overflow-hidden bg-white aspect-[4/3] md:aspect-auto md:h-[600px]`}
                                 onClick={() => setSelectedProject(project)}
                                 onMouseMove={handleMouseMove}
                                 onMouseEnter={() => setIsHovering(true)}
@@ -414,13 +414,6 @@ const Islerimiz = () => {
                                     <p className="text-xs md:text-xs tracking-wider text-white/70">
                                         {project.category}
                                     </p>
-                                </div>
-
-                                {/* Hover Reveal Icon */}
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-50 group-hover:scale-100">
-                                    <div className="w-20 h-20 rounded-full bg-white text-black flex items-center justify-center font-bold text-xs uppercase tracking-widest shadow-xl">
-                                        İncele
-                                    </div>
                                 </div>
                             </motion.div>
                         ))}

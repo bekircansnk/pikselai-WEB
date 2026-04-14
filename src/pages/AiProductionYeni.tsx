@@ -313,7 +313,7 @@ const ExpandableProductShowcase = () => {
             onMouseMove={handleMouseMoveGlobal}
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
-            className="relative group cursor-pointer rounded-2xl md:rounded-[2.5rem] overflow-hidden shadow-2xl bg-[#1A1A1A] aspect-[3/2] md:aspect-[4/3] lg:aspect-[3/2]"
+            className="relative group cursor-none rounded-2xl md:rounded-[2.5rem] overflow-hidden shadow-2xl bg-[#1A1A1A] aspect-[3/2] md:aspect-[4/3] lg:aspect-[3/2]"
           >
             <motion.img
               layoutId={`img-${project.id}`}

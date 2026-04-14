@@ -1,334 +1,677 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { MainLayout } from '../layouts/MainLayout';
-import { ArrowRight, ChevronRight, ChevronDown, Zap, Play, Box, TrendingUp, Layers } from 'lucide-react';
-
-
+import { ArrowRight, ChevronRight, ChevronDown, Zap, Play, Box, TrendingUp, Layers, ImageIcon, User, Sparkles, RefreshCcw, Check } from 'lucide-react';
 
 const colors = {
   beige: "bg-[#F4EFE6]",
   darkGreen: "bg-[#0b2117]",
   limeBtn: "bg-[#caf265]",
-  textDark: "text-[#0b2117]",
-  textLight: "text-[#F4EFE6]",
-  borderColor: "border-[#e0dcd3]",
   borderColorDark: "border-[#1e3b2b]"
 };
 
-const services = [
-  {
-    title: "AI Prodüksiyon",
-    desc: "Yapay zeka ile stüdyo maliyetlerini sıfırlayın. Kusursuz sanal mankenler ve ürün görselleri oluşturun.",
-    icon: <Zap size={32} />,
-    path: "/hizmetler/ai-produksiyon",
-    bg: "bg-[#18201d]",
-    img: "/sosyal_medya_resimler/image1.webp",
-    cols: "md:col-span-8"
-  },
-  {
-    title: "E-Ticaret Yönetimi",
-    desc: "Satışlarınızı en üst düzeye çıkaran kapsamlı mağaza kurulumları ve SEO uyumlu optimizasyonlar.",
-    icon: <Box size={32} />,
-    path: "/hizmetler/e-ticaret",
-    bg: "bg-[#336b9c]",
-    img: "/sosyal_medya_resimler/image2.webp",
-    cols: "md:col-span-4"
-  },
-  {
-    title: "Sosyal Medya",
-    desc: "Markanızı öne çıkaran etkili içerikler, Reels videoları ve 360 derece kreatif topluluk yönetimi.",
-    icon: <Play size={32} />,
-    path: "/hizmetler/sosyal-medya",
-    bg: "bg-[#1f1614]",
-    img: "/sosyal_medya_resimler/sosyal_medya_partlar/1.webp",
-    cols: "md:col-span-4"
-  },
-  {
-    title: "Dijital Büyüme (Performans)",
-    desc: "Veri odaklı metrikler ve dönüşüm optimizasyonlarıyla satış grafiklerinizi hızlıca yukarı yöne çevirin.",
-    icon: <TrendingUp size={32} />,
-    path: "/hizmetler/dijital-buyume",
-    bg: "bg-[#6d5b4a]",
-    img: "/sosyal_medya_resimler/sosyal_medya_partlar/2.webp",
-    cols: "md:col-span-4"
-  },
-  {
-    title: "Kreatif Tasarım",
-    desc: "Marka kimliğinizi A'dan Z'ye güçlendiren benzersiz kurumsal kimlik, UI/UX ve etkileyici görsel çözümler.",
-    icon: <Layers size={32} />,
-    path: "/hizmetler/kreatif-tasarim",
-    bg: "bg-[#0b1426]",
-    img: "/sosyal_medya_resimler/sosyal_medya_partlar/3.webp",
-    cols: "md:col-span-4"
-  }
+// --- DATA ---
+const HERO_IMAGES = [
+  "/sosyal_medya_resimler/Hero/20251220-kive-image-1766252478437.jpg",
+  "/sosyal_medya_resimler/Hero/20251223-kive-image-1766488770214.jpg",
+  "/sosyal_medya_resimler/Hero/03085-Haki_2K_4_5_shot_03_action_muddy_step.jpg",
+  "/sosyal_medya_resimler/Hero/kadin-kol-cantasi-siyah-bordo-c2490807k-canta-venus-c2490807k-16356-23-B_undefined(4).png"
 ];
 
+const BRANDS = ["CAZADOR", "VENÜS", "MINA DRINKS", "CAMP & MAP", "ROSSEA", "PİKSELAI", "RETAIL LABS"];
+
+const COMPARE_TABS = [
+  { id: "ghost", label: "Ghost → E-Ticaret", before: "/sosyal_medya_resimler/Hayalet öncesi sonrası/L0000000751458 (1).jpg", after: "/sosyal_medya_resimler/Hayalet öncesi sonrası/L0000000751458 (6).jpg" },
+  { id: "flat", label: "Düz Ürün → Kampanya", before: "/sosyal_medya_resimler/Hero/kadin-kol-cantasi-siyah-bordo-c2490807k-canta-venus-c2490807k-16356-23-B_undefined(18).png", after: "/sosyal_medya_resimler/Hero/kadin-kol-cantasi-siyah-bordo-c2490807k-canta-venus-c2490807k-16356-23-B_undefined(16).png" },
+  { id: "lifestyle", label: "Ham → Lifestyle", before: "/sosyal_medya_resimler/Hayalet öncesi sonrası/L0000000758648 (1).jpg", after: "/sosyal_medya_resimler/Hero/03085-Haki_2K_4_5_shot_13_action_brushing_foliage.jpg" }
+];
+
+const SERVICES = [
+  { title: "AI Prodüksiyon", desc: "Stüdyo maliyetlerini sıfırlayın. Kusursuz sanal mankenler ve ürün görselleri oluşturun.", icon: <Zap size={32} />, path: "/hizmetler/ai-produksiyon", bg: "bg-[#18201d]", img: "/sosyal_medya_resimler/image1.webp", cols: "md:col-span-8" },
+  { title: "E-Ticaret Yönetimi", desc: "Satışlarınızı en üst düzeye çıkaran kapsamlı mağaza kurulumları ve optimizasyonlar.", icon: <Box size={32} />, path: "/hizmetler/ai-produksiyon", bg: "bg-[#336b9c]", img: "/sosyal_medya_resimler/image2.webp", cols: "md:col-span-4" },
+  { title: "Sosyal Medya", desc: "Markanızı öne çıkaran etkili içerikler, Reels videoları ve kreatif yönetim.", icon: <Play size={32} />, path: "/hizmetler/sosyal-medya", bg: "bg-[#1f1614]", img: "/sosyal_medya_resimler/sosyal_medya_partlar/1.webp", cols: "md:col-span-4" },
+  { title: "Dijital Büyüme", desc: "Veri odaklı metrikler ve dönüşüm optimizasyonlarıyla satış grafiklerinizi hızlıca artırın.", icon: <TrendingUp size={32} />, path: "/hizmetler/sosyal-medya", bg: "bg-[#6d5b4a]", img: "/sosyal_medya_resimler/sosyal_medya_partlar/2.webp", cols: "md:col-span-4" },
+  { title: "Kreatif Tasarım", desc: "Marka kimliğinizi A'dan Z'ye güçlendiren benzersiz kurumsal kimlik ve UI/UX çözümleri.", icon: <Layers size={32} />, path: "/hizmetler/ai-produksiyon", bg: "bg-[#0b1426]", img: "/sosyal_medya_resimler/sosyal_medya_partlar/3.webp", cols: "md:col-span-4" }
+];
+
+const MANKEN_ASSETS = [
+    { name: "Anna", img: "/sosyal_medya_resimler/sanal_manken/Anna/Anna-1.webp" },
+    { name: "Anna", img: "/sosyal_medya_resimler/sanal_manken/Anna/Anna-2.webp" },
+    { name: "Mike", img: "/sosyal_medya_resimler/sanal_manken/Mike/mike_1.webp" },
+    { name: "Mike", img: "/sosyal_medya_resimler/sanal_manken/Mike/mike_2.webp" },
+    { name: "Nia", img: "/sosyal_medya_resimler/sanal_manken/Nia/Nia-1.webp" },
+    { name: "Nia", img: "/sosyal_medya_resimler/sanal_manken/Nia/Nia-2.webp" },
+    { name: "Nora", img: "/sosyal_medya_resimler/sanal_manken/Nora/Nora-1.webp" },
+    { name: "Nora", img: "/sosyal_medya_resimler/sanal_manken/Nora/Nora-3.webp" }
+];
+
+const PORTFOLIO = [
+  { id: 1, client: "Cazador", category: "Reklam Yaratıcılığı", thumbnail: "/sosyal_medya_resimler/cazador/cazador2.webp", spanClass: "md:col-span-4", aspectClass: "aspect-[3/4]" },
+  { id: 2, client: "Venüs Ayakkabı", category: "Sosyal Medya Çekimleri", thumbnail: "/sosyal_medya_resimler/venüs/venus2.webp", spanClass: "md:col-span-8", aspectClass: "aspect-square md:aspect-video" },
+  { id: 3, client: "Camp and Map", category: "E-ticaret için Çekimler", thumbnail: "/sosyal_medya_resimler/camp and map/camp1.webp", spanClass: "md:col-span-6", aspectClass: "aspect-[4/3]" },
+  { id: 4, client: "Mina Drinks", category: "Katalog Çekimleri", thumbnail: "/sosyal_medya_resimler/mina drinks/mina1.webp", spanClass: "md:col-span-6", aspectClass: "aspect-[4/3]" }
+];
+
+const INFINITE_FORMATS = [
+  { id: 1, title: "Orijinal Çekim (Düz)", img: "/sosyal_medya_resimler/Hero/kadin-kol-cantasi-siyah-bordo-c2490807k-canta-venus-c2490807k-16356-23-B_undefined(18).png" },
+  { id: 2, title: "E-Ticaret Katalog", img: "/sosyal_medya_resimler/Hero/kadin-kol-cantasi-siyah-bordo-c2490807k-canta-venus-c2490807k-16356-23-B_undefined(2).png" },
+  { id: 3, title: "Sosyal Medya Post", img: "/sosyal_medya_resimler/Hero/kadin-kol-cantasi-siyah-bordo-c2490807k-canta-venus-c2490807k-16356-23-B_undefined(10).png" },
+  { id: 4, title: "Kampanya Görseli", img: "/sosyal_medya_resimler/Hero/kadin-kol-cantasi-siyah-bordo-c2490807k-canta-venus-c2490807k-16356-23-B_undefined(16).png" }
+];
+
+// --- COMPONENTS ---
+
+// COMPONENT: CountUp
+const CountUp = ({ end, duration = 2, suffix = "" }: { end: number, duration?: number, suffix?: string }) => {
+  const [count, setCount] = useState<string | number>(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  useEffect(() => {
+    if (isInView) {
+      let start = 0;
+      if (start === end) return;
+      const totalMilSecDur = duration * 1000;
+      const incrementTime = (totalMilSecDur / end) * 1.5;
+
+      const timer = setInterval(() => {
+        start += 1;
+        setCount(String(start) + suffix);
+        if (start === end) clearInterval(timer);
+      }, incrementTime);
+      return () => clearInterval(timer);
+    }
+  }, [isInView, end, duration, suffix]);
+
+  return <span ref={ref}>{count === 0 ? "0" + suffix : count}</span>;
+};
+
+// COMPONENT: CompareSlider
+const CompareSlider = () => {
+    const [activeTab, setActiveTab] = useState(COMPARE_TABS[0]);
+    const [sliderPos, setSliderPos] = useState(50);
+    const containerRef = useRef<HTMLDivElement>(null);
+    const [isDragging, setIsDragging] = useState(false);
+
+    const handleMove = (clientX: number) => {
+        if (!containerRef.current) return;
+        const rect = containerRef.current.getBoundingClientRect();
+        const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
+        setSliderPos((x / rect.width) * 100);
+    };
+
+    const handleTouchMove = (e: React.TouchEvent) => { if(isDragging) handleMove(e.touches[0].clientX); };
+    const handleMouseMove = (e: React.MouseEvent) => { if(isDragging) handleMove(e.clientX); };
+
+    return (
+        <div className="w-full flex flex-col gap-6">
+            <div className="flex bg-black/40 p-2 rounded-full w-fit mx-auto border border-white/10 flex-wrap justify-center">
+                {COMPARE_TABS.map((tab) => (
+                    <button 
+                        key={tab.id} 
+                        onClick={() => { setActiveTab(tab); setSliderPos(50); }}
+                        className={`px-4 md:px-6 py-2 rounded-full text-xs md:text-sm font-medium transition-all ${activeTab.id === tab.id ? 'bg-[#caf265] text-black shadow-lg hover:-translate-y-0.5' : 'text-white/60 hover:text-white'}`}
+                    >
+                        {tab.label}
+                    </button>
+                ))}
+            </div>
+            <div 
+                ref={containerRef}
+                className="relative w-full aspect-square md:aspect-[16/8] bg-black/10 rounded-[2rem] overflow-hidden cursor-ew-resize select-none border border-white/5 shadow-2xl"
+                onMouseDown={(e) => { setIsDragging(true); handleMove(e.clientX); }}
+                onMouseUp={() => setIsDragging(false)}
+                onMouseLeave={() => setIsDragging(false)}
+                onMouseMove={handleMouseMove}
+                onTouchStart={(e) => { setIsDragging(true); handleMove(e.touches[0].clientX); }}
+                onTouchEnd={() => setIsDragging(false)}
+                onTouchMove={handleTouchMove}
+            >
+                <img src={activeTab.after} alt="Sonrası" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
+                <div className="absolute inset-0 w-full h-full object-cover overflow-hidden pointer-events-none" style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}>
+                    <img src={activeTab.before} alt="Öncesi" className="absolute inset-0 w-full h-full object-cover min-w-[100vw] xl:min-w-full" style={{ width: '100vw' }} />
+                </div>
+                
+                {/* Custom Handle */}
+                <div className="absolute top-0 bottom-0 w-[2px] bg-white cursor-ew-resize pointer-events-none shadow-[0_0_15px_rgba(0,0,0,0.5)] flex items-center justify-center h-full" style={{ left: `${sliderPos}%`, transform: 'translateX(-50%)' }}>
+                   <div className="w-10 h-10 md:w-12 md:h-12 bg-white shadow-2xl rounded-full flex items-center justify-center border-[3px] border-[#caf265] -ml-[1px]">
+                       <div className="flex gap-1 text-[#0b2117]">
+                           <ChevronRight size={16} className="rotate-180 -mr-2" />
+                           <ChevronRight size={16} />
+                       </div>
+                   </div>
+                </div>
+
+                <div className="absolute top-4 left-4 md:bottom-6 md:top-auto md:left-6 px-4 py-2 bg-black/50 backdrop-blur-md rounded-xl text-white/90 text-xs font-bold uppercase tracking-widest pointer-events-none border border-white/10 shadow-lg">Öncesi (Ham)</div>
+                <div className="absolute top-4 right-4 md:bottom-6 md:top-auto md:right-6 px-4 py-2 bg-[#caf265]/90 backdrop-blur-md rounded-xl text-black text-xs font-bold uppercase tracking-widest pointer-events-none shadow-lg">Sonrası (Yapay Zeka)</div>
+            </div>
+        </div>
+    );
+};
+
+// COMPONENT: Manken Marquee
+const MankenRow = ({ items, reverse = false, duration = 40 }: { items: typeof MANKEN_ASSETS, reverse?: boolean, duration?: number }) => (
+    <div className="flex gap-4 mb-4 overflow-hidden mask-fade relative">
+      <motion.div
+        initial={{ x: reverse ? "-50%" : "0%" }}
+        animate={{ x: reverse ? "0%" : "-50%" }}
+        transition={{ duration, repeat: Infinity, ease: "linear" }}
+        className="flex gap-4 flex-nowrap"
+      >
+        {[...items, ...items].map((item, i) => (
+          <div key={i} className="relative w-[240px] md:w-[280px] h-[340px] md:h-[380px] flex-shrink-0 group rounded-3xl overflow-hidden border border-white/10">
+            <img src={item.img} alt={item.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+            <div className="absolute bottom-6 left-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none">
+              <h4 className="text-white text-xl font-display font-normal italic lowercase">{item.name}</h4>
+            </div>
+          </div>
+        ))}
+      </motion.div>
+    </div>
+);
+
+// COMPONENT: FAQ Item
+const FaqItem = ({ question, answer }: { question: string; answer: string }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    return (
+      <div className={`border rounded-2xl transition-colors duration-300 ${isOpen ? 'border-[#caf265]/30 bg-white/5' : 'border-[#1e3b2b] hover:border-[#caf265]/20'}`}>
+        <button onClick={() => setIsOpen(!isOpen)} className="w-full flex items-center justify-between p-6 text-left focus:outline-none">
+          <span className="text-lg font-medium text-white pr-4">{question}</span>
+          <div className={`w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${isOpen ? 'border-[#caf265] bg-[#caf265] text-[#0b2117]' : 'border-white/20 text-white hover:border-[#caf265]'}`}>
+              <ChevronDown size={16} className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+          </div>
+        </button>
+        <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'}`}>
+          <p className="px-6 pb-6 text-[#a8b8af] font-light leading-relaxed">{answer}</p>
+        </div>
+      </div>
+    );
+};
+
+// --- MAIN PAGE COMPONENT ---
 const Home = () => {
   const navigate = useNavigate();
+  const [heroIndex, setHeroIndex] = useState(0);
+  const [processStep, setProcessStep] = useState(0);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  // Hero slideshow interval
+  useEffect(() => {
+     const interval = setInterval(() => {
+         setHeroIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+     }, 4000);
+     return () => clearInterval(interval);
+  }, []);
+
+  // Process Interactive Interval
+  useEffect(() => {
+      const interval = setInterval(() => {
+          setProcessStep((prev) => (prev + 1) % 3);
+      }, 5000); // 5 sec per step automated
+      return () => clearInterval(interval);
+  }, []);
+
   return (
     <MainLayout transparentHeader={true} headerLightText={true}>
-      <main className="bg-[#0b2117] min-h-screen font-sans selection:bg-[#caf265] selection:text-[#0b2117] overflow-hidden">
+      <main className="bg-[#0b2117] min-h-screen font-sans selection:bg-[#caf265] selection:text-[#0b2117] overflow-x-hidden">
         
         {/* 1. HERO SECTION */}
-        <section className={`relative min-h-[75vh] 2xl:min-h-[70vh] flex items-center justify-center pt-32 pb-16 lg:pt-40 lg:pb-24 ${colors.darkGreen}`}>
-          {/* Subtle bg effects */}
-          <div className="absolute inset-0 bg-[#0b2117] z-0">
-            <div className="absolute top-0 right-0 w-[60vw] h-[60vw] bg-[#caf265]/5 blur-[150px] rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-[#a8b8af]/5 blur-[120px] rounded-full -translate-x-1/2 translate-y-1/2 pointer-events-none" />
+        <section className={`relative min-h-[90vh] flex items-center justify-center pt-32 pb-16 lg:pt-40 lg:pb-24 ${colors.darkGreen} overflow-hidden`}>
+          <div className="absolute inset-0 z-0 bg-black">
+             <AnimatePresence mode="wait">
+                 <motion.img 
+                    key={heroIndex}
+                    src={HERO_IMAGES[heroIndex]}
+                    initial={{ opacity: 0, scale: 1.05 }}
+                    animate={{ opacity: 0.5, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 1.5, ease: "easeInOut" }}
+                    className="absolute inset-0 w-full h-full object-cover"
+                 />
+             </AnimatePresence>
+             <div className="absolute inset-0 bg-gradient-to-t from-[#0b2117] via-[#0b2117]/60 to-transparent" />
+             <div className="absolute inset-0 bg-gradient-to-r from-[#0b2117] via-transparent to-transparent opacity-80" />
+             <div className="absolute inset-0 bg-[#0b2117]/40 pointer-events-none" />
           </div>
 
-          <div className="max-w-[1400px] w-full mx-auto px-6 md:px-16 lg:px-24 relative z-10 flex flex-col items-center text-center">
+          <div className="max-w-[1400px] w-full mx-auto px-6 md:px-16 lg:px-24 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-24">
             
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8"
-            >
-              <div className="w-2 h-2 rounded-full bg-[#caf265] animate-pulse" />
-              <span className="text-[#a8b8af] text-xs font-bold uppercase tracking-widest">PİKSELAI İLE TANIŞIN</span>
+            <div className="flex-1 text-left w-full">
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8">
+                  <Sparkles size={16} className="text-[#caf265]" />
+                  <span className="text-[#a8b8af] text-xs font-bold uppercase tracking-widest">YENİ NESİL AJANS DENEYİMİ</span>
+                </motion.div>
+
+                <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }} className="text-[3.5rem] md:text-7xl lg:text-[7rem] font-display font-normal text-[#F4EFE6] leading-[1.05] tracking-tight mb-8">
+                  Stüdyo Yok. <br />
+                  <span className="italic text-[#caf265]">Sınır Yok.</span>
+                </motion.h1>
+
+                <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="text-xl md:text-2xl text-white/80 max-w-xl font-light mb-12 leading-relaxed">
+                  Yapay zeka devrimiyle fiziksel prodüksiyonun yüksek maliyetlerini ortadan kaldırın. Moda markanız için tek çatı altında sınırsız görsel üretim.
+                </motion.p>
+
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex flex-col sm:flex-row gap-6 items-center w-full sm:w-auto">
+                  <button onClick={() => navigate('/iletisim')} className="w-full sm:w-auto px-10 py-5 bg-[#caf265] hover:bg-white text-[#0b2117] rounded-full text-lg font-bold flex items-center justify-center gap-3 transition-colors duration-300 shadow-[0_0_30px_rgba(202,242,101,0.2)]">
+                      Demoyu Başlat <ArrowRight size={20} />
+                  </button>
+                  <div className="flex items-center justify-center gap-3 text-white/60 text-sm font-medium">
+                      <span className="w-2 h-2 rounded-full bg-[#caf265] animate-pulse"></span>
+                      Hemen Teslimata Hazır
+                  </div>
+                </motion.div>
+            </div>
+
+            <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.4 }} className="hidden lg:block relative w-full lg:w-[450px] xl:w-[500px] aspect-[4/5] rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl p-2 bg-white/5 backdrop-blur-xl shrink-0">
+                 <div className="w-full h-full rounded-[2.5rem] overflow-hidden relative">
+                    <AnimatePresence mode="wait">
+                    <motion.img 
+                        key={heroIndex}
+                        src={HERO_IMAGES[heroIndex]}
+                        initial={{ opacity: 0, scale: 1.1 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 1.2 }}
+                        className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    </AnimatePresence>
+                 </div>
+                 <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-black/60 backdrop-blur-md border border-white/10 flex items-center justify-between shadow-lg">
+                     <span className="text-white/90 text-xs tracking-widest font-bold uppercase drop-shadow-md">✨ YZ ile Üretildi</span>
+                     <div className="flex gap-1">
+                         {HERO_IMAGES.map((_, i) => (
+                             <div key={i} className={`w-1.5 h-1.5 rounded-full transition-all ${i === heroIndex ? 'bg-[#caf265] w-3' : 'bg-white/30'}`} />
+                         ))}
+                     </div>
+                 </div>
             </motion.div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-              className="text-5xl md:text-7xl lg:text-[7rem] font-display font-normal text-[#F4EFE6] leading-[1.05] tracking-tight mb-8"
-            >
-              Her işiniz <br />
-              <span className="italic text-white">tek çatı altında!</span>
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="text-xl md:text-2xl text-[#a8b8af] max-w-2xl font-light mb-12"
-            >
-              Bir ajans, bir fatura, sınırsız çözüm. Yapay zeka destekli görsel üretimden e-ticaret yönetimine, sosyal medyadan kreatif tasarıma — her şey tek çatıda.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="flex flex-col sm:flex-row gap-6 items-center w-full sm:w-auto"
-            >
-              <button 
-                onClick={() => navigate('/iletisim')}
-                className="w-full sm:w-auto px-10 py-5 bg-[#caf265] hover:bg-white text-[#0b2117] rounded-full text-lg font-bold transition-all flex items-center justify-center gap-3 transition-colors duration-300"
-              >
-                Bizimle Tanışın
-                <ArrowRight size={20} />
-              </button>
-              <button 
-                onClick={() => {
-                  const el = document.getElementById('services');
-                  el?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="w-full sm:w-auto px-10 py-5 border border-white/20 hover:border-white text-white rounded-full text-lg font-medium transition-all flex items-center justify-center gap-3 transition-colors duration-300"
-              >
-                Hizmetlerimizi İncele
-              </button>
-            </motion.div>
           </div>
         </section>
 
-        {/* 2. EN HIZLI ÇÖZÜMLER BANNER (Marquee & Large Text) */}
-        <section className={`py-12 md:py-16 border-t ${colors.borderColorDark} relative overflow-hidden`}>
-           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
-             <div className="flex flex-col md:flex-row gap-12 items-center justify-between">
-                <div className="md:w-1/2">
-                   <h2 className="text-4xl md:text-5xl lg:text-7xl font-display italic text-[#F4EFE6] leading-tight mb-6">
-                     Size özel <br className="hidden md:block"/><span className="not-italic">en hızlı çözümler!</span>
-                   </h2>
-                </div>
-                <div className="md:w-1/2 text-lg text-[#a8b8af] font-light leading-relaxed">
-                   Geleneksel ajansların haftalar süren süreçlerini saatlere indiriyoruz. Yapay zeka teknolojimizle zamanınızı ve bütçenizi en verimli şekilde kullanın.
-                </div>
-             </div>
+        {/* 2. MARKA LOGOLARI MARQUEE */}
+        <section className={`py-10 bg-black/40 border-y ${colors.borderColorDark} overflow-hidden relative z-10`}>
+            <div className="max-w-[1400px] mx-auto flex gap-4 mask-fade relative">
+               <motion.div 
+                 animate={{ x: [0, -1500] }} 
+                 transition={{ duration: 30, ease: "linear", repeat: Infinity }} 
+                 className="flex flex-nowrap items-center gap-20 md:gap-32 shrink-0"
+               >
+                  {[...BRANDS, ...BRANDS, ...BRANDS, ...BRANDS].map((brand, i) => (
+                      <span key={i} className="text-xl md:text-3xl font-display font-medium uppercase tracking-[0.2em] text-white/30 hover:text-white transition-colors duration-500 cursor-default whitespace-nowrap drop-shadow-sm">
+                          {brand}
+                      </span>
+                  ))}
+               </motion.div>
+            </div>
+        </section>
+
+        {/* 3. DEĞER ÖNERİSİ & SAYAÇLAR */}
+        <section className={`py-20 md:py-32 border-b ${colors.borderColorDark} relative`}>
+           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.03] bg-center pointer-events-none"></div>
+           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 relative z-10">
+              <div className="flex flex-col lg:flex-row gap-16 justify-between items-center">
+                 <div className="lg:w-5/12 text-center lg:text-left">
+                     <span className="text-[#caf265] text-xs font-bold uppercase tracking-widest mb-6 block">HIZLI ÇÖZÜMLER</span>
+                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-display italic text-[#F4EFE6] leading-tight mb-6">
+                         Rakamlarla <br className="hidden lg:block"/><span className="not-italic text-white">Yapay Zeka Farkı.</span>
+                     </h2>
+                     <p className="text-[#a8b8af] font-light leading-relaxed text-lg lg:max-w-md mx-auto lg:mx-0">
+                         Ajans hantallığına son veriyoruz. Yapay zeka motorumuz sayesinde geleneksel prodüksiyonların getirdiği maliyetleri düşürürken hızı inanılmaz boyutlara çıkarıyoruz.
+                     </p>
+                 </div>
+                 
+                 <div className="lg:w-7/12 grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 w-full mt-10 lg:mt-0">
+                    <div className="flex flex-col items-center lg:items-start p-6 rounded-3xl bg-white/[0.02] border border-white/5 hover:border-[#caf265]/30 transition-colors">
+                        <div className="text-5xl md:text-6xl font-display font-medium text-[#caf265] mb-4 flex items-baseline drop-shadow-[0_0_15px_rgba(202,242,101,0.3)]">
+                            %<CountUp end={80} duration={2}/>
+                        </div>
+                        <h4 className="text-xl font-display text-white mb-2">Düşük Maliyet</h4>
+                        <p className="text-[#a8b8af] text-sm font-light leading-relaxed text-center lg:text-left">Fiziksel stüdyo, manken, ışık ve ekip maliyetini sıfırlayın.</p>
+                    </div>
+                    <div className="flex flex-col items-center lg:items-start p-6 rounded-3xl bg-white/[0.02] border border-white/5 hover:border-[#caf265]/30 transition-colors">
+                        <div className="text-5xl md:text-6xl font-display font-medium text-[#caf265] mb-4 flex items-baseline drop-shadow-[0_0_15px_rgba(202,242,101,0.3)]">
+                            <CountUp end={48} duration={2} suffix="s" />
+                        </div>
+                        <h4 className="text-xl font-display text-white mb-2">İçinde Teslim</h4>
+                        <p className="text-[#a8b8af] text-sm font-light leading-relaxed text-center lg:text-left">Haftalar süren prodüksiyon süreçleri artık aynı gün elinizde.</p>
+                    </div>
+                    <div className="flex flex-col items-center lg:items-start p-6 rounded-3xl bg-white/[0.02] border border-white/5 hover:border-[#caf265]/30 transition-colors">
+                        <div className="text-5xl md:text-6xl font-display font-medium text-[#caf265] mb-4 drop-shadow-[0_0_15px_rgba(202,242,101,0.3)]">∞</div>
+                        <h4 className="text-xl font-display text-white mb-2">Sınırsız Sahne</h4>
+                        <p className="text-[#a8b8af] text-sm font-light leading-relaxed text-center lg:text-left">Dünyanın her köşesinde, istenilen arka planda üretim yapın.</p>
+                    </div>
+                 </div>
+              </div>
            </div>
         </section>
 
-        {/* 3. MASONRY SERVICES GRID */}
-        <section id="services" className={`py-12 md:py-16 border-t ${colors.borderColorDark}`}>
+        {/* 4. ÖNCESİ / SONRASI SLIDER */}
+        <section className={`py-20 md:py-32 border-b ${colors.borderColorDark} relative overflow-hidden bg-[#08150f]`}>
+            {/* Background Glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#caf265] rounded-full blur-[150px] opacity-5 pointer-events-none" />
+
+            <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 relative z-10">
+                <div className="text-center mb-16 max-w-4xl mx-auto">
+                    <span className="text-[#caf265] text-xs font-bold uppercase tracking-widest mb-6 block">SIKICI FOTOĞRAFLARA VEDA</span>
+                    <h2 className="text-4xl md:text-5xl lg:text-[4rem] font-display text-white leading-tight mb-8">
+                        Basit ürünlerden <br/><span className="italic text-[#caf265]">Dünya Standartlarında Kampanyalara.</span>
+                    </h2>
+                    <p className="text-[#a8b8af] font-light text-xl leading-relaxed max-w-2xl mx-auto">
+                        Hangi formatta çekim yapmış olursanız olun. AI motorumuz ham görselinizi alır ve dünyanın en kaliteli prodüksiyon şirketinden çıkmış gibi harikalar yaratır. Üstelik sıfır defo ile.
+                    </p>
+                </div>
+                
+                <CompareSlider />
+            </div>
+        </section>
+
+        {/* 5. MASONRY SERVICES GRID */}
+        <section id="services" className={`py-20 md:py-32 border-b ${colors.borderColorDark}`}>
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
             
             <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
               <div>
-                <span className="text-[#caf265] text-xs font-bold uppercase tracking-widest mb-4 block">HİZMETLERİMİZ</span>
-                <h2 className="text-5xl md:text-6xl font-display text-white">
+                <span className="text-[#caf265] text-xs font-bold uppercase tracking-widest mb-4 block">360° ÇÖZÜMLER</span>
+                <h2 className="text-5xl md:text-7xl font-display text-white">
                   Tek merkezden <br/><span className="italic">sonsuz potansiyel</span>
                 </h2>
               </div>
-              <p className="text-[#a8b8af] max-w-md text-lg font-light leading-relaxed mb-2">
+              <p className="text-[#a8b8af] max-w-md text-xl font-light leading-relaxed mb-4">
                 Markanızı sıfırdan zirveye taşıyacak entegre dijital altyapılar ve yaratıcı çözümler sunuyoruz.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-4 lg:gap-4 auto-rows-auto">
-              {services.map((service, idx) => (
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-6 auto-rows-auto">
+              {SERVICES.map((service, idx) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.6, delay: idx * 0.1 }}
-                  className={`relative ${service.bg} rounded-2xl p-8 md:p-12 overflow-hidden group cursor-pointer ${service.cols} min-h-[400px] md:min-h-[450px] flex flex-col justify-between`}
+                  className={`relative ${service.bg} rounded-[2.5rem] p-10 md:p-12 overflow-hidden group cursor-pointer ${service.cols} min-h-[400px] md:min-h-[500px] flex flex-col justify-between border border-white/5 hover:border-white/20 transition-all`}
                   onClick={() => navigate(service.path)}
                 >
-                  {/* Background Image Wrapper */}
                   <div className="absolute inset-0 w-full h-full">
-                    <img src={service.img} alt={service.title} className="w-full h-full object-cover opacity-30 mix-blend-overlay group-hover:scale-105 transition-transform duration-700" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                    <img src={service.img} alt={service.title} className="w-full h-full object-cover opacity-30 mix-blend-overlay group-hover:scale-105 group-hover:opacity-40 transition-all duration-700" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
                   </div>
 
-                  {/* Content (Z-10) */}
-                  <div className="relative z-10 text-[#caf265] mb-6">
-                     {service.icon}
+                  <div className="relative z-10">
+                     <span className="inline-flex items-center gap-2 px-4 py-2 bg-black/40 backdrop-blur-md rounded-full text-xs uppercase tracking-widest font-bold text-white mb-8 border border-white/10 group-hover:bg-[#caf265] group-hover:text-black transition-colors">
+                        {idx === 0 ? "Özel AI Altyapısı" : "Tam Kapsamlı"}
+                     </span>
+                     <div className="text-[#caf265] mb-8 bg-black/40 p-4 rounded-2xl w-fit backdrop-blur-sm border border-white/10 group-hover:bg-[#caf265] group-hover:text-black transition-colors">
+                         {service.icon}
+                     </div>
                   </div>
 
-                  <div className="relative z-10 mt-auto">
-                    <h3 className="text-3xl font-display font-medium text-white mb-3 pr-10">
-                      {service.title}
-                    </h3>
-                    <p className="text-[#a8b8af] text-lg font-light leading-relaxed pr-10">
-                      {service.desc}
-                    </p>
-
-                    <div className="absolute bottom-0 right-0 w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white group-hover:bg-[#caf265] group-hover:text-[#0b2117] transition-colors duration-300">
-                      <ChevronRight size={24} />
+                  <div className="relative z-10 mt-auto flex items-end justify-between gap-6">
+                    <div>
+                        <h3 className="text-3xl md:text-4xl font-display font-medium text-white mb-4 leading-tight">{service.title}</h3>
+                        <p className="text-[#a8b8af] text-lg font-light leading-relaxed max-w-sm">{service.desc}</p>
+                    </div>
+                    <div className="w-14 h-14 shrink-0 rounded-full border border-white/20 flex items-center justify-center text-white group-hover:bg-white group-hover:text-[#0b2117] transition-all duration-300">
+                      <ArrowRight size={24} className="group-hover:-rotate-45 transition-transform" />
                     </div>
                   </div>
                 </motion.div>
               ))}
             </div>
-
           </div>
         </section>
 
-        {/* 4. METRICS / NUMBERS SECTION */}
-        <section className={`py-12 md:py-16 border-t ${colors.borderColorDark}`}>
-          <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
-             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 divide-y md:divide-y-0 md:divide-x divide-[#1e3b2b]">
-                <div className="flex flex-col items-center md:items-start pt-12 md:pt-0 pr-0 md:pr-12 text-center md:text-left">
-                  <div className="text-6xl md:text-7xl font-display font-medium text-[#caf265] mb-4">∞</div>
-                  <h4 className="text-2xl font-display text-white mb-3">Sınırsız Varyasyon</h4>
-                  <p className="text-[#a8b8af] font-light">Tek ürün için onlarca farklı konsept, arka plan ve sahne. Her birini test edip en iyisini seçin.</p>
-                </div>
-                <div className="flex flex-col items-center md:items-start pt-12 md:pt-0 px-0 md:px-12 text-center md:text-left">
-                  <div className="text-6xl md:text-7xl font-display font-medium text-[#caf265] mb-4">%80</div>
-                  <h4 className="text-2xl font-display text-white mb-3">Daha Düşük Maliyet</h4>
-                  <p className="text-[#a8b8af] font-light">Fiziksel stüdyo, manken ve ekip maliyetini ortadan kaldırın. Aynı kalite, çok daha düşük bütçe.</p>
-                </div>
-                <div className="flex flex-col items-center md:items-start pt-12 md:pt-0 pl-0 md:pl-12 text-center md:text-left">
-                  <div className="text-6xl md:text-7xl font-display font-medium text-[#caf265] mb-4">48s</div>
-                  <h4 className="text-2xl font-display text-white mb-3">İçinde Teslim</h4>
-                  <p className="text-[#a8b8af] font-light">Haftalar süren süreçleri saatlere indirdik. Profesyonel görselleriniz aynı gün hazır.</p>
-                </div>
-             </div>
-          </div>
+        {/* 6. NASIL ÇALIŞIR — ETKİLEŞİMLİ 3 ADIM */}
+        <section className={`py-20 md:py-32 border-b ${colors.borderColorDark}`}>
+           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
+              <div className="text-center mb-20 max-w-3xl mx-auto">
+                  <span className="text-[#caf265] text-xs font-bold uppercase tracking-widest mb-4 block">BASİT VE ETKİLİ</span>
+                  <h2 className="text-5xl md:text-6xl font-display text-white mb-6">Sürecimiz Nasıl <span className="italic">İşliyor?</span></h2>
+                  <p className="text-[#a8b8af] font-light text-xl">Sadece ürün görselini yükleyin, karmaşık promptlar ve teknik detaylarla biz ilgilenelim.</p>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                 {/* Sol Panel: Adımlar */}
+                 <div className="flex flex-col space-y-10 relative pl-8 border-l-2 border-white/10">
+                     {[
+                         { title: "Ürün Görselinizi Gönderin", desc: "Telefonla çekilmiş basit bir düz ürün, cansız manken veya askı fotoğrafı... Bizim için başlangıç noktası olması yeterli." },
+                         { title: "Tasarım & Yapay Zeka İşliyor", desc: "Kreatif ekibimiz ve yapay zeka analiz motorumuz birleşerek, markanıza uyan en mükemmel vizyonu saniyeler içinde işliyor." },
+                         { title: "Kampanyanız Yayınlanmaya Hazır", desc: "Cironuzu katlayacak, dünya standartlarında üretilmiş mankenli ve konsept yaşamsal kareler dijital reklamlarınıza hazır!" }
+                     ].map((step, idx) => (
+                        <div 
+                           key={idx} 
+                           className={`cursor-pointer transition-all duration-500 relative group ${processStep === idx ? 'opacity-100 translate-x-2' : 'opacity-40 hover:opacity-70'}`}
+                           onClick={() => setProcessStep(idx)}
+                        >
+                            <div className={`absolute -left-[37px] w-4 h-4 rounded-full top-2 transition-all duration-500 ${processStep === idx ? 'bg-[#caf265] shadow-[0_0_20px_#caf265] scale-125' : 'bg-[#1e3b2b] group-hover:bg-white/40'}`} />
+                            <div className="text-[#caf265]/50 text-sm font-bold tracking-widest uppercase mb-2">Adım 0{idx + 1}</div>
+                            <h3 className="text-3xl font-display text-white mb-3 font-medium tracking-tight leading-tight">{step.title}</h3>
+                            <p className="text-[#a8b8af] font-light leading-relaxed text-lg max-w-md">{step.desc}</p>
+                        </div>
+                     ))}
+                 </div>
+                 
+                 {/* Sağ Panel: Görsel Gösterim */}
+                 <div className="relative aspect-square md:aspect-[4/5] rounded-[3rem] overflow-hidden bg-white/5 border border-white/10 p-4 shadow-2xl">
+                     <AnimatePresence mode="wait">
+                         {processStep === 0 && (
+                            <motion.div key="s1" initial={{opacity:0, scale:0.95}} animate={{opacity:1, scale:1}} exit={{opacity:0, scale:1.05}} transition={{duration:0.6}} className="w-full h-full rounded-[2.5rem] overflow-hidden relative">
+                                <img src="/sosyal_medya_resimler/Hayalet öncesi sonrası/35325-Siyah (1).jpg" className="w-full h-full object-cover" />
+                                <div className="absolute inset-0 bg-black/20 flex flex-col items-center justify-center pointer-events-none">
+                                    <div className="w-20 h-20 rounded-full bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-white">
+                                        <Camera size={32} />
+                                    </div>
+                                    <div className="mt-4 px-6 py-2 bg-black/60 backdrop-blur-md rounded-full text-white text-sm uppercase tracking-widest font-bold">Ham Görsel Yükleniyor</div>
+                                </div>
+                            </motion.div>
+                         )}
+                         {processStep === 1 && (
+                            <motion.div key="s2" initial={{opacity:0, scale:0.95}} animate={{opacity:1, scale:1}} exit={{opacity:0, scale:1.05}} transition={{duration:0.6}} className="w-full h-full rounded-[2.5rem] bg-gradient-to-br from-[#0b2117] via-black to-[#0b2117] flex items-center justify-center flex-col gap-8 relative overflow-hidden border border-white/10">
+                                <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20 bg-center"></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-0"></div>
+                                <div className="relative z-10 w-32 h-32 flex items-center justify-center">
+                                    <div className="absolute w-full h-full border-4 border-[#caf265]/10 border-t-[#caf265] rounded-full animate-[spin_2s_linear_infinite]"></div>
+                                    <div className="absolute w-24 h-24 border-4 border-[#caf265]/20 border-b-[#caf265] rounded-full animate-[spin_3s_linear_infinite_reverse]"></div>
+                                    <Sparkles size={40} className="text-[#caf265] animate-pulse" />
+                                </div>
+                                <div className="relative z-10 text-center">
+                                    <p className="text-[#caf265] font-display text-3xl animate-pulse mb-2">Yapay Zeka Analizi</p>
+                                    <p className="text-white/60 font-light font-mono text-sm">Hedef Persona Eşleştiriliyor... 87%</p>
+                                </div>
+                            </motion.div>
+                         )}
+                         {processStep === 2 && (
+                            <motion.div key="s3" initial={{opacity:0, scale:0.95}} animate={{opacity:1, scale:1}} exit={{opacity:0, scale:1.05}} transition={{duration:0.6}} className="w-full h-full rounded-[2.5rem] overflow-hidden relative">
+                                <img src="/sosyal_medya_resimler/Hayalet öncesi sonrası/35325-Siyah (8).jpg" className="w-full h-full object-cover" />
+                                <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-black via-black/60 to-transparent pointer-events-none">
+                                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#caf265] text-black rounded-full font-bold uppercase tracking-widest text-xs shadow-[0_0_20px_rgba(202,242,101,0.4)]">
+                                       <Check size={14} /> Yayınlanmaya Hazır
+                                    </div>
+                                </div>
+                            </motion.div>
+                         )}
+                     </AnimatePresence>
+                 </div>
+              </div>
+           </div>
         </section>
 
-        {/* 5. NASIL ÇALIŞIR — 4 Adım */}
-        <section className={`py-16 md:py-24 border-t ${colors.borderColorDark}`}>
-          <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
-            <div className="text-center mb-16">
-              <span className="text-[#caf265] text-xs font-bold uppercase tracking-widest mb-4 block">SÜREÇ</span>
-              <h2 className="text-4xl md:text-6xl font-display text-white">
-                Nasıl <span className="italic">çalışır?</span>
-              </h2>
-            </div>
+        {/* 7. AI VİTRİNİ BENTO */}
+        <section className={`py-16 md:py-24 border-b ${colors.borderColorDark}`}>
+           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
+              <div className="text-center mb-16">
+                  <span className="text-[#a8b8af] text-xs font-bold uppercase tracking-widest mb-4 block">HİZMET ALANLARIMIZ</span>
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-white mb-6">Sanal Prodüksiyon <span className="italic text-[#caf265]">Yeteneklerimiz</span></h2>
+              </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              {[
-                { step: "01", title: "Bize Ulaşın", desc: "İhtiyaçlarınızı anlatalım. Ücretsiz keşif görüşmesiyle projenizin kapsamını birlikte belirleyelim." },
-                { step: "02", title: "Strateji & Plan", desc: "Size özel bir yol haritası çıkarıyoruz. Zaman, bütçe ve hedefler netleştirilir." },
-                { step: "03", title: "Üretim Başlasın", desc: "AI destekli süreçlerimizle görsel üretim, içerik ve teknik çalışmalar eş zamanlı ilerler." },
-                { step: "04", title: "Teslim & Büyüme", desc: "Projelerinizi zamanında teslim eder, performans takibiyle sürekli iyileştirmeler yaparız." }
-              ].map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.15 }}
-                  className="text-center group"
-                >
-                  <div className="text-6xl font-display font-medium text-[#caf265]/20 group-hover:text-[#caf265] transition-colors duration-500 mb-4">{item.step}</div>
-                  <h4 className="text-xl font-display text-white mb-3 font-medium">{item.title}</h4>
-                  <p className="text-[#a8b8af] font-light leading-relaxed text-sm">{item.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-auto md:h-[650px]">
+                  <div className="bg-[#18201d] rounded-3xl p-10 md:p-12 border border-white/10 relative overflow-hidden group hover:border-[#caf265]/50 hover:shadow-[0_0_50px_rgba(202,242,101,0.05)] transition-all cursor-pointer" onClick={() => navigate('/hizmetler/ai-produksiyon')}>
+                      <img src="/sosyal_medya_resimler/sanal_manken/Anna/Anna-2.webp" className="absolute right-0 bottom-0 w-2/3 h-full object-cover object-[center_20%] mask-fade opacity-50 group-hover:scale-105 group-hover:opacity-60 transition-all duration-1000" alt="Manken" />
+                      <div className="relative z-10 w-2/3 h-full flex flex-col">
+                         <div className="w-16 h-16 bg-[#caf265] text-[#0b2117] rounded-[1.5rem] flex items-center justify-center mb-8 shadow-xl"><User size={28} /></div>
+                         <h3 className="text-4xl md:text-5xl font-display text-white mb-6 leading-tight">Sanal Manken Yaratımı</h3>
+                         <p className="text-[#a8b8af] font-light text-lg mb-8 leading-relaxed">Kapsayıcı ve markanıza %100 uyan, her fotoğrafınızda tutarlı görünen özgün dijital personalar inşa edin. Sizin markanız, sizin yüzünüz.</p>
+                         <div className="mt-auto flex items-center gap-3 text-white font-medium group-hover:text-[#caf265] transition-colors">Portföyü İncele <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" /></div>
+                      </div>
+                  </div>
+                  
+                  <div className="grid grid-rows-2 gap-6">
+                     <div className="bg-[#0b1426] rounded-3xl p-10 border border-white/10 relative overflow-hidden group hover:border-white/30 transition-all cursor-pointer flex items-center" onClick={() => navigate('/hizmetler/ai-produksiyon')}>
+                         <img src="/sosyal_medya_resimler/Hayalet öncesi sonrası/L0000000751461 2 (6).jpg" className="absolute right-0 top-0 w-1/2 h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-80 transition-all duration-700" />
+                         <div className="absolute inset-0 bg-gradient-to-r from-[#0b1426] via-[#0b1426]/80 to-transparent" />
+                         <div className="relative z-10 w-2/3 pr-8">
+                             <div className="w-12 h-12 bg-white/10 text-white rounded-[1rem] flex items-center justify-center mb-6 backdrop-blur-md border border-white/20"><ImageIcon size={20} /></div>
+                             <h3 className="text-3xl font-display text-white mb-3 tracking-tight">Ghost Mannequin</h3>
+                             <p className="text-[#a8b8af] font-light leading-relaxed">Hacimli 3D form hissiyatı yaratarak ürünün kumaş kalitesini öne çıkarın.</p>
+                         </div>
+                     </div>
+                     <div className="bg-[#241a15] rounded-3xl p-10 border border-white/10 relative overflow-hidden group hover:border-white/30 transition-all cursor-pointer" onClick={() => navigate('/hizmetler/ai-produksiyon')}>
+                         <img src="/sosyal_medya_resimler/Hero/03085-Haki_2K_4_5_shot_13_action_brushing_foliage.jpg" className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 group-hover:opacity-60 transition-all duration-700" />
+                         <div className="absolute inset-0 bg-gradient-to-t from-[#110c0a] via-black/50 to-transparent" />
+                         <div className="relative z-10 h-full flex flex-col justify-end">
+                             <h3 className="text-3xl font-display text-white mb-3">Konsept Lifestyle</h3>
+                             <p className="text-[#a8b8af] font-light w-5/6 text-lg leading-relaxed mb-4">Dünyanın öbür ucunda bir stüdyo kurmadan oradaymış hissi verin ve hedef kitlenizi ikna edin.</p>
+                             <div className="flex items-center gap-2 text-white text-sm font-bold uppercase tracking-widest group-hover:text-white/70 transition-colors">Katalog Çekimleri <ArrowRight size={16} /></div>
+                         </div>
+                     </div>
+                  </div>
+              </div>
+           </div>
         </section>
 
-        {/* 6. MÜŞTERİ YORUMU (Testimonial) */}
-        {/*
-        <section className={`py-16 md:py-24 border-t ${colors.borderColorDark}`}>
-          <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
-            <div className="max-w-4xl mx-auto text-center">
-              <span className="text-[#caf265] text-xs font-bold uppercase tracking-widest mb-8 block">MÜŞTERİ YORUMU</span>
+        {/* 8. MANKEN SHOWCASE MARQUEE */}
+        <section className={`py-20 md:py-32 border-b ${colors.borderColorDark} overflow-hidden bg-black/20`}>
+           <div className="text-center mb-16 max-w-3xl mx-auto px-6">
+                <span className="text-white/40 text-xs font-bold uppercase tracking-widest mb-4 block">SABİT PERSONALAR, ÇEŞİTLİLİK SAĞLAR</span>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-white leading-tight">İnsan Formunda <span className="italic text-[#caf265]">Dijital Modeller</span></h2>
+                <p className="text-[#a8b8af] mt-4 font-light text-lg">Markanıza uyan sanal mankenlerden birini seçin, koleksiyonlarınızın tamamını aynı yüzle tanıtın.</p>
+           </div>
+           
+           <MankenRow items={MANKEN_ASSETS} reverse={false} duration={40} />
+           <MankenRow items={[...MANKEN_ASSETS].reverse()} reverse={true} duration={45} />
+           
+           <div className="mt-16 flex justify-center">
+               <button onClick={() => navigate('/hizmetler/ai-produksiyon')} className="px-10 py-5 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-white hover:bg-white hover:text-black hover:border-white transition-all font-bold text-lg flex items-center gap-3">
+                   Tüm Manken Portföyünü İncele <MoveRight size={20} />
+               </button>
+           </div>
+        </section>
+
+        {/* 9. PORTFOLYO / İŞLERİMİZ */}
+        <section className={`py-20 md:py-32 border-b ${colors.borderColorDark}`}>
+           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
+              <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-8">
+                <div className="max-w-2xl text-white">
+                    <span className="text-[#caf265] text-xs font-bold uppercase tracking-widest mb-4 block">100+ MEMNUN MARKA</span>
+                    <h2 className="text-5xl md:text-7xl font-display font-normal italic leading-[0.95]">Üretim Gücümüzü <br /><span className="not-italic">Somutlaştırın.</span></h2>
+                </div>
+                <button onClick={() => navigate('/islerimiz')} className="px-10 py-5 rounded-full border border-[#caf265] bg-[#caf265]/10 text-[#caf265] hover:bg-[#caf265] hover:text-[#0b2117] transition-all font-bold group flex items-center gap-3">
+                    Tüm İşlerimizi Gör <ArrowRight size={20} className="group-hover:translate-x-1.5 transition-transform" />
+                </button>
+              </div>
               
-              <motion.blockquote
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="text-2xl md:text-4xl font-display italic text-[#F4EFE6] leading-snug mb-10"
-              >
-                "PikselAI ile çalışmak bizim için kritik öneme sahipti. Zamanında kaliteli iş teslim edebilen, kısa süreli bildirimlerde bile <span className="text-[#caf265] not-italic">güvenebileceğimiz bir ekip.</span>"
-              </motion.blockquote>
-
-              <div className="flex flex-col items-center gap-2">
-                <span className="text-white font-bold text-lg">Fatih Erdoğan</span>
-                <span className="text-[#a8b8af] text-sm">Pazarlama ve İletişim Müdürü — Cazador</span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8 auto-rows-auto">
+                 {PORTFOLIO.map((item) => (
+                     <div key={item.id} onClick={() => navigate('/islerimiz')} className={`group cursor-pointer rounded-[2.5rem] overflow-hidden relative shadow-2xl bg-[#0b1426] border border-white/10 hover:border-[#caf265]/30 ${item.spanClass} ${item.aspectClass}`}>
+                         <img src={item.thumbnail} className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 ease-[cubic-bezier(0.2,0.8,0.2,1)]" alt={item.client} />
+                         <div className="absolute inset-0 bg-gradient-to-t from-[#0b2117] via-[#0b2117]/40 to-transparent opacity-90 group-hover:opacity-60 transition-opacity duration-700" />
+                         
+                         {/* Hover State Explore Button */}
+                         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20">
+                            <div className="w-20 h-20 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center text-white border border-white/20 transform scale-75 group-hover:scale-100 transition-transform duration-500 ease-out">
+                                <ArrowRight size={32} className="-rotate-45" />
+                            </div>
+                         </div>
+                         
+                         {/* Content Info */}
+                         <div className="absolute inset-x-0 bottom-0 p-8 md:p-10 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-700 z-10 flex flex-col gap-2">
+                             <span className="text-[#caf265] text-xs font-bold tracking-[0.2em] uppercase bg-black/50 backdrop-blur-sm self-start px-3 py-1 rounded-full border border-white/10">
+                                 {item.category}
+                             </span>
+                             <h4 className="text-white text-3xl md:text-4xl font-display">{item.client}</h4>
+                         </div>
+                     </div>
+                 ))}
               </div>
-
-              <div className="flex justify-center gap-16 mt-12 pt-12 border-t border-[#1e3b2b]">
-                <div>
-                  <div className="text-4xl font-display font-medium text-[#caf265]">100+</div>
-                  <div className="text-sm text-[#a8b8af] mt-1">Tasarım Projesi</div>
-                </div>
-                <div>
-                  <div className="text-4xl font-display font-medium text-[#caf265]">48s</div>
-                  <div className="text-sm text-[#a8b8af] mt-1">Ort. Teslim Süresi</div>
-                </div>
-                <div>
-                  <div className="text-4xl font-display font-medium text-[#caf265]">%95</div>
-                  <div className="text-sm text-[#a8b8af] mt-1">Memnuniyet</div>
-                </div>
-              </div>
-            </div>
-          </div>
+           </div>
         </section>
-        */}
 
-        {/* 7. SSS – Sıkça Sorulan Sorular */}
-        <section className={`py-16 md:py-24 border-t ${colors.borderColorDark}`}>
+        {/* 11. TEK ÜRÜN SINIRSIZ İÇERİK FORMATLARI */}
+        <section className={`py-20 md:py-32 border-b ${colors.borderColorDark} bg-[#F4EFE6]`}>
+            <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
+                <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-16 lg:gap-24 items-center">
+                    <div className="order-2 lg:order-1 relative aspect-[4/5] md:aspect-square rounded-[3rem] overflow-hidden shadow-2xl group border-[8px] border-white/40 bg-[#1A1A1A]">
+                        <img src={INFINITE_FORMATS[0].img} className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 z-0" />
+                        <motion.img 
+                            animate={{ opacity: [0, 1, 1, 0, 0, 0] }}
+                            transition={{ duration: 16, repeat: Infinity, times: [0, 0.1, 0.3, 0.4, 0.9, 1] }}
+                            src={INFINITE_FORMATS[1].img} className="absolute inset-0 w-full h-full object-cover z-10" 
+                        />
+                        <motion.img 
+                            animate={{ opacity: [0, 0, 0, 1, 1, 0] }}
+                            transition={{ duration: 16, repeat: Infinity, times: [0, 0.3, 0.4, 0.6, 0.7, 1] }}
+                            src={INFINITE_FORMATS[2].img} className="absolute inset-0 w-full h-full object-cover z-20" 
+                        />
+                        <motion.img 
+                            animate={{ opacity: [0, 0, 0, 0, 0, 1] }}
+                            transition={{ duration: 16, repeat: Infinity, times: [0, 0.6, 0.7, 0.9, 1, 1] }}
+                            src={INFINITE_FORMATS[3].img} className="absolute inset-0 w-full h-full object-cover z-30" 
+                        />
+                        <div className="absolute bottom-8 left-8 right-8 z-50 bg-black/60 backdrop-blur-xl text-white px-6 py-4 rounded-2xl flex items-center justify-between border border-white/20">
+                           <div className="flex items-center gap-3">
+                               <RefreshCcw size={20} className="text-[#caf265] animate-spin-slow" />
+                               <span className="font-bold text-sm tracking-widest uppercase">Akıllı Format Dönüşümü</span>
+                           </div>
+                           <div className="flex gap-1.5">
+                               {[1,2,3,4].map(i => <div key={i} className="w-1.5 h-1.5 rounded-full bg-white/30" />)}
+                           </div>
+                        </div>
+                    </div>
+
+                    <div className="order-1 lg:order-2">
+                        <span className="text-[#0b2117]/50 text-xs font-bold uppercase tracking-[0.2em] mb-6 block">MAKSİMUM VERİMLİLİK</span>
+                        <h2 className="text-4xl md:text-5xl lg:text-[4rem] font-display text-[#0b2117] leading-tight mb-8">
+                            Tek Ürün. <br/><span className="italic text-[#0b2117] font-bold underline decoration-[#caf265] underline-offset-8">Sınırsız Sahne.</span>
+                        </h2>
+                        <p className="text-[#0b2117]/70 font-medium text-xl leading-relaxed mb-10">Bir kere basit fotoğraf çekin, sonsuza kadar farklı formatlarda kullanın. Aynı çantayı bugün beyaz fonda satarken, yarın sokak stilinde 16:9 reklamınızda başrolde izleyin.</p>
+                        
+                        <div className="flex flex-col gap-4">
+                            {INFINITE_FORMATS.map((form) => (
+                                <div key={form.id} className="flex items-center justify-between p-5 rounded-2xl bg-white/70 border border-[#0b2117]/5 shadow-sm hover:bg-white hover:shadow-md transition-all">
+                                   <div className="flex items-center gap-4 text-[#0b2117] font-bold text-lg">
+                                      <div className="w-10 h-10 rounded-xl bg-[#caf265] flex items-center justify-center shrink-0 shadow-sm"><Check size={20} className="text-[#0b2117]" /></div>
+                                      {form.title}
+                                   </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* 12. SSS – FREQUENTLY ASKED QUESTIONS */}
+        <section className={`py-20 md:py-32 border-b ${colors.borderColorDark}`}>
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
             <div className="max-w-3xl mx-auto">
               <div className="text-center mb-16">
-                <span className="text-[#caf265] text-xs font-bold uppercase tracking-widest mb-4 block">SSS</span>
-                <h2 className="text-4xl md:text-5xl font-display text-white">
-                  Sıkça <span className="italic">sorulan sorular</span>
+                <span className="text-[#caf265] text-xs font-bold uppercase tracking-widest mb-4 block">AKLINIZA TAKILANLAR</span>
+                <h2 className="text-4xl md:text-6xl font-display text-white">
+                  Sıkça Sorulan <span className="italic">Sorular</span>
                 </h2>
               </div>
-
               <div className="space-y-4">
                 {[
-                  { q: "Minimum sipariş miktarı var mı?", a: "Hayır, tek bir ürün görseli için bile çalışabiliriz. Paketlerimiz her bütçeye uygun esnek seçenekler sunar." },
-                  { q: "Teslim süresi ne kadar?", a: "Proje tipine göre değişmekle birlikte, ürün görselleri için ortalama 24-48 saat, kapsamlı projeler için 1-2 hafta süre öngörüyoruz." },
-                  { q: "Yapay zeka ile üretilen görseller gerçekçi mi?", a: "Evet, fotorealistik kalitede görseller üretiyoruz. Her görsel profesyonel kreatif ekibimiz tarafından kontrol edilir ve gerekirse ince ayar yapılır." },
-                  { q: "Hangi sektörlere hizmet veriyorsunuz?", a: "Moda & tekstil, kozmetik, aksesuar, mobilya, gıda ve daha birçok sektörde deneyimimiz var. İhtiyacınıza özel çözümler sunuyoruz." },
-                  { q: "E-ticaret yönetimi ile birlikte görsel üretim de yapıyor musunuz?", a: "Evet, tam entegre hizmet sunuyoruz. E-ticaret mağazanızın yönetiminden ürün görsellerine, sosyal medya içeriklerinden reklam yönetimine kadar her şey tek çatı altında." }
+                  { q: "Minimum sipariş veya görsel miktarı var mı?", a: "Hayır, tek bir ürün görseli için bile çalışabiliriz. Esnek kampanya paketlerimiz e-ticaret satıcılarından büyük moda devlerine kadar her ölçeğe hitap etmektedir." },
+                  { q: "Teslim süresi ortalama ne kadardır?", a: "Sezon veya konsept yenilemeleri genelde aynı gün veya 48 saat içinde teslim edilmektedir. Proje başlamadan önce kesin teslimat takvimini belirliyoruz." },
+                  { q: "Yapay zeka ile üretilen mankenli fotoğraflar gerçekten inandırıcı mı?", a: "Evet. Özel eğitim yapılmış, kumaş dokusunu bozmayan ve anatomik bütünlüğü (eller, yüz vb.) tamamen doğru işleyen kurumsal AI mimarimiz sayesinde dünyanın en iyi dergi çekimlerinden farksız sonuçlar alırsınız." },
+                  { q: "Kendi ürünümü stüdyonuzda fiziki olarak çektirebilir miyim?", a: "PikselAI olarak dijital prodüksiyon (sanal fotoğrafçılık) haricinde, kendi e-ticaret stüdyomuzda klasik ürün çekim, ghost mannequin ve video hizmetlerini de fiziksel olarak sunuyoruz." }
                 ].map((faq, idx) => (
                   <FaqItem key={idx} question={faq.q} answer={faq.a} />
                 ))}
@@ -337,28 +680,25 @@ const Home = () => {
           </div>
         </section>
 
-        {/* 8. BOTTOM CTA */}
-        <section className={`py-12 md:py-16 px-6 md:px-16 lg:px-24 border-t ${colors.borderColorDark}`}>
+        {/* 14. BOTTOM CTA */}
+        <section className={`py-16 md:py-24 px-4 md:px-12 lg:px-24`}>
           <div className="max-w-[1400px] mx-auto bg-[#caf265] rounded-[3rem] p-10 md:p-24 relative overflow-hidden flex flex-col items-center justify-center text-center gap-8 shadow-2xl">
-            {/* Ambient Lighting */}
-            <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-white/40 via-transparent to-black/5 pointer-events-none" />
-
-            <div className="relative z-10 max-w-3xl flex flex-col items-center">
-              <h2 className="text-4xl md:text-6xl lg:text-[5rem] font-display font-normal italic text-[#0b2117] mb-8 leading-[1.1]">
-                Markanızı birlikte <br /> <span className="text-[#0b2117] font-display font-normal not-italic">büyütmeye hazır mısınız?</span>
+            {/* Dekoratif Daireler */}
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white opacity-20 blur-[100px] rounded-full translate-x-1/2 -translate-y-1/2" />
+            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#0b2117] opacity-10 blur-[80px] rounded-full -translate-x-1/3 translate-y-1/3" />
+            
+            <div className="relative z-10 max-w-4xl flex flex-col items-center">
+              <span className="px-4 py-2 rounded-full border border-[#0b2117]/20 text-[#0b2117] text-xs font-bold uppercase tracking-widest bg-white/20 backdrop-blur-md mb-8">Ücretsiz Danışmanlık</span>
+              <h2 className="text-4xl md:text-6xl lg:text-[6rem] font-display font-normal italic text-[#0b2117] mb-8 leading-[1.0]">
+                Markanızı geleceğe <br /> <span className="text-[#0b2117] font-display font-bold not-italic">taşımaya hazır mısınız?</span>
               </h2>
-              <p className="text-[#4a6355] mb-12 text-lg md:text-xl font-medium max-w-xl">
-                Ajans hantallığına son verin. Kaliteli, hızlı ve markanıza tam uyumlu süreçlerimize bugün katılın. En hızlı çözümleri size özel kurgulayalım.
+              <p className="text-[#0b2117]/80 mb-12 text-xl font-medium max-w-2xl leading-relaxed">
+                Ağır süreçleri, yüksek prodüksiyon maliyetlerini ve karmaşayı geride bırakın. Kaliteli, hızlı ve ölçeklenebilir kreatif sürecimize adım atmak için bugün bizimle iletişime geçin.
               </p>
-              <div className="flex flex-col sm:flex-row items-center gap-6 justify-center w-full">
-                <button 
-                  onClick={() => navigate('/iletisim')}
-                  className="bg-[#0b2117] text-white hover:bg-black transition-all duration-300 rounded-full px-10 py-5 text-lg font-bold flex items-center justify-center gap-3 w-full sm:w-auto min-w-[200px] group shadow-xl"
-                >
-                  Toplantı Planla
-                  <ArrowRight className="group-hover:translate-x-1.5 transition-transform" />
-                </button>
-              </div>
+              <button onClick={() => navigate('/iletisim')} className="bg-[#0b2117] text-[#caf265] hover:bg-black transition-all duration-300 rounded-full px-12 py-6 text-xl font-bold flex items-center justify-center gap-4 w-full sm:w-auto shadow-[0_20px_40px_rgba(11,33,23,0.3)] hover:-translate-y-1 group">
+                 <span>Hemen Demo Talep Et</span>
+                 <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+              </button>
             </div>
           </div>
         </section>
@@ -369,32 +709,3 @@ const Home = () => {
 };
 
 export default Home;
-
-function FaqItem({ question, answer }: { question: string; answer: string }) {
-  const [isOpen, setIsOpen] = useState(false);
-  return (
-    <div
-      className={`border rounded-2xl transition-colors duration-300 ${
-        isOpen ? 'border-[#caf265]/30 bg-white/5' : 'border-[#1e3b2b] hover:border-[#caf265]/20'
-      }`}
-    >
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between p-6 text-left"
-      >
-        <span className="text-lg font-medium text-white pr-4">{question}</span>
-        <ChevronDown
-          size={20}
-          className={`text-[#caf265] shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
-        />
-      </button>
-      <div
-        className={`overflow-hidden transition-all duration-300 ${
-          isOpen ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'
-        }`}
-      >
-        <p className="px-6 pb-6 text-[#a8b8af] font-light leading-relaxed">{answer}</p>
-      </div>
-    </div>
-  );
-}

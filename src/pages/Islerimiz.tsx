@@ -223,7 +223,6 @@ const Islerimiz = () => {
     const [isPlaying, setIsPlaying] = useState(true);
     const videoRef = useRef<HTMLVideoElement>(null);
     const [isHovering, setIsHovering] = useState(false);
-    const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
     const [cursorType, setCursorType] = useState<'dot' | 'exit'>('dot');
 
     // Cursor Motion

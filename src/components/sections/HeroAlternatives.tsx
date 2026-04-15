@@ -128,9 +128,6 @@ const VersionMarquee = () => {
   return (
     <div className="w-full space-y-4 py-8">
       <MarqueeRow row={0} /><MarqueeRow row={1} />
-      <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="pt-16 flex flex-col items-center px-6">
-        <p className="text-3xl md:text-5xl lg:text-6xl font-display text-white max-w-5xl text-center leading-[1.2] font-light">Tüm dijital ihtiyaçlarınızı <span className="italic text-[#caf265] font-serif underline decoration-white/10 underline-offset-8">tek bir çatı altında</span>, en hızlı ve en kreatif şekilde çözüyoruz.</p>
-      </motion.div>
     </div>
   );
 };

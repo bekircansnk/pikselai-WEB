@@ -312,7 +312,8 @@ const Home = () => {
           </div>
         </section>
 
-        {/* 2. MARKA LOGOLARI MARQUEE */}
+        {/* 2. MARKA LOGOLARI MARQUEE (Geçici Olarak Gizlendi) */}
+        {false && (
         <section className={`py-10 bg-black/40 border-y ${colors.borderColorDark} overflow-hidden relative z-10`}>
             <div className="max-w-[1400px] mx-auto flex gap-4 mask-fade relative">
                <motion.div 
@@ -326,6 +327,7 @@ const Home = () => {
                </motion.div>
             </div>
         </section>
+        )}
 
         {/* 3. DEĞER ÖNERİSİ & SAYAÇLAR */}
         <section className={`py-20 md:py-32 border-b ${colors.borderColorDark} relative`}>

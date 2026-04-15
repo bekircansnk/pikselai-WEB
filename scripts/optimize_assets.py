@@ -8,7 +8,7 @@ import sys
 PROJECT_ROOT = os.getcwd()
 SRC_DIR = os.path.join(PROJECT_ROOT, 'src')
 PUBLIC_DIR = os.path.join(PROJECT_ROOT, 'public')
-BACKUP_DIR = os.path.join(PROJECT_ROOT, '_backup_unused')
+BACKUP_DIR = os.path.join(PROJECT_ROOT, '.silinecekler_cop_kutusu')
 MAX_SIZE_KB = 100
 TARGET_FORMAT = 'webp'
 IMAGE_EXTENSIONS = {'.jpg', '.jpeg', '.png', '.webp'}
@@ -152,8 +152,11 @@ def main():
                 if name != new_name:
                     # Update code references
                     update_references(code_files, name, new_name)
-                    # Remove old file if different extension
-                    os.remove(path)
+                    # Move old file if different extension
+                    try:
+                        shutil.move(path, os.path.join(BACKUP_DIR, name))
+                    except:
+                        pass
 
     print(f"\nOptimization Complete!")
     print(f"Moved {unused_count} unused assets to {BACKUP_DIR}")

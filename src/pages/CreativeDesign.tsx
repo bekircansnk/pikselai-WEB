@@ -274,7 +274,7 @@ export default function CreativeDesign() {
                 {/* Full Bleed Background Image - Anchored at the top so the dense forest shows, falling naturally into black/dark green at the bottom */}
                 <div className="absolute inset-0 z-0 pointer-events-none">
                     {/* Hiding the natural dark bottom part seamlessly with the UI's brand green (#0A2624) */}
-                    <div className="absolute inset-0 bg-[url('/assets/pages/creativedesign/katalog_cta_bg.png')] bg-cover bg-top bg-no-repeat opacity-90"></div>
+                    <div className="absolute inset-0 bg-[url('/assets/pages/creativedesign/katalog_cta_bg.webp')] bg-cover bg-top bg-no-repeat opacity-90"></div>
                     <div className="absolute inset-x-0 bottom-0 h-96 bg-gradient-to-t from-[#0A2624] via-[#0A2624]/80 to-transparent"></div>
                 </div>
 

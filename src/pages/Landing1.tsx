@@ -110,7 +110,7 @@ const services = [
     icon: null,
     path: "/hizmetler/dijital-buyume",
     bg: "bg-[#6d5b4a]",
-    img: "/sosyal_medya_resimler/landing_page/reklam_panel.png",
+    img: "/sosyal_medya_resimler/landing_page/reklam_panel.webp",
     cols: "md:col-span-4",
     objectPos: "object-left-top",
     objectFit: "object-none",
@@ -123,7 +123,7 @@ const services = [
     icon: null,
     path: "/hizmetler/kreatif-tasarim",
     bg: "bg-[#0b1426]",
-    img: "/sosyal_medya_resimler/landing_page/katalog.png",
+    img: "/sosyal_medya_resimler/landing_page/katalog.webp",
     cols: "md:col-span-4",
     opacity: "opacity-60 group-hover:opacity-80",
     noBlend: true

@@ -330,39 +330,39 @@ const Home = () => {
         )}
 
         {/* 3. DEĞER ÖNERİSİ & SAYAÇLAR */}
-        <section className={`py-20 md:py-32 border-b ${colors.borderColorDark} relative`}>
-           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.03] bg-center pointer-events-none"></div>
+        <section className={`py-20 md:py-32 border-b border-[#0b2117]/10 bg-[#F4EFE6] relative transition-colors`}>
+           <div className="absolute inset-0 bg-[#0b2117] opacity-[0.03] bg-center pointer-events-none"></div>
            <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 relative z-10">
               <div className="flex flex-col lg:flex-row gap-16 justify-between items-center">
                  <div className="lg:w-5/12 text-center lg:text-left">
-                     <span className="text-[#caf265] text-xs font-bold uppercase tracking-widest mb-6 block">HIZLI ÇÖZÜMLER</span>
-                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-display italic text-[#F4EFE6] leading-tight mb-6">
-                         Rakamlarla <br className="hidden lg:block"/><span className="not-italic text-white">Yapay Zeka Farkı.</span>
+                     <span className="text-[#0b2117]/60 text-xs font-bold uppercase tracking-widest mb-6 block">HIZLI ÇÖZÜMLER</span>
+                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-display italic text-[#0b2117] leading-tight mb-6">
+                         Rakamlarla <br className="hidden lg:block"/><span className="not-italic font-medium">Yapay Zeka Farkı.</span>
                      </h2>
-                     <p className="text-[#a8b8af] font-light leading-relaxed text-lg lg:max-w-md mx-auto lg:mx-0">
+                     <p className="text-[#0b2117]/70 font-light leading-relaxed text-lg lg:max-w-md mx-auto lg:mx-0">
                          Ajans hantallığına son veriyoruz. Yapay zeka motorumuz sayesinde geleneksel prodüksiyonların getirdiği maliyetleri düşürürken hızı inanılmaz boyutlara çıkarıyoruz.
                      </p>
                  </div>
                  
                  <div className="lg:w-7/12 grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 w-full mt-10 lg:mt-0">
-                    <div className="flex flex-col items-center lg:items-start p-6 rounded-3xl bg-white/[0.02] border border-white/5 hover:border-[#caf265]/30 transition-colors">
-                        <div className="text-5xl md:text-6xl font-display font-medium text-[#caf265] mb-4 flex items-baseline drop-shadow-[0_0_15px_rgba(202,242,101,0.3)]">
+                    <div className="flex flex-col items-center lg:items-start p-6 rounded-3xl bg-white border border-[#0b2117]/10 shadow-sm hover:border-black/30 transition-colors">
+                        <div className="text-5xl md:text-6xl font-display font-medium text-[#0b2117] mb-4 flex items-baseline">
                             %<CountUp end={80} duration={2}/>
                         </div>
-                        <h4 className="text-xl font-display text-white mb-2">Düşük Maliyet</h4>
-                        <p className="text-[#a8b8af] text-sm font-light leading-relaxed text-center lg:text-left">Fiziksel stüdyo, manken, ışık ve ekip maliyetini sıfırlayın.</p>
+                        <h4 className="text-xl font-display text-[#0b2117] mb-2 font-bold">Düşük Maliyet</h4>
+                        <p className="text-[#0b2117]/70 text-sm font-light leading-relaxed text-center lg:text-left">Fiziksel stüdyo, manken, ışık ve ekip maliyetini sıfırlayın.</p>
                     </div>
-                    <div className="flex flex-col items-center lg:items-start p-6 rounded-3xl bg-white/[0.02] border border-white/5 hover:border-[#caf265]/30 transition-colors">
-                        <div className="text-5xl md:text-6xl font-display font-medium text-[#caf265] mb-4 flex items-baseline drop-shadow-[0_0_15px_rgba(202,242,101,0.3)]">
+                    <div className="flex flex-col items-center lg:items-start p-6 rounded-3xl bg-white border border-[#0b2117]/10 shadow-sm hover:border-black/30 transition-colors">
+                        <div className="text-5xl md:text-6xl font-display font-medium text-[#0b2117] mb-4 flex items-baseline">
                             <CountUp end={48} duration={2} suffix="s" />
                         </div>
-                        <h4 className="text-xl font-display text-white mb-2">İçinde Teslim</h4>
-                        <p className="text-[#a8b8af] text-sm font-light leading-relaxed text-center lg:text-left">Haftalar süren prodüksiyon süreçleri artık aynı gün elinizde.</p>
+                        <h4 className="text-xl font-display text-[#0b2117] mb-2 font-bold">İçinde Teslim</h4>
+                        <p className="text-[#0b2117]/70 text-sm font-light leading-relaxed text-center lg:text-left">Haftalar süren prodüksiyon süreçleri artık aynı gün elinizde.</p>
                     </div>
-                    <div className="flex flex-col items-center lg:items-start p-6 rounded-3xl bg-white/[0.02] border border-white/5 hover:border-[#caf265]/30 transition-colors">
-                        <div className="text-5xl md:text-6xl font-display font-medium text-[#caf265] mb-4 drop-shadow-[0_0_15px_rgba(202,242,101,0.3)]">∞</div>
-                        <h4 className="text-xl font-display text-white mb-2">Sınırsız Sahne</h4>
-                        <p className="text-[#a8b8af] text-sm font-light leading-relaxed text-center lg:text-left">Dünyanın her köşesinde, istenilen arka planda üretim yapın.</p>
+                    <div className="flex flex-col items-center lg:items-start p-6 rounded-3xl bg-white border border-[#0b2117]/10 shadow-sm hover:border-black/30 transition-colors">
+                        <div className="text-5xl md:text-6xl font-display font-medium text-[#0b2117] mb-4">∞</div>
+                        <h4 className="text-xl font-display text-[#0b2117] mb-2 font-bold">Sınırsız Sahne</h4>
+                        <p className="text-[#0b2117]/70 text-sm font-light leading-relaxed text-center lg:text-left">Dünyanın her köşesinde, istenilen arka planda üretim yapın.</p>
                     </div>
                  </div>
               </div>
@@ -390,17 +390,17 @@ const Home = () => {
         </section>
 
         {/* 5. MASONRY SERVICES GRID */}
-        <section id="services" className={`py-20 md:py-32 border-b ${colors.borderColorDark}`}>
+        <section id="services" className={`py-20 md:py-32 border-b border-[#0b2117]/10 bg-[#F4EFE6] transition-colors`}>
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
             
             <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
               <div>
-                <span className="text-[#caf265] text-xs font-bold uppercase tracking-widest mb-4 block">360° ÇÖZÜMLER</span>
-                <h2 className="text-5xl md:text-7xl font-display text-white">
+                <span className="text-[#0b2117]/60 text-xs font-bold uppercase tracking-widest mb-4 block">360° ÇÖZÜMLER</span>
+                <h2 className="text-5xl md:text-7xl font-display text-[#0b2117]">
                   Tek merkezden <br/><span className="italic">sonsuz potansiyel</span>
                 </h2>
               </div>
-              <p className="text-[#a8b8af] max-w-md text-xl font-light leading-relaxed mb-4">
+              <p className="text-[#0b2117]/70 max-w-md text-xl font-light leading-relaxed mb-4">
                 Markanızı sıfırdan zirveye taşıyacak entegre dijital altyapılar ve yaratıcı çözümler sunuyoruz.
               </p>
             </div>
@@ -521,11 +521,11 @@ const Home = () => {
         </section>
 
         {/* 7. AI VİTRİNİ BENTO */}
-        <section className={`py-16 md:py-24 border-b ${colors.borderColorDark}`}>
+        <section className={`py-16 md:py-24 border-b border-[#0b2117]/10 bg-[#F4EFE6] transition-colors`}>
            <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
               <div className="text-center mb-16">
-                  <span className="text-[#a8b8af] text-xs font-bold uppercase tracking-widest mb-4 block">HİZMET ALANLARIMIZ</span>
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-white mb-6">Sanal Prodüksiyon <span className="italic text-[#caf265]">Yeteneklerimiz</span></h2>
+                  <span className="text-[#0b2117]/60 text-xs font-bold uppercase tracking-widest mb-4 block">HİZMET ALANLARIMIZ</span>
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-[#0b2117] mb-6">Sanal Prodüksiyon <span className="italic font-medium">Yeteneklerimiz</span></h2>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-auto md:h-[650px]">
@@ -582,14 +582,14 @@ const Home = () => {
         </section>
 
         {/* 9. PORTFOLYO / İŞLERİMİZ */}
-        <section className={`py-20 md:py-32 border-b ${colors.borderColorDark}`}>
+        <section className={`py-20 md:py-32 border-b border-[#0b2117]/10 bg-[#F4EFE6] transition-colors`}>
            <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
               <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-8">
-                <div className="max-w-2xl text-white">
-                    <span className="text-[#caf265] text-xs font-bold uppercase tracking-widest mb-4 block">100+ MEMNUN MARKA</span>
-                    <h2 className="text-5xl md:text-7xl font-display font-normal italic leading-[0.95]">Üretim Gücümüzü <br /><span className="not-italic">Somutlaştırın.</span></h2>
+                <div className="max-w-2xl text-[#0b2117]">
+                    <span className="text-[#0b2117]/60 text-xs font-bold uppercase tracking-widest mb-4 block">100+ MEMNUN MARKA</span>
+                    <h2 className="text-5xl md:text-7xl font-display font-normal italic leading-[0.95] text-[#0b2117]">Üretim Gücümüzü <br /><span className="not-italic font-bold">Somutlaştırın.</span></h2>
                 </div>
-                <button onClick={() => navigate('/islerimiz')} className="px-10 py-5 rounded-full border border-[#caf265] bg-[#caf265]/10 text-[#caf265] hover:bg-[#caf265] hover:text-[#0b2117] transition-all font-bold group flex items-center gap-3">
+                <button onClick={() => navigate('/islerimiz')} className="px-10 py-5 rounded-full border border-[#0b2117]/20 bg-white text-[#0b2117] shadow-sm hover:bg-[#0b2117] hover:text-white transition-all font-bold group flex items-center gap-3">
                     Tüm İşlerimizi Gör <ArrowRight size={20} className="group-hover:translate-x-1.5 transition-transform" />
                 </button>
               </div>

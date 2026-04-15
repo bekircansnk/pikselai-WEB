@@ -34,9 +34,9 @@ const BRAND_LOGOS = [
 ];
 
 const COMPARE_TABS = [
-  { id: "ghost", label: "Ghost → E-Ticaret", before: "/sosyal_medya_resimler/Hayalet öncesi sonrası/L0000000751458 (1).jpg", after: "/sosyal_medya_resimler/Hayalet öncesi sonrası/L0000000751458 (6).jpg" },
+  { id: "ghost", label: "Ghost → E-Ticaret", before: "/assets/pages/homeyeni/banner/l0000000751458_1.jpg", after: "/assets/pages/homeyeni/banner/l0000000751458_6.jpg" },
   { id: "flat", label: "Düz Ürün → Kampanya", before: "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined18.webp", after: "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined16.webp" },
-  { id: "lifestyle", label: "Ham → Lifestyle", before: "/sosyal_medya_resimler/Hayalet öncesi sonrası/L0000000758648 (1).jpg", after: "/assets/pages/homeyeni/03085_haki_2k_4_5_shot_13_action_brushing_foliage.webp" }
+  { id: "lifestyle", label: "Ham → Lifestyle", before: "/assets/pages/homeyeni/banner/l0000000758648_1.jpg", after: "/assets/pages/homeyeni/banner/03085_haki_2k_4_5_shot_13_action_brushing_foliage.webp" }
 ];
 
 const SERVICES = [
@@ -480,7 +480,7 @@ const Home = () => {
                      <AnimatePresence mode="wait">
                          {processStep === 0 && (
                             <motion.div key="s1" initial={{opacity:0, scale:0.95}} animate={{opacity:1, scale:1}} exit={{opacity:0, scale:1.05}} transition={{duration:0.6}} className="w-full h-full rounded-[2.5rem] overflow-hidden relative">
-                                <img src="/sosyal_medya_resimler/Hayalet öncesi sonrası/35325-Siyah (1).jpg" className="w-full h-full object-cover" />
+                                <img src="/assets/pages/homeyeni/banner/35325_siyah_1.jpg" className="w-full h-full object-cover" />
                                 <div className="absolute inset-0 bg-black/20 flex flex-col items-center justify-center pointer-events-none">
                                     <div className="w-20 h-20 rounded-full bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-white">
                                         <Camera size={32} />
@@ -506,7 +506,7 @@ const Home = () => {
                          )}
                          {processStep === 2 && (
                             <motion.div key="s3" initial={{opacity:0, scale:0.95}} animate={{opacity:1, scale:1}} exit={{opacity:0, scale:1.05}} transition={{duration:0.6}} className="w-full h-full rounded-[2.5rem] overflow-hidden relative">
-                                <img src="/sosyal_medya_resimler/Hayalet öncesi sonrası/35325-Siyah (8).jpg" className="w-full h-full object-cover" />
+                                <img src="/assets/pages/homeyeni/banner/35325_siyah_8.jpg" className="w-full h-full object-cover" />
                                 <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-black via-black/60 to-transparent pointer-events-none">
                                     <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#caf265] text-black rounded-full font-bold uppercase tracking-widest text-xs shadow-[0_0_20px_rgba(202,242,101,0.4)]">
                                        <Check size={14} /> Yayınlanmaya Hazır
@@ -541,7 +541,7 @@ const Home = () => {
                   
                   <div className="grid grid-rows-2 gap-6">
                      <div className="bg-[#0b1426] rounded-3xl p-10 border border-white/10 relative overflow-hidden group hover:border-white/30 transition-all cursor-pointer flex items-center" onClick={() => navigate('/hizmetler/ai-produksiyon')}>
-                         <img src="/sosyal_medya_resimler/Hayalet öncesi sonrası/L0000000751461 2 (6).jpg" className="absolute right-0 top-0 w-1/2 h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-80 transition-all duration-700" />
+                         <img src="/assets/pages/homeyeni/banner/l0000000751461_2_6.jpg" className="absolute right-0 top-0 w-1/2 h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-80 transition-all duration-700" />
                          <div className="absolute inset-0 bg-gradient-to-r from-[#0b1426] via-[#0b1426]/80 to-transparent" />
                          <div className="relative z-10 w-2/3 pr-8">
                              <div className="w-12 h-12 bg-white/10 text-white rounded-[1rem] flex items-center justify-center mb-6 backdrop-blur-md border border-white/20"><ImageIcon size={20} /></div>

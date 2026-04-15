@@ -26,6 +26,13 @@ const shuffleArray = (array: string[]) => {
 
 const HERO_IMAGES = shuffleArray(INITIAL_HERO_IMAGES);
 
+const ghostModules = import.meta.glob('/public/assets/pages/homeyeni/Ghost-Eticaret/*_1.jpg', { eager: true });
+const GHOST_PAIRS = Object.keys(ghostModules).map(path => {
+    const beforeStr = path.replace('/public', '');
+    const afterStr = beforeStr.replace('_1.jpg', '_2.jpg');
+    return { before: beforeStr, after: afterStr };
+});
+
 const BRAND_LOGOS = [
     "/assets/brands/cazador/cazador_logo.webp",
     "/assets/brands/venus/venus_logo.webp",
@@ -105,6 +112,17 @@ const CompareSlider = () => {
     const [sliderPos, setSliderPos] = useState(50);
     const containerRef = useRef<HTMLDivElement>(null);
     const [isDragging, setIsDragging] = useState(false);
+    const [ghostIndex, setGhostIndex] = useState(Math.floor(Math.random() * Math.max(GHOST_PAIRS.length, 1)));
+
+    // Ghost resim setlerini rastgele başlatıp belirli sürelerle değiştir (4 sn)
+    useEffect(() => {
+        if (activeTab.id === 'ghost' && GHOST_PAIRS.length > 1) {
+            const timer = setInterval(() => {
+                setGhostIndex(prev => (prev + 1) % GHOST_PAIRS.length);
+            }, 4000);
+            return () => clearInterval(timer);
+        }
+    }, [activeTab]);
 
     const handleMove = (clientX: number) => {
         if (!containerRef.current) return;
@@ -115,6 +133,10 @@ const CompareSlider = () => {
 
     const handleTouchMove = (e: React.TouchEvent) => { if(isDragging) handleMove(e.touches[0].clientX); };
     const handleMouseMove = (e: React.MouseEvent) => { if(isDragging) handleMove(e.clientX); };
+
+    // Dinamik Ghost Resimleri Seçimi
+    const currentBefore = activeTab.id === 'ghost' && GHOST_PAIRS.length > 0 ? GHOST_PAIRS[ghostIndex].before : activeTab.before;
+    const currentAfter = activeTab.id === 'ghost' && GHOST_PAIRS.length > 0 ? GHOST_PAIRS[ghostIndex].after : activeTab.after;
 
     return (
         <div className="w-full flex flex-col gap-6">
@@ -140,9 +162,9 @@ const CompareSlider = () => {
                 onTouchEnd={() => setIsDragging(false)}
                 onTouchMove={handleTouchMove}
             >
-                <img src={activeTab.after} alt="Sonrası" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
+                <motion.img key={`after-${currentAfter}`} initial={{ opacity: 0.8 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} src={currentAfter} alt="Sonrası" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
                 <div className="absolute inset-0 w-full h-full object-cover overflow-hidden pointer-events-none" style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}>
-                    <img src={activeTab.before} alt="Öncesi" className="absolute inset-0 w-full h-full object-cover min-w-[100vw] xl:min-w-full" style={{ width: '100vw' }} />
+                    <motion.img key={`before-${currentBefore}`} initial={{ opacity: 0.8 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} src={currentBefore} alt="Öncesi" className="absolute inset-0 w-full h-full object-cover min-w-[100vw] xl:min-w-full" style={{ width: '100vw' }} />
                 </div>
                 
                 {/* Custom Handle */}

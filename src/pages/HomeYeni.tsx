@@ -27,10 +27,10 @@ const shuffleArray = (array: string[]) => {
 
 const HERO_IMAGES = shuffleArray(INITIAL_HERO_IMAGES);
 
-const ghostModules = import.meta.glob('/public/hayalet_oncesi_sonrasi/*__1.jpg', { eager: true });
+const ghostModules = import.meta.glob('/public/assets/pages/homeyeni/hayalet_oncesi_sonrasi/*__1.webp', { eager: true });
 const GHOST_PAIRS = Object.keys(ghostModules).map(path => {
     const beforeStr = path.replace('/public', '');
-    const afterStr = beforeStr.replace('__1.jpg', '__2.jpg');
+    const afterStr = beforeStr.replace('__1.webp', '__2.webp');
     return { before: beforeStr, after: afterStr };
 });
 

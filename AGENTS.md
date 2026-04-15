@@ -13,7 +13,8 @@ Tüm projeyi temiz, yönetilebilir ve net kategoriler halinde tutmak ZORUNLUDUR.
 - `public/sosyal_medya_resimler/` -> Tüm proje görselleri. 
 
 ### 1.1 Görsel Kategorizasyon Kuralları
-`public/sosyal_medya_resimler` klasörü her marka ve duruma göre alt klasörlere ayrılmıştır ve kesinlikle boşluk veya Türkçe/özel karakter içermemelidir:
+- **Sayfa Bazlı Görsel Mimarisi (MANDATORY):** İlgili sayfanın veya bileşenin görselleri başka merkezi ya da genel konumlara taşınmamalı, o sayfanın adını ve amacını taşıyan alt klasörlerde tutulmalıdır (Örn: `public/assets/pages/homeyeni/hayalet_oncesi_sonrasi/`).
+- `public/sosyal_medya_resimler` klasörü her marka ve duruma göre alt klasörlere ayrılmıştır ve kesinlikle boşluk veya Türkçe/özel karakter içermemelidir:
 - `hero/` -> Ana sayfa tam tur görüntüleri.
 - `marka_logo/` -> Referans markaların SVG/PNG logoları.
 - `hayalet_oncesi_sonrasi/` -> Ghost mannequin değişimleri.

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { MainLayout } from '../layouts/MainLayout';
 import { ArrowRight, ChevronRight, Zap, Play, Box, TrendingUp, Layers } from 'lucide-react';
+import HeroAlternatives from '../components/sections/HeroAlternatives';
 
 
 
@@ -83,7 +84,7 @@ const Home = () => {
             <div className="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-[#a8b8af]/5 blur-[120px] rounded-full -translate-x-1/2 translate-y-1/2 pointer-events-none" />
           </div>
 
-          <div className="max-w-[1400px] w-full mx-auto px-6 md:px-16 lg:px-24 relative z-10 flex flex-col items-center text-center">
+          <div className="w-full relative z-10 flex flex-col items-center text-center">
             
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -99,7 +100,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-              className="text-5xl md:text-7xl lg:text-[7rem] font-display font-normal text-[#F4EFE6] leading-[1.05] tracking-tight mb-8"
+              className="max-w-[1400px] px-6 md:px-16 lg:px-24 text-5xl md:text-7xl lg:text-[7rem] font-display font-normal text-[#F4EFE6] leading-[1.05] tracking-tight mb-8"
             >
               Her işiniz <br />
               <span className="italic text-white">tek çatı altında!</span>
@@ -109,16 +110,18 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="text-xl md:text-2xl text-[#a8b8af] max-w-2xl font-light mb-12"
+              className="max-w-4xl px-6 md:px-16 text-xl md:text-2xl text-[#a8b8af] font-light mb-12"
             >
               Dağınık ajanslar, karmaşık süreçler ve belirsiz maliyetlere son. Tasarım, yazılım, yapay zeka ve dijital pazarlama... İhtiyacınız olan her şey PikselAI'da.
             </motion.p>
+            
+            <HeroAlternatives />
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="flex flex-col sm:flex-row gap-6 items-center w-full sm:w-auto"
+              className="flex flex-col sm:flex-row gap-6 items-center w-full sm:w-auto px-6"
             >
               <button 
                 onClick={() => navigate('/iletisim')}

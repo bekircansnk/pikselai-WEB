@@ -7,7 +7,6 @@ import {
   CheckCircle2,
   Clock,
   Zap,
-  TrendingUp,
   Plus,
   Minus,
   Play,

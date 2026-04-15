@@ -41,7 +41,7 @@ export function MegaMenu({ isOpen, activeMenu, onClose }: MegaMenuProps) {
                                 <div className="space-y-4">
                                     <MenuHeader
                                         title="AI Prodüksiyon"
-                                        color="bg-[#023e8a] text-white"
+                                        color="bg-[#D97941] text-white"
                                         href="/hizmetler/ai-produksiyon"
                                         onClose={onClose}
                                     />

@@ -4,9 +4,7 @@ import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
 import {
   ArrowRight,
-  Clock,
   Camera,
-  Layers,
   Sparkles,
   User,
   Image as ImageIcon,
@@ -616,16 +614,39 @@ const AiProduction = () => {
               <motion.h2 className="text-5xl md:text-7xl font-display font-normal italic text-[#1A1A1A] mb-10 leading-tight">Zamanın ötesinde <br /><span className="not-italic font-normal">bir prodüksiyon akışı.</span></motion.h2>
               <motion.p className="text-[#1A1A1A] opacity-60 max-w-3xl mx-auto text-xl font-light">Eski usul çekimlerin yarattığı tüm engelleri ortadan kaldırın. Verimliliği merkeze alan bir vizyonla markanızı büyütün.</motion.p>
             </motion.div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+            <div className="flex flex-col md:flex-row gap-6 h-auto md:h-[550px] w-full">
               {[
-                { icon: <Clock size={40} />, t: "Eşi Benzeri Olmayan Hız", d: "Sektördeki en hızlı üretim döngüsü. Fikirden paylaşıma sadece saatler içinde geçiş yapın." },
-                { icon: <Layers size={40} />, t: "Kusursuz Devamlılık", d: "Yapay zeka modellerimiz her mecrada aynı görsel dili ve karakteri %100 doğrulukla korur." },
-                { icon: <Camera size={40} />, t: "Kuralsız Yaratıcılık", d: "Mekan, bütçe veya teknik kısıtlamalar olmadan istediğiniz her türlü atmosferi oluşturun." }
+                { t: "Eşi Benzeri Olmayan Hız", d: "Sektördeki en hızlı üretim döngüsü. Fikirden paylaşıma sadece saatler içinde geçiş yapın." },
+                { t: "Kusursuz Devamlılık", d: "Yapay zeka modellerimiz her mecrada aynı görsel dili ve karakteri %100 doğrulukla korur." },
+                { t: "Kuralsız Yaratıcılık", d: "Mekan, bütçe veya teknik kısıtlamalar olmadan istediğiniz her türlü atmosferi oluşturun." }
               ].map((item, i) => (
-                <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="flex flex-col items-center text-center p-12 rounded-[3rem] bg-black/5 hover:bg-black/10 transition-colors group">
-                  <div className="w-24 h-24 rounded-[2rem] bg-black text-[#F4EFE6] flex items-center justify-center mb-8 shadow-2xl group-hover:scale-110 transition-transform">{item.icon}</div>
-                  <h3 className="text-2xl font-display font-normal italic mb-4 text-[#1A1A1A]">{item.t}</h3>
-                  <p className="text-[#1A1A1A] opacity-50 leading-relaxed font-light">{item.d}</p>
+                <motion.div 
+                  key={i} 
+                  initial={{ opacity: 0, y: 30 }} 
+                  whileInView={{ opacity: 1, y: 0 }} 
+                  viewport={{ once: true }} 
+                  transition={{ delay: i * 0.1, duration: 0.8 }}
+                  className="flex-1 relative group overflow-hidden bg-black/5 hover:flex-[1.4] transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] border border-black/5 rounded-[3rem] cursor-default"
+                >
+                  {/* Hover Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#D97941]/0 to-[#D97941]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  
+                  <div className="p-10 md:p-14 h-full flex flex-col justify-start relative z-10">
+                     {/* Title */}
+                     <h3 className="text-3xl md:text-5xl lg:text-6xl font-display font-normal italic text-[#1A1A1A] mb-8 leading-[1.1] group-hover:text-[#D97941] transition-colors duration-500">
+                       {item.t}
+                     </h3>
+                     
+                     {/* Description - Reveals on hover */}
+                     <div className="mb-auto overflow-hidden">
+                        <p className="text-[#1A1A1A] opacity-60 md:opacity-0 group-hover:opacity-100 transition-all duration-1000 translate-y-8 group-hover:translate-y-0 text-lg md:text-xl font-light italic leading-relaxed">
+                           {item.d}
+                        </p>
+                     </div>
+                  </div>
+                  
+                  {/* Decorative side line on hover */}
+                  <div className="absolute left-0 top-0 w-2 h-full bg-[#D97941] scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-top" />
                 </motion.div>
               ))}
             </div>

@@ -20,6 +20,8 @@ const AiProductionYeni = lazy(() => import('./pages/AiProductionYeni'))
 const HomeYeni = lazy(() => import('./pages/HomeYeni'))
 const CreativeDesign = lazy(() => import('./pages/CreativeDesign'))
 const CostCalculator = lazy(() => import('./pages/CostCalculator'))
+const Landing1 = lazy(() => import('./pages/Landing1'))
+
 
 const MinaDrinksCaseStudy = lazy(() => import('./pages/blog/MinaDrinksCaseStudy'))
 const VenusCaseStudy = lazy(() => import('./pages/blog/VenusCaseStudy'))
@@ -83,6 +85,8 @@ function App() {
             <Route path="/blog/venus" element={<VenusCaseStudy />} />
             <Route path="/blog/campandmap" element={<CampAndMapCaseStudy />} />
             <Route path="/fiyat-hesapla" element={<CostCalculator />} />
+
+            <Route path="/1" element={<Landing1 />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

@@ -106,23 +106,11 @@ const CountUp = ({ end, duration = 2, suffix = "" }: { end: number, duration?: n
   return <span ref={ref}>{count === 0 ? "0" + suffix : count}</span>;
 };
 
-// COMPONENT: CompareSlider
-const CompareSlider = () => {
-    const [activeTab, setActiveTab] = useState(COMPARE_TABS[0]);
+// COMPONENT: CompareSliderNode
+const CompareSliderNode = ({ beforeImg, afterImg, isVertical = false }: { beforeImg: string, afterImg: string, isVertical?: boolean }) => {
     const [sliderPos, setSliderPos] = useState(50);
     const containerRef = useRef<HTMLDivElement>(null);
-    const [isDragging, setIsDragging] = useState(false);
-    const [ghostIndex, setGhostIndex] = useState(Math.floor(Math.random() * Math.max(GHOST_PAIRS.length, 1)));
-
-    // Ghost resim setlerini rastgele başlatıp belirli sürelerle değiştir (4 sn)
-    useEffect(() => {
-        if (activeTab.id === 'ghost' && GHOST_PAIRS.length > 1) {
-            const timer = setInterval(() => {
-                setGhostIndex(prev => (prev + 1) % GHOST_PAIRS.length);
-            }, 4000);
-            return () => clearInterval(timer);
-        }
-    }, [activeTab]);
+    const [isHovered, setIsHovered] = useState(false);
 
     const handleMove = (clientX: number) => {
         if (!containerRef.current) return;
@@ -131,12 +119,59 @@ const CompareSlider = () => {
         setSliderPos((x / rect.width) * 100);
     };
 
-    const handleTouchMove = (e: React.TouchEvent) => { if(isDragging) handleMove(e.touches[0].clientX); };
-    const handleMouseMove = (e: React.MouseEvent) => { if(isDragging) handleMove(e.clientX); };
+    const handleMouseMove = (e: React.MouseEvent) => { 
+        handleMove(e.clientX); 
+    };
 
-    // Dinamik Ghost Resimleri Seçimi
-    const currentBefore = activeTab.id === 'ghost' && GHOST_PAIRS.length > 0 ? GHOST_PAIRS[ghostIndex].before : activeTab.before;
-    const currentAfter = activeTab.id === 'ghost' && GHOST_PAIRS.length > 0 ? GHOST_PAIRS[ghostIndex].after : activeTab.after;
+    const handleTouchMove = (e: React.TouchEvent) => {
+        handleMove(e.touches[0].clientX);
+    };
+
+    return (
+        <div 
+            ref={containerRef}
+            className={`relative w-full ${isVertical ? 'aspect-[4/5] object-[center_10%] rounded-3xl' : 'aspect-square md:aspect-[16/8] rounded-[2rem]'} bg-[#131110] overflow-hidden cursor-ew-resize select-none border border-white/5 shadow-2xl transition-all`}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => { setIsHovered(false); setSliderPos(50); }}
+            onMouseMove={handleMouseMove}
+            onTouchMove={handleTouchMove}
+        >
+            <motion.img key={`after-${afterImg}`} initial={{ opacity: 0.8 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} src={afterImg} alt="Sonrası" className={`absolute inset-0 w-full h-full pointer-events-none object-cover ${isVertical ? 'object-[center_10%]' : ''}`} />
+            
+            <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none" style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}>
+                <motion.img key={`before-${beforeImg}`} initial={{ opacity: 0.8 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} src={beforeImg} alt="Öncesi" className={`absolute inset-0 h-full max-w-none object-cover ${isVertical ? 'w-full object-[center_10%]' : 'w-[100vw] xl:w-full'}`} />
+            </div>
+            
+            {/* Custom Handle */}
+            <div className="absolute top-0 bottom-0 w-[2px] bg-white pointer-events-none shadow-[0_0_15px_rgba(0,0,0,0.5)] flex items-center justify-center h-full transition-opacity duration-300" style={{ left: `${sliderPos}%`, transform: 'translateX(-50%)', opacity: isHovered ? 1 : 0.4 }}>
+               <div className={`w-10 h-10 md:w-12 md:h-12 bg-white shadow-2xl rounded-full flex items-center justify-center border-[3px] border-[#caf265] -ml-[1px] transition-transform duration-300 ${isHovered ? 'scale-110' : 'scale-90'}`}>
+                   <div className="flex gap-1 text-[#0b2117]">
+                       <ChevronRight size={16} className="rotate-180 -mr-2" />
+                       <ChevronRight size={16} />
+                   </div>
+               </div>
+            </div>
+
+            <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 px-3 py-1.5 md:px-4 md:py-2 bg-black/60 backdrop-blur-md rounded-xl text-white/90 text-[10px] md:text-xs font-bold uppercase tracking-widest pointer-events-none border border-white/10 shadow-lg">Öncesi (Ham)</div>
+            <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 px-3 py-1.5 md:px-4 md:py-2 bg-[#caf265]/90 backdrop-blur-md rounded-xl text-black text-[10px] md:text-xs font-bold uppercase tracking-widest pointer-events-none shadow-lg">Sonrası</div>
+        </div>
+    );
+};
+
+// COMPONENT: CompareSlider
+const CompareSlider = () => {
+    const [activeTab, setActiveTab] = useState(COMPARE_TABS[0]);
+    const [ghostIndex, setGhostIndex] = useState(0);
+
+    // Otomatik geçiş süresi 9000ms'ye çıkarıldı.
+    useEffect(() => {
+        if (activeTab.id === 'ghost' && GHOST_PAIRS.length > 2) {
+            const timer = setInterval(() => {
+                setGhostIndex(prev => (prev + 2) % GHOST_PAIRS.length);
+            }, 9000);
+            return () => clearInterval(timer);
+        }
+    }, [activeTab]);
 
     return (
         <div className="w-full flex flex-col gap-6">
@@ -144,41 +179,33 @@ const CompareSlider = () => {
                 {COMPARE_TABS.map((tab) => (
                     <button 
                         key={tab.id} 
-                        onClick={() => { setActiveTab(tab); setSliderPos(50); }}
+                        onClick={() => { setActiveTab(tab); }}
                         className={`px-4 md:px-6 py-2 rounded-full text-xs md:text-sm font-medium transition-all ${activeTab.id === tab.id ? 'bg-[#caf265] text-black shadow-lg hover:-translate-y-0.5' : 'text-white/60 hover:text-white'}`}
                     >
                         {tab.label}
                     </button>
                 ))}
             </div>
-            <div 
-                ref={containerRef}
-                className="relative w-full aspect-square md:aspect-[16/8] bg-black/10 rounded-[2rem] overflow-hidden cursor-ew-resize select-none border border-white/5 shadow-2xl"
-                onMouseDown={(e) => { setIsDragging(true); handleMove(e.clientX); }}
-                onMouseUp={() => setIsDragging(false)}
-                onMouseLeave={() => setIsDragging(false)}
-                onMouseMove={handleMouseMove}
-                onTouchStart={(e) => { setIsDragging(true); handleMove(e.touches[0].clientX); }}
-                onTouchEnd={() => setIsDragging(false)}
-                onTouchMove={handleTouchMove}
-            >
-                <motion.img key={`after-${currentAfter}`} initial={{ opacity: 0.8 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} src={currentAfter} alt="Sonrası" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
-                <div className="absolute inset-0 w-full h-full object-cover overflow-hidden pointer-events-none" style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}>
-                    <motion.img key={`before-${currentBefore}`} initial={{ opacity: 0.8 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} src={currentBefore} alt="Öncesi" className="absolute inset-0 w-full h-full object-cover min-w-[100vw] xl:min-w-full" style={{ width: '100vw' }} />
-                </div>
-                
-                {/* Custom Handle */}
-                <div className="absolute top-0 bottom-0 w-[2px] bg-white cursor-ew-resize pointer-events-none shadow-[0_0_15px_rgba(0,0,0,0.5)] flex items-center justify-center h-full" style={{ left: `${sliderPos}%`, transform: 'translateX(-50%)' }}>
-                   <div className="w-10 h-10 md:w-12 md:h-12 bg-white shadow-2xl rounded-full flex items-center justify-center border-[3px] border-[#caf265] -ml-[1px]">
-                       <div className="flex gap-1 text-[#0b2117]">
-                           <ChevronRight size={16} className="rotate-180 -mr-2" />
-                           <ChevronRight size={16} />
-                       </div>
-                   </div>
-                </div>
-
-                <div className="absolute top-4 left-4 md:bottom-6 md:top-auto md:left-6 px-4 py-2 bg-black/50 backdrop-blur-md rounded-xl text-white/90 text-xs font-bold uppercase tracking-widest pointer-events-none border border-white/10 shadow-lg">Öncesi (Ham)</div>
-                <div className="absolute top-4 right-4 md:bottom-6 md:top-auto md:right-6 px-4 py-2 bg-[#caf265]/90 backdrop-blur-md rounded-xl text-black text-xs font-bold uppercase tracking-widest pointer-events-none shadow-lg">Sonrası (Yapay Zeka)</div>
+            
+            <div className={`mt-4 ${activeTab.id === 'ghost' ? 'grid grid-cols-1 md:grid-cols-2 gap-6' : ''}`}>
+                {activeTab.id === 'ghost' && GHOST_PAIRS.length > 0 ? (
+                    <>
+                        <CompareSliderNode 
+                            beforeImg={GHOST_PAIRS[ghostIndex % GHOST_PAIRS.length].before} 
+                            afterImg={GHOST_PAIRS[ghostIndex % GHOST_PAIRS.length].after} 
+                            isVertical={true} 
+                        />
+                        {GHOST_PAIRS.length > 1 && (
+                            <CompareSliderNode 
+                                beforeImg={GHOST_PAIRS[(ghostIndex + 1) % GHOST_PAIRS.length].before} 
+                                afterImg={GHOST_PAIRS[(ghostIndex + 1) % GHOST_PAIRS.length].after} 
+                                isVertical={true} 
+                            />
+                        )}
+                    </>
+                ) : (
+                    <CompareSliderNode beforeImg={activeTab.before} afterImg={activeTab.after} isVertical={false} />
+                )}
             </div>
         </div>
     );

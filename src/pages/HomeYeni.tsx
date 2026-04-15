@@ -12,48 +12,8 @@ const colors = {
 };
 
 // --- DATA ---
-const HERO_IMAGES = [
-  "/assets/pages/homeyeni/02_story_scene.webp",
-  "/assets/pages/homeyeni/03085_haki_2k_4_5_shot_03_action_muddy_step.webp",
-  "/assets/pages/homeyeni/03085_haki_2k_4_5_shot_06_american_plan_rain_2k_16_9_shot_03_lifestyle_action_1.webp",
-  "/assets/pages/homeyeni/03085_haki_2k_4_5_shot_13_action_brushing_foliage.webp",
-  "/assets/pages/homeyeni/10600_kar2.webp",
-  "/assets/common/1_2k_4_5_undefined.webp",
-  "/assets/common/1_2k_auto_undefined.webp",
-  "/assets/pages/homeyeni/20220_bej_2k_4_5_shot_1_1.webp",
-  "/assets/pages/homeyeni/20220_bej_2k_4_5_shot_5.webp",
-  "/assets/pages/homeyeni/20251220_kive_image_1766252478437.webp",
-  "/assets/pages/homeyeni/20251220_kive_image_1766252663631.webp",
-  "/assets/pages/homeyeni/20251223_kive_image_1766488770214.webp",
-  "/assets/pages/homeyeni/20251223_kive_image_1766489186478.webp",
-  "/assets/pages/homeyeni/53320_kirmizi_undefined_16x9_2k.webp",
-  "/assets/pages/homeyeni/53320_kirmiziscene_2_exterior_06_prompt_wide_environmental_shot_the_model_is_walking_slowly_past_the_vintage_car_on_the_snowy_sidewalk_hands_relaxed_at_his_sides_he_wears_the_red_sweatshirt_and_black_trousers_the_scene_captures_the_ful.webp",
-  "/assets/pages/homeyeni/53920_imaj.webp",
-  "/assets/pages/homeyeni/gemini_generated_image_arjcizarjcizarjc_3.webp",
-  "/assets/pages/homeyeni/img_20251214_162518.webp",
-  "/assets/pages/homeyeni/img_20251214_162551.webp",
-  "/assets/pages/homeyeni/id_scenario_2_end_frame_prompt_2k_20.webp",
-  "/assets/pages/homeyeni/id_scenario_creative_01_start_frame_pr_1.webp",
-  "/assets/pages/homeyeni/whatsapp_image_2026_03_25_at_144305_1_2k_4_5_01_hero_wide.webp",
-  "/assets/pages/homeyeni/whatsapp_image_2026_03_25_at_144305_1_2k_4_5_05_macro_texture.webp",
-  "/assets/pages/homeyeni/whatsapp_image_2026_03_25_at_144311_1_2k_4_5_02_story_scene_1.webp",
-  "/assets/pages/homeyeni/whatsapp_image_2026_03_25_at_144311_1_2k_4_5_02_story_scene.webp",
-  "/assets/pages/homeyeni/whatsapp_image_2026_03_25_at_144311_1_2k_4_5_06_macro_fabric.webp",
-  "/assets/pages/homeyeni/whatsapp_image_2026_03_25_at_144311_2_2k_4_5_02_story_full.webp",
-  "/assets/pages/homeyeni/whatsapp_image_2026_03_25_at_144311_2_2k_4_5_04_drape_semiback.webp",
-  "/assets/pages/homeyeni/whatsapp_image_2026_03_25_at_144311_2_2k_4_5_05_creative_close.webp",
-  "/assets/pages/homeyeni/whatsapp_image_2026_03_25_at_222638_2k_4_5_01_hero_wide.webp",
-  "/assets/pages/homeyeni/whatsapp_image_2026_03_25_at_222638_2k_4_5_05_creative_close.webp",
-  "/assets/pages/homeyeni/whatsapp_image_2026_03_25_at_222638_2k_4_5_06_macro_pattern.webp",
-  "/assets/pages/homeyeni/whatsapp_image_2026_03_25_at_222652_2k_4_5_04_flatlay_topdown.webp",
-  "/assets/pages/homeyeni/whatsapp_image_2026_03_25_at_222652_2k_4_5_05_macro_texture.webp",
-  "/assets/pages/homeyeni/detay_ayakkab2.webp",
-  "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined10.webp",
-  "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined16.webp",
-  "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined18.webp",
-  "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined2.webp",
-  "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined4.webp"
-];
+const modules = import.meta.glob('/public/assets/pages/homeyeni/banner/*.{webp,jpg,jpeg,png}', { eager: true });
+const HERO_IMAGES = Object.keys(modules).map(path => path.replace('/public', ''));
 
 const BRAND_LOGOS = [
     "/assets/brands/cazador/cazador_logo.webp",
@@ -234,7 +194,7 @@ const FaqItem = ({ question, answer }: { question: string; answer: string }) => 
 // --- MAIN PAGE COMPONENT ---
 const Home = () => {
   const navigate = useNavigate();
-  const [heroIndex, setHeroIndex] = useState(0);
+  const [heroIndex, setHeroIndex] = useState(() => Math.floor(Math.random() * Math.max(HERO_IMAGES.length, 1)));
   const [processStep, setProcessStep] = useState(0);
 
   useEffect(() => {

@@ -210,15 +210,15 @@ const MankenRow = ({ items, reverse = false, duration = 40 }: { items: typeof MA
 const FaqItem = ({ question, answer }: { question: string; answer: string }) => {
     const [isOpen, setIsOpen] = useState(false);
     return (
-      <div className={`border rounded-2xl transition-colors duration-300 ${isOpen ? 'border-[#caf265]/30 bg-white/5' : 'border-[#1e3b2b] hover:border-[#caf265]/20'}`}>
+      <div className={`border rounded-2xl transition-colors duration-300 bg-white shadow-sm ${isOpen ? 'border-[#0b2117]/20 bg-[#F4EFE6]/50' : 'border-[#0b2117]/10 hover:border-[#0b2117]/30'}`}>
         <button onClick={() => setIsOpen(!isOpen)} className="w-full flex items-center justify-between p-6 text-left focus:outline-none">
-          <span className="text-lg font-medium text-white pr-4">{question}</span>
-          <div className={`w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${isOpen ? 'border-[#caf265] bg-[#caf265] text-[#0b2117]' : 'border-white/20 text-white hover:border-[#caf265]'}`}>
+          <span className="text-lg font-medium text-[#0b2117] pr-4">{question}</span>
+          <div className={`w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${isOpen ? 'border-[#0b2117] bg-[#0b2117] text-white' : 'border-[#0b2117]/20 text-[#0b2117] hover:border-[#0b2117]'}`}>
               <ChevronDown size={16} className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
           </div>
         </button>
         <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'}`}>
-          <p className="px-6 pb-6 text-[#a8b8af] font-light leading-relaxed">{answer}</p>
+          <p className="px-6 pb-6 text-[#0b2117]/70 font-light leading-relaxed">{answer}</p>
         </div>
       </div>
     );
@@ -643,10 +643,10 @@ const Home = () => {
         </section>
 
         {/* 11. TEK ÜRÜN SINIRSIZ İÇERİK FORMATLARI */}
-        <section className={`py-20 md:py-32 border-b ${colors.borderColorDark} bg-[#F4EFE6]`}>
+        <section className={`py-20 md:py-32 border-b ${colors.borderColorDark}`}>
             <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
                 <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-16 lg:gap-24 items-center">
-                    <div className="order-2 lg:order-1 relative aspect-[4/5] md:aspect-square rounded-[3rem] overflow-hidden shadow-2xl group border-[8px] border-white/40 bg-[#1A1A1A]">
+                    <div className="order-2 lg:order-1 relative aspect-[4/5] md:aspect-square rounded-[3rem] overflow-hidden shadow-2xl group border-[8px] border-white/5 bg-[#1A1A1A]">
                         <img src={INFINITE_FORMATS[0].img} className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 z-0" />
                         <motion.img 
                             animate={{ opacity: [0, 1, 1, 0, 0, 0] }}
@@ -675,17 +675,17 @@ const Home = () => {
                     </div>
 
                     <div className="order-1 lg:order-2">
-                        <span className="text-[#0b2117]/50 text-xs font-bold uppercase tracking-[0.2em] mb-6 block">MAKSİMUM VERİMLİLİK</span>
-                        <h2 className="text-4xl md:text-5xl lg:text-[4rem] font-display text-[#0b2117] leading-tight mb-8">
-                            Tek Ürün. <br/><span className="italic text-[#0b2117] font-bold underline decoration-[#caf265] underline-offset-8">Sınırsız Sahne.</span>
+                        <span className="text-white/40 text-xs font-bold uppercase tracking-[0.2em] mb-6 block">MAKSİMUM VERİMLİLİK</span>
+                        <h2 className="text-4xl md:text-5xl lg:text-[4rem] font-display text-white leading-tight mb-8">
+                            Tek Ürün. <br/><span className="italic text-white font-bold underline decoration-[#caf265] underline-offset-8">Sınırsız Sahne.</span>
                         </h2>
-                        <p className="text-[#0b2117]/70 font-medium text-xl leading-relaxed mb-10">Bir kere basit fotoğraf çekin, sonsuza kadar farklı formatlarda kullanın. Aynı çantayı bugün beyaz fonda satarken, yarın sokak stilinde 16:9 reklamınızda başrolde izleyin.</p>
+                        <p className="text-[#a8b8af] font-medium text-xl leading-relaxed mb-10">Bir kere basit fotoğraf çekin, sonsuza kadar farklı formatlarda kullanın. Aynı çantayı bugün beyaz fonda satarken, yarın sokak stilinde 16:9 reklamınızda başrolde izleyin.</p>
                         
                         <div className="flex flex-col gap-4">
                             {INFINITE_FORMATS.map((form) => (
-                                <div key={form.id} className="flex items-center justify-between p-5 rounded-2xl bg-white/70 border border-[#0b2117]/5 shadow-sm hover:bg-white hover:shadow-md transition-all">
-                                   <div className="flex items-center gap-4 text-[#0b2117] font-bold text-lg">
-                                      <div className="w-10 h-10 rounded-xl bg-[#caf265] flex items-center justify-center shrink-0 shadow-sm"><Check size={20} className="text-[#0b2117]" /></div>
+                                <div key={form.id} className="flex items-center justify-between p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-[#caf265]/50 hover:bg-white/10 transition-all">
+                                   <div className="flex items-center gap-4 text-white font-bold text-lg">
+                                      <div className="w-10 h-10 rounded-xl bg-[#caf265] flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(202,242,101,0.3)]"><Check size={20} className="text-black" /></div>
                                       {form.title}
                                    </div>
                                 </div>
@@ -697,13 +697,13 @@ const Home = () => {
         </section>
 
         {/* 12. SSS – FREQUENTLY ASKED QUESTIONS */}
-        <section className={`py-20 md:py-32 border-b ${colors.borderColorDark}`}>
+        <section className={`py-20 md:py-32 border-b border-[#0b2117]/10 bg-[#F4EFE6]`}>
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
             <div className="max-w-3xl mx-auto">
               <div className="text-center mb-16">
-                <span className="text-[#caf265] text-xs font-bold uppercase tracking-widest mb-4 block">AKLINIZA TAKILANLAR</span>
-                <h2 className="text-4xl md:text-6xl font-display text-white">
-                  Sıkça Sorulan <span className="italic">Sorular</span>
+                <span className="text-[#0b2117]/60 text-xs font-bold uppercase tracking-widest mb-4 block">AKLINIZA TAKILANLAR</span>
+                <h2 className="text-4xl md:text-6xl font-display text-[#0b2117]">
+                  Sıkça Sorulan <span className="italic font-normal">Sorular</span>
                 </h2>
               </div>
               <div className="space-y-4">

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Layers, Search, Share2, Zap, Timer, Smartphone } from 'lucide-react';
+import { Search } from 'lucide-react';
 import { MainLayout } from '../layouts/MainLayout';
 import { Footer } from '../components/layout/Footer';
 import { Section } from '../components/ui/Section';
@@ -81,49 +81,41 @@ export default function CreativeDesign() {
                         </p>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-3 gap-12 text-center">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0 }}
-                        >
-                            <div className="w-16 h-16 mx-auto bg-bor-primary-100 dark:bg-bor-primary-800 text-bor-primary-900 dark:text-bor-primary-100 rounded-[1.25rem] flex items-center justify-center mb-6 shadow-sm border border-bor-primary-200/50 dark:border-white/10">
-                                <Layers className="w-7 h-7" strokeWidth={1.5} />
-                            </div>
-                            <h3 className="font-bold text-xl mb-3 text-bor-primary-900 dark:text-white">Minimalist ve Sezgisel</h3>
-                            <p className="text-bor-primary-600 dark:text-bor-primary-400 leading-relaxed font-light">
-                                Karmaşık menülerden kurtulun. Hiçbir eğitime veya kılavuza ihtiyaç duymadan, ekibinizin ve müşterilerinizin ilk saniyeden itibaren rahatça kullanabileceği bir tasarım.
-                            </p>
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.1 }}
-                        >
-                            <div className="w-16 h-16 mx-auto bg-bor-primary-100 dark:bg-bor-primary-800 text-bor-primary-900 dark:text-bor-primary-100 rounded-[1.25rem] flex items-center justify-center mb-6 shadow-sm border border-bor-primary-200/50 dark:border-white/10">
-                                <Search className="w-7 h-7" strokeWidth={1.5} />
-                            </div>
-                            <h3 className="font-bold text-xl mb-3 text-bor-primary-900 dark:text-white">Hızlı ve Akıllı Arama</h3>
-                            <p className="text-bor-primary-600 dark:text-bor-primary-400 leading-relaxed font-light">
-                                Yüzlerce klasör arasında kaybolmayın. Hem siz hem de müşterileriniz, bakmak istedikleri modele, renge veya spesifik bir ürüne anında, saniyeler içinde ulaşabilir.
-                            </p>
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.2 }}
-                        >
-                            <div className="w-16 h-16 mx-auto bg-bor-primary-100 dark:bg-bor-primary-800 text-bor-primary-900 dark:text-bor-primary-100 rounded-[1.25rem] flex items-center justify-center mb-6 shadow-sm border border-bor-primary-200/50 dark:border-white/10">
-                                <Share2 className="w-7 h-7" strokeWidth={1.5} />
-                            </div>
-                            <h3 className="font-bold text-xl mb-3 text-bor-primary-900 dark:text-white">Kolay İndirme ve Paylaşım</h3>
-                            <p className="text-bor-primary-600 dark:text-bor-primary-400 leading-relaxed font-light">
-                                Beğendiğiniz görselleri doğrudan cihazınıza hızlıca indirebilir veya tek bir paylaşma butonu ile ekip arkadaşlarınızla ve müşterilerinizle anında paylaşabilirsiniz.
-                            </p>
-                        </motion.div>
+                    <div className="flex flex-col md:flex-row gap-6 h-auto md:h-[550px] w-full">
+                        {[
+                            { t: "Minimalist ve Sezgisel", d: "Karmaşık menülerden kurtulun. Hiçbir eğitime veya kılavuza ihtiyaç duymadan, ekibinizin ve müşterilerinizin ilk saniyeden itibaren rahatça kullanabileceği bir tasarım." },
+                            { t: "Hızlı ve Akıllı Arama", d: "Yüzlerce klasör arasında kaybolmayın. Hem siz hem de müşterileriniz, bakmak istedikleri modele, renge veya spesifik bir ürüne anında, saniyeler içinde ulaşabilir." },
+                            { t: "Kolay İndirme ve Paylaşım", d: "Beğendiğiniz görselleri doğrudan cihazınıza hızlıca indirebilir veya tek bir paylaşma butonu ile ekip arkadaşlarınızla ve müşterilerinizle anında paylaşabilirsiniz." }
+                        ].map((item, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1, duration: 0.8 }}
+                                className="flex-1 relative group overflow-hidden bg-transparent hover:flex-[1.4] transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] border border-bor-primary-200/50 rounded-[3rem] cursor-default"
+                            >
+                                {/* Hover Gradient Overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-b from-[#E2FF65]/0 to-[#E2FF65]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+                                <div className="p-10 md:p-14 h-full flex flex-col justify-start relative z-10">
+                                    {/* Title */}
+                                    <h3 className="text-3xl md:text-5xl lg:text-6xl font-display font-normal italic text-[#2B544E] mb-8 leading-[1.1] group-hover:text-[#86AA00] transition-colors duration-500">
+                                        {item.t}
+                                    </h3>
+
+                                    {/* Description - Reveals on hover */}
+                                    <div className="mb-auto overflow-hidden">
+                                        <p className="text-[#2B544E] opacity-60 md:opacity-0 group-hover:opacity-100 transition-all duration-1000 translate-y-8 group-hover:translate-y-0 text-lg md:text-xl font-light italic leading-relaxed">
+                                            {item.d}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* Decorative side line on hover */}
+                                <div className="absolute left-0 top-0 w-2 h-full bg-[#E2FF65] scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-top" />
+                            </motion.div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -209,17 +201,14 @@ export default function CreativeDesign() {
                                 <FeatureItem
                                     title="Kesintisiz Akış"
                                     desc="Veritabanı cihazınıza senkronize olarak arka planda çalışır. Böylece bir şeyler aradığınızda 'yükleniyor' çemberini izlemek yerine direkt sonuca ulaşırsınız."
-                                    icon={<Zap className="w-6 h-6" strokeWidth={1.5} />}
                                 />
                                 <FeatureItem
                                     title="Zamanınızı Geri Kazanın"
                                     desc="İç içe geçmiş onlarca klasör veya drive linkleri arasında doğru görseli arama devri bitti. Sadece birkaç harf yazın ve aradığınızı anında ekranınıza getirin."
-                                    icon={<Timer className="w-6 h-6" strokeWidth={1.5} />}
                                 />
                                 <FeatureItem
                                     title="Her Yerde Sizinle"
                                     desc="İnternet çekmeyen depo veya fuar alanlarına mı gidiyorsunuz? Sunacağınız koleksiyonları cihazınıza indirerek bağlantı olmadan da çalışmaya kesintisiz devam edebilirsiniz."
-                                    icon={<Smartphone className="w-6 h-6" strokeWidth={1.5} />}
                                 />
                             </div>
                             <div className="mt-12">
@@ -380,17 +369,21 @@ function BentoCard({ title, desc, img, video, className, textDark = false }: { t
     );
 }
 
-function FeatureItem({ title, desc, icon }: { title: string, desc: string, icon: React.ReactNode }) {
+function FeatureItem({ title, desc, icon }: { title: string, desc: string, icon?: React.ReactNode }) {
     return (
-        <div className="flex gap-5 group">
-            <div className="flex-shrink-0 mt-1">
-                <div className="w-12 h-12 rounded-2xl bg-white dark:bg-bor-primary-800 border border-bor-primary-100 dark:border-bor-primary-700 flex items-center justify-center text-[#0A2624] dark:text-[#E2FF65] group-hover:bg-[#0A2624] group-hover:text-[#E2FF65] dark:group-hover:bg-[#E2FF65] dark:group-hover:text-[#0A2624] transition-colors duration-300 shadow-sm">
-                    {icon}
+        <div className="flex gap-5 group items-start">
+            {icon ? (
+                <div className="flex-shrink-0 mt-1">
+                    <div className="w-12 h-12 rounded-2xl bg-white dark:bg-bor-primary-800 border border-bor-primary-100 dark:border-bor-primary-700 flex items-center justify-center text-[#0A2624] dark:text-[#E2FF65] group-hover:bg-[#0A2624] group-hover:text-[#E2FF65] dark:group-hover:bg-[#E2FF65] dark:group-hover:text-[#0A2624] transition-colors duration-300 shadow-sm">
+                        {icon}
+                    </div>
                 </div>
-            </div>
+            ) : (
+                <div className="w-1.5 h-16 bg-[#E2FF65] rounded-full shrink-0 mt-1" />
+            )}
             <div>
-                <h4 className="text-xl font-bold mb-2 text-[#2B544E] dark:text-[#E2FF65]">{title}</h4>
-                <p className="text-bor-primary-600 dark:text-bor-primary-400 leading-relaxed text-sm">
+                <h4 className="text-xl md:text-2xl font-display italic font-normal mb-2 text-[#2B544E] dark:text-[#E2FF65]">{title}</h4>
+                <p className="text-bor-primary-600 dark:text-bor-primary-400 leading-relaxed text-sm lg:text-base font-light">
                     {desc}
                 </p>
             </div>

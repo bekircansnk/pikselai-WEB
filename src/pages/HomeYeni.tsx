@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { MainLayout } from '../layouts/MainLayout';
 import { ArrowRight, ChevronRight, ChevronDown, Zap, Play, Box, TrendingUp, Layers, ImageIcon, User, Sparkles, RefreshCcw, Check, Camera, MoveRight } from 'lucide-react';
+import HeroAlternatives from '../components/sections/HeroAlternatives';
 
 const colors = {
   beige: "bg-[#F4EFE6]",
@@ -293,7 +294,7 @@ const Home = () => {
       <main className="bg-[#0b2117] min-h-screen font-sans selection:bg-[#caf265] selection:text-[#0b2117] overflow-x-hidden">
         
         {/* 1. HERO SECTION */}
-        <section className={`relative min-h-[90vh] flex items-center justify-center pt-32 pb-16 lg:pt-40 lg:pb-24 ${colors.darkGreen} overflow-hidden`}>
+        <section className={`relative min-h-[90vh] flex flex-col items-center justify-start pt-32 pb-16 lg:pt-40 lg:pb-32 ${colors.darkGreen} overflow-hidden`}>
           <div className="absolute inset-0 z-0 bg-black">
              <AnimatePresence mode="wait">
                  <motion.img 
@@ -311,7 +312,54 @@ const Home = () => {
              <div className="absolute inset-0 bg-[#0b2117]/40 pointer-events-none" />
           </div>
 
-          <div className="max-w-[1400px] w-full mx-auto px-6 md:px-16 lg:px-24 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-24">
+          <div className="w-full relative z-10 flex flex-col items-center text-center mt-12 mb-32">
+            <motion.h1
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+              className="max-w-[1400px] px-6 md:px-16 lg:px-24 text-5xl md:text-7xl lg:text-[7rem] font-display font-normal text-[#F4EFE6] leading-[1.05] tracking-tight mb-8"
+            >
+              Her işiniz <br />
+              <span className="italic text-white">tek çatı altında!</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="max-w-4xl px-6 md:px-16 text-xl md:text-2xl text-[#a8b8af] font-light mb-12"
+            >
+              Dağınık ajanslar, karmaşık süreçler ve belirsiz maliyetlere son. Tasarım, yazılım, yapay zeka ve dijital pazarlama... İhtiyacınız olan her şey PikselAI'da.
+            </motion.p>
+            
+            <HeroAlternatives />
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              className="flex flex-col sm:flex-row gap-6 items-center w-full sm:w-auto px-6"
+            >
+              <button 
+                onClick={() => navigate('/iletisim')}
+                className="w-full sm:w-auto px-10 py-5 bg-[#caf265] hover:bg-white text-[#0b2117] rounded-full text-lg font-bold transition-all flex items-center justify-center gap-3 transition-colors duration-300"
+              >
+                Bizimle Tanışın
+                <ArrowRight size={20} />
+              </button>
+              <button 
+                onClick={() => {
+                  const el = document.getElementById('services');
+                  el?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="w-full sm:w-auto px-10 py-5 border border-white/20 hover:border-white text-white rounded-full text-lg font-medium transition-all flex items-center justify-center gap-3 transition-colors duration-300"
+              >
+                Hizmetlerimizi İncele
+              </button>
+            </motion.div>
+          </div>
+
+          <div className="max-w-[1400px] w-full mx-auto px-6 md:px-16 lg:px-24 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-24 mt-20 pt-20 border-t border-white/10">
             
             <div className="flex-1 text-left w-full">
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8">
@@ -357,7 +405,6 @@ const Home = () => {
                      <span className="text-white/90 text-xs tracking-widest font-bold uppercase drop-shadow-md">✨ PikselAI ile Üretildi</span>
                  </div>
             </motion.div>
-
           </div>
         </section>
 

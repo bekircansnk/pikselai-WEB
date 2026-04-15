@@ -3,14 +3,10 @@ import { motion, type Variants } from 'framer-motion';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
 import {
-  Store,
   ShieldCheck,
-  Globe,
-  Zap,
   ChevronRight,
   ArrowRight,
   TrendingUp,
-  Layers,
   MessageSquare,
   Plus,
   Minus
@@ -179,47 +175,35 @@ const EticaretYeni = () => {
                   </p>
                 </motion.div>
 
-                <motion.div variants={fadeInUp} className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-12 mt-16">
+                <motion.div variants={fadeInUp} className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-16 mt-16">
                   {/* Grid Item 1 */}
-                  <div>
-                    <div className="w-10 h-10 rounded-xl bg-[#e3decf] text-[#0b2117] flex items-center justify-center mb-5 border border-[#d6d0c4]">
-                      <ShieldCheck size={20} strokeWidth={1.5} />
-                    </div>
-                    <h3 className="text-lg font-medium text-[#0b2117] mb-2 leading-tight">Tam Güvenlik</h3>
-                    <p className="text-[#4a6355] text-sm leading-relaxed">
+                  <div className="relative pl-0 border-l-2 border-[#caf265] pl-6">
+                    <h3 className="text-2xl md:text-3xl font-bold font-display italic text-[#0b2117] mb-3 leading-tight tracking-tight">Tam Güvenlik</h3>
+                    <p className="text-[#4a6355] text-base leading-relaxed">
                       SSL sertifikası ve PCI uyumu ile verileriniz koruma altında.
                     </p>
                   </div>
 
                   {/* Grid Item 2 */}
-                  <div>
-                    <div className="w-10 h-10 rounded-xl bg-[#e3decf] text-[#0b2117] flex items-center justify-center mb-5 border border-[#d6d0c4]">
-                      <Zap size={20} strokeWidth={1.5} />
-                    </div>
-                    <h3 className="text-lg font-medium text-[#0b2117] mb-2 leading-tight">Yüksek Performans</h3>
-                    <p className="text-[#4a6355] text-sm leading-relaxed">
+                  <div className="relative pl-0 border-l-2 border-[#caf265] pl-6">
+                    <h3 className="text-2xl md:text-3xl font-bold font-display italic text-[#0b2117] mb-3 leading-tight tracking-tight">Yüksek Performans</h3>
+                    <p className="text-[#4a6355] text-base leading-relaxed">
                       Core Web Vitals standartlarına uygun, bulut tabanlı yüksek hızlı altyapı.
                     </p>
                   </div>
 
                   {/* Grid Item 3 */}
-                  <div>
-                    <div className="w-10 h-10 rounded-xl bg-[#e3decf] text-[#0b2117] flex items-center justify-center mb-5 border border-[#d6d0c4]">
-                      <Globe size={20} strokeWidth={1.5} />
-                    </div>
-                    <h3 className="text-lg font-medium text-[#0b2117] mb-2 leading-tight">Küresel Satış</h3>
-                    <p className="text-[#4a6355] text-sm leading-relaxed">
+                  <div className="relative pl-0 border-l-2 border-[#caf265] pl-6">
+                    <h3 className="text-2xl md:text-3xl font-bold font-display italic text-[#0b2117] mb-3 leading-tight tracking-tight">Küresel Satış</h3>
+                    <p className="text-[#4a6355] text-base leading-relaxed">
                       Shopify Markets ile farklı dillerde ve para birimlerinde satış.
                     </p>
                   </div>
 
                   {/* Grid Item 4 */}
-                  <div>
-                    <div className="w-10 h-10 rounded-xl bg-[#e3decf] text-[#0b2117] flex items-center justify-center mb-5 border border-[#d6d0c4]">
-                      <Store size={20} strokeWidth={1.5} />
-                    </div>
-                    <h3 className="text-lg font-medium text-[#0b2117] mb-2 leading-tight">Sıfır Sunucu Maliyeti</h3>
-                    <p className="text-[#4a6355] text-sm leading-relaxed">
+                  <div className="relative pl-0 border-l-2 border-[#caf265] pl-6">
+                    <h3 className="text-2xl md:text-3xl font-bold font-display italic text-[#0b2117] mb-3 leading-tight tracking-tight">Sıfır Sunucu Maliyeti</h3>
+                    <p className="text-[#4a6355] text-base leading-relaxed">
                       Sunucu kurulumuyla uğraşmadan bulut sistemin rahatlığını yaşayın.
                     </p>
                   </div>
@@ -268,12 +252,9 @@ const EticaretYeni = () => {
               <motion.div variants={fadeInUp} className="group relative aspect-[9/16] overflow-hidden rounded-3xl bg-[#0b2117] cursor-pointer shadow-xl">
                 <img src="/assets/pages/eticaretyeni/shopify_setup.webp" alt="Sıfırdan Mağaza Kurulumu" className="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
-                <div className="absolute top-8 left-8">
-                  <Layers className="text-[#caf265]" size={32} />
-                </div>
-                <div className="absolute bottom-8 left-8 right-8">
-                  <h3 className="text-2xl font-serif italic text-white mb-3">Sıfırdan Kurulum<br />& Tasarım</h3>
-                  <p className="text-[#a8b8af] text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute bottom-10 left-10 right-10">
+                  <h3 className="text-3xl md:text-4xl font-display italic text-white mb-4 leading-tight group-hover:text-[#caf265] transition-colors">Sıfırdan Kurulum<br />& Tasarım</h3>
+                  <p className="text-[#F4EFE6]/70 text-base leading-relaxed opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 font-light italic">
                     İhtiyacınıza en uygun premium temaları markanıza uyarlıyor, UX odaklı profesyonel bir vitrin oluşturuyoruz.
                   </p>
                 </div>
@@ -283,12 +264,9 @@ const EticaretYeni = () => {
               <motion.div variants={fadeInUp} className="group relative aspect-[9/16] overflow-hidden rounded-3xl bg-[#0b2117] cursor-pointer shadow-xl">
                 <video src="/assets/common/shopify_migration.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
-                <div className="absolute top-8 left-8">
-                  <TrendingUp className="text-[#caf265]" size={32} />
-                </div>
-                <div className="absolute bottom-8 left-8 right-8">
-                  <h3 className="text-2xl font-serif italic text-white mb-3">Kusursuz Veri<br />Taşıma</h3>
-                  <p className="text-[#a8b8af] text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute bottom-10 left-10 right-10">
+                  <h3 className="text-3xl md:text-4xl font-display italic text-white mb-4 leading-tight group-hover:text-[#caf265] transition-colors">Kusursuz Veri<br />Taşıma</h3>
+                  <p className="text-[#F4EFE6]/70 text-base leading-relaxed opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 font-light italic">
                     Mevcut altyapınızı Shopify'a taşıyor; müşteri, ürün ve sipariş verilerinizi eksiksiz aktarıyoruz.
                   </p>
                 </div>
@@ -298,12 +276,9 @@ const EticaretYeni = () => {
               <motion.div variants={fadeInUp} className="group relative aspect-[9/16] overflow-hidden rounded-3xl bg-[#0b2117] cursor-pointer shadow-xl">
                 <img src="/assets/pages/eticaretyeni/shopify_integrations.webp" alt="Entegrasyonlar" className="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
-                <div className="absolute top-8 left-8">
-                  <Zap className="text-[#caf265]" size={32} />
-                </div>
-                <div className="absolute bottom-8 left-8 right-8">
-                  <h3 className="text-2xl font-serif italic text-white mb-3">Gelişmiş<br />Entegrasyonlar</h3>
-                  <p className="text-[#a8b8af] text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute bottom-10 left-10 right-10">
+                  <h3 className="text-3xl md:text-4xl font-display italic text-white mb-4 leading-tight group-hover:text-[#caf265] transition-colors">Gelişmiş<br />Entegrasyonlar</h3>
+                  <p className="text-[#F4EFE6]/70 text-base leading-relaxed opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 font-light italic">
                     Ödeme sistemleri (iyzico, Stripe), kargo ve ERP sistemlerini (Logo vb.) profesyonelce bağlıyoruz.
                   </p>
                 </div>

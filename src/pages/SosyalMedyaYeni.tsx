@@ -5,14 +5,11 @@ import { Footer } from '../components/layout/Footer';
 import {
   ArrowRight,
   CheckCircle2,
-  Clock,
   Zap,
   Plus,
   Minus,
-  Play,
   ChevronRight,
   Star,
-  Volume2,
   Lightbulb,
   ListChecks,
   X
@@ -91,6 +88,88 @@ const socialProjects: SocialProject[] = [
     images: ["/assets/brands/mina_drinks/mina1.webp", "/assets/brands/mina_drinks/mina2.webp", "/assets/brands/mina_drinks/mina3.webp", "/assets/brands/mina_drinks/mina4.webp"]
   }
 ];
+
+// --- DİNAMİK GRİD BİLEŞENİ VE POOL ---
+const GRID_POOL = [
+  "/sosyal_medya_resimler/image1.webp",
+  "/sosyal_medya_resimler/image2.webp",
+  "/sosyal_medya_resimler/image3.webp",
+  "/sosyal_medya_resimler/image4.webp",
+  "/sosyal_medya_resimler/image5.webp",
+  "/sosyal_medya_resimler/image6.webp",
+  "/sosyal_medya_resimler/image7.webp",
+  "/sosyal_medya_resimler/cazador/cazador1.webp",
+  "/sosyal_medya_resimler/cazador/cazador2.webp",
+  "/sosyal_medya_resimler/cazador/cazador3.webp",
+  "/sosyal_medya_resimler/cazador/cazador4.webp",
+  "/sosyal_medya_resimler/venüs/venus1.webp",
+  "/sosyal_medya_resimler/venüs/venus2.webp",
+  "/sosyal_medya_resimler/venüs/venus3.webp",
+  "/sosyal_medya_resimler/venüs/venus4.webp",
+  "/sosyal_medya_resimler/mina drinks/mina1.webp",
+  "/sosyal_medya_resimler/mina drinks/mina2.webp",
+  "/sosyal_medya_resimler/mina drinks/mina3.webp",
+  "/sosyal_medya_resimler/mina drinks/mina4.webp",
+  "/sosyal_medya_resimler/ürün_fotoğraf/esarp_1.webp",
+  "/sosyal_medya_resimler/ürün_fotoğraf/esarp_2.webp",
+  "/sosyal_medya_resimler/ürün_fotoğraf/esarp_3.webp",
+  "/sosyal_medya_resimler/ürün_fotoğraf/esarp_4.webp",
+  "/sosyal_medya_resimler/ürün_fotoğraf/esarp_5.webp",
+  "/sosyal_medya_resimler/ürün_fotoğraf/esarp_6.webp",
+  "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak.webp",
+  "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak_2.webp",
+  "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak_3.webp",
+  "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak_4.webp",
+  "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak_5.webp",
+  "/sosyal_medya_resimler/sanal_manken/Anna/Anna-imaj-1.webp",
+  "/sosyal_medya_resimler/sanal_manken/Anna/Anna-imaj-2.webp",
+  "/sosyal_medya_resimler/sanal_manken/Mike/mike_1.webp",
+  "/sosyal_medya_resimler/sanal_manken/Mike/mike_2.webp",
+  "/sosyal_medya_resimler/sanal_manken/Mike/mike_3.webp",
+  "/sosyal_medya_resimler/sanal_manken/Mike/mike_4.webp",
+  "/sosyal_medya_resimler/sanal_manken/Nora/Nora-1_imaj.webp",
+  "/sosyal_medya_resimler/sanal_manken/Nora/Nora-1_imaj_2.webp",
+  "/sosyal_medya_resimler/sanal_manken/Sora/Sora-imaj-11.webp",
+  "/sosyal_medya_resimler/sanal_manken/Sora/Sora-imaj-5.webp",
+  "/sosyal_medya_resimler/sanal_manken/Zoe/Zoe-imaj-1.webp",
+  "/sosyal_medya_resimler/sanal_manken/Zoe/Zoe-imaj-5.webp",
+  "/sosyal_medya_resimler/Mia-imaj-6.webp",
+];
+
+const DynamicGridImage = ({ initialSrc, interval }: { initialSrc: string, interval: number }) => {
+  const [currentSrc, setCurrentSrc] = useState(initialSrc);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const changeImage = () => {
+        const randomImg = GRID_POOL[Math.floor(Math.random() * GRID_POOL.length)];
+        setCurrentSrc(randomImg);
+      };
+
+      changeImage(); // İlk değişimi hemen yap
+      const intervalId = setInterval(changeImage, interval);
+      return () => clearInterval(intervalId);
+    }, 500); // Site açıldıktan 0.5 saniye sonra ilk değişim başlasın
+
+    return () => clearTimeout(timer);
+  }, [interval]);
+
+  return (
+    <AnimatePresence mode="wait">
+      <motion.img
+        key={currentSrc}
+        src={currentSrc}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1.5, ease: "easeInOut" }}
+        className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+      />
+    </AnimatePresence>
+  );
+};
+// ------------------------------------
+
 
 const SosyalMedyaYeni = () => {
   useEffect(() => {
@@ -190,7 +269,6 @@ const SosyalMedyaYeni = () => {
                 className="max-w-[38rem]"
               >
                 <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#caf265]/30 bg-[#caf265]/10 text-[#caf265] text-xs font-bold tracking-widest uppercase mb-6 backdrop-blur-sm">
-                  <Zap size={14} className="opacity-80 shrink-0" />
                   YÜKSEK ETKİLEŞİMLİ İÇERİK
                 </motion.div>
 
@@ -303,54 +381,41 @@ const SosyalMedyaYeni = () => {
               <p className="text-[#3a5245] max-w-2xl mx-auto text-lg">Yetersiz araçlar veya yavaş ajans süreçleriyle vakit kaybetmeyin. Dünyanın en iyi kreatif üretim modelini sunuyoruz.</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="flex flex-col items-center text-center"
-              >
-                <div className="w-16 h-16 rounded-2xl bg-[#0b2117] text-[#caf265] flex items-center justify-center mb-6 shadow-xl">
-                  <Clock size={32} strokeWidth={1.5} />
-                </div>
-                <h3 className="text-2xl font-display font-normal italic text-[#0b2117] mb-4">Göz Açıp Kapayıncaya Kadar</h3>
-                <p className="text-[#4a6355] leading-relaxed">
-                  2-4 hafta süren geleneksel ajans teslimatlarını unutun. Trendlere anında tepki veren, haftalık kreatif döngüleriyle çalışıyoruz.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="flex flex-col items-center text-center"
-              >
-                <div className="w-16 h-16 rounded-2xl bg-[#0b2117] text-[#caf265] flex items-center justify-center mb-6 shadow-xl">
-                  <Star size={32} strokeWidth={1.5} />
-                </div>
-                <h3 className="text-2xl font-display font-normal italic text-[#0b2117] mb-4">Sadece En İyiler</h3>
-                <p className="text-[#4a6355] leading-relaxed">
-                  İçerikleriniz staja yeni başlamış kişilere değil, alanında uzman direktörler ve son teknoloji yapay zeka araçları tarafından yönetilir.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="flex flex-col items-center text-center"
-              >
-                <div className="w-16 h-16 rounded-2xl bg-[#0b2117] text-[#caf265] flex items-center justify-center mb-6 shadow-xl">
-                  <Zap size={32} strokeWidth={1.5} />
-                </div>
-                <h3 className="text-2xl font-display font-normal italic text-[#0b2117] mb-4">Sıfır Gizli Maliyet</h3>
-                <p className="text-[#4a6355] leading-relaxed">
-                  Sürpriz faturalar yok. Abonelik modeliyle veya net proje bütçeleriyle çalışarak bütçenizi her zaman korur ve planlı ilerlersiniz.
-                </p>
-              </motion.div>
+            <div className="flex flex-col md:flex-row gap-6 h-auto md:h-[550px] w-full">
+              {[
+                { t: "Göz Açıp Kapayıncaya Kadar", d: "2-4 hafta süren geleneksel ajans teslimatlarını unutun. Trendlere anında tepki veren, haftalık kreatif döngüleriyle çalışıyoruz." },
+                { t: "Sadece En İyiler", d: "İçerikleriniz staja yeni başlamış kişilere değil, alanında uzman direktörler ve son teknoloji yapay zeka araçları tarafından yönetilir." },
+                { t: "Sıfır Gizli Maliyet", d: "Sürpriz faturalar yok. Abonelik modeliyle veya net proje bütçeleriyle çalışarak bütçenizi her zaman korur ve planlı ilerlersiniz." }
+              ].map((item, i) => (
+                <motion.div 
+                  key={i} 
+                  initial={{ opacity: 0, y: 30 }} 
+                  whileInView={{ opacity: 1, y: 0 }} 
+                  viewport={{ once: true }} 
+                  transition={{ delay: i * 0.1, duration: 0.8 }}
+                  className="flex-1 relative group overflow-hidden bg-black/5 hover:flex-[1.4] transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] border border-black/5 rounded-[3rem] cursor-default"
+                >
+                  {/* Hover Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#caf265]/0 to-[#caf265]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  
+                  <div className="p-10 md:p-14 h-full flex flex-col justify-start relative z-10">
+                     {/* Title */}
+                     <h3 className="text-3xl md:text-5xl lg:text-6xl font-display font-normal italic text-[#0b2117] mb-8 leading-[1.1] group-hover:text-[#86AA00] transition-colors duration-500">
+                       {item.t}
+                     </h3>
+                     
+                     {/* Description - Reveals on hover */}
+                     <div className="mb-auto overflow-hidden">
+                        <p className="text-[#0b2117] opacity-60 md:opacity-0 group-hover:opacity-100 transition-all duration-1000 translate-y-8 group-hover:translate-y-0 text-lg md:text-xl font-light italic leading-relaxed">
+                           {item.d}
+                        </p>
+                     </div>
+                  </div>
+                  
+                  {/* Decorative side line on hover */}
+                  <div className="absolute left-0 top-0 w-2 h-full bg-[#caf265] scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-top" />
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
@@ -401,31 +466,45 @@ const SosyalMedyaYeni = () => {
                 className="relative bg-[#0b2117] rounded-3xl p-4 md:p-6 overflow-hidden group aspect-[4/3] sm:aspect-video lg:aspect-[4/3] flex items-center justify-center cursor-pointer shadow-2xl"
               >
                 {/* Embedded Grid of Images to simulate the Superside preview */}
-                <div className="grid grid-cols-3 grid-rows-2 gap-3 md:gap-4 w-full h-full opacity-80 group-hover:opacity-[0.85] transition-opacity duration-500 group-hover:scale-105 transform ease-out">
-                  <div className="col-span-1 row-span-1 rounded-xl overflow-hidden bg-[#1e3b2b]"><img src="/images/social-hero-1.webp" alt="Work" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-                    onError={(e) => (e.currentTarget.src = 'https://images.unsplash.com/photo-1542744094-3a31f272c490?w=800&q=80')} /></div>
-                  <div className="col-span-1 row-span-2 rounded-xl overflow-hidden bg-[#1e3b2b]"><img src="/images/social-reels.webp" alt="Work" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-                    onError={(e) => (e.currentTarget.src = 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=800&q=80')} /></div>
-                  <div className="col-span-1 row-span-1 rounded-xl overflow-hidden bg-[#1e3b2b]"><img src="/images/social-carousel.webp" alt="Work" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-                    onError={(e) => (e.currentTarget.src = 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80')} /></div>
-                  <div className="col-span-1 row-span-1 rounded-xl overflow-hidden bg-[#1e3b2b]"><img src="/images/social-ads.webp" alt="Work" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-                    onError={(e) => (e.currentTarget.src = 'https://images.unsplash.com/photo-1541560052-5e137f229371?w=800&q=80')} /></div>
-                  <div className="col-span-1 row-span-1 rounded-xl overflow-hidden bg-[#1e3b2b]"><img src="/images/social-motion.webp" alt="Work" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-                    onError={(e) => (e.currentTarget.src = 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=800&q=80')} /></div>
+                <div className="grid grid-cols-3 grid-rows-2 gap-3 md:gap-4 w-full h-full opacity-80 group-hover:opacity-[0.85] transition-opacity duration-500 group-hover:scale-105 transform ease-out px-1">
+                  <div className="col-span-1 row-span-1 rounded-xl overflow-hidden bg-[#1e3b2b]">
+                    <DynamicGridImage
+                      initialSrc="/sosyal_medya_resimler/image1.webp"
+                      interval={4000}
+                    />
+                  </div>
+                  <div className="col-span-1 row-span-2 rounded-xl overflow-hidden bg-[#1e3b2b]">
+                    <video
+                      src="/sosyal_medya_resimler/video/end_product.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                    />
+                  </div>
+                  <div className="col-span-1 row-span-1 rounded-xl overflow-hidden bg-[#1e3b2b]">
+                    <DynamicGridImage
+                      initialSrc="/sosyal_medya_resimler/sosyal_medya_partlar/5.webp"
+                      interval={5000}
+                    />
+                  </div>
+                  <div className="col-span-1 row-span-1 rounded-xl overflow-hidden bg-[#1e3b2b]">
+                    <DynamicGridImage
+                      initialSrc="/sosyal_medya_resimler/image3.webp"
+                      interval={4500}
+                    />
+                  </div>
+                  <div className="col-span-1 row-span-1 rounded-xl overflow-hidden bg-[#1e3b2b]">
+                    <DynamicGridImage
+                      initialSrc="/sosyal_medya_resimler/image4.webp"
+                      interval={5500}
+                    />
+                  </div>
                 </div>
 
                 {/* Overlays */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0b2117]/60 via-transparent to-[#0b2117]/20 pointer-events-none" />
-
-                {/* Play Button */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-[#F4EFE6]/20 backdrop-blur-md rounded-full flex items-center justify-center text-white group-hover:scale-110 group-hover:bg-[#caf265]/90 group-hover:text-[#0b2117] transition-all duration-300 z-10 border border-white/30 group-hover:border-[#caf265]">
-                  <Play size={32} className="ml-1 fill-current" />
-                </div>
-
-                {/* Fake Sound Button (top right) */}
-                <div className="absolute top-6 right-6 w-10 h-10 bg-black/40 backdrop-blur-sm rounded-full flex items-center justify-center text-white z-10 border border-white/10 hover:bg-black/60 transition-colors">
-                  <Volume2 size={18} />
-                </div>
               </motion.div>
             </div>
           </div>

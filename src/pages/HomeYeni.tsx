@@ -294,25 +294,13 @@ const Home = () => {
       <main className="bg-[#0b2117] min-h-screen font-sans selection:bg-[#caf265] selection:text-[#0b2117] overflow-x-hidden">
         
         {/* 1. HERO SECTION */}
-        <section className={`relative min-h-[90vh] flex flex-col items-center justify-start pt-32 pb-16 lg:pt-40 lg:pb-32 ${colors.darkGreen} overflow-hidden`}>
-          <div className="absolute inset-0 z-0 bg-black">
-             <AnimatePresence mode="wait">
-                 <motion.img 
-                    key={heroIndex}
-                    src={HERO_IMAGES[heroIndex]}
-                    initial={{ opacity: 0, scale: 1.05 }}
-                    animate={{ opacity: 0.5, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ duration: 1.5, ease: "easeInOut" }}
-                    className="absolute inset-0 w-full h-full object-cover"
-                 />
-             </AnimatePresence>
-             <div className="absolute inset-0 bg-gradient-to-t from-[#0b2117] via-[#0b2117]/60 to-transparent" />
-             <div className="absolute inset-0 bg-gradient-to-r from-[#0b2117] via-transparent to-transparent opacity-80" />
-             <div className="absolute inset-0 bg-[#0b2117]/40 pointer-events-none" />
+        <section className={`relative min-h-[85vh] flex flex-col items-center justify-center pt-32 pb-16 lg:pt-40 lg:pb-32 overflow-hidden`}>
+          <div className="absolute inset-0 z-0 bg-[#0b2117]">
+            <div className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-[#caf265]/10 blur-[120px] rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-[#a8b8af]/5 blur-[120px] rounded-full -translate-x-1/2 translate-y-1/2 pointer-events-none" />
           </div>
 
-          <div className="w-full relative z-10 flex flex-col items-center text-center mt-12 mb-32">
+          <div className="w-full relative z-10 flex flex-col items-center text-center mt-12 mb-12">
             <motion.h1
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -358,8 +346,28 @@ const Home = () => {
               </button>
             </motion.div>
           </div>
+        </section>
 
-          <div className="max-w-[1400px] w-full mx-auto px-6 md:px-16 lg:px-24 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-24 mt-20 pt-20 border-t border-white/10">
+        {/* 1.5. SUB HERO SECTION */}
+        <section className={`relative flex items-center justify-center py-20 lg:py-32 ${colors.darkGreen} overflow-hidden border-t border-white/10`}>
+          <div className="absolute inset-0 z-0 bg-black">
+             <AnimatePresence mode="wait">
+                 <motion.img 
+                    key={heroIndex}
+                    src={HERO_IMAGES[heroIndex]}
+                    initial={{ opacity: 0, scale: 1.05 }}
+                    animate={{ opacity: 0.5, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 1.5, ease: "easeInOut" }}
+                    className="absolute inset-0 w-full h-full object-cover"
+                 />
+             </AnimatePresence>
+             <div className="absolute inset-0 bg-gradient-to-t from-[#0b2117] via-[#0b2117]/60 to-transparent" />
+             <div className="absolute inset-0 bg-gradient-to-r from-[#0b2117] via-transparent to-transparent opacity-80" />
+             <div className="absolute inset-0 bg-[#0b2117]/40 pointer-events-none" />
+          </div>
+
+          <div className="max-w-[1400px] w-full mx-auto px-6 md:px-16 lg:px-24 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-24">
             
             <div className="flex-1 text-left w-full">
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8">

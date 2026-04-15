@@ -27,10 +27,10 @@ const shuffleArray = (array: string[]) => {
 
 const HERO_IMAGES = shuffleArray(INITIAL_HERO_IMAGES);
 
-const ghostModules = import.meta.glob('/public/assets/pages/homeyeni/Ghost-Eticaret/*_1.jpg', { eager: true });
+const ghostModules = import.meta.glob('/public/hayalet_oncesi_sonrasi/*__1.jpg', { eager: true });
 const GHOST_PAIRS = Object.keys(ghostModules).map(path => {
     const beforeStr = path.replace('/public', '');
-    const afterStr = beforeStr.replace('_1.jpg', '_2.jpg');
+    const afterStr = beforeStr.replace('__1.jpg', '__2.jpg');
     return { before: beforeStr, after: afterStr };
 });
 
@@ -162,17 +162,14 @@ const CompareSliderNode = ({ beforeImg, afterImg, isVertical = false }: { before
 // COMPONENT: CompareSlider
 const CompareSlider = () => {
     const [activeTab, setActiveTab] = useState(COMPARE_TABS[0]);
-    const [ghostIndex, setGhostIndex] = useState(0);
-
-    // Otomatik geçiş süresi 9000ms'ye çıkarıldı.
-    useEffect(() => {
-        if (activeTab.id === 'ghost' && GHOST_PAIRS.length > 2) {
-            const timer = setInterval(() => {
-                setGhostIndex(prev => (prev + 2) % GHOST_PAIRS.length);
-            }, 9000);
-            return () => clearInterval(timer);
+    
+    // Her sayfa yenilendiğinde klasörden rastgele bir çift seç
+    const [randomPair] = useState(() => {
+        if (GHOST_PAIRS.length > 0) {
+            return GHOST_PAIRS[Math.floor(Math.random() * GHOST_PAIRS.length)];
         }
-    }, [activeTab]);
+        return null;
+    });
 
     return (
         <div className="w-full flex flex-col gap-6">
@@ -188,21 +185,21 @@ const CompareSlider = () => {
                 ))}
             </div>
             
-            <div className={`mt-4 ${activeTab.id === 'ghost' ? 'grid grid-cols-1 md:grid-cols-2 gap-6' : ''}`}>
-                {activeTab.id === 'ghost' && GHOST_PAIRS.length > 0 ? (
+            <div className={`mt-4 ${activeTab.id === 'ghost' ? 'grid grid-cols-2 gap-4 md:gap-8 max-w-5xl mx-auto' : ''}`}>
+                {activeTab.id === 'ghost' && randomPair ? (
                     <>
-                        <CompareSliderNode 
-                            beforeImg={GHOST_PAIRS[ghostIndex % GHOST_PAIRS.length].before} 
-                            afterImg={GHOST_PAIRS[ghostIndex % GHOST_PAIRS.length].after} 
-                            isVertical={true} 
-                        />
-                        {GHOST_PAIRS.length > 1 && (
-                            <CompareSliderNode 
-                                beforeImg={GHOST_PAIRS[(ghostIndex + 1) % GHOST_PAIRS.length].before} 
-                                afterImg={GHOST_PAIRS[(ghostIndex + 1) % GHOST_PAIRS.length].after} 
-                                isVertical={true} 
-                            />
-                        )}
+                        {/* ÖNCESİ */}
+                        <div className="relative w-full aspect-[3/4] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl group bg-[#131110]">
+                            <img src={randomPair.before} alt="Öncesi" className="w-full h-full object-cover object-[center_10%] transition-transform duration-700 group-hover:scale-105" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none opacity-80" />
+                            <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 px-3 py-1.5 md:px-4 md:py-2 bg-black/60 backdrop-blur-md rounded-xl text-white/90 text-[10px] md:text-sm font-bold uppercase tracking-widest pointer-events-none border border-white/10 shadow-lg">Öncesi (Ham)</div>
+                        </div>
+                        {/* SONRASI */}
+                        <div className="relative w-full aspect-[3/4] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl group bg-[#131110]">
+                            <img src={randomPair.after} alt="Sonrası" className="w-full h-full object-cover object-[center_10%] transition-transform duration-700 group-hover:scale-105" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none opacity-80" />
+                            <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 px-3 py-1.5 md:px-4 md:py-2 bg-[#caf265]/90 backdrop-blur-md rounded-xl text-black text-[10px] md:text-sm font-bold uppercase tracking-widest pointer-events-none shadow-lg">Sonrası</div>
+                        </div>
                     </>
                 ) : (
                     <CompareSliderNode beforeImg={activeTab.before} afterImg={activeTab.after} isVertical={false} />

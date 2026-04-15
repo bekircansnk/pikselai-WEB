@@ -13,7 +13,18 @@ const colors = {
 
 // --- DATA ---
 const modules = import.meta.glob('/public/assets/pages/homeyeni/banner/*.{webp,jpg,jpeg,png}', { eager: true });
-const HERO_IMAGES = Object.keys(modules).map(path => path.replace('/public', ''));
+const INITIAL_HERO_IMAGES = Object.keys(modules).map(path => path.replace('/public', ''));
+
+const shuffleArray = (array: string[]) => {
+    let newArr = [...array];
+    for (let i = newArr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
+    }
+    return newArr;
+};
+
+const HERO_IMAGES = shuffleArray(INITIAL_HERO_IMAGES);
 
 const BRAND_LOGOS = [
     "/assets/brands/cazador/cazador_logo.webp",
@@ -194,7 +205,18 @@ const FaqItem = ({ question, answer }: { question: string; answer: string }) => 
 // --- MAIN PAGE COMPONENT ---
 const Home = () => {
   const navigate = useNavigate();
-  const [heroIndex, setHeroIndex] = useState(() => Math.floor(Math.random() * Math.max(HERO_IMAGES.length, 1)));
+  const [heroIndex, setHeroIndex] = useState(() => {
+     if (HERO_IMAGES.length === 0) return 0;
+     const lastItem = sessionStorage.getItem('lastPikselHero');
+     let nextIdx = Math.floor(Math.random() * HERO_IMAGES.length);
+     
+     if (lastItem && HERO_IMAGES[nextIdx] === lastItem) {
+         nextIdx = (nextIdx + 1) % HERO_IMAGES.length;
+     }
+
+     sessionStorage.setItem('lastPikselHero', HERO_IMAGES[nextIdx]);
+     return nextIdx;
+  });
   const [processStep, setProcessStep] = useState(0);
 
   useEffect(() => {

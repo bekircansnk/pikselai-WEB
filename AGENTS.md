@@ -34,3 +34,9 @@ Ajanların yeniden iş üretmesini engelleme yasası:
 - Tıpkı şu an bu dosyanın yaptığı gibi, her yenilik sisteme kazandırıldığında klasör kurallarının aşılmadığından emin ol.
 - Eski kalıntı dosyaları çekinmeden sil veya çöp kutusuna taşı.
 - Türkçe isim, özel karakterli (boşluk içeren) dosya isimlendirmeleri YAPILAMAZ! (örn: "hero kopya.jpg" YASAK, "hero_v2.webp" İDEAL)
+
+## 4. Ana Dizin (Root) Temizlik Kuralı 🧹
+Sistem her zaman derli toplu ve düzenli olmalıdır.
+- Ana dizinde (root) asla sahipsiz `.tsx`, `.js`, `.py` gibi kaynak dosyalar, test veya yedekleme dosyaları bulundurulamaz. Varsa ilgili ait oldukları klasörlere (örn: `src/pages/`, `scripts/`) taşınmalıdır.
+- Dokümantasyon niteliğindeki (`.md`, `.pdf`, `.txt`) her türlü plan, spec, rapor gibi dosyalar ZORUNLU olarak `docs/` klasöründe tutulmalıdır (Sadece `README.md`, `GEMINI.md`, `AGENTS.md`, `CHANGELOG.md` hariç).
+- İşe yaramayan, kopyalanmış veya eski sürüme ait olduğu düşünülen tüm döküman ve dosyalar `.silinecekler_cop_kutusu/` dizinine taşınmalıdır. Bu kurala her ajan proaktif olarak uymalı ve ortalığı her zaman temiz bırakmalıdır.

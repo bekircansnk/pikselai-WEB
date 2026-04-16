@@ -311,7 +311,7 @@ const ExpandableProductShowcase = () => {
             onMouseMove={handleMouseMoveGlobal}
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
-            className="relative group cursor-none rounded-2xl md:rounded-[2.5rem] overflow-hidden shadow-2xl bg-[#1A1A1A] aspect-[3/2] md:aspect-[4/3] lg:aspect-[3/2]"
+            className="relative group cursor-none rounded-2xl md:rounded-[2.5rem] overflow-hidden shadow-2xl bg-[#0b2117] aspect-[3/2] md:aspect-[4/3] lg:aspect-[3/2]"
           >
             <motion.img
               layoutId={`img-${project.id}`}
@@ -323,7 +323,7 @@ const ExpandableProductShowcase = () => {
 
             {/* Dynamic Label */}
             <div className="absolute inset-x-0 bottom-0 p-4 md:p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-              <div className="py-3 px-5 rounded-xl bg-black/40 backdrop-blur-md border border-white/10 group-hover:bg-[#D97941] transition-all flex items-center justify-between">
+              <div className="py-3 px-5 rounded-xl bg-[#0b2117]/40 backdrop-blur-md border border-white/10 group-hover:bg-[#caf265] transition-all flex items-center justify-between">
                 <h4 className="text-sm md:text-md font-display italic text-white uppercase tracking-[0.2em]">{project.title}</h4>
                 <Plus size={16} className="text-white/40 group-hover:text-white" />
               </div>
@@ -338,7 +338,7 @@ const ExpandableProductShowcase = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[999] bg-[#050505] flex flex-col"
+            className="fixed inset-0 z-[999] bg-[#0b2117] flex flex-col"
             style={{ cursor: 'none' }}
             onMouseMove={handleMouseMoveGlobal}
           >
@@ -349,7 +349,7 @@ const ExpandableProductShowcase = () => {
             >
                 {cursorType === 'exit' ? (
                     <div className="w-[100px] h-[100px] rounded-full bg-white flex items-center justify-center shadow-2xl">
-                        <span className="text-black text-sm font-medium">Çıkış</span>
+                        <span className="text-[#0b2117] text-sm font-medium">Çıkış</span>
                     </div>
                 ) : (
                     <div className="w-[24px] h-[24px] rounded-full bg-white shadow-lg" />
@@ -362,7 +362,7 @@ const ExpandableProductShowcase = () => {
               onClick={() => setSelectedIdx(null)}
               onMouseEnter={() => setCursorType('exit')}
               onMouseLeave={() => setCursorType('dot')}
-              className="fixed top-8 right-8 z-[1001] p-4 rounded-full bg-white/10 text-white hover:bg-white hover:text-black transition-all group"
+              className="fixed top-8 right-8 z-[1001] p-4 rounded-full bg-white/10 text-white hover:bg-white hover:text-[#0b2117] transition-all group"
               style={{ cursor: 'none' }}
             >
               <X size={24} className="group-hover:rotate-90 transition-transform duration-300" />
@@ -370,7 +370,7 @@ const ExpandableProductShowcase = () => {
 
             <motion.div
               layoutId={`project-${projects[selectedIdx].id}`}
-              className="w-full h-full flex flex-col bg-[#050505]"
+              className="w-full h-full flex flex-col bg-[#0b2117]"
               style={{ cursor: 'none' }}
             >
               {/* TOP: Photo Strip (Optimized Sizes) */}
@@ -382,7 +382,7 @@ const ExpandableProductShowcase = () => {
                 <div className="h-full px-6 md:px-16 py-6 flex items-center space-x-6 md:space-x-8 min-w-max" style={{ cursor: 'none' }}>
 
                   {/* 1. Large Intro Block */}
-                  <motion.div className="h-full w-[450px] md:w-[800px] shrink-0 relative rounded-2xl md:rounded-[3rem] overflow-hidden bg-[#1A1A1A]">
+                  <motion.div className="h-full w-[450px] md:w-[800px] shrink-0 relative rounded-2xl md:rounded-[3rem] overflow-hidden bg-[#0b2117]">
                     <motion.img layoutId={`img-${projects[selectedIdx].id}`} src={projects[selectedIdx].mainImg} className="absolute inset-0 w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-blue-900/20 mix-blend-multiply"></div>
                   </motion.div>
@@ -422,7 +422,7 @@ const ExpandableProductShowcase = () => {
 
               {/* BOTTOM: Compact Typography Section */}
               <div
-                className="shrink-0 px-8 md:px-24 py-4 md:py-6 border-t border-white/5 bg-[#050505]"
+                className="shrink-0 px-8 md:px-24 py-4 md:py-6 border-t border-white/5 bg-[#0b2117]"
                 onClick={() => setSelectedIdx(null)}
                 onMouseEnter={() => setCursorType('exit')}
                 onMouseLeave={() => setCursorType('dot')}
@@ -527,8 +527,8 @@ const MankenShowcase = () => {
       <MankenRow items={row3} reverse={true} duration={50} />
 
       {/* Side Overlays to blend scrolling borders */}
-      <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#D97941] to-transparent z-10 pointer-events-none" />
-      <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#D97941] to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#caf265] to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#caf265] to-transparent z-10 pointer-events-none" />
     </div>
   );
 };
@@ -582,7 +582,7 @@ const LifestyleShowcase = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-xl border-2 border-[#D97941]/30"
+          className="rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-xl border-2 border-[#caf265]/30"
         >
           <img src={imgs[2 % imgs.length]} className="w-full h-full object-cover" alt="" />
         </motion.div>
@@ -626,16 +626,16 @@ const AiProduction = () => {
   }, [selectedProject]);
 
   return (
-    <div className={`font-sans min-h-screen selection:bg-black selection:text-white`}>
+    <div className={`font-sans min-h-screen selection:bg-[#0b2117] selection:text-[#0b2117]`}>
       <Header />
 
       <main>
         {/* 1. HERO SECTION */}
-        <section className="relative pt-24 pb-12 lg:pt-32 lg:pb-16 px-6 md:px-16 lg:px-24 overflow-hidden min-h-screen flex items-center bg-black">
+        <section className="relative pt-24 pb-12 lg:pt-32 lg:pb-16 px-6 md:px-16 lg:px-24 overflow-hidden min-h-screen flex items-center bg-[#0b2117]">
           <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none opacity-80 brightness-[0.7] contrast-[1.1] scale-[1.15] translate-y-8">
             <source src="/assets/pages/aiproductionyeni/as.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#D97941]/20 via-transparent to-transparent z-[1] pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#caf265]/20 via-transparent to-transparent z-[1] pointer-events-none" />
           <div className="max-w-[1400px] mx-auto relative z-10 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center">
               <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="max-w-[38rem]">
@@ -646,14 +646,14 @@ const AiProduction = () => {
                 <motion.div variants={fadeInUp}>
                   <h1 className="text-[3.5rem] md:text-6xl lg:text-[6.5rem] font-display font-normal italic leading-[0.95] tracking-tight mb-8 text-[#F4EFE6]">
                     Fiziksel çekim <br />
-                    <span className="not-italic text-white font-normal underline decoration-[#D97941]/50 underline-offset-[12px]">devri kapandı</span>
+                    <span className="not-italic text-white font-normal underline decoration-[#caf265]/50 underline-offset-[12px]">devri kapandı</span>
                   </h1>
                 </motion.div>
                 <motion.p className="opacity-80 md:text-xl font-light leading-relaxed max-w-md mb-10 text-[#F4EFE6]">
                   Stüdyo maliyetlerini ve lojistik dertleri unutun. Yeni nesil AI prodüksiyon ile her kampanyanızı dakikalar içinde hazırlayın.
                 </motion.p>
                 <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
-                  <button onClick={() => navigate('/iletisim')} className="bg-[#D97941] text-[#1A1A1A] hover:bg-[#C46931] transition-all duration-300 rounded-full px-10 py-5 text-base font-bold flex items-center justify-center gap-3 w-fit group shadow-2xl">
+                  <button onClick={() => navigate('/iletisim')} className="bg-[#caf265] text-[#0b2117] hover:bg-[#b5dc57] transition-all duration-300 rounded-full px-10 py-5 text-base font-bold flex items-center justify-center gap-3 w-fit group shadow-2xl">
                     Demoyu Başlat <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                   </button>
                 </motion.div>
@@ -662,14 +662,14 @@ const AiProduction = () => {
           </div>
         </section>
 
-        <div className="h-12 md:h-16 bg-[#D97941] bg-gradient-to-b from-transparent to-[#F4EFE6]" />
+        <div className="h-12 md:h-16 bg-[#caf265] bg-gradient-to-b from-transparent to-[#F4EFE6]" />
 
         {/* 2. VALUE PROPS */}
         <section className={`py-12 md:py-16 flex items-center bg-[#F4EFE6]`}>
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer} className="text-center mb-16 md:mb-24">
-              <motion.h2 className="text-5xl md:text-7xl font-display font-normal italic text-[#1A1A1A] mb-10 leading-tight">Zamanın ötesinde <br /><span className="not-italic font-normal">bir prodüksiyon akışı.</span></motion.h2>
-              <motion.p className="text-[#1A1A1A] opacity-60 max-w-3xl mx-auto text-xl font-light">Eski usul çekimlerin yarattığı tüm engelleri ortadan kaldırın. Verimliliği merkeze alan bir vizyonla markanızı büyütün.</motion.p>
+              <motion.h2 className="text-5xl md:text-7xl font-display font-normal italic text-[#0b2117] mb-10 leading-tight">Zamanın ötesinde <br /><span className="not-italic font-normal">bir prodüksiyon akışı.</span></motion.h2>
+              <motion.p className="text-[#0b2117] opacity-60 max-w-3xl mx-auto text-xl font-light">Eski usul çekimlerin yarattığı tüm engelleri ortadan kaldırın. Verimliliği merkeze alan bir vizyonla markanızı büyütün.</motion.p>
             </motion.div>
             <div className="flex flex-col md:flex-row gap-6 h-auto md:h-[550px] w-full">
               {[
@@ -683,27 +683,27 @@ const AiProduction = () => {
                   whileInView={{ opacity: 1, y: 0 }} 
                   viewport={{ once: true }} 
                   transition={{ delay: i * 0.1, duration: 0.8 }}
-                  className="flex-1 relative group overflow-hidden bg-black/5 hover:flex-[1.4] transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] border border-black/5 rounded-[3rem] cursor-default"
+                  className="flex-1 relative group overflow-hidden bg-[#0b2117]/5 hover:flex-[1.4] transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] border border-[#0b2117]/5 rounded-[3rem] cursor-default"
                 >
                   {/* Hover Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-[#D97941]/0 to-[#D97941]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#caf265]/0 to-[#caf265]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                   
                   <div className="p-10 md:p-14 h-full flex flex-col justify-start relative z-10">
                      {/* Title */}
-                     <h3 className="text-3xl md:text-5xl lg:text-6xl font-display font-normal italic text-[#1A1A1A] mb-8 leading-[1.1] group-hover:text-[#D97941] transition-colors duration-500">
+                     <h3 className="text-3xl md:text-5xl lg:text-6xl font-display font-normal italic text-[#0b2117] mb-8 leading-[1.1] group-hover:text-[#caf265] transition-colors duration-500">
                        {item.t}
                      </h3>
                      
                      {/* Description - Reveals on hover */}
                      <div className="mb-auto overflow-hidden">
-                        <p className="text-[#1A1A1A] opacity-60 md:opacity-0 group-hover:opacity-100 transition-all duration-1000 translate-y-8 group-hover:translate-y-0 text-lg md:text-xl font-light italic leading-relaxed">
+                        <p className="text-[#0b2117] opacity-60 md:opacity-0 group-hover:opacity-100 transition-all duration-1000 translate-y-8 group-hover:translate-y-0 text-lg md:text-xl font-light italic leading-relaxed">
                            {item.d}
                         </p>
                      </div>
                   </div>
                   
                   {/* Decorative side line on hover */}
-                  <div className="absolute left-0 top-0 w-2 h-full bg-[#D97941] scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-top" />
+                  <div className="absolute left-0 top-0 w-2 h-full bg-[#caf265] scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-top" />
                 </motion.div>
               ))}
             </div>
@@ -711,27 +711,27 @@ const AiProduction = () => {
         </section>
 
         {/* 3. SERVICES */}
-        <div className="h-12 md:h-16 bg-[#F4EFE6] bg-gradient-to-b from-transparent to-[#D97941]" />
-        <section className="py-12 md:py-24 overflow-hidden flex flex-col items-center bg-[#D97941]">
+        <div className="h-12 md:h-16 bg-[#F4EFE6] bg-gradient-to-b from-transparent to-[#caf265]" />
+        <section className="py-12 md:py-24 overflow-hidden flex flex-col items-center bg-[#caf265]">
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 w-full mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
               <div>
                 <div className="inline-flex items-center gap-3 mb-8">
-                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl bg-black text-[#F4EFE6]">
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl bg-[#0b2117] text-[#F4EFE6]">
                     <User size={24} />
                   </div>
-                  <span className="text-xs font-bold tracking-[0.2em] uppercase opacity-50 text-[#1A1A1A]">Özel Yüz Tasarımı</span>
+                  <span className="text-xs font-bold tracking-[0.2em] uppercase opacity-50 text-[#0b2117]">Özel Yüz Tasarımı</span>
                 </div>
-                <h3 className="text-5xl md:text-6xl font-display font-normal italic leading-tight text-[#1A1A1A]">Sanal Manken <br /><span className="not-italic font-normal">Kütüphanesi</span></h3>
+                <h3 className="text-5xl md:text-6xl font-display font-normal italic leading-tight text-[#0b2117]">Sanal Manken <br /><span className="not-italic font-normal">Kütüphanesi</span></h3>
               </div>
-              <p className="text-xl leading-relaxed font-light text-[#1A1A1A] opacity-70 max-w-lg">Markanıza özel bir AI manken tasarlayın. Her kampanyada tutarlı yüz, profesyonel pozlar ve markanıza özel stil ile personanızı güçlendirin.</p>
+              <p className="text-xl leading-relaxed font-light text-[#0b2117] opacity-70 max-w-lg">Markanıza özel bir AI manken tasarlayın. Her kampanyada tutarlı yüz, profesyonel pozlar ve markanıza özel stil ile personanızı güçlendirin.</p>
             </div>
           </div>
           <div className="w-full"><MankenShowcase /></div>
-          <div className="mt-16"><button onClick={() => navigate('/iletisim')} className="group flex items-center gap-4 font-bold text-lg hover:gap-6 transition-all w-fit p-4 px-12 rounded-full border border-black/10 hover:bg-black hover:text-[#F4EFE6] text-[#1A1A1A]">Detaylı Bilgi Al <ArrowRight size={22} /></button></div>
+          <div className="mt-16"><button onClick={() => navigate('/iletisim')} className="group flex items-center gap-4 font-bold text-lg hover:gap-6 transition-all w-fit p-4 px-12 rounded-full border border-[#0b2117]/10 hover:bg-[#0b2117] hover:text-[#F4EFE6] text-[#0b2117]">Detaylı Bilgi Al <ArrowRight size={22} /></button></div>
         </section>
 
-        <div className="h-12 md:h-16 bg-[#D97941] bg-gradient-to-b from-transparent to-[#F4EFE6]" />
+        <div className="h-12 md:h-16 bg-[#caf265] bg-gradient-to-b from-transparent to-[#F4EFE6]" />
         <section className="py-12 md:py-24 overflow-hidden flex items-center bg-[#F4EFE6]">
           <div className="max-w-[1700px] mx-auto px-6 md:px-16 lg:px-24 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.8fr] gap-20 lg:gap-32 items-center">
@@ -741,36 +741,36 @@ const AiProduction = () => {
               <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }} className="lg:order-1">
                 <div className="flex flex-col">
                   <div className="inline-flex items-center gap-3 mb-8">
-                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl bg-[#D97941] text-[#F4EFE6]">
+                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl bg-[#caf265] text-[#F4EFE6]">
                       <ImageIcon size={24} />
                     </div>
-                    <span className="text-xs font-bold tracking-[0.2em] uppercase opacity-50 text-[#1A1A1A]">Stüdyo Kalitesi</span>
+                    <span className="text-xs font-bold tracking-[0.2em] uppercase opacity-50 text-[#0b2117]">Stüdyo Kalitesi</span>
                   </div>
-                  <h3 className="text-5xl md:text-6xl lg:text-7xl font-display font-normal italic mb-8 leading-tight text-[#1A1A1A]">Ürün <br /><span className="not-italic font-normal">Fotoğrafçılığı</span></h3>
-                  <p className="text-xl leading-relaxed font-light mb-12 max-w-lg text-[#1A1A1A] opacity-70">Stüdyo ortamına gerek kalmadan, sadece ürününüzün bir karesiyle dünya standartlarında, yüksek çözünürlüklü ürün fotoğrafları üretiyoruz.</p>
-                  <button onClick={() => navigate('/iletisim')} className="group flex items-center gap-4 font-bold text-lg hover:gap-6 transition-all w-fit p-4 px-12 rounded-full border border-black/10 hover:bg-black hover:text-[#F4EFE6] text-[#1A1A1A]">Detaylı Bilgi Al <ArrowRight size={22} /></button>
+                  <h3 className="text-5xl md:text-6xl lg:text-7xl font-display font-normal italic mb-8 leading-tight text-[#0b2117]">Ürün <br /><span className="not-italic font-normal">Fotoğrafçılığı</span></h3>
+                  <p className="text-xl leading-relaxed font-light mb-12 max-w-lg text-[#0b2117] opacity-70">Stüdyo ortamına gerek kalmadan, sadece ürününüzün bir karesiyle dünya standartlarında, yüksek çözünürlüklü ürün fotoğrafları üretiyoruz.</p>
+                  <button onClick={() => navigate('/iletisim')} className="group flex items-center gap-4 font-bold text-lg hover:gap-6 transition-all w-fit p-4 px-12 rounded-full border border-[#0b2117]/10 hover:bg-[#0b2117] hover:text-[#F4EFE6] text-[#0b2117]">Detaylı Bilgi Al <ArrowRight size={22} /></button>
                 </div>
               </motion.div>
             </div>
           </div>
         </section>
-        <div className="h-12 md:h-16 bg-[#F4EFE6] bg-gradient-to-b from-transparent to-[#D97941]" />
-        <section className="py-12 md:py-24 overflow-hidden flex items-center bg-[#D97941]">
+        <div className="h-12 md:h-16 bg-[#F4EFE6] bg-gradient-to-b from-transparent to-[#caf265]" />
+        <section className="py-12 md:py-24 overflow-hidden flex items-center bg-[#caf265]">
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center">
               <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="relative lg:order-1">
                 <div className="flex flex-col">
                   <div className="inline-flex items-center gap-3 mb-8">
-                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl bg-black text-[#F4EFE6]">
+                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl bg-[#0b2117] text-[#F4EFE6]">
                       <Layout size={24} />
                     </div>
-                    <span className="text-xs font-bold tracking-[0.2em] uppercase opacity-50 text-[#1A1A1A]">3D Form & Detay</span>
+                    <span className="text-xs font-bold tracking-[0.2em] uppercase opacity-50 text-[#0b2117]">3D Form & Detay</span>
                   </div>
-                  <h3 className="text-5xl md:text-6xl font-display font-normal italic mb-8 leading-tight text-[#1A1A1A]">Ghost <br /><span className="not-italic font-normal">Mannequin</span></h3>
-                  <p className="text-xl leading-relaxed font-light mb-12 max-w-lg text-[#1A1A1A] opacity-70">Ürünlerinizi 3D formda, sanki görünmez bir manken üzerindeymiş gibi sergileyin. İç dikiş detayları ve dikiş detaylarıyla gerçekliği yansıtın.</p>
+                  <h3 className="text-5xl md:text-6xl font-display font-normal italic mb-8 leading-tight text-[#0b2117]">Ghost <br /><span className="not-italic font-normal">Mannequin</span></h3>
+                  <p className="text-xl leading-relaxed font-light mb-12 max-w-lg text-[#0b2117] opacity-70">Ürünlerinizi 3D formda, sanki görünmez bir manken üzerindeymiş gibi sergileyin. İç dikiş detayları ve dikiş detaylarıyla gerçekliği yansıtın.</p>
 
                   <div className="space-y-4">
-                    <button onClick={() => navigate('/iletisim')} className="group flex items-center gap-4 font-bold text-lg hover:gap-6 transition-all w-fit p-4 px-12 rounded-full border border-black/10 hover:bg-black hover:text-[#F4EFE6] text-[#1A1A1A]">Detaylı Bilgi Al <ArrowRight size={22} /></button>
+                    <button onClick={() => navigate('/iletisim')} className="group flex items-center gap-4 font-bold text-lg hover:gap-6 transition-all w-fit p-4 px-12 rounded-full border border-[#0b2117]/10 hover:bg-[#0b2117] hover:text-[#F4EFE6] text-[#0b2117]">Detaylı Bilgi Al <ArrowRight size={22} /></button>
                   </div>
                 </div>
               </motion.div>
@@ -782,24 +782,24 @@ const AiProduction = () => {
           </div>
         </section>
 
-        <div className="h-12 md:h-16 bg-[#D97941] bg-gradient-to-b from-transparent to-[#F4EFE6]" />
+        <div className="h-12 md:h-16 bg-[#caf265] bg-gradient-to-b from-transparent to-[#F4EFE6]" />
         <section className="py-12 md:py-24 overflow-hidden flex items-center bg-[#F4EFE6]">
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
               <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="lg:order-2">
                 <div className="flex flex-col">
                   <div className="inline-flex items-center gap-3 mb-8">
-                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl bg-[#D97941] text-[#F4EFE6]">
+                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl bg-[#caf265] text-[#F4EFE6]">
                       <Camera size={24} />
                     </div>
-                    <span className="text-xs font-bold tracking-[0.2em] uppercase opacity-50 text-[#1A1A1A]">Özel Konsept</span>
+                    <span className="text-xs font-bold tracking-[0.2em] uppercase opacity-50 text-[#0b2117]">Özel Konsept</span>
                   </div>
-                  <h3 className="text-5xl md:text-6xl font-display font-normal italic mb-8 leading-tight text-[#1A1A1A]">Konsept <br /><span className="not-italic font-normal">Lifestyle</span></h3>
-                  <p className="text-xl leading-relaxed font-light mb-12 max-w-lg text-[#1A1A1A] opacity-70">Ürünlerinizi hikayesini anlatan çarpıcı yaşam tarzı çekimleri. Ürünü istediğiniz her mekanda yüksek gerçekçilikle sahneleyin.</p>
-                  <button onClick={() => navigate('/iletisim')} className="group flex items-center gap-4 font-bold text-lg hover:gap-6 transition-all w-fit p-4 px-12 rounded-full border border-black/10 hover:bg-black hover:text-[#F4EFE6] text-[#1A1A1A]">Detaylı Bilgi Al <ArrowRight size={22} /></button>
+                  <h3 className="text-5xl md:text-6xl font-display font-normal italic mb-8 leading-tight text-[#0b2117]">Konsept <br /><span className="not-italic font-normal">Lifestyle</span></h3>
+                  <p className="text-xl leading-relaxed font-light mb-12 max-w-lg text-[#0b2117] opacity-70">Ürünlerinizi hikayesini anlatan çarpıcı yaşam tarzı çekimleri. Ürünü istediğiniz her mekanda yüksek gerçekçilikle sahneleyin.</p>
+                  <button onClick={() => navigate('/iletisim')} className="group flex items-center gap-4 font-bold text-lg hover:gap-6 transition-all w-fit p-4 px-12 rounded-full border border-[#0b2117]/10 hover:bg-[#0b2117] hover:text-[#F4EFE6] text-[#0b2117]">Detaylı Bilgi Al <ArrowRight size={22} /></button>
                 </div>
               </motion.div>
-              <div className="lg:order-1 h-[600px] md:h-[700px] rounded-[4rem] overflow-hidden shadow-3xl bg-black/5">
+              <div className="lg:order-1 h-[600px] md:h-[700px] rounded-[4rem] overflow-hidden shadow-3xl bg-[#0b2117]/5">
                 <LifestyleShowcase />
               </div>
             </div>
@@ -810,42 +810,42 @@ const AiProduction = () => {
         <section className={`py-12 md:py-16 flex items-center bg-[#F4EFE6]`}>
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 w-full">
             <div className="flex flex-col md:flex-row items-end justify-between mb-16 md:mb-24 gap-8">
-              <div className="max-w-2xl text-[#1A1A1A]">
+              <div className="max-w-2xl text-[#0b2117]">
                 <h3 className="opacity-40 text-sm font-bold tracking-[0.3em] uppercase mb-6">PORTFOLYO</h3>
                 <h2 className="text-5xl md:text-7xl font-display font-normal italic leading-[0.9]">Üretim Gücümüzü <br /><span className="not-italic">Somutlaştırın.</span></h2>
               </div>
-              <button className="px-10 py-5 rounded-full border border-black/20 hover:bg-black hover:text-[#F4EFE6] transition-all font-medium text-[#1A1A1A]">Tüm İşlerimizi Gör</button>
+              <button className="px-10 py-5 rounded-full border border-[#0b2117]/20 hover:bg-[#0b2117] hover:text-[#F4EFE6] transition-all font-medium text-[#0b2117]">Tüm İşlerimizi Gör</button>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-10 md:gap-14">
               {aiProjects.map((project, idx) => (
                 <motion.div key={project.id} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }} className={`group relative cursor-none ${project.spanClass} flex flex-col`} style={{ cursor: 'none' }} onClick={() => setSelectedProject(project)} onMouseMove={handleMouseMove} onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
-                  <div className={`w-full pointer-events-none rounded-[3rem] overflow-hidden bg-black/5 relative ${project.aspectClass} mb-8 shadow-sm group-hover:shadow-2xl transition-all duration-700`}>
+                  <div className={`w-full pointer-events-none rounded-[3rem] overflow-hidden bg-[#0b2117]/5 relative ${project.aspectClass} mb-8 shadow-sm group-hover:shadow-2xl transition-all duration-700`}>
                     <img src={project.thumbnail} alt={project.client} className="w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-1000" />
                   </div>
-                  <h3 className="text-3xl font-display font-normal italic text-[#1A1A1A] mb-3 pointer-events-none">{project.client}</h3>
-                  <p className="text-[#1A1A1A] opacity-40 text-sm font-bold tracking-widest uppercase pointer-events-none">{project.category}</p>
+                  <h3 className="text-3xl font-display font-normal italic text-[#0b2117] mb-3 pointer-events-none">{project.client}</h3>
+                  <p className="text-[#0b2117] opacity-40 text-sm font-bold tracking-widest uppercase pointer-events-none">{project.category}</p>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        <div className="h-12 md:h-16 bg-[#F4EFE6] bg-gradient-to-b from-transparent to-[#D97941]" />
-        <section className={`py-12 md:py-16 overflow-hidden flex items-center bg-[#D97941]`}>
-          <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 w-full text-[#1A1A1A]">
+        <div className="h-12 md:h-16 bg-[#F4EFE6] bg-gradient-to-b from-transparent to-[#caf265]" />
+        <section className={`py-12 md:py-16 overflow-hidden flex items-center bg-[#caf265]`}>
+          <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 w-full text-[#0b2117]">
             <div className="text-center mb-16 md:mb-24 max-w-4xl mx-auto">
-              <h3 className="text-black/40 text-sm font-bold tracking-widest uppercase mb-8 font-sans">SİSTEM NASIL İŞLER?</h3>
+              <h3 className="text-[#0b2117]/40 text-sm font-bold tracking-widest uppercase mb-8 font-sans">SİSTEM NASIL İŞLER?</h3>
               <h2 className="text-5xl md:text-7xl lg:text-8xl font-display font-normal italic leading-[0.9] tracking-tighter">Bürokrasiyi atlayın, <br /> <span className="not-italic underline decoration-black/20 underline-offset-[12px]">doğrudan sonuca</span> odaklanın.</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-16 relative">
-              <div className="hidden md:block absolute top-16 left-[20%] right-[20%] h-px bg-black/10" />
+              <div className="hidden md:block absolute top-16 left-[20%] right-[20%] h-px bg-[#0b2117]/10" />
               {[
                 { n: 1, t: "Stratejik Brief", d: "İhtiyaçlarınızı ve marka ruhunu tanımlayın. Ürün görsellerini panele yükleyin." },
                 { n: 2, t: "AI Motoru Devrede", d: "Gelişmiş algoritmalarımız manken ve mekan kurgusunu sanal dünyada tamamlar." },
                 { n: 3, t: "Yüksek Çözünürlük", d: "Yayına hazır, rötüşlenmiş ve kusursuz görsellerinizi 48 saatte indirin." }
               ].map(step => (
                 <div key={step.n} className="relative z-10 flex flex-col items-center text-center group">
-                  <div className="w-32 h-32 rounded-full bg-black text-[#F4EFE6] text-4xl font-display font-normal italic mb-10 shadow-2xl group-hover:scale-110 transition-transform flex items-center justify-center">{step.n}</div>
+                  <div className="w-32 h-32 rounded-full bg-[#0b2117] text-[#F4EFE6] text-4xl font-display font-normal italic mb-10 shadow-2xl group-hover:scale-110 transition-transform flex items-center justify-center">{step.n}</div>
                   <h4 className="text-3xl font-display font-normal italic mb-6 tracking-tight">{step.t}</h4>
                   <p className="opacity-60 leading-relaxed max-w-xs text-lg font-light">{step.d}</p>
                 </div>
@@ -861,36 +861,36 @@ const AiProduction = () => {
         {selectedProject && (
           <motion.div key="modal" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[100] bg-[#F4EFE6]" style={{ cursor: 'none' }} onMouseMove={handleMouseMove}>
             <motion.div className="fixed top-0 left-0 pointer-events-none z-[1000] hidden md:flex items-center justify-center transform-gpu" style={{ x: cursorX, y: cursorY, translateX: '-50%', translateY: '-50%' }}>
-              {cursorType === 'exit' ? <div className="w-[100px] h-[100px] rounded-full bg-[#1A1A1A] flex items-center justify-center shadow-2xl"><span className="text-[#F4EFE6] text-sm font-bold">Çıkış</span></div> : <div className="w-[24px] h-[24px] rounded-full bg-[#D97941] shadow-[0_0_20px_rgba(217,121,65,0.5)]" />}
+              {cursorType === 'exit' ? <div className="w-[100px] h-[100px] rounded-full bg-[#0b2117] flex items-center justify-center shadow-2xl"><span className="text-[#F4EFE6] text-sm font-bold">Çıkış</span></div> : <div className="w-[24px] h-[24px] rounded-full bg-[#caf265] shadow-[0_0_20px_rgba(217,121,65,0.5)]" />}
             </motion.div>
-            <button onClick={() => setSelectedProject(null)} className="fixed top-6 right-6 z-50 p-4 rounded-full bg-black/10 text-[#1A1A1A] hover:bg-black hover:text-[#F4EFE6] transition-all group" style={{ cursor: 'none' }} onMouseEnter={() => setCursorType('exit')} onMouseLeave={() => setCursorType('dot')}>
+            <button onClick={() => setSelectedProject(null)} className="fixed top-6 right-6 z-50 p-4 rounded-full bg-[#0b2117]/10 text-[#0b2117] hover:bg-[#0b2117] hover:text-[#F4EFE6] transition-all group" style={{ cursor: 'none' }} onMouseEnter={() => setCursorType('exit')} onMouseLeave={() => setCursorType('dot')}>
               <X size={24} className="group-hover:rotate-90 transition-transform duration-300" />
             </button>
             <div className="w-full h-full flex flex-col bg-[#F4EFE6]">
               <div className="flex-1 overflow-x-auto overflow-y-hidden custom-scrollbar" onWheel={(e) => { if (e.currentTarget) e.currentTarget.scrollLeft += e.deltaY; }}>
                 <div className="h-full px-6 md:px-16 py-6 md:py-12 flex items-center space-x-8 min-w-max">
-                  <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="h-full w-[500px] shrink-0 relative rounded-[2rem] overflow-hidden bg-black/5">
+                  <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="h-full w-[500px] shrink-0 relative rounded-[2rem] overflow-hidden bg-[#0b2117]/5">
                     <img src={selectedProject.images[0]} alt={selectedProject.client} className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-[#D97941]/20 mix-blend-multiply" />
+                    <div className="absolute inset-0 bg-[#caf265]/20 mix-blend-multiply" />
                     <div className="absolute top-10 left-10 text-white z-10 font-bold tracking-widest uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">{selectedProject.client}</div>
                   </motion.div>
                   {selectedProject.images.slice(1).map((img, i) => (
-                    <motion.div key={i} initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: (i + 1) * 0.1 }} className="h-full w-[400px] md:w-[600px] shrink-0 relative rounded-[2rem] overflow-hidden bg-black/5">
+                    <motion.div key={i} initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: (i + 1) * 0.1 }} className="h-full w-[400px] md:w-[600px] shrink-0 relative rounded-[2rem] overflow-hidden bg-[#0b2117]/5">
                       <img src={img} className="w-full h-full object-cover" />
                     </motion.div>
                   ))}
                 </div>
               </div>
               <div
-                className="shrink-0 px-8 md:px-16 py-8 md:py-12 border-t border-black/10 bg-[#F4EFE6]"
+                className="shrink-0 px-8 md:px-16 py-8 md:py-12 border-t border-[#0b2117]/10 bg-[#F4EFE6]"
                 onClick={() => setSelectedProject(null)}
                 onMouseEnter={() => setCursorType('exit')}
                 onMouseLeave={() => setCursorType('dot')}
               >
-                <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 max-w-screen-2xl mx-auto text-[#1A1A1A]">
+                <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 max-w-screen-2xl mx-auto text-[#0b2117]">
                   <div className="shrink-0 max-w-md">
                     <h2 className="text-4xl md:text-5xl font-display font-normal italic mb-3">{selectedProject.client}</h2>
-                    <p className="text-[#D97941] text-sm tracking-widest font-bold uppercase">{selectedProject.category}</p>
+                    <p className="text-[#caf265] text-sm tracking-widest font-bold uppercase">{selectedProject.category}</p>
                   </div>
                   <p className="text-base md:text-lg opacity-70 leading-relaxed font-light max-w-xl">{selectedProject.description}</p>
                 </div>

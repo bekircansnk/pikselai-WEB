@@ -59,7 +59,7 @@ const ecommercePackages = [
         price: '₺29.000',
         suffix: 'Tek Seferlik',
         description: 'Standart, temiz ve satışa hazır bir Shopify mağazası kurulumu.',
-        features: ['Shopify mağaza kurulumu', 'Tema ve temel ayarlar', 'Ürünlerin eklenmesi', 'Ödeme ve kargo ayarları', '3 ay teknik destek'],
+        features: ['Shopify mağaza kurulumu', 'Tema ve temel ayarlar', 'Ürünlerin eklenmesi', 'Ödeme ve kargo ayarları', '30 gün teknik destek'],
         cta: 'Teklif Al'
     },
     {

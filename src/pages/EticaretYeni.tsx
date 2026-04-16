@@ -59,8 +59,8 @@ const EticaretYeni = () => {
       answer: "Elinizde görsel yoksa dert değil. Yapay zeka destekli paketlerimizde (Paket 2 ve üstü) ürünleriniz için markanıza tam uyan, çok gerçekçi stüdyo görsellerini sıfırdan biz üretiyoruz."
     },
     {
-      question: "3 aylık kurulum sonrası destek neleri kapsıyor?",
-      answer: "Sektördeki en büyük sorun sitenin yapılıp bırakılması. Biz teslimden sonra 3 ay boyunca yanınızdayız. Ufak tasarım revizyonları, ürün eklerken takıldığınız yerler, kargo veya ödeme altyapısındaki aksaklıklar gibi teknik her konuda direkt bize ulaşabiliyorsunuz."
+      question: "30 günlük kurulum sonrası destek neleri kapsıyor?",
+      answer: "Sektördeki en büyük sorun sitenin yapılıp bırakılması. Biz teslimden sonra 30 gün boyunca yanınızdayız. Ufak tasarım revizyonları, ürün eklerken takıldığınız yerler, kargo veya ödeme altyapısındaki aksaklıklar gibi teknik her konuda direkt bize ulaşabiliyorsunuz."
     },
     {
       question: "Aylık hizmet zorunluluğu var mı?",
@@ -68,7 +68,7 @@ const EticaretYeni = () => {
     },
     {
       question: "Kurulum ortalama ne kadar sürüyor?",
-      answer: "Standart bir mağazayı 10 ila 15 iş günü içinde baştan aşağı satışa hazır hale getiriyoruz. Tabii projeye çok özel entegrasyonlar veya tasarım detayları eklenecekse bu süre biraz esneyebiliyor."
+      answer: "Standart bir mağazayı 3-4 hafta içinde baştan aşağı satışa hazır hale getiriyoruz. Tabii projeye çok özel entegrasyonlar veya tasarım detayları eklenecekse bu süre biraz esneyebiliyor."
     },
     {
       question: "İş bitiminde site tamamen bana mı ait oluyor?",

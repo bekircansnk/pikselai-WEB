@@ -620,6 +620,12 @@ const Home = () => {
                       onClick={() => {
                         setIsAutoPlaying(false);
                         setProcessStep(idx);
+                        // Fiziksel scroll'ı the the da the that the the THE the the kaydırıyoruz The the ki scroll progress the (0,1,2 The the the) the the The ile the the The the state eşleşsin The the.
+                        if (processRef.current) {
+                          const sectionTop = processRef.current.offsetTop;
+                          const targetY = sectionTop + (window.innerHeight * idx);
+                          window.scrollTo({ top: targetY, behavior: 'smooth' });
+                        }
                       }}
                     >
                       {/* pl-6(24px) - Barw(3px) - Dotw(12px) = -28.5px | pl-10(40px) - Barw(4px) - Dotw(16px) = -46px */}

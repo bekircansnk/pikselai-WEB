@@ -258,6 +258,8 @@ const Home = () => {
     return nextIdx;
   });
   const [processStep, setProcessStep] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [progressPercent, setProgressPercent] = useState(0);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -273,18 +275,46 @@ const Home = () => {
 
   // Process Interactive Interval & Scroll
   const processRef = useRef<HTMLElement>(null);
+  const processInView = useInView(processRef, { margin: "-20%", once: false });
   const { scrollYProgress: processScroll } = useScroll({
     target: processRef,
     offset: ["start start", "end end"]
   });
 
+  // Otonom akış (scroll olmadığında kendi kendine ilerleme)
+  useEffect(() => {
+    let interval: ReturnType<typeof setInterval>;
+    if (processInView && isAutoPlaying && processStep < 2) {
+      interval = setInterval(() => {
+        setProcessStep(prev => prev >= 2 ? 2 : prev + 1);
+      }, 4000); // 4 saniyede bir adım dolar. 
+    }
+    return () => clearInterval(interval);
+  }, [processInView, isAutoPlaying, processStep]);
+
+  // Manuel scroll izleme
   useEffect(() => {
     return processScroll.on("change", latest => {
-      if (latest < 0.33) setProcessStep(0);
-      else if (latest < 0.66) setProcessStep(1);
-      else setProcessStep(2);
+      // Eğer kullanıcı ciddi manada kaydırmaya başlarsa (örn. > %5), otonomu devre dışı bırak
+      if (latest > 0.05 && isAutoPlaying) {
+        setIsAutoPlaying(false);
+      }
+      
+      if (!isAutoPlaying) {
+        setProgressPercent(latest * 100);
+        if (latest < 0.33) setProcessStep(0);
+        else if (latest < 0.66) setProcessStep(1);
+        else setProcessStep(2);
+      }
     });
-  }, [processScroll]);
+  }, [processScroll, isAutoPlaying]);
+
+  // isAutoPlaying sırasında progress bar'ın manuel doluş animasyonu
+  useEffect(() => {
+    if (isAutoPlaying) {
+      setProgressPercent((processStep + 1) * 33.33);
+    }
+  }, [processStep, isAutoPlaying]);
 
   const [surecPair] = useState(() => SUREC_PAIRS.length > 0 ? SUREC_PAIRS[Math.floor(Math.random() * SUREC_PAIRS.length)] : null);
 
@@ -549,18 +579,26 @@ const Home = () => {
         </section>
 
         {/* 6. NASIL ÇALIŞIR — ETKİLEŞİMLİ 3 ADIM */}
-        <section ref={processRef} className={`h-[300vh] relative border-b ${colors.borderColorDark}`}>
-          <div className="sticky top-0 h-screen w-full flex flex-col justify-center overflow-hidden bg-[#0b2117]">
-            <div className="max-w-[1400px] w-full mx-auto px-6 md:px-16 lg:px-24">
-              <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
-                <span className="text-[#caf265] text-xs font-bold uppercase tracking-widest mb-4 block">BASİT VE ETKİLİ</span>
-                <h2 className="text-5xl md:text-6xl font-display text-white mb-6">Sürecimiz Nasıl <span className="italic">İşliyor?</span></h2>
-                <p className="text-[#a8b8af] font-light text-xl">Sadece ürün görselini yükleyin, karmaşık promptlar ve teknik detaylarla biz ilgilenelim.</p>
+        <section ref={processRef} className={`h-[200vh] relative border-b ${colors.borderColorDark}`}>
+          <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-[#0b2117] pt-24 pb-12">
+            <div className="max-w-[1400px] w-full mx-auto px-6 md:px-16 lg:px-24 h-full flex flex-col justify-center">
+              <div className="text-center mb-6 md:mb-10 max-w-3xl mx-auto shrink-0 mt-4 md:mt-8">
+                <span className="text-[#caf265] text-xs font-bold uppercase tracking-widest mb-3 block">BASİT VE ETKİLİ</span>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-white mb-4">Sürecimiz Nasıl <span className="italic">İşliyor?</span></h2>
+                <p className="text-[#a8b8af] font-light text-lg md:text-xl">Sadece ürün görselini yükleyin, karmaşık promptlar ve teknik detaylarla biz ilgilenelim.</p>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center flex-1 min-h-0">
                 {/* Sol Panel: Adımlar */}
-                <div className="flex flex-col space-y-10 relative pl-8 border-l-2 border-white/10">
+                <div className="flex flex-col justify-center space-y-8 relative pl-10 h-full">
+                  {/* DİNAMİK PROGRESS BAR */}
+                  <div className="absolute left-0 top-[10%] bottom-[10%] w-1 bg-white/10 rounded-full overflow-hidden">
+                    <div 
+                      className="absolute top-0 left-0 w-full bg-[#caf265] transition-all duration-1000 ease-out rounded-full shadow-[0_0_15px_#caf265]"
+                      style={{ height: `${progressPercent}%` }}
+                    />
+                  </div>
+
                   {[
                     { title: "Ürün Görselinizi Gönderin", desc: "Telefonla çekilmiş basit bir düz ürün, cansız manken veya askı fotoğrafı... Bizim için başlangıç noktası olması yeterli." },
                     { title: "Tasarım & Yapay Zeka İşliyor", desc: "Kreatif ekibimiz ve yapay zeka analiz motorumuz birleşerek, markanıza uyan en mükemmel vizyonu işliyor." },
@@ -569,18 +607,21 @@ const Home = () => {
                     <div
                       key={idx}
                       className={`cursor-pointer transition-all duration-500 relative group ${processStep === idx ? 'opacity-100 translate-x-2' : 'opacity-40 hover:opacity-70'}`}
-                      onClick={() => setProcessStep(idx)}
+                      onClick={() => {
+                        setIsAutoPlaying(false);
+                        setProcessStep(idx);
+                      }}
                     >
-                      <div className={`absolute -left-[37px] w-4 h-4 rounded-full top-2 transition-all duration-500 ${processStep === idx ? 'bg-[#caf265] shadow-[0_0_20px_#caf265] scale-125' : 'bg-[#1e3b2b] group-hover:bg-white/40'}`} />
+                      <div className={`absolute -left-[45px] w-3 h-3 rounded-full top-2.5 transition-all duration-500 z-10 ${processStep === idx ? 'bg-[#caf265] shadow-[0_0_20px_#caf265] scale-150' : 'bg-[#1e3b2b] group-hover:bg-white/40'}`} />
                       <div className="text-[#caf265]/50 text-sm font-bold tracking-widest uppercase mb-2">Adım 0{idx + 1}</div>
-                      <h3 className="text-3xl font-display text-white mb-3 font-medium tracking-tight leading-tight">{step.title}</h3>
+                      <h3 className="text-3xl lg:text-4xl font-display text-white mb-3 font-medium tracking-tight leading-tight">{step.title}</h3>
                       <p className="text-[#a8b8af] font-light leading-relaxed text-lg max-w-md">{step.desc}</p>
                     </div>
                   ))}
                 </div>
 
                 {/* Sağ Panel: Görsel Gösterim */}
-                <div className="relative aspect-square md:aspect-[4/5] rounded-[3rem] overflow-hidden bg-white/5 border border-white/10 p-4 shadow-2xl">
+                <div className="relative w-full aspect-square md:aspect-auto md:h-full max-h-[55vh] md:max-h-[70vh] rounded-[3rem] overflow-hidden bg-white/5 border border-white/10 p-4 shadow-2xl">
                   <AnimatePresence mode="wait">
                     {processStep === 0 && (
                       <motion.div key="s1" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 1.05 }} transition={{ duration: 0.6 }} className="w-full h-full rounded-[2.5rem] overflow-hidden relative">

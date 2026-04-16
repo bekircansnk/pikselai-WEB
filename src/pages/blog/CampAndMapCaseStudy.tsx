@@ -6,18 +6,18 @@ import { motion } from 'framer-motion'
 import { ChevronRight, MessageSquare, TrendingUp } from 'lucide-react'
 
 const BlogImage = ({ src, alt, href, caption }: { src: string, alt: string, href: string, caption: string }) => (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="block my-8 group">
-        <figure className="m-0">
-            <div className="overflow-hidden rounded-2xl border border-bor-primary-200 dark:border-bor-primary-700 shadow-lg">
+    <a href={href} target="_blank" rel="noopener noreferrer" className="block group w-full">
+        <figure className="m-0 relative w-full">
+            <div className="overflow-hidden rounded-3xl border border-[#e0dcd3] shadow-xl hover:shadow-2xl transition-all duration-500 bg-[#F4EFE6]">
                 <img
                     src={src}
                     alt={alt}
-                    className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                 />
             </div>
-            <figcaption className="text-center mt-3 text-sm text-bor-primary-500">
-                {caption} <span className="opacity-70 group-hover:opacity-100 transition-opacity">→ Tıklayın</span>
+            <figcaption className="text-center mt-4 text-sm font-medium text-[#0b2117]/60 uppercase tracking-widest">
+                {caption} <span className="opacity-0 group-hover:opacity-100 transition-opacity text-[#86AA00]">→ İncele</span>
             </figcaption>
         </figure>
     </a>
@@ -27,7 +27,7 @@ const CampAndMapCaseStudy = () => {
 
 
     return (
-        <MainLayout transparentHeader={true} headerLightText={true}>
+        <MainLayout transparentHeader={false} headerLightText={false}>
 
             <Helmet>
                 <title>Campandmap Dijital Ürün Prodüksiyonu | Pikselai</title>
@@ -35,78 +35,95 @@ const CampAndMapCaseStudy = () => {
             </Helmet>
 
             {/* Hero Section */}
-            <Section className="py-24 relative overflow-hidden" mood="dark">
-                {/* Background Image */}
-                <div className="absolute inset-0 z-0 opacity-30">
-                    <img 
-                        src="/assets/brands/camp_and_map/1_2k_auto_undefined.webp" 
-                        alt="Camp and Map Hero Background" 
-                        className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-b from-gray-950/50 to-gray-950/90"></div>
-                </div>
-
-                <div className="max-w-4xl mx-auto text-center relative z-10">
-                    <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-medium text-bor-secondary mb-6 backdrop-blur-md">
-                        Referans Proje
+            <section className="bg-[#F4EFE6] border-b border-[#e0dcd3] pt-24 lg:pt-0">
+                <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh]">
+                    {/* Sol İçerik Alanı */}
+                    <div className="px-6 md:px-16 lg:px-24 py-20 lg:py-32 flex flex-col justify-center">
+                        <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-xl mx-auto lg:mx-0 w-full mt-10 md:mt-0">
+                            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#0b2117]/10 bg-[#0b2117]/5 text-[#0b2117] text-[10px] font-bold tracking-widest uppercase mb-8">
+                                REFERANS PROJE
+                            </div>
+                            <h1 className="text-5xl lg:text-6xl font-bold font-display leading-tight tracking-tight text-[#0b2117] mb-6">
+                                Campandmap'in <br className="hidden lg:block" />
+                                <span className="italic font-light text-[#86AA00]">Outdoor Vitrini</span>
+                            </h1>
+                            <p className="text-[#3a5245] font-light text-lg md:text-xl leading-relaxed max-w-lg">
+                                Doğa ve kamp kültürünü destekleyen Campandmap ekibi, ağır kamp ekipmanlarını stüdyoya taşımak yerine Pikselai'ın yapay zeka destekli arka plan üretimi ile doğanın ruhunu kataloglarına taşıdı.
+                            </p>
+                        </motion.div>
                     </div>
-                    <h1 className="text-4xl md:text-6xl font-bold font-display text-white mb-6 drop-shadow-lg">
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-bor-secondary to-bor-accent">Campandmap'in</span> Outdoor Vitrini
-                    </h1>
-                    <p className="text-xl text-bor-primary-200 leading-relaxed max-w-3xl mx-auto drop-shadow-md">
-                        Doğa ve kamp kültürünü destekleyen Campandmap ekibi, ağır kamp ekipmanlarını stüdyoya taşımak yerine Pikselai'ın yapay zeka destekli arka plan üretimi ile doğanın ruhunu kataloglarına taşıdı.
-                    </p>
+
+                    {/* Sağ Görsel Alanı */}
+                    <div className="relative h-[40vh] md:h-[50vh] lg:h-auto overflow-hidden bg-[#0b2117]">
+                        <motion.img initial={{ scale: 1.1 }} animate={{ scale: 1 }} transition={{ duration: 1.5 }} src="/assets/brands/camp_and_map/1_2k_auto_undefined.webp" alt="Campandmap AI" className="absolute inset-0 w-full h-full object-cover object-center opacity-90" />
+                    </div>
                 </div>
-            </Section>
+            </section>
 
             {/* Article Content */}
-            <Section mood="light">
-                <div className="max-w-3xl mx-auto prose prose-lg prose-headings:font-display prose-headings:font-bold prose-p:text-bor-primary-600 dark:prose-p:text-bor-primary-300 dark:prose-headings:text-white">
+            <Section className="py-24 bg-[#FDFBF7]">
+                <div className="max-w-7xl mx-auto px-6 md:px-16">
 
                     {/* Bölüm 1 */}
-                    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                        <h2>Devasa Ekipmanlar, Akıllı Üretim</h2>
-                        <p>
-                            Çadır, uyku tulumu, dış mekan masa ve sandalyeleri... Campandmap, e-ticaret siteleri için bu büyük hacimli ve doğayla iç içe çekilmesi gereken ürünlerin prodüksiyonunda büyük maliyetler harcıyordu. Taşıma, hava şartları, uzak lokasyonlar fotoğrafçılık süreçlerini aksatan risklerdi.
-                        </p>
-                        <p>
-                            <strong>Pikselai Ekipman Geliştirme AI Ajansı</strong> (Background AI Studio) konsepti ile ürünler sadece basit bir stüdyoda temiz nền veya izole olarak çekildi. Geri kalanı tamamıyla yapay zeka tarafından kusursuz şekilde inşa edildi ve ürün doğa içerisine yerleştirildi.
-                        </p>
-                        <BlogImage
-                            src="/assets/brands/camp_and_map/1_2k_4_5_undefined__1_.webp"
-                            alt="Campandmap AI Ürün Katalog Çalışması"
-                            href="/assets/brands/camp_and_map/1_2k_4_5_undefined__1_.webp"
-                            caption="Yapay Zeka Destekli Karlı / Dağ Konsepti Üretimi"
-                        />
-                    </motion.div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-24 lg:mb-32">
+                        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+                            <h2 className="text-3xl md:text-4xl font-bold font-display text-[#0b2117] mb-6">
+                                Devasa Ekipmanlar, <br className="hidden md:block"/><span className="italic text-[#86AA00]">Akıllı Üretim</span>
+                            </h2>
+                            <div className="text-[#3a5245] text-lg space-y-5 font-light leading-relaxed">
+                                <p>Çadır, uyku tulumu, dış mekan masa ve sandalyeleri... Campandmap, e-ticaret siteleri için bu büyük hacimli ve doğayla iç içe çekilmesi gereken ürünlerin prodüksiyonunda büyük maliyetler harcıyordu. Taşıma, hava şartları, uzak lokasyonlar fotoğrafçılık süreçlerini aksatan risklerdi.</p>
+                                <p><strong>Pikselai Ekipman Geliştirme AI Ajansı</strong> (Background AI Studio) konsepti ile ürünler sadece basit bir stüdyoda temiz bir arka plan üzerinde veya izole olarak çekildi. Geri kalanı tamamıyla yapay zeka tarafından kusursuz şekilde inşa edildi ve ürün doğa içerisine yerleştirildi.</p>
+                            </div>
+                        </motion.div>
+                        <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
+                            <BlogImage
+                                src="/assets/brands/camp_and_map/1_2k_4_5_undefined__1_.webp"
+                                alt="Campandmap AI Ürün Katalog Çalışması"
+                                href="/assets/brands/camp_and_map/1_2k_4_5_undefined__1_.webp"
+                                caption="Karlı Dağ Konsepti"
+                            />
+                        </motion.div>
+                    </div>
 
                     {/* Bölüm 2 */}
-                    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-16">
-                        <h2>Sınırları Kaldıran Doğa Olayları</h2>
-                        <p>
-                            Yapay zeka sistemi sayesinde; aynı kamp ekipmanını saniyeler içinde sisli bir dağ yamacında, yağmurlu bir orman kampında ya da güneşli bir göl kenarında konumlandırmak mümkün hale geldi. Bu esneklik, marka kreatif süreçlerine <strong>inanılmaz bir özgürlük</strong> kattı.
-                        </p>
-                        <BlogImage
-                            src="/assets/brands/camp_and_map/1_2k_4_5_undefined.webp"
-                            alt="Campandmap Atmosferik Dönüşüm"
-                            href="/assets/brands/camp_and_map/1_2k_4_5_undefined.webp"
-                            caption="Farklı İklim ve Aydınlatma Olgusu ile Geliştirilmiş Background"
-                        />
-                    </motion.div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-24 lg:mb-32">
+                        <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="order-2 lg:order-1">
+                            <BlogImage
+                                src="/assets/brands/camp_and_map/1_2k_4_5_undefined.webp"
+                                alt="Campandmap Atmosferik Dönüşüm"
+                                href="/assets/brands/camp_and_map/1_2k_4_5_undefined.webp"
+                                caption="İklim ve Aydınlatma Atmosferi"
+                            />
+                        </motion.div>
+                        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="order-1 lg:order-2">
+                            <h2 className="text-3xl md:text-4xl font-bold font-display text-[#0b2117] mb-6">
+                                Sınırları Kaldıran <br className="hidden md:block"/><span className="italic text-[#86AA00]">Doğa Olayları</span>
+                            </h2>
+                            <div className="text-[#3a5245] text-lg space-y-5 font-light leading-relaxed">
+                                <p>Yapay zeka sistemi sayesinde; aynı kamp ekipmanını saniyeler içinde sisli bir dağ yamacında, yağmurlu bir orman kampında ya da güneşli bir göl kenarında konumlandırmak mümkün hale geldi. Bu esneklik, marka kreatif süreçlerine <strong>inanılmaz bir özgürlük</strong> kattı.</p>
+                            </div>
+                        </motion.div>
+                    </div>
 
                     {/* Bölüm 3 */}
-                    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-16">
-                        <h2>E-ticarette Lojistik Tasarrufu</h2>
-                        <p>
-                            Marka yüzbinlerce liralık lojistik ve saha kiralama (çekim alanı) maliyetinden %100 tasarruf sağlarken, marka algısına son derece yüksek bir premium etki kattı. Pazarlama performansında artan etkileşim, Campandmap'in e-ticaret vitrininde ziyaretçi sitelerinde daha uzun süre kalmasını sağladı.
-                        </p>
-                        <BlogImage
-                            src="/assets/brands/camp_and_map/1_2k_auto_undefined.webp"
-                            alt="Campandmap Kusursuz E-Ticaret"
-                            href="/assets/brands/camp_and_map/1_2k_auto_undefined.webp"
-                            caption="Marka Kampanyalarına Yönelik Final Çıktılar"
-                        />
-                    </motion.div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+                            <h2 className="text-3xl md:text-4xl font-bold font-display text-[#0b2117] mb-6">
+                                E-ticarette <br className="hidden md:block"/><span className="italic text-[#86AA00]">Lojistik Tasarrufu</span>
+                            </h2>
+                            <div className="text-[#3a5245] text-lg space-y-5 font-light leading-relaxed">
+                                <p>Marka yüzbinlerce liralık lojistik ve saha kiralama (çekim alanı) maliyetinden %100 tasarruf sağlarken, marka algısına son derece yüksek bir premium etki kattı. Pazarlama performansında artan etkileşim, Campandmap'in e-ticaret vitrininde ziyaretçi sitelerinde daha uzun süre kalmasını sağladı.</p>
+                            </div>
+                        </motion.div>
+                        <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
+                            <BlogImage
+                                src="/assets/brands/camp_and_map/1_2k_auto_undefined.webp"
+                                alt="Campandmap Kusursuz E-Ticaret"
+                                href="/assets/brands/camp_and_map/1_2k_auto_undefined.webp"
+                                caption="Final Kampanya Çıktıları"
+                            />
+                        </motion.div>
+                    </div>
 
                 </div>
             </Section>

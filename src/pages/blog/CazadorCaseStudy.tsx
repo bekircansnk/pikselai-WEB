@@ -6,18 +6,18 @@ import { motion } from 'framer-motion'
 import { ChevronRight, MessageSquare, TrendingUp } from 'lucide-react'
 
 const BlogImage = ({ src, alt, href, caption }: { src: string, alt: string, href: string, caption: string }) => (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="block my-8 group">
-        <figure className="m-0">
-            <div className="overflow-hidden rounded-2xl border border-bor-primary-200 dark:border-bor-primary-700 shadow-lg">
+    <a href={href} target="_blank" rel="noopener noreferrer" className="block group w-full">
+        <figure className="m-0 relative w-full">
+            <div className="overflow-hidden rounded-3xl border border-[#e0dcd3] shadow-xl hover:shadow-2xl transition-all duration-500 bg-[#F4EFE6]">
                 <img
                     src={src}
                     alt={alt}
-                    className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                 />
             </div>
-            <figcaption className="text-center mt-3 text-sm text-bor-primary-500">
-                {caption} <span className="opacity-70 group-hover:opacity-100 transition-opacity">→ Tıklayın</span>
+            <figcaption className="text-center mt-4 text-sm font-medium text-[#0b2117]/60 uppercase tracking-widest">
+                {caption} <span className="opacity-0 group-hover:opacity-100 transition-opacity text-[#86AA00]">→ İncele</span>
             </figcaption>
         </figure>
     </a>
@@ -27,7 +27,7 @@ const CazadorCaseStudy = () => {
 
 
     return (
-        <MainLayout transparentHeader={true} headerLightText={true}>
+        <MainLayout transparentHeader={false} headerLightText={false}>
 
             <Helmet>
                 <title>Cazador Dijital Dönüşüm Hikayesi | Pikselai</title>
@@ -35,77 +35,95 @@ const CazadorCaseStudy = () => {
             </Helmet>
 
             {/* Hero Section */}
-            <Section className="py-24" mood="dark">
-                <div className="max-w-4xl mx-auto text-center">
-                    <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-medium text-bor-secondary mb-6">
-                        Referans Proje
+            <section className="bg-[#F4EFE6] border-b border-[#e0dcd3] pt-24 lg:pt-0">
+                <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh]">
+                    {/* Sol İçerik Alanı */}
+                    <div className="px-6 md:px-16 lg:px-24 py-20 lg:py-32 flex flex-col justify-center">
+                        <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-xl mx-auto lg:mx-0 w-full mt-10 md:mt-0">
+                            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#0b2117]/10 bg-[#0b2117]/5 text-[#0b2117] text-[10px] font-bold tracking-widest uppercase mb-8">
+                                REFERANS PROJE
+                            </div>
+                            <h1 className="text-5xl lg:text-6xl font-bold font-display leading-tight tracking-tight text-[#0b2117] mb-6">
+                                Cazador'un <br className="hidden lg:block" />
+                                <span className="italic font-light text-[#86AA00]">Dijital Dönüşüm Yolculuğu</span>
+                            </h1>
+                            <p className="text-[#3a5245] font-light text-lg md:text-xl leading-relaxed max-w-lg">
+                                Moda dünyasının köklü markalarından Cazador, Pikselai'ın yapay zeka çözümleriyle katalog süreçlerini hızlandırdı ve dijital varlığını mükemmelleştirdi.
+                            </p>
+                        </motion.div>
                     </div>
-                    <h1 className="text-4xl md:text-6xl font-bold font-display text-white mb-6">
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-bor-secondary to-bor-accent">Cazador'un</span> Dijital Dönüşüm Yolculuğu
-                    </h1>
-                    <p className="text-xl text-bor-primary-200 leading-relaxed max-w-3xl mx-auto">
-                        Moda dünyasının köklü markalarından Cazador, Pikselai'ın yapay zeka çözümleriyle katalog süreçlerini hızlandırdı ve dijital varlığını mükemmelleştirdi.
-                    </p>
+
+                    {/* Sağ Görsel Alanı */}
+                    <div className="relative h-[40vh] md:h-[50vh] lg:h-auto overflow-hidden bg-[#0b2117]">
+                        <motion.img initial={{ scale: 1.1 }} animate={{ scale: 1 }} transition={{ duration: 1.5 }} src="/assets/brands/cazador/ai_cazador.webp" alt="Cazador AI" className="absolute inset-0 w-full h-full object-cover object-center opacity-90" />
+                    </div>
                 </div>
-            </Section>
+            </section>
 
             {/* Article Content */}
-            <Section mood="light">
-                <div className="max-w-3xl mx-auto prose prose-lg prose-headings:font-display prose-headings:font-bold prose-p:text-bor-primary-600 dark:prose-p:text-bor-primary-300 dark:prose-headings:text-white">
+            <Section className="py-24 bg-[#FDFBF7]">
+                <div className="max-w-7xl mx-auto px-6 md:px-16">
 
                     {/* Bölüm 1 */}
-                    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                        <h2>Geleneksel Yöntemlerden Dijital Hıza Geçiş</h2>
-                        <p>
-                            Cazador, yıllarca Drive linkleriyle paylaşılan katalog görselleriyle mücadele etti.
-                            Her sezon yeni koleksiyonları müşterilere ulaştırmak, haftalar süren bir maratona dönüşüyordu.
-                            Paylaşılan linkler unutuluyor, kayboluyordu.
-                        </p>
-                        <p>
-                            <strong>Pikselai'ın Google Drive tabanlı dijital katalog altyapısı</strong> ile bu süreç köklü bir
-                            değişime uğradı. Panel derdi olmadan, mevcut Google Drive klasörlerinden beslenen sistem sayesinde,
-                            binlerce ürünü içeren profesyonel katalog <strong>rekor sürede yayına alındı</strong>.
-                        </p>
-                        <BlogImage
-                            src="/assets/brands/cazador/katalog_cazador.webp"
-                            alt="Cazador Dijital Katalog Arayüzü"
-                            href="https://katalog.cazador.com.tr/"
-                            caption="Cazador Dijital Katalog Arayüzü"
-                        />
-                    </motion.div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-24 lg:mb-32">
+                        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+                            <h2 className="text-3xl md:text-4xl font-bold font-display text-[#0b2117] mb-6">
+                                Geleneksel Yöntemlerden <br className="hidden md:block"/><span className="italic text-[#86AA00]">Dijital Hıza Geçiş</span>
+                            </h2>
+                            <div className="text-[#3a5245] text-lg space-y-5 font-light leading-relaxed">
+                                <p>Cazador, yıllarca Drive linkleriyle paylaşılan katalog görselleriyle mücadele etti. Her sezon yeni koleksiyonları müşterilere ulaştırmak, haftalar süren bir maratona dönüşüyordu. Paylaşılan linkler unutuluyor, kayboluyordu.</p>
+                                <p><strong>Pikselai'ın Google Drive tabanlı dijital katalog altyapısı</strong> ile bu süreç köklü bir değişime uğradı. Panel derdi olmadan, mevcut Google Drive klasörlerinden beslenen sistem sayesinde, binlerce ürünü içeren profesyonel katalog <strong>rekor sürede yayına alındı</strong>.</p>
+                            </div>
+                        </motion.div>
+                        <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
+                            <BlogImage
+                                src="/assets/brands/cazador/katalog_cazador.webp"
+                                alt="Cazador Dijital Katalog Arayüzü"
+                                href="https://katalog.cazador.com.tr/"
+                                caption="Cazador Dijital Katalog Arayüzü"
+                            />
+                        </motion.div>
+                    </div>
 
                     {/* Bölüm 2 */}
-                    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-16">
-                        <h2>Katalog Entegreli Yapay Zeka Stüdyosu</h2>
-                        <p>
-                            Pikselai ile görsel üretim süreci artık <strong>tamamen otonom ve katalogla entegre</strong>.
-                            Cazador ekibi, katalog içerisinden dilediği ürünü seçip, ister kendi belirlediği bir
-                            senaryo/arka plan ile, isterse de yapay zekanın ürünü analiz edip en uygun atmosferi
-                            kendisinin kurguladığı <strong>"Otomatik Senaryo"</strong> moduyla üretim yapabiliyor.
-                        </p>
-                        <BlogImage
-                            src="/assets/brands/cazador/ai_cazador.webp"
-                            alt="Cazador AI Fotoğraf Üretimi Örnekleri"
-                            href="https://www.instagram.com/cazadorglobal/"
-                            caption="Cazador AI Fotoğraf Üretimi Örnekleri"
-                        />
-                    </motion.div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-24 lg:mb-32">
+                        <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="order-2 lg:order-1">
+                            <BlogImage
+                                src="/assets/brands/cazador/ai_cazador.webp"
+                                alt="Cazador AI Fotoğraf Üretimi Örnekleri"
+                                href="https://www.instagram.com/cazadorglobal/"
+                                caption="Cazador AI Fotoğraf Üretimi Örnekleri"
+                            />
+                        </motion.div>
+                        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="order-1 lg:order-2">
+                            <h2 className="text-3xl md:text-4xl font-bold font-display text-[#0b2117] mb-6">
+                                Katalog Entegreli <br className="hidden md:block"/><span className="italic text-[#86AA00]">Yapay Zeka Stüdyosu</span>
+                            </h2>
+                            <div className="text-[#3a5245] text-lg space-y-5 font-light leading-relaxed">
+                                <p>Pikselai ile görsel üretim süreci artık <strong>tamamen otonom ve katalogla entegre</strong>. Cazador ekibi, katalog içerisinden dilediği ürünü seçip, ister kendi belirlediği bir senaryo/arka plan ile, isterse de yapay zekanın ürünü analiz edip en uygun atmosferi kendisinin kurguladığı <strong>"Otomatik Senaryo"</strong> moduyla üretim yapabiliyor.</p>
+                            </div>
+                        </motion.div>
+                    </div>
 
                     {/* Bölüm 3 */}
-                    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-16">
-                        <h2>AI Odaklı Profesyonel Sosyal Medya Vitrini</h2>
-                        <p>
-                            Üretilen yüksek kaliteli AI görseller, Cazador'un Instagram hesabında profesyonel bir akışa dönüştürüldü.
-                            <strong> Tüm süreç Pikselai tarafından tek elden yönetiliyor:</strong> Katalog güncelleme,
-                            AI fotoğraf üretimi, içerik planlama ve sosyal medya paylaşımları.
-                        </p>
-                        <BlogImage
-                            src="/assets/brands/cazador/instagram_cazador.webp"
-                            alt="Cazador Instagram Akışı"
-                            href="https://www.instagram.com/cazadorglobal/"
-                            caption="@cazadorglobal Instagram Akışı"
-                        />
-                    </motion.div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+                            <h2 className="text-3xl md:text-4xl font-bold font-display text-[#0b2117] mb-6">
+                                AI Odaklı <br className="hidden md:block"/><span className="italic text-[#86AA00]">Profesyonel Sosyal Medya</span>
+                            </h2>
+                            <div className="text-[#3a5245] text-lg space-y-5 font-light leading-relaxed">
+                                <p>Üretilen yüksek kaliteli AI görseller, Cazador'un Instagram hesabında profesyonel bir akışa dönüştürüldü. <strong>Tüm süreç Pikselai tarafından tek elden yönetiliyor:</strong> Katalog güncelleme, AI fotoğraf üretimi, içerik planlama ve sosyal medya paylaşımları.</p>
+                            </div>
+                        </motion.div>
+                        <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
+                            <BlogImage
+                                src="/assets/brands/cazador/instagram_cazador.webp"
+                                alt="Cazador Instagram Akışı"
+                                href="https://www.instagram.com/cazadorglobal/"
+                                caption="@cazadorglobal Instagram Akışı"
+                            />
+                        </motion.div>
+                    </div>
 
                 </div>
             </Section>

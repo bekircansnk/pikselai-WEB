@@ -6,18 +6,18 @@ import { motion } from 'framer-motion'
 import { ChevronRight, MessageSquare, TrendingUp } from 'lucide-react'
 
 const BlogImage = ({ src, alt, href, caption }: { src: string, alt: string, href: string, caption: string }) => (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="block my-8 group">
-        <figure className="m-0">
-            <div className="overflow-hidden rounded-2xl border border-bor-primary-200 dark:border-bor-primary-700 shadow-lg">
+    <a href={href} target="_blank" rel="noopener noreferrer" className="block group w-full">
+        <figure className="m-0 relative w-full">
+            <div className="overflow-hidden rounded-3xl border border-[#e0dcd3] shadow-xl hover:shadow-2xl transition-all duration-500 bg-[#F4EFE6]">
                 <img
                     src={src}
                     alt={alt}
-                    className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                 />
             </div>
-            <figcaption className="text-center mt-3 text-sm text-bor-primary-500">
-                {caption} <span className="opacity-70 group-hover:opacity-100 transition-opacity">→ Tıklayın</span>
+            <figcaption className="text-center mt-4 text-sm font-medium text-[#0b2117]/60 uppercase tracking-widest">
+                {caption} <span className="opacity-0 group-hover:opacity-100 transition-opacity text-[#86AA00]">→ İncele</span>
             </figcaption>
         </figure>
     </a>
@@ -27,7 +27,7 @@ const MinaDrinksCaseStudy = () => {
 
 
     return (
-        <MainLayout transparentHeader={true} headerLightText={true}>
+        <MainLayout transparentHeader={false} headerLightText={false}>
 
             <Helmet>
                 <title>Mina Drinks Dijital Dönüşüm Hikayesi | Pikselai</title>
@@ -35,79 +35,95 @@ const MinaDrinksCaseStudy = () => {
             </Helmet>
 
             {/* Hero Section */}
-            <Section className="py-24 relative overflow-hidden" mood="dark">
-                {/* Background Image */}
-                <div className="absolute inset-0 z-0 opacity-30">
-                    <img 
-                        src="/assets/pages/minadrinkscasestudy/_id_scenario_1_corn_field_dream_2k_202.webp" 
-                        alt="Mina Drinks Hero Background" 
-                        className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-b from-gray-950/50 to-gray-950/90"></div>
-                </div>
-
-                <div className="max-w-4xl mx-auto text-center relative z-10">
-                    <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-medium text-bor-secondary mb-6 backdrop-blur-md">
-                        Referans Proje
+            <section className="bg-[#F4EFE6] border-b border-[#e0dcd3] pt-24 lg:pt-0">
+                <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh]">
+                    {/* Sol İçerik Alanı */}
+                    <div className="px-6 md:px-16 lg:px-24 py-20 lg:py-32 flex flex-col justify-center">
+                        <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-xl mx-auto lg:mx-0 w-full mt-10 md:mt-0">
+                            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#0b2117]/10 bg-[#0b2117]/5 text-[#0b2117] text-[10px] font-bold tracking-widest uppercase mb-8">
+                                REFERANS PROJE
+                            </div>
+                            <h1 className="text-5xl lg:text-6xl font-bold font-display leading-tight tracking-tight text-[#0b2117] mb-6">
+                                Mina Drinks'in <br className="hidden lg:block" />
+                                <span className="italic font-light text-[#86AA00]">Görsel Dönüşüm Yolculuğu</span>
+                            </h1>
+                            <p className="text-[#3a5245] font-light text-lg md:text-xl leading-relaxed max-w-lg">
+                                İçecek sektörünün yenilikçi markası Mina Drinks, Pikselai'ın yapay zeka çözümleriyle ürün fotoğrafçılığı süreçlerini baştan yarattı.
+                            </p>
+                        </motion.div>
                     </div>
-                    <h1 className="text-4xl md:text-6xl font-bold font-display text-white mb-6 drop-shadow-lg">
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-bor-secondary to-bor-accent">Mina Drinks'in</span> Görsel Dönüşüm Yolculuğu
-                    </h1>
-                    <p className="text-xl text-bor-primary-200 leading-relaxed max-w-3xl mx-auto drop-shadow-md">
-                        İçecek sektörünün yenilikçi markası Mina Drinks, Pikselai'ın yapay zeka çözümleriyle ürün fotoğrafçılığı süreçlerini baştan yarattı.
-                    </p>
+
+                    {/* Sağ Görsel Alanı */}
+                    <div className="relative h-[40vh] md:h-[50vh] lg:h-auto overflow-hidden bg-[#0b2117]">
+                        <motion.img initial={{ scale: 1.1 }} animate={{ scale: 1 }} transition={{ duration: 1.5 }} src="/assets/pages/minadrinkscasestudy/_id_scenario_1_corn_field_dream_2k_202.webp" alt="Mina Drinks AI" className="absolute inset-0 w-full h-full object-cover object-center opacity-90" />
+                    </div>
                 </div>
-            </Section>
+            </section>
 
             {/* Article Content */}
-            <Section mood="light">
-                <div className="max-w-3xl mx-auto prose prose-lg prose-headings:font-display prose-headings:font-bold prose-p:text-bor-primary-600 dark:prose-p:text-bor-primary-300 dark:prose-headings:text-white">
+            <Section className="py-24 bg-[#FDFBF7]">
+                <div className="max-w-7xl mx-auto px-6 md:px-16">
 
                     {/* Bölüm 1 */}
-                    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                        <h2>Geleneksel Stüdyo Maliyetlerinden Kurtuluş</h2>
-                        <p>
-                            Mina Drinks, yüksek kaliteli içecek fotoğrafları üretmek için düzenli olarak stüdyo çekimleri gerçekleştiriyor ve bu süreç hem zaman hem de bütçe olarak markaya büyük yük getiriyordu. Farklı arka planlarda profesyonel içecek görselleri oluşturmak geleneksel yöntemlerle oldukça maliyetliydi.
-                        </p>
-                        <p>
-                            <strong>Pikselai'ın yapay zeka destekli ürün prodüksiyon platformu</strong> ile bu süreç köklü bir
-                            değişime uğradı. Ürün fotoğrafları saniyeler içinde doğal ortam ve yüksek kaliteyle entegre edilerek, <strong>markanın üretim maliyetleri %90'a varan oranda düşürüldü</strong>.
-                        </p>
-                        <BlogImage
-                            src="/assets/blog/id_scenario_1_end_frame_prompt_2k_20.webp"
-                            alt="Mina Drinks Dijital Katalog Arayüzü"
-                            href="/assets/blog/id_scenario_1_end_frame_prompt_2k_20.webp"
-                            caption="Mina Drinks İlk AI Konsept Tasarımı"
-                        />
-                    </motion.div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-24 lg:mb-32">
+                        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+                            <h2 className="text-3xl md:text-4xl font-bold font-display text-[#0b2117] mb-6">
+                                Geleneksel Stüdyo Maliyetlerinden <br className="hidden md:block"/><span className="italic text-[#86AA00]">Kurtuluş</span>
+                            </h2>
+                            <div className="text-[#3a5245] text-lg space-y-5 font-light leading-relaxed">
+                                <p>Mina Drinks, yüksek kaliteli içecek fotoğrafları üretmek için düzenli olarak stüdyo çekimleri gerçekleştiriyor ve bu süreç hem zaman hem de bütçe olarak markaya büyük yük getiriyordu. Farklı arka planlarda profesyonel içecek görselleri oluşturmak geleneksel yöntemlerle oldukça maliyetliydi.</p>
+                                <p><strong>Pikselai'ın yapay zeka destekli ürün prodüksiyon platformu</strong> ile bu süreç köklü bir değişime uğradı. Ürün fotoğrafları saniyeler içinde doğal ortam ve yüksek kaliteyle entegre edilerek, <strong>markanın üretim maliyetleri %90'a varan oranda düşürüldü</strong>.</p>
+                            </div>
+                        </motion.div>
+                        <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
+                            <BlogImage
+                                src="/assets/blog/id_scenario_1_end_frame_prompt_2k_20.webp"
+                                alt="Mina Drinks Dijital Katalog Arayüzü"
+                                href="/assets/blog/id_scenario_1_end_frame_prompt_2k_20.webp"
+                                caption="İlk AI Konsept Tasarımı"
+                            />
+                        </motion.div>
+                    </div>
 
                     {/* Bölüm 2 */}
-                    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-16">
-                        <h2>Sınırsız Konsept ve Arka Plan Çeşitliliği</h2>
-                        <p>
-                            İçecekleri farklı kurgusal sahnelerde göstermek hiç bu kadar kolay olmamıştı. Orijinal şişe görsellerini baz alan sistem, saniyeler içinde <strong>gerçekçi sıvı efektleri, buzlar ve canlı yaz konseptleriyle</strong> bütünleşen görseller oluşturdu. Marka bu sayede pazarlama kampanyalarına özel içerikleri anında üretme yeteneği kazandı.
-                        </p>
-                        <BlogImage
-                            src="/assets/pages/minadrinkscasestudy/id_scenario_3_end_frame_prompt_2k_20.webp"
-                            alt="Mina Drinks AI Fotoğraf Üretimi Örnekleri"
-                            href="/assets/pages/minadrinkscasestudy/id_scenario_3_end_frame_prompt_2k_20.webp"
-                            caption="Farklı Senaryolara Özel Esnek Görsel Çıktıları"
-                        />
-                    </motion.div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-24 lg:mb-32">
+                        <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="order-2 lg:order-1">
+                            <BlogImage
+                                src="/assets/pages/minadrinkscasestudy/id_scenario_3_end_frame_prompt_2k_20.webp"
+                                alt="Mina Drinks AI Fotoğraf Üretimi Örnekleri"
+                                href="/assets/pages/minadrinkscasestudy/id_scenario_3_end_frame_prompt_2k_20.webp"
+                                caption="Esnek Görsel Çıktıları"
+                            />
+                        </motion.div>
+                        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="order-1 lg:order-2">
+                            <h2 className="text-3xl md:text-4xl font-bold font-display text-[#0b2117] mb-6">
+                                Sınırsız Konsept ve <br className="hidden md:block"/><span className="italic text-[#86AA00]">Arka Plan Çeşitliliği</span>
+                            </h2>
+                            <div className="text-[#3a5245] text-lg space-y-5 font-light leading-relaxed">
+                                <p>İçecekleri farklı kurgusal sahnelerde göstermek hiç bu kadar kolay olmamıştı. Orijinal şişe görsellerini baz alan sistem, saniyeler içinde <strong>gerçekçi sıvı efektleri, buzlar ve canlı yaz konseptleriyle</strong> bütünleşen görseller oluşturdu. Marka bu sayede pazarlama kampanyalarına özel içerikleri anında üretme yeteneği kazandı.</p>
+                            </div>
+                        </motion.div>
+                    </div>
 
                     {/* Bölüm 3 */}
-                    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-16">
-                        <h2>Taze İçerik, Güçlü Marka Algısı</h2>
-                        <p>
-                            Üretilen yüksek kaliteli AI görseller, reklam kampanyalarında doğrudan kullanıldı. Ürünlerin ışık, yansıma ve perspektif açısından kusursuzluğu, Mina Drinks'in yeni dijital varlığında premium bir hissiyat sağladı. Artık markanın her yeni ürünü, pazara eşzamanlı profesyonel prodüksiyon hızında sunulabiliyor.
-                        </p>
-                        <BlogImage
-                            src="/assets/pages/minadrinkscasestudy/id_scenario_creative_01_start_frame_pr__1_.webp"
-                            alt="Mina Drinks Instagram Akışı"
-                            href="/assets/pages/minadrinkscasestudy/id_scenario_creative_01_start_frame_pr__1_.webp"
-                            caption="Mina Drinks Yüksek Etkileşimli Görsel Kalitesi"
-                        />
-                    </motion.div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+                            <h2 className="text-3xl md:text-4xl font-bold font-display text-[#0b2117] mb-6">
+                                Taze İçerik, <br className="hidden md:block"/><span className="italic text-[#86AA00]">Güçlü Marka Algısı</span>
+                            </h2>
+                            <div className="text-[#3a5245] text-lg space-y-5 font-light leading-relaxed">
+                                <p>Üretilen yüksek kaliteli AI görseller, reklam kampanyalarında doğrudan kullanıldı. Ürünlerin ışık, yansıma ve perspektif açısından kusursuzluğu, Mina Drinks'in yeni dijital varlığında premium bir hissiyat sağladı. Artık markanın her yeni ürünü, pazara eşzamanlı profesyonel prodüksiyon hızında sunulabiliyor.</p>
+                            </div>
+                        </motion.div>
+                        <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
+                            <BlogImage
+                                src="/assets/pages/minadrinkscasestudy/id_scenario_creative_01_start_frame_pr__1_.webp"
+                                alt="Mina Drinks Instagram Akışı"
+                                href="/assets/pages/minadrinkscasestudy/id_scenario_creative_01_start_frame_pr__1_.webp"
+                                caption="Yüksek Etkileşimli Görsel Kalitesi"
+                            />
+                        </motion.div>
+                    </div>
 
                 </div>
             </Section>

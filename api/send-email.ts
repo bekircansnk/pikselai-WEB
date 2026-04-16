@@ -12,7 +12,7 @@ export default async function handler(req: any, res: any) {
         // Vercel Environment Variables içinden SMTP verilerini çek.
         // Eğer kullanıcı Vercel > Settings > Environment Variables bölümüne eklerse bunlar kullanılacak.
         const smtpHost = process.env.SMTP_HOST || 'mail.pikselai.com';
-        const smtpPort = process.env.SMTP_PORT ? Number(process.env.SMTP_PORT) : 465;
+        const smtpPort = process.env.SMTP_PORT ? Number(process.env.SMTP_PORT) : 587;
         const smtpUser = process.env.SMTP_USER || 'bilgi@pikselai.com';
         const smtpPass = process.env.SMTP_PASS; // ŞİFRE BURAYA VEYA VERCEL ENV'E GİRİLMELİDİR
 

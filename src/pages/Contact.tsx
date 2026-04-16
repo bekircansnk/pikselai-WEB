@@ -56,6 +56,20 @@ const Contact = () => {
         window.location.href = url;
     };
 
+    const getDynamicMailUrl = () => {
+        if (!formData.adSoyad && !formData.mesaj) return "mailto:bilgi@pikselai.com";
+        const text = generateMessage();
+        const subject = `İletişim Talebi - ${formData.firma || formData.adSoyad}`;
+        return `mailto:bilgi@pikselai.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`;
+    };
+
+    const getDynamicWhatsappUrl = () => {
+        if (!formData.adSoyad && !formData.mesaj) return "https://wa.me/905531832344";
+        const text = generateMessage();
+        return `https://wa.me/905531832344?text=${encodeURIComponent(text)}`;
+    };
+
+
     return (
         <MainLayout transparentHeader={true} headerLightText={true}>
             {/* HERO SECTION */}
@@ -220,7 +234,7 @@ const Contact = () => {
                         <div className="space-y-4">
                             {/* WhatsApp Card */}
                             <a
-                                href="https://wa.me/905531832344"
+                                href={getDynamicWhatsappUrl()}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-5 p-6 rounded-[2rem] bg-white border border-[#e0dcd3] hover:border-[#caf265] hover:shadow-lg transition-all group cursor-pointer"
@@ -239,7 +253,7 @@ const Contact = () => {
 
                             {/* Email Card */}
                             <a
-                                href="mailto:bilgi@pikselai.com"
+                                href={getDynamicMailUrl()}
                                 className="flex items-center gap-5 p-6 rounded-[2rem] bg-white border border-[#e0dcd3] hover:border-[#caf265] hover:shadow-lg transition-all group cursor-pointer"
                             >
                                 <div className="w-16 h-16 rounded-full bg-[#0b2117]/5 text-[#0b2117] group-hover:bg-[#0b2117] group-hover:text-white flex items-center justify-center shrink-0 transition-colors">

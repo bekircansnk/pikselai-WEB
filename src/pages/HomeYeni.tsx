@@ -283,6 +283,19 @@ const Home = () => {
   // Hızlı scroll geçişlerini önlemek, adımları tek tek göstermek için Spring uygulanıyor
   const smoothScroll = useSpring(processScroll, { stiffness: 50, damping: 15, restDelta: 0.001 });
 
+  // Süreç ekranına gelindiğinde Üst Menüyü (Header) tam the ekran hissiyatı için geçici gizle
+  useEffect(() => {
+    const headerEl = document.querySelector('header');
+    if (headerEl) {
+      if (processInView) {
+        headerEl.style.transform = 'translateY(-100%)';
+        headerEl.style.transition = 'transform 0.4s ease-in-out';
+      } else {
+        headerEl.style.transform = '';
+      }
+    }
+  }, [processInView]);
+
   // Otonom akış (scroll olmadığında kendi kendine ilerleme)
   useEffect(() => {
     let interval: ReturnType<typeof setInterval>;
@@ -574,22 +587,22 @@ const Home = () => {
 
         {/* 6. NASIL ÇALIŞIR — ETKİLEŞİMLİ 3 ADIM */}
         <section ref={processRef} className={`h-[300vh] relative border-b ${colors.borderColorDark}`}>
-          <div className="sticky top-0 min-h-[100svh] w-full flex flex-col items-center justify-center overflow-x-hidden bg-[#0b2117] pt-12 pb-12 lg:pt-16 lg:pb-16">
+          <div className="sticky top-0 min-h-[100svh] w-full flex flex-col items-center justify-center overflow-x-hidden bg-[#0b2117] pt-8 pb-8 lg:pt-10 lg:pb-10">
             <div className="max-w-[1300px] w-full mx-auto px-4 md:px-12 flex flex-col justify-center min-h-0">
               
-              <div className="text-center mb-8 md:mb-12 shrink-0">
-                <span className="text-[#caf265] text-[10px] md:text-sm font-bold uppercase tracking-widest mb-2 block">BASİT VE ETKİLİ</span>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-white mb-4 leading-tight">Sürecimiz Nasıl <span className="italic">İşliyor?</span></h2>
-                <p className="text-[#a8b8af] font-light text-sm md:text-lg">Sadece ürün görselini yükleyin, karmaşık promptlar ve teknik detaylarla biz ilgilenelim.</p>
+              <div className="text-center mb-4 md:mb-6 shrink-0 mt-0 lg:mt-4">
+                <span className="text-[#caf265] text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1 md:mb-2 block">BASİT VE ETKİLİ</span>
+                <h2 className="text-3xl md:text-5xl lg:text-5xl font-display text-white mb-2 leading-tight">Sürecimiz Nasıl <span className="italic">İşliyor?</span></h2>
+                <p className="text-[#a8b8af] font-light text-xs md:text-sm lg:text-base max-w-2xl mx-auto">Sadece ürün görselini yükleyin, karmaşık promptlar ve teknik detaylarla biz ilgilenelim.</p>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 items-center">
                 
                 {/* Sol Panel: Adımlar */}
-                <div className="flex flex-col justify-center space-y-8 md:space-y-12 relative pl-8 md:pl-12">
+                <div className="flex flex-col justify-center space-y-5 md:space-y-8 relative pl-6 md:pl-10">
                   
                   {/* DİNAMİK YUMUŞATILMIŞ PROGRESS BAR */}
-                  <div className="absolute left-0 top-[20px] md:top-[25px] bottom-[15%] md:bottom-[20%] w-[3px] md:w-[4px] bg-white/10 rounded-full overflow-hidden">
+                  <div className="absolute left-0 top-[15px] md:top-[20px] bottom-[15%] md:bottom-[20%] w-[3px] md:w-[4px] bg-white/10 rounded-full overflow-hidden">
                     <motion.div 
                       className={`absolute top-0 left-0 w-full bg-[#caf265] rounded-full shadow-[0_0_15px_#caf265] origin-top ${isAutoPlaying ? "transition-transform duration-1000 ease-linear" : ""}`}
                       style={{ scaleY: isAutoPlaying ? (processStep + 1) * 0.3333 : smoothScroll }}
@@ -603,22 +616,23 @@ const Home = () => {
                   ].map((step, idx) => (
                     <div
                       key={idx}
-                      className={`cursor-pointer transition-all duration-500 relative group pb-2 ${processStep === idx ? 'opacity-100 translate-x-1 lg:translate-x-3' : 'opacity-40 hover:opacity-70'}`}
+                      className={`cursor-pointer transition-all duration-500 relative group pb-1 ${processStep === idx ? 'opacity-100 translate-x-1 lg:translate-x-3' : 'opacity-40 hover:opacity-70'}`}
                       onClick={() => {
                         setIsAutoPlaying(false);
                         setProcessStep(idx);
                       }}
                     >
-                      <div className={`absolute -left-[36.5px] md:-left-[54px] w-3 h-3 md:w-4 md:h-4 rounded-full top-1.5 md:top-2 transition-all duration-500 z-10 ${processStep === idx ? 'bg-[#caf265] shadow-[0_0_20px_#caf265] scale-[1.3]' : 'bg-[#1e3b2b] group-hover:bg-white/40'}`} />
-                      <div className="text-[#caf265]/50 text-xs md:text-sm font-bold tracking-widest uppercase mb-1 md:mb-2">Adım 0{idx + 1}</div>
-                      <h3 className="text-2xl lg:text-4xl font-display text-white mb-2 md:mb-3 font-medium tracking-tight leading-tight">{step.title}</h3>
-                      <p className="text-[#a8b8af] font-light leading-relaxed text-sm lg:text-lg max-w-md">{step.desc}</p>
+                      {/* pl-6(24px) - Barw(3px) - Dotw(12px) = -28.5px | pl-10(40px) - Barw(4px) - Dotw(16px) = -46px */}
+                      <div className={`absolute -left-[28.5px] md:-left-[46px] w-3 h-3 md:w-4 md:h-4 rounded-full top-1.5 md:top-2 transition-all duration-500 z-10 ${processStep === idx ? 'bg-[#caf265] shadow-[0_0_20px_#caf265] scale-[1.3]' : 'bg-[#1e3b2b] group-hover:bg-white/40'}`} />
+                      <div className="text-[#caf265]/50 text-[10px] md:text-xs font-bold tracking-widest uppercase mb-1 md:mb-1.5">Adım 0{idx + 1}</div>
+                      <h3 className="text-xl lg:text-3xl font-display text-white mb-1.5 md:mb-2 font-medium tracking-tight leading-tight">{step.title}</h3>
+                      <p className="text-[#a8b8af] font-light leading-relaxed text-xs lg:text-sm max-w-md">{step.desc}</p>
                     </div>
                   ))}
                 </div>
 
-                {/* Sağ Panel: Görsel Gösterim */}
-                <div className="relative w-full aspect-[3/4] md:aspect-[4/5] rounded-[2rem] md:rounded-[3rem] overflow-hidden bg-[#0b2117] border border-white/10 p-2 md:p-4 shadow-2xl mx-auto">
+                {/* Sağ Panel: Görsel Gösterim (Max-w kısıtı ile Height büyümesi durduruldu) */}
+                <div className="relative w-full max-w-[280px] md:max-w-[380px] lg:max-w-[440px] aspect-[3/4] md:aspect-[4/5] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden bg-[#0b2117] border border-white/10 p-1 md:p-3 shadow-2xl mx-auto">
                   <AnimatePresence mode="wait">
                     {processStep === 0 && (
                       <motion.div key="s1" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 1.05 }} transition={{ duration: 0.6 }} className="w-full h-full rounded-[2.5rem] overflow-hidden relative">

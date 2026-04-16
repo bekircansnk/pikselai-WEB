@@ -93,8 +93,8 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                             </div>
 
                             <div className="mt-auto space-y-4 pt-6 border-t border-bor-primary-100 dark:border-bor-primary-800">
-                                <Button className="w-full justify-center" size="lg" href="/iletisim">
-                                    Demo Talep Et
+                                <Button className="w-full justify-center" size="lg" onClick={() => window.open('https://katalog-app.vercel.app/', '_blank')}>
+                                    Kataloğu İncele
                                 </Button>
                             </div>
                         </div>

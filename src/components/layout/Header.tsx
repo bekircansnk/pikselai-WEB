@@ -168,9 +168,9 @@ export function Header({ transparent = false, lightText = false }: HeaderProps) 
                     <Button
                         size="sm"
                         className="hidden lg:flex shadow-lg shadow-bor-secondary/20 hover:shadow-bor-secondary/40 transition-shadow"
-                        onClick={() => navigate('/iletisim')}
+                        onClick={() => window.open('https://katalog-app.vercel.app/', '_blank')}
                     >
-                        Demo Talep Et
+                        Kataloğu İncele
                     </Button>
 
                     {/* Mobile Menu Toggle */}

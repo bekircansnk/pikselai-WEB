@@ -127,13 +127,34 @@ const CountUp = ({ end, duration = 2, suffix = "" }: { end: number, duration?: n
 const CompareSlider = () => {
     const [activeTab, setActiveTab] = useState(COMPARE_TABS[0]);
     
-    // Her sayfa yenilendiğinde klasörlerden rastgele bir çift seç
-    const [randomPairs] = useState(() => {
+    // Her sayfa yenilendiğinde veya sekmeye tıklandığında klasörlerden rastgele bir çift seç
+    const [randomPairs, setRandomPairs] = useState(() => {
         const ghost = GHOST_PAIRS.length > 0 ? GHOST_PAIRS[Math.floor(Math.random() * GHOST_PAIRS.length)] : null;
         const flat = KAMPANYA_PAIRS.length > 0 ? KAMPANYA_PAIRS[Math.floor(Math.random() * KAMPANYA_PAIRS.length)] : null;
         const lifestyle = SOSYAL_MEDYA_PAIRS.length > 0 ? SOSYAL_MEDYA_PAIRS[Math.floor(Math.random() * SOSYAL_MEDYA_PAIRS.length)] : null;
         return { ghost, flat, lifestyle };
     });
+
+    const handleTabClick = (tab: any) => {
+        setActiveTab(tab);
+        setRandomPairs(prev => {
+            const ghost = GHOST_PAIRS.length > 0 ? GHOST_PAIRS[Math.floor(Math.random() * GHOST_PAIRS.length)] : null;
+            const flat = KAMPANYA_PAIRS.length > 0 ? KAMPANYA_PAIRS[Math.floor(Math.random() * KAMPANYA_PAIRS.length)] : null;
+            const lifestyle = SOSYAL_MEDYA_PAIRS.length > 0 ? SOSYAL_MEDYA_PAIRS[Math.floor(Math.random() * SOSYAL_MEDYA_PAIRS.length)] : null;
+            return {
+                ...prev,
+                [tab.id]: tab.id === 'ghost' ? ghost : tab.id === 'flat' ? flat : lifestyle
+            };
+        });
+    };
+
+    useEffect(() => {
+        const pool = [...GHOST_PAIRS, ...KAMPANYA_PAIRS, ...SOSYAL_MEDYA_PAIRS];
+        pool.forEach(pair => {
+            if (pair.before) new Image().src = pair.before;
+            if (pair.after) new Image().src = pair.after;
+        });
+    }, []);
 
     const displayBefore = randomPairs[activeTab.id as keyof typeof randomPairs]?.before || activeTab.before;
     const displayAfter = randomPairs[activeTab.id as keyof typeof randomPairs]?.after || activeTab.after;
@@ -144,7 +165,7 @@ const CompareSlider = () => {
                 {COMPARE_TABS.map((tab) => (
                     <button 
                         key={tab.id} 
-                        onClick={() => { setActiveTab(tab); }}
+                        onClick={() => handleTabClick(tab)}
                         className={`px-4 md:px-6 py-2 rounded-full text-xs md:text-sm font-medium transition-all ${activeTab.id === tab.id ? 'bg-[#caf265] text-black shadow-lg hover:-translate-y-0.5' : 'text-white/60 hover:text-white'}`}
                     >
                         {tab.label}

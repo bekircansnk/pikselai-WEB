@@ -19,7 +19,7 @@ const Contact = () => {
     });
 
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [isMailSending, setIsMailSending] = useState(false);
+
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -50,28 +50,15 @@ const Contact = () => {
         setIsSubmitted(true);
     };
 
-    const handleMailSubmit = async () => {
-        setIsMailSending(true);
-        try {
-            const response = await fetch('/api/send-email', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData)
-            });
-            const result = await response.json();
-            
-            if (result.success) {
-                alert('E-postanız sistem üzerinden başarıyla gönderildi! Ekibimiz en kısa sürede dönüş yapacaktır.');
-            } else {
-                console.error(result);
-                alert('Gönderim hatası (Lütfen SMTP Şifresini kontrol edin/eklediğinizden emin olun): ' + result.message);
-            }
-        } catch (error) {
-            console.error(error);
-            alert('Sistemsel bir ağ hatası oluştu. Lütfen şimdilik WhatsApp ile deneyiniz.');
-        } finally {
-            setIsMailSending(false);
+    const handleMailSubmit = () => {
+        // Form boş mu diye kontrol edelim
+        if (!formData.adSoyad) {
+            alert('Lütfen e-posta göndermeden önce en azından Ad Soyad alanını doldurun.');
+            return;
         }
+        
+        // E-Posta uygulamasını başlat
+        window.location.href = getDynamicMailUrl();
     };
 
     const getDynamicMailUrl = () => {
@@ -228,11 +215,10 @@ const Contact = () => {
                                         animate={{ opacity: 1, height: 'auto' }}
                                         type="button"
                                         onClick={handleMailSubmit}
-                                        disabled={isMailSending}
-                                        className="w-full bg-[#0b2117] text-[#F4EFE6] hover:bg-[#153828] transition-all duration-300 rounded-2xl px-8 py-5 text-lg font-bold flex items-center justify-center gap-3 group disabled:opacity-50"
+                                        className="w-full bg-[#0b2117] text-[#F4EFE6] hover:bg-[#153828] transition-all duration-300 rounded-2xl px-8 py-5 text-lg font-bold flex items-center justify-center gap-3 group"
                                     >
-                                        <Mail size={20} className={`group-hover:scale-110 transition-transform opacity-70 ${isMailSending ? 'animate-pulse' : ''}`} />
-                                        {isMailSending ? 'Sistem Üzerinden Gönderiliyor...' : 'Alternatif Olarak Direkt Sistemden E-Posta Gönder'}
+                                        <Mail size={20} className="group-hover:scale-110 transition-transform opacity-70" />
+                                        Alternatif Olarak E-Posta Uygulamanızla Gönderin
                                     </motion.button>
                                 )}
                             </div>

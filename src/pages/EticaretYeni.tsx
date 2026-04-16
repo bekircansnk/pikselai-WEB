@@ -414,7 +414,7 @@ const EticaretYeni = () => {
                 <ul className="space-y-0">
                   {[
                     "Kapsamlı marka ve rakip analizi",
-                    "Ortalama 10-15 iş günü kurulum süresi",
+                    "Ortalama 3-4 hafta kurulum süresi",
                     "Özel isteklere göre esnek proje takvimi",
                     "A'dan Z'ye sınırsız yayına alma testleri",
                     "Kesintisiz platform taşıma (migration) desteği"
@@ -454,7 +454,7 @@ const EticaretYeni = () => {
               <div className="min-w-[85vw] sm:min-w-[400px] md:min-w-0 bg-[#d9cbb2] rounded-3xl p-8 md:p-10 snap-center shrink-0">
                 <h3 className="text-3xl font-serif italic text-[#0b2117] mb-4">Yönetim & Büyüme</h3>
                 <p className="text-[#0b2117]/80 leading-relaxed mb-10 min-h-[48px]">
-                  Teknik bilgi gerektirmeyen panel. En kolay şekilde küresel pazarlara açılın ve satış yapın.
+                  Teknik bilgi gerektirmeyen, basit ve akıcı yönetim paneliyle işletmenizi dijitalde zahmetsizce büyütün ve satışlarınızı artırın.
                 </p>
 
                 <ul className="space-y-0">
@@ -462,8 +462,8 @@ const EticaretYeni = () => {
                     "E-posta göndermek kadar basit yönetim",
                     "Hiçbir kodlama veya sunucu bilgisi gerekmez",
                     "Kurulum sonrası 30 günlük ücretsiz destek",
-                    "E-ihracat ve dropshipping uyumlu sistemler",
-                    "Market optimizasyonuyla uluslararası satış"
+                    "Mobil uyumlu panel ile mağazanızı cep telefonundan yönetin",
+                    "Detaylı analizlerle satış verilerinizi anlık olarak takip edin"
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-4 py-4 border-t border-[#0b2117]/10 text-[#0b2117]">
                       <div className="flex-1 text-[15px]">{item}</div>

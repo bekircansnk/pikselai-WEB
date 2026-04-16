@@ -14,12 +14,12 @@ export default async function handler(req: any, res: any) {
         const smtpHost = process.env.SMTP_HOST || 'mail.pikselai.com';
         const smtpPort = process.env.SMTP_PORT ? Number(process.env.SMTP_PORT) : 587;
         const smtpUser = process.env.SMTP_USER || 'bilgi@pikselai.com';
-        const smtpPass = process.env.SMTP_PASS; // ŞİFRE BURAYA VEYA VERCEL ENV'E GİRİLMELİDİR
+        const smtpPass = process.env.SMTP_PASS; || 'Sagnak6700.';
 
         if (!smtpPass) {
-            return res.status(500).json({ 
-                success: false, 
-                message: 'Sunucu tarafında (Vercel) e-posta SMTP şifresi (SMTP_PASS) tanımlanmamış.' 
+            return res.status(500).json({
+                success: false,
+                message: 'Sunucu tarafında (Vercel) e-posta SMTP şifresi (SMTP_PASS) tanımlanmamış.'
             });
         }
 
@@ -57,7 +57,7 @@ ${mesaj || 'Mesaj yok.'}
 
         // Maili gönder
         await transporter.sendMail(mailOptions);
-        
+
         return res.status(200).json({ success: true, message: 'E-Posta başarıyla gönderildi.' });
     } catch (error) {
         console.error('SMTP Error:', error);

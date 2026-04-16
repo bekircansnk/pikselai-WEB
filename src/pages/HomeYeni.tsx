@@ -34,6 +34,20 @@ const GHOST_PAIRS = Object.keys(ghostModules).map(path => {
     return { before: beforeStr, after: afterStr };
 });
 
+const kampanyaModules = import.meta.glob('/public/assets/pages/homeyeni/kampanya_oncesi_sonrasi/*__1.webp', { eager: true });
+const KAMPANYA_PAIRS = Object.keys(kampanyaModules).map(path => {
+    const beforeStr = path.replace('/public', '');
+    const afterStr = beforeStr.replace('__1.webp', '__2.webp');
+    return { before: beforeStr, after: afterStr };
+});
+
+const sosyalMedyaModules = import.meta.glob('/public/assets/pages/homeyeni/sosyal_medya_oncesi_sonrasi/*__1.webp', { eager: true });
+const SOSYAL_MEDYA_PAIRS = Object.keys(sosyalMedyaModules).map(path => {
+    const beforeStr = path.replace('/public', '');
+    const afterStr = beforeStr.replace('__1.webp', '__2.webp');
+    return { before: beforeStr, after: afterStr };
+});
+
 const BRAND_LOGOS = [
     "/assets/brands/cazador/cazador_logo.webp",
     "/assets/brands/venus/venus_logo.webp",
@@ -44,7 +58,7 @@ const BRAND_LOGOS = [
 const COMPARE_TABS = [
   { id: "ghost", label: "Ghost → E-Ticaret", before: "/assets/pages/homeyeni/banner/l0000000751458_1.webp", after: "/assets/pages/homeyeni/banner/l0000000751458_6.webp" },
   { id: "flat", label: "Düz Ürün → Kampanya", before: "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined18.webp", after: "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined16.webp" },
-  { id: "lifestyle", label: "Ham → Lifestyle", before: "/assets/pages/homeyeni/banner/l0000000758648_1.webp", after: "/assets/pages/homeyeni/banner/03085_haki_2k_4_5_shot_13_action_brushing_foliage.webp" }
+  { id: "lifestyle", label: "Ham → Sosyal Medya", before: "/assets/pages/homeyeni/banner/l0000000758648_1.webp", after: "/assets/pages/homeyeni/banner/03085_haki_2k_4_5_shot_13_action_brushing_foliage.webp" }
 ];
 
 const SERVICES = [
@@ -113,16 +127,16 @@ const CountUp = ({ end, duration = 2, suffix = "" }: { end: number, duration?: n
 const CompareSlider = () => {
     const [activeTab, setActiveTab] = useState(COMPARE_TABS[0]);
     
-    // Her sayfa yenilendiğinde klasörden rastgele bir çift seç
-    const [randomPair] = useState(() => {
-        if (GHOST_PAIRS.length > 0) {
-            return GHOST_PAIRS[Math.floor(Math.random() * GHOST_PAIRS.length)];
-        }
-        return null;
+    // Her sayfa yenilendiğinde klasörlerden rastgele bir çift seç
+    const [randomPairs] = useState(() => {
+        const ghost = GHOST_PAIRS.length > 0 ? GHOST_PAIRS[Math.floor(Math.random() * GHOST_PAIRS.length)] : null;
+        const flat = KAMPANYA_PAIRS.length > 0 ? KAMPANYA_PAIRS[Math.floor(Math.random() * KAMPANYA_PAIRS.length)] : null;
+        const lifestyle = SOSYAL_MEDYA_PAIRS.length > 0 ? SOSYAL_MEDYA_PAIRS[Math.floor(Math.random() * SOSYAL_MEDYA_PAIRS.length)] : null;
+        return { ghost, flat, lifestyle };
     });
 
-    const displayBefore = activeTab.id === 'ghost' && randomPair ? randomPair.before : activeTab.before;
-    const displayAfter = activeTab.id === 'ghost' && randomPair ? randomPair.after : activeTab.after;
+    const displayBefore = randomPairs[activeTab.id as keyof typeof randomPairs]?.before || activeTab.before;
+    const displayAfter = randomPairs[activeTab.id as keyof typeof randomPairs]?.after || activeTab.after;
 
     return (
         <div className="w-full flex flex-col gap-6">

@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async'
 import { MainLayout } from '../../layouts/MainLayout'
 import { Section } from '../../components/ui/Section'
-import { useNavigate } from 'react-router-dom'
+
 import { motion } from 'framer-motion'
 import { ChevronRight, MessageSquare, TrendingUp } from 'lucide-react'
 
@@ -24,7 +24,7 @@ const BlogImage = ({ src, alt, href, caption }: { src: string, alt: string, href
 )
 
 const CazadorCaseStudy = () => {
-    const navigate = useNavigate()
+
 
     return (
         <MainLayout transparentHeader={true} headerLightText={true}>

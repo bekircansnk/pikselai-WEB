@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { MainLayout } from '../layouts/MainLayout';
 import { Section } from '../components/ui/Section';
 import { motion } from 'framer-motion';
-import { MessageSquare, Mail, Phone, MapPin, Send, ArrowRight } from 'lucide-react';
+import { MessageSquare, Mail, MapPin, ArrowRight } from 'lucide-react';
 
 const Contact = () => {
     useEffect(() => {

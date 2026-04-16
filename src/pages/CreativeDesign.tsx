@@ -32,7 +32,7 @@ export default function CreativeDesign() {
                                 Binlerce ürün görseli arasında neyin nerede olduğunu aramakla vakit kaybetmeyin. Bu sistem sadece müşterinize şık bir sunum yapmanız için değil; kendi ekibinizin de ne arıyorsa saniyeler içinde ulaşıp yönetebilmesi için tasarlandı. Siz içeride dev bir arama motoru hızıyla dilediğinizi bulurken, müşteriniz vitrinde sadece netliği ve sadeliği görsün.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 items-center">
-                                <a href="https://katalog-pikselai.netlify.app/" target="_blank" rel="noreferrer" className="w-full sm:w-auto">
+                                <a href="https://katalog-app.vercel.app/" target="_blank" rel="noreferrer" className="w-full sm:w-auto">
                                     <Button
                                         size="lg"
                                         className="bg-[#E2FF65] text-black hover:bg-[#D4F054] border-none text-lg px-8 h-14 rounded-full w-full sm:w-auto font-medium"
@@ -212,7 +212,7 @@ export default function CreativeDesign() {
                                 />
                             </div>
                             <div className="mt-12">
-                                <a href="https://katalog-pikselai.netlify.app/" target="_blank" rel="noreferrer">
+                                <a href="https://katalog-app.vercel.app/" target="_blank" rel="noreferrer">
                                     <Button size="lg" className="bg-[#0A2624] text-white hover:bg-[#0A2624]/90 border-none shadow-lg px-8 rounded-full font-medium">
                                         Canlı Demoyu İncele
                                     </Button>
@@ -304,7 +304,7 @@ export default function CreativeDesign() {
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
                     >
-                        <a href="https://katalog-pikselai.netlify.app/" target="_blank" rel="noreferrer">
+                        <a href="https://katalog-app.vercel.app/" target="_blank" rel="noreferrer">
                             <Button
                                 size="lg"
                                 className="bg-[#E2FF65] text-[#0A2624] hover:bg-[#D4F054] border-none text-xl px-12 h-16 rounded-full hover:scale-105 transition-transform font-bold shadow-xl"

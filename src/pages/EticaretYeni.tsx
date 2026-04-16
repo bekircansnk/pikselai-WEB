@@ -79,8 +79,8 @@ const EticaretYeni = () => {
       answer: "Hem sizin kullanacağınız yönetim paneli Türkçe, hem de müşterilerin göreceği arayüz, iade adımları, kargo mesajları tamamen Türkçeleştirilmiş şekilde teslim ediliyor."
     },
     {
-      question: "E-ihracat veya yurtdışına satış yapabilir miyim?",
-      answer: "Shopify zaten bunun için üretilmiş bir platform. Farklı dillere, ülkelere ve para birimlerine göre fiyatlandırma yapıp yurtdışı pazarlarına kolayca açılabiliyorsunuz."
+      question: "Mağaza kurulumu bittikten sonra ne yapmalıyım?",
+      answer: "Teslimden sonra mağazanız satışa hazır hale geliyor. Size Shopify yönetim panelini nasıl kullanacağınızı adım adım gösteriyoruz; ürün ekleme, sipariş takibi ve müşteri yönetimi gibi günlük operasyonları kısa sürede rahatlıkla yapabilir hale geliyorsunuz."
     }
   ];
 

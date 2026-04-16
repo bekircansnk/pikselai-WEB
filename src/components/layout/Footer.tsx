@@ -74,7 +74,7 @@ export function Footer({ transparent = false }: FooterProps) {
                 <div className="mt-12 pt-8 border-t border-white/10">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-bor-primary-400">
                         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-                            <a href="mailto:info@pikselai.com" className="hover:text-bor-secondary transition-colors">info@pikselai.com</a>
+                            <a href="mailto:bilgi@pikselai.com" className="hover:text-bor-secondary transition-colors">bilgi@pikselai.com</a>
                             <a href="tel:+905531832344" className="hover:text-bor-secondary transition-colors">+90 553 183 23 44</a>
                             <span>İstanbul, Türkiye</span>
                         </div>

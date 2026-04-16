@@ -100,7 +100,7 @@ const Contact = () => {
 
                         {/* Email */}
                         <a
-                            href="mailto:info@pikselai.com"
+                            href="mailto:bilgi@pikselai.com"
                             className="flex items-center gap-4 p-6 rounded-2xl bg-bor-primary-50 border border-bor-primary-200 hover:bg-bor-primary-100 transition-colors cursor-pointer"
                         >
                             <div className="w-14 h-14 rounded-full bg-bor-primary-900 flex items-center justify-center shrink-0">
@@ -110,7 +110,7 @@ const Contact = () => {
                             </div>
                             <div>
                                 <div className="font-bold text-bor-primary-900 text-lg">E-posta Gönderin</div>
-                                <div className="text-bor-primary-500 text-sm">info@pikselai.com</div>
+                                <div className="text-bor-primary-500 text-sm">bilgi@pikselai.com</div>
                             </div>
                         </a>
 

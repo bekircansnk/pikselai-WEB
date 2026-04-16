@@ -556,7 +556,10 @@ const EticaretYeni = () => {
                 Hemen bir ücretsiz danışmanlık görüşmesi planlayalım ve e-ticaret hedeflerinizi global standartlarda gerçeğe dönüştürelim.
               </p>
               <div className="flex flex-col sm:flex-row items-center gap-6 justify-center md:justify-start">
-                <button className={`${colors.limeBtn} ${colors.textDark} hover:bg-[#b5dc57] transition-all duration-300 rounded-full px-10 py-5 text-lg font-bold flex items-center gap-3 group`}>
+                <button 
+                  onClick={() => window.location.href = 'https://pikselai-web.vercel.app/iletisim'}
+                  className={`${colors.limeBtn} ${colors.textDark} hover:bg-[#b5dc57] transition-all duration-300 rounded-full px-10 py-5 text-lg font-bold flex items-center gap-3 group`}
+                >
                   İş Birliğine Başlayalım
                   <ChevronRight className="group-hover:translate-x-1 transition-transform" />
                 </button>

@@ -107,57 +107,7 @@ const CountUp = ({ end, duration = 2, suffix = "" }: { end: number, duration?: n
   return <span ref={ref}>{count === 0 ? "0" + suffix : count}</span>;
 };
 
-// COMPONENT: CompareSliderNode
-const CompareSliderNode = ({ beforeImg, afterImg, isVertical = false }: { beforeImg: string, afterImg: string, isVertical?: boolean }) => {
-    const [sliderPos, setSliderPos] = useState(50);
-    const containerRef = useRef<HTMLDivElement>(null);
-    const [isHovered, setIsHovered] = useState(false);
-
-    const handleMove = (clientX: number) => {
-        if (!containerRef.current) return;
-        const rect = containerRef.current.getBoundingClientRect();
-        const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
-        setSliderPos((x / rect.width) * 100);
-    };
-
-    const handleMouseMove = (e: React.MouseEvent) => { 
-        handleMove(e.clientX); 
-    };
-
-    const handleTouchMove = (e: React.TouchEvent) => {
-        handleMove(e.touches[0].clientX);
-    };
-
-    return (
-        <div 
-            ref={containerRef}
-            className={`relative w-full ${isVertical ? 'aspect-[4/5] object-[center_10%] rounded-3xl' : 'aspect-square md:aspect-[16/8] rounded-[2rem]'} bg-[#131110] overflow-hidden cursor-ew-resize select-none border border-white/5 shadow-2xl transition-all`}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => { setIsHovered(false); setSliderPos(50); }}
-            onMouseMove={handleMouseMove}
-            onTouchMove={handleTouchMove}
-        >
-            <motion.img key={`after-${afterImg}`} initial={{ opacity: 0.8 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} src={afterImg} alt="Sonrası" className={`absolute inset-0 w-full h-full pointer-events-none object-cover ${isVertical ? 'object-[center_10%]' : ''}`} />
-            
-            <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none" style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}>
-                <motion.img key={`before-${beforeImg}`} initial={{ opacity: 0.8 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} src={beforeImg} alt="Öncesi" className={`absolute inset-0 h-full max-w-none object-cover ${isVertical ? 'w-full object-[center_10%]' : 'w-[100vw] xl:w-full'}`} />
-            </div>
-            
-            {/* Custom Handle */}
-            <div className="absolute top-0 bottom-0 w-[2px] bg-white pointer-events-none shadow-[0_0_15px_rgba(0,0,0,0.5)] flex items-center justify-center h-full transition-opacity duration-300" style={{ left: `${sliderPos}%`, transform: 'translateX(-50%)', opacity: isHovered ? 1 : 0.4 }}>
-               <div className={`w-10 h-10 md:w-12 md:h-12 bg-white shadow-2xl rounded-full flex items-center justify-center border-[3px] border-[#caf265] -ml-[1px] transition-transform duration-300 ${isHovered ? 'scale-110' : 'scale-90'}`}>
-                   <div className="flex gap-1 text-[#0b2117]">
-                       <ChevronRight size={16} className="rotate-180 -mr-2" />
-                       <ChevronRight size={16} />
-                   </div>
-               </div>
-            </div>
-
-            <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 px-3 py-1.5 md:px-4 md:py-2 bg-black/60 backdrop-blur-md rounded-xl text-white/90 text-[10px] md:text-xs font-bold uppercase tracking-widest pointer-events-none border border-white/10 shadow-lg">Öncesi (Ham)</div>
-            <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 px-3 py-1.5 md:px-4 md:py-2 bg-[#caf265]/90 backdrop-blur-md rounded-xl text-black text-[10px] md:text-xs font-bold uppercase tracking-widest pointer-events-none shadow-lg">Sonrası</div>
-        </div>
-    );
-};
+// CompareSliderNode removed to support static side-by-side view for all tabs
 
 // COMPONENT: CompareSlider
 const CompareSlider = () => {
@@ -170,6 +120,9 @@ const CompareSlider = () => {
         }
         return null;
     });
+
+    const displayBefore = activeTab.id === 'ghost' && randomPair ? randomPair.before : activeTab.before;
+    const displayAfter = activeTab.id === 'ghost' && randomPair ? randomPair.after : activeTab.after;
 
     return (
         <div className="w-full flex flex-col gap-6">
@@ -185,24 +138,22 @@ const CompareSlider = () => {
                 ))}
             </div>
             
-            <div className={`mt-4 ${activeTab.id === 'ghost' ? 'grid grid-cols-2 gap-4 md:gap-8 max-w-5xl mx-auto' : ''}`}>
-                {activeTab.id === 'ghost' && randomPair ? (
+            <div className="mt-4 grid grid-cols-2 gap-4 md:gap-8 max-w-5xl mx-auto">
+                {displayBefore && displayAfter && (
                     <>
                         {/* ÖNCESİ */}
                         <div className="relative w-full aspect-[3/4] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl group bg-[#131110]">
-                            <img src={randomPair.before} alt="Öncesi" className="w-full h-full object-cover object-[center_10%] transition-transform duration-700 group-hover:scale-105" />
+                            <img src={displayBefore} alt="Öncesi" className="w-full h-full object-cover object-[center_10%] transition-transform duration-700 group-hover:scale-105" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none opacity-80" />
                             <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 px-3 py-1.5 md:px-4 md:py-2 bg-black/60 backdrop-blur-md rounded-xl text-white/90 text-[10px] md:text-sm font-bold uppercase tracking-widest pointer-events-none border border-white/10 shadow-lg">Öncesi (Ham)</div>
                         </div>
                         {/* SONRASI */}
                         <div className="relative w-full aspect-[3/4] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl group bg-[#131110]">
-                            <img src={randomPair.after} alt="Sonrası" className="w-full h-full object-cover object-[center_10%] transition-transform duration-700 group-hover:scale-105" />
+                            <img src={displayAfter} alt="Sonrası" className="w-full h-full object-cover object-[center_10%] transition-transform duration-700 group-hover:scale-105" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none opacity-80" />
                             <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 px-3 py-1.5 md:px-4 md:py-2 bg-[#caf265]/90 backdrop-blur-md rounded-xl text-black text-[10px] md:text-sm font-bold uppercase tracking-widest pointer-events-none shadow-lg">Sonrası</div>
                         </div>
                     </>
-                ) : (
-                    <CompareSliderNode beforeImg={activeTab.before} afterImg={activeTab.after} isVertical={false} />
                 )}
             </div>
         </div>

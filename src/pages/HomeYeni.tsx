@@ -591,12 +591,8 @@ const Home = () => {
                   {/* DİNAMİK YUMUŞATILMIŞ PROGRESS BAR */}
                   <div className="absolute left-0 top-10 bottom-10 w-[2px] md:w-[3px] bg-white/10 rounded-full overflow-hidden">
                     <motion.div 
-                      className="absolute top-0 left-0 w-full bg-[#caf265] rounded-full shadow-[0_0_15px_#caf265] origin-top"
-                      style={
-                         isAutoPlaying 
-                          ? { scaleY: (processStep + 1) * 0.3333, transition: { duration: 1, ease: "linear" } } 
-                          : { scaleY: smoothScroll }
-                      }
+                      className={`absolute top-0 left-0 w-full bg-[#caf265] rounded-full shadow-[0_0_15px_#caf265] origin-top ${isAutoPlaying ? "transition-transform duration-1000 ease-linear" : ""}`}
+                      style={{ scaleY: isAutoPlaying ? (processStep + 1) * 0.3333 : smoothScroll }}
                     />
                   </div>
 

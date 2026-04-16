@@ -290,7 +290,7 @@ const Home = () => {
 
   return (
     <MainLayout transparentHeader={true} headerLightText={true}>
-      <main className="bg-[#0b2117] min-h-screen font-sans selection:bg-[#caf265] selection:text-[#0b2117] overflow-x-hidden">
+      <main className="bg-[#0b2117] min-h-screen font-sans selection:bg-[#caf265] selection:text-[#0b2117]">
 
         {/* 1. HERO SECTION */}
         <section className={`relative min-h-[85vh] flex flex-col items-center justify-center pt-32 pb-16 lg:pt-40 lg:pb-32 overflow-hidden`}>
@@ -584,7 +584,7 @@ const Home = () => {
                   <AnimatePresence mode="wait">
                     {processStep === 0 && (
                       <motion.div key="s1" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 1.05 }} transition={{ duration: 0.6 }} className="w-full h-full rounded-[2.5rem] overflow-hidden relative">
-                        <img src={surecPair?.before || "/assets/pages/homeyeni/banner/35325_siyah_1.webp"} className="w-full h-full object-cover" />
+                        <img src={surecPair?.before ? surecPair.before : "/assets/pages/homeyeni/banner/35325_siyah_1.webp"} className="w-full h-full object-cover" />
                         <div className="absolute inset-0 bg-black/20 flex flex-col items-center justify-center pointer-events-none">
                           <div className="w-20 h-20 rounded-full bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-white">
                             <Camera size={32} />
@@ -610,7 +610,7 @@ const Home = () => {
                     )}
                     {processStep === 2 && (
                       <motion.div key="s3" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 1.05 }} transition={{ duration: 0.6 }} className="w-full h-full rounded-[2.5rem] overflow-hidden relative">
-                        <img src={surecPair?.after || "/assets/pages/homeyeni/banner/35325_siyah_8.jpg"} className="w-full h-full object-cover" />
+                        <img src={surecPair?.after ? surecPair.after : "/assets/pages/homeyeni/banner/35325_siyah_8.jpg"} className="w-full h-full object-cover" />
                         <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-black via-black/60 to-transparent pointer-events-none">
                           <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#caf265] text-black rounded-full font-bold uppercase tracking-widest text-xs shadow-[0_0_20px_rgba(202,242,101,0.4)]">
                             <Check size={14} /> Yayınlanmaya Hazır

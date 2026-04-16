@@ -4,6 +4,7 @@ import { Section } from '../../components/ui/Section'
 import { Button } from '../../components/ui/Button'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { ChevronRight, MessageSquare, TrendingUp } from 'lucide-react'
 
 const BlogImage = ({ src, alt, href, caption }: { src: string, alt: string, href: string, caption: string }) => (
     <a href={href} target="_blank" rel="noopener noreferrer" className="block my-8 group">
@@ -117,25 +118,51 @@ const VenusCaseStudy = () => {
                 </div>
             </Section>
 
-            {/* CTA */}
-            <Section mood="accent" className="text-center py-20">
-                <div className="max-w-2xl mx-auto">
-                    <h2 className="text-3xl font-bold font-display text-white mb-6">
-                        Siz de Markanızı Dönüştürün
-                    </h2>
-                    <p className="text-white/80 mb-8 text-lg">
-                        Venüs Giyim gibi ürünlerinizin sanal dünyada profesyonel duruş kazanması ve yapay zekanın hızını denemek için ekibimizle tanışın.
-                    </p>
-                    <Button
-                        size="lg"
-                        variant="secondary"
-                        className="bg-white text-bor-secondary hover:bg-gray-100"
-                        onClick={() => navigate('/ucretler')}
-                    >
-                        Hemen Başlayın
-                    </Button>
+            {/* BOTTOM CTA - İletişim Vurgusu */}
+            <section className="bg-[#F4EFE6] py-32 px-6 md:px-16 lg:px-24 mb-1">
+                <div className="max-w-7xl mx-auto bg-[#0b2117] rounded-[3rem] p-10 md:p-24 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12">
+                    {/* Soft Glow Effect */}
+                    <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#caf265]/10 blur-[120px] rounded-full"></div>
+                    <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-[#caf265]/5 blur-[80px] rounded-full"></div>
+
+                    <div className="relative z-10 max-w-xl text-center md:text-left">
+                        <h2 className="text-5xl lg:text-7xl font-bold font-display leading-tight tracking-tight text-[#F4EFE6] mb-8 text-left">
+                            Mağazanızın geleceği <br />
+                            <span className="italic font-light text-[#E2FF65]">bir mesaj uzağınızda</span>
+                        </h2>
+                        <p className="text-[#a8b8af] mb-10 text-lg text-left">
+                            Hemen bir ücretsiz danışmanlık görüşmesi planlayalım ve dijital hedeflerinizi global standartlarda gerçeğe dönüştürelim.
+                        </p>
+                        <div className="flex flex-col sm:flex-row items-center gap-6 justify-center md:justify-start">
+                            <button 
+                                onClick={() => navigate('/iletisim')}
+                                className="bg-[#caf265] text-[#0b2117] hover:bg-[#b5dc57] transition-all duration-300 rounded-full px-10 py-5 text-lg font-bold flex items-center gap-3 group"
+                            >
+                                İş Birliğine Başlayalım
+                                <ChevronRight className="group-hover:translate-x-1 transition-transform" />
+                            </button>
+                            <a href="mailto:bilgi@pikselai.com" className="text-[#F4EFE6] font-medium border-b border-[#F4EFE6]/30 hover:border-[#caf265] hover:text-[#caf265] transition-all pb-1 flex items-center gap-2">
+                                <MessageSquare size={18} /> bilgi@pikselai.com
+                            </a>
+                        </div>
+                    </div>
+
+                    {/* Creative SVG/Visual Element for CTA */}
+                    <div className="relative z-10 hidden md:block w-full max-w-xs aspect-square">
+                        <motion.div
+                            animate={{ rotate: 360 }}
+                            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                            className="w-full h-full border-2 border-dashed border-[#caf265]/30 rounded-full flex items-center justify-center p-8"
+                        >
+                            <div className="w-full h-full border border-[#caf265]/50 rounded-full flex items-center justify-center">
+                                <div className="w-20 h-20 bg-[#caf265] rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(202,242,101,0.4)]">
+                                    <TrendingUp size={32} className="text-[#0b2117]" />
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
                 </div>
-            </Section>
+            </section>
         </MainLayout>
     )
 }

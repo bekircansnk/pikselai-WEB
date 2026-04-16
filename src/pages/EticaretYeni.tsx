@@ -279,7 +279,7 @@ const EticaretYeni = () => {
                 <div className="absolute bottom-10 left-10 right-10">
                   <h3 className="text-3xl md:text-4xl font-display italic text-white mb-4 leading-tight group-hover:text-[#caf265] transition-colors">Gelişmiş<br />Entegrasyonlar</h3>
                   <p className="text-[#F4EFE6]/70 text-base leading-relaxed opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 font-light italic">
-                    Ödeme sistemleri (iyzico, Stripe), kargo ve ERP sistemlerini (Logo vb.) profesyonelce bağlıyoruz.
+                    Sitenizdeki satış sürecini kolaylaştırmak için gerekli olan ödeme altyapılarını ve kargo entegrasyonlarını sorunsuzca kuruyoruz.
                   </p>
                 </div>
               </motion.div>

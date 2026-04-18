@@ -492,10 +492,10 @@ const GhostShowcase = () => {
             className="flex w-full h-full items-center justify-center"
           >
             {/* Tekli Büyük Ürün Gösterimi */}
-            <div className="flex flex-col items-center group scale-[1.5] md:scale-[2.4] lg:scale-[3.0] transform">
-              <div className="flex w-full h-full items-center justify-center gap-4 md:gap-8 drop-shadow-2xl">
-                <img src={current.img1} className="w-1/2 h-auto max-h-[600px] object-contain drop-shadow-2xl" alt="" />
-                <img src={current.img2} className="w-1/2 h-auto max-h-[600px] object-contain drop-shadow-2xl" alt="" />
+            <div className="flex flex-col items-center group scale-100 md:scale-[1.1] lg:scale-[1.25] transform w-full px-4 md:px-0">
+              <div className="flex w-full items-center justify-center gap-4 md:gap-8 drop-shadow-2xl">
+                <img src={current.img1} className="w-[45%] md:w-[40%] h-auto max-h-[500px] md:max-h-[650px] object-contain drop-shadow-2xl" alt="" />
+                <img src={current.img2} className="w-[45%] md:w-[40%] h-auto max-h-[500px] md:max-h-[650px] object-contain drop-shadow-2xl" alt="" />
               </div>
             </div>
           </motion.div>

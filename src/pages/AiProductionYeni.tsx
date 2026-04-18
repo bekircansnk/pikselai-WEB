@@ -713,7 +713,7 @@ const AiProduction = () => {
                 </div>
                 <h3 className="text-5xl md:text-6xl font-display font-normal italic leading-tight text-[#F4EFE6]">Sanal Manken <br /><span className="not-italic font-normal">Kütüphanesi</span></h3>
               </div>
-              <p className="text-xl leading-relaxed font-light text-[#F4EFE6] opacity-70 max-w-lg">Markanıza özel bir AI manken tasarlayın. Her kampanyada tutarlı yüz, profesyonel pozlar ve markanıza özel stil ile personanızı güçlendirin.</p>
+              <p className="text-xl leading-relaxed font-light text-[#F4EFE6] opacity-70 max-w-lg">Markanızın ruhunu yansıtan sana özel bir AI yüz tasarlıyoruz. Her kampanyada aynı tutarlı yüz, profesyonel pozlar ve size has stil ile dijital personanızı güçlendiriyoruz.</p>
             </div>
           </div>
           <div className="w-full"><MankenShowcase /></div>

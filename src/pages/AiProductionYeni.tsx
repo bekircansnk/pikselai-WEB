@@ -754,7 +754,7 @@ const AiProduction = () => {
                     <span className="text-xs font-bold tracking-[0.2em] uppercase opacity-50 text-[#0b2117]">3D Form & Detay</span>
                   </div>
                   <h3 className="text-5xl md:text-6xl font-display font-normal italic mb-8 leading-tight text-[#0b2117]">Ghost <br /><span className="not-italic font-normal">Mannequin</span></h3>
-                  <p className="text-xl leading-relaxed font-light mb-12 max-w-lg text-[#0b2117] opacity-70">Ürünlerinizi 3D formda, sanki görünmez bir manken üzerindeymiş gibi sergileyin. İç dikiş detayları ve dikiş detaylarıyla gerçekliği yansıtın.</p>
+                  <p className="text-xl leading-relaxed font-light mb-12 max-w-lg text-[#0b2117] opacity-70">Kıyafetlerinizi sanki görünmez bir bedenin üzerindeymiş gibi tam formunda sergileyin. İç astar, yaka ve kalıp detaylarını göz önüne sererek müşterilerinize kusursuz bir gerçeklik sunun.</p>
 
                   <div className="space-y-4">
                     <button onClick={() => navigate('/iletisim')} className="group flex items-center gap-4 font-bold text-lg hover:gap-6 transition-all w-fit p-4 px-12 rounded-full border border-[#0b2117]/10 hover:bg-[#0b2117] hover:text-[#F4EFE6] text-[#0b2117]">Detaylı Bilgi Al <ArrowRight size={22} /></button>

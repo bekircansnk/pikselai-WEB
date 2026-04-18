@@ -477,7 +477,6 @@ const GhostShowcase = () => {
   }, []);
 
   const current = GHOST_ASSETS[index];
-  const next = GHOST_ASSETS[(index + 1) % GHOST_ASSETS.length];
 
   return (
     <div className="relative w-full h-full flex items-center justify-center overflow-visible">
@@ -490,21 +489,13 @@ const GhostShowcase = () => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -100 }}
             transition={{ duration: 1.6, ease: "easeInOut" }} // Ağır çekim geçiş
-            className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 w-full h-full items-center justify-center"
+            className="flex w-full h-full items-center justify-center"
           >
-            {/* Product 1 */}
-            <div className="flex flex-col items-center group scale-[1.5] md:scale-[2.2] lg:scale-[2.6] transform md:-translate-y-20">
-              <div className="flex w-full h-full items-center justify-center gap-2 md:gap-4 drop-shadow-2xl">
-                <img src={current.img1} className="w-1/2 h-auto max-h-[600px] object-contain drop-shadow-xl" alt="" />
-                <img src={current.img2} className="w-1/2 h-auto max-h-[600px] object-contain drop-shadow-xl" alt="" />
-              </div>
-            </div>
-
-            {/* Product 2 */}
-            <div className="flex flex-col items-center group scale-[1.5] md:scale-[2.2] lg:scale-[2.6] transform md:translate-y-36">
-              <div className="flex w-full h-full items-center justify-center gap-2 md:gap-4 drop-shadow-2xl">
-                <img src={next.img1} className="w-1/2 h-auto max-h-[600px] object-contain drop-shadow-xl" alt="" />
-                <img src={next.img2} className="w-1/2 h-auto max-h-[600px] object-contain drop-shadow-xl" alt="" />
+            {/* Tekli Büyük Ürün Gösterimi */}
+            <div className="flex flex-col items-center group scale-[1.5] md:scale-[2.4] lg:scale-[3.0] transform">
+              <div className="flex w-full h-full items-center justify-center gap-4 md:gap-8 drop-shadow-2xl">
+                <img src={current.img1} className="w-1/2 h-auto max-h-[600px] object-contain drop-shadow-2xl" alt="" />
+                <img src={current.img2} className="w-1/2 h-auto max-h-[600px] object-contain drop-shadow-2xl" alt="" />
               </div>
             </div>
           </motion.div>

@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence, useInView, useScroll, useSpring, Variants } from 'framer-motion';
+import { motion, AnimatePresence, useInView, useScroll, useSpring } from 'framer-motion';
+import type { Variants } from 'framer-motion';
 import { MainLayout } from '../layouts/MainLayout';
 import { ArrowRight, ChevronDown, Zap, Play, Box, TrendingUp, Layers, ImageIcon, User, Sparkles, RefreshCcw, Check, Camera, MoveRight } from 'lucide-react';
 import HeroAlternatives from '../components/sections/HeroAlternatives';
@@ -991,7 +992,7 @@ const Home = () => {
 
 
         {/* YENİ BÖLÜM: PARMAĞINIZIN UCUNDAKİ KREATİF ÇEŞİTLİLİK */}
-        <section className={`${colors.beige} py-32 border-b ${colors.borderColor}`}>
+        <section className={`${colors.beige} py-32 border-b ${colors.borderColorDark}`}>
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 

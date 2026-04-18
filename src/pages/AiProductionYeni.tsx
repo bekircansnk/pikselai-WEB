@@ -527,8 +527,8 @@ const MankenShowcase = () => {
       <MankenRow items={row3} reverse={true} duration={50} />
 
       {/* Side Overlays to blend scrolling borders */}
-      <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#caf265] to-transparent z-10 pointer-events-none" />
-      <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#caf265] to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#0b2117] to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#0b2117] to-transparent z-10 pointer-events-none" />
     </div>
   );
 };
@@ -635,7 +635,7 @@ const AiProduction = () => {
           <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none opacity-80 brightness-[0.7] contrast-[1.1] scale-[1.15] translate-y-8">
             <source src="/assets/pages/aiproductionyeni/as.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#caf265]/20 via-transparent to-transparent z-[1] pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0b2117]/80 via-transparent to-transparent z-[1] pointer-events-none" />
           <div className="max-w-[1400px] mx-auto relative z-10 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center">
               <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="max-w-[38rem]">
@@ -741,7 +741,7 @@ const AiProduction = () => {
               <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }} className="lg:order-1">
                 <div className="flex flex-col">
                   <div className="inline-flex items-center gap-3 mb-8">
-                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl bg-[#caf265] text-[#F4EFE6]">
+                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl bg-[#caf265] text-[#0b2117]">
                       <ImageIcon size={24} />
                     </div>
                     <span className="text-xs font-bold tracking-[0.2em] uppercase opacity-50 text-[#0b2117]">Stüdyo Kalitesi</span>
@@ -789,7 +789,7 @@ const AiProduction = () => {
               <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="lg:order-2">
                 <div className="flex flex-col">
                   <div className="inline-flex items-center gap-3 mb-8">
-                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl bg-[#caf265] text-[#F4EFE6]">
+                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl bg-[#caf265] text-[#0b2117]">
                       <Camera size={24} />
                     </div>
                     <span className="text-xs font-bold tracking-[0.2em] uppercase opacity-50 text-[#0b2117]">Özel Konsept</span>

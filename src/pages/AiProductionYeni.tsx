@@ -512,7 +512,7 @@ const MankenShowcase = () => {
   const row3 = [...MANKEN_ASSETS.slice(16), ...MANKEN_ASSETS.slice(0, 16)];
 
   return (
-    <div className="relative w-full py-8 md:py-16 overflow-hidden">
+    <div className="relative w-full pt-8 md:pt-16 pb-4 overflow-hidden">
       <MankenRow items={row1} reverse={true} duration={40} />
       <MankenRow items={row2} reverse={false} duration={45} />
       <MankenRow items={row3} reverse={true} duration={50} />
@@ -718,7 +718,7 @@ const AiProduction = () => {
             </div>
           </div>
           <div className="w-full"><MankenShowcase /></div>
-          <div className="mt-16"><button onClick={() => navigate('/iletisim')} className="group flex items-center gap-4 font-bold text-lg hover:gap-6 transition-all w-fit p-4 px-12 rounded-full border border-white/10 hover:bg-[#caf265] hover:text-[#0b2117] text-[#F4EFE6]">Detaylı Bilgi Al <ArrowRight size={22} /></button></div>
+          <div className="mt-4"><button onClick={() => navigate('/iletisim')} className="group flex items-center gap-4 font-bold text-lg hover:gap-6 transition-all w-fit p-4 px-12 rounded-full border border-white/10 hover:bg-[#caf265] hover:text-[#0b2117] text-[#F4EFE6]">Detaylı Bilgi Al <ArrowRight size={22} /></button></div>
         </section>
 
         <div className="h-12 md:h-16 bg-[#0b2117] bg-gradient-to-b from-transparent to-[#F4EFE6]" />

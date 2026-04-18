@@ -641,7 +641,7 @@ const AiProduction = () => {
                   </h1>
                 </motion.div>
                 <motion.p className="opacity-80 md:text-xl font-light leading-relaxed max-w-md mb-10 text-[#F4EFE6]">
-                  Stüdyo maliyetlerini ve lojistik dertleri unutun. Yeni nesil AI prodüksiyon ile her kampanyanızı dakikalar içinde hazırlayın.
+                  Devasa bütçeler, yorucu çekim setleri ve bitmek bilmeyen hazırlık süreleri geride kaldı. Hayalinizdeki kusursuz kampanyayı sadece dakikalar içinde gerçeğe dönüştürüyoruz.
                 </motion.p>
                 <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
                   <button onClick={() => navigate('/iletisim')} className="bg-[#caf265] text-[#0b2117] hover:bg-[#b5dc57] transition-all duration-300 rounded-full px-10 py-5 text-base font-bold flex items-center justify-center gap-3 w-fit group shadow-2xl">

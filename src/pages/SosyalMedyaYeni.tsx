@@ -91,49 +91,19 @@ const socialProjects: SocialProject[] = [
 
 // --- DİNAMİK GRİD BİLEŞENİ VE POOL ---
 const GRID_POOL = [
-  "/sosyal_medya_resimler/image1.webp",
-  "/sosyal_medya_resimler/image2.webp",
-  "/sosyal_medya_resimler/image3.webp",
-  "/sosyal_medya_resimler/image4.webp",
-  "/sosyal_medya_resimler/image5.webp",
-  "/sosyal_medya_resimler/image6.webp",
-  "/sosyal_medya_resimler/image7.webp",
-  "/sosyal_medya_resimler/cazador/cazador1.webp",
-  "/sosyal_medya_resimler/cazador/cazador2.webp",
-  "/sosyal_medya_resimler/cazador/cazador3.webp",
-  "/sosyal_medya_resimler/cazador/cazador4.webp",
-  "/sosyal_medya_resimler/venüs/venus1.webp",
-  "/sosyal_medya_resimler/venüs/venus2.webp",
-  "/sosyal_medya_resimler/venüs/venus3.webp",
-  "/sosyal_medya_resimler/venüs/venus4.webp",
-  "/sosyal_medya_resimler/mina drinks/mina1.webp",
-  "/sosyal_medya_resimler/mina drinks/mina2.webp",
-  "/sosyal_medya_resimler/mina drinks/mina3.webp",
-  "/sosyal_medya_resimler/mina drinks/mina4.webp",
-  "/sosyal_medya_resimler/ürün_fotoğraf/esarp_1.webp",
-  "/sosyal_medya_resimler/ürün_fotoğraf/esarp_2.webp",
-  "/sosyal_medya_resimler/ürün_fotoğraf/esarp_3.webp",
-  "/sosyal_medya_resimler/ürün_fotoğraf/esarp_4.webp",
-  "/sosyal_medya_resimler/ürün_fotoğraf/esarp_5.webp",
-  "/sosyal_medya_resimler/ürün_fotoğraf/esarp_6.webp",
-  "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak.webp",
-  "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak_2.webp",
-  "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak_3.webp",
-  "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak_4.webp",
-  "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak_5.webp",
-  "/sosyal_medya_resimler/sanal_manken/Anna/Anna-imaj-1.webp",
-  "/sosyal_medya_resimler/sanal_manken/Anna/Anna-imaj-2.webp",
-  "/sosyal_medya_resimler/sanal_manken/Mike/mike_1.webp",
-  "/sosyal_medya_resimler/sanal_manken/Mike/mike_2.webp",
-  "/sosyal_medya_resimler/sanal_manken/Mike/mike_3.webp",
-  "/sosyal_medya_resimler/sanal_manken/Mike/mike_4.webp",
-  "/sosyal_medya_resimler/sanal_manken/Nora/Nora-1_imaj.webp",
-  "/sosyal_medya_resimler/sanal_manken/Nora/Nora-1_imaj_2.webp",
-  "/sosyal_medya_resimler/sanal_manken/Sora/Sora-imaj-11.webp",
-  "/sosyal_medya_resimler/sanal_manken/Sora/Sora-imaj-5.webp",
-  "/sosyal_medya_resimler/sanal_manken/Zoe/Zoe-imaj-1.webp",
-  "/sosyal_medya_resimler/sanal_manken/Zoe/Zoe-imaj-5.webp",
-  "/sosyal_medya_resimler/Mia-imaj-6.webp",
+  "/assets/common/image1.webp",
+  "/assets/common/image2.webp",
+  "/assets/pages/sosyalmedyayeni/image3.webp",
+  "/assets/pages/sosyalmedyayeni/image4.webp",
+  "/assets/pages/sosyalmedyayeni/image5.webp",
+  "/assets/pages/sosyalmedyayeni/image6.webp",
+  "/assets/pages/sosyalmedyayeni/image7.webp",
+  "/assets/brands/venus/venus1.webp",
+  "/assets/brands/venus/venus2.webp",
+  "/assets/brands/camp_and_map/camp1.webp",
+  "/assets/brands/mina_drinks/mina1.webp",
+  "/assets/common/man_kazak.webp",
+  "/assets/common/nora_1.webp"
 ];
 
 const DynamicGridImage = ({ initialSrc, interval }: { initialSrc: string, interval: number }) => {
@@ -469,7 +439,7 @@ const SosyalMedyaYeni = () => {
                 <div className="grid grid-cols-3 grid-rows-2 gap-3 md:gap-4 w-full h-full opacity-80 group-hover:opacity-[0.85] transition-opacity duration-500 group-hover:scale-105 transform ease-out px-1">
                   <div className="col-span-1 row-span-1 rounded-xl overflow-hidden bg-[#1e3b2b]">
                     <DynamicGridImage
-                      initialSrc="/sosyal_medya_resimler/image1.webp"
+                      initialSrc="/assets/common/image1.webp"
                       interval={4000}
                     />
                   </div>
@@ -485,19 +455,19 @@ const SosyalMedyaYeni = () => {
                   </div>
                   <div className="col-span-1 row-span-1 rounded-xl overflow-hidden bg-[#1e3b2b]">
                     <DynamicGridImage
-                      initialSrc="/sosyal_medya_resimler/sosyal_medya_partlar/5.webp"
+                      initialSrc="/assets/common/image2.webp"
                       interval={5000}
                     />
                   </div>
                   <div className="col-span-1 row-span-1 rounded-xl overflow-hidden bg-[#1e3b2b]">
                     <DynamicGridImage
-                      initialSrc="/sosyal_medya_resimler/image3.webp"
+                      initialSrc="/assets/pages/sosyalmedyayeni/image3.webp"
                       interval={4500}
                     />
                   </div>
                   <div className="col-span-1 row-span-1 rounded-xl overflow-hidden bg-[#1e3b2b]">
                     <DynamicGridImage
-                      initialSrc="/sosyal_medya_resimler/image4.webp"
+                      initialSrc="/assets/pages/sosyalmedyayeni/image4.webp"
                       interval={5500}
                     />
                   </div>

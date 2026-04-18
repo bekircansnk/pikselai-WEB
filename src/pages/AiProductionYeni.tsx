@@ -675,12 +675,12 @@ const AiProduction = () => {
                   transition={{ delay: i * 0.1, duration: 0.8 }}
                   className="flex-1 relative group overflow-hidden bg-[#0b2117]/5 hover:flex-[1.4] transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] border border-[#0b2117]/5 rounded-[3rem] cursor-default"
                 >
-                  {/* Hover Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-[#caf265]/0 to-[#caf265]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-[#0b2117]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                   
                   <div className="p-10 md:p-14 h-full flex flex-col justify-start relative z-10">
                      {/* Title */}
-                     <h3 className="text-3xl md:text-5xl lg:text-6xl font-display font-normal italic text-[#0b2117] mb-8 leading-[1.1] group-hover:text-[#caf265] transition-colors duration-500">
+                     <h3 className="text-3xl md:text-5xl lg:text-6xl font-display font-normal italic text-[#0b2117] mb-8 leading-[1.1] transition-colors duration-500">
                        {item.t}
                      </h3>
                      
@@ -693,7 +693,7 @@ const AiProduction = () => {
                   </div>
                   
                   {/* Decorative side line on hover */}
-                  <div className="absolute left-0 top-0 w-2 h-full bg-[#caf265] scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-top" />
+                  <div className="absolute left-0 top-0 w-2 h-full bg-[#0b2117] scale-y-0 group-hover:scale-y-100 transition-transform duration-700 origin-top" />
                 </motion.div>
               ))}
             </div>

@@ -957,6 +957,21 @@ const Home = () => {
                 </div>
               </motion.div>
             </div>
+
+            <motion.div
+               initial="hidden"
+               whileInView="visible"
+               viewport={{ once: true, margin: "-100px" }}
+               variants={fadeInUp}
+               className="mt-12 md:mt-20 flex flex-col md:flex-row items-center justify-between gap-8 pt-12 border-t border-[#0b2117]/10"
+            >
+               <p className="text-[#3a5245] text-lg md:text-xl font-light leading-relaxed max-w-3xl">
+                  Sadece bir mağaza altyapısı kurmakla kalmıyor, büyüme iştahınızı teknik kapasitemizle harmanlıyoruz. Satışları katlayan o kusursuz formüle ve e-ticaret atılımına hazır mısınız?
+               </p>
+               <button onClick={() => navigate('/hizmetler/e-ticaret')} className="group bg-[#0b2117] text-[#F4EFE6] hover:bg-[#caf265] hover:text-[#0b2117] border border-[#0b2117] transition-all duration-300 rounded-full px-10 py-4 text-base font-semibold flex items-center gap-3 justify-center w-fit shrink-0">
+                  E-Ticaret Hizmetini İncele <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+               </button>
+            </motion.div>
           </div>
         </section>
 

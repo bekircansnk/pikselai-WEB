@@ -701,8 +701,7 @@ const AiProduction = () => {
         </section>
 
         {/* 3. SERVICES */}
-        <div className="h-12 md:h-16 bg-[#F4EFE6] bg-gradient-to-b from-transparent to-[#0b2117]" />
-        <section className="py-12 md:py-24 overflow-hidden flex flex-col items-center bg-[#0b2117]">
+            <section className="py-12 md:py-24 overflow-hidden flex flex-col items-center bg-[#0b2117]">
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 w-full mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
               <div>
@@ -721,8 +720,7 @@ const AiProduction = () => {
           <div className="mt-4"><button onClick={() => navigate('/iletisim')} className="group flex items-center gap-4 font-bold text-lg hover:gap-6 transition-all w-fit p-4 px-12 rounded-full border border-white/10 hover:bg-[#caf265] hover:text-[#0b2117] text-[#F4EFE6]">Detaylı Bilgi Al <ArrowRight size={22} /></button></div>
         </section>
 
-        <div className="h-12 md:h-16 bg-[#0b2117] bg-gradient-to-b from-transparent to-[#F4EFE6]" />
-        <section className="py-12 md:py-24 overflow-hidden flex items-center bg-[#F4EFE6]">
+            <section className="py-12 md:py-24 overflow-hidden flex items-center bg-[#F4EFE6]">
           <div className="max-w-[1700px] mx-auto px-6 md:px-16 lg:px-24 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.8fr] gap-20 lg:gap-32 items-center">
               <motion.div initial={{ opacity: 0, scale: 0.9, x: 50 }} whileInView={{ opacity: 1, scale: 1, x: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.8 }} className="relative lg:order-2 h-auto md:h-[900px] w-full flex items-center">
@@ -744,8 +742,7 @@ const AiProduction = () => {
             </div>
           </div>
         </section>
-        <div className="h-12 md:h-16 bg-[#F4EFE6]" />
-        <section className="py-12 md:py-24 overflow-hidden flex items-center bg-[#F4EFE6]">
+            <section className="py-12 md:py-24 overflow-hidden flex items-center bg-[#F4EFE6]">
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center">
               <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="relative lg:order-1">
@@ -772,8 +769,7 @@ const AiProduction = () => {
           </div>
         </section>
 
-        <div className="h-12 md:h-16 bg-[#F4EFE6]" />
-        <section className="py-12 md:py-24 overflow-hidden flex items-center bg-[#F4EFE6]">
+            <section className="py-12 md:py-24 overflow-hidden flex items-center bg-[#F4EFE6]">
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
               <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="lg:order-2">
@@ -820,8 +816,7 @@ const AiProduction = () => {
           </div>
         </section>
 
-        <div className="h-12 md:h-16 bg-[#F4EFE6] bg-gradient-to-b from-transparent to-[#0b2117]" />
-        <section className={`py-12 md:py-16 overflow-hidden flex items-center bg-[#0b2117]`}>
+            <section className={`py-12 md:py-16 overflow-hidden flex items-center bg-[#0b2117]`}>
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 w-full text-[#F4EFE6]">
             <div className="text-center mb-16 md:mb-24 max-w-4xl mx-auto">
               <h3 className="text-[#caf265] text-sm font-bold tracking-widest uppercase mb-8 font-sans">SİSTEM NASIL İŞLER?</h3>

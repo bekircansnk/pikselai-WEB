@@ -490,21 +490,21 @@ const GhostShowcase = () => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: -100 }}
             transition={{ duration: 0.8, ease: "circOut" }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 w-full h-full items-center justify-center"
+            className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 w-full h-full items-center justify-center"
           >
             {/* Product 1 */}
-            <div className="flex flex-col items-center group scale-125 md:scale-[1.6]">
-              <div className="flex w-full h-full items-center justify-center overflow-hidden">
-                <img src={current.img1} className="w-1/2 h-full object-contain" alt="" />
-                <img src={current.img2} className="w-1/2 h-full object-contain" alt="" />
+            <div className="flex flex-col items-center group scale-[1.3] md:scale-[1.8] lg:scale-[2.0] transform md:-translate-y-16">
+              <div className="flex w-full h-full items-center justify-center gap-1 md:gap-3 drop-shadow-2xl">
+                <img src={current.img1} className="w-1/2 h-auto max-h-[500px] object-contain" alt="" />
+                <img src={current.img2} className="w-1/2 h-auto max-h-[500px] object-contain" alt="" />
               </div>
             </div>
 
             {/* Product 2 */}
-            <div className="flex flex-col items-center group scale-125 md:scale-[1.6] transform md:translate-y-24">
-              <div className="flex w-full h-full items-center justify-center overflow-hidden">
-                <img src={next.img1} className="w-1/2 h-full object-contain" alt="" />
-                <img src={next.img2} className="w-1/2 h-full object-contain" alt="" />
+            <div className="flex flex-col items-center group scale-[1.3] md:scale-[1.8] lg:scale-[2.0] transform md:translate-y-32">
+              <div className="flex w-full h-full items-center justify-center gap-1 md:gap-3 drop-shadow-2xl">
+                <img src={next.img1} className="w-1/2 h-auto max-h-[500px] object-contain" alt="" />
+                <img src={next.img2} className="w-1/2 h-auto max-h-[500px] object-contain" alt="" />
               </div>
             </div>
           </motion.div>

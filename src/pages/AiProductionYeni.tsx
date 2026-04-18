@@ -711,27 +711,27 @@ const AiProduction = () => {
         </section>
 
         {/* 3. SERVICES */}
-        <div className="h-12 md:h-16 bg-[#F4EFE6] bg-gradient-to-b from-transparent to-[#caf265]" />
-        <section className="py-12 md:py-24 overflow-hidden flex flex-col items-center bg-[#caf265]">
+        <div className="h-12 md:h-16 bg-[#F4EFE6] bg-gradient-to-b from-transparent to-[#0b2117]" />
+        <section className="py-12 md:py-24 overflow-hidden flex flex-col items-center bg-[#0b2117]">
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 w-full mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
               <div>
                 <div className="inline-flex items-center gap-3 mb-8">
-                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl bg-[#0b2117] text-[#F4EFE6]">
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl bg-[#caf265] text-[#0b2117]">
                     <User size={24} />
                   </div>
-                  <span className="text-xs font-bold tracking-[0.2em] uppercase opacity-50 text-[#0b2117]">Özel Yüz Tasarımı</span>
+                  <span className="text-xs font-bold tracking-[0.2em] uppercase opacity-50 text-[#F4EFE6]">Özel Yüz Tasarımı</span>
                 </div>
-                <h3 className="text-5xl md:text-6xl font-display font-normal italic leading-tight text-[#0b2117]">Sanal Manken <br /><span className="not-italic font-normal">Kütüphanesi</span></h3>
+                <h3 className="text-5xl md:text-6xl font-display font-normal italic leading-tight text-[#F4EFE6]">Sanal Manken <br /><span className="not-italic font-normal">Kütüphanesi</span></h3>
               </div>
-              <p className="text-xl leading-relaxed font-light text-[#0b2117] opacity-70 max-w-lg">Markanıza özel bir AI manken tasarlayın. Her kampanyada tutarlı yüz, profesyonel pozlar ve markanıza özel stil ile personanızı güçlendirin.</p>
+              <p className="text-xl leading-relaxed font-light text-[#F4EFE6] opacity-70 max-w-lg">Markanıza özel bir AI manken tasarlayın. Her kampanyada tutarlı yüz, profesyonel pozlar ve markanıza özel stil ile personanızı güçlendirin.</p>
             </div>
           </div>
           <div className="w-full"><MankenShowcase /></div>
-          <div className="mt-16"><button onClick={() => navigate('/iletisim')} className="group flex items-center gap-4 font-bold text-lg hover:gap-6 transition-all w-fit p-4 px-12 rounded-full border border-[#0b2117]/10 hover:bg-[#0b2117] hover:text-[#F4EFE6] text-[#0b2117]">Detaylı Bilgi Al <ArrowRight size={22} /></button></div>
+          <div className="mt-16"><button onClick={() => navigate('/iletisim')} className="group flex items-center gap-4 font-bold text-lg hover:gap-6 transition-all w-fit p-4 px-12 rounded-full border border-white/10 hover:bg-[#caf265] hover:text-[#0b2117] text-[#F4EFE6]">Detaylı Bilgi Al <ArrowRight size={22} /></button></div>
         </section>
 
-        <div className="h-12 md:h-16 bg-[#caf265] bg-gradient-to-b from-transparent to-[#F4EFE6]" />
+        <div className="h-12 md:h-16 bg-[#0b2117] bg-gradient-to-b from-transparent to-[#F4EFE6]" />
         <section className="py-12 md:py-24 overflow-hidden flex items-center bg-[#F4EFE6]">
           <div className="max-w-[1700px] mx-auto px-6 md:px-16 lg:px-24 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.8fr] gap-20 lg:gap-32 items-center">
@@ -754,23 +754,23 @@ const AiProduction = () => {
             </div>
           </div>
         </section>
-        <div className="h-12 md:h-16 bg-[#F4EFE6] bg-gradient-to-b from-transparent to-[#caf265]" />
-        <section className="py-12 md:py-24 overflow-hidden flex items-center bg-[#caf265]">
+        <div className="h-12 md:h-16 bg-[#F4EFE6] bg-gradient-to-b from-transparent to-[#0b2117]" />
+        <section className="py-12 md:py-24 overflow-hidden flex items-center bg-[#0b2117]">
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center">
               <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="relative lg:order-1">
                 <div className="flex flex-col">
                   <div className="inline-flex items-center gap-3 mb-8">
-                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl bg-[#0b2117] text-[#F4EFE6]">
+                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl bg-[#caf265] text-[#0b2117]">
                       <Layout size={24} />
                     </div>
-                    <span className="text-xs font-bold tracking-[0.2em] uppercase opacity-50 text-[#0b2117]">3D Form & Detay</span>
+                    <span className="text-xs font-bold tracking-[0.2em] uppercase opacity-50 text-[#F4EFE6]">3D Form & Detay</span>
                   </div>
-                  <h3 className="text-5xl md:text-6xl font-display font-normal italic mb-8 leading-tight text-[#0b2117]">Ghost <br /><span className="not-italic font-normal">Mannequin</span></h3>
-                  <p className="text-xl leading-relaxed font-light mb-12 max-w-lg text-[#0b2117] opacity-70">Ürünlerinizi 3D formda, sanki görünmez bir manken üzerindeymiş gibi sergileyin. İç dikiş detayları ve dikiş detaylarıyla gerçekliği yansıtın.</p>
+                  <h3 className="text-5xl md:text-6xl font-display font-normal italic mb-8 leading-tight text-[#F4EFE6]">Ghost <br /><span className="not-italic font-normal">Mannequin</span></h3>
+                  <p className="text-xl leading-relaxed font-light mb-12 max-w-lg text-[#F4EFE6] opacity-70">Ürünlerinizi 3D formda, sanki görünmez bir manken üzerindeymiş gibi sergileyin. İç dikiş detayları ve dikiş detaylarıyla gerçekliği yansıtın.</p>
 
                   <div className="space-y-4">
-                    <button onClick={() => navigate('/iletisim')} className="group flex items-center gap-4 font-bold text-lg hover:gap-6 transition-all w-fit p-4 px-12 rounded-full border border-[#0b2117]/10 hover:bg-[#0b2117] hover:text-[#F4EFE6] text-[#0b2117]">Detaylı Bilgi Al <ArrowRight size={22} /></button>
+                    <button onClick={() => navigate('/iletisim')} className="group flex items-center gap-4 font-bold text-lg hover:gap-6 transition-all w-fit p-4 px-12 rounded-full border border-white/10 hover:bg-[#caf265] hover:text-[#0b2117] text-[#F4EFE6]">Detaylı Bilgi Al <ArrowRight size={22} /></button>
                   </div>
                 </div>
               </motion.div>
@@ -782,7 +782,7 @@ const AiProduction = () => {
           </div>
         </section>
 
-        <div className="h-12 md:h-16 bg-[#caf265] bg-gradient-to-b from-transparent to-[#F4EFE6]" />
+        <div className="h-12 md:h-16 bg-[#0b2117] bg-gradient-to-b from-transparent to-[#F4EFE6]" />
         <section className="py-12 md:py-24 overflow-hidden flex items-center bg-[#F4EFE6]">
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -830,22 +830,22 @@ const AiProduction = () => {
           </div>
         </section>
 
-        <div className="h-12 md:h-16 bg-[#F4EFE6] bg-gradient-to-b from-transparent to-[#caf265]" />
-        <section className={`py-12 md:py-16 overflow-hidden flex items-center bg-[#caf265]`}>
-          <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 w-full text-[#0b2117]">
+        <div className="h-12 md:h-16 bg-[#F4EFE6] bg-gradient-to-b from-transparent to-[#0b2117]" />
+        <section className={`py-12 md:py-16 overflow-hidden flex items-center bg-[#0b2117]`}>
+          <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 w-full text-[#F4EFE6]">
             <div className="text-center mb-16 md:mb-24 max-w-4xl mx-auto">
-              <h3 className="text-[#0b2117]/40 text-sm font-bold tracking-widest uppercase mb-8 font-sans">SİSTEM NASIL İŞLER?</h3>
-              <h2 className="text-5xl md:text-7xl lg:text-8xl font-display font-normal italic leading-[0.9] tracking-tighter">Bürokrasiyi atlayın, <br /> <span className="not-italic underline decoration-black/20 underline-offset-[12px]">doğrudan sonuca</span> odaklanın.</h2>
+              <h3 className="text-[#caf265] text-sm font-bold tracking-widest uppercase mb-8 font-sans">SİSTEM NASIL İŞLER?</h3>
+              <h2 className="text-5xl md:text-7xl lg:text-8xl font-display font-normal italic leading-[0.9] tracking-tighter">Bürokrasiyi atlayın, <br /> <span className="not-italic underline decoration-[#caf265]/50 underline-offset-[12px]">doğrudan sonuca</span> odaklanın.</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-16 relative">
-              <div className="hidden md:block absolute top-16 left-[20%] right-[20%] h-px bg-[#0b2117]/10" />
+              <div className="hidden md:block absolute top-16 left-[20%] right-[20%] h-px bg-white/10" />
               {[
                 { n: 1, t: "Stratejik Brief", d: "İhtiyaçlarınızı ve marka ruhunu tanımlayın. Ürün görsellerini panele yükleyin." },
                 { n: 2, t: "AI Motoru Devrede", d: "Gelişmiş algoritmalarımız manken ve mekan kurgusunu sanal dünyada tamamlar." },
                 { n: 3, t: "Yüksek Çözünürlük", d: "Yayına hazır, rötüşlenmiş ve kusursuz görsellerinizi 48 saatte indirin." }
               ].map(step => (
                 <div key={step.n} className="relative z-10 flex flex-col items-center text-center group">
-                  <div className="w-32 h-32 rounded-full bg-[#0b2117] text-[#F4EFE6] text-4xl font-display font-normal italic mb-10 shadow-2xl group-hover:scale-110 transition-transform flex items-center justify-center">{step.n}</div>
+                  <div className="w-32 h-32 rounded-full bg-[#caf265] text-[#0b2117] text-4xl font-display font-normal italic mb-10 shadow-2xl group-hover:scale-110 transition-transform flex items-center justify-center">{step.n}</div>
                   <h4 className="text-3xl font-display font-normal italic mb-6 tracking-tight">{step.t}</h4>
                   <p className="opacity-60 leading-relaxed max-w-xs text-lg font-light">{step.d}</p>
                 </div>

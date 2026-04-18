@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence, useInView, useScroll, useSpring } from 'framer-motion';
+import { motion, AnimatePresence, useInView, useScroll, useSpring, Variants } from 'framer-motion';
 import { MainLayout } from '../layouts/MainLayout';
 import { ArrowRight, ChevronDown, Zap, Play, Box, TrendingUp, Layers, ImageIcon, User, Sparkles, RefreshCcw, Check, Camera, MoveRight } from 'lucide-react';
 import HeroAlternatives from '../components/sections/HeroAlternatives';
@@ -243,6 +243,99 @@ const FaqItem = ({ question, answer }: { question: string; answer: string }) => 
 };
 
 // --- MAIN PAGE COMPONENT ---
+
+const fadeInUp: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+};
+
+const staggerContainer: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 }
+  }
+};
+const GRID_POOL = [
+  "/sosyal_medya_resimler/image1.webp",
+  "/sosyal_medya_resimler/image2.webp",
+  "/sosyal_medya_resimler/image3.webp",
+  "/sosyal_medya_resimler/image4.webp",
+  "/sosyal_medya_resimler/image5.webp",
+  "/sosyal_medya_resimler/image6.webp",
+  "/sosyal_medya_resimler/image7.webp",
+  "/sosyal_medya_resimler/cazador/cazador1.webp",
+  "/sosyal_medya_resimler/cazador/cazador2.webp",
+  "/sosyal_medya_resimler/cazador/cazador3.webp",
+  "/sosyal_medya_resimler/cazador/cazador4.webp",
+  "/sosyal_medya_resimler/venüs/venus1.webp",
+  "/sosyal_medya_resimler/venüs/venus2.webp",
+  "/sosyal_medya_resimler/venüs/venus3.webp",
+  "/sosyal_medya_resimler/venüs/venus4.webp",
+  "/sosyal_medya_resimler/mina drinks/mina1.webp",
+  "/sosyal_medya_resimler/mina drinks/mina2.webp",
+  "/sosyal_medya_resimler/mina drinks/mina3.webp",
+  "/sosyal_medya_resimler/mina drinks/mina4.webp",
+  "/sosyal_medya_resimler/ürün_fotoğraf/esarp_1.webp",
+  "/sosyal_medya_resimler/ürün_fotoğraf/esarp_2.webp",
+  "/sosyal_medya_resimler/ürün_fotoğraf/esarp_3.webp",
+  "/sosyal_medya_resimler/ürün_fotoğraf/esarp_4.webp",
+  "/sosyal_medya_resimler/ürün_fotoğraf/esarp_5.webp",
+  "/sosyal_medya_resimler/ürün_fotoğraf/esarp_6.webp",
+  "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak.webp",
+  "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak_2.webp",
+  "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak_3.webp",
+  "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak_4.webp",
+  "/sosyal_medya_resimler/ürün_fotoğraf/man_kazak_5.webp",
+  "/sosyal_medya_resimler/sanal_manken/Anna/Anna-imaj-1.webp",
+  "/sosyal_medya_resimler/sanal_manken/Anna/Anna-imaj-2.webp",
+  "/sosyal_medya_resimler/sanal_manken/Mike/mike_1.webp",
+  "/sosyal_medya_resimler/sanal_manken/Mike/mike_2.webp",
+  "/sosyal_medya_resimler/sanal_manken/Mike/mike_3.webp",
+  "/sosyal_medya_resimler/sanal_manken/Mike/mike_4.webp",
+  "/sosyal_medya_resimler/sanal_manken/Nora/Nora-1_imaj.webp",
+  "/sosyal_medya_resimler/sanal_manken/Nora/Nora-1_imaj_2.webp",
+  "/sosyal_medya_resimler/sanal_manken/Sora/Sora-imaj-11.webp",
+  "/sosyal_medya_resimler/sanal_manken/Sora/Sora-imaj-5.webp",
+  "/sosyal_medya_resimler/sanal_manken/Zoe/Zoe-imaj-1.webp",
+  "/sosyal_medya_resimler/sanal_manken/Zoe/Zoe-imaj-5.webp",
+  "/sosyal_medya_resimler/Mia-imaj-6.webp",
+];
+
+const DynamicGridImage = ({ initialSrc, interval }: { initialSrc: string, interval: number }) => {
+  const [currentSrc, setCurrentSrc] = useState(initialSrc);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const changeImage = () => {
+        const randomImg = GRID_POOL[Math.floor(Math.random() * GRID_POOL.length)];
+        setCurrentSrc(randomImg);
+      };
+
+      changeImage(); // İlk değişimi hemen yap
+      const intervalId = setInterval(changeImage, interval);
+      return () => clearInterval(intervalId);
+    }, 500); // Site açıldıktan 0.5 saniye sonra ilk değişim başlasın
+
+    return () => clearTimeout(timer);
+  }, [interval]);
+
+  return (
+    <AnimatePresence mode="wait">
+      <motion.img
+        key={currentSrc}
+        src={currentSrc}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1.5, ease: "easeInOut" }}
+        className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+      />
+    </AnimatePresence>
+  );
+};
+// ------------------------------------
+
 const Home = () => {
   const navigate = useNavigate();
   const [heroIndex, setHeroIndex] = useState(() => {
@@ -836,6 +929,157 @@ const Home = () => {
             </div>
           </div>
         </section>
+
+                {/* 3. HİZMET KARTLARI - Neler Yapıyoruz? */}
+        <section className={`${colors.beige} py-24 px-6 md:px-16 lg:px-24 mb-1`}>
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={fadeInUp}
+              className="text-center md:text-left mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8"
+            >
+              <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-[#0b2117] max-w-xl mb-6 md:mb-0">
+                E-Ticaretin her aşamasında <br className="hidden lg:block" />
+                <span className="italic font-light text-[#86AA00]">yanınızdayız</span>
+              </h2>
+              <p className="text-[#3a5245] font-light text-lg leading-relaxed md:max-w-sm">
+                Shopify partnerliğimizle sıfırdan kuruluma, veri taşımadan ileri düzey entegrasyonlara kadar her şeyi bizzat üstleniyoruz.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Card 1 - Kurulum */}
+              <motion.div variants={fadeInUp} className="group relative aspect-[9/16] overflow-hidden rounded-3xl bg-[#0b2117] cursor-pointer shadow-xl">
+                <img src="/assets/pages/eticaretyeni/shopify_setup.webp" alt="Sıfırdan Mağaza Kurulumu" className="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                <div className="absolute bottom-10 left-10 right-10">
+                  <h3 className="text-3xl md:text-4xl font-display italic text-white mb-4 leading-tight group-hover:text-[#caf265] transition-colors">Sıfırdan Kurulum<br />& Tasarım</h3>
+                  <p className="text-[#F4EFE6]/70 text-base leading-relaxed opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 font-light italic">
+                    İhtiyacınıza en uygun premium temaları markanıza uyarlıyor, UX odaklı profesyonel bir vitrin oluşturuyoruz.
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Card 2 - Migration */}
+              <motion.div variants={fadeInUp} className="group relative aspect-[9/16] overflow-hidden rounded-3xl bg-[#0b2117] cursor-pointer shadow-xl">
+                <video src="/assets/common/shopify_migration.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                <div className="absolute bottom-10 left-10 right-10">
+                  <h3 className="text-3xl md:text-4xl font-display italic text-white mb-4 leading-tight group-hover:text-[#caf265] transition-colors">Kusursuz Veri<br />Taşıma</h3>
+                  <p className="text-[#F4EFE6]/70 text-base leading-relaxed opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 font-light italic">
+                    Mevcut altyapınızı Shopify'a taşıyor; müşteri, ürün ve sipariş verilerinizi eksiksiz aktarıyoruz.
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Card 3 - Entegrasyonlar */}
+              <motion.div variants={fadeInUp} className="group relative aspect-[9/16] overflow-hidden rounded-3xl bg-[#0b2117] cursor-pointer shadow-xl">
+                <img src="/assets/pages/eticaretyeni/shopify_integrations.webp" alt="Entegrasyonlar" className="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                <div className="absolute bottom-10 left-10 right-10">
+                  <h3 className="text-3xl md:text-4xl font-display italic text-white mb-4 leading-tight group-hover:text-[#caf265] transition-colors">Gelişmiş<br />Entegrasyonlar</h3>
+                  <p className="text-[#F4EFE6]/70 text-base leading-relaxed opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 font-light italic">
+                    Sitenizdeki satış sürecini kolaylaştırmak için gerekli olan ödeme altyapılarını ve kargo entegrasyonlarını sorunsuzca kuruyoruz.
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+
+        {/* YENİ BÖLÜM: PARMAĞINIZIN UCUNDAKİ KREATİF ÇEŞİTLİLİK */}
+        <section className={`${colors.beige} py-32 border-b ${colors.borderColor}`}>
+          <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+              {/* Left Column */}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={staggerContainer}
+                className="max-w-xl"
+              >
+                <motion.div variants={fadeInUp} className="mb-8">
+                  <h3 className="text-[#3a5245] text-[13px] font-bold tracking-widest uppercase mb-4">PARMAĞINIZIN UCUNDAKİ KREATİF ÇEŞİTLİLİK</h3>
+                  <div className="w-full h-px bg-[#0b2117]/10"></div>
+                </motion.div>
+
+                <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-[4rem] font-display font-normal text-[#0b2117] leading-[1.05] mb-8 tracking-tight">
+                  Tasarım, video, hareketli grafik <span className="italic">ve daha fazlası</span>
+                </motion.h2>
+
+                <motion.p variants={fadeInUp} className="text-[#3a5245] text-[1.1rem] font-medium leading-relaxed mb-6">
+                  İster çarpıcı bir reklam kurgusuna, ister etkileşim odaklı statik tasarımlara, ister viral potansiyelli reels videolarına ihtiyacınız olsun; global standartlardaki yaratıcı ekibimiz bunu gerçeğe dönüştürür.
+                </motion.p>
+
+                <motion.p variants={fadeInUp} className="text-[#4a6355] text-base leading-relaxed mb-10 font-light">
+                  Geleneksel kreatif ajanslarının hantallığından uzak; günümüz markalarının hızına ve büyüyen ihtiyaçlarına ayak uydurmak üzere kurulmuş, yeni nesil ve teknoloji destekli bir "Hizmet Olarak Kreatif" çözümüyüz. Tüm tasarım ve video ihtiyaçlarınızı ölçeklenebilir ve şeffaf bir modelle hızlıca teslim alırsınız.
+                </motion.p>
+
+                <motion.div variants={fadeInUp}>
+                  <button className={`bg-[#0b2117] text-white hover:bg-[#1e3b2b] transition-all duration-300 rounded-full px-10 py-4 text-base font-semibold flex items-center justify-center w-fit`}>
+                    Örnekleri İncele
+                  </button>
+                </motion.div>
+              </motion.div>
+
+              {/* Right Column (Video/Media Grid) */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="relative bg-[#0b2117] rounded-3xl p-4 md:p-6 overflow-hidden group aspect-[4/3] sm:aspect-video lg:aspect-[4/3] flex items-center justify-center cursor-pointer shadow-2xl"
+              >
+                {/* Embedded Grid of Images to simulate the Superside preview */}
+                <div className="grid grid-cols-3 grid-rows-2 gap-3 md:gap-4 w-full h-full opacity-80 group-hover:opacity-[0.85] transition-opacity duration-500 group-hover:scale-105 transform ease-out px-1">
+                  <div className="col-span-1 row-span-1 rounded-xl overflow-hidden bg-[#1e3b2b]">
+                    <DynamicGridImage
+                      initialSrc="/sosyal_medya_resimler/image1.webp"
+                      interval={4000}
+                    />
+                  </div>
+                  <div className="col-span-1 row-span-2 rounded-xl overflow-hidden bg-[#1e3b2b]">
+                    <video
+                      src="/sosyal_medya_resimler/video/end_product.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                    />
+                  </div>
+                  <div className="col-span-1 row-span-1 rounded-xl overflow-hidden bg-[#1e3b2b]">
+                    <DynamicGridImage
+                      initialSrc="/sosyal_medya_resimler/sosyal_medya_partlar/5.webp"
+                      interval={5000}
+                    />
+                  </div>
+                  <div className="col-span-1 row-span-1 rounded-xl overflow-hidden bg-[#1e3b2b]">
+                    <DynamicGridImage
+                      initialSrc="/sosyal_medya_resimler/image3.webp"
+                      interval={4500}
+                    />
+                  </div>
+                  <div className="col-span-1 row-span-1 rounded-xl overflow-hidden bg-[#1e3b2b]">
+                    <DynamicGridImage
+                      initialSrc="/sosyal_medya_resimler/image4.webp"
+                      interval={5500}
+                    />
+                  </div>
+                </div>
+
+                {/* Overlays */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0b2117]/60 via-transparent to-[#0b2117]/20 pointer-events-none" />
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
 
         {/* 12. SSS – FREQUENTLY ASKED QUESTIONS */}
         <section className={`py-20 md:py-32 border-b border-[#0b2117]/10 bg-[#F4EFE6]`}>

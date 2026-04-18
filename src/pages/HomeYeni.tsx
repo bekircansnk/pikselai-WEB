@@ -990,8 +990,8 @@ const Home = () => {
                 </motion.p>
 
                 <motion.div variants={fadeInUp}>
-                  <button className={`bg-[#0b2117] text-white hover:bg-[#1e3b2b] transition-all duration-300 rounded-full px-10 py-4 text-base font-semibold flex items-center justify-center w-fit`}>
-                    Örnekleri İncele
+                  <button onClick={() => navigate('/hizmetler/sosyal-medya')} className={`group bg-[#0b2117] text-white hover:bg-[#caf265] hover:text-[#0b2117] border border-[#0b2117] transition-all duration-300 rounded-full px-10 py-4 text-base font-semibold flex items-center gap-3 justify-center w-fit`}>
+                    Sosyal Medya Hizmetini Keşfet <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                   </button>
                 </motion.div>
               </motion.div>

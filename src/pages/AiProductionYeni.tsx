@@ -662,7 +662,7 @@ const AiProduction = () => {
           </div>
         </section>
 
-        <div className="h-12 md:h-16 bg-[#caf265] bg-gradient-to-b from-transparent to-[#F4EFE6]" />
+        <div className="h-12 md:h-16 bg-[#0b2117] bg-gradient-to-b from-transparent to-[#F4EFE6]" />
 
         {/* 2. VALUE PROPS */}
         <section className={`py-12 md:py-16 flex items-center bg-[#F4EFE6]`}>
@@ -754,8 +754,8 @@ const AiProduction = () => {
             </div>
           </div>
         </section>
-        <div className="h-12 md:h-16 bg-[#F4EFE6] bg-gradient-to-b from-transparent to-[#0b2117]" />
-        <section className="py-12 md:py-24 overflow-hidden flex items-center bg-[#0b2117]">
+        <div className="h-12 md:h-16 bg-[#F4EFE6]" />
+        <section className="py-12 md:py-24 overflow-hidden flex items-center bg-[#F4EFE6]">
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center">
               <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="relative lg:order-1">
@@ -764,13 +764,13 @@ const AiProduction = () => {
                     <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl bg-[#caf265] text-[#0b2117]">
                       <Layout size={24} />
                     </div>
-                    <span className="text-xs font-bold tracking-[0.2em] uppercase opacity-50 text-[#F4EFE6]">3D Form & Detay</span>
+                    <span className="text-xs font-bold tracking-[0.2em] uppercase opacity-50 text-[#0b2117]">3D Form & Detay</span>
                   </div>
-                  <h3 className="text-5xl md:text-6xl font-display font-normal italic mb-8 leading-tight text-[#F4EFE6]">Ghost <br /><span className="not-italic font-normal">Mannequin</span></h3>
-                  <p className="text-xl leading-relaxed font-light mb-12 max-w-lg text-[#F4EFE6] opacity-70">Ürünlerinizi 3D formda, sanki görünmez bir manken üzerindeymiş gibi sergileyin. İç dikiş detayları ve dikiş detaylarıyla gerçekliği yansıtın.</p>
+                  <h3 className="text-5xl md:text-6xl font-display font-normal italic mb-8 leading-tight text-[#0b2117]">Ghost <br /><span className="not-italic font-normal">Mannequin</span></h3>
+                  <p className="text-xl leading-relaxed font-light mb-12 max-w-lg text-[#0b2117] opacity-70">Ürünlerinizi 3D formda, sanki görünmez bir manken üzerindeymiş gibi sergileyin. İç dikiş detayları ve dikiş detaylarıyla gerçekliği yansıtın.</p>
 
                   <div className="space-y-4">
-                    <button onClick={() => navigate('/iletisim')} className="group flex items-center gap-4 font-bold text-lg hover:gap-6 transition-all w-fit p-4 px-12 rounded-full border border-white/10 hover:bg-[#caf265] hover:text-[#0b2117] text-[#F4EFE6]">Detaylı Bilgi Al <ArrowRight size={22} /></button>
+                    <button onClick={() => navigate('/iletisim')} className="group flex items-center gap-4 font-bold text-lg hover:gap-6 transition-all w-fit p-4 px-12 rounded-full border border-[#0b2117]/10 hover:bg-[#0b2117] hover:text-[#F4EFE6] text-[#0b2117]">Detaylı Bilgi Al <ArrowRight size={22} /></button>
                   </div>
                 </div>
               </motion.div>
@@ -782,7 +782,7 @@ const AiProduction = () => {
           </div>
         </section>
 
-        <div className="h-12 md:h-16 bg-[#0b2117] bg-gradient-to-b from-transparent to-[#F4EFE6]" />
+        <div className="h-12 md:h-16 bg-[#F4EFE6]" />
         <section className="py-12 md:py-24 overflow-hidden flex items-center bg-[#F4EFE6]">
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">

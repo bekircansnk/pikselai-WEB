@@ -662,7 +662,6 @@ const AiProduction = () => {
           </div>
         </section>
 
-        <div className="h-12 md:h-16 bg-[#0b2117] bg-gradient-to-b from-transparent to-[#F4EFE6]" />
 
         {/* 2. VALUE PROPS */}
         <section className={`py-12 md:py-16 flex items-center bg-[#F4EFE6]`}>

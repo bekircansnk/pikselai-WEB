@@ -974,17 +974,15 @@ const Home = () => {
                 variants={staggerContainer}
                 className="max-w-xl"
               >
-                <motion.div variants={fadeInUp} className="mb-8">
-                  <h3 className="text-[#3a5245] text-[13px] font-bold tracking-widest uppercase mb-4">SOSYAL MEDYA İÇERİK ÜRETİMİ</h3>
-                  <div className="w-full h-px bg-[#0b2117]/10"></div>
+                <motion.div variants={fadeInUp} className="mb-6 invisible md:visible h-px">
                 </motion.div>
 
-                <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-[4rem] font-display font-normal text-[#0b2117] leading-[1.05] mb-8 tracking-tight">
-                  Markanızın etkileşimini <br className="hidden md:block"/> <span className="italic">kreatif gücümüzle</span> uçurun
+                <motion.h2 variants={fadeInUp} className="text-5xl md:text-6xl lg:text-[4.5rem] font-display font-bold text-[#0b2117] leading-[1.05] mb-8 tracking-tight">
+                  Sosyal Medya <br className="hidden md:block"/> <span className="italic font-light text-[#86AA00]">İçerik Üretimi</span>
                 </motion.h2>
 
-                <motion.p variants={fadeInUp} className="text-[#3a5245] text-[1.1rem] font-medium leading-relaxed mb-6">
-                  Çarpıcı reklam kurgularından, kaydırmayı durduran postlara ve viral potansiyelli reels videolarına kadar sosyal medyadaki tüm görsel ihtiyacınızı karşılıyoruz.
+                <motion.p variants={fadeInUp} className="text-[#3a5245] text-lg md:text-xl font-medium leading-relaxed mb-6">
+                  Çarpıcı reklam kurgularından, kaydırmayı durduran postlara ve viral potansiyelli reels videolarına kadar markanızın dijital etkileşimini kreatif gücümüzle uçuruşa geçiriyoruz.
                 </motion.p>
 
                 <motion.p variants={fadeInUp} className="text-[#4a6355] text-base leading-relaxed mb-10 font-light">

@@ -701,7 +701,7 @@ const AiProduction = () => {
         </section>
 
         {/* 3. SERVICES */}
-            <section className="py-12 md:py-24 overflow-hidden flex flex-col items-center bg-[#0b2117]">
+        <section className="pt-12 pb-8 md:pt-24 md:pb-12 overflow-hidden flex flex-col items-center bg-[#0b2117]">
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 w-full mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
               <div>

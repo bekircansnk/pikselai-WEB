@@ -37,19 +37,10 @@ export interface AiProject {
   spanClass: string;
   aspectClass: string;
   images: string[];
+  link?: string;
 }
 
 const aiProjects: AiProject[] = [
-  {
-    id: 1,
-    client: "Cazador",
-    category: "Reklam Yaratıcılığı",
-    thumbnail: "/assets/brands/cazador/cazador2.webp",
-    description: "Cazador'un yeni sezon koleksiyonu için dinamik ve dikkat çekici sosyal medya kurguları.",
-    spanClass: "md:col-span-4",
-    aspectClass: "aspect-[3/4]",
-    images: ["/assets/brands/cazador/cazador1.webp", "/assets/brands/cazador/cazador2.webp", "/assets/brands/cazador/cazador3.webp", "/assets/brands/cazador/cazador4.webp"]
-  },
   {
     id: 2,
     client: "Venüs Ayakkabı",
@@ -58,7 +49,19 @@ const aiProjects: AiProject[] = [
     description: "Venüs Ayakkabı'nın yeni modelleri için etkileşim odaklı reklam kreatifleri.",
     spanClass: "md:col-span-8",
     aspectClass: "aspect-square md:aspect-video",
-    images: ["/assets/brands/venus/venus1.webp", "/assets/brands/venus/venus2.webp", "/assets/brands/venus/venus3.webp", "/assets/brands/venus/venus4.webp"]
+    images: ["/assets/brands/venus/venus1.webp", "/assets/brands/venus/venus2.webp", "/assets/brands/venus/venus3.webp", "/assets/brands/venus/venus4.webp"],
+    link: "/blog/venus"
+  },
+  {
+    id: 1,
+    client: "Cazador",
+    category: "Reklam Yaratıcılığı",
+    thumbnail: "/assets/brands/cazador/cazador2.webp",
+    description: "Cazador'un yeni sezon koleksiyonu için dinamik ve dikkat çekici sosyal medya kurguları.",
+    spanClass: "md:col-span-4",
+    aspectClass: "aspect-[3/4]",
+    images: ["/assets/brands/cazador/cazador1.webp", "/assets/brands/cazador/cazador2.webp", "/assets/brands/cazador/cazador3.webp", "/assets/brands/cazador/cazador4.webp"],
+    link: "/blog/referanslar"
   },
   {
     id: 3,
@@ -68,7 +71,8 @@ const aiProjects: AiProject[] = [
     description: "Doğa tutkunları için outdoor ruhunu yansıtan etkileyici görsel kurgular.",
     spanClass: "md:col-span-6",
     aspectClass: "aspect-[4/3]",
-    images: ["/assets/brands/camp_and_map/camp1.webp", "/assets/brands/camp_and_map/camp2.webp", "/assets/brands/camp_and_map/camp3.webp", "/assets/brands/camp_and_map/camp4.webp"]
+    images: ["/assets/brands/camp_and_map/camp1.webp", "/assets/brands/camp_and_map/camp2.webp", "/assets/brands/camp_and_map/camp3.webp", "/assets/brands/camp_and_map/camp4.webp"],
+    link: "/blog/campandmap"
   },
   {
     id: 4,
@@ -78,7 +82,8 @@ const aiProjects: AiProject[] = [
     description: "Mina Drinks'in ferahlatıcı kimliğini öne çıkaran yapay zeka destekli görseller.",
     spanClass: "md:col-span-6",
     aspectClass: "aspect-[4/3]",
-    images: ["/assets/brands/mina_drinks/mina1.webp", "/assets/brands/mina_drinks/mina2.webp", "/assets/brands/mina_drinks/mina3.webp", "/assets/brands/mina_drinks/mina4.webp"]
+    images: ["/assets/brands/mina_drinks/mina1.webp", "/assets/brands/mina_drinks/mina2.webp", "/assets/brands/mina_drinks/mina3.webp", "/assets/brands/mina_drinks/mina4.webp"],
+    link: "/blog/mina-drinks"
   }
 ];
 
@@ -804,7 +809,7 @@ const AiProduction = () => {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-10 md:gap-14">
               {aiProjects.map((project, idx) => (
-                <motion.div key={project.id} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }} className={`group relative cursor-none ${project.spanClass} flex flex-col`} style={{ cursor: 'none' }} onClick={() => setSelectedProject(project)} onMouseMove={handleMouseMove} onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
+                <motion.div key={project.id} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }} className={`group relative cursor-none ${project.spanClass} flex flex-col`} style={{ cursor: 'none' }} onClick={() => { if(project.link) navigate(project.link); }} onMouseMove={handleMouseMove} onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
                   <div className={`w-full pointer-events-none rounded-[3rem] overflow-hidden bg-[#0b2117]/5 relative ${project.aspectClass} mb-8 shadow-sm group-hover:shadow-2xl transition-all duration-700`}>
                     <img src={project.thumbnail} alt={project.client} className="w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-1000" />
                   </div>

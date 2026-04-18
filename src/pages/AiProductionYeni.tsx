@@ -472,7 +472,7 @@ const GhostShowcase = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex(prev => (prev + 1) % GHOST_ASSETS.length);
-    }, 2000);
+    }, 4500); // 4.5 saniye ekranda kalsın
     return () => clearInterval(timer);
   }, []);
 
@@ -486,25 +486,25 @@ const GhostShowcase = () => {
         <AnimatePresence mode="wait">
           <motion.div
             key={`multi-pair-${index}`}
-            initial={{ opacity: 0, scale: 0.9, y: 100 }}
+            initial={{ opacity: 0, scale: 0.95, y: 100 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: -100 }}
-            transition={{ duration: 0.8, ease: "circOut" }}
+            exit={{ opacity: 0, scale: 0.95, y: -100 }}
+            transition={{ duration: 1.6, ease: "easeInOut" }} // Ağır çekim geçiş
             className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 w-full h-full items-center justify-center"
           >
             {/* Product 1 */}
-            <div className="flex flex-col items-center group scale-[1.3] md:scale-[1.8] lg:scale-[2.0] transform md:-translate-y-16">
-              <div className="flex w-full h-full items-center justify-center gap-1 md:gap-3 drop-shadow-2xl">
-                <img src={current.img1} className="w-1/2 h-auto max-h-[500px] object-contain" alt="" />
-                <img src={current.img2} className="w-1/2 h-auto max-h-[500px] object-contain" alt="" />
+            <div className="flex flex-col items-center group scale-[1.5] md:scale-[2.2] lg:scale-[2.6] transform md:-translate-y-20">
+              <div className="flex w-full h-full items-center justify-center gap-2 md:gap-4 drop-shadow-2xl">
+                <img src={current.img1} className="w-1/2 h-auto max-h-[600px] object-contain drop-shadow-xl" alt="" />
+                <img src={current.img2} className="w-1/2 h-auto max-h-[600px] object-contain drop-shadow-xl" alt="" />
               </div>
             </div>
 
             {/* Product 2 */}
-            <div className="flex flex-col items-center group scale-[1.3] md:scale-[1.8] lg:scale-[2.0] transform md:translate-y-32">
-              <div className="flex w-full h-full items-center justify-center gap-1 md:gap-3 drop-shadow-2xl">
-                <img src={next.img1} className="w-1/2 h-auto max-h-[500px] object-contain" alt="" />
-                <img src={next.img2} className="w-1/2 h-auto max-h-[500px] object-contain" alt="" />
+            <div className="flex flex-col items-center group scale-[1.5] md:scale-[2.2] lg:scale-[2.6] transform md:translate-y-36">
+              <div className="flex w-full h-full items-center justify-center gap-2 md:gap-4 drop-shadow-2xl">
+                <img src={next.img1} className="w-1/2 h-auto max-h-[600px] object-contain drop-shadow-xl" alt="" />
+                <img src={next.img2} className="w-1/2 h-auto max-h-[600px] object-contain drop-shadow-xl" alt="" />
               </div>
             </div>
           </motion.div>

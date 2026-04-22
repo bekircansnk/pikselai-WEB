@@ -170,16 +170,14 @@ const Pricing = () => {
                                 exit={{ opacity: 0, y: -20 }}
                                 className="flex flex-col gap-10"
                             >
-                                <div className="mb-8 p-6 bg-[#E2FF65]/10 border border-[#E2FF65]/20 rounded-2xl text-center">
-                                    <p className="text-bor-primary-900 dark:text-white font-medium mb-1">
-                                        Markanıza özel modelleme için tek seferlik <span className="line-through opacity-50">$49</span> kurulum ücreti alınır.
-                                    </p>
-                                    <p className="text-bor-secondary font-bold flex items-center justify-center gap-2">
-                                        <span className="flex h-2 w-2 rounded-full bg-bor-secondary animate-pulse"></span>
-                                        Şu an kampanyadayız: Kurulum Ücreti ÜCRETSİZ!
-                                    </p>
-                                    <p className="text-sm text-bor-primary-500 mt-2">
-                                        Sonrasında sadece ürettiğiniz görsel kadar, ay sonunda faturalandırılırsınız.
+                                <div className="flex flex-col items-center mb-10">
+                                    <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-bor-primary-900 dark:bg-white text-white dark:text-bor-primary-900 text-sm font-medium shadow-md transition-transform hover:scale-105 duration-300">
+                                        <span className="text-bor-secondary">✨ Fırsat:</span> 
+                                        Tek seferlik <span className="line-through opacity-60 ml-1">$49</span> modelleme kurulumu <strong className="text-bor-secondary ml-1">ÜCRETSİZ</strong>
+                                    </div>
+                                    <p className="mt-4 text-sm text-bor-primary-500 dark:text-bor-primary-400 max-w-md text-center leading-relaxed">
+                                        Hiçbir sürpriz maliyet veya gizli ücret yok. <br />
+                                        Sadece kullandığınız başarılı görseller için faturalandırılırsınız.
                                     </p>
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

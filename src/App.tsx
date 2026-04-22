@@ -3,7 +3,7 @@ import { useEffect, lazy, Suspense } from 'react'
 import { ThemeProvider } from './contexts/ThemeContext'
 
 const Pricing = lazy(() => import('./pages/Pricing'))
-const ServicesHub = lazy(() => import('./pages/ServicesHub'))
+
 const About = lazy(() => import('./pages/About'))
 const Contact = lazy(() => import('./pages/Contact'))
 const CazadorCaseStudy = lazy(() => import('./pages/blog/CazadorCaseStudy'))
@@ -64,7 +64,7 @@ function App() {
         <Suspense fallback={<Loading />}>
           <Routes>
             <Route path="/" element={<HomeYeni />} />
-            <Route path="/hizmetler" element={<ServicesHub />} />
+
             <Route path="/hizmetler/ai-produksiyon" element={<AiProductionYeni />} />
             <Route path="/hizmetler/e-ticaret" element={<EticaretYeni />} />
             <Route path="/hizmetler/sosyal-medya" element={<SosyalMedyaYeni />} />

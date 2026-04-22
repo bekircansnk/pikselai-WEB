@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const routes = [
   { path: '/', name: 'HomeYeni (Ana Sayfa)' },
-  { path: '/hizmetler', name: 'ServicesHub (Hizmetler)' },
+
   { path: '/hizmetler/ai-produksiyon', name: 'AiProductionYeni (AI Prodüksiyon)' },
   { path: '/hizmetler/e-ticaret', name: 'EticaretYeni (E-Ticaret)' },
   { path: '/hizmetler/sosyal-medya', name: 'SosyalMedyaYeni (Sosyal Medya)' },

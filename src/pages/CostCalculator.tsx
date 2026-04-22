@@ -351,7 +351,7 @@ Genel Toplam Bütçe: $${overallCost.toFixed(2)}
                   <ul className="text-xs text-gray-600 dark:text-gray-400 space-y-2">
                     <li className="flex items-start gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-bor-secondary mt-1 shrink-0" />
-                      Fiyatlandırma üretilen görsel sayısına göre kümülatif azalır. (0.195$ → 0.155$)
+                      Fiyatlandırma üretilen görsel sayısına göre kümülatif azalır. ($0.50 → $0.25)
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-bor-secondary mt-1 shrink-0" />

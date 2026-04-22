@@ -1,7 +1,7 @@
 export function getUnitPrice(totalImages: number): number {
-  if (totalImages >= 1400) return 0.155;
-  if (totalImages >= 400) return 0.17;
-  return 0.195;
+  if (totalImages > 700) return 0.25;
+  if (totalImages > 200) return 0.30;
+  return 0.50;
 }
 
 export function calculateSocialMedia({

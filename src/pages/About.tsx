@@ -13,10 +13,10 @@ const About = () => {
             {/* Hero */}
             <Section mood="dark" className="pt-32 pb-20 md:pt-44 md:pb-28">
                 <div className="max-w-3xl">
-                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#E2FF65] block mb-6">Hakkımızda</span>
+                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-bor-secondary block mb-6">Hakkımızda</span>
                     <h1 className="text-5xl md:text-7xl font-bold font-display leading-tight tracking-tight text-white mb-6 drop-shadow-2xl">
-                        Biz <span className="italic font-light text-[#E2FF65]">fotoğrafçı</span> değiliz. <br />
-                        <span className="italic font-light text-[#E2FF65]">Teknoloji ortağınızız.</span>
+                        Biz <span className="italic font-light text-bor-secondary">fotoğrafçı</span> değiliz. <br />
+                        <span className="italic font-light text-bor-secondary">Teknoloji ortağınızız.</span>
                     </h1>
                     <p className="text-lg md:text-xl font-light text-white/80 max-w-xl leading-relaxed">
                         Geleneksel ajanslardaki fiziksel stüdyo, manken ve ekip ihtiyacını ortadan kaldırıyoruz.
@@ -29,9 +29,9 @@ const About = () => {
             <Section mood="light" className="py-24">
                 <div className="grid md:grid-cols-2 gap-16 items-center">
                     <div>
-                        <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#86AA00] block mb-4">Hikayemiz</span>
+                        <span className="text-xs font-bold uppercase tracking-[0.2em] text-bor-secondary block mb-4">Hikayemiz</span>
                         <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-bor-primary-900 mb-6">
-                            Neden <span className="italic font-light text-[#86AA00]">PikselAI?</span>
+                            Neden <span className="italic font-light text-bor-secondary">PikselAI?</span>
                         </h2>
                         <div className="space-y-4 text-lg md:text-xl font-light text-bor-primary-600 leading-relaxed">
                             <p>
@@ -57,7 +57,7 @@ const About = () => {
             <Section mood="dark" className="py-24">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-white mb-6">
-                        Biz ne <span className="italic font-light text-[#E2FF65]">farklı yapıyoruz?</span>
+                        Biz ne <span className="italic font-light text-bor-secondary">farklı yapıyoruz?</span>
                     </h2>
                 </div>
 
@@ -91,14 +91,14 @@ const About = () => {
             <Section mood="light" className="py-24">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-bor-primary-900 mb-6">
-                        <span className="italic font-light text-[#86AA00]">Değerlerimiz</span>
+                        <span className="italic font-light text-bor-secondary">Değerlerimiz</span>
                     </h2>
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-8">
-                    <ValueBlock title="Hız" description="Haftalar değil, saatler içinde teslim. Müşterilerimiz zamanı geri kazanır." icon={<Zap className="w-10 h-10 text-[#86AA00]" />} />
-                    <ValueBlock title="Kalite" description="Fiziksel çekimden ayırt edilemeyen gerçekçilik. Her piksel mükemmellik için optimize." icon={<Sparkles className="w-10 h-10 text-[#86AA00]" />} />
-                    <ValueBlock title="Maliyet Avantajı" description="%80'e varan tasarruf. Kurumsal bütçe değil, akıllı bütçe." icon={<CircleDollarSign className="w-10 h-10 text-[#86AA00]" />} />
+                    <ValueBlock title="Hız" description="Haftalar değil, saatler içinde teslim. Müşterilerimiz zamanı geri kazanır." icon={<Zap className="w-10 h-10 text-bor-secondary" />} />
+                    <ValueBlock title="Kalite" description="Fiziksel çekimden ayırt edilemeyen gerçekçilik. Her piksel mükemmellik için optimize." icon={<Sparkles className="w-10 h-10 text-bor-secondary" />} />
+                    <ValueBlock title="Maliyet Avantajı" description="%80'e varan tasarruf. Kurumsal bütçe değil, akıllı bütçe." icon={<CircleDollarSign className="w-10 h-10 text-bor-secondary" />} />
                 </div>
             </Section>
 
@@ -106,7 +106,7 @@ const About = () => {
             <Section mood="dark" className="py-24 text-center">
                 <div className="max-w-3xl mx-auto space-y-6">
                     <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-white mb-6">
-                        "Bu adamlar <span className="italic font-light text-[#E2FF65]">geleceği getirmiş</span>" deyin
+                        "Bu adamlar <span className="italic font-light text-bor-secondary">geleceği getirmiş</span>" deyin
                     </h2>
                     <p className="text-lg md:text-xl font-light text-white/80">Ücretsiz demo ile farkı görün.</p>
                     <Button size="lg" className="bg-bor-secondary hover:bg-bor-secondary/90 text-white rounded-full px-8 h-14" onClick={() => navigate('/iletisim')}>
@@ -126,7 +126,7 @@ function CompetitorCard({ rival, rivalDesc, advantage }: { rival: string; rivalD
                 <p className="text-sm text-white/40">{rivalDesc}</p>
             </div>
             <div className="pt-4 border-t border-white/10">
-                <span className="text-xs font-bold uppercase tracking-widest text-[#E2FF65] block mb-2">PikselAI Farkı</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-bor-secondary block mb-2">PikselAI Farkı</span>
                 <p className="text-white/80 text-lg font-light leading-relaxed">{advantage}</p>
             </div>
         </div>

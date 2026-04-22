@@ -392,7 +392,7 @@ const Home = () => {
         <section className={`relative min-h-[85vh] flex flex-col items-center justify-center pt-32 pb-16 lg:pt-40 lg:pb-32 overflow-hidden`}>
           <div className="absolute inset-0 z-0 overflow-hidden">
             <video 
-              src="/assets/pages/landing1/landing.mp4" 
+              src="/assets/pages/homeyeni/landing.mp4" 
               autoPlay 
               loop 
               muted 

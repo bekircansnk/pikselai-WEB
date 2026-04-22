@@ -46,8 +46,9 @@ const shuffleArray = <T,>(array: T[]): T[] => {
   return newArr;
 };
 
-const rawImages = import.meta.glob('/public/assets/pages/aiproductionyeni/tek_urun_sinirsiz_sahne/*.{webp,jpg,jpeg,png,avif}', { eager: true });
-const tekUrunImages = shuffleArray(Object.keys(rawImages).map(path => path.replace('/public', '')));
+import { ASSET_DATA } from '../data/assetData';
+
+const tekUrunImages = shuffleArray(ASSET_DATA.pages.aiproductionyeni.tek_urun_sinirsiz_sahne);
 
 export interface AiProject {
   id: number;

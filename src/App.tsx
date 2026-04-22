@@ -17,7 +17,7 @@ const AiProductionYeni = lazy(() => import('./pages/AiProductionYeni'))
 const HomeYeni = lazy(() => import('./pages/HomeYeni'))
 const CreativeDesign = lazy(() => import('./pages/CreativeDesign'))
 const CostCalculator = lazy(() => import('./pages/CostCalculator'))
-const Landing1 = lazy(() => import('./pages/Landing1'))
+
 const TestPanel = lazy(() => import('./pages/TestPanel'))
 
 
@@ -81,7 +81,7 @@ function App() {
             <Route path="/blog/campandmap" element={<CampAndMapCaseStudy />} />
             <Route path="/fiyat-hesapla" element={<CostCalculator />} />
 
-            <Route path="/1" element={<Landing1 />} />
+
             <Route path="/test-panel" element={<TestPanel />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

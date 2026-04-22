@@ -18,7 +18,7 @@ const routes = [
   { path: '/blog/venus', name: 'VenusCaseStudy' },
   { path: '/blog/campandmap', name: 'CampAndMapCaseStudy' },
   { path: '/fiyat-hesapla', name: 'CostCalculator (Fiyat Hesapla)' },
-  { path: '/1', name: 'Landing1' },
+
 ];
 
 const TestPanel = () => {

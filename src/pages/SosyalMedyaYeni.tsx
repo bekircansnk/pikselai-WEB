@@ -445,7 +445,7 @@ const SosyalMedyaYeni = () => {
                   </div>
                   <div className="col-span-1 row-span-2 rounded-xl overflow-hidden bg-[#1e3b2b]">
                     <video
-                      src="/sosyal_medya_resimler/video/end_product.mp4"
+                      src="/assets/common/end_product.mp4"
                       autoPlay
                       loop
                       muted

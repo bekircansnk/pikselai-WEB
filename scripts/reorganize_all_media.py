@@ -182,6 +182,15 @@ def main():
         print(f"REMOVED EMPTY DIR: {DOCS_BLOG_DIR}")
         
     print("Cleanup and Restructure Complete.")
+    
+    # Generate asset data for frontend
+    try:
+        from scripts.generate_asset_data import generate_asset_data
+        generate_asset_data()
+    except ImportError:
+        # If running from root, might need different import
+        import subprocess
+        subprocess.run(['python3', 'scripts/generate_asset_data.py'])
 
 if __name__ == '__main__':
     main()

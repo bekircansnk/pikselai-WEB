@@ -23,32 +23,47 @@ const catalogPlan = {
     cta: 'Paketi Seç'
 };
 
-// AI Fotoğraf Paketleri
+// AI Fotoğraf Paketleri (Hacim Bazlı Kullandıkça Öde)
 const aiPlans = [
     {
-        name: 'Başlangıç',
-        price: '$39',
-        suffix: '/ aylık',
-        description: 'Yapay zekayı düşük riskle denemek isteyen işletmeler için.',
-        features: ['Ayda 200 adet AI fotoğraf', 'Profesyonel prompt altyapısı', 'Katalog ve sosyal medya uyumlu', 'İptal edilebilir üyelik'],
-        cta: 'Paketi Seç'
+        name: 'Deneme',
+        price: '$0.50',
+        suffix: '/ görsel',
+        description: 'Aylık 100 adet. Yapay zekayı düşük riskle denemek isteyen işletmeler için.',
+        features: [
+            'Sadece üretilen görsel kadar öde (Aylık faturalandırma)',
+            'Profesyonel prompt altyapısı',
+            'Katalog ve sosyal medya uyumlu',
+            'Temel e-ticaret entegrasyonu'
+        ],
+        cta: 'Bu Kademe ile Başla'
     },
     {
         name: 'En Popüler',
-        price: '$119',
-        suffix: '/ aylık',
-        description: 'Düzenli içerik üreten markalar için en dengeli paket.',
-        features: ['Ayda 700 adet AI fotoğraf', 'Gelişmiş prompt mühendisliği', 'Tutarlı stil ve görsel bütünlük', 'Öncelikli üretim sırası'],
-        cta: 'En Popüler Paketi Seç',
+        price: '$0.30',
+        suffix: '/ görsel',
+        description: 'Aylık 251 - 700 adet arası düzenli görsel üreten markalar için.',
+        features: [
+            'Sadece üretilen görsel kadar öde (Aylık faturalandırma)',
+            'Gelişmiş prompt mühendisliği',
+            'Tutarlı stil ve marka bütünlüğü',
+            'Öncelikli üretim sırası'
+        ],
+        cta: 'Bu Kademe ile Başla',
         featured: true
     },
     {
         name: 'Profesyonel',
-        price: '$219',
-        suffix: '/ aylık',
-        description: 'Yüksek hacimli, sürekli görsel üretimi yapan markalar için.',
-        features: ['Ayda 1.400 adet AI fotoğraf', 'Gelişmiş prompt + sahne varyasyonları', 'Büyük kataloglar için uygun', 'Öncelikli destek'],
-        cta: 'Profesyonel Paketi Seç'
+        price: '$0.25',
+        suffix: '/ görsel',
+        description: 'Aylık 700+ adet yüksek hacimli görsel üreten markalar için.',
+        features: [
+            'Sadece üretilen görsel kadar öde (Aylık faturalandırma)',
+            'Gelişmiş prompt ve sahne varyasyonları',
+            'Büyük kataloglar için özel optimizasyon',
+            '7/24 Öncelikli destek'
+        ],
+        cta: 'Bu Kademe ile Başla'
     }
 ];
 
@@ -152,6 +167,18 @@ const Pricing = () => {
                                 exit={{ opacity: 0, y: -20 }}
                                 className="flex flex-col gap-10"
                             >
+                                <div className="mb-8 p-6 bg-[#E2FF65]/10 border border-[#E2FF65]/20 rounded-2xl text-center">
+                                    <p className="text-bor-primary-900 dark:text-white font-medium mb-1">
+                                        Markanıza özel modelleme için tek seferlik <span className="line-through opacity-50">$49</span> kurulum ücreti alınır.
+                                    </p>
+                                    <p className="text-bor-secondary font-bold flex items-center justify-center gap-2">
+                                        <span className="flex h-2 w-2 rounded-full bg-bor-secondary animate-pulse"></span>
+                                        Şu an kampanyadayız: Kurulum Ücreti ÜCRETSİZ!
+                                    </p>
+                                    <p className="text-sm text-bor-primary-500 mt-2">
+                                        Sonrasında sadece ürettiğiniz görsel kadar, ay sonunda faturalandırılırsınız.
+                                    </p>
+                                </div>
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                                     {aiPlans.map((plan, i) => (
                                         <PricingCard key={i} plan={plan} />

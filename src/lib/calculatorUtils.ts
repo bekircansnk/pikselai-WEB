@@ -10,12 +10,14 @@ export function calculateSocialMedia({
   revisionCount,
   imagesPerRun,
   daysPerMonth,
+  overrideUnitPrice,
 }: {
   storiesPerDay: number;
   postsPerDay: number;
   revisionCount: number;
   imagesPerRun: number;
   daysPerMonth: number;
+  overrideUnitPrice?: number;
 }) {
   // Temel günlük üretim (Sadece ilk set: 4 görsel)
   const dailyStoryImages = storiesPerDay * imagesPerRun;
@@ -30,7 +32,7 @@ export function calculateSocialMedia({
   // Toplam Hacim
   const monthlyTotal = baseMonthlyTotal + revisionImages;
   
-  const unitPrice = getUnitPrice(monthlyTotal);
+  const unitPrice = overrideUnitPrice ?? getUnitPrice(monthlyTotal);
   const totalCost = monthlyTotal * unitPrice;
 
   return {
@@ -54,6 +56,7 @@ export function calculateBanners({
   mobileMultiplier,
   desktopMultiplier,
   categoryMultiplier,
+  overrideUnitPrice,
 }: {
   mobileCount: number;
   desktopCount: number;
@@ -63,6 +66,7 @@ export function calculateBanners({
   mobileMultiplier: number;
   desktopMultiplier: number;
   categoryMultiplier: number;
+  overrideUnitPrice?: number;
 }) {
   // Banner temel üretimi
   const mobileTotal = mobileCount * imagesPerRun * mobileMultiplier;
@@ -76,7 +80,7 @@ export function calculateBanners({
   const revisionImages = revisionCount * imagesPerRun;
 
   const seasonTotal = baseSeasonTotal + revisionImages;
-  const unitPrice = getUnitPrice(seasonTotal);
+  const unitPrice = overrideUnitPrice ?? getUnitPrice(seasonTotal);
   const totalCost = seasonTotal * unitPrice;
 
   return {
@@ -95,16 +99,18 @@ export function calculateBulkProduction({
   imagesPerProduct,
   errorBase,
   errorAmount,
+  overrideUnitPrice,
 }: {
   totalProducts: number;
   imagesPerProduct: number;
   errorBase: number;
   errorAmount: number;
+  overrideUnitPrice?: number;
 }) {
   const finalImages = totalProducts * imagesPerProduct;
   const errorTolerance = Math.round((finalImages / errorBase) * errorAmount);
   const billableImages = finalImages + errorTolerance;
-  const unitPrice = getUnitPrice(billableImages);
+  const unitPrice = overrideUnitPrice ?? getUnitPrice(billableImages);
   const totalCost = billableImages * unitPrice;
   const productUnitCost = totalProducts > 0 ? totalCost / totalProducts : 0;
 

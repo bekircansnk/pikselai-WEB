@@ -12,6 +12,7 @@ import {
   calculateSocialMedia,
   calculateBanners,
   calculateBulkProduction,
+  getUnitPrice,
 } from "../lib/calculatorUtils";
 
 interface CardHeaderProps {
@@ -88,15 +89,23 @@ const CostCalculator = () => {
 
   const [isCopied, setIsCopied] = useState(false);
 
-  // Calculations
-  const socialCalc = calculateSocialMedia({ ...social, imagesPerRun: IMAGES_PER_RUN });
-  const bannerCalc = calculateBanners({ ...banner, imagesPerRun: IMAGES_PER_RUN });
-  const bulkCalc = calculateBulkProduction({ ...bulk });
+  // Adım 1: Hacimleri hesapla
+  const rawSocial = calculateSocialMedia({ ...social, imagesPerRun: IMAGES_PER_RUN });
+  const rawBanner = calculateBanners({ ...banner, imagesPerRun: IMAGES_PER_RUN });
+  const rawBulk = calculateBulkProduction({ ...bulk });
+
+  // Adım 2: Tüm tablolardaki toplam görsel üretimini bul ve global birim fiyatı belirle
+  const overallImages = rawSocial.monthlyTotal + rawBanner.seasonTotal + rawBulk.billableImages;
+  const globalUnitPrice = getUnitPrice(overallImages);
+
+  // Adım 3: Belirlenen global birim fiyatla gerçek maliyetleri hesapla
+  const socialCalc = calculateSocialMedia({ ...social, imagesPerRun: IMAGES_PER_RUN, overrideUnitPrice: globalUnitPrice });
+  const bannerCalc = calculateBanners({ ...banner, imagesPerRun: IMAGES_PER_RUN, overrideUnitPrice: globalUnitPrice });
+  const bulkCalc = calculateBulkProduction({ ...bulk, overrideUnitPrice: globalUnitPrice });
 
   const totalMonthlyCost = socialCalc.totalCost;
   const totalSeasonCost = bannerCalc.totalCost + bulkCalc.totalCost;
   const overallCost = totalMonthlyCost + totalSeasonCost;
-  const overallImages = socialCalc.monthlyTotal + bannerCalc.seasonTotal + bulkCalc.billableImages;
 
   const handleCopy = () => {
     const text = `

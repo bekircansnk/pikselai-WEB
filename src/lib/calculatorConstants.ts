@@ -9,8 +9,7 @@ export const DEFAULT_PRICE_TIERS = [
 export const DEFAULT_SOCIAL = {
   storiesPerDay: 0,
   postsPerDay: 0,
-  storyRevisionCount: 0,
-  postRevisionCount: 0,
+  revisionCount: 0,
   daysPerMonth: 30,
 };
 

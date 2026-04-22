@@ -7,15 +7,13 @@ export function getUnitPrice(totalImages: number): number {
 export function calculateSocialMedia({
   storiesPerDay,
   postsPerDay,
-  storyRevisionCount,
-  postRevisionCount,
+  revisionCount,
   imagesPerRun,
   daysPerMonth,
 }: {
   storiesPerDay: number;
   postsPerDay: number;
-  storyRevisionCount: number;
-  postRevisionCount: number;
+  revisionCount: number;
   imagesPerRun: number;
   daysPerMonth: number;
 }) {
@@ -27,7 +25,7 @@ export function calculateSocialMedia({
   const baseMonthlyTotal = (dailyStoryImages + dailyPostImages) * daysPerMonth;
 
   // Revizyonlar (Girilen her 1 revizyon sadece 4 görsel ekler)
-  const revisionImages = (storyRevisionCount + postRevisionCount) * imagesPerRun;
+  const revisionImages = revisionCount * imagesPerRun;
 
   // Toplam Hacim
   const monthlyTotal = baseMonthlyTotal + revisionImages;

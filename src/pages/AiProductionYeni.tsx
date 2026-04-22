@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence, useMotionValue, type Variants } from 'framer-motion';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
-import {
   ArrowRight,
   Camera,
   Sparkles,
@@ -10,7 +9,9 @@ import {
   Image as ImageIcon,
   Layout,
   X,
-  Plus
+  Plus,
+  RefreshCcw,
+  Check
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
@@ -28,6 +29,13 @@ const staggerContainer: Variants = {
   }
 };
 
+const INFINITE_FORMATS = [
+  { id: 1, title: "Orijinal Çekim (Düz)", img: "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined18.webp" },
+  { id: 2, title: "E-Ticaret Katalog", img: "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined2.webp" },
+  { id: 3, title: "Sosyal Medya Post", img: "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined10.webp" },
+  { id: 4, title: "Kampanya Görseli", img: "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined16.webp" }
+];
+
 export interface AiProject {
   id: number;
   client: string;
@@ -37,21 +45,9 @@ export interface AiProject {
   spanClass: string;
   aspectClass: string;
   images: string[];
-  link?: string;
 }
 
 const aiProjects: AiProject[] = [
-  {
-    id: 2,
-    client: "Venüs Ayakkabı",
-    category: "Sosyal Medya Çekimleri",
-    thumbnail: "/assets/brands/venus/venus2.webp",
-    description: "Venüs Ayakkabı'nın yeni modelleri için etkileşim odaklı reklam kreatifleri.",
-    spanClass: "md:col-span-8",
-    aspectClass: "aspect-square md:aspect-video",
-    images: ["/assets/brands/venus/venus1.webp", "/assets/brands/venus/venus2.webp", "/assets/brands/venus/venus3.webp", "/assets/brands/venus/venus4.webp"],
-    link: "/blog/venus"
-  },
   {
     id: 1,
     client: "Cazador",
@@ -60,8 +56,17 @@ const aiProjects: AiProject[] = [
     description: "Cazador'un yeni sezon koleksiyonu için dinamik ve dikkat çekici sosyal medya kurguları.",
     spanClass: "md:col-span-4",
     aspectClass: "aspect-[3/4]",
-    images: ["/assets/brands/cazador/cazador1.webp", "/assets/brands/cazador/cazador2.webp", "/assets/brands/cazador/cazador3.webp", "/assets/brands/cazador/cazador4.webp"],
-    link: "/blog/referanslar"
+    images: ["/assets/brands/cazador/cazador1.webp", "/assets/brands/cazador/cazador2.webp", "/assets/brands/cazador/cazador3.webp", "/assets/brands/cazador/cazador4.webp"]
+  },
+  {
+    id: 2,
+    client: "Venüs Ayakkabı",
+    category: "Sosyal Medya Çekimleri",
+    thumbnail: "/assets/brands/venus/venus2.webp",
+    description: "Venüs Ayakkabı'nın yeni modelleri için etkileşim odaklı reklam kreatifleri.",
+    spanClass: "md:col-span-8",
+    aspectClass: "aspect-square md:aspect-video",
+    images: ["/assets/brands/venus/venus1.webp", "/assets/brands/venus/venus2.webp", "/assets/brands/venus/venus3.webp", "/assets/brands/venus/venus4.webp"]
   },
   {
     id: 3,
@@ -71,8 +76,7 @@ const aiProjects: AiProject[] = [
     description: "Doğa tutkunları için outdoor ruhunu yansıtan etkileyici görsel kurgular.",
     spanClass: "md:col-span-6",
     aspectClass: "aspect-[4/3]",
-    images: ["/assets/brands/camp_and_map/camp1.webp", "/assets/brands/camp_and_map/camp2.webp", "/assets/brands/camp_and_map/camp3.webp", "/assets/brands/camp_and_map/camp4.webp"],
-    link: "/blog/campandmap"
+    images: ["/assets/brands/camp_and_map/camp1.webp", "/assets/brands/camp_and_map/camp2.webp", "/assets/brands/camp_and_map/camp3.webp", "/assets/brands/camp_and_map/camp4.webp"]
   },
   {
     id: 4,
@@ -82,8 +86,7 @@ const aiProjects: AiProject[] = [
     description: "Mina Drinks'in ferahlatıcı kimliğini öne çıkaran yapay zeka destekli görseller.",
     spanClass: "md:col-span-6",
     aspectClass: "aspect-[4/3]",
-    images: ["/assets/brands/mina_drinks/mina1.webp", "/assets/brands/mina_drinks/mina2.webp", "/assets/brands/mina_drinks/mina3.webp", "/assets/brands/mina_drinks/mina4.webp"],
-    link: "/blog/mina-drinks"
+    images: ["/assets/brands/mina_drinks/mina1.webp", "/assets/brands/mina_drinks/mina2.webp", "/assets/brands/mina_drinks/mina3.webp", "/assets/brands/mina_drinks/mina4.webp"]
   }
 ];
 
@@ -797,6 +800,60 @@ const AiProduction = () => {
           </div>
         </section>
 
+        {/* 6.5 TEK ÜRÜN SINIRSIZ İÇERİK FORMATLARI */}
+        <section className="py-20 md:py-32 bg-[#0b2117]">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
+            <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-16 lg:gap-24 items-center">
+              <div className="order-2 lg:order-1 relative aspect-[4/5] md:aspect-square rounded-[3rem] overflow-hidden shadow-2xl group border-[8px] border-white/5 bg-[#1A1A1A]">
+                <img src={INFINITE_FORMATS[0].img} className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 z-0" />
+                <motion.img
+                  animate={{ opacity: [0, 1, 1, 0, 0, 0] }}
+                  transition={{ duration: 16, repeat: Infinity, times: [0, 0.1, 0.3, 0.4, 0.9, 1] }}
+                  src={INFINITE_FORMATS[1].img} className="absolute inset-0 w-full h-full object-cover z-10"
+                />
+                <motion.img
+                  animate={{ opacity: [0, 0, 0, 1, 1, 0] }}
+                  transition={{ duration: 16, repeat: Infinity, times: [0, 0.3, 0.4, 0.6, 0.7, 1] }}
+                  src={INFINITE_FORMATS[2].img} className="absolute inset-0 w-full h-full object-cover z-20"
+                />
+                <motion.img
+                  animate={{ opacity: [0, 0, 0, 0, 0, 1] }}
+                  transition={{ duration: 16, repeat: Infinity, times: [0, 0.6, 0.7, 0.9, 1, 1] }}
+                  src={INFINITE_FORMATS[3].img} className="absolute inset-0 w-full h-full object-cover z-30"
+                />
+                <div className="absolute bottom-8 left-8 right-8 z-50 bg-black/60 backdrop-blur-xl text-white px-6 py-4 rounded-2xl flex items-center justify-between border border-white/20">
+                  <div className="flex items-center gap-3">
+                    <RefreshCcw size={20} className="text-[#caf265] animate-spin-slow" />
+                    <span className="font-bold text-sm tracking-widest uppercase">Akıllı Format Dönüşümü</span>
+                  </div>
+                  <div className="flex gap-1.5">
+                    {[1, 2, 3, 4].map(i => <div key={i} className="w-1.5 h-1.5 rounded-full bg-white/30" />)}
+                  </div>
+                </div>
+              </div>
+
+              <div className="order-1 lg:order-2">
+                <span className="text-white/40 text-xs font-bold uppercase tracking-[0.2em] mb-6 block">MAKSİMUM VERİMLİLİK</span>
+                <h2 className="text-4xl md:text-5xl lg:text-[4rem] font-display text-white leading-tight mb-8">
+                  Tek Ürün. <br /><span className="italic text-white font-bold underline decoration-[#caf265] underline-offset-8">Sınırsız Sahne.</span>
+                </h2>
+                <p className="text-[#a8b8af] font-medium text-xl leading-relaxed mb-10">Bir kere basit fotoğraf çekin, sonsuza kadar farklı formatlarda kullanın. Aynı çantayı bugün beyaz fonda satarken, yarın sokak stilinde 16:9 reklamınızda başrolde izleyin.</p>
+
+                <div className="flex flex-col gap-4">
+                  {INFINITE_FORMATS.map((form) => (
+                    <div key={form.id} className="flex items-center justify-between p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-[#caf265]/50 hover:bg-white/10 transition-all">
+                      <div className="flex items-center gap-4 text-white font-bold text-lg">
+                        <div className="w-10 h-10 rounded-xl bg-[#caf265] flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(202,242,101,0.3)]"><Check size={20} className="text-black" /></div>
+                        {form.title}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* 7. PORTFOLYO */}
         <section className={`py-12 md:py-16 flex items-center bg-[#F4EFE6]`}>
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 w-full">
@@ -809,7 +866,7 @@ const AiProduction = () => {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-10 md:gap-14">
               {aiProjects.map((project, idx) => (
-                <motion.div key={project.id} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }} className={`group relative cursor-none ${project.spanClass} flex flex-col`} style={{ cursor: 'none' }} onClick={() => { if(project.link) navigate(project.link); }} onMouseMove={handleMouseMove} onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
+                <motion.div key={project.id} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }} className={`group relative cursor-none ${project.spanClass} flex flex-col`} style={{ cursor: 'none' }} onClick={() => setSelectedProject(project)} onMouseMove={handleMouseMove} onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
                   <div className={`w-full pointer-events-none rounded-[3rem] overflow-hidden bg-[#0b2117]/5 relative ${project.aspectClass} mb-8 shadow-sm group-hover:shadow-2xl transition-all duration-700`}>
                     <img src={project.thumbnail} alt={project.client} className="w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-1000" />
                   </div>

@@ -100,8 +100,38 @@ const ecommercePackages = [
     }
 ];
 
+// Kreatif Tasarım Paketleri
+const creativePackages = [
+    {
+        name: 'Landing Page',
+        price: '₺15.000',
+        suffix: 'Tek Seferlik',
+        description: 'Tek sayfalık dönüşüm odaklı tanıtım ve kampanya sayfaları.',
+        features: ['Özel UI/UX tasarımı', 'Mobil uyumlu modern yapı', 'Hızlı sayfa yüklenme (SEO)', 'Form ve lead toplama', 'Ücretsiz 1 yıl barındırma'],
+        cta: 'Teklif Al'
+    },
+    {
+        name: 'Kurumsal Web Sitesi',
+        price: '₺25.000',
+        suffix: 'Tek Seferlik',
+        description: 'Markanızı en iyi yansıtan çok sayfalı ve dinamik kurumsal kimlik siteleri.',
+        features: ['Özgün tasarım sistemi', 'CMS (İçerik Yönetimi)', 'Sınırsız sayfa yapısı', 'Blog ve haberler modülü', 'Temel SEO yapılandırması'],
+        cta: 'En Popüler Paketi Seç',
+        featured: true
+    },
+    {
+        name: 'Özel Proje',
+        price: 'Özel Teklif',
+        suffix: '',
+        description: 'İnteraktif katalog, portal veya tam kapsamlı özel tasarım süreçleri.',
+        features: ['Kapsamlı marka analizi', 'Tasarım sistemleri', 'Özel React/Next.js geliştirme', 'API/Backend entegrasyonları', 'Sürekli teknik destek'],
+        cta: 'Projenizi Konuşalım',
+        isPremium: true
+    }
+];
+
 const Pricing = () => {
-    const [activeTab, setActiveTab] = useState<'katalog' | 'ai' | 'eticaret'>('ai');
+    const [activeTab, setActiveTab] = useState<'katalog' | 'ai' | 'eticaret' | 'kreatif'>('ai');
 
     return (
         <MainLayout>
@@ -141,6 +171,13 @@ const Pricing = () => {
                         className="rounded-full"
                     >
                         E-Ticaret
+                    </Button>
+                    <Button
+                        variant={activeTab === 'kreatif' ? 'secondary' : 'ghost'}
+                        onClick={() => setActiveTab('kreatif')}
+                        className="rounded-full"
+                    >
+                        Kreatif Tasarım
                     </Button>
                 </div>
 
@@ -222,6 +259,21 @@ const Pricing = () => {
                                 className="grid grid-cols-1 md:grid-cols-3 gap-8"
                             >
                                 {ecommercePackages.map((plan, i) => (
+                                    <PricingCard key={i} plan={plan} />
+                                ))}
+                            </motion.div>
+                        )}
+
+                        {/* Kreatif Tasarım Tab */}
+                        {activeTab === 'kreatif' && (
+                            <motion.div
+                                key="kreatif"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -20 }}
+                                className="grid grid-cols-1 md:grid-cols-3 gap-8"
+                            >
+                                {creativePackages.map((plan, i) => (
                                     <PricingCard key={i} plan={plan} />
                                 ))}
                             </motion.div>

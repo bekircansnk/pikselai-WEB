@@ -25,6 +25,13 @@ const services = [
     desc: 'Satış odaklı mağaza kurulumları, optimizasyon ve uçtan uca operasyon yönetimi.',
     path: '/hizmetler/e-ticaret',
     color: '#4facfe'
+  },
+  {
+    id: 'creative',
+    title: 'Kreatif Tasarım',
+    desc: 'Kullanıcı odaklı dijital arayüzler, landing page ve interaktif web çözümleri.',
+    path: '/hizmetler/kreatif-tasarim',
+    color: '#c084fc'
   }
 ];
 

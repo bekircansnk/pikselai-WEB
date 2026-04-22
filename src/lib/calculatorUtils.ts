@@ -19,23 +19,28 @@ export function calculateSocialMedia({
   imagesPerRun: number;
   daysPerMonth: number;
 }) {
-  // İlk üretim 1 settir (4 görsel). Her revizyon ekstra 1 set daha üretim demektir.
-  const storyImagesPerItem = (1 + storyRevisionCount) * imagesPerRun;
-  const postImagesPerItem = (1 + postRevisionCount) * imagesPerRun;
+  // Temel günlük üretim (Sadece ilk set: 4 görsel)
+  const dailyStoryImages = storiesPerDay * imagesPerRun;
+  const dailyPostImages = postsPerDay * imagesPerRun;
+  
+  // Temel aylık üretim
+  const baseMonthlyTotal = (dailyStoryImages + dailyPostImages) * daysPerMonth;
 
-  const dailyStoryImages = storiesPerDay * storyImagesPerItem;
-  const dailyPostImages = postsPerDay * postImagesPerItem;
-  const dailyTotal = dailyStoryImages + dailyPostImages;
-  const monthlyTotal = dailyTotal * daysPerMonth;
+  // Revizyonlar (Girilen her 1 revizyon sadece 4 görsel ekler)
+  const revisionImages = (storyRevisionCount + postRevisionCount) * imagesPerRun;
+
+  // Toplam Hacim
+  const monthlyTotal = baseMonthlyTotal + revisionImages;
+  
   const unitPrice = getUnitPrice(monthlyTotal);
   const totalCost = monthlyTotal * unitPrice;
 
   return {
-    storyImagesPerItem,
-    postImagesPerItem,
+    storyImagesPerItem: imagesPerRun,
+    postImagesPerItem: imagesPerRun,
     dailyStoryImages,
     dailyPostImages,
-    dailyTotal,
+    dailyTotal: dailyStoryImages + dailyPostImages,
     monthlyTotal,
     unitPrice,
     totalCost,
@@ -61,18 +66,23 @@ export function calculateBanners({
   desktopMultiplier: number;
   categoryMultiplier: number;
 }) {
-  const baseBannerImages = (1 + revisionCount) * imagesPerRun;
+  // Banner temel üretimi
+  const mobileTotal = mobileCount * imagesPerRun * mobileMultiplier;
+  const desktopTotal = desktopCount * imagesPerRun * desktopMultiplier;
+  const categoryTotal = categoryCount * imagesPerRun * categoryMultiplier;
 
-  const mobileTotal = mobileCount * baseBannerImages * mobileMultiplier;
-  const desktopTotal = desktopCount * baseBannerImages * desktopMultiplier;
-  const categoryTotal = categoryCount * baseBannerImages * categoryMultiplier;
+  // Toplam temel hacim
+  const baseSeasonTotal = mobileTotal + desktopTotal + categoryTotal;
 
-  const seasonTotal = mobileTotal + desktopTotal + categoryTotal;
+  // Revizyonlar (Girilen her 1 revizyon sadece 4 görsel ekler)
+  const revisionImages = revisionCount * imagesPerRun;
+
+  const seasonTotal = baseSeasonTotal + revisionImages;
   const unitPrice = getUnitPrice(seasonTotal);
   const totalCost = seasonTotal * unitPrice;
 
   return {
-    baseBannerImages,
+    baseBannerImages: imagesPerRun,
     mobileTotal,
     desktopTotal,
     categoryTotal,

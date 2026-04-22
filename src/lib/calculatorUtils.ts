@@ -5,26 +5,23 @@ export function getUnitPrice(totalImages: number): number {
 }
 
 export function calculateSocialMedia({
-  storiesPerDay,
-  postsPerDay,
+  dailyContentCount,
   revisionCount,
   imagesPerRun,
   daysPerMonth,
   overrideUnitPrice,
 }: {
-  storiesPerDay: number;
-  postsPerDay: number;
+  dailyContentCount: number;
   revisionCount: number;
   imagesPerRun: number;
   daysPerMonth: number;
   overrideUnitPrice?: number;
 }) {
   // Temel günlük üretim (Sadece ilk set: 4 görsel)
-  const dailyStoryImages = storiesPerDay * imagesPerRun;
-  const dailyPostImages = postsPerDay * imagesPerRun;
+  const dailyTotal = dailyContentCount * imagesPerRun;
   
   // Temel aylık üretim
-  const baseMonthlyTotal = (dailyStoryImages + dailyPostImages) * daysPerMonth;
+  const baseMonthlyTotal = dailyTotal * daysPerMonth;
 
   // Revizyonlar (Girilen her 1 revizyon sadece 4 görsel ekler)
   const revisionImages = revisionCount * imagesPerRun;
@@ -36,11 +33,7 @@ export function calculateSocialMedia({
   const totalCost = monthlyTotal * unitPrice;
 
   return {
-    storyImagesPerItem: imagesPerRun,
-    postImagesPerItem: imagesPerRun,
-    dailyStoryImages,
-    dailyPostImages,
-    dailyTotal: dailyStoryImages + dailyPostImages,
+    dailyTotal,
     monthlyTotal,
     unitPrice,
     totalCost,

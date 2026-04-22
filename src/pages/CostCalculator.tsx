@@ -76,7 +76,7 @@ const InputField = ({ label, value, onChange, type = "number", suffix = "", tool
   </div>
 );
 
-const EMPTY_SOCIAL = { storiesPerDay: 0, postsPerDay: 0, revisionCount: 0, daysPerMonth: 30 };
+const EMPTY_SOCIAL = { dailyContentCount: 0, revisionCount: 0, daysPerMonth: 30 };
 const EMPTY_BANNERS = { mobileCount: 0, desktopCount: 0, categoryCount: 0, revisionCount: 0, imagesPerRun: 4, mobileMultiplier: 1, desktopMultiplier: 2, categoryMultiplier: 2 };
 const EMPTY_BULK = { totalProducts: 0, imagesPerProduct: 1, errorBase: 500, errorAmount: 10 };
 
@@ -198,9 +198,8 @@ Genel Toplam Bütçe: $${overallCost.toFixed(2)}
                   badge="Aylık"
                 />
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-4 mt-8">
-                  <InputField label="Günlük Story" value={social.storiesPerDay} onChange={(e) => setSocial({...social, storiesPerDay: Math.max(0, Number(e.target.value))})} min={0} type="number" tooltip="1 günde paylaşılacak ortalama story adedi." />
-                  <InputField label="Günlük Post" value={social.postsPerDay} onChange={(e) => setSocial({...social, postsPerDay: Math.max(0, Number(e.target.value))})} min={0} type="number" tooltip="1 günde paylaşılacak ortalama post/reel adedi." />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mt-8">
+                  <InputField label="Günlük İçerik Adedi" value={social.dailyContentCount} onChange={(e) => setSocial({...social, dailyContentCount: Math.max(0, Number(e.target.value))})} min={0} type="number" tooltip="1 günde paylaşılacak toplam ortalama story, reel ve post adedi." />
                   <InputField label="Aylık Revizyon" value={social.revisionCount} onChange={(e) => setSocial({...social, revisionCount: Math.max(0, Number(e.target.value))})} min={0} type="number" tooltip="Ay boyunca sosyal medya üretimlerinde ihtiyaç duyulacak tahmini toplam revize (varyasyon) sayısı." />
                 </div>
 

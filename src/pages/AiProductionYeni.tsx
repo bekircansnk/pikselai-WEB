@@ -30,12 +30,24 @@ const staggerContainer: Variants = {
   }
 };
 
-const INFINITE_FORMATS = [
-  { id: 1, title: "Orijinal Çekim (Düz)", img: "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined18.webp" },
-  { id: 2, title: "E-Ticaret Katalog", img: "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined2.webp" },
-  { id: 3, title: "Sosyal Medya Post", img: "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined10.webp" },
-  { id: 4, title: "Kampanya Görseli", img: "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined16.webp" }
+const INFINITE_FORMAT_TEXTS = [
+  { id: 1, title: "Orijinal Çekim (Düz)" },
+  { id: 2, title: "E-Ticaret Katalog" },
+  { id: 3, title: "Sosyal Medya Post" },
+  { id: 4, title: "Kampanya Görseli" }
 ];
+
+const shuffleArray = <T,>(array: T[]): T[] => {
+  const newArr = [...array];
+  for (let i = newArr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
+  }
+  return newArr;
+};
+
+const rawImages = import.meta.glob('/public/assets/pages/aiproductionyeni/tek_urun_sinirsiz_sahne/*.{webp,jpg,jpeg,png,avif}', { eager: true });
+const tekUrunImages = shuffleArray(Object.keys(rawImages).map(path => path.replace('/public', '')));
 
 export interface AiProject {
   id: number;
@@ -593,9 +605,19 @@ const LifestyleShowcase = () => {
 
 const AiProduction = () => {
   const navigate = useNavigate();
+  const [currentFormatIndex, setCurrentFormatIndex] = useState(0);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    if (tekUrunImages.length > 0) {
+      const interval = setInterval(() => {
+        setCurrentFormatIndex(prev => (prev + 1) % tekUrunImages.length);
+      }, 3500);
+      return () => clearInterval(interval);
+    }
   }, []);
 
   const [selectedProject, setSelectedProject] = useState<AiProject | null>(null);
@@ -806,22 +828,19 @@ const AiProduction = () => {
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
             <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-16 lg:gap-24 items-center">
               <div className="order-2 lg:order-1 relative aspect-[4/5] md:aspect-square rounded-[3rem] overflow-hidden shadow-2xl group border-[8px] border-white/5 bg-[#1A1A1A]">
-                <img src={INFINITE_FORMATS[0].img} className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 z-0" />
-                <motion.img
-                  animate={{ opacity: [0, 1, 1, 0, 0, 0] }}
-                  transition={{ duration: 16, repeat: Infinity, times: [0, 0.1, 0.3, 0.4, 0.9, 1] }}
-                  src={INFINITE_FORMATS[1].img} className="absolute inset-0 w-full h-full object-cover z-10"
-                />
-                <motion.img
-                  animate={{ opacity: [0, 0, 0, 1, 1, 0] }}
-                  transition={{ duration: 16, repeat: Infinity, times: [0, 0.3, 0.4, 0.6, 0.7, 1] }}
-                  src={INFINITE_FORMATS[2].img} className="absolute inset-0 w-full h-full object-cover z-20"
-                />
-                <motion.img
-                  animate={{ opacity: [0, 0, 0, 0, 0, 1] }}
-                  transition={{ duration: 16, repeat: Infinity, times: [0, 0.6, 0.7, 0.9, 1, 1] }}
-                  src={INFINITE_FORMATS[3].img} className="absolute inset-0 w-full h-full object-cover z-30"
-                />
+                <AnimatePresence>
+                  {tekUrunImages.length > 0 && (
+                    <motion.img
+                      key={currentFormatIndex}
+                      src={tekUrunImages[currentFormatIndex]}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 1.2, ease: "easeInOut" }}
+                      className="absolute inset-0 w-full h-full object-cover z-0"
+                    />
+                  )}
+                </AnimatePresence>
                 <div className="absolute bottom-8 left-8 right-8 z-50 bg-black/60 backdrop-blur-xl text-white px-6 py-4 rounded-2xl flex items-center justify-between border border-white/20">
                   <div className="flex items-center gap-3">
                     <RefreshCcw size={20} className="text-[#caf265] animate-spin-slow" />
@@ -841,7 +860,7 @@ const AiProduction = () => {
                 <p className="text-[#a8b8af] font-medium text-xl leading-relaxed mb-10">Bir kere basit fotoğraf çekin, sonsuza kadar farklı formatlarda kullanın. Aynı çantayı bugün beyaz fonda satarken, yarın sokak stilinde 16:9 reklamınızda başrolde izleyin.</p>
 
                 <div className="flex flex-col gap-4">
-                  {INFINITE_FORMATS.map((form) => (
+                  {INFINITE_FORMAT_TEXTS.map((form) => (
                     <div key={form.id} className="flex items-center justify-between p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-[#caf265]/50 hover:bg-white/10 transition-all">
                       <div className="flex items-center gap-4 text-white font-bold text-lg">
                         <div className="w-10 h-10 rounded-xl bg-[#caf265] flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(202,242,101,0.3)]"><Check size={20} className="text-black" /></div>

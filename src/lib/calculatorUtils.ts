@@ -67,21 +67,21 @@ export function calculateBanners({
   const categoryTotal = categoryCount * imagesPerRun * categoryMultiplier;
 
   // Toplam temel hacim
-  const baseSeasonTotal = mobileTotal + desktopTotal + categoryTotal;
+  const baseMonthlyTotal = mobileTotal + desktopTotal + categoryTotal;
 
   // Revizyonlar (Girilen her 1 revizyon sadece 4 görsel ekler)
   const revisionImages = revisionCount * imagesPerRun;
 
-  const seasonTotal = baseSeasonTotal + revisionImages;
-  const unitPrice = overrideUnitPrice ?? getUnitPrice(seasonTotal);
-  const totalCost = seasonTotal * unitPrice;
+  const monthlyTotal = baseMonthlyTotal + revisionImages;
+  const unitPrice = overrideUnitPrice ?? getUnitPrice(monthlyTotal);
+  const totalCost = monthlyTotal * unitPrice;
 
   return {
     baseBannerImages: imagesPerRun,
     mobileTotal,
     desktopTotal,
     categoryTotal,
-    seasonTotal,
+    monthlyTotal,
     unitPrice,
     totalCost,
   };

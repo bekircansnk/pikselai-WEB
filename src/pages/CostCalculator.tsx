@@ -95,7 +95,7 @@ const CostCalculator = () => {
   const rawBulk = calculateBulkProduction({ ...bulk });
 
   // Adım 2: Tüm tablolardaki toplam görsel üretimini bul ve global birim fiyatı belirle
-  const overallImages = rawSocial.monthlyTotal + rawBanner.seasonTotal + rawBulk.billableImages;
+  const overallImages = rawSocial.monthlyTotal + rawBanner.monthlyTotal + rawBulk.billableImages;
   const globalUnitPrice = getUnitPrice(overallImages);
 
   // Adım 3: Belirlenen global birim fiyatla gerçek maliyetleri hesapla
@@ -104,15 +104,16 @@ const CostCalculator = () => {
   const bulkCalc = calculateBulkProduction({ ...bulk, overrideUnitPrice: globalUnitPrice });
 
   const totalMonthlyCost = socialCalc.totalCost;
-  const totalSeasonCost = bannerCalc.totalCost + bulkCalc.totalCost;
-  const overallCost = totalMonthlyCost + totalSeasonCost;
+  const totalBannerCost = bannerCalc.totalCost;
+  const totalBulkCost = bulkCalc.totalCost;
+  const overallCost = totalMonthlyCost + totalBannerCost + totalBulkCost;
 
   const handleCopy = () => {
     const text = `
 PikselAI Gelişmiş Üretim Özeti:
 ----------------------------------
 Sosyal Medya Aylık: $${socialCalc.totalCost.toFixed(2)} (${socialCalc.monthlyTotal} Görsel)
-Banner Üretimi Sezonluk: $${bannerCalc.totalCost.toFixed(2)} (${bannerCalc.seasonTotal} Görsel)
+Banner Üretimi Aylık: $${bannerCalc.totalCost.toFixed(2)} (${bannerCalc.monthlyTotal} Görsel)
 Toplu Üretim (Sezonluk): $${bulkCalc.totalCost.toFixed(2)} (${bulkCalc.billableImages} Görsel)
 ----------------------------------
 Genel Toplam Bütçe: $${overallCost.toFixed(2)}
@@ -228,7 +229,7 @@ Genel Toplam Bütçe: $${overallCost.toFixed(2)}
                   icon={ImageIcon} 
                   title="Banner Üretimi" 
                   description="Kampanya ve e-ticaret siteleri için mobil, desktop banner ihtiyaçları." 
-                  badge="Sezonluk"
+                  badge="Aylık"
                 />
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-2 mb-6">
@@ -243,15 +244,15 @@ Genel Toplam Bütçe: $${overallCost.toFixed(2)}
 
                 <div className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-white/5 dark:to-transparent border border-gray-200 dark:border-white/5 flex flex-wrap gap-6 justify-between items-center">
                   <div>
-                    <span className="text-gray-500 dark:text-gray-400 text-sm block mb-1">Sezonluk Hacim</span>
-                    <span className="text-2xl font-bold text-gray-900 dark:text-white">{bannerCalc.seasonTotal}</span>
+                    <span className="text-gray-500 dark:text-gray-400 text-sm block mb-1">Aylık Hacim</span>
+                    <span className="text-2xl font-bold font-display text-gray-900 dark:text-white">{bannerCalc.monthlyTotal}</span>
                   </div>
                   <div>
                     <span className="text-gray-500 dark:text-gray-400 text-sm block mb-1">Birim Fiyat</span>
                     <span className="text-2xl font-bold text-bor-secondary">${bannerCalc.unitPrice.toFixed(3)}</span>
                   </div>
                   <div className="text-right">
-                    <span className="text-gray-500 dark:text-gray-400 text-sm block mb-1">Sezonluk Maliyet</span>
+                    <span className="text-gray-500 dark:text-gray-400 text-sm block mb-1">Aylık Maliyet</span>
                     <span className="text-3xl font-display font-bold text-gray-900 dark:text-white">${bannerCalc.totalCost.toFixed(2)}</span>
                   </div>
                 </div>
@@ -320,9 +321,9 @@ Genel Toplam Bütçe: $${overallCost.toFixed(2)}
                       <span className="text-gray-400">Sosyal Medya (Aylık)</span>
                       <span className="font-semibold">${socialCalc.totalCost.toFixed(2)}</span>
                     </div>
-                    <div className="flex justify-between items-center pb-4 border-b border-white/10">
-                      <span className="text-gray-400">Banner (Sezonluk)</span>
-                      <span className="font-semibold">${bannerCalc.totalCost.toFixed(2)}</span>
+                    <div className="flex justify-between items-center py-4 border-b border-gray-100 dark:border-white/10">
+                      <span className="text-gray-400">Banner (Aylık)</span>
+                      <span className="font-semibold text-white">${bannerCalc.totalCost.toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between items-center pb-4 border-b border-white/10">
                       <span className="text-gray-400">Toplu Üretim</span>

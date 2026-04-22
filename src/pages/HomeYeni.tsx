@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence, useInView, useScroll, useSpring } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { MainLayout } from '../layouts/MainLayout';
-import { ArrowRight, ChevronDown, Zap, Play, Box, TrendingUp, Layers, ImageIcon, User, Sparkles, RefreshCcw, Check, Camera, MoveRight } from 'lucide-react';
+import { ArrowRight, ChevronDown, Zap, Play, Box, TrendingUp, Layers, ImageIcon, User, Sparkles, Check, Camera, MoveRight } from 'lucide-react';
 import HeroAlternatives from '../components/sections/HeroAlternatives';
 
 const colors = {

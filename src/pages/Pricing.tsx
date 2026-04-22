@@ -171,13 +171,13 @@ const Pricing = () => {
                                 className="flex flex-col gap-10"
                             >
                                 <div className="flex flex-col items-center mb-10">
-                                    <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-bor-primary-900 dark:bg-white text-white dark:text-bor-primary-900 text-sm font-medium shadow-md transition-transform hover:scale-105 duration-300">
+                                    <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-bor-primary-900 dark:bg-white text-white dark:text-bor-primary-900 text-sm font-medium shadow-md transition-transform hover:scale-105 duration-300 text-center flex-wrap justify-center">
                                         <span className="text-bor-secondary">✨ Fırsat:</span> 
-                                        Tek seferlik <span className="line-through opacity-60 ml-1">$49</span> modelleme kurulumu <strong className="text-bor-secondary ml-1">ÜCRETSİZ</strong>
+                                        Markanıza özel AI model eğitimi (Tek seferlik <span className="line-through opacity-60 mx-1">$49</span>) şu an <strong className="text-bor-secondary ml-1">ÜCRETSİZ</strong>
                                     </div>
-                                    <p className="mt-4 text-sm text-bor-primary-500 dark:text-bor-primary-400 max-w-md text-center leading-relaxed">
-                                        Hiçbir sürpriz maliyet veya gizli ücret yok. <br />
-                                        Yalnızca sistemde ürettiğiniz görsel adedi kadar faturalandırılırsınız.
+                                    <p className="mt-4 text-sm text-bor-primary-500 dark:text-bor-primary-400 max-w-xl text-center leading-relaxed">
+                                        Ürünlerinizin marka kimliğine ve DNA'sına uygun olarak yapay zekaya öğretilmesi işlemi kısa bir süreliğine ücretsizdir. <br className="hidden md:block" />
+                                        Sistemde gizli ücret yoktur; yalnızca ürettiğiniz görsel adedi kadar faturalandırılırsınız.
                                     </p>
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

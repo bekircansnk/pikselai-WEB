@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { Zap, Sparkles, CircleDollarSign } from 'lucide-react';
 import { MainLayout } from '../layouts/MainLayout';
 import { Section } from '../components/ui/Section';
 import { Button } from '../components/ui/Button';
@@ -95,9 +96,9 @@ const About = () => {
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-8">
-                    <ValueBlock title="Hız" description="Haftalar değil, saatler içinde teslim. Müşterilerimiz zamanı geri kazanır." icon="⚡" />
-                    <ValueBlock title="Kalite" description="Fiziksel çekimden ayırt edilemeyen gerçekçilik. Her piksel mükemmellik için optimize." icon="✨" />
-                    <ValueBlock title="Maliyet Avantajı" description="%80'e varan tasarruf. Kurumsal bütçe değil, akıllı bütçe." icon="💰" />
+                    <ValueBlock title="Hız" description="Haftalar değil, saatler içinde teslim. Müşterilerimiz zamanı geri kazanır." icon={<Zap className="w-10 h-10 text-[#86AA00]" />} />
+                    <ValueBlock title="Kalite" description="Fiziksel çekimden ayırt edilemeyen gerçekçilik. Her piksel mükemmellik için optimize." icon={<Sparkles className="w-10 h-10 text-[#86AA00]" />} />
+                    <ValueBlock title="Maliyet Avantajı" description="%80'e varan tasarruf. Kurumsal bütçe değil, akıllı bütçe." icon={<CircleDollarSign className="w-10 h-10 text-[#86AA00]" />} />
                 </div>
             </Section>
 
@@ -132,10 +133,10 @@ function CompetitorCard({ rival, rivalDesc, advantage }: { rival: string; rivalD
     );
 }
 
-function ValueBlock({ title, description, icon }: { title: string; description: string; icon: string }) {
+function ValueBlock({ title, description, icon }: { title: string; description: string; icon: React.ReactNode }) {
     return (
         <div className="text-center p-8 rounded-2xl border border-bor-primary-100 hover:border-bor-secondary/30 transition-colors">
-            <div className="text-4xl mb-4">{icon}</div>
+            <div className="flex justify-center mb-6">{icon}</div>
             <h3 className="text-xl lg:text-2xl font-bold font-display text-bor-primary-900 mb-3">{title}</h3>
             <p className="text-bor-primary-600 text-lg font-light leading-relaxed">{description}</p>
         </div>

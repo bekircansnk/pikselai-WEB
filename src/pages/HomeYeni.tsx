@@ -1092,10 +1092,10 @@ const Home = () => {
             <div className="relative z-10 max-w-4xl flex flex-col items-center">
               <span className="px-4 py-2 rounded-full border border-[#0b2117]/20 text-[#0b2117] text-xs font-bold uppercase tracking-widest bg-white/20 backdrop-blur-md mb-8">Ücretsiz Danışmanlık</span>
               <h2 className="text-4xl md:text-6xl lg:text-[6rem] font-display font-normal italic text-[#0b2117] mb-8 leading-[1.0]">
-                Markanızı geleceğe <br /> <span className="text-[#0b2117] font-display font-bold not-italic">taşımaya hazır mısınız?</span>
+                Markanızın geleceğini <br /> <span className="text-[#0b2117] font-display font-bold not-italic">birlikte inşa edelim.</span>
               </h2>
               <p className="text-[#0b2117]/80 mb-12 text-xl font-medium max-w-2xl leading-relaxed">
-                Ağır süreçleri, yüksek prodüksiyon maliyetlerini ve karmaşayı geride bırakın. Kaliteli, hızlı ve ölçeklenebilir kreatif sürecimize adım atmak için bugün bizimle iletişime geçin.
+                Ağır süreçleri ve yüksek prodüksiyon maliyetlerini geride bırakın. Hemen ücretsiz dijital varlık denetimi talebinde bulunun ve markanızı AI devrimiyle geleceğe taşıyın.
               </p>
               <button onClick={() => navigate('/iletisim')} className="bg-[#0b2117] text-[#caf265] hover:bg-black transition-all duration-300 rounded-full px-12 py-6 text-xl font-bold flex items-center justify-center gap-4 w-full sm:w-auto shadow-[0_20px_40px_rgba(11,33,23,0.3)] hover:-translate-y-1 group">
                 <span>Hemen Demo Talep Et</span>

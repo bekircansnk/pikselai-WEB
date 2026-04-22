@@ -7,20 +7,21 @@ export function getUnitPrice(totalImages: number): number {
 export function calculateSocialMedia({
   storiesPerDay,
   postsPerDay,
-  storyTryCount,
-  postTryCount,
+  storyRevisionCount,
+  postRevisionCount,
   imagesPerRun,
   daysPerMonth,
 }: {
   storiesPerDay: number;
   postsPerDay: number;
-  storyTryCount: number;
-  postTryCount: number;
+  storyRevisionCount: number;
+  postRevisionCount: number;
   imagesPerRun: number;
   daysPerMonth: number;
 }) {
-  const storyImagesPerItem = storyTryCount * imagesPerRun;
-  const postImagesPerItem = postTryCount * imagesPerRun;
+  // İlk üretim 1 settir (4 görsel). Her revizyon ekstra 1 set daha üretim demektir.
+  const storyImagesPerItem = (1 + storyRevisionCount) * imagesPerRun;
+  const postImagesPerItem = (1 + postRevisionCount) * imagesPerRun;
 
   const dailyStoryImages = storiesPerDay * storyImagesPerItem;
   const dailyPostImages = postsPerDay * postImagesPerItem;
@@ -45,7 +46,7 @@ export function calculateBanners({
   mobileCount,
   desktopCount,
   categoryCount,
-  tryCount,
+  revisionCount,
   imagesPerRun,
   mobileMultiplier,
   desktopMultiplier,
@@ -54,13 +55,13 @@ export function calculateBanners({
   mobileCount: number;
   desktopCount: number;
   categoryCount: number;
-  tryCount: number;
+  revisionCount: number;
   imagesPerRun: number;
   mobileMultiplier: number;
   desktopMultiplier: number;
   categoryMultiplier: number;
 }) {
-  const baseBannerImages = tryCount * imagesPerRun;
+  const baseBannerImages = (1 + revisionCount) * imagesPerRun;
 
   const mobileTotal = mobileCount * baseBannerImages * mobileMultiplier;
   const desktopTotal = desktopCount * baseBannerImages * desktopMultiplier;

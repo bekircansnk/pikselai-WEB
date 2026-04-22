@@ -75,8 +75,8 @@ const InputField = ({ label, value, onChange, type = "number", suffix = "", tool
   </div>
 );
 
-const EMPTY_SOCIAL = { storiesPerDay: 0, postsPerDay: 0, storyTryCount: 1, postTryCount: 1, daysPerMonth: 30 };
-const EMPTY_BANNERS = { mobileCount: 0, desktopCount: 0, categoryCount: 0, tryCount: 1, imagesPerRun: 4, mobileMultiplier: 1, desktopMultiplier: 2, categoryMultiplier: 2 };
+const EMPTY_SOCIAL = { storiesPerDay: 0, postsPerDay: 0, storyRevisionCount: 0, postRevisionCount: 0, daysPerMonth: 30 };
+const EMPTY_BANNERS = { mobileCount: 0, desktopCount: 0, categoryCount: 0, revisionCount: 0, imagesPerRun: 4, mobileMultiplier: 1, desktopMultiplier: 2, categoryMultiplier: 2 };
 const EMPTY_BULK = { totalProducts: 0, imagesPerProduct: 1, errorBase: 500, errorAmount: 10 };
 
 const CostCalculator = () => {
@@ -192,8 +192,8 @@ Genel Toplam Bütçe: $${overallCost.toFixed(2)}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-8">
                   <InputField label="Günlük Story" value={social.storiesPerDay} onChange={(e) => setSocial({...social, storiesPerDay: Math.max(0, Number(e.target.value))})} min={0} type="number" tooltip="1 günde paylaşılacak ortalama story adedi." />
                   <InputField label="Günlük Post" value={social.postsPerDay} onChange={(e) => setSocial({...social, postsPerDay: Math.max(0, Number(e.target.value))})} min={0} type="number" tooltip="1 günde paylaşılacak ortalama post/reel adedi." />
-                  <InputField label="Story Başı Deneme" value={social.storyTryCount} onChange={(e) => setSocial({...social, storyTryCount: Math.max(1, Number(e.target.value))})} min={1} type="number" tooltip="Kaç kez AI üretim tetiklenecek?" />
-                  <InputField label="Post Başı Deneme" value={social.postTryCount} onChange={(e) => setSocial({...social, postTryCount: Math.max(1, Number(e.target.value))})} min={1} type="number" tooltip="Bir post/reel için yapay zeka tarafından denenecek varyasyon turu sayısı." />
+                  <InputField label="Story Başı Revizyon" value={social.storyRevisionCount} onChange={(e) => setSocial({...social, storyRevisionCount: Math.max(0, Number(e.target.value))})} min={0} type="number" tooltip="İlk üretilen 4 görsele ek olarak kaç set revize alınacak?" />
+                  <InputField label="Post Başı Revizyon" value={social.postRevisionCount} onChange={(e) => setSocial({...social, postRevisionCount: Math.max(0, Number(e.target.value))})} min={0} type="number" tooltip="İlk üretilen 4 görsele ek olarak kaç set revize alınacak?" />
                 </div>
 
                 <div className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-white/5 dark:to-transparent border border-gray-200 dark:border-white/5 flex flex-wrap gap-6 justify-between items-center">
@@ -231,7 +231,7 @@ Genel Toplam Bütçe: $${overallCost.toFixed(2)}
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">
-                   <InputField label="Deneme Sayısı" value={banner.tryCount} onChange={(e) => setBanner({...banner, tryCount: Math.max(1, Number(e.target.value))})} min={1} type="number" tooltip="Her bir ölçü formatı için oluşturulacak alternatif tasarım denemelerinin sayısı." />
+                   <InputField label="Revizyon Sayısı" value={banner.revisionCount} onChange={(e) => setBanner({...banner, revisionCount: Math.max(0, Number(e.target.value))})} min={0} type="number" tooltip="İlk üretimden sonra kaç kez yeni varyasyon/revize talep edilecek?" />
                 </div>
 
                 <div className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-white/5 dark:to-transparent border border-gray-200 dark:border-white/5 flex flex-wrap gap-6 justify-between items-center">

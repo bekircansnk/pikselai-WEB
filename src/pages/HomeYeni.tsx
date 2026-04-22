@@ -14,59 +14,49 @@ const colors = {
 };
 
 // --- DATA ---
-const modules = import.meta.glob('/public/assets/pages/homeyeni/banner/*.{webp,jpg,jpeg,png}', { eager: true });
-const INITIAL_HERO_IMAGES = Object.keys(modules).map(path => path.replace('/public', ''));
+import { ASSET_DATA } from '../data/assetData';
 
-const shuffleArray = (array: string[]) => {
-  let newArr = [...array];
-  for (let i = newArr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
-  }
-  return newArr;
-};
+// --- DATA ---
 
-const HERO_IMAGES = shuffleArray(INITIAL_HERO_IMAGES);
 
-const ghostModules = import.meta.glob('/public/assets/pages/homeyeni/hayalet_oncesi_sonrasi/*__1.webp', { eager: true });
-const GHOST_PAIRS = Object.keys(ghostModules).map(path => {
-  const beforeStr = path.replace('/public', '');
-  const afterStr = beforeStr.replace('__1.webp', '__2.webp');
-  return { before: beforeStr, after: afterStr };
-});
 
-const kampanyaModules = import.meta.glob('/public/assets/pages/homeyeni/kampanya_oncesi_sonrasi/*__1.webp', { eager: true });
-const KAMPANYA_PAIRS = Object.keys(kampanyaModules).map(path => {
-  const beforeStr = path.replace('/public', '');
-  const afterStr = beforeStr.replace('__1.webp', '__2.webp');
-  return { before: beforeStr, after: afterStr };
-});
 
-const sosyalMedyaModules = import.meta.glob('/public/assets/pages/homeyeni/sosyal_medya_oncesi_sonrasi/*__1.webp', { eager: true });
-const SOSYAL_MEDYA_PAIRS = Object.keys(sosyalMedyaModules).map(path => {
-  const beforeStr = path.replace('/public', '');
-  const afterStr = beforeStr.replace('__1.webp', '__2.webp');
-  return { before: beforeStr, after: afterStr };
-});
 
-const surecModules = import.meta.glob('/public/assets/pages/homeyeni/surec_isleme/*__1.webp', { eager: true });
-const SUREC_PAIRS = Object.keys(surecModules).map(path => {
-  const beforeStr = path.replace('/public', '');
-  const afterStr = beforeStr.replace('__1.webp', '__2.webp');
-  return { before: beforeStr, after: afterStr };
-});
 
-const BRAND_LOGOS = [
-  "/assets/brands/cazador/cazador_logo.webp",
-  "/assets/brands/venus/venus_logo.webp",
-  "/assets/brands/mina_drinks/minadrinks_logo.webp",
-  "/assets/brands/camp_and_map/campandmap_logo.webp"
-];
+const GHOST_PAIRS = ASSET_DATA.pages.homeyeni.hayalet_oncesi_sonrasi
+  .filter((path: string) => path.endsWith('__1.webp'))
+  .map((path: string) => ({
+    before: path,
+    after: path.replace('__1.webp', '__2.webp')
+  }));
+
+const KAMPANYA_PAIRS = ASSET_DATA.pages.homeyeni.kampanya_oncesi_sonrasi
+  .filter((path: string) => path.endsWith('__1.webp'))
+  .map((path: string) => ({
+    before: path,
+    after: path.replace('__1.webp', '__2.webp')
+  }));
+
+const SOSYAL_MEDYA_PAIRS = ASSET_DATA.pages.homeyeni.sosyal_medya_oncesi_sonrasi
+  .filter((path: string) => path.endsWith('__1.webp'))
+  .map((path: string) => ({
+    before: path,
+    after: path.replace('__1.webp', '__2.webp')
+  }));
+
+const SUREC_PAIRS = ASSET_DATA.pages.homeyeni.surec_isleme
+  .filter((path: string) => path.endsWith('__1.webp'))
+  .map((path: string) => ({
+    before: path,
+    after: path.replace('__1.webp', '__2.webp')
+  }));
+
+
 
 const COMPARE_TABS = [
-  { id: "ghost", label: "Ghost → E-Ticaret", before: "/assets/pages/homeyeni/banner/l0000000751458_1.webp", after: "/assets/pages/homeyeni/banner/l0000000751458_6.webp" },
-  { id: "flat", label: "Düz Ürün → Kampanya", before: "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined18.webp", after: "/assets/brands/venus/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined16.webp" },
-  { id: "lifestyle", label: "Ham → Sosyal Medya", before: "/assets/pages/homeyeni/banner/l0000000758648_1.webp", after: "/assets/pages/homeyeni/banner/03085_haki_2k_4_5_shot_13_action_brushing_foliage.webp" }
+  { id: "ghost", label: "Ghost → E-Ticaret", before: "/assets/pages/homeyeni/hayalet_oncesi_sonrasi/l0000000751458__1.webp", after: "/assets/pages/homeyeni/hayalet_oncesi_sonrasi/l0000000751458__2.webp" },
+  { id: "flat", label: "Düz Ürün → Kampanya", before: "/assets/pages/homeyeni/banner/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined18.webp", after: "/assets/pages/homeyeni/banner/kadin_kol_cantasi_siyah_bordo_c2490807k_canta_venus_c2490807k_16356_23_b_undefined16.webp" },
+  { id: "lifestyle", label: "Ham → Sosyal Medya", before: "/assets/pages/homeyeni/hayalet_oncesi_sonrasi/l0000000758648__1.webp", after: "/assets/pages/homeyeni/banner/03085_haki_2k_4_5_shot_13_action_brushing_foliage.webp" }
 ];
 
 const SERVICES = [
@@ -302,18 +292,7 @@ const DynamicGridImage = ({ initialSrc, interval }: { initialSrc: string, interv
 
 const Home = () => {
   const navigate = useNavigate();
-  const [heroIndex, setHeroIndex] = useState(() => {
-    if (HERO_IMAGES.length === 0) return 0;
-    const lastItem = sessionStorage.getItem('lastPikselHero');
-    let nextIdx = Math.floor(Math.random() * HERO_IMAGES.length);
 
-    if (lastItem && HERO_IMAGES[nextIdx] === lastItem) {
-      nextIdx = (nextIdx + 1) % HERO_IMAGES.length;
-    }
-
-    sessionStorage.setItem('lastPikselHero', HERO_IMAGES[nextIdx]);
-    return nextIdx;
-  });
   const [processStep, setProcessStep] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
@@ -321,13 +300,7 @@ const Home = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Hero slideshow interval
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setHeroIndex((prev) => (prev + 1) % HERO_IMAGES.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
+
 
   // Process Interactive Interval & Scroll
   const processRef = useRef<HTMLElement>(null);
@@ -386,145 +359,88 @@ const Home = () => {
     <MainLayout transparentHeader={true} headerLightText={true}>
       <main className="bg-[#0b2117] min-h-screen font-sans selection:bg-[#caf265] selection:text-[#0b2117]">
 
-        {/* 1. HERO SECTION */}
-        <section className={`relative min-h-[85vh] flex flex-col items-center justify-center pt-32 pb-16 lg:pt-40 lg:pb-32 overflow-hidden`}>
-          <div className="absolute inset-0 z-0 bg-[#0b2117]">
-            <div className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-[#caf265]/10 blur-[120px] rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-[#a8b8af]/5 blur-[120px] rounded-full -translate-x-1/2 translate-y-1/2 pointer-events-none" />
+        {/* 1. STRATEGIC HERO SECTION */}
+        <section className="relative pt-32 pb-16 lg:pt-48 lg:pb-32 overflow-hidden bg-black">
+          {/* Background Video */}
+          <div className="absolute inset-0 z-0 overflow-hidden">
+            <video 
+              src="/assets/pages/landing1/landing.mp4" 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              className="w-full h-full object-cover opacity-60"
+            />
+            {/* Dynamic Overlay for Contrast */}
+            <div className="absolute inset-0 bg-[#0b2117]/60" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0b2117]/20 via-transparent to-[#0b2117]" />
           </div>
 
-          <div className="w-full relative z-10 flex flex-col items-center text-center mt-12 mb-12">
-            <motion.h1
-              initial={{ opacity: 0, y: 40 }}
+          {/* Background Aura */}
+          <div className="absolute top-0 right-0 w-[70vw] h-[70vw] bg-[#caf265]/5 blur-[180px] rounded-full translate-x-1/4 -translate-y-1/4 pointer-events-none" />
+
+          <div className="w-full relative z-10 flex flex-col items-center text-center">
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-              className="max-w-[1400px] px-6 md:px-16 lg:px-24 text-5xl md:text-7xl lg:text-[7rem] font-display font-normal text-[#F4EFE6] leading-[1.05] tracking-tight mb-8"
+              transition={{ duration: 0.6 }}
+              className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[#caf265]/20 bg-[#caf265]/5 backdrop-blur-md mb-8"
             >
-              Her işiniz <br />
-              <span className="italic text-white">tek çatı altında!</span>
+              <span className="text-[#caf265] text-xs font-bold uppercase tracking-[0.2em]">Sonuç Odaklı Dijital Dönüşüm</span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="max-w-[1400px] px-6 md:px-16 lg:px-24 text-5xl md:text-7xl lg:text-[6.5rem] font-display font-medium leading-[1.05] tracking-tight mb-10 text-white"
+            >
+              AI Prodüksiyon ile <br />
+              <span className="italic text-[#caf265] font-serif underline decoration-white/10 underline-offset-8">Maliyetleri %70 Düşürün.</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="max-w-4xl px-6 md:px-16 text-xl md:text-2xl text-[#a8b8af] font-light mb-12"
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="max-w-3xl px-6 text-xl md:text-2xl text-[#a8b8af] font-light mb-16 leading-relaxed"
             >
-              Dağınık ajanslar, karmaşık süreçler ve belirsiz maliyetlere son. Tasarım, yazılım, yapay zeka ve dijital pazarlama... İhtiyacınız olan her şey PikselAI'da.
+              Geleneksel ajans karmaşasına son. Yapay zeka destekli üretim ve profesyonel medya yönetimi ile markanızı tek çatı altında geleceğe taşıyoruz.
             </motion.p>
-
-            <HeroAlternatives />
+            
+            {/* The Integrated Service Pillar Component */}
+            <div className="w-full mb-20">
+              <HeroAlternatives />
+            </div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="flex flex-col sm:flex-row gap-6 items-center w-full sm:w-auto px-6"
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="flex flex-col sm:flex-row gap-6 items-center px-6"
             >
-              <button
+              <button 
                 onClick={() => navigate('/iletisim')}
-                className="w-full sm:w-auto px-10 py-5 bg-[#caf265] hover:bg-white text-[#0b2117] rounded-full text-lg font-bold transition-all flex items-center justify-center gap-3 transition-colors duration-300"
+                className="w-full sm:w-auto px-12 py-6 bg-[#caf265] hover:bg-white text-[#0b2117] rounded-full text-xl font-bold transition-all flex items-center justify-center gap-3 shadow-[0_0_40px_rgba(202,242,101,0.2)]"
               >
-                Bizimle Tanışın
-                <ArrowRight size={20} />
-              </button>
-              <button
-                onClick={() => {
-                  const el = document.getElementById('services');
-                  el?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="w-full sm:w-auto px-10 py-5 border border-white/20 hover:border-white text-white rounded-full text-lg font-medium transition-all flex items-center justify-center gap-3 transition-colors duration-300"
-              >
-                Hizmetlerimizi İncele
+                Ücretsiz Strateji Analizi AI
+                <ArrowRight size={22} />
               </button>
             </motion.div>
           </div>
         </section>
 
-        {/* 1.5. SUB HERO SECTION */}
-        <section className={`relative flex items-center justify-center py-20 lg:py-32 ${colors.darkGreen} overflow-hidden border-t border-white/10`}>
-          <div className="absolute inset-0 z-0 bg-black">
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={heroIndex}
-                src={HERO_IMAGES[heroIndex]}
-                initial={{ opacity: 0, scale: 1.05 }}
-                animate={{ opacity: 0.5, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 1.5, ease: "easeInOut" }}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-            </AnimatePresence>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0b2117] via-[#0b2117]/60 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0b2117] via-transparent to-transparent opacity-80" />
-            <div className="absolute inset-0 bg-[#0b2117]/40 pointer-events-none" />
-          </div>
-
-          <div className="max-w-[1400px] w-full mx-auto px-6 md:px-16 lg:px-24 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-24">
-
-            <div className="flex-1 text-left w-full">
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8">
-                <Sparkles size={16} className="text-[#caf265]" />
-                <span className="text-[#a8b8af] text-xs font-bold uppercase tracking-widest">YENİ NESİL AJANS DENEYİMİ</span>
-              </motion.div>
-
-              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }} className="text-[3.5rem] md:text-7xl lg:text-[7rem] font-display font-normal text-[#F4EFE6] leading-[1.05] tracking-tight mb-8">
-                Stüdyo Yok. <br />
-                <span className="italic text-[#caf265]">Sınır Yok.</span>
-              </motion.h1>
-
-              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="text-xl md:text-2xl text-white/80 max-w-xl font-light mb-12 leading-relaxed">
-                Yapay zeka devrimiyle fiziksel prodüksiyonun yüksek maliyetlerini ortadan kaldırın. Moda markanız için tek çatı altında sınırsız görsel üretim.
-              </motion.p>
-
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex flex-col sm:flex-row gap-6 items-center w-full sm:w-auto">
-                <button onClick={() => navigate('/iletisim')} className="w-full sm:w-auto px-10 py-5 bg-[#caf265] hover:bg-white text-[#0b2117] rounded-full text-lg font-bold flex items-center justify-center gap-3 transition-colors duration-300 shadow-[0_0_30px_rgba(202,242,101,0.2)]">
-                  Demoyu Başlat <ArrowRight size={20} />
-                </button>
-                <div className="flex items-center justify-center gap-3 text-white/60 text-sm font-medium">
-                  <span className="w-2 h-2 rounded-full bg-[#caf265] animate-pulse"></span>
-                  Hemen Teslimata Hazır
-                </div>
-              </motion.div>
+        {/* 2. LOGO CLOUD (TRUST BAR) */}
+        <section className="py-20 border-y border-white/5 bg-white/[0.01]">
+          <div className="max-w-[1400px] mx-auto px-6">
+            <p className="text-center text-[#a8b8af] text-sm uppercase tracking-[0.4em] mb-12 font-medium opacity-60">Güvenen Markalar & Partnerler</p>
+            <div className="flex flex-wrap justify-center gap-12 md:gap-24 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
+               {['CAZADOR', 'VENÜS AYAKKABI', 'CAMP AND MAP'].map((brand) => (
+                 <span key={brand} className="text-2xl md:text-4xl font-display font-black tracking-tighter text-white">{brand}</span>
+               ))}
             </div>
-
-            <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.4 }} className="hidden lg:block relative w-full lg:w-[450px] xl:w-[500px] aspect-[4/5] rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl p-2 bg-white/5 backdrop-blur-xl shrink-0">
-              <div className="w-full h-full rounded-[2.5rem] overflow-hidden relative">
-                <AnimatePresence mode="wait">
-                  <motion.img
-                    key={heroIndex}
-                    src={HERO_IMAGES[heroIndex]}
-                    initial={{ opacity: 0, scale: 1.1 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 1.2 }}
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                </AnimatePresence>
-              </div>
-              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-black/60 backdrop-blur-md border border-white/10 flex items-center justify-center shadow-lg">
-                <span className="text-white/90 text-xs tracking-widest font-bold uppercase drop-shadow-md">✨ PikselAI ile Üretildi</span>
-              </div>
-            </motion.div>
           </div>
         </section>
-
-        {/* 2. MARKA LOGOLARI MARQUEE (Geçici Olarak Gizlendi) */}
-        {false && (
-          <section className={`py-10 bg-black/40 border-y ${colors.borderColorDark} overflow-hidden relative z-10`}>
-            <div className="max-w-[1400px] mx-auto flex gap-4 mask-fade relative">
-              <motion.div
-                animate={{ x: [0, -1500] }}
-                transition={{ duration: 30, ease: "linear", repeat: Infinity }}
-                className="flex flex-nowrap items-center gap-20 md:gap-32 shrink-0"
-              >
-                {[...BRAND_LOGOS, ...BRAND_LOGOS, ...BRAND_LOGOS, ...BRAND_LOGOS, ...BRAND_LOGOS, ...BRAND_LOGOS].map((logo, i) => (
-                  <img key={i} src={logo} alt="Marka Logo" className="h-10 md:h-14 object-contain opacity-50 hover:opacity-100 transition-opacity duration-500 grayscale hover:grayscale-0" />
-                ))}
-              </motion.div>
-            </div>
-          </section>
-        )}
 
         {/* 3. DEĞER ÖNERİSİ & SAYAÇLAR */}
         <section className={`py-20 md:py-32 border-b border-[#0b2117]/10 bg-[#F4EFE6] relative transition-colors`}>
@@ -1022,7 +938,7 @@ const Home = () => {
                   </div>
                   <div className="col-span-1 row-span-2 rounded-xl overflow-hidden bg-[#1e3b2b]">
                     <video
-                      src="/sosyal_medya_resimler/video/end_product.mp4"
+                      src="/assets/common/end_product.mp4"
                       autoPlay
                       loop
                       muted

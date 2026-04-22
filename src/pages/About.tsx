@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Zap, Sparkles, CircleDollarSign, ArrowRight } from 'lucide-react';
+import { ArrowRight, Zap, Eye, HandHeart, Lightbulb, TrendingUp, Users } from 'lucide-react';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
 
@@ -11,145 +11,256 @@ const About = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    // Superside Renk Paleti
-    const colors = {
-        beige: "bg-[#F4EFE6]",
-        darkGreen: "bg-[#0b2117]",
-        limeBtn: "bg-[#caf265]",
-        textDark: "text-[#0b2117]",
-        textLight: "text-[#F4EFE6]",
-        borderColor: "border-[#e0dcd3]",
-        borderColorDark: "border-[#1e3b2b]"
-    };
-
     return (
-        <div className={`font-sans ${colors.beige} ${colors.textDark} min-h-screen selection:bg-[#caf265] selection:text-[#0b2117]`}>
+        <div className="font-sans bg-[#F4EFE6] text-[#0b2117] min-h-screen selection:bg-[#caf265] selection:text-[#0b2117]">
             {/* Header */}
-            <div className={`${colors.darkGreen}`}>
+            <div className="bg-[#0b2117]">
                 <Header />
             </div>
 
             <main>
-                {/* Hero */}
-                <section className={`pt-32 pb-20 md:pt-44 md:pb-28 ${colors.darkGreen} px-6 md:px-16 lg:px-24`}>
-                    <div className="max-w-7xl mx-auto">
-                        <div className="max-w-3xl">
+                {/* ═══════════════ HERO ═══════════════ */}
+                <section className="pt-32 pb-24 md:pt-44 md:pb-36 bg-[#0b2117] px-6 md:px-16 lg:px-24 relative overflow-hidden">
+                    {/* Arka plan parıltıları */}
+                    <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#caf265]/8 blur-[180px] rounded-full pointer-events-none" />
+                    <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-[#caf265]/5 blur-[120px] rounded-full pointer-events-none" />
+
+                    <div className="max-w-7xl mx-auto relative z-10">
+                        <div className="max-w-4xl">
                             <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#caf265] block mb-6">Hakkımızda</span>
-                            <h1 className="text-5xl md:text-7xl font-bold font-display leading-tight tracking-tight text-[#F4EFE6] mb-6">
-                                Biz <span className="italic font-light text-[#caf265]">fotoğrafçı</span> değiliz. <br />
-                                <span className="italic font-light text-[#caf265]">Teknoloji ortağınızız.</span>
+                            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold font-display leading-[1.05] tracking-tight text-[#F4EFE6] mb-8">
+                                Markanızı <br className="hidden md:block" />
+                                <span className="italic font-light text-[#caf265]">gözle görülür</span> yapıyoruz.
                             </h1>
-                            <p className="text-lg md:text-xl font-light text-[#F4EFE6]/80 max-w-xl leading-relaxed">
-                                Geleneksel ajanslardaki fiziksel stüdyo, manken ve ekip ihtiyacını ortadan kaldırıyoruz.
-                                Yapay zeka ile dünyanın en hızlı ve ekonomik görsel üretim hattını işletiyoruz.
+                            <p className="text-xl md:text-2xl font-light text-[#F4EFE6]/75 max-w-2xl leading-relaxed">
+                                Stüdyo yok. Fiziksel set yok. Haftalarca bekleme yok.
+                                Sadece yapay zeka, yaratıcılık ve ürünlerinizi parlatma tutkusu var.
                             </p>
                         </div>
                     </div>
                 </section>
 
-                {/* Story */}
-                <section className={`py-24 ${colors.beige} border-b ${colors.borderColor} px-6 md:px-16 lg:px-24`}>
+                {/* ═══════════════ MANİFESTO ═══════════════ */}
+                <section className="py-28 bg-[#F4EFE6] border-b border-[#e0dcd3] px-6 md:px-16 lg:px-24">
                     <div className="max-w-7xl mx-auto">
-                        <div className="grid md:grid-cols-2 gap-16 items-center">
-                            <div>
-                                <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#0b2117]/60 block mb-4">Hikayemiz</span>
-                                <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-[#0b2117] mb-6">
-                                    Neden <span className="italic font-light text-[#86AA00]">PikselAI?</span>
+                        <div className="grid lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+                            {/* Sol: Başlık */}
+                            <div className="lg:col-span-4 lg:sticky lg:top-32">
+                                <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#0b2117]/50 block mb-4">Hikayemiz</span>
+                                <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-[#0b2117]">
+                                    Her şey bir <span className="italic font-light text-[#86AA00]">soruyla</span> başladı.
                                 </h2>
-                                <div className="space-y-4 text-lg md:text-xl font-light text-[#3a5245] leading-relaxed">
-                                    <p>
-                                        E-ticaret sektöründe yıllardır gördüğümüz sorunu çözüyoruz: yüksek maliyetli, yavaş ve ölçeklenemeyen görsel üretim süreçleri.
-                                    </p>
-                                    <p>
-                                        Fiziksel stüdyo kurmak, ışık ayarlamak, manken tutmak — tüm bunlar zaman ve para. Bir ürünün kargosundan veya tek bir amatör kareden "High-End" moda çekimi yapabilecek teknolojiyi geliştirdik.
-                                    </p>
-                                    <p>
-                                        Siteyi kurup bırakmıyoruz. İçini AI ile saniyeler içinde binlerce benzersiz içerik ve görselle dolduruyoruz.
-                                        İşin "nasıl yapılacağını" değil, "yapılmış halini" sunuyoruz — hem de çok daha ekonomik.
-                                    </p>
-                                </div>
                             </div>
 
-                            <div className="rounded-3xl overflow-hidden aspect-square bg-[#0b2117]/10">
-                                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80" alt="PikselAI Team" className="w-full h-full object-cover" />
+                            {/* Sağ: Hikaye metni */}
+                            <div className="lg:col-span-8 space-y-8 text-lg md:text-xl font-light text-[#3a5245] leading-relaxed">
+                                <p className="text-2xl md:text-3xl font-normal text-[#0b2117] leading-snug">
+                                    "Bir e-ticaret markasının profesyonel görsellere ulaşması neden bu kadar zor, 
+                                    bu kadar pahalı ve bu kadar yavaş?"
+                                </p>
+
+                                <p>
+                                    Yıllardır dijital dünyada çalışıyoruz. Ve şunu net gördük: küçük-orta 
+                                    ölçekli markalar aynı tuzağa düşüyor. Ürünü harika, hikayesi güçlü 
+                                    ama görselleri o hikayeyi anlatamıyor. Çünkü profesyonel bir çekim 
+                                    için stüdyo kirala, manken bul, fotoğrafçı ayarla, post-prodüksiyon yaptır… 
+                                    Haftalar geçiyor, bütçe eriyor.
+                                </p>
+
+                                <p>
+                                    Biz dedik ki: <strong>"Bu döngüyü kıralım."</strong>
+                                </p>
+
+                                <p>
+                                    PikselAI olarak yapay zekayı bir araç değil, bir <em>yaratıcı ortak</em> olarak 
+                                    kullanıyoruz. Ürününüzün tek bir fotoğrafını alıyoruz — bazen kargoya 
+                                    koymadan önceki bir kareyi bile — ve onu profesyonel stüdyo kalitesinde 
+                                    görselere, sanal manken üzerinde moda çekimlerine, sosyal medya içeriklerine 
+                                    dönüştürüyoruz. Saatler içinde. Bütçenizin bir kısmıyla.
+                                </p>
+
+                                <p>
+                                    Ama sadece "güzel fotoğraf üretiyoruz" demek eksik kalır. Biz markanızın 
+                                    dijital varlığını baştan sona inşa ediyoruz: e-ticaret altyapısından sosyal 
+                                    medya yönetimine, marka kimliğinden performans pazarlamasına kadar.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* Competitive Advantage */}
-                <section className={`py-24 ${colors.darkGreen} border-b ${colors.borderColorDark} px-6 md:px-16 lg:px-24`}>
+                {/* ═══════════════ YAKLAŞIMIMIZ — 3 SÜTUN ═══════════════ */}
+                <section className="py-28 bg-[#0b2117] px-6 md:px-16 lg:px-24">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="text-center mb-20">
+                            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#caf265]/70 block mb-4">Yaklaşımımız</span>
+                            <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-[#F4EFE6]">
+                                Neden <span className="italic font-light text-[#caf265]">farklıyız?</span>
+                            </h2>
+                            <p className="text-lg text-[#a8b8af] max-w-2xl mx-auto mt-6 font-light leading-relaxed">
+                                Geleneksel ajansların yaptığını yapay zekayla birleştiriyoruz — ama asıl farkımız 
+                                teknolojide değil, bakış açımızda.
+                            </p>
+                        </div>
+
+                        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+                            <ApproachCard
+                                icon={<Eye className="w-7 h-7" />}
+                                title="Sonucu Teslim Ediyoruz"
+                                description="Size 'nasıl yapılacağını' anlatmıyoruz. Yapılmış, kullanıma hazır sonucu sunuyoruz. Ürün görseli mi? Hazır. Sosyal medya takvimi mi? Dolu. E-ticaret sitesi mi? Açık ve çalışıyor."
+                            />
+                            <ApproachCard
+                                icon={<Lightbulb className="w-7 h-7" />}
+                                title="Teknolojiyi İnsanlaştırıyoruz"
+                                description="Yapay zeka tek başına yeterli değil. Her görseli, her stratejiyi insan gözüyle kontrol ediyoruz. AI üretir, biz kusursuzlaştırırız. Sonuç: 'Gerçek çekim mi bu?' dedirten görseller."
+                            />
+                            <ApproachCard
+                                icon={<TrendingUp className="w-7 h-7" />}
+                                title="Birlikte Büyüyoruz"
+                                description="Tek seferlik iş yapmıyoruz. Markanız büyüdükçe hizmetlerimiz de ölçekleniyor. Bugün 10 ürün görseli, yarın 10.000 — aynı kalite, aynı hız, aynı maliyet avantajıyla."
+                            />
+                        </div>
+                    </div>
+                </section>
+
+                {/* ═══════════════ RAKAMLARLA BİZ ═══════════════ */}
+                <section className="py-24 bg-[#F4EFE6] border-b border-[#e0dcd3] px-6 md:px-16 lg:px-24">
                     <div className="max-w-7xl mx-auto">
                         <div className="text-center mb-16">
+                            <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-[#0b2117]">
+                                Rakamlarla <span className="italic font-light text-[#86AA00]">PikselAI</span>
+                            </h2>
+                        </div>
+
+                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                            <StatBlock value="%80" label="Maliyet Tasarrufu" subtitle="Geleneksel çekime kıyasla" />
+                            <StatBlock value="24s" label="Ortalama Teslim" subtitle="Saatler içinde, haftalar değil" />
+                            <StatBlock value="∞" label="Sınırsız Versiyon" subtitle="Tek üründen sınırsız sahne" />
+                            <StatBlock value="4+" label="Hizmet Alanı" subtitle="AI, E-Ticaret, Sosyal, Tasarım" />
+                        </div>
+                    </div>
+                </section>
+
+                {/* ═══════════════ DEĞERLERİMİZ ═══════════════ */}
+                <section className="py-28 bg-[#F4EFE6] px-6 md:px-16 lg:px-24">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="grid lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+                            {/* Sol: Başlık */}
+                            <div className="lg:col-span-4">
+                                <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#0b2117]/50 block mb-4">Değerlerimiz</span>
+                                <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-[#0b2117] mb-6">
+                                    Neye <span className="italic font-light text-[#86AA00]">inanıyoruz?</span>
+                                </h2>
+                                <p className="text-lg font-light text-[#3a5245] leading-relaxed">
+                                    Güzel görseller üretmek kolay. Asıl zor olan, her seferinde aynı özenle, 
+                                    aynı tutarlılıkla ve müşterimizin hikayesine sadık kalarak bunu yapmak.
+                                </p>
+                            </div>
+
+                            {/* Sağ: Değer kartları */}
+                            <div className="lg:col-span-8 space-y-6">
+                                <ValueCard
+                                    icon={<Zap className="w-6 h-6" />}
+                                    title="Hız, ama acelecilik değil"
+                                    description="Saatler içinde teslim ediyoruz ama 'çabuk olsun da nasıl olursa olsun' demiyoruz. Her pikseli kontrol ediyor, kaliteyi asla hıza feda etmiyoruz. Hızlı oluyoruz çünkü süreçlerimiz akıllı."
+                                />
+                                <ValueCard
+                                    icon={<HandHeart className="w-6 h-6" />}
+                                    title="Dürüst iletişim"
+                                    description="Yapamayacağımız şeyi söz vermiyoruz. İhtiyacınız olmayan hizmeti satmıyoruz. 'Bu sizin için uygun değil' diyebilecek kadar rahatız — çünkü amacımız tek seferlik satış değil, uzun vadeli ortaklık."
+                                />
+                                <ValueCard
+                                    icon={<Users className="w-6 h-6" />}
+                                    title="Erişilebilir profesyonellik"
+                                    description="Kurumsal markaların kullandığı teknoloji ve kaliteyi, butik markalara ve girişimcilere de sunuyoruz. Premium görsel üretim artık sadece büyük bütçelerin ayrıcalığı değil."
+                                />
+                                <ValueCard
+                                    icon={<Lightbulb className="w-6 h-6" />}
+                                    title="Sürekli öğrenme"
+                                    description="AI teknolojisi her gün değişiyor ve biz de onunla birlikte gelişiyoruz. Dünün yöntemlerine takılıp kalmıyoruz. Her projede bir öncekinden daha iyisini hedefliyoruz."
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* ═══════════════ KİMLER İÇİN ═══════════════ */}
+                <section className="py-28 bg-[#0b2117] px-6 md:px-16 lg:px-24">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="text-center mb-16">
+                            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#caf265]/70 block mb-4">Hedef Kitlemiz</span>
                             <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-[#F4EFE6] mb-6">
-                                Biz ne <span className="italic font-light text-[#caf265]">farklı yapıyoruz?</span>
+                                Kimlerle <span className="italic font-light text-[#caf265]">çalışıyoruz?</span>
                             </h2>
+                            <p className="text-lg text-[#a8b8af] max-w-2xl mx-auto font-light leading-relaxed">
+                                Ortak noktaları aynı: harika ürünleri var ama görsellerle anlatamıyorlar.
+                            </p>
                         </div>
 
-                        <div className="max-w-5xl mx-auto">
-                            <div className="grid md:grid-cols-2 gap-8">
-                                <CompetitorCard
-                                    rival="Star İstanbul & Edil Ajans"
-                                    rivalDesc="Geleneksel fotoğrafçılık, katalog ve matbaa/baskı"
-                                    advantage="Ürünü kargolamadan veya tek bir amatör kareyle 'High-End' moda çekimi yapabilirsiniz."
-                                />
-                                <CompetitorCard
-                                    rival="Qreate & Alis Dijital"
-                                    rivalDesc="Shopify ve E-ticaret altyapısı kurma"
-                                    advantage="Siteyi kurmakla kalmayıp, içini AI ile saniyeler içinde binlerce benzersiz içerik ve görselle dolduruyoruz."
-                                />
-                                <CompetitorCard
-                                    rival="Roible & SEO Ajansları"
-                                    rivalDesc="SEO ve yerel pazarlama"
-                                    advantage="Programatik SEO ile binlerce long-tail kelime için otomatik sayfalar oluşturuyoruz."
-                                />
-                                <CompetitorCard
-                                    rival="Bossy & SmartKid"
-                                    rivalDesc="Performans pazarlaması ve marka yaratma"
-                                    advantage="Ürünü daha üretilmeden, AI ile reklam görselleri sunarak ön satış yapmanızı sağlıyoruz."
-                                />
-                            </div>
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <AudienceCard
+                                emoji="👗"
+                                title="Moda & Tekstil Markaları"
+                                description="Koleksiyonunuzu stüdyo kurmadan, manken tutmadan profesyonel moda çekimlerine dönüştürüyoruz."
+                            />
+                            <AudienceCard
+                                emoji="🛒"
+                                title="E-Ticaret Girişimcileri"
+                                description="Mağazanızı kuruyor, görselleri üretiyor ve satışa hazır hale getiriyoruz — uçtan uca."
+                            />
+                            <AudienceCard
+                                emoji="🏢"
+                                title="KOBİ & Butik Markalar"
+                                description="Kurumsal kalitede dijital varlık oluşturuyoruz, KOBİ bütçesiyle."
+                            />
+                            <AudienceCard
+                                emoji="🚀"
+                                title="Startup & Yeni Markalar"
+                                description="Henüz piyasaya çıkmamış ürünler için bile görsel ve içerik üretiyoruz. Lansmandan önce hazır olun."
+                            />
+                            <AudienceCard
+                                emoji="🍽️"
+                                title="Yiyecek & İçecek Markaları"
+                                description="Ürünlerinizi iştah açıcı sahnelerde, farklı konseptlerde sınırsız versiyonla sunuyoruz."
+                            />
+                            <AudienceCard
+                                emoji="💄"
+                                title="Kozmetik & Güzellik"
+                                description="Ürünlerinizi premium kampanya görsellerine dönüştürüyoruz — lüks marka estetiğiyle."
+                            />
                         </div>
                     </div>
                 </section>
 
-                {/* Values */}
-                <section className={`py-24 ${colors.beige} px-6 md:px-16 lg:px-24`}>
-                    <div className="max-w-7xl mx-auto">
-                        <div className="text-center mb-16">
-                            <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-[#0b2117] mb-6">
-                                <span className="italic font-light text-[#86AA00]">Değerlerimiz</span>
+                {/* ═══════════════ CTA ═══════════════ */}
+                <section className="py-24 bg-[#F4EFE6] px-6 md:px-16 lg:px-24 mb-1">
+                    <div className="max-w-7xl mx-auto bg-[#0b2117] rounded-[3rem] p-10 md:p-24 relative overflow-hidden">
+                        {/* Parıltı efektleri */}
+                        <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#caf265]/10 blur-[120px] rounded-full" />
+                        <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-[#caf265]/5 blur-[80px] rounded-full" />
+
+                        <div className="relative z-10 max-w-2xl text-center mx-auto">
+                            <h2 className="text-4xl lg:text-6xl font-bold font-display leading-tight tracking-tight text-[#F4EFE6] mb-6">
+                                Ürünleriniz bu kadar iyiyse, <span className="italic font-light text-[#caf265]">görselleri de öyle olmalı.</span>
                             </h2>
-                        </div>
+                            <p className="text-[#a8b8af] mb-10 text-lg font-light leading-relaxed">
+                                Ücretsiz demo ile AI görsel üretiminin farkını kendi ürününüzde görün. 
+                                Hiçbir taahhüt yok — sadece sonucu beğenin.
+                            </p>
 
-                        <div className="grid md:grid-cols-3 gap-8">
-                            <ValueBlock title="Hız" description="Haftalar değil, saatler içinde teslim. Müşterilerimiz zamanı geri kazanır." icon={<Zap className="w-10 h-10 text-[#0b2117]" />} />
-                            <ValueBlock title="Kalite" description="Fiziksel çekimden ayırt edilemeyen gerçekçilik. Her piksel mükemmellik için optimize." icon={<Sparkles className="w-10 h-10 text-[#0b2117]" />} />
-                            <ValueBlock title="Maliyet Avantajı" description="%80'e varan tasarruf. Kurumsal bütçe değil, akıllı bütçe." icon={<CircleDollarSign className="w-10 h-10 text-[#0b2117]" />} />
-                        </div>
-                    </div>
-                </section>
-
-                {/* CTA */}
-                <section className={`py-24 ${colors.beige} px-6 md:px-16 lg:px-24 mb-1`}>
-                    <div className="max-w-7xl mx-auto bg-[#0b2117] rounded-[3rem] p-10 md:p-24 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12">
-                        {/* Soft Glow Effect */}
-                        <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#caf265]/10 blur-[120px] rounded-full"></div>
-                        <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-[#caf265]/5 blur-[80px] rounded-full"></div>
-
-                        <div className="relative z-10 max-w-xl text-center md:text-left mx-auto md:mx-0">
-                            <h2 className="text-4xl lg:text-6xl font-bold font-display leading-tight tracking-tight text-[#F4EFE6] mb-8">
-                                "Bu adamlar <span className="italic font-light text-[#caf265]">geleceği getirmiş</span>" deyin
-                            </h2>
-                            <p className="text-[#a8b8af] mb-10 text-lg">Ücretsiz demo ile farkı görün.</p>
-                            
-                            <div className="flex justify-center md:justify-start">
-                                <button 
+                            <div className="flex flex-col sm:flex-row justify-center gap-4">
+                                <button
                                     onClick={() => navigate('/iletisim')}
-                                    className="bg-[#caf265] text-[#0b2117] hover:bg-[#b5dc57] transition-all duration-300 rounded-full px-10 py-5 text-lg font-bold flex items-center gap-3 group"
+                                    className="bg-[#caf265] text-[#0b2117] hover:bg-[#b5dc57] transition-all duration-300 rounded-full px-10 py-5 text-lg font-bold flex items-center justify-center gap-3 group"
                                 >
-                                    Demo Talep Et
+                                    Ücretsiz Demo Talep Et
                                     <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+                                </button>
+                                <button
+                                    onClick={() => navigate('/islerimiz')}
+                                    className="border border-white/20 text-[#F4EFE6] hover:border-[#caf265]/50 hover:text-[#caf265] transition-all duration-300 rounded-full px-10 py-5 text-lg font-medium"
+                                >
+                                    İşlerimizi İncele
                                 </button>
                             </div>
                         </div>
@@ -157,34 +268,61 @@ const About = () => {
                 </section>
             </main>
 
-            <div className={`${colors.darkGreen}`}>
+            <div className="bg-[#0b2117]">
                 <Footer />
             </div>
         </div>
     );
 };
 
-function CompetitorCard({ rival, rivalDesc, advantage }: { rival: string; rivalDesc: string; advantage: string }) {
+// ─── Alt Bileşenler ───
+
+// Yaklaşım kartı (koyu arka plan üzerinde)
+function ApproachCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
     return (
-        <div className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-[#caf265]/30 transition-colors duration-300">
-            <div className="mb-4">
-                <h4 className="text-lg font-bold text-[#F4EFE6]">{rival}</h4>
-                <p className="text-sm text-[#F4EFE6]/60">{rivalDesc}</p>
+        <div className="p-8 lg:p-10 rounded-3xl bg-white/[0.04] border border-white/10 hover:border-[#caf265]/25 transition-all duration-300 group">
+            <div className="w-14 h-14 rounded-2xl bg-[#caf265]/10 text-[#caf265] flex items-center justify-center mb-6 group-hover:bg-[#caf265]/20 transition-colors">
+                {icon}
             </div>
-            <div className="pt-4 border-t border-white/10">
-                <span className="text-xs font-bold uppercase tracking-widest text-[#caf265] block mb-2">PikselAI Farkı</span>
-                <p className="text-[#F4EFE6]/90 text-lg font-light leading-relaxed">{advantage}</p>
+            <h3 className="text-xl lg:text-2xl font-bold font-display text-[#F4EFE6] mb-4">{title}</h3>
+            <p className="text-[#a8b8af] text-[17px] font-light leading-relaxed">{description}</p>
+        </div>
+    );
+}
+
+// İstatistik bloğu
+function StatBlock({ value, label, subtitle }: { value: string; label: string; subtitle: string }) {
+    return (
+        <div className="text-center p-8 lg:p-10 rounded-3xl bg-white border border-[#e0dcd3] hover:border-[#0b2117]/20 transition-all duration-300 shadow-sm hover:shadow-md">
+            <div className="text-5xl lg:text-6xl font-bold font-display text-[#0b2117] mb-2 tracking-tight">{value}</div>
+            <div className="text-lg font-semibold text-[#0b2117] mb-1">{label}</div>
+            <div className="text-sm text-[#3a5245]/70 font-light">{subtitle}</div>
+        </div>
+    );
+}
+
+// Değer kartı (açık arka plan, yatay düzen)
+function ValueCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
+    return (
+        <div className="flex items-start gap-6 p-8 rounded-2xl bg-white border border-[#e0dcd3] hover:border-[#0b2117]/20 transition-all duration-300 shadow-sm hover:shadow-md group">
+            <div className="w-12 h-12 rounded-xl bg-[#0b2117] text-[#caf265] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                {icon}
+            </div>
+            <div>
+                <h3 className="text-xl font-bold font-display text-[#0b2117] mb-2">{title}</h3>
+                <p className="text-[#3a5245] text-[17px] font-light leading-relaxed">{description}</p>
             </div>
         </div>
     );
 }
 
-function ValueBlock({ title, description, icon }: { title: string; description: string; icon: React.ReactNode }) {
+// Hedef kitle kartı (koyu arka plan)
+function AudienceCard({ emoji, title, description }: { emoji: string; title: string; description: string }) {
     return (
-        <div className="text-center p-8 rounded-3xl border border-[#e0dcd3] bg-white hover:border-[#0b2117]/30 transition-all duration-300 shadow-sm hover:shadow-md">
-            <div className="flex justify-center mb-6">{icon}</div>
-            <h3 className="text-xl lg:text-2xl font-bold font-display text-[#0b2117] mb-3">{title}</h3>
-            <p className="text-[#3a5245] text-lg font-light leading-relaxed">{description}</p>
+        <div className="p-8 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#caf265]/25 transition-all duration-300 group">
+            <div className="text-4xl mb-5">{emoji}</div>
+            <h3 className="text-lg font-bold text-[#F4EFE6] mb-3 group-hover:text-[#caf265] transition-colors">{title}</h3>
+            <p className="text-[#a8b8af] text-[15px] font-light leading-relaxed">{description}</p>
         </div>
     );
 }

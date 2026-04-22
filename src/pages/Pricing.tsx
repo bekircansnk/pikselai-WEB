@@ -30,7 +30,13 @@ const aiPlans = [
         price: '$0.50',
         suffix: '/ görsel',
         description: 'Yapay zekayı düşük riskle denemek isteyen işletmeler için.',
-        features: ['Ayda 200 adet AI fotoğraf', 'Profesyonel prompt altyapısı', 'Katalog ve sosyal medya uyumlu', 'İptal edilebilir üyelik'],
+        features: [
+            'Ayda 200 adete kadar üretim',
+            'Profesyonel prompt altyapısı',
+            'Katalog ve sosyal medya uyumlu',
+            'İptal edilebilir üyelik',
+            'Sadece ürettiğin kadar öde'
+        ],
         cta: 'Paketi Seç'
     },
     {
@@ -38,7 +44,13 @@ const aiPlans = [
         price: '$0.30',
         suffix: '/ görsel',
         description: 'Düzenli içerik üreten markalar için en dengeli paket.',
-        features: ['Ayda 700 adet AI fotoğraf', 'Gelişmiş prompt mühendisliği', 'Tutarlı stil ve görsel bütünlük', 'Öncelikli üretim sırası'],
+        features: [
+            'Ayda 201 - 700 arası üretim',
+            'Gelişmiş prompt mühendisliği',
+            'Tutarlı stil ve görsel bütünlük',
+            'Öncelikli üretim sırası',
+            'Sadece ürettiğin kadar öde'
+        ],
         cta: 'En Popüler Paketi Seç',
         featured: true
     },
@@ -47,7 +59,13 @@ const aiPlans = [
         price: '$0.25',
         suffix: '/ görsel',
         description: 'Yüksek hacimli, sürekli görsel üretimi yapan markalar için.',
-        features: ['Ayda 1.400 adet AI fotoğraf', 'Gelişmiş prompt + sahne varyasyonları', 'Büyük kataloglar için uygun', 'Öncelikli destek'],
+        features: [
+            'Ayda 700+ üzeri hacimli üretim',
+            'Gelişmiş prompt + sahne varyasyonları',
+            'Büyük kataloglar için uygun',
+            'Öncelikli destek',
+            'Sadece ürettiğin kadar öde'
+        ],
         cta: 'Profesyonel Paketi Seç'
     }
 ];

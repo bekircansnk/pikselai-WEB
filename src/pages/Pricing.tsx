@@ -32,7 +32,6 @@ const aiPlans = [
         description: 'Yapay zekayı düşük riskle denemek isteyen işletmeler için.',
         features: [
             'Ayda 200 adete kadar üretim',
-            'Profesyonel prompt altyapısı',
             'Katalog ve sosyal medya uyumlu',
             'İptal edilebilir üyelik',
             'Sadece ürettiğin kadar öde'
@@ -171,9 +170,14 @@ const Pricing = () => {
                                 className="flex flex-col gap-10"
                             >
                                 <div className="flex flex-col items-center mb-10">
-                                    <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-bor-primary-900 dark:bg-white text-white dark:text-bor-primary-900 text-sm font-medium shadow-md transition-transform hover:scale-105 duration-300 text-center flex-wrap justify-center">
-                                        <span className="text-bor-secondary">✨ Fırsat:</span> 
-                                        Markanıza özel AI model eğitimi (Tek seferlik <span className="line-through opacity-60 mx-1">$49</span>) şu an <strong className="text-bor-secondary ml-1">ÜCRETSİZ</strong>
+                                    <div className="inline-flex items-center gap-3 px-2 py-1.5 pr-5 rounded-full bg-white dark:bg-bor-primary-900/50 border border-bor-secondary/30 shadow-sm text-sm font-medium transition-all hover:border-bor-secondary/60 duration-300 text-center flex-wrap justify-center text-bor-primary-900 dark:text-white">
+                                        <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-bor-secondary text-bor-primary-900 text-xs font-bold tracking-wide uppercase">
+                                            <span className="h-1.5 w-1.5 rounded-full bg-bor-primary-900 animate-pulse"></span>
+                                            Kampanya
+                                        </span> 
+                                        <span>
+                                            Markanıza özel AI model eğitimi (Tek seferlik <span className="line-through opacity-50 mx-1">$49</span>) şu an <strong className="text-bor-secondary">ÜCRETSİZ</strong>
+                                        </span>
                                     </div>
                                     <p className="mt-4 text-sm text-bor-primary-500 dark:text-bor-primary-400 max-w-xl text-center leading-relaxed">
                                         Ürünlerinizin marka kimliğine ve DNA'sına uygun olarak yapay zekaya öğretilmesi işlemi kısa bir süreliğine ücretsizdir. <br className="hidden md:block" />

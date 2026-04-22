@@ -17,11 +17,18 @@ const colors = {
 import { ASSET_DATA } from '../data/assetData';
 
 // --- DATA ---
+const INITIAL_HERO_IMAGES = ASSET_DATA.pages.homeyeni.banner;
 
+const shuffleArray = (array: string[]) => {
+  let newArr = [...array];
+  for (let i = newArr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
+  }
+  return newArr;
+};
 
-
-
-
+const HERO_IMAGES = shuffleArray(INITIAL_HERO_IMAGES);
 
 const GHOST_PAIRS = ASSET_DATA.pages.homeyeni.hayalet_oncesi_sonrasi
   .filter((path: string) => path.endsWith('__1.webp'))
@@ -51,7 +58,12 @@ const SUREC_PAIRS = ASSET_DATA.pages.homeyeni.surec_isleme
     after: path.replace('__1.webp', '__2.webp')
   }));
 
-
+const BRAND_LOGOS = [
+  "/assets/brands/cazador/cazador_logo.webp",
+  "/assets/brands/venus/venus_logo.webp",
+  "/assets/brands/mina_drinks/minadrinks_logo.webp",
+  "/assets/brands/camp_and_map/campandmap_logo.webp"
+];
 
 const COMPARE_TABS = [
   { id: "ghost", label: "Ghost → E-Ticaret", before: "/assets/pages/homeyeni/hayalet_oncesi_sonrasi/l0000000751458__1.webp", after: "/assets/pages/homeyeni/hayalet_oncesi_sonrasi/l0000000751458__2.webp" },
@@ -292,7 +304,18 @@ const DynamicGridImage = ({ initialSrc, interval }: { initialSrc: string, interv
 
 const Home = () => {
   const navigate = useNavigate();
+  const [heroIndex, setHeroIndex] = useState(() => {
+    if (HERO_IMAGES.length === 0) return 0;
+    const lastItem = sessionStorage.getItem('lastPikselHero');
+    let nextIdx = Math.floor(Math.random() * HERO_IMAGES.length);
 
+    if (lastItem && HERO_IMAGES[nextIdx] === lastItem) {
+      nextIdx = (nextIdx + 1) % HERO_IMAGES.length;
+    }
+
+    sessionStorage.setItem('lastPikselHero', HERO_IMAGES[nextIdx]);
+    return nextIdx;
+  });
   const [processStep, setProcessStep] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
@@ -300,7 +323,13 @@ const Home = () => {
     window.scrollTo(0, 0);
   }, []);
 
-
+  // Hero slideshow interval
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHeroIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
   // Process Interactive Interval & Scroll
   const processRef = useRef<HTMLElement>(null);
@@ -332,7 +361,7 @@ const Home = () => {
     if (processInView && isAutoPlaying && processStep < 2) {
       interval = setInterval(() => {
         setProcessStep(prev => prev >= 2 ? 2 : prev + 1);
-      }, 4000); 
+      }, 4000);
     }
     return () => clearInterval(interval);
   }, [processInView, isAutoPlaying, processStep]);
@@ -344,7 +373,7 @@ const Home = () => {
       if (latest > 0.01 && isAutoPlaying) {
         setIsAutoPlaying(false);
       }
-      
+
       if (!isAutoPlaying) {
         if (latest < 0.33) setProcessStep(0);
         else if (latest < 0.66) setProcessStep(1);
@@ -359,9 +388,8 @@ const Home = () => {
     <MainLayout transparentHeader={true} headerLightText={true}>
       <main className="bg-[#0b2117] min-h-screen font-sans selection:bg-[#caf265] selection:text-[#0b2117]">
 
-        {/* 1. STRATEGIC HERO SECTION */}
-        <section className="relative pt-32 pb-16 lg:pt-48 lg:pb-32 overflow-hidden bg-black">
-          {/* Background Video */}
+        {/* 1. HERO SECTION */}
+        <section className={`relative min-h-[85vh] flex flex-col items-center justify-center pt-32 pb-16 lg:pt-40 lg:pb-32 overflow-hidden`}>
           <div className="absolute inset-0 z-0 overflow-hidden">
             <video 
               src="/assets/pages/landing1/landing.mp4" 
@@ -376,71 +404,138 @@ const Home = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-[#0b2117]/20 via-transparent to-[#0b2117]" />
           </div>
 
-          {/* Background Aura */}
-          <div className="absolute top-0 right-0 w-[70vw] h-[70vw] bg-[#caf265]/5 blur-[180px] rounded-full translate-x-1/4 -translate-y-1/4 pointer-events-none" />
-
-          <div className="w-full relative z-10 flex flex-col items-center text-center">
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[#caf265]/20 bg-[#caf265]/5 backdrop-blur-md mb-8"
-            >
-              <span className="text-[#caf265] text-xs font-bold uppercase tracking-[0.2em]">Sonuç Odaklı Dijital Dönüşüm</span>
-            </motion.div>
-
+          <div className="w-full relative z-10 flex flex-col items-center text-center mt-12 mb-12">
             <motion.h1
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="max-w-[1400px] px-6 md:px-16 lg:px-24 text-5xl md:text-7xl lg:text-[6.5rem] font-display font-medium leading-[1.05] tracking-tight mb-10 text-white"
+              transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+              className="max-w-[1400px] px-6 md:px-16 lg:px-24 text-5xl md:text-7xl lg:text-[7rem] font-display font-normal text-[#F4EFE6] leading-[1.05] tracking-tight mb-8"
             >
-              AI Prodüksiyon ile <br />
-              <span className="italic text-[#caf265] font-serif underline decoration-white/10 underline-offset-8">Maliyetleri %70 Düşürün.</span>
+              Her işiniz <br />
+              <span className="italic text-white">tek çatı altında!</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="max-w-3xl px-6 text-xl md:text-2xl text-[#a8b8af] font-light mb-16 leading-relaxed"
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="max-w-4xl px-6 md:px-16 text-xl md:text-2xl text-[#a8b8af] font-light mb-12"
             >
-              Geleneksel ajans karmaşasına son. Yapay zeka destekli üretim ve profesyonel medya yönetimi ile markanızı tek çatı altında geleceğe taşıyoruz.
+              Dağınık ajanslar, karmaşık süreçler ve belirsiz maliyetlere son. Tasarım, yazılım, yapay zeka ve dijital pazarlama... İhtiyacınız olan her şey PikselAI'da.
             </motion.p>
-            
-            {/* The Integrated Service Pillar Component */}
-            <div className="w-full mb-20">
-              <HeroAlternatives />
-            </div>
+
+            <HeroAlternatives />
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-6 items-center px-6"
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              className="flex flex-col sm:flex-row gap-6 items-center w-full sm:w-auto px-6"
             >
-              <button 
+              <button
                 onClick={() => navigate('/iletisim')}
-                className="w-full sm:w-auto px-12 py-6 bg-[#caf265] hover:bg-white text-[#0b2117] rounded-full text-xl font-bold transition-all flex items-center justify-center gap-3 shadow-[0_0_40px_rgba(202,242,101,0.2)]"
+                className="w-full sm:w-auto px-10 py-5 bg-[#caf265] hover:bg-white text-[#0b2117] rounded-full text-lg font-bold transition-all flex items-center justify-center gap-3 transition-colors duration-300"
               >
-                Ücretsiz Strateji Analizi AI
-                <ArrowRight size={22} />
+                Bizimle Tanışın
+                <ArrowRight size={20} />
+              </button>
+              <button
+                onClick={() => {
+                  const el = document.getElementById('services');
+                  el?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="w-full sm:w-auto px-10 py-5 border border-white/20 hover:border-white text-white rounded-full text-lg font-medium transition-all flex items-center justify-center gap-3 transition-colors duration-300"
+              >
+                Hizmetlerimizi İncele
               </button>
             </motion.div>
           </div>
         </section>
 
-        {/* 2. LOGO CLOUD (TRUST BAR) */}
-        <section className="py-20 border-y border-white/5 bg-white/[0.01]">
-          <div className="max-w-[1400px] mx-auto px-6">
-            <p className="text-center text-[#a8b8af] text-sm uppercase tracking-[0.4em] mb-12 font-medium opacity-60">Güvenen Markalar & Partnerler</p>
-            <div className="flex flex-wrap justify-center gap-12 md:gap-24 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
-               {['CAZADOR', 'VENÜS AYAKKABI', 'CAMP AND MAP'].map((brand) => (
-                 <span key={brand} className="text-2xl md:text-4xl font-display font-black tracking-tighter text-white">{brand}</span>
-               ))}
+        {/* 1.5. SUB HERO SECTION */}
+        <section className={`relative flex items-center justify-center py-20 lg:py-32 ${colors.darkGreen} overflow-hidden border-t border-white/10`}>
+          <div className="absolute inset-0 z-0 bg-black">
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={heroIndex}
+                src={HERO_IMAGES[heroIndex]}
+                initial={{ opacity: 0, scale: 1.05 }}
+                animate={{ opacity: 0.5, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 1.5, ease: "easeInOut" }}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </AnimatePresence>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0b2117] via-[#0b2117]/60 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0b2117] via-transparent to-transparent opacity-80" />
+            <div className="absolute inset-0 bg-[#0b2117]/40 pointer-events-none" />
+          </div>
+
+          <div className="max-w-[1400px] w-full mx-auto px-6 md:px-16 lg:px-24 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-24">
+
+            <div className="flex-1 text-left w-full">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8">
+                <Sparkles size={16} className="text-[#caf265]" />
+                <span className="text-[#a8b8af] text-xs font-bold uppercase tracking-widest">YENİ NESİL AJANS DENEYİMİ</span>
+              </motion.div>
+
+              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }} className="text-[3.5rem] md:text-7xl lg:text-[7rem] font-display font-normal text-[#F4EFE6] leading-[1.05] tracking-tight mb-8">
+                Stüdyo Yok. <br />
+                <span className="italic text-[#caf265]">Sınır Yok.</span>
+              </motion.h1>
+
+              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="text-xl md:text-2xl text-white/80 max-w-xl font-light mb-12 leading-relaxed">
+                Yapay zeka devrimiyle fiziksel prodüksiyonun yüksek maliyetlerini ortadan kaldırın. Moda markanız için tek çatı altında sınırsız görsel üretim.
+              </motion.p>
+
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex flex-col sm:flex-row gap-6 items-center w-full sm:w-auto">
+                <button onClick={() => navigate('/iletisim')} className="w-full sm:w-auto px-10 py-5 bg-[#caf265] hover:bg-white text-[#0b2117] rounded-full text-lg font-bold flex items-center justify-center gap-3 transition-colors duration-300 shadow-[0_0_30px_rgba(202,242,101,0.2)]">
+                  Demoyu Başlat <ArrowRight size={20} />
+                </button>
+                <div className="flex items-center justify-center gap-3 text-white/60 text-sm font-medium">
+                  <span className="w-2 h-2 rounded-full bg-[#caf265] animate-pulse"></span>
+                  Hemen Teslimata Hazır
+                </div>
+              </motion.div>
             </div>
+
+            <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.4 }} className="hidden lg:block relative w-full lg:w-[450px] xl:w-[500px] aspect-[4/5] rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl p-2 bg-white/5 backdrop-blur-xl shrink-0">
+              <div className="w-full h-full rounded-[2.5rem] overflow-hidden relative">
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={heroIndex}
+                    src={HERO_IMAGES[heroIndex]}
+                    initial={{ opacity: 0, scale: 1.1 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 1.2 }}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </AnimatePresence>
+              </div>
+              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-black/60 backdrop-blur-md border border-white/10 flex items-center justify-center shadow-lg">
+                <span className="text-white/90 text-xs tracking-widest font-bold uppercase drop-shadow-md">✨ PikselAI ile Üretildi</span>
+              </div>
+            </motion.div>
           </div>
         </section>
+
+        {/* 2. MARKA LOGOLARI MARQUEE (Geçici Olarak Gizlendi) */}
+        {false && (
+          <section className={`py-10 bg-black/40 border-y ${colors.borderColorDark} overflow-hidden relative z-10`}>
+            <div className="max-w-[1400px] mx-auto flex gap-4 mask-fade relative">
+              <motion.div
+                animate={{ x: [0, -1500] }}
+                transition={{ duration: 30, ease: "linear", repeat: Infinity }}
+                className="flex flex-nowrap items-center gap-20 md:gap-32 shrink-0"
+              >
+                {[...BRAND_LOGOS, ...BRAND_LOGOS, ...BRAND_LOGOS, ...BRAND_LOGOS, ...BRAND_LOGOS, ...BRAND_LOGOS].map((logo, i) => (
+                  <img key={i} src={logo} alt="Marka Logo" className="h-10 md:h-14 object-contain opacity-50 hover:opacity-100 transition-opacity duration-500 grayscale hover:grayscale-0" />
+                ))}
+              </motion.div>
+            </div>
+          </section>
+        )}
 
         {/* 3. DEĞER ÖNERİSİ & SAYAÇLAR */}
         <section className={`py-20 md:py-32 border-b border-[#0b2117]/10 bg-[#F4EFE6] relative transition-colors`}>
@@ -562,7 +657,7 @@ const Home = () => {
         <section ref={processRef} className={`h-[300vh] relative border-b ${colors.borderColorDark}`}>
           <div className="sticky top-0 min-h-[100svh] w-full flex flex-col items-center justify-center overflow-x-hidden bg-[#0b2117] pt-8 pb-8 lg:pt-10 lg:pb-10">
             <div className="max-w-[1300px] w-full mx-auto px-4 md:px-12 flex flex-col justify-center min-h-0">
-              
+
               <div className="text-center mb-4 md:mb-6 shrink-0 mt-0 lg:mt-4">
                 <span className="text-[#caf265] text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1 md:mb-2 block">BASİT VE ETKİLİ</span>
                 <h2 className="text-3xl md:text-5xl lg:text-5xl font-display text-white mb-2 leading-tight">Sürecimiz Nasıl <span className="italic">İşliyor?</span></h2>
@@ -570,13 +665,13 @@ const Home = () => {
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 items-center">
-                
+
                 {/* Sol Panel: Adımlar */}
                 <div className="flex flex-col justify-center space-y-5 md:space-y-8 relative pl-6 md:pl-10">
-                  
+
                   {/* DİNAMİK YUMUŞATILMIŞ PROGRESS BAR */}
                   <div className="absolute left-0 top-[15px] md:top-[20px] bottom-[15%] md:bottom-[20%] w-[3px] md:w-[4px] bg-white/10 rounded-full overflow-hidden">
-                    <motion.div 
+                    <motion.div
                       className={`absolute top-0 left-0 w-full bg-[#caf265] rounded-full shadow-[0_0_15px_#caf265] origin-top ${isAutoPlaying ? "transition-transform duration-1000 ease-linear" : ""}`}
                       style={{ scaleY: isAutoPlaying ? (processStep + 1) * 0.3333 : smoothScroll }}
                     />
@@ -660,9 +755,9 @@ const Home = () => {
         <section className="py-24 lg:py-40 relative bg-[#0b2117] border-b border-[#0b2117]/10">
           <div className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
-               initial={{ opacity: 0, x: -30 }}
-               whileInView={{ opacity: 1, x: 0 }}
-               viewport={{ once: true }}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
             >
               <h2 className="text-4xl md:text-5xl font-display mb-8 leading-tight text-white">
                 Geleneksel Ajans Süreçleri <br />
@@ -684,10 +779,10 @@ const Home = () => {
             </motion.div>
 
             <motion.div
-               initial={{ opacity: 0, scale: 0.95 }}
-               whileInView={{ opacity: 1, scale: 1 }}
-               viewport={{ once: true }}
-               className="bg-[#caf265] text-[#0b2117] p-10 md:p-16 rounded-[3rem] shadow-2xl relative overflow-hidden"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="bg-[#caf265] text-[#0b2117] p-10 md:p-16 rounded-[3rem] shadow-2xl relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 p-8 opacity-10">
                 <ShieldCheck size={120} />
@@ -810,7 +905,7 @@ const Home = () => {
           </div>
         </section>
 
-                {/* 3. HİZMET KARTLARI - Neler Yapıyoruz? */}
+        {/* 3. HİZMET KARTLARI - Neler Yapıyoruz? */}
         <section className={`${colors.beige} py-24 px-6 md:px-16 lg:px-24 mb-1`}>
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -868,18 +963,18 @@ const Home = () => {
             </div>
 
             <motion.div
-               initial="hidden"
-               whileInView="visible"
-               viewport={{ once: true, margin: "-100px" }}
-               variants={fadeInUp}
-               className="mt-12 md:mt-20 flex flex-col md:flex-row items-center justify-between gap-8 pt-12 border-t border-[#0b2117]/10"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={fadeInUp}
+              className="mt-12 md:mt-20 flex flex-col md:flex-row items-center justify-between gap-8 pt-12 border-t border-[#0b2117]/10"
             >
-               <p className="text-[#3a5245] text-lg md:text-xl font-light leading-relaxed max-w-3xl">
-                  Sadece bir mağaza altyapısı kurmakla kalmıyor, büyüme iştahınızı teknik kapasitemizle harmanlıyoruz. Satışları katlayan o kusursuz formüle ve e-ticaret atılımına hazır mısınız?
-               </p>
-               <button onClick={() => navigate('/hizmetler/e-ticaret')} className="group bg-[#0b2117] text-[#F4EFE6] hover:bg-[#caf265] hover:text-[#0b2117] border border-[#0b2117] transition-all duration-300 rounded-full px-10 py-4 text-base font-semibold flex items-center gap-3 justify-center w-fit shrink-0">
-                  E-Ticaret Hizmetini İncele <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-               </button>
+              <p className="text-[#3a5245] text-lg md:text-xl font-light leading-relaxed max-w-3xl">
+                Sadece bir mağaza altyapısı kurmakla kalmıyor, büyüme iştahınızı teknik kapasitemizle harmanlıyoruz. Satışları katlayan o kusursuz formüle ve e-ticaret atılımına hazır mısınız?
+              </p>
+              <button onClick={() => navigate('/hizmetler/e-ticaret')} className="group bg-[#0b2117] text-[#F4EFE6] hover:bg-[#caf265] hover:text-[#0b2117] border border-[#0b2117] transition-all duration-300 rounded-full px-10 py-4 text-base font-semibold flex items-center gap-3 justify-center w-fit shrink-0">
+                E-Ticaret Hizmetini İncele <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              </button>
             </motion.div>
           </div>
         </section>
@@ -902,7 +997,7 @@ const Home = () => {
                 </motion.div>
 
                 <motion.h2 variants={fadeInUp} className="text-5xl md:text-6xl lg:text-[4.5rem] font-display font-bold text-[#0b2117] leading-[1.05] mb-8 tracking-tight">
-                  Sosyal Medya <br className="hidden md:block"/> <span className="italic font-light text-[#86AA00]">İçerik Üretimi</span>
+                  Sosyal Medya <br className="hidden md:block" /> <span className="italic font-light text-[#86AA00]">İçerik Üretimi</span>
                 </motion.h2>
 
                 <motion.p variants={fadeInUp} className="text-[#3a5245] text-lg md:text-xl font-medium leading-relaxed mb-6">

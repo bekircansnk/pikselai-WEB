@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence, useInView, useScroll, useSpring } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { MainLayout } from '../layouts/MainLayout';
-import { ArrowRight, ChevronDown, Zap, Play, Box, TrendingUp, Layers, ImageIcon, User, Sparkles, Check, Camera, MoveRight } from 'lucide-react';
+import { ArrowRight, ChevronDown, Zap, Play, Box, TrendingUp, Layers, ImageIcon, User, Sparkles, Check, Camera, MoveRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import HeroAlternatives from '../components/sections/HeroAlternatives';
 
 const colors = {
@@ -737,6 +737,60 @@ const Home = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* 6.5. PROBLEM & SOLUTION (PAIN POINTS) */}
+        <section className="py-24 lg:py-40 relative bg-[#0b2117] border-b border-[#0b2117]/10">
+          <div className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+               initial={{ opacity: 0, x: -30 }}
+               whileInView={{ opacity: 1, x: 0 }}
+               viewport={{ once: true }}
+            >
+              <h2 className="text-4xl md:text-5xl font-display mb-8 leading-tight text-white">
+                Geleneksel Ajans Süreçleri <br />
+                <span className="text-[#ff7e5f]">Sizi Yavaşlatıyor mu?</span>
+              </h2>
+              <div className="space-y-6">
+                {[
+                  'Yüksek stüdyo ve manken çekim maliyetleri.',
+                  'Koordinasyonu zor çoklu ajans yapıları.',
+                  'Tahmin edilemeyen reklam performansları.',
+                  'Yavaş içerik üretim ve revizyon süreçleri.'
+                ].map((text, i) => (
+                  <div key={i} className="flex items-center gap-4 text-[#a8b8af]">
+                    <div className="w-5 h-[1px] bg-[#ff7e5f]" />
+                    <p className="text-lg font-light">{text}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+               initial={{ opacity: 0, scale: 0.95 }}
+               whileInView={{ opacity: 1, scale: 1 }}
+               viewport={{ once: true }}
+               className="bg-[#caf265] text-[#0b2117] p-10 md:p-16 rounded-[3rem] shadow-2xl relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 p-8 opacity-10">
+                <ShieldCheck size={120} />
+              </div>
+              <h3 className="text-3xl md:text-4xl font-display font-bold mb-8">Piksel AI Çözümü</h3>
+              <div className="space-y-6 relative z-10">
+                {[
+                  'AI ile stüdyo maliyetlerinde %90 tasarruf.',
+                  'Tüm hizmetler için tek ve şeffaf muhatap.',
+                  'Veri odaklı, garantili büyüme stratejileri.',
+                  'Gerçek zamanlı kreatif içerik üretimi.'
+                ].map((text, i) => (
+                  <div key={i} className="flex items-start gap-4">
+                    <CheckCircle2 size={24} className="mt-1 flex-shrink-0" />
+                    <p className="text-xl font-medium leading-snug">{text}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </section>
 

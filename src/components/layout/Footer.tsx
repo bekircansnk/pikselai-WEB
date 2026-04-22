@@ -86,9 +86,9 @@ const navColumns: FooterColumn[] = [
 
 // Yasal linkler — alt ortada konumlanır
 const legalLinks = [
-    { label: 'Gizlilik Politikası', href: '#' },
-    { label: 'Kullanım Koşulları', href: '#' },
-    { label: 'KVKK', href: '#' },
+    { label: 'Gizlilik Politikası', to: '/gizlilik-politikasi' },
+    { label: 'Kullanım Koşulları', to: '/kullanim-kosullari' },
+    { label: 'KVKK', to: '/kvkk' },
 ];
 
 // Piksel/nokta SVG ikonu (logo başındaki kare piksel motifi)
@@ -213,13 +213,13 @@ export function Footer() {
                         {/* Orta: Yasal linkler — Superside gibi tam ortada */}
                         <div className="flex items-center gap-6 flex-wrap justify-center">
                             {legalLinks.map((l) => (
-                                <a
+                                <Link
                                     key={l.label}
-                                    href={l.href}
+                                    to={l.to}
                                     className="text-[13px] text-white/40 hover:text-white/80 transition-colors"
                                 >
                                     {l.label}
-                                </a>
+                                </Link>
                             ))}
                         </div>
 

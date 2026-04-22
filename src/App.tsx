@@ -17,6 +17,9 @@ const AiProductionYeni = lazy(() => import('./pages/AiProductionYeni'))
 const HomeYeni = lazy(() => import('./pages/HomeYeni'))
 const CreativeDesign = lazy(() => import('./pages/CreativeDesign'))
 const CostCalculator = lazy(() => import('./pages/CostCalculator'))
+const PrivacyPolicy = lazy(() => import('./pages/legal/PrivacyPolicy'))
+const TermsOfService = lazy(() => import('./pages/legal/TermsOfService'))
+const KvkkPolicy = lazy(() => import('./pages/legal/KvkkPolicy'))
 
 const TestPanel = lazy(() => import('./pages/TestPanel'))
 
@@ -80,6 +83,9 @@ function App() {
             <Route path="/blog/venus" element={<VenusCaseStudy />} />
             <Route path="/blog/campandmap" element={<CampAndMapCaseStudy />} />
             <Route path="/fiyat-hesapla" element={<CostCalculator />} />
+            <Route path="/gizlilik-politikasi" element={<PrivacyPolicy />} />
+            <Route path="/kullanim-kosullari" element={<TermsOfService />} />
+            <Route path="/kvkk" element={<KvkkPolicy />} />
 
 
             <Route path="/test-panel" element={<TestPanel />} />

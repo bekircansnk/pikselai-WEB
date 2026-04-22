@@ -259,38 +259,38 @@ interface PricingPlan {
 
 function PricingCard({ plan }: { plan: PricingPlan }) {
     return (
-        <Card className={`relative flex flex-col h-full ${plan.featured ? 'border-bor-secondary shadow-lg ring-1 ring-bor-secondary' : ''}`}>
+        <Card className={`relative flex flex-col h-full ${plan.featured ? 'border-[#E2FF65] shadow-lg ring-1 ring-[#E2FF65]/50' : 'border-gray-200 dark:border-white/10'}`}>
             {plan.featured && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-bor-secondary text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#E2FF65] text-bor-primary-900 px-4 py-1.5 rounded-full text-[11px] font-extrabold uppercase tracking-widest shadow-sm">
                     En Popüler
                 </div>
             )}
-            <CardHeader>
-                <CardTitle className="text-xl font-bold">{plan.name}</CardTitle>
+            <CardHeader className="pt-8">
+                <CardTitle className="text-2xl font-bold !font-sans tracking-tight text-bor-primary-900 dark:text-white">{plan.name}</CardTitle>
                 <div className="mt-4 flex items-baseline gap-1">
-                    <span className="text-4xl font-bold tracking-tight text-bor-primary-900 dark:text-white">
+                    <span className="text-4xl font-extrabold tracking-tight text-bor-primary-900 dark:text-white">
                         {plan.price}
                     </span>
                     {plan.suffix && <span className="text-sm font-medium text-bor-primary-500">{plan.suffix}</span>}
                 </div>
-                <CardDescription className="mt-2 text-sm text-bor-primary-500 dark:text-bor-primary-400">
+                <CardDescription className="mt-3 text-sm text-bor-primary-500 dark:text-bor-primary-400 leading-relaxed">
                     {plan.description}
                 </CardDescription>
             </CardHeader>
-            <CardContent className="flex-1">
-                <ul className="space-y-3 text-sm text-bor-primary-600 dark:text-bor-primary-300">
+            <CardContent className="flex-1 pb-8">
+                <ul className="space-y-4 text-sm text-bor-primary-600 dark:text-bor-primary-300">
                     {plan.features.map((feature: string, i: number) => (
-                        <li key={i} className="flex gap-3">
-                            <span className="text-bor-secondary">✓</span>
-                            {feature}
+                        <li key={i} className="flex gap-3 items-start">
+                            <span className="text-[#86AA00] dark:text-[#E2FF65] font-bold mt-0.5">✓</span>
+                            <span className="leading-snug">{feature}</span>
                         </li>
                     ))}
                 </ul>
             </CardContent>
-            <CardFooter>
+            <CardFooter className="pb-8">
                 <Button
-                    className="w-full"
-                    variant={plan.featured ? 'primary' : 'outline'}
+                    className={`w-full py-6 text-base font-semibold ${plan.featured ? 'bg-[#E2FF65] text-bor-primary-900 hover:bg-[#d4f54e] shadow-lg shadow-[#E2FF65]/20 border-none' : ''}`}
+                    variant={plan.featured ? 'outline' : 'outline'}
                     href="https://wa.me/905531832344" // WhatsApp linki eklendi
                 >
                     {plan.cta}

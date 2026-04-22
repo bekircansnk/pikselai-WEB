@@ -2,6 +2,7 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect, lazy, Suspense } from 'react'
 import { ThemeProvider } from './contexts/ThemeContext'
 
+const Pricing = lazy(() => import('./pages/Pricing'))
 const ServicesHub = lazy(() => import('./pages/ServicesHub'))
 const About = lazy(() => import('./pages/About'))
 const Contact = lazy(() => import('./pages/Contact'))

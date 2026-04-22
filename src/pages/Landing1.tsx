@@ -71,7 +71,22 @@ const socialProjects: SocialProject[] = [
   }
 ];
 
-const services = [
+interface ServiceItem {
+  title: string;
+  desc: string;
+  icon: any;
+  path: string;
+  bg: string;
+  img: string;
+  cols: string;
+  isAiGrid?: boolean;
+  opacity?: string;
+  noBlend?: boolean;
+  objectFit?: string;
+  objectPos?: string;
+}
+
+const services: ServiceItem[] = [
   {
     title: "AI Prodüksiyon",
     desc: "Yapay zeka ile stüdyo maliyetlerini sıfırlayın. Kusursuz sanal mankenler ve ürün görselleri oluşturun.",

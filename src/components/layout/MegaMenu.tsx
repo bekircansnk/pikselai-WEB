@@ -41,7 +41,7 @@ export function MegaMenu({ isOpen, activeMenu, onClose }: MegaMenuProps) {
                                 <div className="space-y-4">
                                     <MenuHeader
                                         title="AI Prodüksiyon"
-                                        color="bg-[#40916c] text-white"
+                                        color="bg-[#16445B] text-[#F4EFE6]"
                                         href="/hizmetler/ai-produksiyon"
                                         onClose={onClose}
                                     />
@@ -88,7 +88,7 @@ export function MegaMenu({ isOpen, activeMenu, onClose }: MegaMenuProps) {
                                 <div className="space-y-4">
                                     <MenuHeader
                                         title="E-Ticaret"
-                                        color="bg-[#2d6a4f] text-white"
+                                        color="bg-[#28493B] text-[#F4EFE6]"
                                         href="/hizmetler/e-ticaret"
                                         onClose={onClose}
                                     />
@@ -142,7 +142,7 @@ export function MegaMenu({ isOpen, activeMenu, onClose }: MegaMenuProps) {
                                 <div className="space-y-4">
                                     <MenuHeader
                                         title="Sosyal Medya"
-                                        color="bg-[#386641] text-white"
+                                        color="bg-[#E5D7C2] text-[#0b2117]"
                                         href="/hizmetler/sosyal-medya"
                                         onClose={onClose}
                                     />
@@ -196,7 +196,7 @@ export function MegaMenu({ isOpen, activeMenu, onClose }: MegaMenuProps) {
                                 <div className="space-y-4">
                                     <MenuHeader
                                         title="Kreatif Tasarım"
-                                        color="bg-[#1b4332] text-white"
+                                        color="bg-[#CAF265] text-[#0b2117]"
                                         href="/hizmetler/kreatif-tasarim"
                                         onClose={onClose}
                                     />

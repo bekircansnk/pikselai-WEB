@@ -36,7 +36,7 @@ const aiPlans = [
             'Katalog ve sosyal medya uyumlu',
             'Temel e-ticaret entegrasyonu'
         ],
-        cta: 'Bu Kademe ile Başla'
+        cta: 'Paketi Seç'
     },
     {
         name: 'En Popüler',
@@ -49,7 +49,7 @@ const aiPlans = [
             'Tutarlı stil ve marka bütünlüğü',
             'Öncelikli üretim sırası'
         ],
-        cta: 'Bu Kademe ile Başla',
+        cta: 'En Popüler Paketi Seç',
         featured: true
     },
     {
@@ -63,7 +63,7 @@ const aiPlans = [
             'Büyük kataloglar için özel optimizasyon',
             '7/24 Öncelikli destek'
         ],
-        cta: 'Bu Kademe ile Başla'
+        cta: 'Profesyonel Paketi Seç'
     }
 ];
 

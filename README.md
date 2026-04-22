@@ -3,7 +3,9 @@
 Bu dosya projenin kurulumu, yapısı ve YZ çalışma prensipleri hakkında tüm bilgileri tek bir yerde toplar.
 
 ---
+
 sadasadllkdkkdd
+
 ## 🚀 1. Genel Bakış ve Özellikler
 
 Profesyonel dijital katalog ve yapay zeka destekli içerik yönetimi için modern web uygulaması.
@@ -17,13 +19,13 @@ Profesyonel dijital katalog ve yapay zeka destekli içerik yönetimi için moder
 
 ### 🛠️ Teknolojiler
 
-| Teknoloji       | Açıklama                 |
-| --------------- | ------------------------ |
+| Teknoloji       | Açıklama                   |
+| --------------- | ---------------------------- |
 | React 19        | Modern kullanıcı arayüzü |
-| TypeScript      | Tip güvenli geliştirme   |
+| TypeScript      | Tip güvenli geliştirme     |
 | Vite            | Hızlı geliştirme ortamı  |
-| Framer Motion   | Akıcı animasyonlar       |
-| Tailwind CSS v4 | Modern tasarım sistemi   |
+| Framer Motion   | Akıcı animasyonlar         |
+| Tailwind CSS v4 | Modern tasarım sistemi      |
 
 ---
 
@@ -99,6 +101,8 @@ VITE_GOOGLE_CLIENT_ID=client-id-buraya
 ```
 
 ---
+
+## Test Paneli: **`http://localhost:5173/test-panel`**
 
 ## 🤝 5. İletişim ve Lisans
 

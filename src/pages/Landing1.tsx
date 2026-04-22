@@ -104,19 +104,7 @@ const services = [
     opacity: "opacity-60 group-hover:opacity-80",
     noBlend: true
   },
-  {
-    title: "Dijital Büyüme (Performans)",
-    desc: "Veri odaklı metrikler and dönüşüm optimizasyonlarıyla satış grafiklerinizi hızlıca yukarı yöne çevirin.",
-    icon: null,
-    path: "/hizmetler/dijital-buyume",
-    bg: "bg-[#6d5b4a]",
-    img: "/sosyal_medya_resimler/landing_page/reklam_panel.webp",
-    cols: "md:col-span-4",
-    objectPos: "object-left-top",
-    objectFit: "object-none",
-    opacity: "opacity-60 group-hover:opacity-80",
-    noBlend: true
-  },
+
   {
     title: "Kreatif Tasarım",
     desc: "Marka kimliğinizi A'dan Z'ye güçlendiren benzersiz kurumsal kimlik, UI/UX ve etkileyici görsel çözümler.",

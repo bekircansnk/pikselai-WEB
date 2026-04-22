@@ -18,20 +18,7 @@ const services = [
         ],
         color: "from-blue-600/20 to-indigo-600/20",
     },
-    {
-        category: "DİJİTAL BÜYÜME",
-        href: "/hizmetler/dijital-buyume",
-        title: "Satış Odaklı Dijital Strateji",
-        description: "Güzel görseller tek başına satmaz. E-ticaret yönetimi, SEO optimizasyonu, sosyal medya stratejisi ve AI content factory ile dijital kanallarınızı uçtan uca yönetiyoruz.",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
-        features: ["E-Ticaret Yönetimi", "SEO & İçerik Otomasyonu", "Sosyal Medya", "AI Content Factory", "Reklam Yönetimi", "Analytics"],
-        stats: [
-            { value: "%340", label: "Ort. ciro artışı" },
-            { value: "150+", label: "Yönetilen mağaza" },
-            { value: "50M+", label: "Toplam ciro" },
-        ],
-        color: "from-emerald-600/20 to-teal-600/20",
-    },
+
     {
         category: "KATALOG & WEB",
         href: "/hizmetler/katalog-web",

@@ -2,11 +2,7 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect, lazy, Suspense } from 'react'
 import { ThemeProvider } from './contexts/ThemeContext'
 
-const Home = lazy(() => import('./pages/Home'))
-const Pricing = lazy(() => import('./pages/Pricing'))
 const ServicesHub = lazy(() => import('./pages/ServicesHub'))
-const AiProduction = lazy(() => import('./pages/AiProduction'))
-const DigitalGrowth = lazy(() => import('./pages/DigitalGrowth'))
 const About = lazy(() => import('./pages/About'))
 const Contact = lazy(() => import('./pages/Contact'))
 const CazadorCaseStudy = lazy(() => import('./pages/blog/CazadorCaseStudy'))
@@ -71,9 +67,6 @@ function App() {
             <Route path="/hizmetler/ai-produksiyon" element={<AiProductionYeni />} />
             <Route path="/hizmetler/e-ticaret" element={<EticaretYeni />} />
             <Route path="/hizmetler/sosyal-medya" element={<SosyalMedyaYeni />} />
-            <Route path="/hizmetler/ai-produksiyon-yeni" element={<AiProduction />} />
-            <Route path="/home-yeni" element={<Home />} />
-            <Route path="/hizmetler/dijital-buyume" element={<DigitalGrowth />} />
             <Route path="/hizmetler/kreatif-tasarim" element={<CreativeDesign />} />
             <Route path="/hakkimizda" element={<About />} />
             <Route path="/iletisim" element={<Contact />} />

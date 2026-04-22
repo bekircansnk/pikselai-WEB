@@ -51,9 +51,7 @@ export function Footer({ transparent = false }: FooterProps) {
                         <h4 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">Dijital Büyüme</h4>
                         <ul className="space-y-2 text-sm text-bor-primary-400">
                             <li><Link to="/hizmetler/e-ticaret" className="hover:text-bor-secondary transition-colors">E-Ticaret Yönetimi</Link></li>
-                            <li><Link to="/hizmetler/dijital-buyume" className="hover:text-bor-secondary transition-colors">SEO & İçerik Otomasyonu</Link></li>
                             <li><Link to="/hizmetler/sosyal-medya" className="hover:text-bor-secondary transition-colors">Sosyal Medya</Link></li>
-                            <li><Link to="/hizmetler/dijital-buyume" className="hover:text-bor-secondary transition-colors">AI Content Factory</Link></li>
                         </ul>
                     </div>
 

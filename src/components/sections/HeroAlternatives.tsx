@@ -25,13 +25,6 @@ const services = [
     desc: 'Satış odaklı mağaza kurulumları, optimizasyon ve uçtan uca operasyon yönetimi.',
     path: '/hizmetler/e-ticaret',
     color: '#4facfe'
-  },
-  {
-    id: 'ads',
-    title: 'Dijital Reklam Yönetimi',
-    desc: 'Veri odaklı performans pazarlaması ve yüksek dönüşümlü reklam kampanyaları.',
-    path: '/hizmetler/dijital-buyume',
-    color: '#a8ff78'
   }
 ];
 

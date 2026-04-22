@@ -233,28 +233,28 @@ const Pricing = () => {
 
             {/* BOTTOM CTA - İletişim Vurgusu */}
             <section className="bg-transparent py-24 px-6 md:px-16 lg:px-24 mb-1">
-                <div className="max-w-7xl mx-auto bg-bor-primary-900 dark:bg-[#111115] rounded-[3rem] p-10 md:p-24 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12 shadow-2xl">
+                <div className="max-w-7xl mx-auto bg-[#0b2117] rounded-[3rem] p-10 md:p-24 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12 shadow-2xl">
                     {/* Soft Glow Effect */}
                     <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#E2FF65]/10 blur-[120px] rounded-full pointer-events-none"></div>
                     <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-[#E2FF65]/5 blur-[80px] rounded-full pointer-events-none"></div>
 
                     <div className="relative z-10 max-w-xl text-center md:text-left">
-                        <h2 className="text-5xl lg:text-7xl font-bold font-display leading-tight tracking-tight text-white mb-8 text-left">
+                        <h2 className="text-5xl lg:text-7xl font-bold font-display leading-tight tracking-tight text-[#F4EFE6] mb-8 text-left">
                             Mağazanızın geleceği <br />
                             <span className="italic font-light text-[#E2FF65]">bir mesaj uzağınızda</span>
                         </h2>
-                        <p className="text-gray-300 mb-10 text-lg text-left">
+                        <p className="text-[#a8b8af] mb-10 text-lg text-left">
                             Hemen bir ücretsiz danışmanlık görüşmesi planlayalım ve dijital hedeflerinizi global standartlarda gerçeğe dönüştürelim.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center gap-6 justify-center md:justify-start">
                             <button 
                                 onClick={() => window.location.href = 'https://wa.me/905531832344'}
-                                className="bg-[#E2FF65] text-bor-primary-900 hover:bg-[#d4f54e] transition-all duration-300 rounded-full px-10 py-5 text-lg font-bold flex items-center gap-3 group"
+                                className="bg-[#E2FF65] text-[#0b2117] hover:bg-[#d4f54e] transition-all duration-300 rounded-full px-10 py-5 text-lg font-bold flex items-center gap-3 group"
                             >
                                 İş Birliğine Başlayalım
                                 <ChevronRight className="group-hover:translate-x-1 transition-transform" />
                             </button>
-                            <a href="mailto:bilgi@pikselai.com" className="text-white font-medium border-b border-white/30 hover:border-[#E2FF65] hover:text-[#E2FF65] transition-all pb-1 flex items-center gap-2">
+                            <a href="mailto:bilgi@pikselai.com" className="text-[#F4EFE6] font-medium border-b border-[#F4EFE6]/30 hover:border-[#E2FF65] hover:text-[#E2FF65] transition-all pb-1 flex items-center gap-2">
                                 <MessageSquare size={18} /> bilgi@pikselai.com
                             </a>
                         </div>
@@ -269,7 +269,7 @@ const Pricing = () => {
                         >
                             <div className="w-full h-full border border-[#E2FF65]/50 rounded-full flex items-center justify-center">
                                 <div className="w-20 h-20 bg-[#E2FF65] rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(226,255,101,0.4)]">
-                                    <TrendingUp size={32} className="text-bor-primary-900" />
+                                    <TrendingUp size={32} className="text-[#0b2117]" />
                                 </div>
                             </div>
                         </motion.div>

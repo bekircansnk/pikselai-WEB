@@ -21,6 +21,7 @@ const HomeYeni = lazy(() => import('./pages/HomeYeni'))
 const CreativeDesign = lazy(() => import('./pages/CreativeDesign'))
 const CostCalculator = lazy(() => import('./pages/CostCalculator'))
 const Landing1 = lazy(() => import('./pages/Landing1'))
+const TestPanel = lazy(() => import('./pages/TestPanel'))
 
 
 const MinaDrinksCaseStudy = lazy(() => import('./pages/blog/MinaDrinksCaseStudy'))
@@ -87,6 +88,7 @@ function App() {
             <Route path="/fiyat-hesapla" element={<CostCalculator />} />
 
             <Route path="/1" element={<Landing1 />} />
+            <Route path="/test-panel" element={<TestPanel />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

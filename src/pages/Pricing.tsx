@@ -26,29 +26,19 @@ const catalogPlan = {
 // AI Fotoğraf Paketleri (Hacim Bazlı Kullandıkça Öde)
 const aiPlans = [
     {
-        name: 'Deneme',
+        name: 'Başlangıç',
         price: '$0.50',
         suffix: '/ görsel',
-        description: 'Aylık 100 adet. Yapay zekayı düşük riskle denemek isteyen işletmeler için.',
-        features: [
-            'Sadece üretilen görsel kadar öde (Aylık faturalandırma)',
-            'Profesyonel prompt altyapısı',
-            'Katalog ve sosyal medya uyumlu',
-            'Temel e-ticaret entegrasyonu'
-        ],
+        description: 'Yapay zekayı düşük riskle denemek isteyen işletmeler için.',
+        features: ['Ayda 200 adet AI fotoğraf', 'Profesyonel prompt altyapısı', 'Katalog ve sosyal medya uyumlu', 'İptal edilebilir üyelik'],
         cta: 'Paketi Seç'
     },
     {
         name: 'En Popüler',
         price: '$0.30',
         suffix: '/ görsel',
-        description: 'Aylık 251 - 700 adet arası düzenli görsel üreten markalar için.',
-        features: [
-            'Sadece üretilen görsel kadar öde (Aylık faturalandırma)',
-            'Gelişmiş prompt mühendisliği',
-            'Tutarlı stil ve marka bütünlüğü',
-            'Öncelikli üretim sırası'
-        ],
+        description: 'Düzenli içerik üreten markalar için en dengeli paket.',
+        features: ['Ayda 700 adet AI fotoğraf', 'Gelişmiş prompt mühendisliği', 'Tutarlı stil ve görsel bütünlük', 'Öncelikli üretim sırası'],
         cta: 'En Popüler Paketi Seç',
         featured: true
     },
@@ -56,13 +46,8 @@ const aiPlans = [
         name: 'Profesyonel',
         price: '$0.25',
         suffix: '/ görsel',
-        description: 'Aylık 700+ adet yüksek hacimli görsel üreten markalar için.',
-        features: [
-            'Sadece üretilen görsel kadar öde (Aylık faturalandırma)',
-            'Gelişmiş prompt ve sahne varyasyonları',
-            'Büyük kataloglar için özel optimizasyon',
-            '7/24 Öncelikli destek'
-        ],
+        description: 'Yüksek hacimli, sürekli görsel üretimi yapan markalar için.',
+        features: ['Ayda 1.400 adet AI fotoğraf', 'Gelişmiş prompt + sahne varyasyonları', 'Büyük kataloglar için uygun', 'Öncelikli destek'],
         cta: 'Profesyonel Paketi Seç'
     }
 ];

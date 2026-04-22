@@ -177,7 +177,7 @@ const Pricing = () => {
                                     </div>
                                     <p className="mt-4 text-sm text-bor-primary-500 dark:text-bor-primary-400 max-w-md text-center leading-relaxed">
                                         Hiçbir sürpriz maliyet veya gizli ücret yok. <br />
-                                        Sadece kullandığınız başarılı görseller için faturalandırılırsınız.
+                                        Yalnızca sistemde ürettiğiniz görsel adedi kadar faturalandırılırsınız.
                                     </p>
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

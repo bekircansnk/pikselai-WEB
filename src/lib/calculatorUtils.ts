@@ -1,30 +1,7 @@
 export function getUnitPrice(totalImages: number): number {
-  if (totalImages === 0) return 0;
-
-  let cost = 0;
-  let remaining = totalImages;
-
-  // 1. Kademe: İlk 200 görsel ($0.50)
-  if (remaining > 0) {
-    const tier1 = Math.min(remaining, 200);
-    cost += tier1 * 0.50;
-    remaining -= tier1;
-  }
-
-  // 2. Kademe: 201 - 700 arası görseller ($0.30)
-  if (remaining > 0) {
-    const tier2 = Math.min(remaining, 500); // 700 - 200 = 500
-    cost += tier2 * 0.30;
-    remaining -= tier2;
-  }
-
-  // 3. Kademe: 701 ve üzeri görseller ($0.25)
-  if (remaining > 0) {
-    cost += remaining * 0.25;
-  }
-
-  // Etkili (Ortalama) Birim Fiyatı döndür
-  return cost / totalImages;
+  if (totalImages > 700) return 0.25;
+  if (totalImages > 200) return 0.30;
+  return 0.50;
 }
 
 export function calculateSocialMedia({

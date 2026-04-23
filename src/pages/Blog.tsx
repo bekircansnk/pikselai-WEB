@@ -67,7 +67,6 @@ export default function Blog() {
     const totalPages = Math.ceil(filtered.length / PER_PAGE)
     const paginated  = filtered.slice((page - 1) * PER_PAGE, page * PER_PAGE)
 
-    const changeCat = (id: string) => { setActiveCat(id); setPage(1) }
 
     return (
         <div className="min-h-screen font-sans overflow-x-hidden" style={{ background: C.bg }}>

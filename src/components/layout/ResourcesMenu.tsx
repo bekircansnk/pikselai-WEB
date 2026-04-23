@@ -115,19 +115,20 @@ function ImageCard({ image, title, href, onClose }: { image: string, title: stri
     return (
         <Link
             to={href}
-            className="group flex items-center gap-3 p-1.5 -mx-1.5 rounded-xl hover:bg-white dark:hover:bg-bor-primary-800 transition-all duration-200"
+            className="group flex items-center gap-4 p-2.5 -mx-2.5 rounded-2xl hover:bg-white dark:hover:bg-bor-primary-800 transition-all duration-300 hover:shadow-lg hover:shadow-bor-primary-200/50"
             onClick={onClose}
         >
-            <div className="w-16 h-12 flex-shrink-0 rounded-lg overflow-hidden bg-gray-100">
+            <div className="w-24 h-16 flex-shrink-0 rounded-xl overflow-hidden bg-gray-100 shadow-sm">
                 <img
                     src={image}
                     alt={title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
             </div>
-            <h4 className="font-semibold text-[13px] text-bor-primary-900 dark:text-white group-hover:text-bor-secondary transition-colors leading-snug line-clamp-2">
+            <h4 className="font-bold text-[15px] text-bor-primary-900 dark:text-white group-hover:text-bor-secondary transition-colors leading-tight tracking-tight">
                 {title}
             </h4>
         </Link>
     )
 }
+

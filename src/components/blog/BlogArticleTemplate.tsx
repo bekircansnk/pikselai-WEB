@@ -27,7 +27,7 @@ interface BlogArticleTemplateProps {
 }
 
 /* ─── Sol kenar içindekiler tablosu (TOC) ─── */
-function TableOfContents({ sections, active }: { sections: BlogSection[]; active: string }) {
+function Sidebar({ sections, active }: { sections: BlogSection[]; active: string }) {
     const scrollTo = (id: string) => {
         const el = document.getElementById(id)
         if (el) {
@@ -35,31 +35,60 @@ function TableOfContents({ sections, active }: { sections: BlogSection[]; active
             window.scrollTo({ top: y, behavior: 'smooth' })
         }
     }
+
+    const CATEGORIES = [
+        { name: "AI Destekli Yaratıcılık", id: "ai-powered-creative" },
+        { name: "Markaya Dair Her Şey", id: "all-things-brand" },
+        { name: "Yaratıcı Liderlik", id: "creative-leadership" },
+        { name: "Dijital Pazarlama", id: "digital-marketing" }
+    ]
+
     return (
-        <aside className="sticky top-32 hidden xl:block w-[320px] shrink-0 self-start bg-[#F4EFE6] rounded-2xl p-6">
-            <div className="flex items-center justify-between mb-4 border-b border-[#0b2117]/10 pb-4">
-                <p className="text-xs font-bold tracking-[0.15em] uppercase text-[#0b2117]/60">İçindekiler</p>
-                <span className="text-[#0b2117]/40">—</span>
+        <aside className="sticky top-32 hidden xl:block w-[320px] shrink-0 self-start space-y-8">
+            {/* İçindekiler */}
+            <div className="bg-[#F4EFE6] rounded-2xl p-6">
+                <div className="flex items-center justify-between mb-4 border-b border-[#0b2117]/10 pb-4">
+                    <p className="text-xs font-bold tracking-[0.15em] uppercase text-[#0b2117]/60">İçindekiler</p>
+                </div>
+                <nav className="flex flex-col gap-1.5">
+                    {sections.map(s => (
+                        <button
+                            key={s.id}
+                            onClick={() => scrollTo(s.id)}
+                            className={[
+                                'text-left text-[14px] font-medium leading-snug py-2 px-3 rounded-lg transition-all duration-200',
+                                active === s.id
+                                    ? 'text-[#0b2117] bg-[#D8FF85]/60 shadow-sm font-bold'
+                                    : 'text-[#0b2117]/60 hover:text-[#0b2117] hover:bg-[#0b2117]/5',
+                            ].join(' ')}
+                        >
+                            {s.heading}
+                        </button>
+                    ))}
+                </nav>
             </div>
-            <nav className="flex flex-col gap-1.5">
-                {sections.map(s => (
-                    <button
-                        key={s.id}
-                        onClick={() => scrollTo(s.id)}
-                        className={[
-                            'text-left text-[15px] font-medium leading-snug py-2.5 px-3 rounded-lg transition-all duration-200',
-                            active === s.id
-                                ? 'text-[#0b2117] bg-[#D8FF85]/60 shadow-sm'
-                                : 'text-[#0b2117]/60 hover:text-[#0b2117] hover:bg-[#0b2117]/5',
-                        ].join(' ')}
-                    >
-                        {s.heading}
-                    </button>
-                ))}
-            </nav>
+
+            {/* Kategoriler */}
+            <div className="bg-[#F4EFE6] rounded-2xl p-6">
+                <div className="flex items-center justify-between mb-4 border-b border-[#0b2117]/10 pb-4">
+                    <p className="text-xs font-bold tracking-[0.15em] uppercase text-[#0b2117]/60">Kategoriler</p>
+                </div>
+                <nav className="flex flex-col gap-1">
+                    {CATEGORIES.map(c => (
+                        <Link
+                            key={c.id}
+                            to={`/blog?cat=${c.id}#katalog`}
+                            className="text-left text-[14px] font-medium leading-snug py-2.5 px-3 rounded-lg text-[#0b2117]/60 hover:text-[#0b2117] hover:bg-[#0b2117]/5 transition-all duration-200"
+                        >
+                            {c.name}
+                        </Link>
+                    ))}
+                </nav>
+            </div>
         </aside>
     )
 }
+
 
 /* ─── Aktif bölüm hook'u ─── */
 function useActiveSection(ids: string[]) {
@@ -135,7 +164,7 @@ export function BlogArticleTemplate({
 
                 {/* ─── İçerik Gövdesi ─── */}
                 <section className="px-6 lg:px-12 max-w-[1300px] mx-auto flex flex-col xl:flex-row gap-12 xl:gap-24 items-start">
-                    <TableOfContents sections={sections} active={active} />
+                    <Sidebar sections={sections} active={active} />
 
                     <article className="flex-1 min-w-0 w-full max-w-4xl mx-auto xl:mx-0">
                         {/* Kahraman görsel */}

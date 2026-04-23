@@ -20,7 +20,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "Figma, Photoshop, Canva ve Google Slides'ın iş akışınızı hızlandıracak yapay zeka özelliklerini keşfedin.",
         img: "/assets/pages/blog/gizli_ai_ozellikleri.webp",
         link: "/blog/ai-powered-creative/gizli-ai-ozellikleri",
-        time: "8 dk",
+        time: "4 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -31,7 +31,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "Türk markalarının yapay zeka kullanarak hayata geçirdiği en etkileyici pazarlama kampanyalarını inceleyin. Venüs Ayakkabı, CAMPANDMAP ve Cazador örnekleri.",
         img: "/assets/pages/blog/ai_pazarlama_kampanyalari.webp",
         link: "/blog/digital-marketing/ai-pazarlama-kampanyalari",
-        time: "12 dk",
+        time: "5 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -42,7 +42,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "2026 yılının en önemli yapay zeka tasarım trendlerini keşfedin. Fotorealizmden hiper-kişiselleştirmeye, tasarım dünyasını değiştiren 7 yenilik.",
         img: "/assets/pages/blog/ai_tasarim_trendleri_2026.webp",
         link: "/blog/ai-powered-creative/ai-tasarim-trendleri",
-        time: "12 dk",
+        time: "5 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -53,7 +53,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "İş akışınızı %60 hızlandıracak en iyi 11 yapay zeka tasarım aracını keşfedin. Midjourney'den Adobe Firefly'a, profesyonel tasarımcıların tercihleri.",
         img: "/assets/pages/blog/en_iyi_ai_araclari.webp",
         link: "/blog/ai-powered-creative/ai-tasarim-araclari",
-        time: "15 dk",
+        time: "7 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -64,7 +64,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "Yapay zeka ile görsel üretiminin sınırlarını zorlayın. Ürün fotoğrafçılığından sanal mankenlere, markalar için en başarılı AI kullanım örnekleri.",
         img: "/assets/pages/blog/ai_gorsel_uretimi_ornekleri.webp",
         link: "/blog/ai-powered-creative/ai-gorsel-uretimi-ornekleri",
-        time: "10 dk",
+        time: "4 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -75,7 +75,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "Yapay zeka ile üretilen içeriklerin telif hakları kime ait? Markalar için AI kullanımında yasal riskler ve dikkat edilmesi gerekenler.",
         img: "/assets/pages/blog/ai_telif_haklari.webp",
         link: "/blog/creative-leadership/ai-telif-haklari",
-        time: "10 dk",
+        time: "4 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -86,7 +86,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "Yapay zeka tasarım dünyasını nasıl dönüştürüyor? Hız, ölçek ve yaratıcılık ekseninde tasarımın geleceğine dair uzman öngörüleri.",
         img: "/assets/pages/blog/tasarimda_ai_gelecegi.webp",
         link: "/blog/creative-leadership/tasarimda-ai-gelecegi",
-        time: "11 dk",
+        time: "5 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -97,7 +97,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "Tasarım süreçlerini otomatize ederek nasıl 5 kat daha hızlı içerik üretiyoruz? Pikselai'ın iç iş akışlarını ve otomasyon stratejilerini keşfedin.",
         img: "/assets/pages/blog/tasarim_is_akisi_otomasyon.webp",
         link: "/blog/inside-pikselai/tasarim-is-akisi-otomasyon",
-        time: "9 dk",
+        time: "4 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -108,7 +108,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "Yapay zeka marka rehberlerini nasıl dönüştürüyor? Statik PDF'lerden yaşayan, dinamik AI modellerine geçiş süreci ve marka tutarlılığı.",
         img: "/assets/pages/blog/ai_marka_rehberleri.webp",
         link: "/blog/all-things-brand/ai-marka-rehberleri",
-        time: "10 dk",
+        time: "4 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -119,7 +119,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "Yapay zeka video pazarlamasını nasıl değiştiriyor? AI video araçları, kurgu otomasyonu ve sosyal medya için stratejik video üretim rehberimiz.",
         img: "/assets/pages/blog/ai_video_pazarlama.webp",
         link: "/blog/video-marketing/ai-video-pazarlama",
-        time: "11 dk",
+        time: "5 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -130,7 +130,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "Yapay zeka tasarım dünyasını nasıl dönüştürüyor? Hız, ölçek ve yaratıcılık ekseninde tasarımın geleceğine dair uzman öngörüleri.",
         img: "/assets/pages/blog/tasarimda_yapay_zeka.webp",
         link: "/blog/ai-powered-creative/tasarimda-yapay-zeka",
-        time: "10 dk",
+        time: "4 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -141,7 +141,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "Tek bir ana içerikten onlarca sosyal medya paylaşımı üretin. Yapay zeka ile içerik dönüştürme stratejileri ve ipuçları.",
         img: "/assets/pages/blog/sosyal_medya_icerik_donusturme.webp",
         link: "/blog/digital-marketing/sosyal-medya-icerik-donusturme",
-        time: "9 dk",
+        time: "4 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -152,7 +152,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "Marka kimliği nedir? Logo, renk paleti ve tipografi ile markanızı nasıl ayrıştırırsınız? Adım adım stratejiler.",
         img: "/assets/pages/blog/marka_kimligi_rehberi.webp",
         link: "/blog/all-things-brand/marka-kimligi-rehberi",
-        time: "12 dk",
+        time: "5 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -174,7 +174,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "Yapay zeka reklam dünyasını nasıl değiştiriyor? Nutella, Trivago ve SmartNews gibi markaların AI başarı hikayeleri.",
         img: "/assets/pages/blog/ai_reklam_gorselleri.webp",
         link: "/blog/digital-marketing/ai-reklam-gorselleri",
-        time: "10 dk",
+        time: "4 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -185,7 +185,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "2026'nın reklam dünyasını şekillendiren trendleri keşfedin. Kısa videolar ve AI destekli kişiselleştirme.",
         img: "/assets/pages/blog/reklam_yaraticilik_trendleri.webp",
         link: "/blog/digital-marketing/reklam-yaraticilik-trendleri",
-        time: "11 dk",
+        time: "5 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -196,7 +196,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "Yapay zeka kullanarak nasıl yüksek performanslı reklam görselleri oluşturulur? Adım adım süreçler ve araçlar.",
         img: "/assets/pages/blog/ai_reklam_gorseli_olusturma.webp",
         link: "/blog/digital-marketing/ai-reklam-gorseli-olusturma",
-        time: "12 dk",
+        time: "5 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -207,7 +207,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "2026 marka tasarım trendlerini keşfedin. Otantiklik, nostalji ve AI'nın marka kimliği üzerindeki etkileri.",
         img: "/assets/pages/blog/marka_tasarim_trendleri.webp",
         link: "/blog/all-things-brand/marka-tasarim-trendleri",
-        time: "12 dk",
+        time: "5 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -218,7 +218,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "Markalaşma süreci nasıl yönetilir? Strateji, konumlandırma ve görsel kimlik konularında kapsamlı rehber.",
         img: "/assets/pages/blog/markalasma_rehberi.webp",
         link: "/blog/all-things-brand/markalasma-rehberi",
-        time: "15 dk",
+        time: "7 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -229,7 +229,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "İyi bir tasarımcıdan iyi bir lidere nasıl dönüşülür? Yaratıcı liderlik basamaklarını ve ekip yönetiminin püf noktalarını keşfedin.",
         img: "/assets/pages/blog/yaratici_liderlik.webp",
         link: "/blog/creative-leadership/yaratici-liderlik",
-        time: "10 dk",
+        time: "4 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -240,7 +240,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "Tasarım sistemleri ile marka tutarlılığını nasıl sağlarsınız? Vimeo örneği ve tasarım sistemlerinin faydaları.",
         img: "/assets/pages/blog/tasarim_sistemleri.webp",
         link: "/blog/all-things-brand/tasarim-sistemleri",
-        time: "10 dk",
+        time: "4 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -251,7 +251,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "E-ticaret sitenizi nasıl satış makinesine dönüştürürsünüz? Ana sayfa, ürün sayfası ve ödeme süreçleri.",
         img: "/assets/pages/blog/eticaret_web_tasarimi.webp",
         link: "/blog/all-things-brand/eticaret-web-tasarimi",
-        time: "12 dk",
+        time: "5 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -262,7 +262,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "Video pazarlamasında başarıya giden yol haritası. 70-20-10 kuralı, kanal stratejileri ve video içerik üretimi.",
         img: "/assets/pages/blog/video_pazarlama_stratejisi.webp",
         link: "/blog/video-marketing/video-pazarlama-stratejisi",
-        time: "12 dk",
+        time: "5 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -273,7 +273,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "Motion grafiklerin gücünü keşfedin. Intel, PayPal ve Dropbox gibi markaların ilham veren örnekleri.",
         img: "/assets/pages/blog/motion_grafik_ornekleri.webp",
         link: "/blog/video-marketing/motion-grafik-ornekleri",
-        time: "10 dk",
+        time: "4 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -284,7 +284,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "2026'nın en iyi yapay zeka video araçlarını keşfedin. Runway, HeyGen ve Sora gibi araçlarla prodüksiyonu ölçeklendirin.",
         img: "/assets/pages/blog/ai_video_olusturma_araclari.webp",
         link: "/blog/video-marketing/ai-video-olusturma-araclari",
-        time: "15 dk",
+        time: "7 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -295,7 +295,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "Yapay zeka e-posta pazarlamasını nasıl dönüştürüyor? Kişiselleştirme, otomasyon ve optimizasyon stratejileri.",
         img: "/assets/pages/blog/ai_eposta_pazarlama.webp",
         link: "/blog/digital-marketing/ai-eposta-pazarlama",
-        time: "11 dk",
+        time: "5 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -306,7 +306,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "Dünya devlerinin en başarılı sosyal medya kampanyalarını inceleyin. Spotify, Dove, H&M ve Walmart örnekleri.",
         img: "/assets/pages/blog/sosyal_medya_kampanyalari.webp",
         link: "/blog/digital-marketing/sosyal-medya-kampanyalari",
-        time: "12 dk",
+        time: "5 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -317,7 +317,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "Ürün ambalajı tasarımında dikkat edilmesi gerekenler. Sürdürülebilirlik, görsel etki ve unboxing deneyimi.",
         img: "/assets/pages/blog/ambalaj_tasarimi.webp",
         link: "/blog/all-things-brand/ambalaj-tasarimi",
-        time: "10 dk",
+        time: "4 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -328,7 +328,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "Etkileyici bir logo nasıl tasarlanır? Sadelik, tipografi, renk seçimi ve görsel hiyerarşi üzerine profesyonel ipuçları.",
         img: "/assets/pages/blog/logo_tasarim_ipuclari.webp",
         link: "/blog/all-things-brand/logo-tasarim-ipuclari",
-        time: "10 dk",
+        time: "4 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -339,7 +339,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "Kurumsal markalar tasarım süreçlerini nasıl ölçeklendirir? DesignOps, AI entegrasyonu ve optimizasyon.",
         img: "/assets/pages/blog/olceklenebilir_yaraticilik.webp",
         link: "/blog/creative-leadership/olceklenebilir-yaraticilik",
-        time: "12 dk",
+        time: "5 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -350,7 +350,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "Yapay zeka destekli ajanslar tasarım dünyasını nasıl değiştiriyor? AI ajanslarıyla çalışmanın avantajları.",
         img: "/assets/pages/blog/ai_destekli_ajanslar.webp",
         link: "/blog/ai-powered-creative/ai-destekli-ajanslar",
-        time: "10 dk",
+        time: "4 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -361,7 +361,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "Dünya çapında başarıya ulaşmış içerik pazarlaması örneklerini inceleyin. LEGO, Patagonia ve Netflix stratejileri.",
         img: "/assets/pages/blog/icerik_pazarlamasi_ornekleri.webp",
         link: "/blog/digital-marketing/icerik-pazarlamasi-ornekleri",
-        time: "12 dk",
+        time: "5 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -372,7 +372,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "Yapay zeka ile profesyonel videolar nasıl üretilir? Senaryo hazırlığından araç seçimine adım adım AI video rehberi.",
         img: "/assets/pages/blog/ai_video_nasil_olusturulur.webp",
         link: "/blog/video-marketing/ai-video-nasil-olusturulur",
-        time: "15 dk",
+        time: "7 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -383,7 +383,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "Renklerin tüketici psikolojisi üzerindeki etkisini keşfedin. Markanız için doğru renkleri nasıl seçersiniz?",
         img: "/assets/pages/blog/renklerin_gucu.webp",
         link: "/blog/all-things-brand/renklerin-gucu",
-        time: "10 dk",
+        time: "4 dk",
         date: "23 Nisan 2026"
     },
     {
@@ -394,7 +394,7 @@ export const BLOG_POSTS: BlogPost[] = [
         desc: "2026 dijital pazarlama dünyasını şekillendiren trendleri keşfedin. AI analitiği, video stratejileri ve büyüme.",
         img: "/assets/pages/blog/dijital_pazarlama_trendleri.webp",
         link: "/blog/digital-marketing/dijital-pazarlama-trendleri",
-        time: "12 dk",
+        time: "5 dk",
         date: "23 Nisan 2026"
     }
 

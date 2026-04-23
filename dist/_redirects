@@ -1,0 +1,11 @@
+# Eski İngilizce blog URL'lerinden yeni Türkçe URL'lere 301 redirect
+/blog/ai-powered-creative/*  /blog/yapay-zeka-yaraticilik/:splat  301
+/blog/all-things-brand/*      /blog/marka-rehberi/:splat           301
+/blog/creative-leadership/*   /blog/yaratici-liderlik/:splat       301
+/blog/digital-marketing/*     /blog/dijital-pazarlama/:splat       301
+/blog/inside-pikselai/*       /blog/pikselainin-icinden/:splat     301
+/blog/video-marketing/*       /blog/video-pazarlama/:splat         301
+
+# Eski müşteri hikayeleri redirect
+/musteri-hikayeleri/referanslar  /musteri-hikayeleri/cazador  301
+/blog/referanslar                /musteri-hikayeleri          301

@@ -1,9 +1,10 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
 import { Header } from "../components/layout/Header"
 import { Footer } from "../components/layout/Footer"
+import { BLOG_POSTS, BLOG_CATEGORIES } from "../data/blogPosts"
 
 /* ─── Süperside Renk Referansları ───────────────────────────────
    cloud-100  : #f7f9f2  (krem arka plan)
@@ -29,53 +30,28 @@ const C = {
     border: "rgba(10,33,31,0.12)",
 }
 
-/* ─── Kategoriler ─── */
-const CATS = [
-    { id: "tumu",                  label: "Tümü" },
-    { id: "ai-powered-creative",   label: "AI Destekli Yaratıcılık" },
-    { id: "all-things-brand",      label: "Markaya Dair Her Şey" },
-    { id: "creative-leadership",   label: "Yaratıcı Liderlik" },
-    { id: "customer-stories",      label: "Müşteri Hikayeleri" },
-    { id: "digital-marketing",     label: "Dijital Pazarlama" },
-    { id: "inside-superside",      label: "Pikselai'ın İçinden" },
-    { id: "video-marketing",       label: "Video Pazarlama" },
-]
-
-/* ─── Öne Çıkan Kartlar ─── */
-const FEATURED = [
-    {
-        id: "gizli-ai-ozellikleri",
-        cat: "AI Destekli Yaratıcılık",
-        title: "Favori Pazarlama & Tasarım Araçlarınızdaki Gizli Yapay Zeka Özellikleri",
-        desc: "Figma, Photoshop, Canva ve Google Slides'ın iş akışınızı hızlandıracak yapay zeka özelliklerini keşfedin.",
-        img: "https://cdn.sanity.io/images/k0dlbavy/production/79af68beb2c85a929135d7607b7caae6667252ac-1584x892.png?w=1584&q=95&auto=format",
-        link: "/blog/gizli-ai-ozellikleri",
-        stats: [{ v: "8 dk", l: "Okuma Süresi" }, { v: "4", l: "Tasarım Aracı" }],
-    }
-]
-
-/* ─── Tüm Yazılar ─── */
-const POSTS = [
-    { 
-        id: "gizli-ai", 
-        cat: "AI Destekli Yaratıcılık", 
-        catId: "ai-powered-creative", 
-        title: "Favori Pazarlama & Tasarım Araçlarınızdaki Gizli Yapay Zeka Özellikleri", 
-        desc: "Figma, Photoshop, Canva ve Google Slides'ı neredeyse her gün kullanıyorsunuz; ama bu araçların iş akışını kısaltacak yapay zeka özelliklerini muhtemelen hiç fark etmediniz.", 
-        img: "https://cdn.sanity.io/images/k0dlbavy/production/79af68beb2c85a929135d7607b7caae6667252ac-1584x892.png?w=1584&q=95&auto=format", 
-        link: "/blog/gizli-ai-ozellikleri", 
-        time: "8 dk" 
-    }
-]
-
 const PER_PAGE = 6
 
 /* ═════════════════════════════════════════════════════════════ */
 export default function Blog() {
     const [activeCat, setActiveCat] = useState("tumu")
     const [page, setPage]           = useState(1)
+    const location = useLocation()
 
-    const filtered   = activeCat === "tumu" ? POSTS : POSTS.filter(p => p.catId === activeCat)
+    // URL'den kategori parametresini oku ve state'e yansıt
+    useEffect(() => {
+        const params = new URLSearchParams(location.search)
+        const cat = params.get('cat')
+        if (cat && BLOG_CATEGORIES.find(c => c.id === cat)) {
+            setActiveCat(cat)
+            setPage(1)
+        } else if (!cat) {
+            setActiveCat("tumu")
+            setPage(1)
+        }
+    }, [location])
+
+    const filtered   = activeCat === "tumu" ? BLOG_POSTS : BLOG_POSTS.filter(p => p.catId === activeCat)
     const totalPages = Math.ceil(filtered.length / PER_PAGE)
     const paginated  = filtered.slice((page - 1) * PER_PAGE, page * PER_PAGE)
 
@@ -103,7 +79,7 @@ export default function Blog() {
             {/* ── 2'Lİ BÜYÜK ÖNE ÇIKAN KARTLAR (Yazılar altta) ──────────────── */}
             <section className="px-6 lg:px-12 xl:px-20 pb-20 max-w-screen-xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
-                    {FEATURED.map((f, i) => (
+                    {BLOG_POSTS.slice(0, 2).map((f, i) => (
                         <motion.div
                             key={f.id}
                             initial={{ opacity: 0, y: 24 }}
@@ -124,7 +100,7 @@ export default function Blog() {
                                 <div className="flex items-center gap-2 text-[11px] font-bold tracking-widest uppercase mb-3 text-[#1a3835]/50">
                                     <span>{f.cat}</span>
                                     <span>•</span>
-                                    <span>{f.stats[0]?.v} okuma</span>
+                                    <span>{f.time} okuma</span>
                                 </div>
                                 <Link to={f.link}>
                                     <h2 className="text-2xl md:text-[28px] font-medium leading-tight mb-3 text-[#0a211f] group-hover:text-[#2a4e45] transition-colors">
@@ -165,7 +141,7 @@ export default function Blog() {
 
                     {/* Blog Grid (Koyu temada yazılar altta) */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
-                        {POSTS.map(p => (
+                        {BLOG_POSTS.filter(p => p.catId === "ai-powered-creative").slice(0, 3).map(p => (
                             <div key={p.id} className="group flex flex-col">
                                 {/* Görsel Kutusu */}
                                 <Link to={p.link} className="block overflow-hidden rounded-[1.5rem] mb-6">
@@ -204,7 +180,7 @@ export default function Blog() {
                 <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
                     <div>
                         <h2 className="text-3xl md:text-4xl font-bold" style={{ color: C.text }}>
-                            {activeCat === "tumu" ? "Tüm İçerikler" : CATS.find(c => c.id === activeCat)?.label}
+                            {activeCat === "tumu" ? "Tüm İçerikler" : BLOG_CATEGORIES.find(c => c.id === activeCat)?.label}
                         </h2>
                         <p className="text-sm mt-1" style={{ color: C.textLight }}>{filtered.length} içerik</p>
                     </div>
@@ -212,10 +188,10 @@ export default function Blog() {
 
                 {/* Kategori tab bar */}
                 <div className="flex flex-wrap gap-2 border-b mb-12 pb-4" style={{ borderColor: C.border }}>
-                    {CATS.map(c => (
+                    {BLOG_CATEGORIES.map(c => (
                         <button
                             key={c.id}
-                            onClick={() => changeCat(c.id)}
+                            onClick={() => { setActiveCat(c.id); setPage(1); }}
                             className="px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200"
                             style={activeCat === c.id
                                 ? { background: C.pine, color: C.sparkMid }

@@ -63,40 +63,47 @@ export function ResourcesMenu({ isOpen, activeMenu, onClose }: ResourcesMenuProp
                                 {/* Sütun 2: Öğrenim Merkezi & Blog (1/2) */}
                                 <div className="pl-8">
                                     <MenuHeader title="Öğrenim Merkezi & Blog" href="/blog" onClose={onClose} />
-                                    <div className="mt-4 space-y-0.5">
+                                    <div className="mt-4 space-y-1">
                                         <TextItem
-                                            title="Etkinlikler ve Zirveler"
-                                            desc="Yaklaşan etkinliklerimiz ve kayıtlar"
-                                            icon={<Mic size={16} />}
-                                            href="/blog"
+                                            title="AI Destekli Yaratıcılık"
+                                            desc="Yapay zeka ile tasarımın sınırlarını keşfedin"
+                                            icon={<div className="w-8 h-8 rounded-lg bg-spark-500/10 flex items-center justify-center text-spark-600"><PlayCircle size={20} /></div>}
+                                            href="/blog?cat=ai-powered-creative"
                                             onClose={onClose}
                                         />
                                         <TextItem
-                                            title="Rehberler"
-                                            desc="Pazarlama liderlerinden içgörüler"
-                                            icon={<BookOpen size={16} />}
-                                            href="/blog"
+                                            title="Markaya Dair Her Şey"
+                                            desc="Güçlü ve sürdürülebilir markalar inşa edin"
+                                            icon={<div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-600"><FolderArchive size={20} /></div>}
+                                            href="/blog?cat=all-things-brand"
                                             onClose={onClose}
                                         />
                                         <TextItem
-                                            title="Raporlar"
-                                            desc="Daha akıllı kararlar için veri"
-                                            icon={<PieChart size={16} />}
-                                            href="/blog"
+                                            title="Yaratıcı Liderlik"
+                                            desc="Ekiplerinizi geleceğe hazırlayın"
+                                            icon={<div className="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-600"><Mic size={20} /></div>}
+                                            href="/blog?cat=creative-leadership"
                                             onClose={onClose}
                                         />
                                         <TextItem
-                                            title="Video kütüphanesi"
-                                            desc="PikselAI'nın en yeni videoları"
-                                            icon={<PlayCircle size={16} />}
-                                            href="/blog"
+                                            title="Dijital Pazarlama"
+                                            desc="Veri odaklı büyüme stratejileri"
+                                            icon={<div className="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-600"><PieChart size={20} /></div>}
+                                            href="/blog?cat=digital-marketing"
                                             onClose={onClose}
                                         />
                                         <TextItem
-                                            title="Oyun kılavuzları"
-                                            desc="Stratejik büyüme metotları"
-                                            icon={<FolderArchive size={16} />}
-                                            href="/blog"
+                                            title="Video Pazarlama"
+                                            desc="Etkileyici görsel hikayeler oluşturun"
+                                            icon={<div className="w-8 h-8 rounded-lg bg-red-500/10 flex items-center justify-center text-red-600"><PlayCircle size={20} /></div>}
+                                            href="/blog?cat=video-marketing"
+                                            onClose={onClose}
+                                        />
+                                        <TextItem
+                                            title="Pikselai'ın İçinden"
+                                            desc="Ekibimizden haberler ve güncellemeler"
+                                            icon={<div className="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center text-green-600"><FolderArchive size={20} /></div>}
+                                            href="/blog?cat=inside-pikselai"
                                             onClose={onClose}
                                         />
                                     </div>
@@ -116,9 +123,9 @@ function MenuHeader({ title, href, onClose }: { title: string, href: string, onC
         <Link
             to={href}
             onClick={onClose}
-            className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-bor-primary-400 dark:text-bor-primary-500 hover:text-bor-secondary transition-colors"
+            className="flex items-center gap-1.5 text-[13px] font-black uppercase tracking-[0.15em] text-bor-primary-400 dark:text-bor-primary-500 hover:text-bor-secondary transition-colors mb-2"
         >
-            {title} <span className="text-[10px]">↗</span>
+            {title} <span className="text-[11px] opacity-50">↗</span>
         </Link>
     )
 }
@@ -127,18 +134,18 @@ function TextItem({ title, desc, icon, href, onClose }: { title: string, desc: s
     return (
         <Link
             to={href}
-            className="group flex items-center justify-between py-2 px-3 -mx-3 rounded-lg hover:bg-white dark:hover:bg-bor-primary-800 transition-all duration-200"
+            className="group flex items-center justify-between py-3 px-4 -mx-4 rounded-xl hover:bg-white dark:hover:bg-bor-primary-800 transition-all duration-300"
             onClick={onClose}
         >
-            <div className="space-y-0.5">
-                <h4 className="font-bold text-[14px] text-bor-primary-900 dark:text-white group-hover:text-bor-secondary transition-colors leading-tight">
+            <div className="space-y-1">
+                <h4 className="font-bold text-[16px] md:text-[18px] text-bor-primary-900 dark:text-white group-hover:text-bor-secondary transition-colors leading-tight tracking-tight">
                     {title}
                 </h4>
-                <p className="text-[11px] text-bor-primary-500 dark:text-bor-primary-400 leading-snug opacity-80">
+                <p className="text-[12px] md:text-[13px] text-bor-primary-500 dark:text-bor-primary-400 leading-snug opacity-70 group-hover:opacity-100 transition-opacity max-w-[240px]">
                     {desc}
                 </p>
             </div>
-            <div className="text-bor-primary-300 group-hover:text-bor-secondary transition-colors ml-3 opacity-40 group-hover:opacity-100">
+            <div className="text-bor-primary-300 group-hover:text-bor-secondary transition-all duration-300 ml-4 transform group-hover:scale-110 group-hover:rotate-3">
                 {icon}
             </div>
         </Link>

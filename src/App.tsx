@@ -28,6 +28,15 @@ const MinaDrinksCaseStudy = lazy(() => import('./pages/musteri-hikayeleri/MinaDr
 const VenusCaseStudy = lazy(() => import('./pages/musteri-hikayeleri/VenusCaseStudy'))
 const CampAndMapCaseStudy = lazy(() => import('./pages/musteri-hikayeleri/CampAndMapCaseStudy'))
 const GizliAiOzellikleri = lazy(() => import('./pages/blog/ai-powered-creative/GizliAiOzellikleri'))
+const AiTasarimTrendleri = lazy(() => import('./pages/blog/ai-powered-creative/AiTasarimTrendleri'))
+const AiTasarimAraclari = lazy(() => import('./pages/blog/ai-powered-creative/AiTasarimAraclari'))
+const AiGorselUretimiOrnekleri = lazy(() => import('./pages/blog/ai-powered-creative/AiGorselUretimiOrnekleri'))
+const AiTelifHaklari = lazy(() => import('./pages/blog/creative-leadership/AiTelifHaklari'))
+const AiPazarlamaKampanyalari = lazy(() => import('./pages/blog/digital-marketing/AiPazarlamaKampanyalari'))
+const TasarimdaAiGelecegi = lazy(() => import('./pages/blog/creative-leadership/TasarimdaAiGelecegi'))
+const TasarimIsAkisiOtomasyon = lazy(() => import('./pages/blog/inside-pikselai/TasarimIsAkisiOtomasyon'))
+const AiMarkaRehberleri = lazy(() => import('./pages/blog/all-things-brand/AiMarkaRehberleri'))
+const AiVideoPazarlama = lazy(() => import('./pages/blog/video-marketing/AiVideoPazarlama'))
 
 function Loading() {
   return (
@@ -79,6 +88,15 @@ function App() {
             <Route path="/islerimiz" element={<Islerimiz />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/gizli-ai-ozellikleri" element={<GizliAiOzellikleri />} />
+            <Route path="/blog/ai-tasarim-trendleri" element={<AiTasarimTrendleri />} />
+            <Route path="/blog/ai-tasarim-araclari" element={<AiTasarimAraclari />} />
+            <Route path="/blog/ai-gorsel-uretimi-ornekleri" element={<AiGorselUretimiOrnekleri />} />
+            <Route path="/blog/ai-telif-haklari" element={<AiTelifHaklari />} />
+            <Route path="/blog/ai-pazarlama-kampanyalari" element={<AiPazarlamaKampanyalari />} />
+            <Route path="/blog/tasarimda-ai-gelecegi" element={<TasarimdaAiGelecegi />} />
+            <Route path="/blog/tasarim-is-akisi-otomasyon" element={<TasarimIsAkisiOtomasyon />} />
+            <Route path="/blog/ai-marka-rehberleri" element={<AiMarkaRehberleri />} />
+            <Route path="/blog/ai-video-pazarlama" element={<AiVideoPazarlama />} />
             <Route path="/musteri-hikayeleri" element={<MusteriHikayeleri />} />
             <Route path="/musteri-hikayeleri/referanslar" element={<CazadorCaseStudy />} />
             <Route path="/musteri-hikayeleri/mina-drinks" element={<MinaDrinksCaseStudy />} />

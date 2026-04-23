@@ -27,6 +27,7 @@ const TestPanel = lazy(() => import('./pages/TestPanel'))
 const MinaDrinksCaseStudy = lazy(() => import('./pages/musteri-hikayeleri/MinaDrinksCaseStudy'))
 const VenusCaseStudy = lazy(() => import('./pages/musteri-hikayeleri/VenusCaseStudy'))
 const CampAndMapCaseStudy = lazy(() => import('./pages/musteri-hikayeleri/CampAndMapCaseStudy'))
+const GizliAiOzellikleri = lazy(() => import('./pages/blog/ai-powered-creative/GizliAiOzellikleri'))
 
 function Loading() {
   return (
@@ -77,6 +78,7 @@ function App() {
             <Route path="/ucretler" element={<Pricing />} />
             <Route path="/islerimiz" element={<Islerimiz />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/gizli-ai-ozellikleri" element={<GizliAiOzellikleri />} />
             <Route path="/musteri-hikayeleri" element={<MusteriHikayeleri />} />
             <Route path="/musteri-hikayeleri/referanslar" element={<CazadorCaseStudy />} />
             <Route path="/musteri-hikayeleri/mina-drinks" element={<MinaDrinksCaseStudy />} />

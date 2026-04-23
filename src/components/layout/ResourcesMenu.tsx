@@ -60,30 +60,30 @@ export function ResourcesMenu({ isOpen, activeMenu, onClose }: ResourcesMenuProp
 
                                 {/* Sütun 2: Öğrenim Merkezi & Blog (1/2) */}
                                 <div className="pl-8">
-                                    <MenuHeader title="Öğrenim Merkezi & Blog" href="/blog" onClose={onClose} />
+                                    <MenuHeader title="Öğrenim Merkezi & Blog" href="/blog#katalog" onClose={onClose} />
                                     <div className="mt-4 space-y-3">
                                         <ImageCard
                                             image="/assets/pages/blog/gizli_ai_ozellikleri.jpeg"
                                             title="AI Destekli Yaratıcılık"
-                                            href="/blog?cat=ai-powered-creative"
+                                            href="/blog?cat=ai-powered-creative#katalog"
                                             onClose={onClose}
                                         />
                                         <ImageCard
                                             image="/assets/pages/blog/ai_marka_rehberleri.jpeg"
                                             title="Markaya Dair Her Şey"
-                                            href="/blog?cat=all-things-brand"
+                                            href="/blog?cat=all-things-brand#katalog"
                                             onClose={onClose}
                                         />
                                         <ImageCard
                                             image="/assets/pages/blog/ai_telif_haklari.jpeg"
                                             title="Yaratıcı Liderlik"
-                                            href="/blog?cat=creative-leadership"
+                                            href="/blog?cat=creative-leadership#katalog"
                                             onClose={onClose}
                                         />
                                         <ImageCard
                                             image="/assets/pages/blog/ai_pazarlama_kampanyalari.png"
                                             title="Dijital Pazarlama"
-                                            href="/blog?cat=digital-marketing"
+                                            href="/blog?cat=digital-marketing#katalog"
                                             onClose={onClose}
                                         />
                                     </div>

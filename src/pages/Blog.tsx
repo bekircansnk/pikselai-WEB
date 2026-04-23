@@ -50,6 +50,18 @@ export default function Blog() {
             setPage(1)
         }
     }, [location])
+    
+    // Hash varsa ilgili bölüme kaydır
+    useEffect(() => {
+        if (location.hash === "#katalog") {
+            const el = document.getElementById("katalog")
+            if (el) {
+                setTimeout(() => {
+                    el.scrollIntoView({ behavior: "smooth" })
+                }, 100)
+            }
+        }
+    }, [location.hash])
 
     const filtered   = activeCat === "tumu" ? BLOG_POSTS : BLOG_POSTS.filter(p => p.catId === activeCat)
     const totalPages = Math.ceil(filtered.length / PER_PAGE)
@@ -175,7 +187,7 @@ export default function Blog() {
             </section>
 
             {/* ── FİLTRELİ YAZI GRİDİ (Tüm İçerikler) ─────────────────────────── */}
-            <section className="px-6 lg:px-12 xl:px-20 py-24 max-w-screen-xl mx-auto">
+            <section id="katalog" className="px-6 lg:px-12 xl:px-20 py-24 max-w-screen-xl mx-auto">
                 {/* Başlık */}
                 <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
                     <div>

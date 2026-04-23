@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ArrowRight, Clock, User, Zap, BarChart3, Package, TrendingUp } from "lucide-react"
+import { ArrowRight, Clock, User, Zap, BarChart3, Package, TrendingUp, Star } from "lucide-react"
 import { Link } from "react-router-dom"
 import { Header } from "../components/layout/Header"
 import { Footer } from "../components/layout/Footer"
@@ -19,7 +19,7 @@ const caseStudies = [
         title: "Cazador'un Dijital Dönüşüm Yolculuğu",
         excerpt: "Moda dünyasının köklü markası Cazador, Pikselai'ın yapay zeka çözümleriyle katalog süreçlerini hızlandırdı ve dijital varlığını mükemmelleştirdi.",
         tags: ["Dijital Katalog", "AI Prodüksiyon", "Sosyal Medya"],
-        image: "/assets/brands/cazador/ai_cazador.webp",
+        image: "/assets/brands/cazador/cazador_moda_haki.webp",
         stat: { label: "Katalog Hızı", value: "10x", icon: TrendingUp },
         featured: true,
     },
@@ -77,77 +77,107 @@ export default function Blog() {
 
             {/* Hero - Öne Çıkan */}
             {featured && activeCategory === "Tümü" && (
-                <section className="pt-28 pb-0 px-4 sm:px-6 lg:px-12 xl:px-24 bg-[#F4EFE6]">
-                    <div className="max-w-7xl mx-auto">
-                        {/* Başlık */}
+                <section className="pt-24 pb-0 bg-[#F4EFE6]">
+                    {/* Sayfa başlığı */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="text-center px-4 pt-6 pb-10"
+                    >
+                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#0b2117]/10 bg-[#0b2117]/5 text-[#0b2117] text-xs font-bold tracking-widest uppercase mb-5">
+                            Müşteri Hikayeleri
+                        </div>
+                        <h1 className="text-5xl md:text-7xl font-bold font-display leading-tight tracking-tight text-[#0b2117] mb-3">
+                            Gerçek Markalar,<br />
+                            <span className="italic font-light text-[#86AA00]">Gerçek Sonuçlar</span>
+                        </h1>
+                        <p className="text-[#3a5245] text-xl max-w-2xl mx-auto font-light leading-relaxed">
+                            Pikselai ile dijital dönüşüm yolculuğuna çıkan markalardan ilham alın.
+                        </p>
+                    </motion.div>
+
+                    {/* Öne Çıkan - Tam Genişlik */}
+                    <Link to={featured.slug} className="block">
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                            className="mb-12 text-center"
+                            transition={{ duration: 0.7, delay: 0.15 }}
+                            className="group relative grid grid-cols-1 lg:grid-cols-2 min-h-[70vh] overflow-hidden"
                         >
-                            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#0b2117]/10 bg-[#0b2117]/5 text-[#0b2117] text-xs font-bold tracking-widest uppercase mb-6">
-                                Müşteri Hikayeleri
-                            </div>
-                            <h1 className="text-5xl md:text-7xl font-bold font-display leading-tight tracking-tight text-[#0b2117] mb-4">
-                                Gerçek Markalar,<br />
-                                <span className="italic font-light text-[#86AA00]">Gerçek Sonuçlar</span>
-                            </h1>
-                            <p className="text-[#3a5245] text-xl max-w-2xl mx-auto font-light leading-relaxed">
-                                Pikselai ile dijital dönüşüm yolculuğuna çıkan markalardan ilham alın.
-                            </p>
-                        </motion.div>
+                            {/* Sol - Büyük Ürün Görseli */}
+                            <div className="relative h-[55vw] max-h-[680px] lg:h-auto overflow-hidden bg-[#0b2117]">
+                                <img
+                                    src={featured.image}
+                                    alt={featured.brand}
+                                    className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-105"
+                                />
+                                {/* Sağa doğru gradient geçişi */}
+                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#0b2117]/60 hidden lg:block" />
+                                {/* Alt gradient */}
+                                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0b2117]/50 to-transparent lg:hidden" />
 
-                        {/* Öne Çıkan Kart */}
-                        <Link to={featured.slug}>
-                            <motion.div
-                                initial={{ opacity: 0, y: 40 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.7, delay: 0.2 }}
-                                className="group relative grid grid-cols-1 lg:grid-cols-2 rounded-[2.5rem] overflow-hidden border border-[#e0dcd3] shadow-2xl hover:shadow-[0_30px_80px_rgba(11,33,23,0.15)] transition-all duration-700 bg-[#0b2117]"
-                            >
-                                {/* Sol - İçerik */}
-                                <div className="px-10 md:px-16 py-14 md:py-20 flex flex-col justify-center relative z-10">
-                                    <div className="absolute -top-16 -left-16 w-64 h-64 bg-[#caf265]/5 blur-[80px] rounded-full" />
-                                    <span className="inline-block text-[#caf265] text-xs font-bold tracking-widest uppercase mb-6">
-                                        {featured.brand} · {featured.category}
+                                {/* Brand etiket - sol alt */}
+                                <div className="absolute bottom-6 left-6 flex items-center gap-3">
+                                    <div className="w-2 h-2 rounded-full bg-[#caf265] animate-pulse" />
+                                    <span className="text-white/80 text-sm font-bold tracking-widest uppercase">
+                                        {featured.brand}
                                     </span>
-                                    <h2 className="text-3xl md:text-4xl font-bold font-display text-white leading-tight mb-6">
+                                </div>
+                            </div>
+
+                            {/* Sağ - İçerik */}
+                            <div className="bg-[#0b2117] px-10 md:px-16 lg:px-20 py-16 lg:py-24 flex flex-col justify-center relative overflow-hidden">
+                                {/* Arka plan glow efektleri */}
+                                <div className="absolute -top-20 -right-20 w-80 h-80 bg-[#caf265]/8 blur-[100px] rounded-full" />
+                                <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-[#caf265]/5 blur-[80px] rounded-full" />
+
+                                <div className="relative z-10">
+                                    {/* Etiket */}
+                                    <span className="inline-flex items-center gap-2 text-[#caf265] text-xs font-bold tracking-widest uppercase mb-6">
+                                        <Star size={10} className="fill-[#caf265]" />
+                                        Öne Çıkan Hikaye
+                                    </span>
+
+                                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display text-white leading-tight mb-5">
                                         {featured.title}
                                     </h2>
-                                    <p className="text-[#a8b8af] font-light leading-relaxed mb-8">
+
+                                    <p className="text-[#a8b8af] font-light leading-relaxed text-lg mb-8 max-w-md">
                                         {featured.excerpt}
                                     </p>
+
+                                    {/* İstatistikler */}
+                                    <div className="flex items-center gap-10 mb-10 pb-8 border-b border-white/10">
+                                        <div>
+                                            <div className="text-3xl font-bold text-[#caf265]">{featured.stat.value}</div>
+                                            <div className="text-xs text-[#a8b8af] mt-1">{featured.stat.label}</div>
+                                        </div>
+                                        <div>
+                                            <div className="text-3xl font-bold text-white">10x</div>
+                                            <div className="text-xs text-[#a8b8af] mt-1">Hız Artışı</div>
+                                        </div>
+                                    </div>
+
+                                    {/* Etiketler */}
                                     <div className="flex flex-wrap gap-2 mb-10">
                                         {featured.tags.map(tag => (
-                                            <span key={tag} className="px-3 py-1 rounded-full text-xs font-medium bg-white/10 text-white/70">
+                                            <span key={tag} className="px-3 py-1.5 rounded-full text-xs font-medium bg-white/8 text-white/60 border border-white/10">
                                                 {tag}
                                             </span>
                                         ))}
                                     </div>
-                                    <div className="flex items-center gap-3">
-                                        <span className="px-5 py-3 rounded-full bg-[#caf265] text-[#0b2117] text-sm font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
-                                            Hikayeyi Oku <ArrowRight size={16} />
+
+                                    {/* CTA */}
+                                    <div className="flex items-center gap-4">
+                                        <span className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-[#caf265] text-[#0b2117] font-bold text-base group-hover:gap-3 transition-all duration-300">
+                                            Hikayeyi Oku <ArrowRight size={18} />
                                         </span>
-                                        <div className="flex flex-col pl-4 border-l border-white/20">
-                                            <span className="text-2xl font-bold text-[#caf265]">{featured.stat.value}</span>
-                                            <span className="text-xs text-[#a8b8af]">{featured.stat.label}</span>
-                                        </div>
                                     </div>
                                 </div>
-
-                                {/* Sağ - Görsel */}
-                                <div className="relative h-64 lg:h-auto overflow-hidden">
-                                    <img
-                                        src={featured.image}
-                                        alt={featured.title}
-                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#0b2117]/30" />
-                                </div>
-                            </motion.div>
-                        </Link>
-                    </div>
+                            </div>
+                        </motion.div>
+                    </Link>
                 </section>
             )}
 

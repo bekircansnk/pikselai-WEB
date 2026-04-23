@@ -44,36 +44,28 @@ const CATS = [
 /* ─── Öne Çıkan Kartlar ─── */
 const FEATURED = [
     {
-        id: "cazador",
-        cat: "Müşteri Hikayesi",
-        title: "Cazador: Moda Fotoğrafçılığında AI Dönüşümü",
-        desc: "Geleneksel stüdyo çekimine kıyasla 10x daha hızlı ve %80 daha düşük maliyetli prodüksiyon.",
-        img: "/assets/brands/cazador/cazador_moda_haki.webp",
-        link: "/musteri-hikayeleri/referanslar",
-        stats: [{ v: "%80", l: "Maliyet Tasarrufu" }, { v: "10x", l: "Hız Artışı" }],
-    },
-    {
-        id: "mina",
-        cat: "Müşteri Hikayesi",
-        title: "Mina Drinks: CGI ile Sıfır Maliyetli Stüdyo",
-        desc: "Stüdyo giderlerini tamamen ortadan kaldırarak sınırsız ürün görseli üretimi.",
-        img: "/assets/brands/mina_drinks/mina1.webp",
-        link: "/musteri-hikayeleri/mina-drinks",
-        stats: [{ v: "%90", l: "Maliyet Azaltımı" }, { v: "∞", l: "Yaratıcı Çıktı" }],
-    },
+        id: "gizli-ai-ozellikleri",
+        cat: "AI Destekli Yaratıcılık",
+        title: "Favori Pazarlama & Tasarım Araçlarınızdaki Gizli Yapay Zeka Özellikleri",
+        desc: "Figma, Photoshop, Canva ve Google Slides'ın iş akışınızı hızlandıracak yapay zeka özelliklerini keşfedin.",
+        img: "https://cdn.sanity.io/images/k0dlbavy/production/79af68beb2c85a929135d7607b7caae6667252ac-1584x892.png?w=1584&q=95&auto=format",
+        link: "/blog/gizli-ai-ozellikleri",
+        stats: [{ v: "8 dk", l: "Okuma Süresi" }, { v: "4", l: "Tasarım Aracı" }],
+    }
 ]
 
 /* ─── Tüm Yazılar ─── */
 const POSTS = [
-    { id: "c1", cat: "Müşteri Hikayesi", catId: "musteri", title: "Yapay Zeka ile Moda Fotoğrafçılığında Devrim", desc: "Geleneksel fotoğraf çekimi maliyetlerini %80 düşürürken ürün görselleştirme hızını 10 kat artırdık.", img: "/assets/brands/cazador/cazador_siyah_pose.webp", link: "/musteri-hikayeleri/referanslar", time: "5 dk" },
-    { id: "c2", cat: "Müşteri Hikayesi", catId: "musteri", title: "Görsel Üretim Maliyetlerinde %90 Tasarruf",      desc: "İçecek fotoğrafçılığını stüdyolardan AI altyapılarına taşıyarak sınırsız yaratıcılık kazandık.",  img: "/assets/brands/mina_drinks/mina2.webp",             link: "/musteri-hikayeleri/mina-drinks",  time: "4 dk" },
-    { id: "c3", cat: "Moda & Tekstil",   catId: "moda",    title: "Sanal Manken Teknolojisi ile E-Ticarette Hız",   desc: "Hayalet manken görsellerini saniyeler içinde uluslararası modellere dönüştürerek süreci %85 hızlandırdık.", img: "/assets/brands/venus/ella_1_1_2k_4_5_03_portrait_mid.webp", link: "/musteri-hikayeleri/venus", time: "6 dk" },
-    { id: "c4", cat: "Outdoor & Ekipman", catId: "e-ticaret", title: "Saha Prodüksiyonu Olmadan Profesyonel Doğa Çekimleri", desc: "Ağır ekipman taşımadan AI ortam üretimiyle kusursuz doğa vitrinleri inşa ettik.", img: "/assets/brands/camp_and_map/1_2k_4_5_undefined__1_.webp", link: "/musteri-hikayeleri/campandmap", time: "5 dk" },
-    { id: "c5", cat: "AI Prodüksiyon",   catId: "ai-produksiyon", title: "AI Görsel Prodüksiyona Başlamadan Önce Bilmeniz Gerekenler", desc: "Yapay zeka destekli görsel üretim sürecine geçmeden önce dikkat etmeniz gereken 7 kritik nokta.", img: "/assets/brands/cazador/cazador1.webp", link: "/musteri-hikayeleri/referanslar", time: "8 dk" },
-    { id: "c6", cat: "Sosyal Medya",     catId: "sosyal-medya", title: "Sosyal Medya İçerikleri için AI Görsel Üretimi", desc: "Günlük içerik ihtiyacınızı karşılamak için AI destekli görsel akışını nasıl kurarsınız?", img: "/assets/brands/cazador/instagram_cazador.webp", link: "/musteri-hikayeleri/referanslar", time: "6 dk" },
-    { id: "c7", cat: "E-Ticaret",        catId: "e-ticaret", title: "E-Ticaret Ürün Fotoğraflarını AI ile Optimize Etmek", desc: "Dönüşüm oranlarını artıran AI destekli ürün görseli stratejileri ve pratik ipuçları.", img: "/assets/brands/venus/venus1.webp", link: "/musteri-hikayeleri/venus", time: "7 dk" },
-    { id: "c8", cat: "Moda & Tekstil",   catId: "moda", title: "2025'te Moda Fotoğrafçılığında AI Trendleri", desc: "Gelecek sezon moda markalarının AI ile üretkenliğini nasıl katlayacağını anlatan analiz.", img: "/assets/brands/venus/venus2.webp", link: "/musteri-hikayeleri/venus", time: "9 dk" },
-    { id: "c9", cat: "Outdoor & Ekipman", catId: "e-ticaret", title: "Outdoor Markalar için AI Ürün Fotoğrafçılığı", desc: "Dağ, orman ve kamp ortamlarını stüdyodan oluşturan AI sistemleri nasıl çalışır?", img: "/assets/brands/camp_and_map/camp1.webp", link: "/musteri-hikayeleri/campandmap", time: "5 dk" },
+    { 
+        id: "gizli-ai", 
+        cat: "AI Destekli Yaratıcılık", 
+        catId: "ai-powered-creative", 
+        title: "Favori Pazarlama & Tasarım Araçlarınızdaki Gizli Yapay Zeka Özellikleri", 
+        desc: "Figma, Photoshop, Canva ve Google Slides'ı neredeyse her gün kullanıyorsunuz; ama bu araçların iş akışını kısaltacak yapay zeka özelliklerini muhtemelen hiç fark etmediniz.", 
+        img: "https://cdn.sanity.io/images/k0dlbavy/production/79af68beb2c85a929135d7607b7caae6667252ac-1584x892.png?w=1584&q=95&auto=format", 
+        link: "/blog/gizli-ai-ozellikleri", 
+        time: "8 dk" 
+    }
 ]
 
 const PER_PAGE = 6

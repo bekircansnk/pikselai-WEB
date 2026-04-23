@@ -76,7 +76,7 @@ const About = () => {
                                     kullanıyoruz. Ürününüzün tek bir fotoğrafını alıyoruz — bazen kargoya 
                                     koymadan önceki bir kareyi bile — ve onu profesyonel stüdyo kalitesinde 
                                     görselere, sanal manken üzerinde moda çekimlerine, sosyal medya içeriklerine 
-                                    dönüştürüyoruz. Saatler içinde. Bütçenizin bir kısmıyla.
+                                    dönüştürüyoruz. 48 saat içinde. Bütçenizin bir kısmıyla.
                                 </p>
 
                                 <p>
@@ -134,7 +134,7 @@ const About = () => {
 
                         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
                             <StatBlock value="%80" label="Maliyet Tasarrufu" subtitle="Geleneksel çekime kıyasla" />
-                            <StatBlock value="24s" label="Ortalama Teslim" subtitle="Saatler içinde, haftalar değil" />
+                            <StatBlock value="48s" label="Ortalama Teslim" subtitle="İki gün içinde, haftalar değil" />
                             <StatBlock value="∞" label="Sınırsız Versiyon" subtitle="Tek üründen sınırsız sahne" />
                             <StatBlock value="4+" label="Hizmet Alanı" subtitle="AI, E-Ticaret, Sosyal, Tasarım" />
                         </div>
@@ -162,7 +162,7 @@ const About = () => {
                                 <ValueCard
                                     icon={<Zap className="w-6 h-6" />}
                                     title="Hız, ama acelecilik değil"
-                                    description="Saatler içinde teslim ediyoruz ama 'çabuk olsun da nasıl olursa olsun' demiyoruz. Her pikseli kontrol ediyor, kaliteyi asla hıza feda etmiyoruz. Hızlı oluyoruz çünkü süreçlerimiz akıllı."
+                                    description="48 saat içinde teslim ediyoruz ama 'çabuk olsun da nasıl olursa olsun' demiyoruz. Her pikseli kontrol ediyor, kaliteyi asla hıza feda etmiyoruz. Hızlı oluyoruz çünkü süreçlerimiz akıllı."
                                 />
                                 <ValueCard
                                     icon={<HandHeart className="w-6 h-6" />}

@@ -695,7 +695,7 @@ const AiProduction = () => {
             </motion.div>
             <div className="flex flex-col md:flex-row gap-6 h-auto md:h-[550px] w-full">
               {[
-                { t: "Eşi Benzeri Olmayan Hız", d: "Sektördeki en hızlı üretim döngüsü. Fikirden paylaşıma sadece saatler içinde geçiş yapın." },
+                { t: "Eşi Benzeri Olmayan Hız", d: "Sektördeki en hızlı üretim döngüsü. Fikirden paylaşıma sadece 48 saat içinde geçiş yapın." },
                 { t: "Kusursuz Devamlılık", d: "Yapay zeka modellerimiz her mecrada aynı görsel dili ve karakteri %100 doğrulukla korur." },
                 { t: "Kuralsız Yaratıcılık", d: "Mekan, bütçe veya teknik kısıtlamalar olmadan istediğiniz her türlü atmosferi oluşturun." }
               ].map((item, i) => (

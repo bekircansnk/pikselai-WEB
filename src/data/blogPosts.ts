@@ -18,7 +18,7 @@ export const BLOG_POSTS: BlogPost[] = [
         catId: "ai-powered-creative",
         title: "Favori Pazarlama & Tasarım Araçlarınızdaki Gizli Yapay Zeka Özellikleri",
         desc: "Figma, Photoshop, Canva ve Google Slides'ın iş akışınızı hızlandıracak yapay zeka özelliklerini keşfedin.",
-        img: "/assets/pages/blog/gizli_ai_ozellikleri.jpeg",
+        img: "/assets/pages/blog/gizli_ai_ozellikleri.webp",
         link: "/blog/ai-powered-creative/gizli-ai-ozellikleri",
         time: "8 dk",
         date: "23 Nisan 2026"
@@ -29,7 +29,7 @@ export const BLOG_POSTS: BlogPost[] = [
         catId: "ai-powered-creative",
         title: "AI Tasarım Trendleri: 2026'da Bilmeniz Gereken Her Şey",
         desc: "2026 yılının en önemli yapay zeka tasarım trendlerini keşfedin. Fotorealizmden hiper-kişiselleştirmeye, tasarım dünyasını değiştiren 7 yenilik.",
-        img: "/assets/pages/blog/ai_tasarim_trendleri_2026.jpeg",
+        img: "/assets/pages/blog/ai_tasarim_trendleri_2026.webp",
         link: "/blog/ai-powered-creative/ai-tasarim-trendleri",
         time: "12 dk",
         date: "23 Nisan 2026"
@@ -40,7 +40,7 @@ export const BLOG_POSTS: BlogPost[] = [
         catId: "ai-powered-creative",
         title: "En İyi AI Tasarım Araçları: 2026 Kapsamlı Rehber",
         desc: "İş akışınızı %60 hızlandıracak en iyi 11 yapay zeka tasarım aracını keşfedin. Midjourney'den Adobe Firefly'a, profesyonel tasarımcıların tercihleri.",
-        img: "/assets/pages/blog/en_iyi_ai_araclari.jpeg",
+        img: "/assets/pages/blog/en_iyi_ai_araclari.webp",
         link: "/blog/ai-powered-creative/ai-tasarim-araclari",
         time: "15 dk",
         date: "23 Nisan 2026"
@@ -51,7 +51,7 @@ export const BLOG_POSTS: BlogPost[] = [
         catId: "ai-powered-creative",
         title: "AI Görsel Üretimi: İlham Veren Örnekler ve En İyi Uygulamalar",
         desc: "Yapay zeka ile görsel üretiminin sınırlarını zorlayın. Ürün fotoğrafçılığından sanal mankenlere, markalar için en başarılı AI kullanım örnekleri.",
-        img: "/assets/pages/blog/ai_gorsel_uretimi_ornekleri.jpeg",
+        img: "/assets/pages/blog/ai_gorsel_uretimi_ornekleri.webp",
         link: "/blog/ai-powered-creative/ai-gorsel-uretimi-ornekleri",
         time: "10 dk",
         date: "23 Nisan 2026"
@@ -62,7 +62,7 @@ export const BLOG_POSTS: BlogPost[] = [
         catId: "creative-leadership",
         title: "Yapay Zeka ve Telif Hakları: Yaratıcı Ekipler İçin Kapsamlı Rehber",
         desc: "Yapay zeka ile üretilen içeriklerin telif hakları kime ait? Markalar için AI kullanımında yasal riskler ve dikkat edilmesi gerekenler.",
-        img: "/assets/pages/blog/ai_telif_haklari.jpeg",
+        img: "/assets/pages/blog/ai_telif_haklari.webp",
         link: "/blog/creative-leadership/ai-telif-haklari",
         time: "10 dk",
         date: "23 Nisan 2026"
@@ -73,7 +73,7 @@ export const BLOG_POSTS: BlogPost[] = [
         catId: "digital-marketing",
         title: "Yaratıcılığın Sınırlarını Zorlayan En Başarılı 9 AI Pazarlama Kampanyası",
         desc: "Dünya devlerinin yapay zeka kullanarak hayata geçirdiği en etkileyici pazarlama kampanyalarını inceleyin. Coca-Cola'dan Nike'a, ilham veren AI örnekleri.",
-        img: "/assets/pages/blog/ai_pazarlama_kampanyalari.png",
+        img: "/assets/pages/blog/ai_pazarlama_kampanyalari.webp",
         link: "/blog/digital-marketing/ai-pazarlama-kampanyalari",
         time: "12 dk",
         date: "23 Nisan 2026"
@@ -84,7 +84,7 @@ export const BLOG_POSTS: BlogPost[] = [
         catId: "creative-leadership",
         title: "Tasarımda Yapay Zekanın Geleceği: Kimler Öne Geçecek?",
         desc: "Yapay zeka tasarım dünyasını nasıl dönüştürüyor? Hız, ölçek ve yaratıcılık ekseninde tasarımın geleceğine dair uzman öngörüleri.",
-        img: "/assets/pages/blog/tasarimda_ai_gelecegi.png",
+        img: "/assets/pages/blog/tasarimda_ai_gelecegi.webp",
         link: "/blog/creative-leadership/tasarimda-ai-gelecegi",
         time: "11 dk",
         date: "23 Nisan 2026"
@@ -95,7 +95,7 @@ export const BLOG_POSTS: BlogPost[] = [
         catId: "inside-pikselai",
         title: "Tasarım İş Akışında Otomasyon: Pikselai'ın İçinden Sırlar",
         desc: "Tasarım süreçlerini otomatize ederek nasıl 5 kat daha hızlı içerik üretiyoruz? Pikselai'ın iç iş akışlarını ve otomasyon stratejilerini keşfedin.",
-        img: "/assets/pages/blog/tasarim_is_akisi_otomasyon.jpeg",
+        img: "/assets/pages/blog/tasarim_is_akisi_otomasyon.webp",
         link: "/blog/inside-pikselai/tasarim-is-akisi-otomasyon",
         time: "9 dk",
         date: "23 Nisan 2026"
@@ -106,7 +106,7 @@ export const BLOG_POSTS: BlogPost[] = [
         catId: "all-things-brand",
         title: "AI ve Marka Rehberleri: Geleceğin Görsel Standartlarını Belirlemek",
         desc: "Yapay zeka marka rehberlerini nasıl dönüştürüyor? Statik PDF'lerden yaşayan, dinamik AI modellerine geçiş süreci ve marka tutarlılığı.",
-        img: "/assets/pages/blog/ai_marka_rehberleri.jpeg",
+        img: "/assets/pages/blog/ai_marka_rehberleri.webp",
         link: "/blog/all-things-brand/ai-marka-rehberleri",
         time: "10 dk",
         date: "23 Nisan 2026"
@@ -117,7 +117,7 @@ export const BLOG_POSTS: BlogPost[] = [
         catId: "video-marketing",
         title: "AI ile Video Pazarlama: Saniyeler İçinde Etkileyici İçerikler Üretin",
         desc: "Yapay zeka video pazarlamasını nasıl değiştiriyor? AI video araçları, kurgu otomasyonu ve sosyal medya için stratejik video üretim rehberimiz.",
-        img: "/assets/pages/blog/ai_video_pazarlama.jpeg",
+        img: "/assets/pages/blog/ai_video_pazarlama.webp",
         link: "/blog/video-marketing/ai-video-pazarlama",
         time: "11 dk",
         date: "23 Nisan 2026"

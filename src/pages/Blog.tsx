@@ -1,260 +1,173 @@
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { ArrowRight, Clock, User, Zap, BarChart3, Package, TrendingUp, Star } from "lucide-react"
+import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
+import { ArrowRight, Star } from "lucide-react"
 import { Header } from "../components/layout/Header"
 import { Footer } from "../components/layout/Footer"
-import { BottomCTA } from "../components/sections/BottomCTA"
-import { cn } from "../lib/utils"
+import { Button } from "../components/ui/Button"
 
-// Kategori listesi
-const categories = ["Tümü", "Referans Proje", "Yapay Zeka", "E-Ticaret", "Sosyal Medya"]
-
-// Gerçek case study'ler
-const caseStudies = [
+const stories = [
     {
-        id: 1,
-        slug: "/blog/referanslar",
-        category: "Referans Proje",
-        brand: "Cazador",
-        title: "Cazador'un Dijital Dönüşüm Yolculuğu",
-        excerpt: "Moda dünyasının köklü markası Cazador, Pikselai'ın yapay zeka çözümleriyle katalog süreçlerini hızlandırdı ve dijital varlığını mükemmelleştirdi.",
-        tags: ["Dijital Katalog", "AI Prodüksiyon", "Sosyal Medya"],
-        image: "/assets/brands/cazador/cazador_moda_haki.webp",
-        stat: { label: "Katalog Hızı", value: "10x", icon: TrendingUp },
-        featured: true,
+        id: "cazador",
+        client: "Cazador",
+        industry: "Moda & Tekstil",
+        title: "Yapay Zeka ile Moda Fotoğrafçılığında Devrim",
+        description: "Geleneksel fotoğraf çekimi maliyetlerini %80 düşürürken, ürün görselleştirme hızını 10 kat artırdık.",
+        image: "/assets/brands/cazador/cazador_siyah_pose.webp",
+        tags: ["AI Prodüksiyon", "Katalog", "Verimlilik"],
+        link: "/blog/referanslar" // Mevcut Cazador case study sayfasına yönlendirme
     },
     {
-        id: 2,
-        slug: "/blog/mina-drinks",
-        category: "E-Ticaret",
-        brand: "Mina Drinks",
-        title: "Mina Drinks'in Görsel Dönüşüm Yolculuğu",
-        excerpt: "İçecek sektörünün yenilikçi markası Mina Drinks, Pikselai'ın yapay zeka çözümleriyle ürün fotoğrafçılığı süreçlerini baştan yarattı.",
-        tags: ["Ürün Fotoğrafçılığı", "AI Stüdyo", "Maliyet Azaltma"],
-        image: "/assets/pages/minadrinkscasestudy/_id_scenario_1_corn_field_dream_2k_202.webp",
-        stat: { label: "Maliyet Azalması", value: "%90", icon: BarChart3 },
-        featured: false,
+        id: "mina-drinks",
+        client: "Mina Drinks",
+        industry: "Yiyecek & İçecek",
+        title: "Görsel Üretim Maliyetlerinde %90 Tasarruf",
+        description: "İçecek fotoğrafçılığını stüdyolardan AI altyapılarına taşıyarak sınırsız yaratıcılık kazandık.",
+        image: "/assets/blog/id_scenario_1_end_frame_prompt_2k_20.webp",
+        tags: ["AI Prodüksiyon", "CGI", "Yaratıcılık"],
+        link: "/blog/mina-drinks"
     },
     {
-        id: 3,
-        slug: "/blog/venus",
-        category: "E-Ticaret",
-        brand: "Venüs Giyim",
-        title: "Venüs'ün Model Çeşitliliği Dönüşümü",
-        excerpt: "Kadın giyim markası Venüs, e-ticaret manken çekim süreçlerini Pikselai'ın Sanal Manken (AI Model) teknolojisiyle tamamen yeniden kurguladı.",
-        tags: ["Sanal Manken", "AI Model", "Uluslararası Pazar"],
-        image: "/assets/brands/venus/mila_1_image00004_4k_16_9_01_hero_full.webp",
-        stat: { label: "Zaman Tasarrufu", value: "%85", icon: Zap },
-        featured: false,
+        id: "venus",
+        client: "Venüs Giyim",
+        industry: "Moda & Tekstil",
+        title: "Sanal Manken Teknolojisi ile E-Ticarette Hız",
+        description: "Hayalet manken görsellerini saniyeler içinde uluslararası modellere dönüştürerek süreci %85 oranında hızlandırdık.",
+        image: "/assets/brands/venus/ella_1_1_2k_4_5_03_portrait_mid.webp",
+        tags: ["Ghost Mannequin", "AI Model", "Moda"],
+        link: "/blog/venus"
     },
     {
-        id: 4,
-        slug: "/blog/campandmap",
-        category: "E-Ticaret",
-        brand: "Campandmap",
-        title: "Campandmap'in Outdoor Vitrini",
-        excerpt: "Ağır kamp ekipmanlarını stüdyoya taşımak yerine Pikselai'ın yapay zeka destekli arka plan üretimi ile doğanın ruhunu kataloglarına taşıdı.",
-        tags: ["Background AI", "Outdoor Prodüksiyon", "E-Ticaret"],
-        image: "/assets/brands/camp_and_map/1_2k_auto_undefined.webp",
-        stat: { label: "Lojistik Tasarruf", value: "%100", icon: Package },
-        featured: false,
-    },
+        id: "campandmap",
+        client: "Camp and Map",
+        industry: "Outdoor Giyim & Ekipman",
+        title: "Saha Prodüksiyonu Olmadan Profesyonel Doğa Çekimleri",
+        description: "Ağır kamp ekipmanlarını taşımadan, yapay zeka ortam arka plan üretimiyle kusursuz doğa vitrinleri inşa ettik.",
+        image: "/assets/brands/camp_and_map/1_2k_4_5_undefined__1_.webp",
+        tags: ["AI Background", "Outdoor", "Lojistik"],
+        link: "/blog/campandmap"
+    }
 ]
 
 export default function Blog() {
-    const [activeCategory, setActiveCategory] = useState("Tümü")
-
-    const filtered = activeCategory === "Tümü"
-        ? caseStudies
-        : caseStudies.filter(p => p.category === activeCategory)
-
-    const featured = caseStudies.find(p => p.featured)
-    const rest = filtered.filter(p => !p.featured)
-
     return (
-        <div className="min-h-screen bg-[#F4EFE6] font-sans">
-            <Header transparent={false} lightText={false} />
+        <div className="min-h-screen bg-white dark:bg-bor-primary-900 font-sans">
+            <Header />
 
-            {/* Hero - Öne Çıkan */}
-            {featured && activeCategory === "Tümü" && (
-                <section className="pt-24 pb-0 bg-[#F4EFE6]">
-                    {/* Sayfa başlığı */}
+            {/* Hero Section */}
+            <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+                <div className="max-w-7xl mx-auto text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                        className="text-center px-4 pt-6 pb-10"
+                        transition={{ duration: 0.6 }}
                     >
-                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#0b2117]/10 bg-[#0b2117]/5 text-[#0b2117] text-xs font-bold tracking-widest uppercase mb-5">
-                            Müşteri Hikayeleri
-                        </div>
-                        <h1 className="text-5xl md:text-7xl font-bold font-display leading-tight tracking-tight text-[#0b2117] mb-3">
-                            Gerçek Markalar,<br />
-                            <span className="italic font-light text-[#86AA00]">Gerçek Sonuçlar</span>
+                        <h1 className="text-4xl md:text-6xl font-bold font-display text-bor-primary-900 dark:text-white mb-6">
+                            Öğrenim Merkezi & <span className="italic font-light text-bor-secondary">Blog</span>
                         </h1>
-                        <p className="text-[#3a5245] text-xl max-w-2xl mx-auto font-light leading-relaxed">
-                            Pikselai ile dijital dönüşüm yolculuğuna çıkan markalardan ilham alın.
+                        <p className="text-xl text-bor-primary-600 dark:text-bor-primary-300 max-w-3xl mx-auto leading-relaxed">
+                            Yapay zeka, dijital dönüşüm ve modern pazarlama stratejileri hakkında en son içerikler, rehberler ve sektör analizleri.
                         </p>
                     </motion.div>
-
-                    {/* Öne Çıkan - Kart Formatı */}
-                    <div className="px-4 sm:px-6 lg:px-12 xl:px-20 pb-0">
-                        <Link to={featured.slug} className="block">
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.7, delay: 0.15 }}
-                                className="group relative grid grid-cols-1 lg:grid-cols-2 rounded-3xl overflow-hidden shadow-2xl hover:shadow-[0_40px_100px_rgba(11,33,23,0.18)] transition-shadow duration-700 border border-[#e0dcd3]"
-                            >
-                                {/* Sol - Ürün Görseli (doğal boyut) */}
-                                <div className="relative bg-[#eae4da] flex items-end justify-center min-h-[350px] lg:min-h-[620px] overflow-hidden">
-                                    <img
-                                        src={featured.image}
-                                        alt={featured.brand}
-                                        className="relative z-10 w-auto h-full max-h-[700px] object-contain object-bottom transition-transform duration-700 group-hover:scale-[1.02]"
-                                    />
-                                    {/* Hafif alt vignette */}
-                                    <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#c8bfb0]/20 to-transparent pointer-events-none" />
-                                </div>
-
-                                {/* Sağ - İçerik */}
-                                <div className="bg-[#0b2117] px-10 md:px-14 lg:px-16 py-14 lg:py-20 flex flex-col justify-center relative overflow-hidden">
-                                    <div className="absolute -top-20 -right-20 w-80 h-80 bg-[#caf265]/8 blur-[100px] rounded-full" />
-                                    <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-[#caf265]/5 blur-[80px] rounded-full" />
-
-                                    <div className="relative z-10">
-                                        <span className="inline-flex items-center gap-2 text-[#caf265] text-xs font-bold tracking-widest uppercase mb-6">
-                                            <Star size={10} className="fill-[#caf265]" />
-                                            Öne Çıkan Hikaye
-                                        </span>
-
-                                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display text-white leading-tight mb-5">
-                                            {featured.title}
-                                        </h2>
-
-                                        <p className="text-[#a8b8af] font-light leading-relaxed text-lg mb-8 max-w-md">
-                                            {featured.excerpt}
-                                        </p>
-
-                                        {/* İstatistikler */}
-                                        <div className="flex items-center gap-10 mb-10 pb-8 border-b border-white/10">
-                                            <div>
-                                                <div className="text-3xl font-bold text-[#caf265]">{featured.stat.value}</div>
-                                                <div className="text-xs text-[#a8b8af] mt-1">{featured.stat.label}</div>
-                                            </div>
-                                            <div>
-                                                <div className="text-3xl font-bold text-white">%80</div>
-                                                <div className="text-xs text-[#a8b8af] mt-1">Maliyet Tasarrufu</div>
-                                            </div>
-                                        </div>
-
-                                        {/* Etiketler */}
-                                        <div className="flex flex-wrap gap-2 mb-10">
-                                            {featured.tags.map(tag => (
-                                                <span key={tag} className="px-3 py-1.5 rounded-full text-xs font-medium bg-white/8 text-white/60 border border-white/10">
-                                                    {tag}
-                                                </span>
-                                            ))}
-                                        </div>
-
-                                        {/* CTA */}
-                                        <span className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-[#caf265] text-[#0b2117] font-bold text-base group-hover:gap-3 transition-all duration-300 w-fit">
-                                            Hikayeyi Oku <ArrowRight size={18} />
-                                        </span>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        </Link>
-                    </div>
-
-                </section>
-            )}
-
-
-
-            {/* Kart Izgara */}
-            <section className="py-16 px-4 sm:px-6 lg:px-12 xl:px-24 bg-[#F4EFE6]">
-                <div className="max-w-7xl mx-auto">
-                    {activeCategory !== "Tümü" && filtered.length === 0 && (
-                        <div className="text-center py-20 text-[#3a5245] text-lg font-light">
-                            Bu kategoride henüz içerik yok.
-                        </div>
-                    )}
-                    <AnimatePresence mode="wait">
-                        <motion.div
-                            key={activeCategory}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.3 }}
-                            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-                        >
-                            {(activeCategory === "Tümü" ? rest : filtered).map((post, i) => (
-                                <motion.div
-                                    key={post.id}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.4, delay: i * 0.08 }}
-                                >
-                                    <Link to={post.slug} className="block group h-full">
-                                        <article className="flex flex-col h-full rounded-3xl overflow-hidden border border-[#e0dcd3] bg-white hover:border-[#86AA00]/40 hover:shadow-xl transition-all duration-500">
-                                            {/* Görsel */}
-                                            <div className="h-52 overflow-hidden relative">
-                                                <img
-                                                    src={post.image}
-                                                    alt={post.title}
-                                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                                />
-                                                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                                                {/* Stat badge */}
-                                                <div className="absolute bottom-3 right-3 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#0b2117]/80 backdrop-blur-sm">
-                                                    <post.stat.icon size={12} className="text-[#caf265]" />
-                                                    <span className="text-white text-xs font-bold">{post.stat.value}</span>
-                                                    <span className="text-white/60 text-[10px]">{post.stat.label}</span>
-                                                </div>
-                                            </div>
-
-                                            {/* İçerik */}
-                                            <div className="p-6 flex flex-col flex-grow">
-                                                <div className="flex items-center gap-2 mb-3">
-                                                    <span className="text-xs font-bold text-[#86AA00] uppercase tracking-widest">{post.brand}</span>
-                                                    <span className="text-[#0b2117]/20">·</span>
-                                                    <span className="text-xs text-[#0b2117]/50">{post.category}</span>
-                                                </div>
-                                                <h3 className="text-lg font-bold text-[#0b2117] mb-3 leading-snug group-hover:text-[#86AA00] transition-colors">
-                                                    {post.title}
-                                                </h3>
-                                                <p className="text-sm text-[#3a5245] font-light leading-relaxed mb-5 flex-grow line-clamp-3">
-                                                    {post.excerpt}
-                                                </p>
-                                                <div className="flex flex-wrap gap-1.5 mb-5">
-                                                    {post.tags.map(tag => (
-                                                        <span key={tag} className="px-2 py-0.5 rounded-full text-[10px] font-medium bg-[#0b2117]/5 text-[#0b2117]/60">
-                                                            {tag}
-                                                        </span>
-                                                    ))}
-                                                </div>
-                                                <div className="flex items-center justify-between pt-4 border-t border-[#e0dcd3]">
-                                                    <span className="text-xs font-medium text-[#3a5245] flex items-center gap-1.5">
-                                                        <User size={12} /> Pikselai Ekibi
-                                                    </span>
-                                                    <span className="text-xs text-[#86AA00] font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
-                                                        Oku <ArrowRight size={12} />
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </Link>
-                                </motion.div>
-                            ))}
-                        </motion.div>
-                    </AnimatePresence>
                 </div>
             </section>
 
-            {/* CTA Bölümü */}
-            <BottomCTA />
+            {/* Featured Story (Cazador) */}
+            <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-bor-primary-800/50">
+                <div className="max-w-7xl mx-auto">
+                    <div className="flex flex-col md:flex-row items-center gap-12 rounded-3xl overflow-hidden bg-white dark:bg-bor-primary-900 shadow-xl border border-bor-primary-100 dark:border-bor-primary-800">
+                        <div className="md:w-1/2 h-full min-h-[400px]">
+                            <img
+                                src="/assets/brands/cazador/cazador_moda_haki.webp"
+                                alt="Cazador Case Study"
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                        <div className="md:w-1/2 p-8 md:p-12 space-y-6">
+                            <div className="flex items-center gap-2 text-bor-secondary font-bold uppercase tracking-wider text-sm">
+                                <Star className="w-4 h-4 fill-current" />
+                                <span>Öne Çıkan Hikaye</span>
+                            </div>
+                            <h2 className="text-3xl md:text-4xl font-bold font-display text-bor-primary-900 dark:text-white">
+                                Cazador: Moda Fotoğrafçılığında AI Dönüşümü
+                            </h2>
+                            <p className="text-lg text-bor-primary-600 dark:text-bor-primary-300">
+                                Geleneksel stüdyo çekimlerine kıyasla 10 kat daha hızlı ve %80 daha düşük maliyetli
+                                yapay zeka destekli prodüksiyon süreci.
+                            </p>
+                            <div className="grid grid-cols-2 gap-6 py-4">
+                                <div>
+                                    <div className="text-3xl font-bold text-bor-secondary">%80</div>
+                                    <div className="text-sm text-bor-primary-500">Maliyet Tasarrufu</div>
+                                </div>
+                                <div>
+                                    <div className="text-3xl font-bold text-bor-secondary">10x</div>
+                                    <div className="text-sm text-bor-primary-500">Hız Artışı</div>
+                                </div>
+                            </div>
+                            <Link to="/blog/referanslar">
+                                <Button size="lg" className="gap-2">
+                                    Hikayeyi Oku <ArrowRight className="w-4 h-4" />
+                                </Button>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Stories Grid */}
+            <section className="py-20 px-4 sm:px-6 lg:px-8">
+                <div className="max-w-7xl mx-auto">
+                    <h2 className="text-2xl font-bold mb-10 text-bor-primary-900 dark:text-white">Daha Fazla Başarı Hikayesi</h2>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {stories.map((story) => (
+                            <motion.div
+                                key={story.id}
+                                whileHover={{ y: -5 }}
+                                className="bg-white dark:bg-bor-primary-800 rounded-xl overflow-hidden border border-bor-primary-100 dark:border-bor-primary-700 shadow-sm hover:shadow-lg transition-all"
+                            >
+                                <div className="h-48 overflow-hidden">
+                                    <img
+                                        src={story.image}
+                                        alt={story.title}
+                                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                                    />
+                                </div>
+                                <div className="p-6 space-y-4">
+                                    <div className="flex items-center justify-between">
+                                        <span className="text-xs font-semibold text-bor-secondary uppercase tracking-wider">
+                                            {story.industry}
+                                        </span>
+                                        <span className="text-xs font-medium text-bor-primary-400">
+                                            {story.client}
+                                        </span>
+                                    </div>
+                                    <h3 className="text-xl font-bold text-bor-primary-900 dark:text-white leading-tight">
+                                        <Link to={story.link.replace('/blog/', '/musteri-hikayeleri/')} className="hover:text-bor-secondary transition-colors">
+                                            {story.title}
+                                        </Link>
+                                    </h3>
+                                    <p className="text-bor-primary-500 dark:text-bor-primary-400 text-sm line-clamp-3">
+                                        {story.description}
+                                    </p>
+                                    <div className="flex flex-wrap gap-2 pt-2">
+                                        {story.tags.map(tag => (
+                                            <span key={tag} className="text-xs px-2 py-1 bg-bor-primary-50 dark:bg-bor-primary-900 rounded-md text-bor-primary-600 dark:text-bor-primary-300">
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
+                                    <Link
+                                        to={story.link.replace('/blog/', '/musteri-hikayeleri/')}
+                                        className="inline-flex items-center gap-1 text-sm font-semibold text-bor-secondary hover:underline pt-2"
+                                    >
+                                        İncele <ArrowRight className="w-3 h-3" />
+                                    </Link>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
 
             <Footer />
         </div>

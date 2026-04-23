@@ -29,8 +29,39 @@ export function ResourcesMenu({ isOpen, activeMenu, onClose }: ResourcesMenuProp
                         {activeMenu === "kaynaklar" && (
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-bor-primary-100 dark:border-bor-primary-800">
 
-                                {/* Sütun 1: Öğrenim Merkezi (1/2) */}
+                                {/* Sütun 1: Müşteri Hikayeleri (1/2) */}
                                 <div className="pr-8 border-r border-bor-primary-100 dark:border-bor-primary-800">
+                                    <MenuHeader title="Müşteri Hikayeleri" href="/musteri-hikayeleri" onClose={onClose} />
+                                    <div className="mt-4 space-y-3">
+                                        <ImageCard
+                                            image="/assets/brands/cazador/cazador_siyah_pose.webp"
+                                            title="Cazador: Moda Fotoğrafçılığında AI Dönüşümü"
+                                            href="/musteri-hikayeleri/referanslar"
+                                            onClose={onClose}
+                                        />
+                                        <ImageCard
+                                            image="/assets/blog/id_scenario_1_end_frame_prompt_2k_20.webp"
+                                            title="Mina Drinks: Ürün Prodüksiyonunda %90 Tasarruf"
+                                            href="/musteri-hikayeleri/mina-drinks"
+                                            onClose={onClose}
+                                        />
+                                        <ImageCard
+                                            image="/assets/brands/venus/ella_1_1_2k_4_5_03_portrait_mid.webp"
+                                            title="Venüs Giyim: E-Ticarette Sanal Manken Teknolojisi"
+                                            href="/musteri-hikayeleri/venus"
+                                            onClose={onClose}
+                                        />
+                                        <ImageCard
+                                            image="/assets/brands/camp_and_map/1_2k_4_5_undefined__1_.webp"
+                                            title="Camp and Map: Açık Hava Stüdyoları AI'a Taşındı"
+                                            href="/musteri-hikayeleri/campandmap"
+                                            onClose={onClose}
+                                        />
+                                    </div>
+                                </div>
+
+                                {/* Sütun 2: Öğrenim Merkezi & Blog (1/2) */}
+                                <div className="pl-8">
                                     <MenuHeader title="Öğrenim Merkezi & Blog" href="/blog" onClose={onClose} />
                                     <div className="mt-4 space-y-0.5">
                                         <TextItem
@@ -66,37 +97,6 @@ export function ResourcesMenu({ isOpen, activeMenu, onClose }: ResourcesMenuProp
                                             desc="Stratejik büyüme metotları"
                                             icon={<FolderArchive size={16} />}
                                             href="/blog"
-                                            onClose={onClose}
-                                        />
-                                    </div>
-                                </div>
-
-                                {/* Sütun 2: Müşteri Hikayeleri (1/2) */}
-                                <div className="pl-8">
-                                    <MenuHeader title="Müşteri Hikayeleri" href="/musteri-hikayeleri" onClose={onClose} />
-                                    <div className="mt-4 space-y-3">
-                                        <ImageCard
-                                            image="/assets/brands/cazador/cazador_siyah_pose.webp"
-                                            title="Cazador: Moda Fotoğrafçılığında AI Dönüşümü"
-                                            href="/blog/referanslar"
-                                            onClose={onClose}
-                                        />
-                                        <ImageCard
-                                            image="/assets/blog/id_scenario_1_end_frame_prompt_2k_20.webp"
-                                            title="Mina Drinks: Ürün Prodüksiyonunda %90 Tasarruf"
-                                            href="/blog/mina-drinks"
-                                            onClose={onClose}
-                                        />
-                                        <ImageCard
-                                            image="/assets/brands/venus/ella_1_1_2k_4_5_03_portrait_mid.webp"
-                                            title="Venüs Giyim: E-Ticarette Sanal Manken Teknolojisi"
-                                            href="/blog/venus"
-                                            onClose={onClose}
-                                        />
-                                        <ImageCard
-                                            image="/assets/brands/camp_and_map/1_2k_4_5_undefined__1_.webp"
-                                            title="Camp and Map: Açık Hava Stüdyoları AI'a Taşındı"
-                                            href="/blog/campandmap"
                                             onClose={onClose}
                                         />
                                     </div>

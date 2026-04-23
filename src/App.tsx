@@ -9,8 +9,8 @@ const Contact = lazy(() => import('./pages/Contact'))
 const CazadorCaseStudy = lazy(() => import('./pages/blog/CazadorCaseStudy'))
 const Islerimiz = lazy(() => import('./pages/Islerimiz'))
 const NotFound = lazy(() => import('./pages/NotFound'))
+const MusteriHikayeleri = lazy(() => import('./pages/MusteriHikayeleri'))
 const Blog = lazy(() => import('./pages/Blog'))
-const CustomerStories = lazy(() => import('./pages/CustomerStories'))
 const EticaretYeni = lazy(() => import('./pages/EticaretYeni'))
 const SosyalMedyaYeni = lazy(() => import('./pages/SosyalMedyaYeni'))
 const AiProductionYeni = lazy(() => import('./pages/AiProductionYeni'))
@@ -77,11 +77,11 @@ function App() {
             <Route path="/ucretler" element={<Pricing />} />
             <Route path="/islerimiz" element={<Islerimiz />} />
             <Route path="/blog" element={<Blog />} />
-            <Route path="/musteri-hikayeleri" element={<CustomerStories />} />
-            <Route path="/blog/referanslar" element={<CazadorCaseStudy />} />
-            <Route path="/blog/mina-drinks" element={<MinaDrinksCaseStudy />} />
-            <Route path="/blog/venus" element={<VenusCaseStudy />} />
-            <Route path="/blog/campandmap" element={<CampAndMapCaseStudy />} />
+            <Route path="/musteri-hikayeleri" element={<MusteriHikayeleri />} />
+            <Route path="/musteri-hikayeleri/referanslar" element={<CazadorCaseStudy />} />
+            <Route path="/musteri-hikayeleri/mina-drinks" element={<MinaDrinksCaseStudy />} />
+            <Route path="/musteri-hikayeleri/venus" element={<VenusCaseStudy />} />
+            <Route path="/musteri-hikayeleri/campandmap" element={<CampAndMapCaseStudy />} />
             <Route path="/fiyat-hesapla" element={<CostCalculator />} />
             <Route path="/gizlilik-politikasi" element={<PrivacyPolicy />} />
             <Route path="/kullanim-kosullari" element={<TermsOfService />} />

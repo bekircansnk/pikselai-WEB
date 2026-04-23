@@ -405,7 +405,6 @@ export const BLOG_CATEGORIES = [
     { id: "ai-powered-creative",   label: "AI Destekli Yaratıcılık" },
     { id: "all-things-brand",      label: "Markaya Dair Her Şey" },
     { id: "creative-leadership",   label: "Yaratıcı Liderlik" },
-    { id: "customer-stories",      label: "Müşteri Hikayeleri" },
     { id: "digital-marketing",     label: "Dijital Pazarlama" },
     { id: "inside-pikselai",       label: "Pikselai'ın İçinden" },
     { id: "video-marketing",       label: "Video Pazarlama" },

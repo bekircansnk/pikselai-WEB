@@ -30,7 +30,7 @@ const C = {
     border: "rgba(10,33,31,0.12)",
 }
 
-const PER_PAGE = 6
+const PER_PAGE = 12
 
 /* ═════════════════════════════════════════════════════════════ */
 export default function Blog() {

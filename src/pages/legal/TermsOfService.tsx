@@ -220,7 +220,7 @@ const TermsOfService = () => {
                             <div className="bg-white rounded-2xl p-6 border border-[#e0dcd3] not-prose space-y-2 text-[15px] text-[#3a5245]">
                                 <p><strong className="text-[#0b2117]">E-posta:</strong> bilgi@pikselai.com</p>
                                 <p><strong className="text-[#0b2117]">Telefon:</strong> +90 553 183 23 44</p>
-                                <p><strong className="text-[#0b2117]">Adres:</strong> İstanbul, Türkiye</p>
+                                <p><strong className="text-[#0b2117]">Adres:</strong> Başakşehir / İstanbul</p>
                             </div>
                         </LegalSection>
 

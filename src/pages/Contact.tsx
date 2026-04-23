@@ -276,7 +276,7 @@ const Contact = () => {
                                 </div>
                                 <div className="flex-1">
                                     <div className="font-bold text-[#0b2117] text-lg mb-1">Konum</div>
-                                    <div className="text-[#3a5245] text-sm">İstanbul, Türkiye</div>
+                                    <div className="text-[#3a5245] text-sm">Başakşehir / İstanbul</div>
                                 </div>
                             </div>
                         </div>

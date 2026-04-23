@@ -64,7 +64,7 @@ const KvkkPolicy = () => {
                                         </tr>
                                         <tr className="border-b border-[#e0dcd3]">
                                             <td className="py-3 font-semibold text-[#0b2117]">Adres</td>
-                                            <td className="py-3">İstanbul, Türkiye</td>
+                                            <td className="py-3">Başakşehir / İstanbul</td>
                                         </tr>
                                         <tr className="border-b border-[#e0dcd3]">
                                             <td className="py-3 font-semibold text-[#0b2117]">E-posta</td>

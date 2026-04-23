@@ -130,6 +130,32 @@ const creativePackages = [
     }
 ];
 
+// SSS Verileri
+const catalogFaqs = [
+    { q: "Katalog paketi için ödeme tek seferlik mi?", a: "Evet, profesyonel katalog paketi için sadece bir kez ödeme yaparsınız. Sistem tarafımızdan kurulup size teslim edildikten sonra sınırsız ve süresiz kullanım hakkına sahip olursunuz." },
+    { q: "Kendi domainimi kullanabilir miyim?", a: "Kesinlikle! Hazırlanan dijital kataloğu kendi alan adınız (örn: katalog.markaniz.com) altında kullanabilirsiniz." },
+    { q: "Kaç ürün yükleyebilirim?", a: "Herhangi bir ürün veya görsel sınırımız yoktur. Sınırsız sayıda ürün ve kategori oluşturabilirsiniz." }
+];
+
+const aiFaqs = [
+    { q: "Kredi sisteminiz nasıl çalışıyor?", a: "Kredi veya aylık abonelik zorunluluğumuz yok. Ay sonunda sadece o ay içinde ürettiğiniz başarılı görsellerin toplam sayısı üzerinden, bulunduğunuz dilime göre faturalandırılırsınız." },
+    { q: "Beğenmediğim görseller için ücret ödüyor muyum?", a: "Hayır. Kalite kontrol sürecimizden geçmeyen veya sizin onaylamadığınız hiçbir görsel için ücret talep etmiyoruz. Sadece kullandığınız nihai görseller için ödeme yaparsınız." },
+    { q: "Kendi markam için özel bir AI modeli eğitilebilir mi?", a: "Evet! Özellikle hacimli çalışmalarda marka kimliğinize, renklerinize ve stilinize %100 uygun sonuçlar alabilmeniz için size özel model eğitimi gerçekleştiriyoruz. Şu an kampanya dahilinde bu işlem ücretsizdir." },
+    { q: "Görsel teslim süreleri nedir?", a: "Talebinize ve hacmine bağlı olmakla birlikte, standart üretimler 48 saat içerisinde kalite kontrolü tamamlanmış olarak size teslim edilir." }
+];
+
+const ecommerceFaqs = [
+    { q: "Hangi altyapıyı kullanıyorsunuz?", a: "E-ticaret projelerimizde hız, güvenlik ve dönüşüm oranı en yüksek olan Shopify altyapısını tercih ediyoruz." },
+    { q: "Kurulum süreci ne kadar sürüyor?", a: "Seçtiğiniz pakete göre değişiklik göstermekle birlikte, standart bir kurulum 7-14 gün, özel tasarımlı profesyonel kurulumlar ise 3-4 hafta içerisinde tamamlanmaktadır." },
+    { q: "Ödeme altyapılarını siz mi kuruyorsunuz?", a: "Evet. İyzico, PayTR, Stripe gibi popüler ödeme sağlayıcılarının entegrasyonu tarafımızca eksiksiz olarak yapılmaktadır." }
+];
+
+const creativeFaqs = [
+    { q: "Özel proje ne anlama geliyor?", a: "Özel projeler, standart bir web sitesinin ötesinde; interaktif portallar, gelişmiş filtreleme sistemleri veya markanıza tamamen özel, sıfırdan kodlanan (React/Next.js) web uygulamalarıdır." },
+    { q: "Sitenin SEO ayarları yapılıyor mu?", a: "Tüm web projelerimizde, Google'ın güncel standartlarına uygun temel SEO yapılandırmaları, site hızı optimizasyonları ve doğru etiket hiyerarşisi (H1, H2 vb.) sağlanarak teslim edilir." },
+    { q: "Teslimat sonrası teknik destek veriyor musunuz?", a: "Elbette. Proje tesliminden sonra oluşabilecek teknik sorunlar için standart olarak ilk 1 ay ücretsiz destek sağlıyor, sonrasında dilerseniz aylık bakım paketlerimizle yanınızda olmaya devam ediyoruz." }
+];
+
 const Pricing = () => {
     const [activeTab, setActiveTab] = useState<'katalog' | 'ai' | 'eticaret' | 'kreatif'>('ai');
 
@@ -192,9 +218,12 @@ const Pricing = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -20 }}
-                                className="flex justify-center"
+                                className="flex flex-col items-center gap-10"
                             >
-                                <PricingCard plan={catalogPlan} />
+                                <div className="w-full max-w-md">
+                                    <PricingCard plan={catalogPlan} />
+                                </div>
+                                <FaqSection faqs={catalogFaqs} />
                             </motion.div>
                         )}
 
@@ -246,6 +275,8 @@ const Pricing = () => {
                                         En Uygun Paketi Hesapla
                                     </Button>
                                 </div>
+
+                                <FaqSection faqs={aiFaqs} />
                             </motion.div>
                         )}
 
@@ -256,11 +287,14 @@ const Pricing = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -20 }}
-                                className="grid grid-cols-1 md:grid-cols-3 gap-8"
+                                className="flex flex-col gap-10"
                             >
-                                {ecommercePackages.map((plan, i) => (
-                                    <PricingCard key={i} plan={plan} />
-                                ))}
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                    {ecommercePackages.map((plan, i) => (
+                                        <PricingCard key={i} plan={plan} />
+                                    ))}
+                                </div>
+                                <FaqSection faqs={ecommerceFaqs} />
                             </motion.div>
                         )}
 
@@ -271,11 +305,14 @@ const Pricing = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -20 }}
-                                className="grid grid-cols-1 md:grid-cols-3 gap-8"
+                                className="flex flex-col gap-10"
                             >
-                                {creativePackages.map((plan, i) => (
-                                    <PricingCard key={i} plan={plan} />
-                                ))}
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                    {creativePackages.map((plan, i) => (
+                                        <PricingCard key={i} plan={plan} />
+                                    ))}
+                                </div>
+                                <FaqSection faqs={creativeFaqs} />
                             </motion.div>
                         )}
 
@@ -384,6 +421,52 @@ function PricingCard({ plan }: { plan: PricingPlan }) {
             </CardFooter>
         </Card>
     )
+}
+
+function FaqSection({ faqs }: { faqs: { q: string, a: string }[] }) {
+    const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+    return (
+        <div className="mt-16 text-left max-w-4xl mx-auto w-full">
+            <h3 className="text-3xl font-bold font-display text-bor-primary-900 dark:text-white mb-8 text-center">
+                Sıkça Sorulan Sorular
+            </h3>
+            <div className="space-y-4">
+                {faqs.map((faq, index) => (
+                    <div 
+                        key={index} 
+                        className={`border rounded-2xl overflow-hidden transition-colors duration-300 ${openIndex === index ? 'border-bor-secondary/50 bg-white/50 dark:bg-bor-primary-900/30' : 'border-gray-200 dark:border-white/10 bg-white/30 dark:bg-transparent'}`}
+                    >
+                        <button 
+                            onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                            className="w-full px-6 py-5 text-left flex items-center justify-between gap-4"
+                        >
+                            <span className="font-semibold text-lg text-bor-primary-900 dark:text-white">{faq.q}</span>
+                            <span className="shrink-0 text-bor-primary-400 transition-transform duration-300">
+                                {openIndex === index ? (
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+                                ) : (
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                                )}
+                            </span>
+                        </button>
+                        <AnimatePresence>
+                            {openIndex === index && (
+                                <motion.div 
+                                    initial={{ height: 0, opacity: 0 }}
+                                    animate={{ height: 'auto', opacity: 1 }}
+                                    exit={{ height: 0, opacity: 0 }}
+                                    className="px-6 pb-5 text-bor-primary-600 dark:text-bor-primary-400"
+                                >
+                                    {faq.a}
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
 }
 
 export default Pricing;

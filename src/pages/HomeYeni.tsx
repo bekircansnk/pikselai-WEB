@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence, useInView, useScroll, useSpring } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { MainLayout } from '../layouts/MainLayout';
-import { ArrowRight, ChevronDown, Zap, Play, Box, TrendingUp, Layers, ImageIcon, User, Sparkles, Check, Camera, MoveRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, ChevronDown, Zap, Play, Box, TrendingUp, Layers, Sparkles, Check, Camera, MoveRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import HeroAlternatives from '../components/sections/HeroAlternatives';
 
 const colors = {
@@ -805,48 +805,7 @@ const Home = () => {
           </div>
         </section>
 
-        {/* 7. AI VİTRİNİ BENTO */}
-        <section className={`py-16 md:py-24 border-b border-[#0b2117]/10 bg-[#F4EFE6] transition-colors`}>
-          <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
-            <div className="text-center mb-16">
-              <span className="text-[#0b2117]/60 text-xs font-bold uppercase tracking-widest mb-4 block">HİZMET ALANLARIMIZ</span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-[#0b2117] mb-6">Sanal Prodüksiyon <span className="italic font-medium">Yeteneklerimiz</span></h2>
-            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-auto md:h-[650px]">
-              <div className="bg-[#18201d] rounded-3xl p-10 md:p-12 border border-white/10 relative overflow-hidden group hover:border-[#caf265]/50 hover:shadow-[0_0_50px_rgba(202,242,101,0.05)] transition-all cursor-pointer" onClick={() => navigate('/hizmetler/ai-produksiyon')}>
-                <img src="/assets/common/anna_2.webp" className="absolute right-0 bottom-0 w-2/3 h-full object-cover object-[center_20%] mask-fade opacity-50 group-hover:scale-105 group-hover:opacity-60 transition-all duration-1000" alt="Manken" />
-                <div className="relative z-10 w-2/3 h-full flex flex-col">
-                  <div className="w-16 h-16 bg-[#caf265] text-[#0b2117] rounded-[1.5rem] flex items-center justify-center mb-8 shadow-xl"><User size={28} /></div>
-                  <h3 className="text-4xl md:text-5xl font-display text-white mb-6 leading-tight">Sanal Manken Yaratımı</h3>
-                  <p className="text-[#a8b8af] font-light text-lg mb-8 leading-relaxed">Kapsayıcı ve markanıza %100 uyan, her fotoğrafınızda tutarlı görünen özgün dijital personalar inşa edin. Sizin markanız, sizin yüzünüz.</p>
-                  <div className="mt-auto flex items-center gap-3 text-white font-medium group-hover:text-[#caf265] transition-colors">Portföyü İncele <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" /></div>
-                </div>
-              </div>
-
-              <div className="grid grid-rows-2 gap-6">
-                <div className="bg-[#0b1426] rounded-3xl p-10 border border-white/10 relative overflow-hidden group hover:border-white/30 transition-all cursor-pointer flex items-center" onClick={() => navigate('/hizmetler/ai-produksiyon')}>
-                  <img src="/assets/pages/homeyeni/banner/l0000000751461_2_6.webp" className="absolute right-0 top-0 w-1/2 h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-80 transition-all duration-700" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#0b1426] via-[#0b1426]/80 to-transparent" />
-                  <div className="relative z-10 w-2/3 pr-8">
-                    <div className="w-12 h-12 bg-white/10 text-white rounded-[1rem] flex items-center justify-center mb-6 backdrop-blur-md border border-white/20"><ImageIcon size={20} /></div>
-                    <h3 className="text-3xl font-display text-white mb-3 tracking-tight">Ghost Mannequin</h3>
-                    <p className="text-[#a8b8af] font-light leading-relaxed">Hacimli 3D form hissiyatı yaratarak ürünün kumaş kalitesini öne çıkarın.</p>
-                  </div>
-                </div>
-                <div className="bg-[#241a15] rounded-3xl p-10 border border-white/10 relative overflow-hidden group hover:border-white/30 transition-all cursor-pointer" onClick={() => navigate('/hizmetler/ai-produksiyon')}>
-                  <img src="/assets/pages/homeyeni/03085_haki_2k_4_5_shot_13_action_brushing_foliage.webp" className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 group-hover:opacity-60 transition-all duration-700" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#110c0a] via-black/50 to-transparent" />
-                  <div className="relative z-10 h-full flex flex-col justify-end">
-                    <h3 className="text-3xl font-display text-white mb-3">Konsept Lifestyle</h3>
-                    <p className="text-[#a8b8af] font-light w-5/6 text-lg leading-relaxed mb-4">Dünyanın öbür ucunda bir stüdyo kurmadan oradaymış hissi verin ve hedef kitlenizi ikna edin.</p>
-                    <div className="flex items-center gap-2 text-white text-sm font-bold uppercase tracking-widest group-hover:text-white/70 transition-colors">Katalog Çekimleri <ArrowRight size={16} /></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* 8. MANKEN SHOWCASE MARQUEE */}
         <section className={`py-20 md:py-32 border-b ${colors.borderColorDark} overflow-hidden bg-black/20`}>

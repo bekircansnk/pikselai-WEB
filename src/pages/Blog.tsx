@@ -31,12 +31,14 @@ const C = {
 
 /* ─── Kategoriler ─── */
 const CATS = [
-    { id: "tumu",            label: "Tümü" },
-    { id: "musteri",         label: "Müşteri Hikayeleri" },
-    { id: "ai-produksiyon",  label: "AI Prodüksiyon" },
-    { id: "moda",            label: "Moda & Tekstil" },
-    { id: "e-ticaret",       label: "E-Ticaret" },
-    { id: "sosyal-medya",    label: "Sosyal Medya" },
+    { id: "tumu",                  label: "Tümü" },
+    { id: "ai-powered-creative",   label: "AI Destekli Yaratıcılık" },
+    { id: "all-things-brand",      label: "Markaya Dair Her Şey" },
+    { id: "creative-leadership",   label: "Yaratıcı Liderlik" },
+    { id: "customer-stories",      label: "Müşteri Hikayeleri" },
+    { id: "digital-marketing",     label: "Dijital Pazarlama" },
+    { id: "inside-superside",      label: "Pikselai'ın İçinden" },
+    { id: "video-marketing",       label: "Video Pazarlama" },
 ]
 
 /* ─── Öne Çıkan Kartlar ─── */

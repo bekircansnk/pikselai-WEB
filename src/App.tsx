@@ -6,7 +6,7 @@ const Pricing = lazy(() => import('./pages/Pricing'))
 
 const About = lazy(() => import('./pages/About'))
 const Contact = lazy(() => import('./pages/Contact'))
-const CazadorCaseStudy = lazy(() => import('./pages/blog/CazadorCaseStudy'))
+const CazadorCaseStudy = lazy(() => import('./pages/musteri-hikayeleri/CazadorCaseStudy'))
 const Islerimiz = lazy(() => import('./pages/Islerimiz'))
 const NotFound = lazy(() => import('./pages/NotFound'))
 const MusteriHikayeleri = lazy(() => import('./pages/MusteriHikayeleri'))
@@ -24,9 +24,9 @@ const KvkkPolicy = lazy(() => import('./pages/legal/KvkkPolicy'))
 const TestPanel = lazy(() => import('./pages/TestPanel'))
 
 
-const MinaDrinksCaseStudy = lazy(() => import('./pages/blog/MinaDrinksCaseStudy'))
-const VenusCaseStudy = lazy(() => import('./pages/blog/VenusCaseStudy'))
-const CampAndMapCaseStudy = lazy(() => import('./pages/blog/CampAndMapCaseStudy'))
+const MinaDrinksCaseStudy = lazy(() => import('./pages/musteri-hikayeleri/MinaDrinksCaseStudy'))
+const VenusCaseStudy = lazy(() => import('./pages/musteri-hikayeleri/VenusCaseStudy'))
+const CampAndMapCaseStudy = lazy(() => import('./pages/musteri-hikayeleri/CampAndMapCaseStudy'))
 
 function Loading() {
   return (

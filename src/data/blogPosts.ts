@@ -24,6 +24,17 @@ export const BLOG_POSTS: BlogPost[] = [
         date: "23 Nisan 2026"
     },
     {
+        id: "ai-pazarlama-kampanyalari",
+        cat: "Dijital Pazarlama",
+        catId: "digital-marketing",
+        title: "Yaratıcılığın Sınırlarını Zorlayan En Başarılı AI Pazarlama Kampanyaları",
+        desc: "Türk markalarının yapay zeka kullanarak hayata geçirdiği en etkileyici pazarlama kampanyalarını inceleyin. Venüs Ayakkabı, CAMPANDMAP ve Cazador örnekleri.",
+        img: "/assets/pages/blog/ai_pazarlama_kampanyalari.webp",
+        link: "/blog/digital-marketing/ai-pazarlama-kampanyalari",
+        time: "12 dk",
+        date: "23 Nisan 2026"
+    },
+    {
         id: "ai-tasarim-trendleri",
         cat: "AI Destekli Yaratıcılık",
         catId: "ai-powered-creative",
@@ -65,17 +76,6 @@ export const BLOG_POSTS: BlogPost[] = [
         img: "/assets/pages/blog/ai_telif_haklari.webp",
         link: "/blog/creative-leadership/ai-telif-haklari",
         time: "10 dk",
-        date: "23 Nisan 2026"
-    },
-    {
-        id: "ai-pazarlama-kampanyalari",
-        cat: "Dijital Pazarlama",
-        catId: "digital-marketing",
-        title: "Yaratıcılığın Sınırlarını Zorlayan En Başarılı AI Pazarlama Kampanyaları",
-        desc: "Türk markalarının yapay zeka kullanarak hayata geçirdiği en etkileyici pazarlama kampanyalarını inceleyin. Venüs Ayakkabı, CAMPANDMAP ve Cazador örnekleri.",
-        img: "/assets/pages/blog/ai_pazarlama_kampanyalari.webp",
-        link: "/blog/digital-marketing/ai-pazarlama-kampanyalari",
-        time: "12 dk",
         date: "23 Nisan 2026"
     },
     {

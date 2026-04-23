@@ -3,6 +3,7 @@ import { motion, AnimatePresence, useMotionValue } from 'framer-motion';
 import { MainLayout } from '../layouts/MainLayout';
 import { Section } from '../components/ui/Section';
 import { X, Play, Pause, ChevronRight } from 'lucide-react';
+import { SEOHead } from '../components/seo/SEOHead';
 
 /* ── Types ── */
 interface ProjectImage {
@@ -267,6 +268,11 @@ const Islerimiz = () => {
 
     return (
         <MainLayout showFooter={false} transparentHeader={true} headerLightText={true}>
+            <SEOHead
+                title="İşlerimiz — AI Destekli Kreatif Portföy"
+                description="PikselAI'ın yapay zeka ile ürettiği moda çekimleri, e-ticaret görselleri, sanal manken ve ghost mannequin projelerini inceleyin."
+                canonical="/islerimiz"
+            />
             {/* ── Hero Section (Video Background) ── */}
             <div className="relative w-full h-[60vh] md:h-[80vh] flex items-center justify-center bg-black overflow-hidden group">
                 <div className="absolute inset-0 z-0">

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence, useMotionValue, type Variants } from 'framer-motion';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
+import { SEOHead } from '../components/seo/SEOHead';
 import {
   ArrowRight,
   Camera,
@@ -650,6 +651,11 @@ const AiProduction = () => {
 
   return (
     <div className={`font-sans min-h-screen selection:bg-[#0b2117] selection:text-[#0b2117]`}>
+      <SEOHead
+        title="Yapay Zeka Destekli Ürün Fotoğrafçılığı — AI Prodüksiyon"
+        description="Stüdyo olmadan profesyonel ürün görselleri, sanal manken çekimleri ve ghost mannequin hizmeti. PikselAI ile 48 saatte teslim."
+        canonical="/ai-produksiyon"
+      />
       <Header />
 
       <main>

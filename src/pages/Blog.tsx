@@ -5,6 +5,7 @@ import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
 import { Header } from "../components/layout/Header"
 import { Footer } from "../components/layout/Footer"
 import { BLOG_POSTS, BLOG_CATEGORIES } from "../data/blogPosts"
+import { SEOHead } from "../components/seo/SEOHead"
 
 /* ─── Süperside Renk Referansları ───────────────────────────────
    cloud-100  : #f7f9f2  (krem arka plan)
@@ -70,6 +71,11 @@ export default function Blog() {
 
     return (
         <div className="min-h-screen font-sans overflow-x-hidden" style={{ background: C.bg }}>
+            <SEOHead
+                title="Blog — Yapıcı Fikirler, AI Trendleri ve Dijital Pazarlama Rehberleri"
+                description="Yapay zeka destekli tasarım, dijital pazarlama, marka stratejisi ve e-ticaret hakkında uzman içerikler. Pikselai Blog ile sektörün önünde olun."
+                canonical="/blog"
+            />
             <Header />
 
             {/* ── HERO (Ortalanmış Başlık) ─────────────────────────── */}

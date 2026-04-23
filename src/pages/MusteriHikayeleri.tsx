@@ -4,11 +4,12 @@ import { Link } from "react-router-dom"
 import { Header } from "../components/layout/Header"
 import { Footer } from "../components/layout/Footer"
 import { BottomCTA } from "../components/sections/BottomCTA"
+import { SEOHead } from "../components/seo/SEOHead"
 // Gerçek case study'ler
 const caseStudies = [
     {
         id: 1,
-        slug: "/musteri-hikayeleri/referanslar",
+        slug: "/musteri-hikayeleri/cazador",
         category: "Referans Proje",
         brand: "Cazador",
         title: "Cazador'un Dijital Dönüşüm Yolculuğu",
@@ -68,6 +69,11 @@ export default function MusteriHikayeleri() {
 
     return (
         <div className="min-h-screen bg-[#F4EFE6] font-sans">
+            <SEOHead
+                title="Müşteri Hikayeleri — Referans Projeler ve Başarı Öyküleri"
+                description="PikselAI ile dijital dönüşüm yaşayan markaların başarı hikayeleri. Cazador, Venüs, Mina Drinks ve daha fazlası."
+                canonical="/musteri-hikayeleri"
+            />
             <Header transparent={false} lightText={false} />
 
             {/* Hero - Öne Çıkan */}

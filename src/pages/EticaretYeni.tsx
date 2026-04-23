@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion, type Variants } from 'framer-motion';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
+import { SEOHead } from '../components/seo/SEOHead';
 import {
   ShieldCheck,
   ChevronRight,
@@ -86,6 +87,11 @@ const EticaretYeni = () => {
 
   return (
     <div className={`font-sans ${colors.beige} ${colors.textDark} min-h-screen selection:bg-[#caf265] selection:text-[#0b2117]`}>
+      <SEOHead
+        title="Shopify E-Ticaret Danışmanlığı — Anahtar Teslim Mağaza Kurulumu"
+        description="Shopify Türkiye Resmi Partneri PikselAI ile anahtar teslim e-ticaret mağazası kurun. AI destekli görsel üretim, veri taşıma ve entegrasyon hizmetleri."
+        canonical="/e-ticaret"
+      />
       {/* Header (Saydam/Dark) */}
       <div className={`${colors.darkGreen}`}>
         <Header />

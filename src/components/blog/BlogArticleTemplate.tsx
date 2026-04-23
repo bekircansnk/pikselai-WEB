@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import { Helmet } from 'react-helmet-async'
 import { MainLayout } from '../../layouts/MainLayout'
 import { Link } from 'react-router-dom'
 import { ArrowLeft, Clock } from 'lucide-react'
+import { SEOHead, createArticleSchema, createBreadcrumbSchema } from '../seo/SEOHead'
 
 /* ─── Tipler ─── */
 export interface BlogSection {
@@ -24,6 +24,7 @@ interface BlogArticleTemplateProps {
     children: React.ReactNode
     ctaTitle?: string
     ctaDescription?: string
+    slug?: string
 }
 
 /* ─── Sol kenar içindekiler tablosu (TOC) ─── */
@@ -37,10 +38,12 @@ function Sidebar({ sections, active }: { sections: BlogSection[]; active: string
     }
 
     const CATEGORIES = [
-        { name: "AI Destekli Yaratıcılık", id: "ai-powered-creative" },
-        { name: "Markaya Dair Her Şey", id: "all-things-brand" },
-        { name: "Yaratıcı Liderlik", id: "creative-leadership" },
-        { name: "Dijital Pazarlama", id: "digital-marketing" }
+        { name: "AI Destekli Yaratıcılık", id: "yapay-zeka-yaraticilik" },
+        { name: "Markaya Dair Her Şey", id: "marka-rehberi" },
+        { name: "Yaratıcı Liderlik", id: "yaratici-liderlik" },
+        { name: "Dijital Pazarlama", id: "dijital-pazarlama" },
+        { name: "Video Pazarlama", id: "video-pazarlama" },
+        { name: "Pikselai'ın İçinden", id: "pikselainin-icinden" }
     ]
 
     return (
@@ -115,23 +118,54 @@ export function BlogArticleTemplate({
     title,
     metaDescription,
     category,
+    categoryId,
     author = "Pikselai Ekibi",
     readTime,
+    publishDate,
     heroImage,
     heroImageAlt,
     sections,
     children,
     ctaTitle = "Yapay Zeka Destekli Görsel Prodüksiyon",
-    ctaDescription = "E-ticaret görsellerinden sosyal medya içeriklerine, 48 saat içinde profesyonel çıktı."
+    ctaDescription = "E-ticaret görsellerinden sosyal medya içeriklerine, 48 saat içinde profesyonel çıktı.",
+    slug
 }: BlogArticleTemplateProps) {
     const active = useActiveSection(sections.map(s => s.id))
+    const articleUrl = slug || ''
+
+    // JSON-LD yapısal veri
+    const articleSchema = createArticleSchema({
+        title,
+        description: metaDescription,
+        url: articleUrl,
+        image: heroImage,
+        datePublished: publishDate,
+        author,
+        section: category
+    })
+
+    const breadcrumbSchema = createBreadcrumbSchema([
+        { name: 'Ana Sayfa', url: '/' },
+        { name: 'Blog', url: '/blog' },
+        { name: category, url: `/blog?cat=${categoryId}#katalog` },
+        { name: title, url: articleUrl }
+    ])
 
     return (
         <MainLayout transparentHeader={false} headerLightText={false}>
-            <Helmet>
-                <title>{title} | Pikselai</title>
-                <meta name="description" content={metaDescription} />
-            </Helmet>
+            <SEOHead
+                title={title}
+                description={metaDescription}
+                canonical={articleUrl}
+                ogImage={heroImage}
+                ogType="article"
+                article={{
+                    publishedTime: publishDate,
+                    author,
+                    section: category
+                }}
+                jsonLd={[articleSchema, breadcrumbSchema]}
+            />
 
             <div className="bg-[#FDFBF7] min-h-screen pt-28 pb-32">
                 

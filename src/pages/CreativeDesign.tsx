@@ -4,11 +4,17 @@ import { MainLayout } from '../layouts/MainLayout';
 import { Footer } from '../components/layout/Footer';
 import { Section } from '../components/ui/Section';
 import { Button } from '../components/ui/Button';
+import { SEOHead } from '../components/seo/SEOHead';
 
 export default function CreativeDesign() {
 
     return (
         <MainLayout transparentHeader={true} headerLightText={true} showFooter={false}>
+            <SEOHead
+                title="Dijital Katalog ve Arşiv Yönetimi — Akıllı Ürün Platformu"
+                description="PikselAI Katalog sistemi ile ürün görsellerinizi yönetin, akıllı arama ile anında bulun ve müşterilerinizle profesyonelce paylaşın."
+                canonical="/katalog"
+            />
             {/* ═══════════════════════════════════════════
        1. HERO SECTION — Koyu Arka Plan & Animasyonlu Başlık
        ═══════════════════════════════════════════ */}

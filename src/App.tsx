@@ -27,43 +27,53 @@ const TestPanel = lazy(() => import('./pages/TestPanel'))
 const MinaDrinksCaseStudy = lazy(() => import('./pages/musteri-hikayeleri/MinaDrinksCaseStudy'))
 const VenusCaseStudy = lazy(() => import('./pages/musteri-hikayeleri/VenusCaseStudy'))
 const CampAndMapCaseStudy = lazy(() => import('./pages/musteri-hikayeleri/CampAndMapCaseStudy'))
-const GizliAiOzellikleri = lazy(() => import('./pages/blog/ai-powered-creative/GizliAiOzellikleri'))
-const AiTasarimTrendleri = lazy(() => import('./pages/blog/ai-powered-creative/AiTasarimTrendleri'))
-const AiTasarimAraclari = lazy(() => import('./pages/blog/ai-powered-creative/AiTasarimAraclari'))
-const AiGorselUretimiOrnekleri = lazy(() => import('./pages/blog/ai-powered-creative/AiGorselUretimiOrnekleri'))
-const AiTelifHaklari = lazy(() => import('./pages/blog/creative-leadership/AiTelifHaklari'))
-const AiPazarlamaKampanyalari = lazy(() => import('./pages/blog/digital-marketing/AiPazarlamaKampanyalari'))
-const TasarimdaAiGelecegi = lazy(() => import('./pages/blog/creative-leadership/TasarimdaAiGelecegi'))
-const TasarimIsAkisiOtomasyon = lazy(() => import('./pages/blog/inside-pikselai/TasarimIsAkisiOtomasyon'))
-const AiMarkaRehberleri = lazy(() => import('./pages/blog/all-things-brand/AiMarkaRehberleri'))
-const AiVideoPazarlama = lazy(() => import('./pages/blog/video-marketing/AiVideoPazarlama'))
 
-// Yeni Makaleler (Batch 1 & 2)
-const TasarimdaYapayZeka = lazy(() => import('./pages/blog/ai-powered-creative/TasarimdaYapayZeka'))
-const SosyalMedyaIcerikDonusturme = lazy(() => import('./pages/blog/digital-marketing/SosyalMedyaIcerikDonusturme'))
-const MarkalasmaRehberi = lazy(() => import('./pages/blog/all-things-brand/MarkalasmaRehberi'));
-const YaraticiLiderlik = lazy(() => import('./pages/blog/creative-leadership/YaraticiLiderlik'));
-const TasarimSistemleri = lazy(() => import('./pages/blog/all-things-brand/TasarimSistemleri'));
-const EticaretWebTasarimi = lazy(() => import('./pages/blog/all-things-brand/EticaretWebTasarimi'));
-const VideoPazarlamaStratejisi = lazy(() => import('./pages/blog/video-marketing/VideoPazarlamaStratejisi'));
-const MotionGrafikOrnekleri = lazy(() => import('./pages/blog/video-marketing/MotionGrafikOrnekleri'));
-const AiVideoOlusturmaAraclari = lazy(() => import('./pages/blog/video-marketing/AiVideoOlusturmaAraclari'));
-const AiEpostaPazarlama = lazy(() => import('./pages/blog/digital-marketing/AiEpostaPazarlama'));
-const SosyalMedyaKampanyalari = lazy(() => import('./pages/blog/digital-marketing/SosyalMedyaKampanyalari'));
-const AmbalajTasarimi = lazy(() => import('./pages/blog/all-things-brand/AmbalajTasarimi'));
-const LogoTasarimIpuclari = lazy(() => import('./pages/blog/all-things-brand/LogoTasarimIpuclari'));
-const OlceklenebilirYaraticilik = lazy(() => import('./pages/blog/creative-leadership/OlceklenebilirYaraticilik'));
-const AiDestekliAjanslar = lazy(() => import('./pages/blog/ai-powered-creative/AiDestekliAjanslar'));
-const IcerikPazarlamasiOrnekleri = lazy(() => import('./pages/blog/digital-marketing/IcerikPazarlamasiOrnekleri'));
-const AiVideoNasilOlusturulur = lazy(() => import('./pages/blog/video-marketing/AiVideoNasilOlusturulur'));
-const RenklerinGucu = lazy(() => import('./pages/blog/all-things-brand/RenklerinGucu'));
-const DijitalPazarlamaTrendleri = lazy(() => import('./pages/blog/digital-marketing/DijitalPazarlamaTrendleri'));
-const MarkaKimligiRehberi = lazy(() => import('./pages/blog/all-things-brand/MarkaKimligiRehberi'));
-const TasarimciIseAlmaRehberi = lazy(() => import('./pages/blog/creative-leadership/TasarimciIseAlmaRehberi'));
-const AiReklamGorselleri = lazy(() => import('./pages/blog/digital-marketing/AiReklamGorselleri'));
-const ReklamYaraticilikTrendleri = lazy(() => import('./pages/blog/digital-marketing/ReklamYaraticilikTrendleri'));
-const AiReklamGorseliOlusturma = lazy(() => import('./pages/blog/digital-marketing/AiReklamGorseliOlusturma'));
-const MarkaTasarimTrendleri = lazy(() => import('./pages/blog/all-things-brand/MarkaTasarimTrendleri'));
+// Blog — Yapay Zeka Yaratıcılık
+const GizliAiOzellikleri = lazy(() => import('./pages/blog/yapay-zeka-yaraticilik/GizliAiOzellikleri'))
+const AiTasarimTrendleri = lazy(() => import('./pages/blog/yapay-zeka-yaraticilik/AiTasarimTrendleri'))
+const AiTasarimAraclari = lazy(() => import('./pages/blog/yapay-zeka-yaraticilik/AiTasarimAraclari'))
+const AiGorselUretimiOrnekleri = lazy(() => import('./pages/blog/yapay-zeka-yaraticilik/AiGorselUretimiOrnekleri'))
+const TasarimdaYapayZeka = lazy(() => import('./pages/blog/yapay-zeka-yaraticilik/TasarimdaYapayZeka'))
+const AiDestekliAjanslar = lazy(() => import('./pages/blog/yapay-zeka-yaraticilik/AiDestekliAjanslar'))
+
+// Blog — Yaratıcı Liderlik
+const AiTelifHaklari = lazy(() => import('./pages/blog/yaratici-liderlik/AiTelifHaklari'))
+const TasarimdaAiGelecegi = lazy(() => import('./pages/blog/yaratici-liderlik/TasarimdaAiGelecegi'))
+const YaraticiLiderlik = lazy(() => import('./pages/blog/yaratici-liderlik/YaraticiLiderlik'))
+const TasarimciIseAlmaRehberi = lazy(() => import('./pages/blog/yaratici-liderlik/TasarimciIseAlmaRehberi'))
+const OlceklenebilirYaraticilik = lazy(() => import('./pages/blog/yaratici-liderlik/OlceklenebilirYaraticilik'))
+
+// Blog — Dijital Pazarlama
+const AiPazarlamaKampanyalari = lazy(() => import('./pages/blog/dijital-pazarlama/AiPazarlamaKampanyalari'))
+const SosyalMedyaIcerikDonusturme = lazy(() => import('./pages/blog/dijital-pazarlama/SosyalMedyaIcerikDonusturme'))
+const AiReklamGorselleri = lazy(() => import('./pages/blog/dijital-pazarlama/AiReklamGorselleri'))
+const ReklamYaraticilikTrendleri = lazy(() => import('./pages/blog/dijital-pazarlama/ReklamYaraticilikTrendleri'))
+const AiReklamGorseliOlusturma = lazy(() => import('./pages/blog/dijital-pazarlama/AiReklamGorseliOlusturma'))
+const AiEpostaPazarlama = lazy(() => import('./pages/blog/dijital-pazarlama/AiEpostaPazarlama'))
+const SosyalMedyaKampanyalari = lazy(() => import('./pages/blog/dijital-pazarlama/SosyalMedyaKampanyalari'))
+const IcerikPazarlamasiOrnekleri = lazy(() => import('./pages/blog/dijital-pazarlama/IcerikPazarlamasiOrnekleri'))
+const DijitalPazarlamaTrendleri = lazy(() => import('./pages/blog/dijital-pazarlama/DijitalPazarlamaTrendleri'))
+
+// Blog — Marka Rehberi
+const AiMarkaRehberleri = lazy(() => import('./pages/blog/marka-rehberi/AiMarkaRehberleri'))
+const MarkalasmaRehberi = lazy(() => import('./pages/blog/marka-rehberi/MarkalasmaRehberi'))
+const TasarimSistemleri = lazy(() => import('./pages/blog/marka-rehberi/TasarimSistemleri'))
+const EticaretWebTasarimi = lazy(() => import('./pages/blog/marka-rehberi/EticaretWebTasarimi'))
+const AmbalajTasarimi = lazy(() => import('./pages/blog/marka-rehberi/AmbalajTasarimi'))
+const LogoTasarimIpuclari = lazy(() => import('./pages/blog/marka-rehberi/LogoTasarimIpuclari'))
+const RenklerinGucu = lazy(() => import('./pages/blog/marka-rehberi/RenklerinGucu'))
+const MarkaKimligiRehberi = lazy(() => import('./pages/blog/marka-rehberi/MarkaKimligiRehberi'))
+const MarkaTasarimTrendleri = lazy(() => import('./pages/blog/marka-rehberi/MarkaTasarimTrendleri'))
+
+// Blog — Video Pazarlama
+const AiVideoPazarlama = lazy(() => import('./pages/blog/video-pazarlama/AiVideoPazarlama'))
+const VideoPazarlamaStratejisi = lazy(() => import('./pages/blog/video-pazarlama/VideoPazarlamaStratejisi'))
+const MotionGrafikOrnekleri = lazy(() => import('./pages/blog/video-pazarlama/MotionGrafikOrnekleri'))
+const AiVideoOlusturmaAraclari = lazy(() => import('./pages/blog/video-pazarlama/AiVideoOlusturmaAraclari'))
+const AiVideoNasilOlusturulur = lazy(() => import('./pages/blog/video-pazarlama/AiVideoNasilOlusturulur'))
+
+// Blog — Pikselai'nın İçinden
+const TasarimIsAkisiOtomasyon = lazy(() => import('./pages/blog/pikselainin-icinden/TasarimIsAkisiOtomasyon'))
 
 function Loading() {
   return (
@@ -115,50 +125,56 @@ function App() {
             <Route path="/islerimiz" element={<Islerimiz />} />
             <Route path="/blog" element={<Blog />} />
             
-            {/* Blog Makaleleri */}
-            <Route path="/blog/ai-powered-creative/gizli-ai-ozellikleri" element={<GizliAiOzellikleri />} />
-            <Route path="/blog/ai-powered-creative/ai-tasarim-trendleri" element={<AiTasarimTrendleri />} />
-            <Route path="/blog/ai-powered-creative/ai-tasarim-araclari" element={<AiTasarimAraclari />} />
-            <Route path="/blog/ai-powered-creative/ai-gorsel-uretimi-ornekleri" element={<AiGorselUretimiOrnekleri />} />
-            <Route path="/blog/ai-powered-creative/tasarimda-yapay-zeka" element={<TasarimdaYapayZeka />} />
-            <Route path="/blog/ai-powered-creative/ai-destekli-ajanslar" element={<AiDestekliAjanslar />} />
+            {/* Blog — Yapay Zeka Yaratıcılık */}
+            <Route path="/blog/yapay-zeka-yaraticilik/gizli-ai-ozellikleri" element={<GizliAiOzellikleri />} />
+            <Route path="/blog/yapay-zeka-yaraticilik/ai-tasarim-trendleri" element={<AiTasarimTrendleri />} />
+            <Route path="/blog/yapay-zeka-yaraticilik/ai-tasarim-araclari" element={<AiTasarimAraclari />} />
+            <Route path="/blog/yapay-zeka-yaraticilik/ai-gorsel-uretimi-ornekleri" element={<AiGorselUretimiOrnekleri />} />
+            <Route path="/blog/yapay-zeka-yaraticilik/tasarimda-yapay-zeka" element={<TasarimdaYapayZeka />} />
+            <Route path="/blog/yapay-zeka-yaraticilik/ai-destekli-ajanslar" element={<AiDestekliAjanslar />} />
             
-            <Route path="/blog/creative-leadership/ai-telif-haklari" element={<AiTelifHaklari />} />
-            <Route path="/blog/creative-leadership/tasarimda-ai-gelecegi" element={<TasarimdaAiGelecegi />} />
-            <Route path="/blog/creative-leadership/yaratici-liderlik" element={<YaraticiLiderlik />} />
-            <Route path="/blog/creative-leadership/tasarimci-ise-alma-rehberi" element={<TasarimciIseAlmaRehberi />} />
-            <Route path="/blog/creative-leadership/olceklenebilir-yaraticilik" element={<OlceklenebilirYaraticilik />} />
+            {/* Blog — Yaratıcı Liderlik */}
+            <Route path="/blog/yaratici-liderlik/ai-telif-haklari" element={<AiTelifHaklari />} />
+            <Route path="/blog/yaratici-liderlik/tasarimda-ai-gelecegi" element={<TasarimdaAiGelecegi />} />
+            <Route path="/blog/yaratici-liderlik/yaratici-liderlik" element={<YaraticiLiderlik />} />
+            <Route path="/blog/yaratici-liderlik/tasarimci-ise-alma-rehberi" element={<TasarimciIseAlmaRehberi />} />
+            <Route path="/blog/yaratici-liderlik/olceklenebilir-yaraticilik" element={<OlceklenebilirYaraticilik />} />
             
-            <Route path="/blog/digital-marketing/ai-pazarlama-kampanyalari" element={<AiPazarlamaKampanyalari />} />
-            <Route path="/blog/digital-marketing/sosyal-medya-icerik-donusturme" element={<SosyalMedyaIcerikDonusturme />} />
-            <Route path="/blog/digital-marketing/ai-reklam-gorselleri" element={<AiReklamGorselleri />} />
-            <Route path="/blog/digital-marketing/reklam-yaraticilik-trendleri" element={<ReklamYaraticilikTrendleri />} />
-            <Route path="/blog/digital-marketing/ai-reklam-gorseli-olusturma" element={<AiReklamGorseliOlusturma />} />
-            <Route path="/blog/digital-marketing/ai-eposta-pazarlama" element={<AiEpostaPazarlama />} />
-            <Route path="/blog/digital-marketing/sosyal-medya-kampanyalari" element={<SosyalMedyaKampanyalari />} />
-            <Route path="/blog/digital-marketing/icerik-pazarlamasi-ornekleri" element={<IcerikPazarlamasiOrnekleri />} />
-            <Route path="/blog/digital-marketing/dijital-pazarlama-trendleri" element={<DijitalPazarlamaTrendleri />} />
+            {/* Blog — Dijital Pazarlama */}
+            <Route path="/blog/dijital-pazarlama/ai-pazarlama-kampanyalari" element={<AiPazarlamaKampanyalari />} />
+            <Route path="/blog/dijital-pazarlama/sosyal-medya-icerik-donusturme" element={<SosyalMedyaIcerikDonusturme />} />
+            <Route path="/blog/dijital-pazarlama/ai-reklam-gorselleri" element={<AiReklamGorselleri />} />
+            <Route path="/blog/dijital-pazarlama/reklam-yaraticilik-trendleri" element={<ReklamYaraticilikTrendleri />} />
+            <Route path="/blog/dijital-pazarlama/ai-reklam-gorseli-olusturma" element={<AiReklamGorseliOlusturma />} />
+            <Route path="/blog/dijital-pazarlama/ai-eposta-pazarlama" element={<AiEpostaPazarlama />} />
+            <Route path="/blog/dijital-pazarlama/sosyal-medya-kampanyalari" element={<SosyalMedyaKampanyalari />} />
+            <Route path="/blog/dijital-pazarlama/icerik-pazarlamasi-ornekleri" element={<IcerikPazarlamasiOrnekleri />} />
+            <Route path="/blog/dijital-pazarlama/dijital-pazarlama-trendleri" element={<DijitalPazarlamaTrendleri />} />
             
-            <Route path="/blog/all-things-brand/ai-marka-rehberleri" element={<AiMarkaRehberleri />} />
-            <Route path="/blog/all-things-brand/markalasma-rehberi" element={<MarkalasmaRehberi />} />
-            <Route path="/blog/all-things-brand/tasarim-sistemleri" element={<TasarimSistemleri />} />
-            <Route path="/blog/all-things-brand/eticaret-web-tasarimi" element={<EticaretWebTasarimi />} />
-            <Route path="/blog/all-things-brand/ambalaj-tasarimi" element={<AmbalajTasarimi />} />
-            <Route path="/blog/all-things-brand/logo-tasarim-ipuclari" element={<LogoTasarimIpuclari />} />
-            <Route path="/blog/all-things-brand/renklerin-gucu" element={<RenklerinGucu />} />
-            <Route path="/blog/all-things-brand/marka-kimligi-rehberi" element={<MarkaKimligiRehberi />} />
-            <Route path="/blog/all-things-brand/marka-tasarim-trendleri" element={<MarkaTasarimTrendleri />} />
+            {/* Blog — Marka Rehberi */}
+            <Route path="/blog/marka-rehberi/ai-marka-rehberleri" element={<AiMarkaRehberleri />} />
+            <Route path="/blog/marka-rehberi/markalasma-rehberi" element={<MarkalasmaRehberi />} />
+            <Route path="/blog/marka-rehberi/tasarim-sistemleri" element={<TasarimSistemleri />} />
+            <Route path="/blog/marka-rehberi/eticaret-web-tasarimi" element={<EticaretWebTasarimi />} />
+            <Route path="/blog/marka-rehberi/ambalaj-tasarimi" element={<AmbalajTasarimi />} />
+            <Route path="/blog/marka-rehberi/logo-tasarim-ipuclari" element={<LogoTasarimIpuclari />} />
+            <Route path="/blog/marka-rehberi/renklerin-gucu" element={<RenklerinGucu />} />
+            <Route path="/blog/marka-rehberi/marka-kimligi-rehberi" element={<MarkaKimligiRehberi />} />
+            <Route path="/blog/marka-rehberi/marka-tasarim-trendleri" element={<MarkaTasarimTrendleri />} />
             
-            <Route path="/blog/video-marketing/ai-video-pazarlama" element={<AiVideoPazarlama />} />
-            <Route path="/blog/video-marketing/video-pazarlama-stratejisi" element={<VideoPazarlamaStratejisi />} />
-            <Route path="/blog/video-marketing/motion-grafik-ornekleri" element={<MotionGrafikOrnekleri />} />
-            <Route path="/blog/video-marketing/ai-video-olusturma-araclari" element={<AiVideoOlusturmaAraclari />} />
-            <Route path="/blog/video-marketing/ai-video-nasil-olusturulur" element={<AiVideoNasilOlusturulur />} />
+            {/* Blog — Video Pazarlama */}
+            <Route path="/blog/video-pazarlama/ai-video-pazarlama" element={<AiVideoPazarlama />} />
+            <Route path="/blog/video-pazarlama/video-pazarlama-stratejisi" element={<VideoPazarlamaStratejisi />} />
+            <Route path="/blog/video-pazarlama/motion-grafik-ornekleri" element={<MotionGrafikOrnekleri />} />
+            <Route path="/blog/video-pazarlama/ai-video-olusturma-araclari" element={<AiVideoOlusturmaAraclari />} />
+            <Route path="/blog/video-pazarlama/ai-video-nasil-olusturulur" element={<AiVideoNasilOlusturulur />} />
             
-            <Route path="/blog/inside-pikselai/tasarim-is-akisi-otomasyon" element={<TasarimIsAkisiOtomasyon />} />
+            {/* Blog — Pikselai'nın İçinden */}
+            <Route path="/blog/pikselainin-icinden/tasarim-is-akisi-otomasyon" element={<TasarimIsAkisiOtomasyon />} />
 
+            {/* Müşteri Hikayeleri */}
             <Route path="/musteri-hikayeleri" element={<MusteriHikayeleri />} />
-            <Route path="/musteri-hikayeleri/referanslar" element={<CazadorCaseStudy />} />
+            <Route path="/musteri-hikayeleri/cazador" element={<CazadorCaseStudy />} />
             <Route path="/musteri-hikayeleri/mina-drinks" element={<MinaDrinksCaseStudy />} />
             <Route path="/musteri-hikayeleri/venus" element={<VenusCaseStudy />} />
             <Route path="/musteri-hikayeleri/campandmap" element={<CampAndMapCaseStudy />} />

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence, useMotionValue, type Variants } from 'framer-motion';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
+import { SEOHead } from '../components/seo/SEOHead';
 import {
   ArrowRight,
   CheckCircle2,
@@ -218,6 +219,11 @@ const SosyalMedyaYeni = () => {
 
   return (
     <div className={`font-sans sosyal-page ${colors.beige} ${colors.textDark} min-h-screen selection:bg-[#caf265] selection:text-[#0b2117]`}>
+      <SEOHead
+        title="Sosyal Medya Yönetimi ve İçerik Üretimi — Kreatif Ajans"
+        description="PikselAI ile sosyal medya içerik üretimi, video kurgu, reklam kreatifi ve topluluk yönetimi. Yüksek etkileşimli, dönüşüm odaklı içerikler."
+        canonical="/sosyal-medya"
+      />
       {/* Header */}
       <div className={`${colors.darkGreen}`}>
         <Header />

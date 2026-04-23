@@ -5,6 +5,7 @@ import type { Variants } from 'framer-motion';
 import { MainLayout } from '../layouts/MainLayout';
 import { ArrowRight, ChevronDown, Zap, Play, Box, TrendingUp, Layers, Sparkles, Check, Camera, MoveRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import HeroAlternatives from '../components/sections/HeroAlternatives';
+import { SEOHead } from '../components/seo/SEOHead';
 
 const colors = {
   beige: "bg-[#F4EFE6]",
@@ -386,6 +387,40 @@ const Home = () => {
 
   return (
     <MainLayout transparentHeader={true} headerLightText={true}>
+      <SEOHead
+        title="Yapay Zeka Destekli Kreatif Üretim, E-Ticaret ve Dijital Çözümler"
+        description="Yapay zeka ile ürün fotoğrafçılığı, sanal manken tasarımı, e-ticaret yönetimi ve sosyal medya. Stüdyo yok, manken yok — tek çatı altında dijital çözümler."
+        canonical="/"
+        jsonLd={[{
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          'name': 'Pikselai',
+          'url': 'https://pikselai.com',
+          'potentialAction': {
+            '@type': 'SearchAction',
+            'target': 'https://pikselai.com/blog?q={search_term_string}',
+            'query-input': 'required name=search_term_string'
+          }
+        }, {
+          '@context': 'https://schema.org',
+          '@type': 'Organization',
+          'name': 'Pikselai',
+          'url': 'https://pikselai.com',
+          'logo': 'https://pikselai.com/branding/logo-dark-v2.webp',
+          'description': 'Yapay zeka destekli kreatif üretim, e-ticaret yönetimi ve dijital çözümler sunan profesyonel dijital ajans.',
+          'contactPoint': {
+            '@type': 'ContactPoint',
+            'telephone': '+905531832344',
+            'contactType': 'customer service',
+            'areaServed': 'TR',
+            'availableLanguage': 'Turkish'
+          },
+          'sameAs': [
+            'https://www.instagram.com/pikselai',
+            'https://www.linkedin.com/company/pikselai'
+          ]
+        }]}
+      />
       <main className="bg-[#0b2117] min-h-screen font-sans selection:bg-[#caf265] selection:text-[#0b2117]">
 
         {/* 1. HERO SECTION */}

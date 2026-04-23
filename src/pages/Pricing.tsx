@@ -4,7 +4,7 @@ import { Section } from '../components/ui/Section';
 import { Button } from '../components/ui/Button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../components/ui/Card';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
+import { SEOHead } from '../components/seo/SEOHead';
 import { ChevronRight, MessageSquare, TrendingUp } from 'lucide-react';
 
 // Profesyonel Katalog Paketi (Sabit)
@@ -161,9 +161,11 @@ const Pricing = () => {
 
     return (
         <MainLayout>
-            <Helmet>
-                <title>Ücretler | Pikselai</title>
-            </Helmet>
+            <SEOHead
+                title="Fiyatlandırma — Şeffaf ve Esnek Paketler"
+                description="PikselAI hizmet ücretleri: AI fotoğraf üretimi, Shopify e-ticaret kurulumu, sosyal medya yönetimi ve kreatif tasarım paketleri. Gizli ücret yok."
+                canonical="/fiyatlandirma"
+            />
 
             {/* Hero Section */}
             <Section className="py-24 text-center" mood="light">

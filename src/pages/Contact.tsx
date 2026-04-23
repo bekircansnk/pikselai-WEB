@@ -3,6 +3,7 @@ import { MainLayout } from '../layouts/MainLayout';
 import { Section } from '../components/ui/Section';
 import { motion } from 'framer-motion';
 import { MessageSquare, Mail, MapPin, ArrowRight } from 'lucide-react';
+import { SEOHead } from '../components/seo/SEOHead';
 
 const Contact = () => {
     useEffect(() => {
@@ -77,6 +78,11 @@ const Contact = () => {
 
     return (
         <MainLayout transparentHeader={true} headerLightText={true}>
+            <SEOHead
+                title="İletişim — Ücretsiz Demo ve Teklif Alın"
+                description="PikselAI ile iletişime geçin. Yapay zeka destekli ürün fotoğrafçılığı, e-ticaret ve sosyal medya hizmetleri için ücretsiz demo talep edin."
+                canonical="/iletisim"
+            />
             {/* HERO SECTION */}
             <Section className="pt-32 pb-20 md:pt-48 md:pb-32 relative overflow-hidden bg-[#0b2117]">
                 {/* Background Glow */}

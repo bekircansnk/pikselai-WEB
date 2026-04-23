@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Check, Settings, Image as ImageIcon, Box, PieChart, Info, Copy, Zap } from "lucide-react";
 import { Header } from "../components/layout/Header";
 import { Footer } from "../components/layout/Footer";
+import { SEOHead } from "../components/seo/SEOHead";
 import {
   DEFAULT_SOCIAL,
   DEFAULT_BANNERS,
@@ -125,6 +126,11 @@ Genel Toplam Bütçe: $${overallCost.toFixed(2)}
 
   return (
     <>
+      <SEOHead
+        title="AI Görsel Üretim Maliyet Hesaplayıcı — Bütçenizi Planlayın"
+        description="Yapay zeka ile ürün fotoğrafçılığı, banner ve toplu görsel üretim maliyetlerini anında hesaplayın. Şeffaf fiyatlandırma."
+        canonical="/maliyet-hesapla"
+      />
       <Header />
       <div className="min-h-screen pt-24 pb-20 bg-[#f8f9fa] dark:bg-[#0a0a0c] selection:bg-bor-secondary/30 transition-colors duration-300">
         

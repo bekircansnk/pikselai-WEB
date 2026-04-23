@@ -18,7 +18,7 @@ export default function AiPazarlamaKampanyalari() {
             category="Dijital Pazarlama"
             categoryId="digital-marketing"
             readTime="12 dk"
-            heroImage="https://cdn.sanity.io/images/k0dlbavy/production/e6e768784d16d97c729e24699564757c91d4e0e2-1584x892.png?w=1584&q=95&auto=format"
+            heroImage="/assets/pages/blog/ai_pazarlama_kampanyalari.png"
             heroImageAlt="AI Pazarlama Kampanyaları"
             sections={SECTIONS}
         >

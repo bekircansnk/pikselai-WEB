@@ -20,7 +20,7 @@ export default function AiTasarimAraclari() {
             category="AI Destekli Yaratıcılık"
             categoryId="ai-powered-creative"
             readTime="15 dk"
-            heroImage="https://cdn.sanity.io/images/k0dlbavy/production/94b4e138a387532392070d65b38d01168532f41b-2400x1260.png?w=1584&q=95&auto=format"
+            heroImage="/assets/pages/blog/en_iyi_ai_araclari.jpeg"
             heroImageAlt="En İyi AI Tasarım Araçları"
             sections={SECTIONS}
         >

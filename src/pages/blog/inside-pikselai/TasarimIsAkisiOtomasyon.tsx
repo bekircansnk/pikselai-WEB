@@ -17,7 +17,7 @@ export default function TasarimIsAkisiOtomasyon() {
             category="Pikselai'ın İçinden"
             categoryId="inside-pikselai"
             readTime="9 dk"
-            heroImage="https://cdn.sanity.io/images/k0dlbavy/production/73cbb74b83da816e09969c116d1d97dfb3b53687-4181x2185.png?rect=3,0,4175,2185&w=1200&h=628&q=95&auto=format"
+            heroImage="/assets/pages/blog/tasarim_is_akisi_otomasyon.jpeg"
             heroImageAlt="Tasarım İş Akışında Otomasyon"
             sections={SECTIONS}
         >

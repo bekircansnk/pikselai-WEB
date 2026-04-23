@@ -17,7 +17,7 @@ export default function GizliAiOzellikleri() {
             category="AI Destekli Yaratıcılık"
             categoryId="ai-powered-creative"
             readTime="8 dk"
-            heroImage="https://cdn.sanity.io/images/k0dlbavy/production/79af68beb2c85a929135d7607b7caae6667252ac-1584x892.png?w=1584&q=95&auto=format"
+            heroImage="/assets/pages/blog/gizli_ai_ozellikleri.jpeg"
             heroImageAlt="Gizli AI Özellikleri"
             sections={SECTIONS}
         >

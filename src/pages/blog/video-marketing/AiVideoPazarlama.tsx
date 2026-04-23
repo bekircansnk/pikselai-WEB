@@ -17,7 +17,7 @@ export default function AiVideoPazarlama() {
             category="Video Pazarlama"
             categoryId="video-marketing"
             readTime="11 dk"
-            heroImage="https://cdn.sanity.io/images/k0dlbavy/production/be30a7d9796e62552834b9983944736f8f04757c-1584x892.png?w=1584&q=95&auto=format"
+            heroImage="/assets/pages/blog/ai_video_pazarlama.jpeg"
             heroImageAlt="AI ile Video Pazarlama"
             sections={SECTIONS}
         >

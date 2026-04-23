@@ -19,7 +19,7 @@ export default function AiGorselUretimiOrnekleri() {
             category="AI Destekli Yaratıcılık"
             categoryId="ai-powered-creative"
             readTime="10 dk"
-            heroImage="https://cdn.sanity.io/images/k0dlbavy/production/49a71227189f7f465c6978438127393433a1f81d-1584x892.png?w=1584&q=95&auto=format"
+            heroImage="/assets/pages/blog/ai_gorsel_uretimi_ornekleri.jpeg"
             heroImageAlt="AI Görsel Üretimi Örnekleri"
             sections={SECTIONS}
         >

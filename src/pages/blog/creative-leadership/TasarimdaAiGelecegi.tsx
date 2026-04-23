@@ -17,7 +17,7 @@ export default function TasarimdaAiGelecegi() {
             category="Yaratıcı Liderlik"
             categoryId="creative-leadership"
             readTime="11 dk"
-            heroImage="https://cdn.sanity.io/images/k0dlbavy/production/49a71227189f7f465c6978438127393433a1f81d-1584x892.png?w=1584&q=95&auto=format"
+            heroImage="/assets/pages/blog/tasarimda_ai_gelecegi.png"
             heroImageAlt="Tasarımda AI Geleceği"
             sections={SECTIONS}
         >

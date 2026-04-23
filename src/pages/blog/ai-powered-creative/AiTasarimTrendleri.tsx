@@ -20,7 +20,7 @@ export default function AiTasarimTrendleri() {
             category="AI Destekli Yaratıcılık"
             categoryId="ai-powered-creative"
             readTime="12 dk"
-            heroImage="https://cdn.sanity.io/images/k0dlbavy/production/73cbb74b83da816e09969c116d1d97dfb3b53687-4181x2185.png?rect=3,0,4175,2185&w=1200&h=628&q=95&auto=format"
+            heroImage="/assets/pages/blog/ai_tasarim_trendleri_2026.jpeg"
             heroImageAlt="AI Tasarım Trendleri 2026"
             sections={SECTIONS}
         >

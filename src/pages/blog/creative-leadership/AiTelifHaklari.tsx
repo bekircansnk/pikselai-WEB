@@ -17,7 +17,7 @@ export default function AiTelifHaklari() {
             category="Yaratıcı Liderlik"
             categoryId="creative-leadership"
             readTime="10 dk"
-            heroImage="https://cdn.sanity.io/images/k0dlbavy/production/9773463372c088c442436f562477382d51b32d84-1584x892.png?w=1584&q=95&auto=format"
+            heroImage="/assets/pages/blog/ai_telif_haklari.jpeg"
             heroImageAlt="AI ve Telif Hakları"
             sections={SECTIONS}
         >

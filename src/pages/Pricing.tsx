@@ -107,7 +107,7 @@ const creativePackages = [
         price: '₺15.000',
         suffix: 'Tek Seferlik',
         description: 'Tek sayfalık dönüşüm odaklı tanıtım ve kampanya sayfaları.',
-        features: ['Özel UI/UX tasarımı', 'Mobil uyumlu modern yapı', 'Hızlı sayfa yüklenme (SEO)', 'Form ve lead toplama', 'SSL ve Güvenlik Sertifikası'],
+        features: ['Özel UI/UX tasarımı', 'Mobil uyumlu modern yapı', 'Hızlı sayfa yüklenme (SEO)', 'Form ve lead toplama', 'Google Analytics & Takip Kurulumu'],
         cta: 'Teklif Al'
     },
     {

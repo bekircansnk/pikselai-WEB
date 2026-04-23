@@ -1,133 +1,160 @@
 import { useState } from "react"
-import { motion } from "framer-motion"
-import { ArrowRight, Clock, User } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
+import { ArrowRight, Clock, User, Zap, BarChart3, Package, TrendingUp } from "lucide-react"
+import { Link } from "react-router-dom"
 import { Header } from "../components/layout/Header"
 import { Footer } from "../components/layout/Footer"
-import { Button } from "../components/ui/Button"
 import { cn } from "../lib/utils"
 
-// Mock Data
-const categories = ["Tümü", "Yapay Zeka", "Design Ops", "Marketing", "E-Ticaret"]
+// Kategori listesi
+const categories = ["Tümü", "Referans Proje", "Yapay Zeka", "E-Ticaret", "Sosyal Medya"]
 
-const featuredPost = {
-    id: 1,
-    category: "Yapay Zeka",
-    title: "2026'da Generative AI'ın Tasarım Dünyasına Etkileri",
-    excerpt: "Yapay zeka araçlarının yaratıcı süreçleri nasıl değiştirdiğini ve tasarımcıların rollerini nasıl dönüştürdüğünü derinlemesine inceliyoruz.",
-    author: "Bekircan Sağnak",
-    date: "10 Şubat 2026",
-    readTime: "5 dk",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop"
-}
-
-const posts = [
+// Gerçek case study'ler
+const caseStudies = [
+    {
+        id: 1,
+        slug: "/blog/referanslar",
+        category: "Referans Proje",
+        brand: "Cazador",
+        title: "Cazador'un Dijital Dönüşüm Yolculuğu",
+        excerpt: "Moda dünyasının köklü markası Cazador, Pikselai'ın yapay zeka çözümleriyle katalog süreçlerini hızlandırdı ve dijital varlığını mükemmelleştirdi.",
+        tags: ["Dijital Katalog", "AI Prodüksiyon", "Sosyal Medya"],
+        image: "/assets/brands/cazador/ai_cazador.webp",
+        stat: { label: "Katalog Hızı", value: "10x", icon: TrendingUp },
+        featured: true,
+    },
     {
         id: 2,
-        category: "Design Ops",
-        title: "Ölçeklenebilir Tasarım Sistemleri Nasıl Kurulur?",
-        excerpt: "Büyüyen ekipler için tutarlı ve sürdürülebilir bir tasarım dili oluşturmanın ipuçları.",
-        author: "Zeynep Yılmaz",
-        date: "8 Şubat 2026",
-        readTime: "7 dk",
-        image: "https://images.unsplash.com/photo-1586717791821-3f44a5638d4f?q=80&w=2070&auto=format&fit=crop"
+        slug: "/blog/mina-drinks",
+        category: "E-Ticaret",
+        brand: "Mina Drinks",
+        title: "Mina Drinks'in Görsel Dönüşüm Yolculuğu",
+        excerpt: "İçecek sektörünün yenilikçi markası Mina Drinks, Pikselai'ın yapay zeka çözümleriyle ürün fotoğrafçılığı süreçlerini baştan yarattı.",
+        tags: ["Ürün Fotoğrafçılığı", "AI Stüdyo", "Maliyet Azaltma"],
+        image: "/assets/pages/minadrinkscasestudy/_id_scenario_1_corn_field_dream_2k_202.webp",
+        stat: { label: "Maliyet Azalması", value: "%90", icon: BarChart3 },
+        featured: false,
     },
     {
         id: 3,
-        category: "Marketing",
-        title: "Performans Pazarlamada AI Görsellerinin Gücü",
-        excerpt: "CTR oranlarını %300 artıran yapay zeka destekli reklam kreatifleri.",
-        author: "Can Demir",
-        date: "5 Şubat 2026",
-        readTime: "4 dk",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
+        slug: "/blog/venus",
+        category: "E-Ticaret",
+        brand: "Venüs Giyim",
+        title: "Venüs'ün Model Çeşitliliği Dönüşümü",
+        excerpt: "Kadın giyim markası Venüs, e-ticaret manken çekim süreçlerini Pikselai'ın Sanal Manken (AI Model) teknolojisiyle tamamen yeniden kurguladı.",
+        tags: ["Sanal Manken", "AI Model", "Uluslararası Pazar"],
+        image: "/assets/brands/venus/mila_1_image00004_4k_16_9_01_hero_full.webp",
+        stat: { label: "Zaman Tasarrufu", value: "%85", icon: Zap },
+        featured: false,
     },
     {
         id: 4,
+        slug: "/blog/campandmap",
         category: "E-Ticaret",
-        title: "Ürün Fotoğrafçılığında Ghost Mannequin Dönemi",
-        excerpt: "Maliyetleri düşüren ve hızı artıran yeni nesil ürün çekim teknikleri.",
-        author: "Elif Kaya",
-        date: "1 Şubat 2026",
-        readTime: "6 dk",
-        image: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=2070&auto=format&fit=crop"
+        brand: "Campandmap",
+        title: "Campandmap'in Outdoor Vitrini",
+        excerpt: "Ağır kamp ekipmanlarını stüdyoya taşımak yerine Pikselai'ın yapay zeka destekli arka plan üretimi ile doğanın ruhunu kataloglarına taşıdı.",
+        tags: ["Background AI", "Outdoor Prodüksiyon", "E-Ticaret"],
+        image: "/assets/brands/camp_and_map/1_2k_auto_undefined.webp",
+        stat: { label: "Lojistik Tasarruf", value: "%100", icon: Package },
+        featured: false,
     },
-    {
-        id: 5,
-        category: "Yapay Zeka",
-        title: "Midjourney ve Stable Diffusion: Hangisi Sizin İçin?",
-        excerpt: "İki dev yapay zeka modelinin karşılaştırmalı analizi ve kullanım senaryoları.",
-        author: "Bekircan Sağnak",
-        date: "28 Ocak 2026",
-        readTime: "8 dk",
-        image: "https://images.unsplash.com/photo-1684369175853-7b566c3fc458?q=80&w=2071&auto=format&fit=crop"
-    },
-    {
-        id: 6,
-        category: "Marketing",
-        title: "2026 Sosyal Medya Trendleri",
-        excerpt: "Kısa video içerikleri ve etkileşim odaklı stratejilerin yükselişi.",
-        author: "Selin Y.",
-        date: "25 Ocak 2026",
-        readTime: "5 dk",
-        image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop"
-    }
 ]
 
 export default function Blog() {
     const [activeCategory, setActiveCategory] = useState("Tümü")
 
-    const filteredPosts = activeCategory === "Tümü"
-        ? posts
-        : posts.filter(post => post.category === activeCategory)
+    const filtered = activeCategory === "Tümü"
+        ? caseStudies
+        : caseStudies.filter(p => p.category === activeCategory)
+
+    const featured = caseStudies.find(p => p.featured)
+    const rest = filtered.filter(p => !p.featured)
 
     return (
-        <div className="min-h-screen bg-white dark:bg-bor-primary-900 font-sans">
-            <Header />
+        <div className="min-h-screen bg-[#F4EFE6] font-sans">
+            <Header transparent={false} lightText={false} />
 
-            {/* Hero / Featured Post */}
-            <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-bor-primary-900/50">
-                <div className="max-w-7xl mx-auto">
-                    <div className="grid md:grid-cols-2 gap-12 items-center">
-                        <div className="space-y-6">
-                            <span className="inline-block px-3 py-1 rounded-full bg-bor-secondary/10 text-bor-secondary text-sm font-bold tracking-wide">
-                                {featuredPost.category}
-                            </span>
-                            <h1 className="text-4xl md:text-5xl font-bold font-display text-bor-primary-900 dark:text-white leading-tight">
-                                {featuredPost.title}
-                            </h1>
-                            <p className="text-lg text-bor-primary-600 dark:text-bor-primary-300 leading-relaxed">
-                                {featuredPost.excerpt}
-                            </p>
-                            <div className="flex items-center gap-4 text-sm text-bor-primary-500 dark:text-bor-primary-400">
-                                <div className="flex items-center gap-2">
-                                    <User size={16} />
-                                    <span>{featuredPost.author}</span>
-                                </div>
-                                <span>•</span>
-                                <div className="flex items-center gap-2">
-                                    <Clock size={16} />
-                                    <span>{featuredPost.readTime} okuma</span>
-                                </div>
+            {/* Hero - Öne Çıkan */}
+            {featured && activeCategory === "Tümü" && (
+                <section className="pt-28 pb-0 px-4 sm:px-6 lg:px-12 xl:px-24 bg-[#F4EFE6]">
+                    <div className="max-w-7xl mx-auto">
+                        {/* Başlık */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            className="mb-12 text-center"
+                        >
+                            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#0b2117]/10 bg-[#0b2117]/5 text-[#0b2117] text-xs font-bold tracking-widest uppercase mb-6">
+                                Müşteri Hikayeleri
                             </div>
-                            <Button size="lg" className="gap-2">
-                                Okumaya Başla <ArrowRight className="w-4 h-4" />
-                            </Button>
-                        </div>
-                        <div className="rounded-2xl overflow-hidden shadow-2xl skew-y-1 transform transition-transform hover:skew-y-0 duration-500">
-                            <img
-                                src={featuredPost.image}
-                                alt={featuredPost.title}
-                                className="w-full h-full object-cover aspect-video"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </section>
+                            <h1 className="text-5xl md:text-7xl font-bold font-display leading-tight tracking-tight text-[#0b2117] mb-4">
+                                Gerçek Markalar,<br />
+                                <span className="italic font-light text-[#86AA00]">Gerçek Sonuçlar</span>
+                            </h1>
+                            <p className="text-[#3a5245] text-xl max-w-2xl mx-auto font-light leading-relaxed">
+                                Pikselai ile dijital dönüşüm yolculuğuna çıkan markalardan ilham alın.
+                            </p>
+                        </motion.div>
 
-            {/* Categories & Filter */}
-            <section className="sticky top-[72px] z-30 bg-white/80 dark:bg-bor-primary-900/80 backdrop-blur-md border-b border-bor-primary-100 dark:border-bor-primary-800 py-4">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-hide">
+                        {/* Öne Çıkan Kart */}
+                        <Link to={featured.slug}>
+                            <motion.div
+                                initial={{ opacity: 0, y: 40 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.7, delay: 0.2 }}
+                                className="group relative grid grid-cols-1 lg:grid-cols-2 rounded-[2.5rem] overflow-hidden border border-[#e0dcd3] shadow-2xl hover:shadow-[0_30px_80px_rgba(11,33,23,0.15)] transition-all duration-700 bg-[#0b2117]"
+                            >
+                                {/* Sol - İçerik */}
+                                <div className="px-10 md:px-16 py-14 md:py-20 flex flex-col justify-center relative z-10">
+                                    <div className="absolute -top-16 -left-16 w-64 h-64 bg-[#caf265]/5 blur-[80px] rounded-full" />
+                                    <span className="inline-block text-[#caf265] text-xs font-bold tracking-widest uppercase mb-6">
+                                        {featured.brand} · {featured.category}
+                                    </span>
+                                    <h2 className="text-3xl md:text-4xl font-bold font-display text-white leading-tight mb-6">
+                                        {featured.title}
+                                    </h2>
+                                    <p className="text-[#a8b8af] font-light leading-relaxed mb-8">
+                                        {featured.excerpt}
+                                    </p>
+                                    <div className="flex flex-wrap gap-2 mb-10">
+                                        {featured.tags.map(tag => (
+                                            <span key={tag} className="px-3 py-1 rounded-full text-xs font-medium bg-white/10 text-white/70">
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
+                                    <div className="flex items-center gap-3">
+                                        <span className="px-5 py-3 rounded-full bg-[#caf265] text-[#0b2117] text-sm font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
+                                            Hikayeyi Oku <ArrowRight size={16} />
+                                        </span>
+                                        <div className="flex flex-col pl-4 border-l border-white/20">
+                                            <span className="text-2xl font-bold text-[#caf265]">{featured.stat.value}</span>
+                                            <span className="text-xs text-[#a8b8af]">{featured.stat.label}</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Sağ - Görsel */}
+                                <div className="relative h-64 lg:h-auto overflow-hidden">
+                                    <img
+                                        src={featured.image}
+                                        alt={featured.title}
+                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#0b2117]/30" />
+                                </div>
+                            </motion.div>
+                        </Link>
+                    </div>
+                </section>
+            )}
+
+            {/* Kategori Filtreleri */}
+            <section className="sticky top-[72px] z-30 bg-[#F4EFE6]/90 backdrop-blur-md border-b border-[#e0dcd3] py-4">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-24">
+                    <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-hide">
                         {categories.map((cat) => (
                             <button
                                 key={cat}
@@ -135,8 +162,8 @@ export default function Blog() {
                                 className={cn(
                                     "px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all",
                                     activeCategory === cat
-                                        ? "bg-bor-primary-900 text-white dark:bg-white dark:text-bor-primary-900 shadow-md"
-                                        : "bg-gray-100 text-bor-primary-600 hover:bg-gray-200 dark:bg-bor-primary-800 dark:text-bor-primary-300 dark:hover:bg-bor-primary-700"
+                                        ? "bg-[#0b2117] text-white shadow-md"
+                                        : "bg-[#0b2117]/5 text-[#0b2117] hover:bg-[#0b2117]/10"
                                 )}
                             >
                                 {cat}
@@ -146,75 +173,117 @@ export default function Blog() {
                 </div>
             </section>
 
-            {/* Posts Grid */}
-            <section className="py-16 px-4 sm:px-6 lg:px-8">
+            {/* Kart Izgara */}
+            <section className="py-16 px-4 sm:px-6 lg:px-12 xl:px-24 bg-[#F4EFE6]">
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {filteredPosts.map((post) => (
-                            <motion.article
-                                key={post.id}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.4 }}
-                                className="group cursor-pointer flex flex-col h-full bg-white dark:bg-bor-primary-800 rounded-xl overflow-hidden border border-bor-primary-100 dark:border-bor-primary-700 hover:border-bor-primary-300 dark:hover:border-bor-primary-600 transition-colors shadow-sm hover:shadow-lg"
-                            >
-                                <div className="h-56 overflow-hidden">
-                                    <img
-                                        src={post.image}
-                                        alt={post.title}
-                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                    />
-                                </div>
-                                <div className="p-6 flex flex-col flex-grow">
-                                    <div className="flex items-center justify-between mb-3">
-                                        <span className="text-xs font-bold text-bor-secondary uppercase tracking-wider">
-                                            {post.category}
-                                        </span>
-                                        <span className="text-xs text-bor-primary-400">
-                                            {post.date}
-                                        </span>
-                                    </div>
+                    {activeCategory !== "Tümü" && filtered.length === 0 && (
+                        <div className="text-center py-20 text-[#3a5245] text-lg font-light">
+                            Bu kategoride henüz içerik yok.
+                        </div>
+                    )}
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={activeCategory}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+                        >
+                            {(activeCategory === "Tümü" ? rest : filtered).map((post, i) => (
+                                <motion.div
+                                    key={post.id}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.4, delay: i * 0.08 }}
+                                >
+                                    <Link to={post.slug} className="block group h-full">
+                                        <article className="flex flex-col h-full rounded-3xl overflow-hidden border border-[#e0dcd3] bg-white hover:border-[#86AA00]/40 hover:shadow-xl transition-all duration-500">
+                                            {/* Görsel */}
+                                            <div className="h-52 overflow-hidden relative">
+                                                <img
+                                                    src={post.image}
+                                                    alt={post.title}
+                                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                                />
+                                                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                                                {/* Stat badge */}
+                                                <div className="absolute bottom-3 right-3 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#0b2117]/80 backdrop-blur-sm">
+                                                    <post.stat.icon size={12} className="text-[#caf265]" />
+                                                    <span className="text-white text-xs font-bold">{post.stat.value}</span>
+                                                    <span className="text-white/60 text-[10px]">{post.stat.label}</span>
+                                                </div>
+                                            </div>
 
-                                    <h3 className="text-xl font-bold text-bor-primary-900 dark:text-white mb-3 leading-tight group-hover:text-bor-secondary transition-colors">
-                                        {post.title}
-                                    </h3>
-
-                                    <p className="text-sm text-bor-primary-500 dark:text-bor-primary-400 mb-6 flex-grow line-clamp-3">
-                                        {post.excerpt}
-                                    </p>
-
-                                    <div className="flex items-center justify-between pt-4 border-t border-bor-primary-100 dark:border-bor-primary-700 mt-auto">
-                                        <div className="flex items-center gap-2 text-xs font-medium text-bor-primary-600 dark:text-bor-primary-300">
-                                            <span>{post.author}</span>
-                                        </div>
-                                        <div className="flex items-center gap-1 text-xs text-bor-primary-400">
-                                            <Clock size={14} />
-                                            <span>{post.readTime}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </motion.article>
-                        ))}
-                    </div>
+                                            {/* İçerik */}
+                                            <div className="p-6 flex flex-col flex-grow">
+                                                <div className="flex items-center gap-2 mb-3">
+                                                    <span className="text-xs font-bold text-[#86AA00] uppercase tracking-widest">{post.brand}</span>
+                                                    <span className="text-[#0b2117]/20">·</span>
+                                                    <span className="text-xs text-[#0b2117]/50">{post.category}</span>
+                                                </div>
+                                                <h3 className="text-lg font-bold text-[#0b2117] mb-3 leading-snug group-hover:text-[#86AA00] transition-colors">
+                                                    {post.title}
+                                                </h3>
+                                                <p className="text-sm text-[#3a5245] font-light leading-relaxed mb-5 flex-grow line-clamp-3">
+                                                    {post.excerpt}
+                                                </p>
+                                                <div className="flex flex-wrap gap-1.5 mb-5">
+                                                    {post.tags.map(tag => (
+                                                        <span key={tag} className="px-2 py-0.5 rounded-full text-[10px] font-medium bg-[#0b2117]/5 text-[#0b2117]/60">
+                                                            {tag}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                                <div className="flex items-center justify-between pt-4 border-t border-[#e0dcd3]">
+                                                    <span className="text-xs font-medium text-[#3a5245] flex items-center gap-1.5">
+                                                        <User size={12} /> Pikselai Ekibi
+                                                    </span>
+                                                    <span className="text-xs text-[#86AA00] font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                                        Oku <ArrowRight size={12} />
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </Link>
+                                </motion.div>
+                            ))}
+                        </motion.div>
+                    </AnimatePresence>
                 </div>
             </section>
 
-            {/* Newsletter / CTA */}
-            <section className="py-20 px-4 sm:px-6 lg:px-8 bg-bor-primary-900 text-white">
-                <div className="max-w-4xl mx-auto text-center space-y-6">
-                    <h2 className="text-3xl md:text-4xl font-bold font-display">Geleceği Kaçırmayın</h2>
-                    <p className="text-lg text-bor-primary-200">
-                        En yeni yapay zeka trendleri, tasarım ipuçları ve sektörel raporlar için bültenimize abone olun.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                        <input
-                            type="email"
-                            placeholder="E-posta adresiniz"
-                            className="flex-grow px-4 py-3 rounded-lg text-bor-primary-900 focus:outline-none focus:ring-2 focus:ring-bor-secondary"
-                        />
-                        <Button variant="secondary" className="bg-bor-secondary text-white hover:bg-bor-secondary/90">
-                            Abone Ol
-                        </Button>
+            {/* CTA Bülteni */}
+            <section className="py-20 px-4 sm:px-6 lg:px-12 xl:px-24 bg-[#F4EFE6]">
+                <div className="max-w-7xl mx-auto">
+                    <div className="bg-[#0b2117] rounded-[2.5rem] p-10 md:p-20 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12">
+                        <div className="absolute -top-20 -right-20 w-80 h-80 bg-[#caf265]/8 blur-[100px] rounded-full" />
+                        <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-[#caf265]/5 blur-[80px] rounded-full" />
+
+                        <div className="relative z-10 max-w-lg">
+                            <h2 className="text-3xl md:text-5xl font-bold font-display text-white leading-tight mb-4">
+                                Markanız da bu<br />
+                                <span className="italic font-light text-[#caf265]">başarı hikayesinde olsun</span>
+                            </h2>
+                            <p className="text-[#a8b8af] font-light leading-relaxed">
+                                Ücretsiz danışmanlık görüşmesi planlayalım ve dijital hedeflerinizi gerçeğe dönüştürelim.
+                            </p>
+                        </div>
+
+                        <div className="relative z-10 flex flex-col gap-4 items-center md:items-start shrink-0">
+                            <a
+                                href="/iletisim"
+                                className="px-8 py-4 rounded-full bg-[#caf265] text-[#0b2117] font-bold text-base flex items-center gap-2 hover:bg-[#b5dc57] transition-colors"
+                            >
+                                Ücretsiz Danışmanlık Al <ArrowRight size={18} />
+                            </a>
+                            <a
+                                href="mailto:bilgi@pikselai.com"
+                                className="text-sm text-white/60 hover:text-[#caf265] transition-colors"
+                            >
+                                bilgi@pikselai.com
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>

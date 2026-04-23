@@ -20,7 +20,7 @@ export default function AiTasarimAraclari() {
             category="AI Destekli Yaratıcılık"
             categoryId="ai-powered-creative"
             readTime="15 dk"
-            heroImage="/assets/pages/blog/en_iyi_ai_araclari.jpeg"
+            heroImage="/assets/pages/blog/en_iyi_ai_araclari.webp"
             heroImageAlt="En İyi AI Tasarım Araçları"
             sections={SECTIONS}
         >

@@ -63,25 +63,25 @@ export function ResourcesMenu({ isOpen, activeMenu, onClose }: ResourcesMenuProp
                                     <MenuHeader title="Öğrenim Merkezi & Blog" href="/blog#katalog" onClose={onClose} />
                                     <div className="mt-4 space-y-3">
                                         <ImageCard
-                                            image="/assets/pages/blog/gizli_ai_ozellikleri.jpeg"
+                                            image="/assets/pages/blog/gizli_ai_ozellikleri.webp"
                                             title="AI Destekli Yaratıcılık"
                                             href="/blog?cat=ai-powered-creative#katalog"
                                             onClose={onClose}
                                         />
                                         <ImageCard
-                                            image="/assets/pages/blog/ai_marka_rehberleri.jpeg"
+                                            image="/assets/pages/blog/ai_marka_rehberleri.webp"
                                             title="Markaya Dair Her Şey"
                                             href="/blog?cat=all-things-brand#katalog"
                                             onClose={onClose}
                                         />
                                         <ImageCard
-                                            image="/assets/pages/blog/ai_telif_haklari.jpeg"
+                                            image="/assets/pages/blog/ai_telif_haklari.webp"
                                             title="Yaratıcı Liderlik"
                                             href="/blog?cat=creative-leadership#katalog"
                                             onClose={onClose}
                                         />
                                         <ImageCard
-                                            image="/assets/pages/blog/ai_pazarlama_kampanyalari.png"
+                                            image="/assets/pages/blog/ai_pazarlama_kampanyalari.webp"
                                             title="Dijital Pazarlama"
                                             href="/blog?cat=digital-marketing#katalog"
                                             onClose={onClose}

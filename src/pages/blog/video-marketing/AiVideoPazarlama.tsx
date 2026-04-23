@@ -17,7 +17,7 @@ export default function AiVideoPazarlama() {
             category="Video Pazarlama"
             categoryId="video-marketing"
             readTime="11 dk"
-            heroImage="/assets/pages/blog/ai_video_pazarlama.jpeg"
+            heroImage="/assets/pages/blog/ai_video_pazarlama.webp"
             heroImageAlt="AI ile Video Pazarlama"
             sections={SECTIONS}
         >

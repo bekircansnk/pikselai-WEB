@@ -17,7 +17,7 @@ export default function TasarimdaAiGelecegi() {
             category="Yaratıcı Liderlik"
             categoryId="creative-leadership"
             readTime="11 dk"
-            heroImage="/assets/pages/blog/tasarimda_ai_gelecegi.png"
+            heroImage="/assets/pages/blog/tasarimda_ai_gelecegi.webp"
             heroImageAlt="Tasarımda AI Geleceği"
             sections={SECTIONS}
         >

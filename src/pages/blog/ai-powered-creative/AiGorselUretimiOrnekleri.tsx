@@ -19,7 +19,7 @@ export default function AiGorselUretimiOrnekleri() {
             category="AI Destekli Yaratıcılık"
             categoryId="ai-powered-creative"
             readTime="10 dk"
-            heroImage="/assets/pages/blog/ai_gorsel_uretimi_ornekleri.jpeg"
+            heroImage="/assets/pages/blog/ai_gorsel_uretimi_ornekleri.webp"
             heroImageAlt="AI Görsel Üretimi Örnekleri"
             sections={SECTIONS}
         >

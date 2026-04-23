@@ -17,7 +17,7 @@ export default function TasarimIsAkisiOtomasyon() {
             category="Pikselai'ın İçinden"
             categoryId="inside-pikselai"
             readTime="9 dk"
-            heroImage="/assets/pages/blog/tasarim_is_akisi_otomasyon.jpeg"
+            heroImage="/assets/pages/blog/tasarim_is_akisi_otomasyon.webp"
             heroImageAlt="Tasarım İş Akışında Otomasyon"
             sections={SECTIONS}
         >

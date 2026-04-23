@@ -17,7 +17,7 @@ export default function AiTelifHaklari() {
             category="Yaratıcı Liderlik"
             categoryId="creative-leadership"
             readTime="10 dk"
-            heroImage="/assets/pages/blog/ai_telif_haklari.jpeg"
+            heroImage="/assets/pages/blog/ai_telif_haklari.webp"
             heroImageAlt="AI ve Telif Hakları"
             sections={SECTIONS}
         >

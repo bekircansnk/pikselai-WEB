@@ -17,7 +17,7 @@ export default function AiMarkaRehberleri() {
             category="Markaya Dair Her Şey"
             categoryId="all-things-brand"
             readTime="10 dk"
-            heroImage="/assets/pages/blog/ai_marka_rehberleri.jpeg"
+            heroImage="/assets/pages/blog/ai_marka_rehberleri.webp"
             heroImageAlt="AI ve Marka Rehberleri"
             sections={SECTIONS}
         >

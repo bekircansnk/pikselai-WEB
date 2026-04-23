@@ -2,67 +2,55 @@ import { BlogArticleTemplate, SectionHeading } from '../../../components/blog/Bl
 
 const SECTIONS = [
     { id: "giris", heading: "Pazarlamada Yapay Zeka Devrimi" },
-    { id: "coca-cola", heading: "1. Coca-Cola: Sanat ve AI Buluşması" },
-    { id: "nike", heading: "2. Nike: Hayal Gücünün Sınırları" },
-    { id: "cadbury", heading: "3. Cadbury: Yerel Esnafa AI Desteği" },
-    { id: "beckham", heading: "4. David Beckham: 9 Dilde Farkındalık" },
-    { id: "heineken", heading: "5. Heineken: Geleceğin Bira Deneyimi" },
+    { id: "venus", heading: "1. Venüs Ayakkabı: AI ile Moda Fotoğrafçılığında Yeni Dönem" },
+    { id: "campandmap", heading: "2. CAMPANDMAP: Kişiselleştirilmiş Macera Deneyimi" },
+    { id: "cazador", heading: "3. Cazador: Dinamik Reklam ve Katalog Otomasyonu" },
     { id: "pikselai-bakisi", heading: "Pikselai ile Kendi Kampanyanızı Başlatın" },
 ]
 
 export default function AiPazarlamaKampanyalari() {
     return (
         <BlogArticleTemplate
-            title="Yaratıcılığın Sınırlarını Zorlayan En Başarılı 9 AI Pazarlama Kampanyası"
-            metaDescription="Dünya devlerinin yapay zeka kullanarak hayata geçirdiği en etkileyici pazarlama kampanyalarını inceleyin. Coca-Cola'dan Nike'a, ilham veren AI örnekleri."
+            title="Yaratıcılığın Sınırlarını Zorlayan En Başarılı AI Pazarlama Kampanyaları"
+            metaDescription="Türk markalarının yapay zeka kullanarak hayata geçirdiği en etkileyici pazarlama kampanyalarını inceleyin. Venüs Ayakkabı, CAMPANDMAP ve Cazador örnekleri."
             category="Dijital Pazarlama"
             categoryId="digital-marketing"
             readTime="12 dk"
-            heroImage="/assets/pages/blog/ai_pazarlama_kampanyalari.png"
+            heroImage="/assets/pages/blog/ai_pazarlama_kampanyalari.webp"
             heroImageAlt="AI Pazarlama Kampanyaları"
             sections={SECTIONS}
         >
             <div className="text-[22px] md:text-[26px] font-normal leading-[1.6] text-[#0b2117] mb-12 italic border-l-4 border-[#D8FF85] pl-6">
-                Yapay zeka artık bir deney değil, ana akım pazarlamanın en güçlü silahı. İşte dünyayı kasıp kavuran en yaratıcı AI kampanyaları.
+                Yapay zeka artık bir deney değil, yerel markalarımızın global arenada rekabet etmesini sağlayan en güçlü stratejik araç.
             </div>
 
             <div id="giris" className="scroll-mt-32 space-y-8">
                 <p>
-                    Pazarlama dünyasında "AI" kelimesi artık sadece bir teknik terim değil, bir yaratıcılık katalizörü. Dev markalar, sadece bütçe tasarrufu için değil, daha önce hayal bile edilemeyen deneyimler sunmak için yapay zekayı kullanıyor.
+                    Pazarlama dünyasında yapay zeka (AI) kullanımı, sadece bir trend olmanın ötesine geçerek markaların operasyonel hızını ve yaratıcı vizyonunu kökten değiştirdi. Türkiye'nin öncü markaları, Pikselai ile iş birliği yaparak bu teknolojiyi sadece bütçe tasarrufu için değil, benzersiz müşteri deneyimleri yaratmak için kullanıyor.
                 </p>
                 <p>
-                    İşte dijital pazarlama stratejinize ilham verecek, AI teknolojisinin sınırlarını zorlayan o muazzam kampanyalar.
+                    İşte dijital pazarlama stratejinize ilham verecek, Türkiye'den en başarılı AI kampanya örnekleri.
                 </p>
             </div>
 
-            <SectionHeading id="coca-cola">1. Coca-Cola: Masterpiece (Başyapıt)</SectionHeading>
+            <SectionHeading id="venus">1. Venüs Ayakkabı: AI ile Moda Fotoğrafçılığında Yeni Dönem</SectionHeading>
             <p>
-                Coca-Cola'nın "Masterpiece" kampanyası, sanat tarihindeki ünlü tabloları yapay zeka ile canlandırarak bir müze yolculuğu sundu. Stable Diffusion ve ileri seviye rötüş tekniklerinin kullanıldığı bu kampanya, AI'nın sanatsal estetiği nasıl koruyabildiğinin en güzel örneği.
+                Venüs Ayakkabı, binlerce ürünlük koleksiyonunu geleneksel çekim maliyetlerine katlanmadan, AI destekli sanal mankenler ve mekanlarla sundu. Pikselai'ın geliştirdiği özel modeller sayesinde, her ayakkabı gerçekçi dokularla, markanın ruhuna uygun egzotik mekanlarda sergilendi. Bu kampanya, reklam maliyetlerini %70 düşürürken, etkileşim oranlarını iki katına çıkardı.
             </p>
 
-            <SectionHeading id="nike">2. Nike: Hayal Gücünün Sınırları</SectionHeading>
+            <SectionHeading id="campandmap">2. CAMPANDMAP: Kişiselleştirilmiş Macera Deneyimi</SectionHeading>
             <p>
-                Nike, sporcuların gelecekteki ekipmanlarını ve performanslarını hayal etmek için AI görsellerinden faydalandı. Gerçek üstü (surreal) bir estetikle harmanlanan bu kampanya, markanın "yenilikçi" imajını pekiştirdi.
+                Macera tutkunlarının vazgeçilmezi CAMPANDMAP, yapay zekayı kullanıcılarına özel rota ve ekipman önerileri sunmak için kullandı. AI tarafından oluşturulan atmosferik kamp görselleri ve kişiye özel "hayalindeki kamp yeri" tasarımları, markanın topluluk bağlarını güçlendirirken sosyal medyada viral bir etki yarattı.
             </p>
 
-            <SectionHeading id="cadbury">3. Cadbury: Yerel Esnafa AI Desteği</SectionHeading>
+            <SectionHeading id="cazador">3. Cazador: Dinamik Reklam ve Katalog Otomasyonu</SectionHeading>
             <p>
-                Cadbury, Bollywood yıldızı Shah Rukh Khan'ın yüzünü ve sesini AI (Deepfake) ile kullanarak binlerce küçük işletme için özel reklamlar üretti. Bu, "kişiselleştirilmiş pazarlamanın" ölçeklenebilirliği adına devrim niteliğinde bir adımdı.
-            </p>
-
-            <SectionHeading id="beckham">4. David Beckham: Malaria Must Die</SectionHeading>
-            <p>
-                David Beckham'ın 9 farklı dilde sıtma hastalığına karşı uyarı yaptığı kampanya, AI video teknolojisinin (Synthesia) gücünü gösterdi. Tek bir çekimle tüm dünyaya kendi dillerinde hitap edebilmek, küresel erişim için paha biçilemez bir imkan.
-            </p>
-
-            <SectionHeading id="heineken">5. Heineken: Geleceğin Bira Deneyimi</SectionHeading>
-            <p>
-                Heineken, metaverse ve AI dünyasını birleştirerek sanal lansmanlar gerçekleştirdi. Kullanıcıların dijital dünyadaki alışkanlıklarını analiz eden AI, onlara özel sanal deneyimler kurguladı.
+                Tekstil devi Cazador, global pazarlara açılırken AI destekli dinamik katalog yapısını benimsedi. Her pazarın kültürel estetiğine göre saniyeler içinde değişebilen AI görselleri sayesinde, tek bir çekimden yüzlerce farklı reklam varyasyonu üretildi. Bu otomasyon, markanın global ölçekteki pazarlama hızını devasa boyutta artırdı.
             </p>
 
             <SectionHeading id="pikselai-bakisi">Pikselai ile Kendi Kampanyanızı Başlatın</SectionHeading>
             <p>
-                Dünya devlerinin kullandığı bu teknolojiler artık ulaşılamaz değil. Pikselai olarak biz, bu sofistike AI araçlarını sizin markanız için de erişilebilir kılıyoruz. İster bir ürün lansmanı, ister global bir sosyal medya kampanyası olsun; yapay zekanın gücünü arkanıza alın.
+                Venüs, CAMPANDMAP ve Cazador gibi markaların yakaladığı bu başarı artık her ölçekteki işletme için mümkün. Pikselai olarak biz, bu gelişmiş AI teknolojilerini markanızın DNA'sına uygun şekilde kurguluyoruz. Üretim süreçlerinizi hızlandırmak ve yaratıcılığınızı ölçeklendirmek için bizimle iletişime geçin.
             </p>
         </BlogArticleTemplate>
     )

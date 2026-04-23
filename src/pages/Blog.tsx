@@ -4,6 +4,7 @@ import { ArrowRight, Clock, User, Zap, BarChart3, Package, TrendingUp, Star } fr
 import { Link } from "react-router-dom"
 import { Header } from "../components/layout/Header"
 import { Footer } from "../components/layout/Footer"
+import { BottomCTA } from "../components/sections/BottomCTA"
 import { cn } from "../lib/utils"
 
 // Kategori listesi
@@ -107,7 +108,7 @@ export default function Blog() {
                                 className="group relative grid grid-cols-1 lg:grid-cols-2 rounded-3xl overflow-hidden shadow-2xl hover:shadow-[0_40px_100px_rgba(11,33,23,0.18)] transition-shadow duration-700 border border-[#e0dcd3]"
                             >
                                 {/* Sol - Ürün Görseli (doğal boyut) */}
-                                <div className="relative bg-[#eae4da] flex items-end justify-center min-h-[500px] lg:min-h-[620px] overflow-hidden">
+                                <div className="relative bg-[#eae4da] flex items-end justify-center min-h-[350px] lg:min-h-[620px] overflow-hidden">
                                     <img
                                         src={featured.image}
                                         alt={featured.brand}
@@ -170,27 +171,7 @@ export default function Blog() {
                 </section>
             )}
 
-            {/* Kategori Filtreleri */}
-            <section className="sticky top-[72px] z-30 bg-[#F4EFE6]/90 backdrop-blur-md border-b border-[#e0dcd3] py-4">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-24">
-                    <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-hide">
-                        {categories.map((cat) => (
-                            <button
-                                key={cat}
-                                onClick={() => setActiveCategory(cat)}
-                                className={cn(
-                                    "px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all",
-                                    activeCategory === cat
-                                        ? "bg-[#0b2117] text-white shadow-md"
-                                        : "bg-[#0b2117]/5 text-[#0b2117] hover:bg-[#0b2117]/10"
-                                )}
-                            >
-                                {cat}
-                            </button>
-                        ))}
-                    </div>
-                </div>
-            </section>
+
 
             {/* Kart Izgara */}
             <section className="py-16 px-4 sm:px-6 lg:px-12 xl:px-24 bg-[#F4EFE6]">
@@ -272,40 +253,8 @@ export default function Blog() {
                 </div>
             </section>
 
-            {/* CTA Bülteni */}
-            <section className="py-20 px-4 sm:px-6 lg:px-12 xl:px-24 bg-[#F4EFE6]">
-                <div className="max-w-7xl mx-auto">
-                    <div className="bg-[#0b2117] rounded-[2.5rem] p-10 md:p-20 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12">
-                        <div className="absolute -top-20 -right-20 w-80 h-80 bg-[#caf265]/8 blur-[100px] rounded-full" />
-                        <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-[#caf265]/5 blur-[80px] rounded-full" />
-
-                        <div className="relative z-10 max-w-lg">
-                            <h2 className="text-3xl md:text-5xl font-bold font-display text-white leading-tight mb-4">
-                                Markanız da bu<br />
-                                <span className="italic font-light text-[#caf265]">başarı hikayesinde olsun</span>
-                            </h2>
-                            <p className="text-[#a8b8af] font-light leading-relaxed">
-                                Ücretsiz danışmanlık görüşmesi planlayalım ve dijital hedeflerinizi gerçeğe dönüştürelim.
-                            </p>
-                        </div>
-
-                        <div className="relative z-10 flex flex-col gap-4 items-center md:items-start shrink-0">
-                            <a
-                                href="/iletisim"
-                                className="px-8 py-4 rounded-full bg-[#caf265] text-[#0b2117] font-bold text-base flex items-center gap-2 hover:bg-[#b5dc57] transition-colors"
-                            >
-                                Ücretsiz Danışmanlık Al <ArrowRight size={18} />
-                            </a>
-                            <a
-                                href="mailto:bilgi@pikselai.com"
-                                className="text-sm text-white/60 hover:text-[#caf265] transition-colors"
-                            >
-                                bilgi@pikselai.com
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            {/* CTA Bölümü */}
+            <BottomCTA />
 
             <Footer />
         </div>

@@ -1,8 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { Link } from "react-router-dom"
-import {
-    Mic, BookOpen, PieChart, PlayCircle, FolderArchive
-} from "lucide-react"
+
 
 
 interface ResourcesMenuProps {
@@ -63,47 +61,29 @@ export function ResourcesMenu({ isOpen, activeMenu, onClose }: ResourcesMenuProp
                                 {/* Sütun 2: Öğrenim Merkezi & Blog (1/2) */}
                                 <div className="pl-8">
                                     <MenuHeader title="Öğrenim Merkezi & Blog" href="/blog" onClose={onClose} />
-                                    <div className="mt-4 space-y-1">
-                                        <TextItem
+                                    <div className="mt-4 space-y-3">
+                                        <ImageCard
+                                            image="/assets/pages/blog/gizli_ai_ozellikleri.jpeg"
                                             title="AI Destekli Yaratıcılık"
-                                            desc="Yapay zeka ile tasarımın sınırlarını keşfedin"
-                                            icon={<div className="w-8 h-8 rounded-lg bg-spark-500/10 flex items-center justify-center text-spark-600"><PlayCircle size={20} /></div>}
                                             href="/blog?cat=ai-powered-creative"
                                             onClose={onClose}
                                         />
-                                        <TextItem
+                                        <ImageCard
+                                            image="/assets/pages/blog/ai_marka_rehberleri.jpeg"
                                             title="Markaya Dair Her Şey"
-                                            desc="Güçlü ve sürdürülebilir markalar inşa edin"
-                                            icon={<div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-600"><FolderArchive size={20} /></div>}
                                             href="/blog?cat=all-things-brand"
                                             onClose={onClose}
                                         />
-                                        <TextItem
+                                        <ImageCard
+                                            image="/assets/pages/blog/ai_telif_haklari.jpeg"
                                             title="Yaratıcı Liderlik"
-                                            desc="Ekiplerinizi geleceğe hazırlayın"
-                                            icon={<div className="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-600"><Mic size={20} /></div>}
                                             href="/blog?cat=creative-leadership"
                                             onClose={onClose}
                                         />
-                                        <TextItem
+                                        <ImageCard
+                                            image="/assets/pages/blog/ai_pazarlama_kampanyalari.png"
                                             title="Dijital Pazarlama"
-                                            desc="Veri odaklı büyüme stratejileri"
-                                            icon={<div className="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-600"><PieChart size={20} /></div>}
                                             href="/blog?cat=digital-marketing"
-                                            onClose={onClose}
-                                        />
-                                        <TextItem
-                                            title="Video Pazarlama"
-                                            desc="Etkileyici görsel hikayeler oluşturun"
-                                            icon={<div className="w-8 h-8 rounded-lg bg-red-500/10 flex items-center justify-center text-red-600"><PlayCircle size={20} /></div>}
-                                            href="/blog?cat=video-marketing"
-                                            onClose={onClose}
-                                        />
-                                        <TextItem
-                                            title="Pikselai'ın İçinden"
-                                            desc="Ekibimizden haberler ve güncellemeler"
-                                            icon={<div className="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center text-green-600"><FolderArchive size={20} /></div>}
-                                            href="/blog?cat=inside-pikselai"
                                             onClose={onClose}
                                         />
                                     </div>
@@ -130,27 +110,6 @@ function MenuHeader({ title, href, onClose }: { title: string, href: string, onC
     )
 }
 
-function TextItem({ title, desc, icon, href, onClose }: { title: string, desc: string, icon: React.ReactNode, href: string, onClose: () => void }) {
-    return (
-        <Link
-            to={href}
-            className="group flex items-center justify-between py-3 px-4 -mx-4 rounded-xl hover:bg-white dark:hover:bg-bor-primary-800 transition-all duration-300"
-            onClick={onClose}
-        >
-            <div className="space-y-1">
-                <h4 className="font-bold text-[16px] md:text-[18px] text-bor-primary-900 dark:text-white group-hover:text-bor-secondary transition-colors leading-tight tracking-tight">
-                    {title}
-                </h4>
-                <p className="text-[12px] md:text-[13px] text-bor-primary-500 dark:text-bor-primary-400 leading-snug opacity-70 group-hover:opacity-100 transition-opacity max-w-[240px]">
-                    {desc}
-                </p>
-            </div>
-            <div className="text-bor-primary-300 group-hover:text-bor-secondary transition-all duration-300 ml-4 transform group-hover:scale-110 group-hover:rotate-3">
-                {icon}
-            </div>
-        </Link>
-    )
-}
 
 function ImageCard({ image, title, href, onClose }: { image: string, title: string, href: string, onClose: () => void }) {
     return (

@@ -51,7 +51,7 @@ export default function Blog() {
         }
     }, [location])
     
-    // Hash varsa ilgili bölüme kaydır
+    // Hash veya kategori parametresi değiştiğinde ilgili bölüme kaydır
     useEffect(() => {
         if (location.hash === "#katalog") {
             const el = document.getElementById("katalog")
@@ -61,7 +61,7 @@ export default function Blog() {
                 }, 100)
             }
         }
-    }, [location.hash])
+    }, [location.hash, location.search])
 
     const filtered   = activeCat === "tumu" ? BLOG_POSTS : BLOG_POSTS.filter(p => p.catId === activeCat)
     const totalPages = Math.ceil(filtered.length / PER_PAGE)

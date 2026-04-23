@@ -134,20 +134,20 @@ const creativePackages = [
 const catalogFaqs = [
     { q: "Katalog paketi için ödeme tek seferlik mi?", a: "Evet, profesyonel katalog paketi için sadece bir kez ödeme yaparsınız. Sistem tarafımızdan kurulup size teslim edildikten sonra sınırsız ve süresiz kullanım hakkına sahip olursunuz." },
     { q: "Kendi domainimi kullanabilir miyim?", a: "Kesinlikle! Hazırlanan dijital kataloğu kendi alan adınız (örn: katalog.markaniz.com) altında kullanabilirsiniz." },
-    { q: "Kaç ürün yükleyebilirim?", a: "Herhangi bir ürün veya görsel sınırımız yoktur. Sınırsız sayıda ürün ve kategori oluşturabilirsiniz." }
+    { q: "Kaç ürün yükleyebilirim?", a: "Herhangi bir ürün veya görsel sınırımız yoktur. Google Drive altyapısını sisteminize entegre ediyoruz, böylece kendi Google Drive deponuzun kapasitesine göre sınırsız sayıda ürün ve kategori oluşturabilirsiniz." }
 ];
 
 const aiFaqs = [
     { q: "Kredi sisteminiz nasıl çalışıyor?", a: "Kredi veya aylık abonelik zorunluluğumuz yok. Ay sonunda sadece o ay içinde ürettiğiniz başarılı görsellerin toplam sayısı üzerinden, bulunduğunuz dilime göre faturalandırılırsınız." },
-    { q: "Beğenmediğim görseller için ücret ödüyor muyum?", a: "Hayır. Kalite kontrol sürecimizden geçmeyen veya sizin onaylamadığınız hiçbir görsel için ücret talep etmiyoruz. Sadece kullandığınız nihai görseller için ödeme yaparsınız." },
+    { q: "Beğenmediğim görseller için ücretsiz düzeltme var mı?", a: "Hayır. Ürettiğiniz bütün görseller için ücret yansıtılmaktadır. Kullandıkça öde mantığı ile çalışıyoruz ve her görselin API ve üretim maliyeti bulunduğundan ücretsiz düzeltme veya iade seçeneğimiz bulunmamaktadır." },
     { q: "Kendi markam için özel bir AI modeli eğitilebilir mi?", a: "Evet! Özellikle hacimli çalışmalarda marka kimliğinize, renklerinize ve stilinize %100 uygun sonuçlar alabilmeniz için size özel model eğitimi gerçekleştiriyoruz. Şu an kampanya dahilinde bu işlem ücretsizdir." },
     { q: "Görsel teslim süreleri nedir?", a: "Talebinize ve hacmine bağlı olmakla birlikte, standart üretimler 48 saat içerisinde kalite kontrolü tamamlanmış olarak size teslim edilir." }
 ];
 
 const ecommerceFaqs = [
     { q: "Hangi altyapıyı kullanıyorsunuz?", a: "E-ticaret projelerimizde hız, güvenlik ve dönüşüm oranı en yüksek olan Shopify altyapısını tercih ediyoruz." },
-    { q: "Kurulum süreci ne kadar sürüyor?", a: "Seçtiğiniz pakete göre değişiklik göstermekle birlikte, standart bir kurulum 7-14 gün, özel tasarımlı profesyonel kurulumlar ise 3-4 hafta içerisinde tamamlanmaktadır." },
-    { q: "Ödeme altyapılarını siz mi kuruyorsunuz?", a: "Evet. İyzico, PayTR, Stripe gibi popüler ödeme sağlayıcılarının entegrasyonu tarafımızca eksiksiz olarak yapılmaktadır." }
+    { q: "Kurulum süreci ne kadar sürüyor?", a: "Seçtiğiniz pakete göre değişiklik göstermekle birlikte, standart projelerin kurulumu 3-4 hafta, daha özel tasarımlı kurulumlar ise 4-8 hafta içerisinde tamamlanmaktadır." },
+    { q: "Ödeme altyapılarını siz mi kuruyorsunuz?", a: "Evet. Altyapımızda şu anda sadece İyzico desteklenmektedir ve İyzico entegrasyonu tarafımızca eksiksiz olarak yapılmaktadır." }
 ];
 
 const creativeFaqs = [

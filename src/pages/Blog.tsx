@@ -97,87 +97,76 @@ export default function Blog() {
                         </p>
                     </motion.div>
 
-                    {/* Öne Çıkan - Tam Genişlik */}
-                    <Link to={featured.slug} className="block">
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.7, delay: 0.15 }}
-                            className="group relative grid grid-cols-1 lg:grid-cols-2 min-h-[70vh] overflow-hidden"
-                        >
-                            {/* Sol - Büyük Ürün Görseli */}
-                            <div className="relative h-[55vw] max-h-[680px] lg:h-auto overflow-hidden bg-[#0b2117]">
-                                <img
-                                    src={featured.image}
-                                    alt={featured.brand}
-                                    className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-105"
-                                />
-                                {/* Sağa doğru gradient geçişi */}
-                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#0b2117]/60 hidden lg:block" />
-                                {/* Alt gradient */}
-                                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0b2117]/50 to-transparent lg:hidden" />
-
-                                {/* Brand etiket - sol alt */}
-                                <div className="absolute bottom-6 left-6 flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-[#caf265] animate-pulse" />
-                                    <span className="text-white/80 text-sm font-bold tracking-widest uppercase">
-                                        {featured.brand}
-                                    </span>
+                    {/* Öne Çıkan - Kart Formatı */}
+                    <div className="px-4 sm:px-6 lg:px-12 xl:px-20 pb-0">
+                        <Link to={featured.slug} className="block">
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.7, delay: 0.15 }}
+                                className="group relative grid grid-cols-1 lg:grid-cols-2 rounded-3xl overflow-hidden shadow-2xl hover:shadow-[0_40px_100px_rgba(11,33,23,0.18)] transition-shadow duration-700 border border-[#e0dcd3]"
+                            >
+                                {/* Sol - Ürün Görseli (doğal boyut) */}
+                                <div className="relative bg-[#eae4da] flex items-end justify-center min-h-[500px] lg:min-h-[620px] overflow-hidden">
+                                    <img
+                                        src={featured.image}
+                                        alt={featured.brand}
+                                        className="relative z-10 w-auto h-full max-h-[700px] object-contain object-bottom transition-transform duration-700 group-hover:scale-[1.02]"
+                                    />
+                                    {/* Hafif alt vignette */}
+                                    <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#c8bfb0]/20 to-transparent pointer-events-none" />
                                 </div>
-                            </div>
 
-                            {/* Sağ - İçerik */}
-                            <div className="bg-[#0b2117] px-10 md:px-16 lg:px-20 py-16 lg:py-24 flex flex-col justify-center relative overflow-hidden">
-                                {/* Arka plan glow efektleri */}
-                                <div className="absolute -top-20 -right-20 w-80 h-80 bg-[#caf265]/8 blur-[100px] rounded-full" />
-                                <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-[#caf265]/5 blur-[80px] rounded-full" />
+                                {/* Sağ - İçerik */}
+                                <div className="bg-[#0b2117] px-10 md:px-14 lg:px-16 py-14 lg:py-20 flex flex-col justify-center relative overflow-hidden">
+                                    <div className="absolute -top-20 -right-20 w-80 h-80 bg-[#caf265]/8 blur-[100px] rounded-full" />
+                                    <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-[#caf265]/5 blur-[80px] rounded-full" />
 
-                                <div className="relative z-10">
-                                    {/* Etiket */}
-                                    <span className="inline-flex items-center gap-2 text-[#caf265] text-xs font-bold tracking-widest uppercase mb-6">
-                                        <Star size={10} className="fill-[#caf265]" />
-                                        Öne Çıkan Hikaye
-                                    </span>
+                                    <div className="relative z-10">
+                                        <span className="inline-flex items-center gap-2 text-[#caf265] text-xs font-bold tracking-widest uppercase mb-6">
+                                            <Star size={10} className="fill-[#caf265]" />
+                                            Öne Çıkan Hikaye
+                                        </span>
 
-                                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display text-white leading-tight mb-5">
-                                        {featured.title}
-                                    </h2>
+                                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display text-white leading-tight mb-5">
+                                            {featured.title}
+                                        </h2>
 
-                                    <p className="text-[#a8b8af] font-light leading-relaxed text-lg mb-8 max-w-md">
-                                        {featured.excerpt}
-                                    </p>
+                                        <p className="text-[#a8b8af] font-light leading-relaxed text-lg mb-8 max-w-md">
+                                            {featured.excerpt}
+                                        </p>
 
-                                    {/* İstatistikler */}
-                                    <div className="flex items-center gap-10 mb-10 pb-8 border-b border-white/10">
-                                        <div>
-                                            <div className="text-3xl font-bold text-[#caf265]">{featured.stat.value}</div>
-                                            <div className="text-xs text-[#a8b8af] mt-1">{featured.stat.label}</div>
+                                        {/* İstatistikler */}
+                                        <div className="flex items-center gap-10 mb-10 pb-8 border-b border-white/10">
+                                            <div>
+                                                <div className="text-3xl font-bold text-[#caf265]">{featured.stat.value}</div>
+                                                <div className="text-xs text-[#a8b8af] mt-1">{featured.stat.label}</div>
+                                            </div>
+                                            <div>
+                                                <div className="text-3xl font-bold text-white">%80</div>
+                                                <div className="text-xs text-[#a8b8af] mt-1">Maliyet Tasarrufu</div>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <div className="text-3xl font-bold text-white">10x</div>
-                                            <div className="text-xs text-[#a8b8af] mt-1">Hız Artışı</div>
+
+                                        {/* Etiketler */}
+                                        <div className="flex flex-wrap gap-2 mb-10">
+                                            {featured.tags.map(tag => (
+                                                <span key={tag} className="px-3 py-1.5 rounded-full text-xs font-medium bg-white/8 text-white/60 border border-white/10">
+                                                    {tag}
+                                                </span>
+                                            ))}
                                         </div>
-                                    </div>
 
-                                    {/* Etiketler */}
-                                    <div className="flex flex-wrap gap-2 mb-10">
-                                        {featured.tags.map(tag => (
-                                            <span key={tag} className="px-3 py-1.5 rounded-full text-xs font-medium bg-white/8 text-white/60 border border-white/10">
-                                                {tag}
-                                            </span>
-                                        ))}
-                                    </div>
-
-                                    {/* CTA */}
-                                    <div className="flex items-center gap-4">
-                                        <span className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-[#caf265] text-[#0b2117] font-bold text-base group-hover:gap-3 transition-all duration-300">
+                                        {/* CTA */}
+                                        <span className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-[#caf265] text-[#0b2117] font-bold text-base group-hover:gap-3 transition-all duration-300 w-fit">
                                             Hikayeyi Oku <ArrowRight size={18} />
                                         </span>
                                     </div>
                                 </div>
-                            </div>
-                        </motion.div>
-                    </Link>
+                            </motion.div>
+                        </Link>
+                    </div>
+
                 </section>
             )}
 

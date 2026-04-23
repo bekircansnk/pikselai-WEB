@@ -1,15 +1,9 @@
-import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ArrowRight, Clock, User, Zap, BarChart3, Package, TrendingUp, Star } from "lucide-react"
+import { ArrowRight, User, Zap, BarChart3, Package, TrendingUp, Star } from "lucide-react"
 import { Link } from "react-router-dom"
 import { Header } from "../components/layout/Header"
 import { Footer } from "../components/layout/Footer"
 import { BottomCTA } from "../components/sections/BottomCTA"
-import { cn } from "../lib/utils"
-
-// Kategori listesi
-const categories = ["Tümü", "Referans Proje", "Yapay Zeka", "E-Ticaret", "Sosyal Medya"]
-
 // Gerçek case study'ler
 const caseStudies = [
     {
@@ -63,7 +57,7 @@ const caseStudies = [
 ]
 
 export default function MusteriHikayeleri() {
-    const [activeCategory, setActiveCategory] = useState("Tümü")
+    const activeCategory = "Tümü"
 
     const filtered = activeCategory === "Tümü"
         ? caseStudies

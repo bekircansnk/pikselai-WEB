@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async'
 import { MainLayout } from '../../layouts/MainLayout'
 import { motion } from 'framer-motion'
-import { ChevronRight, MessageSquare, TrendingUp, ArrowLeft } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { BottomCTA } from '../../components/sections/BottomCTA'
 

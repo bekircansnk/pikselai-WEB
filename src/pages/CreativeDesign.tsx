@@ -317,7 +317,7 @@ export default function CreativeDesign() {
 
                 {/* Clean inline footer without its own black blur background */}
                 <div className="relative z-10">
-                    <Footer transparent={true} />
+                    <Footer />
                 </div>
             </div>
 

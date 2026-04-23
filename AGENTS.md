@@ -41,3 +41,10 @@ Sistem her zaman derli toplu ve düzenli olmalıdır.
 - Ana dizinde (root) asla sahipsiz `.tsx`, `.js`, `.py` gibi kaynak dosyalar, test veya yedekleme dosyaları bulundurulamaz. Varsa ilgili ait oldukları klasörlere (örn: `src/pages/`, `scripts/`) taşınmalıdır.
 - Dokümantasyon niteliğindeki (`.md`, `.pdf`, `.txt`) her türlü plan, spec, rapor gibi dosyalar ZORUNLU olarak `docs/` klasöründe tutulmalıdır (Sadece `README.md`, `GEMINI.md`, `AGENTS.md`, `CHANGELOG.md` hariç).
 - İşe yaramayan, kopyalanmış veya eski sürüme ait olduğu düşünülen tüm döküman ve dosyalar `.silinecekler_cop_kutusu/` dizinine taşınmalıdır. Bu kurala her ajan proaktif olarak uymalı ve ortalığı her zaman temiz bırakmalıdır.
+
+## 5. Build Kontrol Zorunluluğu (CRITICAL) 📦
+Vercel deployment hatalarını sıfıra indirmek için:
+- **Harekete Geçmeden Önce:** Her kod değişikliği sonrası `npm run build` veya `npx tsc --noEmit` çalıştırılacaktır.
+- **Unused Variable Temizliği:** Kullanılmayan hiçbir `import`, `variable` veya `function` kod içerisinde bırakılmayacaktır.
+- **Commit Öncesi Onay:** Ajan, build'in başarılı olduğundan emin olmadan asla `git push` yapmayacaktır.
+

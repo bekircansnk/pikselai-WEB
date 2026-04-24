@@ -4,5 +4,17 @@
       "source": "/(.*)",
       "destination": "/index.html"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/blog/referanslar",
+      "destination": "/musteri-hikayeleri",
+      "permanent": true
+    },
+    {
+      "source": "/musteri-hikayeleri/referanslar",
+      "destination": "/musteri-hikayeleri/cazador",
+      "permanent": true
+    }
   ]
 }

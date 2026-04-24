@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom'
 import { useEffect, lazy, Suspense } from 'react'
 import { ThemeProvider } from './contexts/ThemeContext'
 
@@ -171,6 +171,10 @@ function App() {
             
             {/* Blog — Pikselai'nın İçinden */}
             <Route path="/blog/pikselainin-icinden/tasarim-is-akisi-otomasyon" element={<TasarimIsAkisiOtomasyon />} />
+
+            {/* Eski Yönlendirmeler (Fallback) */}
+            <Route path="/blog/referanslar" element={<Navigate to="/musteri-hikayeleri" replace />} />
+            <Route path="/musteri-hikayeleri/referanslar" element={<Navigate to="/musteri-hikayeleri/cazador" replace />} />
 
             {/* Müşteri Hikayeleri */}
             <Route path="/musteri-hikayeleri" element={<MusteriHikayeleri />} />

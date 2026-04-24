@@ -15,6 +15,16 @@
       "source": "/musteri-hikayeleri/referanslar",
       "destination": "/musteri-hikayeleri/cazador",
       "permanent": true
+    },
+    {
+      "source": "/profesyonel-katalog",
+      "destination": "/hizmetler/kreatif-tasarim",
+      "permanent": true
+    },
+    {
+      "source": "/katalog",
+      "destination": "/hizmetler/kreatif-tasarim",
+      "permanent": true
     }
   ]
 }

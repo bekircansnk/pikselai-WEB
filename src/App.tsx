@@ -175,6 +175,8 @@ function App() {
             {/* Eski Yönlendirmeler (Fallback) */}
             <Route path="/blog/referanslar" element={<Navigate to="/musteri-hikayeleri" replace />} />
             <Route path="/musteri-hikayeleri/referanslar" element={<Navigate to="/musteri-hikayeleri/cazador" replace />} />
+            <Route path="/profesyonel-katalog" element={<Navigate to="/hizmetler/kreatif-tasarim" replace />} />
+            <Route path="/katalog" element={<Navigate to="/hizmetler/kreatif-tasarim" replace />} />
 
             {/* Müşteri Hikayeleri */}
             <Route path="/musteri-hikayeleri" element={<MusteriHikayeleri />} />

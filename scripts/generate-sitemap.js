@@ -7,7 +7,7 @@ const staticPages = [
     { url: '/ai-produksiyon', priority: '0.9', changefreq: 'monthly' },
     { url: '/e-ticaret', priority: '0.9', changefreq: 'monthly' },
     { url: '/sosyal-medya', priority: '0.9', changefreq: 'monthly' },
-    { url: '/katalog', priority: '0.9', changefreq: 'monthly' },
+    { url: '/hizmetler/kreatif-tasarim', priority: '0.9', changefreq: 'monthly' },
     { url: '/fiyatlandirma', priority: '0.8', changefreq: 'monthly' },
     { url: '/maliyet-hesapla', priority: '0.7', changefreq: 'monthly' },
     { url: '/hakkimizda', priority: '0.7', changefreq: 'monthly' },

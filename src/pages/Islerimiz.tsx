@@ -456,116 +456,36 @@ const Islerimiz = () => {
                                 }}
                             >
                                 <div className="h-full px-6 md:px-16 py-6 flex items-center space-x-3 md:space-x-6 min-w-max" style={{ cursor: 'none' }}>
-
-                                    {/* Column 1: Large Wide Block */}
-                                    <motion.div
-                                        initial={{ opacity: 0, scale: 0.95 }}
-                                        animate={{ opacity: 1, scale: 1 }}
-                                        transition={{ delay: 0.1 }}
-                                        className="h-full w-[350px] md:w-[600px] shrink-0 relative rounded-xl md:rounded-2xl overflow-hidden bg-blue-900"
-                                    >
-                                        <img src="https://images.unsplash.com/photo-1572297837096-7fc11c435520?q=80&w=1200&auto=format&fit=crop" alt="Large Intro" className="w-full h-full object-cover" />
-                                        <div className="absolute inset-0 bg-blue-900/40 mix-blend-multiply"></div>
-                                        <div className="absolute top-6 left-6 text-white z-10 w-2/3">
-                                            <h3 className="text-2xl md:text-3xl font-serif uppercase leading-tight">A Blend <br /> Ahead</h3>
-                                        </div>
-                                    </motion.div>
-
-                                    {/* Column 2: Two Stacked */}
-                                    <div className="h-full w-[220px] md:w-[300px] flex flex-col space-y-3 md:space-y-6 shrink-0">
+                                    {selectedProject.images.map((img, index) => (
                                         <motion.div
+                                            key={index}
                                             initial={{ opacity: 0, scale: 0.95 }}
                                             animate={{ opacity: 1, scale: 1 }}
-                                            transition={{ delay: 0.2 }}
-                                            className="flex-1 rounded-xl md:rounded-2xl overflow-hidden relative"
+                                            transition={{ delay: 0.1 * index }}
+                                            className={`h-full shrink-0 relative rounded-xl md:rounded-2xl overflow-hidden ${
+                                                img.aspect === 'wide' ? 'w-[350px] md:w-[600px]' :
+                                                img.aspect === 'tall' ? 'w-[260px] md:w-[350px]' :
+                                                'w-[220px] md:w-[300px]'
+                                            }`}
                                         >
-                                            <img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=600&auto=format&fit=crop" alt="Square 1" className="w-full h-full object-cover" />
+                                            <img
+                                                src={img.url}
+                                                alt={`${selectedProject.title} ${index + 1}`}
+                                                className="w-full h-full object-cover"
+                                                loading="lazy"
+                                            />
+                                            {index === 0 && (
+                                                <>
+                                                    <div className="absolute inset-0 bg-black/20"></div>
+                                                    <div className="absolute top-6 left-6 text-white z-10 w-2/3">
+                                                        <h3 className="text-2xl md:text-3xl font-serif uppercase leading-tight">
+                                                            {selectedProject.client} <br /> {selectedProject.title}
+                                                        </h3>
+                                                    </div>
+                                                </>
+                                            )}
                                         </motion.div>
-                                        <motion.div
-                                            initial={{ opacity: 0, scale: 0.95 }}
-                                            animate={{ opacity: 1, scale: 1 }}
-                                            transition={{ delay: 0.3 }}
-                                            className="flex-1 rounded-xl md:rounded-2xl overflow-hidden relative bg-[#c6e9a7]"
-                                        >
-                                            <div className="absolute inset-0 flex items-center justify-center p-4">
-                                                <div className="w-20 h-20 md:w-28 md:h-28 bg-black rounded-3xl relative overflow-hidden">
-                                                    <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=400&auto=format&fit=crop" className="absolute -bottom-2 -right-2 w-14 h-14 md:w-18 md:h-18 rounded-full border-4 border-[#c6e9a7] object-cover" />
-                                                </div>
-                                            </div>
-                                        </motion.div>
-                                    </div>
-
-                                    {/* Column 3: One Tall Image */}
-                                    <motion.div
-                                        initial={{ opacity: 0, scale: 0.95 }}
-                                        animate={{ opacity: 1, scale: 1 }}
-                                        transition={{ delay: 0.4 }}
-                                        className="h-full w-[260px] md:w-[350px] shrink-0 relative rounded-xl md:rounded-2xl overflow-hidden"
-                                    >
-                                        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=800&auto=format&fit=crop" alt="Tall Portrait" className="w-full h-full object-cover" />
-                                    </motion.div>
-
-                                    {/* Column 4: Two Stacked */}
-                                    <div className="h-full w-[220px] md:w-[300px] flex flex-col space-y-3 md:space-y-6 shrink-0">
-                                        <motion.div
-                                            initial={{ opacity: 0, scale: 0.95 }}
-                                            animate={{ opacity: 1, scale: 1 }}
-                                            transition={{ delay: 0.5 }}
-                                            className="flex-1 rounded-xl md:rounded-2xl overflow-hidden relative bg-purple-200 flex items-center justify-center"
-                                        >
-                                            <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=400&auto=format&fit=crop" alt="Circle Graphic" className="w-full max-w-[100px] aspect-square object-cover rounded-full" />
-                                        </motion.div>
-                                        <motion.div
-                                            initial={{ opacity: 0, scale: 0.95 }}
-                                            animate={{ opacity: 1, scale: 1 }}
-                                            transition={{ delay: 0.6 }}
-                                            className="flex-1 rounded-xl md:rounded-2xl overflow-hidden relative"
-                                        >
-                                            <img src="https://images.unsplash.com/photo-1574096079513-d8259312b785?q=80&w=600&auto=format&fit=crop" alt="Square 2" className="w-full h-full object-cover" />
-                                        </motion.div>
-                                    </div>
-
-                                    {/* Column 5: Wide Image */}
-                                    <motion.div
-                                        initial={{ opacity: 0, scale: 0.95 }}
-                                        animate={{ opacity: 1, scale: 1 }}
-                                        transition={{ delay: 0.7 }}
-                                        className="h-full w-[400px] md:w-[550px] shrink-0 relative rounded-xl md:rounded-2xl overflow-hidden"
-                                    >
-                                        <img src="https://images.unsplash.com/photo-1544026261-71fbdfb548eb?q=80&w=1200&auto=format&fit=crop" alt="Wide Content" className="w-full h-full object-cover" />
-                                    </motion.div>
-
-                                    {/* Column 6: Final Stacked Block */}
-                                    <div className="h-full w-[260px] md:w-[400px] flex flex-col space-y-3 md:space-y-6 shrink-0">
-                                        <motion.div
-                                            initial={{ opacity: 0, scale: 0.95 }}
-                                            animate={{ opacity: 1, scale: 1 }}
-                                            transition={{ delay: 0.8 }}
-                                            className="flex-1 rounded-xl md:rounded-2xl overflow-hidden relative"
-                                        >
-                                            <img src="https://images.unsplash.com/photo-1497534446932-c925b458314e?q=80&w=800&auto=format&fit=crop" alt="Bottom Wide" className="w-full h-full object-cover" />
-                                        </motion.div>
-                                        <div className="flex-1 flex gap-3 md:gap-6 items-stretch">
-                                            <motion.div
-                                                initial={{ opacity: 0, scale: 0.95 }}
-                                                animate={{ opacity: 1, scale: 1 }}
-                                                transition={{ delay: 0.9 }}
-                                                className="flex-1 rounded-xl md:rounded-2xl overflow-hidden relative bg-[#1a1a1a] p-5 text-white flex flex-col justify-end"
-                                            >
-                                                <h4 className="text-base font-bold">Details</h4>
-                                                <p className="text-xs opacity-50 mt-1">More specs</p>
-                                            </motion.div>
-                                            <motion.div
-                                                initial={{ opacity: 0, scale: 0.95 }}
-                                                animate={{ opacity: 1, scale: 1 }}
-                                                transition={{ delay: 1.0 }}
-                                                className="flex-1 rounded-xl md:rounded-2xl overflow-hidden relative"
-                                            >
-                                                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=600&auto=format&fit=crop" alt="Final Square" className="w-full h-full object-cover" />
-                                            </motion.div>
-                                        </div>
-                                    </div>
-
+                                    ))}
                                 </div>
                             </div>
 

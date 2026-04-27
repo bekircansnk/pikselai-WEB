@@ -27,7 +27,7 @@ interface Project {
 }
 
 /* ── Mock Data ── */
-const categories = ['Tümü', 'AI Fotoğraf', 'E-Ticaret', 'Social Media', 'Ürün Fotoğrafçılığı', 'Sanal Manken'];
+const categories = ['Tümü', 'E-Ticaret', 'Sosyal Medya', 'Ürün Fotoğrafçılığı', 'Kampanya', 'Hayalet Çekim'];
 
 const stats = [
     { value: '500+', label: 'Tamamlanan Proje' },
@@ -39,25 +39,25 @@ const stats = [
 const projects: Project[] = [
     {
         id: 1,
-        title: 'AI Kış Kampanyası',
+        title: 'Kış Kampanyası',
         client: 'Cazador',
-        category: 'AI Fotoğraf',
-        thumbnail: '/assets/brands/cazador/cazador1.webp',
+        category: 'Kampanya',
+        thumbnail: '/assets/pages/islerimiz/kampanya/cazador_kis_kampanyasi/cazador1.webp',
         thumbnailType: 'single',
         images: [
-            { url: '/projects/cazador-local/shopify-migration.mp4', type: 'video', aspect: 'wide' },
-            { url: '/assets/brands/cazador/cazador1.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/brands/cazador/cazador2.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/brands/cazador/cazador3.webp', type: 'image', aspect: 'wide' },
-            { url: '/assets/brands/cazador/cazador4.webp', type: 'image', aspect: 'tall' },
-            { url: '/projects/cazador-local/AI-cazador.webp', type: 'image', aspect: 'tall' },
-            { url: '/projects/cazador-local/katalog-cazador.webp', type: 'image', aspect: 'tall' },
-            { url: '/projects/cazador-local/katalog-hero.webp', type: 'image', aspect: 'wide' },
-            { url: '/projects/cazador-local/instagram-cazador.webp', type: 'image', aspect: 'tall' },
-            { url: '/e_ticaret_images/22_pernod_ricard_2k_202602210105.webp', type: 'image', aspect: 'tall' }
+            { url: '/assets/pages/islerimiz/kampanya/cazador_kis_kampanyasi/cazador1.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/kampanya/cazador_kis_kampanyasi/cazador2.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/kampanya/cazador_kis_kampanyasi/cazador3.webp', type: 'image', aspect: 'wide' },
+            { url: '/assets/pages/islerimiz/kampanya/cazador_kis_kampanyasi/cazador4.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/kampanya/cazador_kis_kampanyasi/ai_cazador.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/kampanya/cazador_kis_kampanyasi/katalog_cazador.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/kampanya/cazador_kis_kampanyasi/katalog_hero.webp', type: 'image', aspect: 'wide' },
+            { url: '/assets/pages/islerimiz/kampanya/cazador_kis_kampanyasi/instagram_cazador.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/kampanya/cazador_kis_kampanyasi/cazador_moda_haki.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/kampanya/cazador_kis_kampanyasi/cazador_siyah_pose.webp', type: 'image', aspect: 'tall' }
         ],
-        description: "Cazador için tamamen yapay zeka ile üretilen dış mekan kış koleksiyonu çekimleri. Stüdyo ve manken olmadan, AI ile fotorealistik editorial görseller.",
-        tags: ['AI', 'Moda', 'Outdoor'],
+        description: "Cazador kış koleksiyonu için hazırlanan kapsamlı kampanya görselleri. Katalog, sosyal medya ve e-ticaret kanallarını kapsayan bütünleşik prodüksiyon.",
+        tags: ['Kampanya', 'Moda', 'Outdoor'],
         bgColor: '#1a2a1f'
     },
     {
@@ -65,67 +65,64 @@ const projects: Project[] = [
         title: 'E-Ticaret Dönüşümü',
         client: 'Cazador',
         category: 'E-Ticaret',
-        thumbnail: '/e_ticaret_images/15.webp',
+        thumbnail: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/cazador1.webp',
         thumbnailType: 'single',
         images: [
-            { url: '/e_ticaret_images/video_e_ticaret.mp4', type: 'video', aspect: 'wide' },
-            { url: '/e_ticaret_images/15.webp', type: 'image', aspect: 'wide' },
-            { url: '/e_ticaret_images/16.webp', type: 'image', aspect: 'wide' },
-            { url: '/e_ticaret_images/11.webp', type: 'image', aspect: 'wide' },
-            { url: '/e_ticaret_images/1.webp', type: 'image', aspect: 'tall' },
-            { url: '/e_ticaret_images/2.webp', type: 'image', aspect: 'tall' },
-            { url: '/e_ticaret_images/3.webp', type: 'image', aspect: 'tall' },
-            { url: '/e_ticaret_images/4.webp', type: 'image', aspect: 'tall' },
-            { url: '/e_ticaret_images/5.webp', type: 'image', aspect: 'wide' },
-            { url: '/e_ticaret_images/19_transformation_optimization_2k_2026022101.webp', type: 'image', aspect: 'wide' }
+            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/cazador1.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/cazador2.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/cazador3.webp', type: 'image', aspect: 'wide' },
+            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/cazador4.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/1_n.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/1_arka.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/3_n.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/3_arka.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/5_n.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/5_arka.webp', type: 'image', aspect: 'tall' }
         ],
-        description: "Cazador'un e-ticaret altyapısının uçtan uca dönüşümü. Shopify entegrasyonu, ürün optimize ve satış artırıcı UX iyileştirmeleri.",
-        tags: ['Shopify', 'E-Ticaret', 'UX'],
+        description: "Cazador'un e-ticaret platformu için hazırlanan ürün görselleri. Ghost mannequin tekniği ve stüdyo çekimlerini kapsayan kapsamlı görsel prodüksiyon.",
+        tags: ['E-Ticaret', 'Katalog', 'Stüdyo'],
         bgColor: '#0a1628'
     },
     {
         id: 3,
-        title: 'AI Moda Çekimleri',
-        client: 'Venus',
-        category: 'AI Fotoğraf',
-        thumbnail: '/assets/brands/venus/venus2.webp',
+        title: 'Sosyal Medya İçerikleri',
+        client: 'Mina Drinks',
+        category: 'Sosyal Medya',
+        thumbnail: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina1.webp',
         thumbnailType: 'single',
         images: [
-            { url: '/assets/brands/venus/venus1.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/brands/venus/venus2.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/brands/venus/venus3.webp', type: 'image', aspect: 'wide' },
-            { url: '/assets/brands/venus/venus4.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/brands/venus/mila_1_image00004_2k_4_5_01_hero_full__2_.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/brands/venus/ella_1_1_2k_4_5_03_portrait_mid.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/brands/venus/ella_1_1_4k_4_5_02_story_full.webp', type: 'image', aspect: 'wide' },
-            { url: '/assets/brands/venus/mila_1_image00004_2k_4_5_05_closeup_creative__2_.webp', type: 'image', aspect: 'square' },
-            { url: '/assets/common/ella_1_1_2k_4_5_01_full_body.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/common/ella_1_1_2k_4_5_02_full_body.webp', type: 'image', aspect: 'tall' }
+            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina1.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina2.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina3.webp', type: 'image', aspect: 'wide' },
+            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina4.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina_drink_1.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina_drink_2.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina_drink_4.webp', type: 'image', aspect: 'wide' },
+            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/ca.webp', type: 'image', aspect: 'tall' }
         ],
-        description: "Venus için hazırlanan yapay zeka destekli kadın moda koleksiyonu çekimleri. Ayakkabı, çanta ve aksesuar görselleri.",
-        tags: ['AI', 'Kadın Moda', 'Aksesuar'],
-        bgColor: '#2d1b36'
+        description: "Mina Drinks içecek markası için hazırlanan AI destekli sosyal medya içerik paketleri. Reels, story ve feed görselleri dahil.",
+        tags: ['Sosyal Medya', 'İçecek', 'Konsept'],
+        bgColor: '#1c3a13'
     },
     {
         id: 4,
-        title: 'Mina Drinks Konsept',
+        title: 'Mina Drinks Ürün Çekimi',
         client: 'Mina Drinks',
         category: 'Ürün Fotoğrafçılığı',
-        thumbnail: '/assets/brands/mina_drinks/mina1.webp',
+        thumbnail: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina3.webp',
         thumbnailType: 'single',
         images: [
-            { url: '/assets/brands/mina_drinks/mina1.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/brands/mina_drinks/mina2.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/brands/mina_drinks/mina3.webp', type: 'image', aspect: 'wide' },
-            { url: '/assets/brands/mina_drinks/mina4.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/common/mina_drink_1.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/common/mina_drink_2.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/common/mina_drink_3.webp', type: 'image', aspect: 'wide' },
-            { url: '/assets/common/mina_drink_4.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/common/ca.webp', type: 'image', aspect: 'tall' }
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina1.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina2.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina3.webp', type: 'image', aspect: 'wide' },
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina4.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina_drink_1.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina_drink_2.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina_drink_4.webp', type: 'image', aspect: 'wide' },
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/ca.webp', type: 'image', aspect: 'tall' }
         ],
-        description: "Mina Drinks içecek markası için hazırlanan AI destekli yaratıcı ürün görselleri ve sosyal medya konseptleri.",
-        tags: ['İçecek', 'Ürün', 'Sosyal Medya'],
+        description: "Mina Drinks için hazırlanan yaratıcı ürün fotoğrafçılığı. Doğal ortam ve konsept stüdyo çekimleri.",
+        tags: ['Ürün', 'İçecek', 'Stüdyo'],
         bgColor: '#1c3a13'
     },
     {
@@ -133,19 +130,19 @@ const projects: Project[] = [
         title: 'CampAndMap Outdoor',
         client: 'CampAndMap',
         category: 'Ürün Fotoğrafçılığı',
-        thumbnail: '/assets/brands/camp_and_map/camp1.webp',
+        thumbnail: '/assets/pages/islerimiz/urun_fotografciligi/campandmap_outdoor/camp1.webp',
         thumbnailType: 'single',
         images: [
-            { url: '/assets/brands/camp_and_map/camp1.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/brands/camp_and_map/camp2.webp', type: 'image', aspect: 'wide' },
-            { url: '/assets/brands/camp_and_map/camp3.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/brands/camp_and_map/camp4.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/camp_imaj_magic_hamak_4x5_scene_1_shot_1_arrival.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/common/camp_imaj_set1_4x5_scene_1_shot_3_wide.webp', type: 'image', aspect: 'wide' },
-            { url: '/assets/brands/camp_and_map/campandmap_logo_3_4_5_2k_4_2.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/brands/camp_and_map/1_2k_4_5_undefined.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/brands/camp_and_map/2_2k_4_5_undefined.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/brands/camp_and_map/1_2k_auto_undefined.webp', type: 'image', aspect: 'wide' }
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/campandmap_outdoor/camp1.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/campandmap_outdoor/camp2.webp', type: 'image', aspect: 'wide' },
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/campandmap_outdoor/camp3.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/campandmap_outdoor/camp4.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/campandmap_outdoor/camp_imaj_magic_hamak_4x5_scene_1_shot_1_arrival.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/campandmap_outdoor/camp_imaj_set1_4x5_scene_1_shot_3_wide.webp', type: 'image', aspect: 'wide' },
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/campandmap_outdoor/campandmap_logo_3_4_5_2k_4_2.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/campandmap_outdoor/1_2k_4_5_undefined.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/campandmap_outdoor/2_2k_4_5_undefined.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/campandmap_outdoor/1_2k_auto_undefined.webp', type: 'image', aspect: 'wide' }
         ],
         description: "CampAndMap outdoor ekipman markası için AI ile üretilen doğa ve kamp temalı e-ticaret ve sosyal medya ürün görselleri.",
         tags: ['Outdoor', 'Kamp', 'Ürün'],
@@ -153,70 +150,48 @@ const projects: Project[] = [
     },
     {
         id: 6,
-        title: 'Rossea Eşarp Koleksiyonu',
+        title: 'Rossea Eşarp Kampanyası',
         client: 'Rossea',
-        category: 'AI Fotoğraf',
-        thumbnail: '/assets/common/esarp_1.webp',
+        category: 'Kampanya',
+        thumbnail: '/assets/pages/islerimiz/kampanya/rossea_esarp_kampanya/esarp_1.webp',
         thumbnailType: 'single',
         images: [
-            { url: '/assets/common/esarp_1.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/common/esarp_2.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/common/esarp_3.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/common/esarp_4.webp', type: 'image', aspect: 'wide' },
-            { url: '/assets/common/esarp_5.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/common/esarp_6.webp', type: 'image', aspect: 'tall' }
+            { url: '/assets/pages/islerimiz/kampanya/rossea_esarp_kampanya/esarp_1.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/kampanya/rossea_esarp_kampanya/esarp_2.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/kampanya/rossea_esarp_kampanya/esarp_3.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/kampanya/rossea_esarp_kampanya/esarp_4.webp', type: 'image', aspect: 'wide' },
+            { url: '/assets/pages/islerimiz/kampanya/rossea_esarp_kampanya/esarp_5.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/kampanya/rossea_esarp_kampanya/esarp_6.webp', type: 'image', aspect: 'tall' }
         ],
-        description: "Rossea eşarp markası için yapay zeka ile üretilen sanal manken üzerinde ürün çekimleri. Otantik Türk lokasyonlarında editorial tarz.",
-        tags: ['Eşarp', 'AI', 'Moda'],
+        description: "Rossea eşarp markası için yapay zeka ile üretilen kampanya görselleri. Otantik Türk lokasyonlarında editorial tarz sanal manken çekimleri.",
+        tags: ['Eşarp', 'Kampanya', 'Moda'],
         bgColor: '#2e1a1a'
     },
     {
         id: 7,
         title: 'Ghost Mannequin Sistemleri',
         client: 'Cazador',
-        category: 'E-Ticaret',
-        thumbnail: '/assets/common/1_n.webp',
+        category: 'Hayalet Çekim',
+        thumbnail: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/1_n.webp',
         thumbnailType: 'single',
         images: [
-            { url: '/assets/common/1_n.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/common/1_arka.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/common/3_n.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/common/3_arka.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/common/5_n.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/common/5_arka.webp', type: 'image', aspect: 'tall' },
-            { url: '/sosyal_medya_resimler/ghost_cekim/35195-Kiremit (1).webp', type: 'image', aspect: 'tall' },
-            { url: '/sosyal_medya_resimler/ghost_cekim/55035-Siyah (1).webp', type: 'image', aspect: 'tall' },
-            { url: '/sosyal_medya_resimler/ghost_cekim/35325-Haki (1).webp', type: 'image', aspect: 'tall' },
-            { url: '/sosyal_medya_resimler/ghost_cekim/05810-Hippo Navy Wash (1).webp', type: 'image', aspect: 'tall' }
+            { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/1_n.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/1_arka.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/3_n.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/3_arka.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/5_n.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/5_arka.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/rosseamavi__2.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/l0000000751458__1.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/l0000000751458__2.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/l0000000746579__1.webp', type: 'image', aspect: 'tall' }
         ],
         description: "Markaların e-ticaret siteleri için hazırlanan, kıyafet formlarını 3 boyutlu gösteren kusursuz profesyonel ghost mannequin (hayalet manken) çekimleri.",
         tags: ['Ghost', 'Katalog', 'E-Ticaret'],
         bgColor: '#1a1a1a'
-    },
-    {
-        id: 8,
-        title: 'Sanal Manken & Modeller',
-        client: 'PikselAI',
-        category: 'Sanal Manken',
-        thumbnail: '/assets/common/anna_imaj_1.webp',
-        thumbnailType: 'single',
-        images: [
-            { url: '/assets/common/anna_imaj_1.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/common/anna_imaj_2.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/common/anna_1.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/common/anna_2.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/common/man_kazak.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/common/man_kazak_2.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/common/man_kazak_3.webp', type: 'image', aspect: 'tall' },
-            { url: '/sosyal_medya_resimler/urun_fotograf/man_kazak_4.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/common/ella_1_1_2k_4_5_03_full_body_sitting_step.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/common/ella_1_1_2k_4_5_04_close_up_side_profile.webp', type: 'image', aspect: 'square' }
-        ],
-        description: "PikselAI'ın tescilli sanal manken ajansı. Yüksek çözünürlüklü, anatomik tutarlılığa sahip dijital modeller markalar için özelleştirilerek kullanılıyor.",
-        tags: ['Sanal Manken', 'AI', 'Moda'],
-        bgColor: '#2a1a2e'
     }
 ];
+
 
 const Islerimiz = () => {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -712,13 +687,13 @@ const IslerimizFooter = () => {
                     <div>© 2026 PIKSELAI PRODUCTION. TÜM HAKLARI SAKLIDIR.</div>
                     <div className="flex items-center gap-8">
                         <a href="#" className="hover:text-white transition-colors flex items-center gap-2 group">
-                            MODA PRODÜKSİYONU <ChevronRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+                            E-TİCARET <ChevronRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
                         </a>
                         <a href="#" className="hover:text-white transition-colors flex items-center gap-2 group">
-                            AI FOTOĞRAF <ChevronRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+                            KAMPANYA <ChevronRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
                         </a>
                         <a href="#" className="hover:text-white transition-colors flex items-center gap-2 group">
-                            SOSYAL MEDYA <ChevronRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+                            HAYALET ÇEKİM <ChevronRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
                         </a>
                     </div>
                 </div>

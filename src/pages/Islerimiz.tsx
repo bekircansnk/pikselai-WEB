@@ -33,10 +33,7 @@ const stats = [
     { value: '500+', label: 'Tamamlanan Proje' },
     { value: '50+', label: 'Mutlu Marka' },
     { value: '%80', label: 'Maliyet Tasarrufu' },
-    { value: '24-48s', label: 'Teslimat Süresi' },
-];
-
-const projects: Project[] = [
+    { value: '24-48s', labelconst projects: Project[] = [
     {
         id: 1,
         title: 'Kış Kampanyası',
@@ -46,13 +43,12 @@ const projects: Project[] = [
         thumbnailType: 'single',
         images: [
             { url: '/assets/pages/islerimiz/kampanya/cazador_kis_kampanyasi/cazador1.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/kampanya/cazador_kis_kampanyasi/cazador2.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/kampanya/cazador_kis_kampanyasi/cazador3.webp', type: 'image', aspect: 'wide' },
+            { url: '/assets/pages/islerimiz/kampanya/cazador_kis_kampanyasi/cazador2.webp', type: 'image', aspect: 'square' },
+            { url: '/assets/pages/islerimiz/kampanya/cazador_kis_kampanyasi/cazador3.webp', type: 'image', aspect: 'square' },
+            { url: '/assets/pages/islerimiz/kampanya/cazador_kis_kampanyasi/katalog_hero.webp', type: 'image', aspect: 'wide' },
             { url: '/assets/pages/islerimiz/kampanya/cazador_kis_kampanyasi/cazador4.webp', type: 'image', aspect: 'tall' },
             { url: '/assets/pages/islerimiz/kampanya/cazador_kis_kampanyasi/ai_cazador.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/kampanya/cazador_kis_kampanyasi/katalog_cazador.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/kampanya/cazador_kis_kampanyasi/katalog_hero.webp', type: 'image', aspect: 'wide' },
-            { url: '/assets/pages/islerimiz/kampanya/cazador_kis_kampanyasi/instagram_cazador.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/kampanya/cazador_kis_kampanyasi/instagram_cazador.webp', type: 'image', aspect: 'wide' },
             { url: '/assets/pages/islerimiz/kampanya/cazador_kis_kampanyasi/cazador_moda_haki.webp', type: 'image', aspect: 'tall' },
             { url: '/assets/pages/islerimiz/kampanya/cazador_kis_kampanyasi/cazador_siyah_pose.webp', type: 'image', aspect: 'tall' }
         ],
@@ -69,13 +65,13 @@ const projects: Project[] = [
         thumbnailType: 'single',
         images: [
             { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/cazador1.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/cazador2.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/1_n.webp', type: 'image', aspect: 'square' },
+            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/1_arka.webp', type: 'image', aspect: 'square' },
             { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/cazador3.webp', type: 'image', aspect: 'wide' },
+            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/cazador2.webp', type: 'image', aspect: 'tall' },
             { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/cazador4.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/1_n.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/1_arka.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/3_n.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/3_arka.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/3_n.webp', type: 'image', aspect: 'square' },
+            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/3_arka.webp', type: 'image', aspect: 'square' },
             { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/5_n.webp', type: 'image', aspect: 'tall' },
             { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/5_arka.webp', type: 'image', aspect: 'tall' }
         ],
@@ -92,11 +88,11 @@ const projects: Project[] = [
         thumbnailType: 'single',
         images: [
             { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina1.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina2.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina_drink_1.webp', type: 'image', aspect: 'square' },
+            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina_drink_2.webp', type: 'image', aspect: 'square' },
             { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina3.webp', type: 'image', aspect: 'wide' },
+            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina2.webp', type: 'image', aspect: 'tall' },
             { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina4.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina_drink_1.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina_drink_2.webp', type: 'image', aspect: 'tall' },
             { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina_drink_4.webp', type: 'image', aspect: 'wide' },
             { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/ca.webp', type: 'image', aspect: 'tall' }
         ],
@@ -112,14 +108,14 @@ const projects: Project[] = [
         thumbnail: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina3.webp',
         thumbnailType: 'single',
         images: [
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina3.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina_drink_1.webp', type: 'image', aspect: 'square' },
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina_drink_2.webp', type: 'image', aspect: 'square' },
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina_drink_4.webp', type: 'image', aspect: 'wide' },
             { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina1.webp', type: 'image', aspect: 'tall' },
             { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina2.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina3.webp', type: 'image', aspect: 'wide' },
-            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina4.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina_drink_1.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina_drink_2.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina_drink_4.webp', type: 'image', aspect: 'wide' },
-            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/ca.webp', type: 'image', aspect: 'tall' }
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/ca.webp', type: 'image', aspect: 'wide' },
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina4.webp', type: 'image', aspect: 'tall' }
         ],
         description: "Mina Drinks için hazırlanan yaratıcı ürün fotoğrafçılığı. Doğal ortam ve konsept stüdyo çekimleri.",
         tags: ['Ürün', 'İçecek', 'Stüdyo'],
@@ -134,15 +130,14 @@ const projects: Project[] = [
         thumbnailType: 'single',
         images: [
             { url: '/assets/pages/islerimiz/urun_fotografciligi/campandmap_outdoor/camp1.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/campandmap_outdoor/camp_imaj_magic_hamak_4x5_scene_1_shot_1_arrival.webp', type: 'image', aspect: 'square' },
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/campandmap_outdoor/camp_imaj_set1_4x5_scene_1_shot_3_wide.webp', type: 'image', aspect: 'square' },
             { url: '/assets/pages/islerimiz/urun_fotografciligi/campandmap_outdoor/camp2.webp', type: 'image', aspect: 'wide' },
             { url: '/assets/pages/islerimiz/urun_fotografciligi/campandmap_outdoor/camp3.webp', type: 'image', aspect: 'tall' },
             { url: '/assets/pages/islerimiz/urun_fotografciligi/campandmap_outdoor/camp4.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/urun_fotografciligi/campandmap_outdoor/camp_imaj_magic_hamak_4x5_scene_1_shot_1_arrival.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/urun_fotografciligi/campandmap_outdoor/camp_imaj_set1_4x5_scene_1_shot_3_wide.webp', type: 'image', aspect: 'wide' },
-            { url: '/assets/pages/islerimiz/urun_fotografciligi/campandmap_outdoor/campandmap_logo_3_4_5_2k_4_2.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/campandmap_outdoor/1_2k_auto_undefined.webp', type: 'image', aspect: 'wide' },
             { url: '/assets/pages/islerimiz/urun_fotografciligi/campandmap_outdoor/1_2k_4_5_undefined.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/urun_fotografciligi/campandmap_outdoor/2_2k_4_5_undefined.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/urun_fotografciligi/campandmap_outdoor/1_2k_auto_undefined.webp', type: 'image', aspect: 'wide' }
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/campandmap_outdoor/2_2k_4_5_undefined.webp', type: 'image', aspect: 'tall' }
         ],
         description: "CampAndMap outdoor ekipman markası için AI ile üretilen doğa ve kamp temalı e-ticaret ve sosyal medya ürün görselleri.",
         tags: ['Outdoor', 'Kamp', 'Ürün'],
@@ -157,8 +152,8 @@ const projects: Project[] = [
         thumbnailType: 'single',
         images: [
             { url: '/assets/pages/islerimiz/kampanya/rossea_esarp_kampanya/esarp_1.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/kampanya/rossea_esarp_kampanya/esarp_2.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/kampanya/rossea_esarp_kampanya/esarp_3.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/kampanya/rossea_esarp_kampanya/esarp_2.webp', type: 'image', aspect: 'square' },
+            { url: '/assets/pages/islerimiz/kampanya/rossea_esarp_kampanya/esarp_3.webp', type: 'image', aspect: 'square' },
             { url: '/assets/pages/islerimiz/kampanya/rossea_esarp_kampanya/esarp_4.webp', type: 'image', aspect: 'wide' },
             { url: '/assets/pages/islerimiz/kampanya/rossea_esarp_kampanya/esarp_5.webp', type: 'image', aspect: 'tall' },
             { url: '/assets/pages/islerimiz/kampanya/rossea_esarp_kampanya/esarp_6.webp', type: 'image', aspect: 'tall' }
@@ -176,15 +171,13 @@ const projects: Project[] = [
         thumbnailType: 'single',
         images: [
             { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/1_n.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/1_arka.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/l0000000751458__1.webp', type: 'image', aspect: 'square' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/l0000000746579__1.webp', type: 'image', aspect: 'square' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/1_arka.webp', type: 'image', aspect: 'wide' },
             { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/3_n.webp', type: 'image', aspect: 'tall' },
             { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/3_arka.webp', type: 'image', aspect: 'tall' },
             { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/5_n.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/5_arka.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/rosseamavi__2.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/l0000000751458__1.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/l0000000751458__2.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/l0000000746579__1.webp', type: 'image', aspect: 'tall' }
+            { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/5_arka.webp', type: 'image', aspect: 'tall' }
         ],
         description: "Markaların e-ticaret siteleri için hazırlanan, kıyafet formlarını 3 boyutlu gösteren kusursuz profesyonel ghost mannequin (hayalet manken) çekimleri.",
         tags: ['Ghost', 'Katalog', 'E-Ticaret'],

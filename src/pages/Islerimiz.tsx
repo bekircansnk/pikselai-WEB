@@ -460,25 +460,33 @@ const Islerimiz = () => {
                                         const columns = [];
                                         const imgs = [...selectedProject.images];
                                         
-                                        for (let i = 0; i < imgs.length; i++) {
-                                            const current = imgs[i];
-                                            const next = imgs[i + 1];
+                                        // Ritim Döngüsü: Big -> Stacked -> Wide -> Stacked
+                                        let imgIndex = 0;
+                                        let patternIdx = 0;
+                                        const pattern = ['big', 'stacked', 'wide', 'stacked'];
 
-                                            // Eğer şu anki ve sonraki kareyse, ikisini bir kolona hapseyle (Stacked)
-                                            if (current.aspect === 'square' && next && next.aspect === 'square') {
+                                        while (imgIndex < imgs.length) {
+                                            const currentPattern = pattern[patternIdx % pattern.length];
+
+                                            if (currentPattern === 'stacked' && imgIndex + 1 < imgs.length) {
+                                                // İki görseli birleştir (Stacked)
                                                 columns.push({
                                                     type: 'stacked',
-                                                    images: [current, next],
-                                                    startIndex: i
+                                                    images: [imgs[imgIndex], imgs[imgIndex + 1]],
+                                                    startIndex: imgIndex
                                                 });
-                                                i++; // Bir sonrakini tükettik
+                                                imgIndex += 2;
                                             } else {
+                                                // Tekli görsel (Big veya Wide)
+                                                // Eğer sonda tek bir görsel kaldıysa ve pattern 'stacked' diyorsa, mecburen tekli yapar.
                                                 columns.push({
-                                                    type: 'single',
-                                                    images: [current],
-                                                    startIndex: i
+                                                    type: currentPattern === 'stacked' ? 'big' : currentPattern,
+                                                    images: [imgs[imgIndex]],
+                                                    startIndex: imgIndex
                                                 });
+                                                imgIndex += 1;
                                             }
+                                            patternIdx++;
                                         }
 
                                         return columns.map((col, colIndex) => (
@@ -486,32 +494,32 @@ const Islerimiz = () => {
                                                 key={colIndex} 
                                                 className={`h-full shrink-0 flex flex-col ${
                                                     col.type === 'stacked' ? 'w-[220px] md:w-[320px] space-y-3 md:space-y-6' : 
-                                                    col.images[0].aspect === 'wide' ? 'w-[350px] md:w-[650px]' : 
-                                                    'w-[260px] md:w-[380px]'
+                                                    col.type === 'wide' ? 'w-[350px] md:w-[650px]' : 
+                                                    'w-[260px] md:w-[400px]'
                                                 }`}
                                             >
-                                                {col.images.map((img, imgIndex) => (
+                                                {col.images.map((img, subIdx) => (
                                                     <motion.div
-                                                        key={`${colIndex}-${imgIndex}`}
+                                                        key={`${colIndex}-${subIdx}`}
                                                         initial={{ opacity: 0, y: 20 }}
                                                         animate={{ opacity: 1, y: 0 }}
-                                                        transition={{ delay: 0.1 * col.startIndex + (imgIndex * 0.1) }}
+                                                        transition={{ delay: 0.05 * (col.startIndex + subIdx) }}
                                                         className={`relative rounded-2xl md:rounded-[2.5rem] overflow-hidden group/img ${
                                                             col.type === 'stacked' ? 'flex-1' : 'h-full'
                                                         }`}
                                                     >
                                                         <img
                                                             src={img.url}
-                                                            alt={`${selectedProject.title} ${col.startIndex + imgIndex}`}
+                                                            alt={`${selectedProject.title} ${col.startIndex + subIdx}`}
                                                             className="w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-110"
                                                             loading="lazy"
                                                         />
                                                         
-                                                        {/* İlk kolonun ilk görseline o şık başlığı ekleyelim */}
-                                                        {col.startIndex === 0 && imgIndex === 0 && (
+                                                        {/* İlk görsel başlığı (Sadece ilk görselde) */}
+                                                        {col.startIndex === 0 && subIdx === 0 && (
                                                             <>
-                                                                <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-transparent"></div>
-                                                                <div className="absolute top-10 left-10 text-white z-10">
+                                                                <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-transparent to-transparent"></div>
+                                                                <div className="absolute top-10 left-10 text-white z-10 pr-10">
                                                                     <motion.span 
                                                                         initial={{ opacity: 0, x: -20 }}
                                                                         animate={{ opacity: 1, x: 0 }}

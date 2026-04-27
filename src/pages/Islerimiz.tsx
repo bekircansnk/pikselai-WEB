@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useMotionValue } from 'framer-motion';
-import { MainLayout } from '../layouts/MainLayout';
+import { Header } from '../components/layout/Header';
+import { Footer } from '../components/layout/Footer';
 import { Section } from '../components/ui/Section';
-import { X, Play, Pause, ChevronRight } from 'lucide-react';
 import { SEOHead } from '../components/seo/SEOHead';
+import { X, Play, Pause, ChevronRight, MessageSquare, TrendingUp } from 'lucide-react';
 
 /* ── Types ── */
 interface ProjectImage {
@@ -238,364 +239,349 @@ const Islerimiz = () => {
     }, [selectedProject]);
 
     return (
-        <MainLayout showFooter={false} transparentHeader={true} headerLightText={true}>
+        <div className="bg-white min-h-screen selection:bg-[#caf265] selection:text-[#0b2117]">
             <SEOHead
-                title="İşlerimiz — AI Destekli Kreatif Portföy"
-                description="PikselAI'ın yapay zeka ile ürettiği moda çekimleri, e-ticaret görselleri, sanal manken ve ghost mannequin projelerini inceleyin."
+                title="İşlerimiz — PikselAI Portfolyo"
+                description="Yapay zeka prodüksiyon süreçlerimizle hazırlanan en son projelerimiz, vaka çalışmaları ve yaratıcı çözümlerimiz."
                 canonical="/islerimiz"
             />
-            {/* ── Hero Section (Video Background) ── */}
-            <div className="relative w-full h-[60vh] md:h-[80vh] flex items-center justify-center bg-black overflow-hidden group">
-                <div className="absolute inset-0 z-0">
-                    <video
-                        ref={videoRef}
-                        className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-700"
-                        src="https://cdn.pixabay.com/video/2024/02/09/199958-911694865_large.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40" />
-                </div>
+            
+            <div className="bg-[#0b2117]">
+                <Header />
+            </div>
 
-                <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <p className="text-sm md:text-base font-bold tracking-[0.3em] uppercase mb-6 text-[#E2FF65]">
-                            YAPTIĞIMIZ İŞLER
-                        </p>
-                        <h1 className="text-5xl md:text-7xl font-bold font-display leading-tight tracking-tight text-white mb-6 drop-shadow-2xl">
-                            Yaratıcılık <br />
-                            <span className="italic font-light text-[#E2FF65]">işe yarar</span>
-                        </h1>
+            <main>
+                {/* ── Hero Section (Video Background) ── */}
+                <div className="relative w-full h-[60vh] md:h-[80vh] flex items-center justify-center bg-black overflow-hidden group">
+                    <div className="absolute inset-0 z-0">
+                        <video
+                            ref={videoRef}
+                            className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-700"
+                            src="https://cdn.pixabay.com/video/2024/02/09/199958-911694865_large.mp4"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40" />
+                    </div>
 
-                        <button
-                            onClick={togglePlay}
-                            className="bg-white/10 backdrop-blur-md border border-white/30 text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto hover:bg-white hover:text-black transition-all duration-300 group"
+                    <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
                         >
-                            {isPlaying ? <Pause size={28} /> : <Play size={28} className="ml-1" />}
-                        </button>
+                            <p className="text-sm md:text-base font-bold tracking-[0.3em] uppercase mb-6 text-[#E2FF65]">
+                                YAPTIĞIMIZ İŞLER
+                            </p>
+                            <h1 className="text-5xl md:text-7xl font-bold font-display leading-tight tracking-tight text-white mb-6 drop-shadow-2xl">
+                                Yaratıcılık <br />
+                                <span className="italic font-light text-[#E2FF65]">işe yarar</span>
+                            </h1>
+
+                            <button
+                                onClick={togglePlay}
+                                className="bg-white/10 backdrop-blur-md border border-white/30 text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto hover:bg-white hover:text-black transition-all duration-300 group"
+                            >
+                                {isPlaying ? <Pause size={28} /> : <Play size={28} className="ml-1" />}
+                            </button>
+                        </motion.div>
+                    </div>
+
+                    <motion.div
+                        animate={{ y: [0, 10, 0] }}
+                        transition={{ repeat: Infinity, duration: 2 }}
+                        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50"
+                    >
+                        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-2">
+                            <div className="w-1 h-2 bg-white rounded-full" />
+                        </div>
                     </motion.div>
                 </div>
 
-                <motion.div
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{ repeat: Infinity, duration: 2 }}
-                    className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50"
-                >
-                    <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-2">
-                        <div className="w-1 h-2 bg-white rounded-full" />
-                    </div>
-                </motion.div>
-            </div>
+                {/* ─── SUBTITLE & STATS ─── */}
+                <Section mood="light" width="narrow" className="py-24">
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="text-lg md:text-xl font-light text-bor-primary-600 leading-relaxed text-center"
+                    >
+                        Türkiye'nin lider markalarına, AI destekli yaratıcı çözümlerle
+                        hız ve kalitede fark yaratan prodüksiyonlar sunuyoruz — konseptten
+                        uygulamaya, sonuca kadar.
+                    </motion.p>
+                </Section>
 
-            {/* ─── SUBTITLE & STATS ─── */}
-            <Section mood="light" width="narrow" className="py-24">
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                    className="text-lg md:text-xl font-light text-bor-primary-600 leading-relaxed text-center"
-                >
-                    Türkiye'nin lider markalarına, AI destekli yaratıcı çözümlerle
-                    hız ve kalitede fark yaratan prodüksiyonlar sunuyoruz — konseptten
-                    uygulamaya, sonuca kadar.
-                </motion.p>
-            </Section>
-
-            <Section mood="gray" className="!py-12 bg-gray-50/50">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto px-4">
-                    {stats.map((stat, i) => (
-                        <motion.div
-                            key={stat.label}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: i * 0.1, duration: 0.5 }}
-                            className="text-center"
-                        >
-                            <div className="text-3xl md:text-5xl font-bold text-[#86AA00] mb-2">{stat.value}</div>
-                            <div className="text-sm font-medium text-gray-500 uppercase tracking-wider">{stat.label}</div>
-                        </motion.div>
-                    ))}
-                </div>
-            </Section>
-
-            {/* ── Category Filter Hub ── */}
-            <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-lg border-b border-gray-100 py-6 overflow-x-auto">
-                <div className="flex justify-center min-w-max px-4">
-                    <div className="flex gap-2 md:gap-4 bg-gray-100/50 p-1.5 rounded-full">
-                        {categories.map((cat) => (
-                            <button
-                                key={cat}
-                                onClick={() => setSelectedCategory(cat)}
-                                className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${selectedCategory === cat
-                                    ? 'bg-black text-white shadow-lg'
-                                    : 'text-gray-500 hover:text-black hover:bg-white'
-                                    }`}
-                            >
-                                {cat}
-                            </button>
-                        ))}
-                    </div>
-                </div>
-            </div>
-
-            {/* ── Portfolio Grid ── */}
-            <div className="bg-white min-h-screen">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-0.5 bg-gray-100">
-                    <AnimatePresence mode='popLayout'>
-                        {filteredProjects.map((project) => (
+                <Section mood="gray" className="!py-12 bg-gray-50/50">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto px-4">
+                        {stats.map((stat, i) => (
                             <motion.div
-                                key={project.id}
-                                layoutId={`project-container-${project.id}`}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.4 }}
-                                className={`group relative cursor-none overflow-hidden bg-white aspect-[4/3] md:aspect-auto md:h-[600px]`}
-                                style={{ cursor: 'none' }}
-                                onClick={() => setSelectedProject(project)}
-                                onMouseMove={handleMouseMove}
-                                onMouseEnter={() => setIsHovering(true)}
-                                onMouseLeave={() => setIsHovering(false)}
+                                key={stat.label}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1, duration: 0.5 }}
+                                className="text-center"
                             >
-                                <motion.div
-                                    className="w-full h-full"
-                                    whileHover={{ scale: 1.05 }}
-                                    transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1] }}
-                                >
-                                    <img
-                                        src={project.thumbnail}
-                                        alt={project.title}
-                                        className="w-full h-full object-cover"
-                                        loading="lazy"
-                                    />
-                                </motion.div>
-
-                                {/* Overlay gradient */}
-                                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300" />
-
-                                {/* Info */}
-                                <div className="absolute bottom-0 left-0 p-8 z-20 text-white w-full pointer-events-none">
-                                    <motion.h3
-                                        layoutId={`project-title-${project.id}`}
-                                        className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-white mb-2"
-                                    >
-                                        {project.client} <span className="text-white/50 text-2xl font-sans inline-block align-middle">+</span>
-                                    </motion.h3>
-                                    <p className="text-xs md:text-xs tracking-wider text-white/70">
-                                        {project.category}
-                                    </p>
-                                </div>
+                                <div className="text-3xl md:text-5xl font-bold text-[#86AA00] mb-2">{stat.value}</div>
+                                <div className="text-sm font-medium text-gray-500 uppercase tracking-wider">{stat.label}</div>
                             </motion.div>
                         ))}
-                    </AnimatePresence>
+                    </div>
+                </Section>
+
+                {/* ── Category Filter Hub ── */}
+                <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-lg border-b border-gray-100 py-6 overflow-x-auto">
+                    <div className="flex justify-center min-w-max px-4">
+                        <div className="flex gap-2 md:gap-4 bg-gray-100/50 p-1.5 rounded-full">
+                            {categories.map((cat) => (
+                                <button
+                                    key={cat}
+                                    onClick={() => setSelectedCategory(cat)}
+                                    className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${selectedCategory === cat
+                                        ? 'bg-black text-white shadow-lg'
+                                        : 'text-gray-500 hover:text-black hover:bg-white'
+                                        }`}
+                                >
+                                    {cat}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            {/* ── Project Modal (Redesigned - Superside Style) */}
-            <AnimatePresence>
-                {selectedProject && (
-                    <motion.div
-                        key="modal"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[100] bg-[#050505]"
-                        style={{ cursor: 'none' }}
-                        onMouseMove={handleMouseMove}
-                    >
-                        {/* Custom Cursor */}
+                {/* ── Portfolio Grid ── */}
+                <div className="bg-white min-h-screen">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-0.5 bg-gray-100">
+                        <AnimatePresence mode='popLayout'>
+                            {filteredProjects.map((project) => (
+                                <motion.div
+                                    key={project.id}
+                                    layoutId={`project-container-${project.id}`}
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    transition={{ duration: 0.4 }}
+                                    className={`group relative cursor-none overflow-hidden bg-white aspect-[4/3] md:aspect-auto md:h-[600px]`}
+                                    style={{ cursor: 'none' }}
+                                    onClick={() => setSelectedProject(project)}
+                                    onMouseMove={handleMouseMove}
+                                    onMouseEnter={() => setIsHovering(true)}
+                                    onMouseLeave={() => setIsHovering(false)}
+                                >
+                                    <motion.div
+                                        className="w-full h-full"
+                                        whileHover={{ scale: 1.05 }}
+                                        transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1] }}
+                                    >
+                                        <img
+                                            src={project.thumbnail}
+                                            alt={project.title}
+                                            className="w-full h-full object-cover"
+                                            loading="lazy"
+                                        />
+                                    </motion.div>
+
+                                    {/* Overlay gradient */}
+                                    <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300" />
+
+                                    {/* Info */}
+                                    <div className="absolute bottom-0 left-0 p-8 z-20 text-white w-full pointer-events-none">
+                                        <motion.h3
+                                            layoutId={`project-title-${project.id}`}
+                                            className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-white mb-2"
+                                        >
+                                            {project.client} <span className="text-white/50 text-2xl font-sans inline-block align-middle">+</span>
+                                        </motion.h3>
+                                        <p className="text-xs md:text-xs tracking-wider text-white/70">
+                                            {project.category}
+                                        </p>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </AnimatePresence>
+                    </div>
+                </div>
+
+                {/* ── Project Modal ── */}
+                <AnimatePresence>
+                    {selectedProject && (
                         <motion.div
-                            className="fixed top-0 left-0 pointer-events-none z-[100] hidden md:flex items-center justify-center transform-gpu"
-                            style={{ x: cursorX, y: cursorY, translateX: '-50%', translateY: '-50%' }}
-                        >
-                            {cursorType === 'exit' ? (
-                                <div className="w-[100px] h-[100px] rounded-full bg-white flex items-center justify-center shadow-2xl">
-                                    <span className="text-black text-sm font-medium">Çıkış</span>
-                                </div>
-                            ) : (
-                                <div className="w-[24px] h-[24px] rounded-full bg-white shadow-lg" />
-                            )}
-                        </motion.div>
-
-                        {/* Close Button */}
-                        <motion.button
-                            initial={{ opacity: 0, y: -20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -20 }}
-                            onClick={() => setSelectedProject(null)}
-                            className="fixed top-8 right-8 z-50 p-4 rounded-full bg-white/10 text-white hover:bg-white hover:text-black transition-all group"
-                            style={{ cursor: 'none' }} // Hide native cursor for this button too
-                            onMouseEnter={() => setCursorType('exit')}
-                            onMouseLeave={() => setCursorType('dot')}
-                        >
-                            <X size={24} className="group-hover:rotate-90 transition-transform duration-300" />
-                            <span className="sr-only">Kapat</span>
-                        </motion.button>
-
-                        <motion.div
-                            layoutId={`project-container-${selectedProject.id}`}
-                            className="w-full h-full flex flex-col bg-[#050505]"
+                            key="modal"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="fixed inset-0 z-[100] bg-[#050505]"
                             style={{ cursor: 'none' }}
+                            onMouseMove={handleMouseMove}
                         >
-                            {/* TOP: Horizontal Photo Strip */}
-                            <div
-                                className="flex-1 overflow-x-auto overflow-y-hidden custom-scrollbar"
-                                style={{ cursor: 'none' }}
-                                onWheel={(e) => {
-                                    if (e.currentTarget) {
-                                        e.currentTarget.scrollLeft += e.deltaY;
-                                    }
-                                }}
+                            <motion.div
+                                className="fixed top-0 left-0 pointer-events-none z-[100] hidden md:flex items-center justify-center transform-gpu"
+                                style={{ x: cursorX, y: cursorY, translateX: '-50%', translateY: '-50%' }}
                             >
-                                <div className="h-full px-6 md:px-16 py-6 flex items-center space-x-3 md:space-x-6 min-w-max" style={{ cursor: 'none' }}>
-                                    {(() => {
-                                        const columns = [];
-                                        const imgs = [...selectedProject.images];
-                                        
-                                        // Ritim Döngüsü: Big -> Stacked -> Wide -> Stacked
-                                        let imgIndex = 0;
-                                        let patternIdx = 0;
-                                        const pattern = ['big', 'stacked', 'wide', 'stacked'];
+                                {cursorType === 'exit' ? (
+                                    <div className="w-[100px] h-[100px] rounded-full bg-white flex items-center justify-center shadow-2xl">
+                                        <span className="text-black text-sm font-medium">Çıkış</span>
+                                    </div>
+                                ) : (
+                                    <div className="w-[24px] h-[24px] rounded-full bg-white shadow-lg" />
+                                )}
+                            </motion.div>
 
-                                        while (imgIndex < imgs.length) {
-                                            const currentPattern = pattern[patternIdx % pattern.length];
-
-                                            if (currentPattern === 'stacked' && imgIndex + 1 < imgs.length) {
-                                                // İki görseli birleştir (Stacked)
-                                                columns.push({
-                                                    type: 'stacked',
-                                                    images: [imgs[imgIndex], imgs[imgIndex + 1]],
-                                                    startIndex: imgIndex
-                                                });
-                                                imgIndex += 2;
-                                            } else {
-                                                // Tekli görsel (Big veya Wide)
-                                                // Eğer sonda tek bir görsel kaldıysa ve pattern 'stacked' diyorsa, mecburen tekli yapar.
-                                                columns.push({
-                                                    type: currentPattern === 'stacked' ? 'big' : currentPattern,
-                                                    images: [imgs[imgIndex]],
-                                                    startIndex: imgIndex
-                                                });
-                                                imgIndex += 1;
-                                            }
-                                            patternIdx++;
-                                        }
-
-                                        return columns.map((col, colIndex) => (
-                                            <div 
-                                                key={colIndex} 
-                                                className={`h-full shrink-0 flex flex-col ${
-                                                    col.type === 'stacked' ? 'w-[220px] md:w-[320px] space-y-3 md:space-y-6' : 
-                                                    col.type === 'wide' ? 'w-[350px] md:w-[650px]' : 
-                                                    'w-[260px] md:w-[400px]'
-                                                }`}
-                                            >
-                                                {col.images.map((img, subIdx) => (
-                                                    <motion.div
-                                                        key={`${colIndex}-${subIdx}`}
-                                                        initial={{ opacity: 0, y: 20 }}
-                                                        animate={{ opacity: 1, y: 0 }}
-                                                        transition={{ delay: 0.05 * (col.startIndex + subIdx) }}
-                                                        className={`relative rounded-2xl md:rounded-[2.5rem] overflow-hidden group/img ${
-                                                            col.type === 'stacked' ? 'flex-1' : 'h-full'
-                                                        }`}
-                                                    >
-                                                        <img
-                                                            src={img.url}
-                                                            alt={`${selectedProject.title} ${col.startIndex + subIdx}`}
-                                                            className="w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-110"
-                                                            loading="lazy"
-                                                        />
-                                                        
-                                                        {/* İlk görsel başlığı (Sadece ilk görselde) */}
-                                                        {col.startIndex === 0 && subIdx === 0 && (
-                                                            <>
-                                                                <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-transparent to-transparent"></div>
-                                                                <div className="absolute top-10 left-10 text-white z-10 pr-10">
-                                                                    <motion.span 
-                                                                        initial={{ opacity: 0, x: -20 }}
-                                                                        animate={{ opacity: 1, x: 0 }}
-                                                                        className="text-xs uppercase tracking-[0.3em] font-medium opacity-70 mb-2 block"
-                                                                    >
-                                                                        Vaka Çalışması
-                                                                    </motion.span>
-                                                                    <h3 className="text-3xl md:text-5xl font-serif uppercase leading-[1.1] tracking-tight">
-                                                                        {selectedProject.client} <br /> 
-                                                                        <span className="opacity-60">{selectedProject.title}</span>
-                                                                    </h3>
-                                                                </div>
-                                                            </>
-                                                        )}
-                                                    </motion.div>
-                                                ))}
-                                            </div>
-                                        ));
-                                    })()}
-                                </div>
-                            </div>
-
-                            {/* BOTTOM: Fixed Typography Section */}
-                            <div
-                                className="shrink-0 px-8 md:px-16 py-6 md:py-8 border-t border-white/5"
+                            <motion.button
+                                initial={{ opacity: 0, y: -20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -20 }}
+                                onClick={() => setSelectedProject(null)}
+                                className="fixed top-8 right-8 z-50 p-4 rounded-full bg-white/10 text-white hover:bg-white hover:text-black transition-all group"
                                 style={{ cursor: 'none' }}
                                 onMouseEnter={() => setCursorType('exit')}
                                 onMouseLeave={() => setCursorType('dot')}
-                                onClick={() => setSelectedProject(null)}
                             >
-                                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 md:gap-16 max-w-screen-2xl mx-auto">
-                                    {/* Left: Title */}
-                                    <div className="shrink-0">
-                                        <motion.h2
-                                            layoutId={`project-title-${selectedProject.id}`}
-                                            className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-white mb-1"
-                                        >
-                                            {selectedProject.client}
-                                        </motion.h2>
-                                        <motion.p
-                                            initial={{ opacity: 0, y: 10 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            transition={{ delay: 0.2 }}
-                                            className="text-gray-500 text-sm tracking-wide"
-                                        >
-                                            {selectedProject.title}
-                                        </motion.p>
+                                <X size={24} className="group-hover:rotate-90 transition-transform duration-300" />
+                                <span className="sr-only">Kapat</span>
+                            </motion.button>
+
+                            <motion.div
+                                layoutId={`project-container-${selectedProject.id}`}
+                                className="w-full h-full flex flex-col bg-[#050505]"
+                                style={{ cursor: 'none' }}
+                            >
+                                <div
+                                    className="flex-1 overflow-x-auto overflow-y-hidden custom-scrollbar"
+                                    style={{ cursor: 'none' }}
+                                    onWheel={(e) => {
+                                        if (e.currentTarget) {
+                                            e.currentTarget.scrollLeft += e.deltaY;
+                                        }
+                                    }}
+                                >
+                                    <div className="h-full px-6 md:px-16 py-6 flex items-center space-x-3 md:space-x-6 min-w-max" style={{ cursor: 'none' }}>
+                                        {(() => {
+                                            const columns = [];
+                                            const imgs = [...selectedProject.images];
+                                            let imgIndex = 0;
+                                            let patternIdx = 0;
+                                            const pattern = ['big', 'stacked', 'wide', 'stacked'];
+
+                                            while (imgIndex < imgs.length) {
+                                                const currentPattern = pattern[patternIdx % pattern.length];
+                                                if (currentPattern === 'stacked' && imgIndex + 1 < imgs.length) {
+                                                    columns.push({ type: 'stacked', images: [imgs[imgIndex], imgs[imgIndex + 1]], startIndex: imgIndex });
+                                                    imgIndex += 2;
+                                                } else {
+                                                    columns.push({ type: currentPattern === 'stacked' ? 'big' : currentPattern, images: [imgs[imgIndex]], startIndex: imgIndex });
+                                                    imgIndex += 1;
+                                                }
+                                                patternIdx++;
+                                            }
+
+                                            return columns.map((col, colIndex) => (
+                                                <div key={colIndex} className={`h-full shrink-0 flex flex-col ${col.type === 'stacked' ? 'w-[220px] md:w-[320px] space-y-3 md:space-y-6' : col.type === 'wide' ? 'w-[350px] md:w-[650px]' : 'w-[260px] md:w-[400px]'}`}>
+                                                    {col.images.map((img, subIdx) => (
+                                                        <motion.div key={`${colIndex}-${subIdx}`} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 * (col.startIndex + subIdx) }} className={`relative rounded-2xl md:rounded-[2.5rem] overflow-hidden group/img ${col.type === 'stacked' ? 'flex-1' : 'h-full'}`}>
+                                                            <img src={img.url} alt={`${selectedProject.title} ${col.startIndex + subIdx}`} className="w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-110" loading="lazy" />
+                                                            {col.startIndex === 0 && subIdx === 0 && (
+                                                                <>
+                                                                    <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-transparent to-transparent"></div>
+                                                                    <div className="absolute top-10 left-10 text-white z-10 pr-10">
+                                                                        <motion.span className="text-xs uppercase tracking-[0.3em] font-medium opacity-70 mb-2 block">Vaka Çalışması</motion.span>
+                                                                        <h3 className="text-3xl md:text-5xl font-serif uppercase leading-[1.1] tracking-tight">{selectedProject.client} <br /> <span className="opacity-60">{selectedProject.title}</span></h3>
+                                                                    </div>
+                                                                </>
+                                                            )}
+                                                        </motion.div>
+                                                    ))}
+                                                </div>
+                                            ));
+                                        })()}
                                     </div>
-
-                                    {/* Right: Description */}
-                                    <motion.p
-                                        initial={{ opacity: 0, y: 10 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{ delay: 0.3 }}
-                                        className="text-base md:text-lg text-gray-400 leading-relaxed font-light max-w-2xl"
-                                    >
-                                        {selectedProject.description}
-                                    </motion.p>
                                 </div>
-                            </div>
-                        </motion.div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
 
-            <IslerimizFooter />
+                                <div
+                                    className="shrink-0 px-8 md:px-16 py-6 md:py-8 border-t border-white/5"
+                                    style={{ cursor: 'none' }}
+                                    onMouseEnter={() => setCursorType('exit')}
+                                    onMouseLeave={() => setCursorType('dot')}
+                                    onClick={() => setSelectedProject(null)}
+                                >
+                                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 md:gap-16 max-w-screen-2xl mx-auto">
+                                        <div className="shrink-0">
+                                            <motion.h2 layoutId={`project-title-${selectedProject.id}`} className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-white mb-1">{selectedProject.client}</motion.h2>
+                                            <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-gray-500 text-sm tracking-wide">{selectedProject.title}</motion.p>
+                                        </div>
+                                        <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="text-base md:text-lg text-gray-400 leading-relaxed font-light max-w-2xl">{selectedProject.description}</motion.p>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+
+                {/* ── BOTTOM CTA ── */}
+                <section className="bg-white py-32 px-6 md:px-16 lg:px-24 mb-1">
+                    <div className="max-w-7xl mx-auto bg-[#0b2117] rounded-[3rem] p-10 md:p-24 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12">
+                        {/* Soft Glow Effect */}
+                        <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#caf265]/10 blur-[120px] rounded-full"></div>
+                        <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-[#caf265]/5 blur-[80px] rounded-full"></div>
+
+                        <div className="relative z-10 max-w-xl text-center md:text-left">
+                            <h2 className="text-5xl lg:text-7xl font-bold font-display leading-tight tracking-tight text-[#F4EFE6] mb-8">
+                                Markanı <br />
+                                <span className="italic font-light text-[#E2FF65]">geleceğe taşıyalım.</span>
+                            </h2>
+                            <p className="text-[#a8b8af] mb-10 text-lg">
+                                Yapay zeka prodüksiyonu ile tanışın. Süreçleri hızlandırın, maliyetleri düşürün ve etkileyici sonuçlar alın.
+                            </p>
+                            <div className="flex flex-col sm:flex-row items-center gap-6 justify-center md:justify-start">
+                                <button 
+                                    onClick={() => window.location.href = '/iletisim'}
+                                    className="bg-[#caf265] text-[#0b2117] hover:bg-[#b5dc57] transition-all duration-300 rounded-full px-10 py-5 text-lg font-bold flex items-center gap-3 group"
+                                >
+                                    Proje Başlatalım
+                                    <ChevronRight className="group-hover:translate-x-1 transition-transform" />
+                                </button>
+                                <a href="mailto:bilgi@pikselai.com" className="text-[#F4EFE6] font-medium border-b border-[#F4EFE6]/30 hover:border-[#caf265] hover:text-[#caf265] transition-all pb-1 flex items-center gap-2">
+                                    <MessageSquare size={18} /> bilgi@pikselai.com
+                                </a>
+                            </div>
+                        </div>
+
+                        {/* Creative Visual Element */}
+                        <div className="relative z-10 hidden md:block w-full max-w-xs aspect-square">
+                            <motion.div
+                                animate={{ rotate: 360 }}
+                                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                                className="w-full h-full border-2 border-dashed border-[#caf265]/30 rounded-full flex items-center justify-center p-8"
+                            >
+                                <div className="w-full h-full border border-[#caf265]/50 rounded-full flex items-center justify-center">
+                                    <div className="w-20 h-20 bg-[#caf265] rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(202,242,101,0.4)]">
+                                        <TrendingUp size={32} className="text-[#0b2117]" />
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <div className="bg-[#0b2117]">
+                <Footer />
+            </div>
 
             <style>{`
                 .custom-scrollbar::-webkit-scrollbar {
-                    width: 0px;
+                    display: none;
                 }
                 .custom-scrollbar {
                     -ms-overflow-style: none;
                     scrollbar-width: none;
                 }
             `}</style>
+
             {/* ── Custom Cursor ── */}
             <motion.div
                 className="fixed top-0 left-0 w-24 h-24 bg-gray-400/80 backdrop-blur-sm rounded-full pointer-events-none z-[9999] flex items-center justify-center text-white font-bold text-sm tracking-widest uppercase transform-gpu"
@@ -610,64 +596,7 @@ const Islerimiz = () => {
             >
                 İncele
             </motion.div>
-        </MainLayout>
-    );
-};
-
-const IslerimizFooter = () => {
-    return (
-        <section className="relative bg-[#02211e] text-white overflow-hidden pt-32 pb-16">
-            <div className="absolute inset-0 z-0 opacity-40">
-                <img
-                    src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2000&auto=format&fit=crop"
-                    className="w-full h-full object-cover"
-                    alt="Footer Background"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#02312d] via-[#02211e]/80 to-transparent" />
-            </div>
-
-            <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="space-y-8"
-                >
-                    <h2 className="text-4xl lg:text-5xl font-bold font-display leading-tight tracking-tight text-white mb-6">
-                        Markanı <br className="hidden lg:block" />
-                        <span className="italic font-light text-[#E2FF65]">geleceğe taşıyalım.</span>
-                    </h2>
-                    <p className="text-lg md:text-xl font-light text-white/80 leading-relaxed max-w-2xl mx-auto mb-8">
-                        Yapay zeka prodüksiyonu ile tanışın. Süreçleri hızlandırın, maliyetleri düşürün ve etkileyici sonuçlar alın.
-                    </p>
-
-                    <div className="pt-12 flex flex-col md:flex-row items-center justify-center gap-6">
-                        <button className="px-12 py-6 bg-white text-black rounded-full text-sm font-bold tracking-widest uppercase hover:bg-blue-400 hover:text-white transition-all duration-300 flex items-center gap-3 group">
-                            Proje Başlat
-                            <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                        </button>
-                        <button className="px-12 py-6 bg-transparent border border-white/20 text-white rounded-full text-sm font-bold tracking-widest uppercase hover:bg-white/10 transition-all duration-300">
-                            Tanıtım Sunumunu Gör
-                        </button>
-                    </div>
-                </motion.div>
-
-                <div className="mt-32 pt-16 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-8 text-white/40 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase">
-                    <div>© 2026 PIKSELAI PRODUCTION. TÜM HAKLARI SAKLIDIR.</div>
-                    <div className="flex items-center gap-8">
-                        <a href="#" className="hover:text-white transition-colors flex items-center gap-2 group">
-                            E-TİCARET <ChevronRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
-                        </a>
-                        <a href="#" className="hover:text-white transition-colors flex items-center gap-2 group">
-                            KAMPANYA <ChevronRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
-                        </a>
-                        <a href="#" className="hover:text-white transition-colors flex items-center gap-2 group">
-                            HAYALET ÇEKİM <ChevronRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
     );
 };
 

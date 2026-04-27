@@ -33,7 +33,10 @@ const stats = [
     { value: '500+', label: 'Tamamlanan Proje' },
     { value: '50+', label: 'Mutlu Marka' },
     { value: '%80', label: 'Maliyet Tasarrufu' },
-    { value: '24-48s', labelconst projects: Project[] = [
+    { value: '24-48s', label: 'Teslimat Süresi' },
+];
+
+const projects: Project[] = [
     {
         id: 1,
         title: 'Kış Kampanyası',

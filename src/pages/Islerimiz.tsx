@@ -456,36 +456,81 @@ const Islerimiz = () => {
                                 }}
                             >
                                 <div className="h-full px-6 md:px-16 py-6 flex items-center space-x-3 md:space-x-6 min-w-max" style={{ cursor: 'none' }}>
-                                    {selectedProject.images.map((img, index) => (
-                                        <motion.div
-                                            key={index}
-                                            initial={{ opacity: 0, scale: 0.95 }}
-                                            animate={{ opacity: 1, scale: 1 }}
-                                            transition={{ delay: 0.1 * index }}
-                                            className={`h-full shrink-0 relative rounded-xl md:rounded-2xl overflow-hidden ${
-                                                img.aspect === 'wide' ? 'w-[350px] md:w-[600px]' :
-                                                img.aspect === 'tall' ? 'w-[260px] md:w-[350px]' :
-                                                'w-[220px] md:w-[300px]'
-                                            }`}
-                                        >
-                                            <img
-                                                src={img.url}
-                                                alt={`${selectedProject.title} ${index + 1}`}
-                                                className="w-full h-full object-cover"
-                                                loading="lazy"
-                                            />
-                                            {index === 0 && (
-                                                <>
-                                                    <div className="absolute inset-0 bg-black/20"></div>
-                                                    <div className="absolute top-6 left-6 text-white z-10 w-2/3">
-                                                        <h3 className="text-2xl md:text-3xl font-serif uppercase leading-tight">
-                                                            {selectedProject.client} <br /> {selectedProject.title}
-                                                        </h3>
-                                                    </div>
-                                                </>
-                                            )}
-                                        </motion.div>
-                                    ))}
+                                    {(() => {
+                                        const columns = [];
+                                        const imgs = [...selectedProject.images];
+                                        
+                                        for (let i = 0; i < imgs.length; i++) {
+                                            const current = imgs[i];
+                                            const next = imgs[i + 1];
+
+                                            // Eğer şu anki ve sonraki kareyse, ikisini bir kolona hapseyle (Stacked)
+                                            if (current.aspect === 'square' && next && next.aspect === 'square') {
+                                                columns.push({
+                                                    type: 'stacked',
+                                                    images: [current, next],
+                                                    startIndex: i
+                                                });
+                                                i++; // Bir sonrakini tükettik
+                                            } else {
+                                                columns.push({
+                                                    type: 'single',
+                                                    images: [current],
+                                                    startIndex: i
+                                                });
+                                            }
+                                        }
+
+                                        return columns.map((col, colIndex) => (
+                                            <div 
+                                                key={colIndex} 
+                                                className={`h-full shrink-0 flex flex-col ${
+                                                    col.type === 'stacked' ? 'w-[220px] md:w-[320px] space-y-3 md:space-y-6' : 
+                                                    col.images[0].aspect === 'wide' ? 'w-[350px] md:w-[650px]' : 
+                                                    'w-[260px] md:w-[380px]'
+                                                }`}
+                                            >
+                                                {col.images.map((img, imgIndex) => (
+                                                    <motion.div
+                                                        key={`${colIndex}-${imgIndex}`}
+                                                        initial={{ opacity: 0, y: 20 }}
+                                                        animate={{ opacity: 1, y: 0 }}
+                                                        transition={{ delay: 0.1 * col.startIndex + (imgIndex * 0.1) }}
+                                                        className={`relative rounded-2xl md:rounded-[2.5rem] overflow-hidden group/img ${
+                                                            col.type === 'stacked' ? 'flex-1' : 'h-full'
+                                                        }`}
+                                                    >
+                                                        <img
+                                                            src={img.url}
+                                                            alt={`${selectedProject.title} ${col.startIndex + imgIndex}`}
+                                                            className="w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-110"
+                                                            loading="lazy"
+                                                        />
+                                                        
+                                                        {/* İlk kolonun ilk görseline o şık başlığı ekleyelim */}
+                                                        {col.startIndex === 0 && imgIndex === 0 && (
+                                                            <>
+                                                                <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-transparent"></div>
+                                                                <div className="absolute top-10 left-10 text-white z-10">
+                                                                    <motion.span 
+                                                                        initial={{ opacity: 0, x: -20 }}
+                                                                        animate={{ opacity: 1, x: 0 }}
+                                                                        className="text-xs uppercase tracking-[0.3em] font-medium opacity-70 mb-2 block"
+                                                                    >
+                                                                        Vaka Çalışması
+                                                                    </motion.span>
+                                                                    <h3 className="text-3xl md:text-5xl font-serif uppercase leading-[1.1] tracking-tight">
+                                                                        {selectedProject.client} <br /> 
+                                                                        <span className="opacity-60">{selectedProject.title}</span>
+                                                                    </h3>
+                                                                </div>
+                                                            </>
+                                                        )}
+                                                    </motion.div>
+                                                ))}
+                                            </div>
+                                        ));
+                                    })()}
                                 </div>
                             </div>
 

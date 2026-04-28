@@ -24,49 +24,67 @@ const catalogPlan = {
     cta: 'Paketi Seç'
 };
 
-// AI Fotoğraf Paketleri (Hacim Bazlı Kullandıkça Öde)
+// Sosyal Medya İçerik Paketleri
 const aiPlans = [
     {
         name: 'Başlangıç',
-        price: '$0.50',
-        suffix: '/ görsel',
-        description: 'Yapay zekayı düşük riskle denemek isteyen işletmeler için.',
+        price: '₺6.000',
+        suffix: '/ ay',
+        description: 'Sosyal medyada içerik üretimini denemek isteyenler için',
         features: [
-            'Ayda 200 adete kadar üretim',
-            'Katalog ve sosyal medya uyumlu',
-            'İptal edilebilir üyelik',
-            'Sadece ürettiğin kadar öde'
+            'Aylık 15 içerik üretimi',
+            'Her içerik için 4 görsel (toplam 60 görsel)',
+            'Sınırlı kullanım',
+            '5 revize hakkı'
         ],
-        cta: 'Paketi Seç'
+        cta: 'Paketi Seç',
+        bottomMessage: 'Küçük işletmeler ve deneme süreci için'
     },
     {
-        name: 'En Popüler',
-        price: '$0.30',
-        suffix: '/ görsel',
-        description: 'Düzenli içerik üreten markalar için en dengeli paket.',
+        name: 'En Popüler ⭐',
+        price: '₺12.000',
+        suffix: '/ ay',
+        description: 'Günlük paylaşım yapan markalar için en ideal paket',
         features: [
-            'Ayda 201 - 700 arası üretim',
-            'Gelişmiş prompt mühendisliği',
-            'Tutarlı stil ve görsel bütünlük',
-            'Öncelikli üretim sırası',
-            'Sadece ürettiğin kadar öde'
+            'Günlük 2 içerik üretimi',
+            'Aylık 60 içerik (240 görsel)',
+            'Her içerik için 4 alternatif',
+            'Story için geniş içerik havuzu',
+            '15 revize hakkı',
+            'Tutarlı marka görünümü'
         ],
-        cta: 'En Popüler Paketi Seç',
-        featured: true
+        cta: 'Paketi Seç',
+        featured: true,
+        bottomMessage: 'Sayfanız hiçbir zaman boş kalmaz'
     },
     {
         name: 'Profesyonel',
-        price: '$0.25',
-        suffix: '/ görsel',
-        description: 'Yüksek hacimli, sürekli görsel üretimi yapan markalar için.',
+        price: '₺15.000',
+        suffix: '/ ay',
+        description: 'Sosyal medyada hızlı büyümek isteyen markalar için',
         features: [
-            'Ayda 700+ üzeri hacimli üretim',
-            'Gelişmiş prompt + sahne varyasyonları',
-            'Büyük kataloglar için uygun',
-            'Öncelikli destek',
-            'Sadece ürettiğin kadar öde'
+            'Günlük 3 içerik üretimi',
+            'Aylık 90 içerik (360 görsel)',
+            'Gelişmiş sahne ve varyasyon',
+            'Kampanya içerikleri',
+            '25 revize hakkı',
+            'Öncelikli üretim'
         ],
-        cta: 'Profesyonel Paketi Seç'
+        cta: 'Paketi Seç',
+        bottomMessage: 'Daha fazla paylaşım = daha fazla büyüme'
+    },
+    {
+        name: 'Özel Üretim',
+        price: 'Özel',
+        suffix: 'Teklif',
+        description: 'Standart paketlerin dışında kalan projeler için',
+        features: [
+            'Katalog çekimleri',
+            'Web sitesi banner',
+            'Kampanya içerikleri',
+            '500+ görsel üretim'
+        ],
+        cta: 'Özel Teklif Alın'
     }
 ];
 
@@ -138,10 +156,12 @@ const catalogFaqs = [
 ];
 
 const aiFaqs = [
-    { q: "Kredi sisteminiz nasıl çalışıyor?", a: "Kredi veya aylık abonelik zorunluluğumuz yok. Ay sonunda sadece o ay içinde ürettiğiniz başarılı görsellerin toplam sayısı üzerinden, bulunduğunuz dilime göre faturalandırılırsınız." },
-    { q: "Beğenmediğim görseller için ücretsiz düzeltme var mı?", a: "Hayır. Ürettiğiniz bütün görseller için ücret yansıtılmaktadır. Kullandıkça öde mantığı ile çalışıyoruz ve her görselin API ve üretim maliyeti bulunduğundan ücretsiz düzeltme veya iade seçeneğimiz bulunmamaktadır." },
-    { q: "Kendi markam için özel bir AI modeli eğitilebilir mi?", a: "Evet! Özellikle hacimli çalışmalarda marka kimliğinize, renklerinize ve stilinize %100 uygun sonuçlar alabilmeniz için size özel model eğitimi gerçekleştiriyoruz. Şu an kampanya dahilinde bu işlem ücretsizdir." },
-    { q: "Görsel teslim süreleri nedir?", a: "Talebinize ve hacmine bağlı olmakla birlikte, standart üretimler 48 saat içerisinde kalite kontrolü tamamlanmış olarak size teslim edilir." }
+    { q: "Görseller nasıl üretiliyor?", a: "Her içerik için markanıza uygun sahne oluşturulur ve 4 farklı alternatif görsel hazırlanır." },
+    { q: "Beğenmediğim görseller ne olacak?", a: "Paket kapsamında belirlenen revize hakkınızı kullanarak yeni görseller talep edebilirsiniz." },
+    { q: "Revize ne demek?", a: "Revize, bir içerik için yeniden üretim yapılmasıdır. Her revize ile 4 yeni görsel hazırlanır." },
+    { q: "Günlük paylaşım için yeterli olur mu?", a: "Evet. Paketler günlük paylaşım ihtiyacınıza göre planlanmıştır." },
+    { q: "Sosyal medya yönetimi de dahil mi?", a: "Hayır. Bu hizmet sadece görsel içerik üretimini kapsar." },
+    { q: "Ek görsel istersem?", a: "İstediğiniz kadar ek içerik satın alabilirsiniz. Ek üretim: 120 TL / içerik (4 görsel)." }
 ];
 
 const ecommerceFaqs = [
@@ -170,12 +190,27 @@ const Pricing = () => {
             {/* Hero Section */}
             <Section className="py-24 text-center" mood="light">
                 <h1 className="text-5xl md:text-7xl font-bold font-display leading-tight tracking-tight text-bor-primary-900 dark:text-white mb-6">
-                    Şeffaf ve Esnek <br className="hidden lg:block" />
-                    <span className="italic font-light text-[#86AA00] dark:text-[#E2FF65]">Fiyatlandırma</span>
+                    Sosyal Medyanız İçin <br className="hidden lg:block" />
+                    <span className="italic font-light text-[#86AA00] dark:text-[#E2FF65]">Her Gün Hazır İçerik</span>
                 </h1>
-                <p className="text-lg md:text-xl font-light text-bor-primary-600 dark:text-bor-primary-400 leading-relaxed max-w-2xl mx-auto mb-10">
-                    İhtiyacınıza en uygun paketi seçin, işletmenizi büyütmeye hemen başlayın. Gizli ücret yok, sürpriz yok.
+                <p className="text-lg md:text-xl font-light text-bor-primary-600 dark:text-bor-primary-400 leading-relaxed max-w-2xl mx-auto mb-4">
+                    Her gün paylaşacak görsel bulma derdini bitirin. <br className="hidden md:block" />
+                    Markanıza özel yapay zeka destekli içerikleri biz üretelim.
                 </p>
+                
+                <div className="flex flex-col items-center justify-center gap-3 mb-10 text-sm md:text-base font-medium text-bor-primary-600 dark:text-bor-primary-300 bg-bor-secondary/10 dark:bg-bor-secondary/5 py-5 px-8 rounded-3xl border border-bor-secondary/20 max-w-xl mx-auto text-left w-full shadow-sm">
+                    <span className="flex items-center gap-3 w-full"><span className="text-[#86AA00] dark:text-[#E2FF65] text-xl font-bold">✓</span> Her içerik için 4 farklı alternatif görsel üretilir.</span>
+                    <span className="flex items-center gap-3 w-full"><span className="text-[#86AA00] dark:text-[#E2FF65] text-xl font-bold">✓</span> Beğenmediğiniz içerikleri kolayca değiştirebilirsiniz.</span>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+                    <Button size="lg" className="bg-[#E2FF65] text-[#0b2117] hover:bg-[#d4f54e] rounded-full px-8 font-bold shadow-lg shadow-[#E2FF65]/20 py-6 text-lg" href="https://wa.me/905531832344">
+                        👉 Hemen İçerik Üretimine Başla
+                    </Button>
+                    <Button size="lg" variant="outline" className="rounded-full px-8 font-bold py-6 text-lg" onClick={() => setActiveTab('ai')}>
+                        👉 Paketleri İncele
+                    </Button>
+                </div>
 
                 {/* Tab Navigation */}
                 <div className="flex justify-center gap-2 mb-12">
@@ -191,7 +226,7 @@ const Pricing = () => {
                         onClick={() => setActiveTab('ai')}
                         className="rounded-full"
                     >
-                        AI Fotoğraf
+                        Sosyal Medya Görsel Üretimi
                     </Button>
                     <Button
                         variant={activeTab === 'eticaret' ? 'secondary' : 'ghost'}
@@ -238,43 +273,101 @@ const Pricing = () => {
                                 exit={{ opacity: 0, y: -20 }}
                                 className="flex flex-col gap-10"
                             >
-                                <div className="flex flex-col items-center mb-10">
+                                <div className="flex flex-col items-center mb-12">
                                     <div className="inline-flex items-center gap-3 px-2 py-1.5 pr-5 rounded-full bg-white dark:bg-bor-primary-900/50 border border-bor-secondary/30 shadow-sm text-sm font-medium transition-all hover:border-bor-secondary/60 duration-300 text-center flex-wrap justify-center text-bor-primary-900 dark:text-white">
                                         <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-bor-secondary text-bor-primary-900 text-xs font-bold tracking-wide uppercase">
                                             <span className="h-1.5 w-1.5 rounded-full bg-bor-primary-900 animate-pulse"></span>
                                             Kampanya
                                         </span> 
                                         <span>
-                                            Markanıza özel AI model eğitimi (Tek seferlik <span className="line-through opacity-50 mx-1">$49</span>) şu an <strong className="text-bor-secondary">ÜCRETSİZ</strong>
+                                            İlk ay %20 daha fazla içerik üretimi <strong className="text-bor-secondary">ÜCRETSİZ</strong>
                                         </span>
                                     </div>
-                                    <p className="mt-4 text-sm text-bor-primary-500 dark:text-bor-primary-400 max-w-xl text-center leading-relaxed">
-                                        Ürünlerinizin marka kimliğine ve DNA'sına uygun olarak yapay zekaya öğretilmesi işlemi kısa bir süreliğine ücretsizdir. <br className="hidden md:block" />
-                                        Sistemde gizli ücret yoktur; yalnızca ürettiğiniz görsel adedi kadar faturalandırılırsınız.
-                                    </p>
+                                    <div className="mt-6 text-center">
+                                        <h4 className="text-xl md:text-2xl font-bold font-display text-bor-primary-900 dark:text-white mb-3">
+                                            🎯 Markanıza özel içerik sistemi kurulumu HEDİYE
+                                        </h4>
+                                        <p className="text-base text-bor-primary-500 dark:text-bor-primary-400 max-w-xl mx-auto leading-relaxed">
+                                            Ürünlerinize ve markanıza uygun içerik sistemi kurulur. <br className="hidden md:block" />
+                                            Paylaşım yapmanız için hazır görseller düzenli olarak teslim edilir.
+                                        </p>
+                                    </div>
                                 </div>
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                                     {aiPlans.map((plan, i) => (
                                         <PricingCard key={i} plan={plan} />
                                     ))}
                                 </div>
                                 
-                                {/* Cost Calculator Banner CTA */}
-                                <div className="w-full bg-white dark:bg-bor-primary-900/50 rounded-3xl p-8 lg:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 dark:border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 transition-transform hover:-translate-y-1 duration-300">
+                                {/* Model Sistemi ve Ekstra Üretim */}
+                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mt-16 mb-6 text-left">
+                                    {/* Nasıl Çalışır? */}
+                                    <div className="bg-white dark:bg-bor-primary-900/40 rounded-3xl p-8 lg:p-10 border border-gray-100 dark:border-white/5 shadow-sm h-full">
+                                        <h3 className="text-2xl font-bold font-display text-bor-primary-900 dark:text-white mb-6">
+                                            👉 Nasıl Çalışır?
+                                        </h3>
+                                        <ul className="space-y-4 text-bor-primary-600 dark:text-bor-primary-300">
+                                            <li className="flex gap-4 items-start">
+                                                <span className="text-bor-secondary font-bold text-lg mt-0.5">1.</span>
+                                                <span className="leading-relaxed font-medium">Her içerik için markanıza özel sahne oluşturulur.</span>
+                                            </li>
+                                            <li className="flex gap-4 items-start">
+                                                <span className="text-bor-secondary font-bold text-lg mt-0.5">2.</span>
+                                                <span className="leading-relaxed font-medium">Bu sahne üzerinden 4 farklı alternatif görsel üretilir.</span>
+                                            </li>
+                                            <li className="flex gap-4 items-start">
+                                                <span className="text-bor-secondary font-bold text-lg mt-0.5">3.</span>
+                                                <span className="leading-relaxed font-medium">Bu sayede tek bir içerik için birden fazla seçenek sunulur.</span>
+                                            </li>
+                                            <li className="flex gap-4 items-start">
+                                                <span className="text-bor-secondary font-bold text-lg mt-0.5">4.</span>
+                                                <span className="leading-relaxed font-medium">Beğendiğiniz görselleri kullanabilir, beğenmediklerinizi revize edebilirsiniz.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    {/* Ekstra Üretim Bloğu */}
+                                    <div className="bg-[#E2FF65]/10 dark:bg-[#E2FF65]/5 rounded-3xl p-8 lg:p-10 border border-[#E2FF65]/30 shadow-sm relative overflow-hidden h-full flex flex-col justify-center">
+                                        <div className="relative z-10">
+                                            <h3 className="text-2xl font-bold font-display text-bor-primary-900 dark:text-white mb-3">
+                                                👉 Ek Görsel ve Web İçerikleri
+                                            </h3>
+                                            <p className="text-bor-primary-600 dark:text-bor-primary-300 mb-8 text-base">
+                                                Paket dışında ihtiyacınız olan tüm görselleri esnek şekilde satın alabilirsiniz.
+                                            </p>
+                                            <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center justify-between">
+                                                <ul className="space-y-3 text-bor-primary-600 dark:text-bor-primary-300 font-medium">
+                                                    <li className="flex items-center gap-3"><span className="text-[#86AA00] dark:text-[#E2FF65]">✓</span> Web banner</li>
+                                                    <li className="flex items-center gap-3"><span className="text-[#86AA00] dark:text-[#E2FF65]">✓</span> Kampanya görselleri</li>
+                                                    <li className="flex items-center gap-3"><span className="text-[#86AA00] dark:text-[#E2FF65]">✓</span> Ürün sayfası içerikleri</li>
+                                                    <li className="flex items-center gap-3"><span className="text-[#86AA00] dark:text-[#E2FF65]">✓</span> Ek sosyal medya içerikleri</li>
+                                                </ul>
+                                                <div className="bg-white dark:bg-bor-primary-900 rounded-2xl p-6 text-center min-w-[180px] shadow-sm border border-gray-100 dark:border-white/10 mt-4 sm:mt-0">
+                                                    <div className="text-sm text-bor-primary-500 uppercase tracking-wider font-bold mb-2">Ek Üretim</div>
+                                                    <div className="text-3xl font-bold font-display text-bor-primary-900 dark:text-white">120 TL</div>
+                                                    <div className="text-sm text-bor-primary-500 mt-1">/ içerik (4 görsel)</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Kararsızım Bloğu */}
+                                <div className="w-full bg-white dark:bg-bor-primary-900/50 rounded-3xl p-8 lg:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 dark:border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 transition-transform hover:-translate-y-1 duration-300 mt-8">
                                     <div className="text-left flex-1">
                                         <h3 className="text-2xl lg:text-3xl font-bold font-display text-gray-900 dark:text-white mb-3">
-                                            Hangi paketin size uygun olduğundan emin değil misiniz?
+                                            👉 Hangi paketin size uygun olduğundan emin değil misiniz?
                                         </h3>
                                         <p className="text-gray-500 dark:text-gray-400 text-lg">
-                                            AI üretim maliyet hesaplama motorumuzu kullanarak projenizin tahmini bütçesini anında görün.
+                                            İhtiyacınıza göre en uygun içerik planını birlikte belirleyelim.
                                         </p>
                                     </div>
                                     <Button 
                                         size="lg" 
-                                        className="w-full md:w-auto md:min-w-[280px] text-lg py-6 bg-bor-secondary text-white hover:bg-bor-secondary/90 shadow-xl shadow-bor-secondary/20"
-                                        href="/fiyat-hesapla"
+                                        className="w-full md:w-auto md:min-w-[280px] text-lg py-6 bg-[#E2FF65] text-[#0b2117] hover:bg-[#d4f54e] shadow-xl shadow-[#E2FF65]/20 font-bold"
+                                        href="https://wa.me/905531832344"
                                     >
-                                        En Uygun Paketi Hesapla
+                                        👉 Ücretsiz Danışmanlık Al
                                     </Button>
                                 </div>
 
@@ -331,18 +424,18 @@ const Pricing = () => {
 
                     <div className="relative z-10 max-w-xl text-center md:text-left">
                         <h2 className="text-5xl lg:text-7xl font-bold font-display leading-tight tracking-tight text-[#F4EFE6] mb-8 text-left">
-                            Mağazanızın geleceği <br />
-                            <span className="italic font-light text-[#E2FF65]">bir mesaj uzağınızda</span>
+                            Sosyal medyada her gün <br />
+                            <span className="italic font-light text-[#E2FF65]">paylaşım yapmaya hazır mısınız?</span>
                         </h2>
                         <p className="text-[#a8b8af] mb-10 text-lg text-left">
-                            Hemen bir ücretsiz danışmanlık görüşmesi planlayalım ve dijital hedeflerinizi global standartlarda gerçeğe dönüştürelim.
+                            İçerik üretimini bize bırakın, siz işinizi büyütün.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center gap-6 justify-center md:justify-start">
                             <button 
                                 onClick={() => window.location.href = 'https://wa.me/905531832344'}
                                 className="bg-[#E2FF65] text-[#0b2117] hover:bg-[#d4f54e] transition-all duration-300 rounded-full px-10 py-5 text-lg font-bold flex items-center gap-3 group"
                             >
-                                İş Birliğine Başlayalım
+                                👉 Hemen Başlayalım
                                 <ChevronRight className="group-hover:translate-x-1 transition-transform" />
                             </button>
                             <a href="mailto:bilgi@pikselai.com" className="text-[#F4EFE6] font-medium border-b border-[#F4EFE6]/30 hover:border-[#E2FF65] hover:text-[#E2FF65] transition-all pb-1 flex items-center gap-2">
@@ -380,6 +473,7 @@ interface PricingPlan {
     cta: string;
     featured?: boolean;
     isPremium?: boolean;
+    bottomMessage?: string;
 }
 
 function PricingCard({ plan }: { plan: PricingPlan }) {
@@ -390,7 +484,7 @@ function PricingCard({ plan }: { plan: PricingPlan }) {
                     En Popüler
                 </div>
             )}
-            <CardHeader className="pt-8">
+            <CardHeader className="pt-8 pb-4">
                 <CardTitle className="text-2xl font-bold !font-sans tracking-tight text-bor-primary-900 dark:text-white">{plan.name}</CardTitle>
                 <div className="mt-4 flex items-baseline gap-1">
                     <span className="text-4xl font-extrabold tracking-tight text-bor-primary-900 dark:text-white">
@@ -398,11 +492,11 @@ function PricingCard({ plan }: { plan: PricingPlan }) {
                     </span>
                     {plan.suffix && <span className="text-sm font-medium text-bor-primary-500">{plan.suffix}</span>}
                 </div>
-                <CardDescription className="mt-3 text-sm text-bor-primary-500 dark:text-bor-primary-400 leading-relaxed">
+                <CardDescription className="mt-3 text-sm text-bor-primary-500 dark:text-bor-primary-400 leading-relaxed min-h-[40px]">
                     {plan.description}
                 </CardDescription>
             </CardHeader>
-            <CardContent className="flex-1 pb-8">
+            <CardContent className="flex-1 pb-6">
                 <ul className="space-y-4 text-sm text-bor-primary-600 dark:text-bor-primary-300">
                     {plan.features.map((feature: string, i: number) => (
                         <li key={i} className="flex gap-3 items-start">
@@ -412,14 +506,21 @@ function PricingCard({ plan }: { plan: PricingPlan }) {
                     ))}
                 </ul>
             </CardContent>
-            <CardFooter className="pb-8">
+            <CardFooter className="pb-8 flex-col gap-4 items-stretch">
                 <Button
-                    className={`w-full py-6 text-base font-semibold ${plan.featured ? 'bg-[#E2FF65] text-bor-primary-900 hover:bg-[#d4f54e] shadow-lg shadow-[#E2FF65]/20 border-none' : ''}`}
+                    className={`w-full py-6 text-base font-bold ${plan.featured ? 'bg-[#E2FF65] text-bor-primary-900 hover:bg-[#d4f54e] shadow-lg shadow-[#E2FF65]/20 border-none' : ''}`}
                     variant={plan.featured ? 'outline' : 'outline'}
-                    href="https://wa.me/905531832344" // WhatsApp linki eklendi
+                    href="https://wa.me/905531832344"
                 >
                     {plan.cta}
                 </Button>
+                {plan.bottomMessage && (
+                    <div className="w-full mt-1">
+                        <span className="text-xs font-medium text-bor-primary-600 dark:text-bor-primary-400 bg-gray-50 dark:bg-white/5 py-2.5 px-3 rounded-xl block border border-gray-100 dark:border-white/5 text-center leading-tight">
+                            💬 {plan.bottomMessage}
+                        </span>
+                    </div>
+                )}
             </CardFooter>
         </Card>
     )

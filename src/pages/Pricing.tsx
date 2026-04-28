@@ -334,23 +334,24 @@ const Pricing = () => {
                                         <div className="bg-gray-50 dark:bg-white/5 p-4 rounded-xl border border-gray-100 dark:border-white/10 mb-6 flex items-center gap-3">
                                             <span className="text-2xl">💡</span>
                                             <p className="text-sm text-bor-primary-600 dark:text-bor-primary-300 font-medium leading-relaxed">
-                                                <strong className="text-bor-primary-900 dark:text-white">“İçerik”</strong> = 1 paylaşım için üretilen görsellerdir.
+                                                <strong className="text-bor-primary-900 dark:text-white">“İçerik”</strong> kelimesi, 1 sosyal medya paylaşımını (post) ifade eder.
                                             </p>
-                                        </div>
-                                        <div className="font-medium text-bor-primary-900 dark:text-white mb-4 flex items-center gap-2 border-b border-gray-100 dark:border-white/5 pb-4">
-                                            <span className="text-[#86AA00] dark:text-[#E2FF65]">👉</span> Her içerik = 1 sosyal medya paylaşımı (post)
                                         </div>
                                         <ul className="space-y-4 text-bor-primary-600 dark:text-bor-primary-300 mt-2">
                                             <li className="flex gap-4 items-start">
                                                 <span className="text-bor-secondary font-bold text-lg mt-0.5">1.</span>
-                                                <span className="leading-relaxed font-medium">Markanıza özel sahne oluşturularak aynı sahneden 4 farklı pozda görsel üretilir.</span>
+                                                <span className="leading-relaxed font-medium">Markanıza özel sahne oluşturulur.</span>
                                             </li>
                                             <li className="flex gap-4 items-start">
                                                 <span className="text-bor-secondary font-bold text-lg mt-0.5">2.</span>
-                                                <span className="leading-relaxed font-medium">En beğendiğinizi kullanırsınız.</span>
+                                                <span className="leading-relaxed font-medium">Aynı sahneden 4 farklı açıda görsel üretilir.</span>
                                             </li>
                                             <li className="flex gap-4 items-start">
                                                 <span className="text-bor-secondary font-bold text-lg mt-0.5">3.</span>
+                                                <span className="leading-relaxed font-medium">En beğendiğinizi kullanırsınız.</span>
+                                            </li>
+                                            <li className="flex gap-4 items-start">
+                                                <span className="text-bor-secondary font-bold text-lg mt-0.5">4.</span>
                                                 <span className="leading-relaxed font-medium">Beğenmediklerinizi revize edebilirsiniz.</span>
                                             </li>
                                         </ul>

@@ -33,9 +33,9 @@ const aiPlans = [
         description: 'Sosyal medyada içerik üretimini denemek isteyenler için',
         features: [
             'Aylık 15 paylaşım (post) için içerik üretimi',
-            'Her içerik için 4 görsel (toplam 60 görsel)',
-            'Sınırlı kullanım',
-            '5 revize hakkı'
+            'Her içerik için 4 alternatif (60 görsel)',
+            '5 revize hakkı (+20 görsel)',
+            'Aylık toplam 80 görsel teslimi'
         ],
         cta: 'Paketi Seç',
         bottomMessage: 'Küçük işletmeler ve deneme süreci için'
@@ -48,9 +48,9 @@ const aiPlans = [
         features: [
             'Günlük 2 post paylaşımına uygun içerik üretimi',
             'Aylık 60 içerik (240 görsel)',
-            'Her içerik için 4 alternatif',
+            '15 revize hakkı (+60 görsel)',
+            'Aylık toplam 300 görsel teslimi',
             'Story için geniş içerik havuzu',
-            '15 revize hakkı',
             'Tutarlı marka görünümü'
         ],
         cta: 'Paketi Seç',
@@ -65,10 +65,10 @@ const aiPlans = [
         features: [
             'Günlük 3 post paylaşımına uygun içerik üretimi',
             'Aylık 90 içerik (360 görsel)',
-            'Gelişmiş sahne ve varyasyon',
+            '25 revize hakkı (+100 görsel)',
+            'Aylık toplam 460 görsel teslimi',
             'Story için geniş içerik havuzu',
             'Kampanya içerikleri',
-            '25 revize hakkı',
             'Öncelikli üretim'
         ],
         cta: 'Paketi Seç',

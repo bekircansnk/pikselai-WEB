@@ -32,7 +32,7 @@ const aiPlans = [
         suffix: '/ ay',
         description: 'Sosyal medyada içerik üretimini denemek isteyenler için',
         features: [
-            'Aylık 15 içerik üretimi',
+            'Aylık 15 paylaşım (post) için içerik üretimi',
             'Her içerik için 4 görsel (toplam 60 görsel)',
             'Sınırlı kullanım',
             '5 revize hakkı'
@@ -46,7 +46,7 @@ const aiPlans = [
         suffix: '/ ay',
         description: 'Günlük paylaşım yapan markalar için en ideal paket',
         features: [
-            'Günlük 2 içerik üretimi',
+            'Günlük 2 post paylaşımına uygun içerik üretimi',
             'Aylık 60 içerik (240 görsel)',
             'Her içerik için 4 alternatif',
             'Story için geniş içerik havuzu',
@@ -55,7 +55,7 @@ const aiPlans = [
         ],
         cta: 'Paketi Seç',
         featured: true,
-        bottomMessage: 'Sayfanız hiçbir zaman boş kalmaz'
+        bottomMessage: 'Günlük düzenli paylaşım yapan markalar için en ideal kullanım'
     },
     {
         name: 'Profesyonel',
@@ -63,7 +63,7 @@ const aiPlans = [
         suffix: '/ ay',
         description: 'Sosyal medyada hızlı büyümek isteyen markalar için',
         features: [
-            'Günlük 3 içerik üretimi',
+            'Günlük 3 post paylaşımına uygun içerik üretimi',
             'Aylık 90 içerik (360 görsel)',
             'Gelişmiş sahne ve varyasyon',
             'Story için geniş içerik havuzu',
@@ -157,12 +157,12 @@ const catalogFaqs = [
 ];
 
 const aiFaqs = [
+    { q: "Günde kaç paylaşım yapabilirim?", a: "Seçtiğiniz pakete göre günlük paylaşım yapabileceğiniz içerikler üretilir." },
     { q: "Görseller nasıl üretiliyor?", a: "Her içerik için markanıza uygun sahne oluşturulur ve 4 farklı alternatif görsel hazırlanır." },
     { q: "Beğenmediğim görseller ne olacak?", a: "Paket kapsamında belirlenen revize hakkınızı kullanarak yeni görseller talep edebilirsiniz." },
-    { q: "Revize ne demek?", a: "Revize, bir içerik için yeniden üretim yapılmasıdır. Her revize ile 4 yeni görsel hazırlanır." },
-    { q: "Günlük paylaşım için yeterli olur mu?", a: "Evet. Paketler günlük paylaşım ihtiyacınıza göre planlanmıştır." },
+    { q: "Revize ne demek?", a: "Revize, bir içerik için yeniden üretim yapılmasıdır. Her revizede 4 yeni görsel hazırlanır." },
     { q: "Sosyal medya yönetimi de dahil mi?", a: "Hayır. Bu hizmet sadece görsel içerik üretimini kapsar." },
-    { q: "Ek görsel istersem?", a: "İstediğiniz kadar ek içerik satın alabilirsiniz. Ek üretim: 120 TL / içerik (4 görsel)." }
+    { q: "Ek görsel istersem?", a: "İstediğiniz kadar ek içerik satın alabilirsiniz. Ek üretim: 120 TL / içerik (4 alternatif görsel dahil)." }
 ];
 
 const ecommerceFaqs = [
@@ -181,10 +181,11 @@ const heroContent = {
     ai: {
         title: "Sosyal Medyanız İçin",
         titleHighlight: "Her Gün Hazır İçerik",
-        description: "Her gün paylaşacak görsel bulma derdini bitirin. Markanıza özel yapay zeka destekli içerikleri biz üretelim.",
+        description: "Her gün paylaşım yapabilmeniz için ihtiyacınız olan tüm görselleri düzenli olarak üretiyoruz.",
         features: [
-            "Her içerik için 4 farklı alternatif görsel üretilir.",
-            "Beğenmediğiniz içerikleri kolayca değiştirebilirsiniz."
+            "Günlük paylaşım için hazır içerikler",
+            "Her içerik için 4 alternatif görsel",
+            "Beğenmediğin içerikleri kolayca değiştir"
         ]
     },
     eticaret: {
@@ -326,29 +327,35 @@ const Pricing = () => {
                                 {/* Model Sistemi ve Ekstra Üretim */}
                                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mt-16 mb-6 text-left">
                                     {/* Nasıl Çalışır? */}
-                                    <div className="bg-white dark:bg-bor-primary-900/40 rounded-3xl p-8 lg:p-10 border border-gray-100 dark:border-white/5 shadow-sm h-full">
-                                        <h3 className="text-2xl font-bold font-display text-bor-primary-900 dark:text-white mb-3">
+                                    <div className="bg-white dark:bg-bor-primary-900/40 rounded-3xl p-8 lg:p-10 border border-gray-100 dark:border-white/5 shadow-sm h-full flex flex-col">
+                                        <h3 className="text-2xl font-bold font-display text-bor-primary-900 dark:text-white mb-4">
                                             👉 Nasıl Çalışır?
                                         </h3>
-                                        <p className="text-sm text-bor-primary-500 mb-6 font-medium leading-relaxed bg-gray-50 dark:bg-white/5 p-3.5 rounded-xl border border-gray-100 dark:border-white/10">
-                                            💡 Buradaki <strong className="text-bor-primary-900 dark:text-white">"içerik"</strong> kelimesi, sosyal medyada paylaşacağınız 1 adet post (fotoğraf) gönderisini ifade eder. Örneğin günlük 2 içerik, günde 2 ayrı post atabileceğiniz anlamına gelir.
-                                        </p>
-                                        <ul className="space-y-4 text-bor-primary-600 dark:text-bor-primary-300">
+                                        <div className="bg-gray-50 dark:bg-white/5 p-4 rounded-xl border border-gray-100 dark:border-white/10 mb-6 flex items-center gap-3">
+                                            <span className="text-2xl">💡</span>
+                                            <p className="text-sm text-bor-primary-600 dark:text-bor-primary-300 font-medium leading-relaxed">
+                                                <strong className="text-bor-primary-900 dark:text-white">“İçerik”</strong> = 1 paylaşım için üretilen görsellerdir.
+                                            </p>
+                                        </div>
+                                        <div className="font-medium text-bor-primary-900 dark:text-white mb-4 flex items-center gap-2 border-b border-gray-100 dark:border-white/5 pb-4">
+                                            <span className="text-[#86AA00] dark:text-[#E2FF65]">👉</span> Her içerik = 1 sosyal medya paylaşımı (post)
+                                        </div>
+                                        <ul className="space-y-4 text-bor-primary-600 dark:text-bor-primary-300 mt-2">
                                             <li className="flex gap-4 items-start">
                                                 <span className="text-bor-secondary font-bold text-lg mt-0.5">1.</span>
-                                                <span className="leading-relaxed font-medium">Her içerik için markanıza özel sahne oluşturulur.</span>
+                                                <span className="leading-relaxed font-medium">Markanıza özel sahne oluşturulur.</span>
                                             </li>
                                             <li className="flex gap-4 items-start">
                                                 <span className="text-bor-secondary font-bold text-lg mt-0.5">2.</span>
-                                                <span className="leading-relaxed font-medium">Bu sahne üzerinden 4 farklı alternatif görsel üretilir.</span>
+                                                <span className="leading-relaxed font-medium">Aynı sahneden 4 farklı görsel üretilir.</span>
                                             </li>
                                             <li className="flex gap-4 items-start">
                                                 <span className="text-bor-secondary font-bold text-lg mt-0.5">3.</span>
-                                                <span className="leading-relaxed font-medium">Bu sayede tek bir içerik için birden fazla seçenek sunulur.</span>
+                                                <span className="leading-relaxed font-medium">En beğendiğinizi kullanırsınız.</span>
                                             </li>
                                             <li className="flex gap-4 items-start">
                                                 <span className="text-bor-secondary font-bold text-lg mt-0.5">4.</span>
-                                                <span className="leading-relaxed font-medium">Beğendiğiniz görselleri kullanabilir, beğenmediklerinizi revize edebilirsiniz.</span>
+                                                <span className="leading-relaxed font-medium">Beğenmediklerinizi revize edebilirsiniz.</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -356,11 +363,12 @@ const Pricing = () => {
                                     {/* Ekstra Üretim Bloğu */}
                                     <div className="bg-[#E2FF65]/10 dark:bg-[#E2FF65]/5 rounded-3xl p-8 lg:p-10 border border-[#E2FF65]/30 shadow-sm relative overflow-hidden h-full flex flex-col justify-center">
                                         <div className="relative z-10">
-                                            <h3 className="text-2xl font-bold font-display text-bor-primary-900 dark:text-white mb-3">
-                                                👉 Ek Görsel ve Web İçerikleri
+                                            <h3 className="text-2xl font-bold font-display text-bor-primary-900 dark:text-white mb-3 flex flex-col gap-1">
+                                                <span>👉 Ek Görsel İhtiyaçları</span>
+                                                <span className="text-lg opacity-80 font-medium text-bor-primary-600 dark:text-bor-primary-400">(İstediğin kadar üretim)</span>
                                             </h3>
                                             <p className="text-bor-primary-600 dark:text-bor-primary-300 mb-8 text-base">
-                                                Paket dışında ihtiyacınız olan tüm görselleri esnek şekilde satın alabilirsiniz.
+                                                Paket dışında ihtiyacınız olan tüm görselleri esnek şekilde üretebilirsiniz.
                                             </p>
                                             <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center justify-between">
                                                 <ul className="space-y-3 text-bor-primary-600 dark:text-bor-primary-300 font-medium">
@@ -370,32 +378,13 @@ const Pricing = () => {
                                                     <li className="flex items-center gap-3"><span className="text-[#86AA00] dark:text-[#E2FF65]">✓</span> Ek sosyal medya içerikleri</li>
                                                 </ul>
                                                 <div className="bg-white dark:bg-bor-primary-900 rounded-2xl p-6 text-center min-w-[180px] shadow-sm border border-gray-100 dark:border-white/10 mt-4 sm:mt-0">
-                                                    <div className="text-sm text-bor-primary-500 uppercase tracking-wider font-bold mb-2">Ek Üretim</div>
                                                     <div className="text-3xl font-bold font-display text-bor-primary-900 dark:text-white">120 TL</div>
-                                                    <div className="text-sm text-bor-primary-500 mt-1">/ içerik (4 görsel)</div>
+                                                    <div className="text-sm font-bold text-bor-primary-500 mt-1 uppercase tracking-wider">/ içerik</div>
+                                                    <div className="text-xs text-bor-primary-400 mt-1">(4 alternatif görsel dahil)</div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-
-                                {/* Kararsızım Bloğu */}
-                                <div className="w-full bg-white dark:bg-bor-primary-900/50 rounded-3xl p-8 lg:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 dark:border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 transition-transform hover:-translate-y-1 duration-300 mt-8">
-                                    <div className="text-left flex-1">
-                                        <h3 className="text-2xl lg:text-3xl font-bold font-display text-gray-900 dark:text-white mb-3">
-                                            👉 Hangi paketin size uygun olduğundan emin değil misiniz?
-                                        </h3>
-                                        <p className="text-gray-500 dark:text-gray-400 text-lg">
-                                            İhtiyacınıza göre en uygun içerik planını birlikte belirleyelim.
-                                        </p>
-                                    </div>
-                                    <Button 
-                                        size="lg" 
-                                        className="w-full md:w-auto md:min-w-[280px] text-lg py-6 bg-[#E2FF65] text-[#0b2117] hover:bg-[#d4f54e] shadow-xl shadow-[#E2FF65]/20 font-bold"
-                                        href="https://wa.me/905531832344"
-                                    >
-                                        👉 Ücretsiz Danışmanlık Al
-                                    </Button>
                                 </div>
 
                                 <FaqSection faqs={aiFaqs} />
@@ -451,11 +440,10 @@ const Pricing = () => {
 
                     <div className="relative z-10 max-w-xl text-center md:text-left">
                         <h2 className="text-5xl lg:text-7xl font-bold font-display leading-tight tracking-tight text-[#F4EFE6] mb-8 text-left">
-                            Sosyal medyada her gün <br />
-                            <span className="italic font-light text-[#E2FF65]">paylaşım yapmaya hazır mısınız?</span>
+                            Her gün <span className="italic font-light text-[#E2FF65]">paylaşım yapmaya</span> hazır mısınız?
                         </h2>
                         <p className="text-[#a8b8af] mb-10 text-lg text-left">
-                            İçerik üretimini bize bırakın, siz işinizi büyütün.
+                            Düzenli paylaşım yaparak markanızı büyütmeye bugün başlayın.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center gap-6 justify-center md:justify-start">
                             <button 

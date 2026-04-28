@@ -66,6 +66,7 @@ const aiPlans = [
             'Günlük 3 içerik üretimi',
             'Aylık 90 içerik (360 görsel)',
             'Gelişmiş sahne ve varyasyon',
+            'Story için geniş içerik havuzu',
             'Kampanya içerikleri',
             '25 revize hakkı',
             'Öncelikli üretim'
@@ -326,9 +327,12 @@ const Pricing = () => {
                                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mt-16 mb-6 text-left">
                                     {/* Nasıl Çalışır? */}
                                     <div className="bg-white dark:bg-bor-primary-900/40 rounded-3xl p-8 lg:p-10 border border-gray-100 dark:border-white/5 shadow-sm h-full">
-                                        <h3 className="text-2xl font-bold font-display text-bor-primary-900 dark:text-white mb-6">
+                                        <h3 className="text-2xl font-bold font-display text-bor-primary-900 dark:text-white mb-3">
                                             👉 Nasıl Çalışır?
                                         </h3>
+                                        <p className="text-sm text-bor-primary-500 mb-6 font-medium leading-relaxed bg-gray-50 dark:bg-white/5 p-3.5 rounded-xl border border-gray-100 dark:border-white/10">
+                                            💡 Buradaki <strong className="text-bor-primary-900 dark:text-white">"içerik"</strong> kelimesi, sosyal medyada paylaşacağınız 1 adet post (fotoğraf) gönderisini ifade eder. Örneğin günlük 2 içerik, günde 2 ayrı post atabileceğiniz anlamına gelir.
+                                        </p>
                                         <ul className="space-y-4 text-bor-primary-600 dark:text-bor-primary-300">
                                             <li className="flex gap-4 items-start">
                                                 <span className="text-bor-secondary font-bold text-lg mt-0.5">1.</span>

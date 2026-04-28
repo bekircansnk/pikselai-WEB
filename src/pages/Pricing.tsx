@@ -176,6 +176,45 @@ const creativeFaqs = [
     { q: "Teslimat sonrası teknik destek veriyor musunuz?", a: "Elbette. Proje tesliminden sonra oluşabilecek teknik sorunlar için standart olarak ilk 1 ay ücretsiz destek sağlıyor, sonrasında dilerseniz aylık bakım paketlerimizle yanınızda olmaya devam ediyoruz." }
 ];
 
+const heroContent = {
+    ai: {
+        title: "Sosyal Medyanız İçin",
+        titleHighlight: "Her Gün Hazır İçerik",
+        description: "Her gün paylaşacak görsel bulma derdini bitirin. Markanıza özel yapay zeka destekli içerikleri biz üretelim.",
+        features: [
+            "Her içerik için 4 farklı alternatif görsel üretilir.",
+            "Beğenmediğiniz içerikleri kolayca değiştirebilirsiniz."
+        ]
+    },
+    eticaret: {
+        title: "Satışa Hazır Özel",
+        titleHighlight: "E-Ticaret Mağazaları",
+        description: "Shopify altyapısı ve yapay zeka gücüyle dönüşüm oranı yüksek, modern ve satış odaklı online mağazalar kuruyoruz.",
+        features: [
+            "Baştan sona anahtar teslim Shopify kurulumu.",
+            "Markanıza özel yüksek dönüşümlü modern tasarım."
+        ]
+    },
+    kreatif: {
+        title: "Markanızı Büyüten",
+        titleHighlight: "Kreatif Web Çözümleri",
+        description: "Dönüşüm odaklı açılış sayfalarından kapsamlı kurumsal sitelere kadar, markanızın dijital yüzünü modern standartlarda tasarlıyoruz.",
+        features: [
+            "Kullanıcı deneyimi (UI/UX) odaklı özel tasarım.",
+            "Yüksek performanslı, hızlı ve SEO uyumlu altyapı."
+        ]
+    },
+    katalog: {
+        title: "Profesyonel ve Sınırsız",
+        titleHighlight: "Dijital Katalog Çözümü",
+        description: "Ürünlerinizi en iyi şekilde sergileyebileceğiniz, PWA destekli ve mobil uyumlu dijital katalog sistemine tek seferlik ödemeyle sahip olun.",
+        features: [
+            "Sınırsız kategori, albüm ve görsel kapasitesi.",
+            "Herhangi bir aylık komisyon veya abonelik ücreti yok."
+        ]
+    }
+};
+
 const Pricing = () => {
     const [activeTab, setActiveTab] = useState<'katalog' | 'ai' | 'eticaret' | 'kreatif'>('ai');
 
@@ -189,28 +228,31 @@ const Pricing = () => {
 
             {/* Hero Section */}
             <Section className="py-24 text-center" mood="light">
-                <h1 className="text-5xl md:text-7xl font-bold font-display leading-tight tracking-tight text-bor-primary-900 dark:text-white mb-6">
-                    Sosyal Medyanız İçin <br className="hidden lg:block" />
-                    <span className="italic font-light text-[#86AA00] dark:text-[#E2FF65]">Her Gün Hazır İçerik</span>
-                </h1>
-                <p className="text-lg md:text-xl font-light text-bor-primary-600 dark:text-bor-primary-400 leading-relaxed max-w-2xl mx-auto mb-4">
-                    Her gün paylaşacak görsel bulma derdini bitirin. <br className="hidden md:block" />
-                    Markanıza özel yapay zeka destekli içerikleri biz üretelim.
-                </p>
-                
-                <div className="flex flex-col items-center justify-center gap-3 mb-10 text-sm md:text-base font-medium text-bor-primary-600 dark:text-bor-primary-300 bg-bor-secondary/10 dark:bg-bor-secondary/5 py-5 px-8 rounded-3xl border border-bor-secondary/20 max-w-xl mx-auto text-left w-full shadow-sm">
-                    <span className="flex items-center gap-3 w-full"><span className="text-[#86AA00] dark:text-[#E2FF65] text-xl font-bold">✓</span> Her içerik için 4 farklı alternatif görsel üretilir.</span>
-                    <span className="flex items-center gap-3 w-full"><span className="text-[#86AA00] dark:text-[#E2FF65] text-xl font-bold">✓</span> Beğenmediğiniz içerikleri kolayca değiştirebilirsiniz.</span>
-                </div>
-
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-                    <Button size="lg" className="bg-[#E2FF65] text-[#0b2117] hover:bg-[#d4f54e] rounded-full px-8 font-bold shadow-lg shadow-[#E2FF65]/20 py-6 text-lg" href="https://wa.me/905531832344">
-                        👉 Hemen İçerik Üretimine Başla
-                    </Button>
-                    <Button size="lg" variant="outline" className="rounded-full px-8 font-bold py-6 text-lg" onClick={() => setActiveTab('ai')}>
-                        👉 Paketleri İncele
-                    </Button>
-                </div>
+                <AnimatePresence mode="wait">
+                    <motion.div
+                        key={activeTab}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.3 }}
+                    >
+                        <h1 className="text-5xl md:text-7xl font-bold font-display leading-tight tracking-tight text-bor-primary-900 dark:text-white mb-6">
+                            {heroContent[activeTab].title} <br className="hidden lg:block" />
+                            <span className="italic font-light text-[#86AA00] dark:text-[#E2FF65]">{heroContent[activeTab].titleHighlight}</span>
+                        </h1>
+                        <p className="text-lg md:text-xl font-light text-bor-primary-600 dark:text-bor-primary-400 leading-relaxed max-w-2xl mx-auto mb-6">
+                            {heroContent[activeTab].description}
+                        </p>
+                        
+                        <div className="flex flex-col items-center justify-center gap-3 mb-12 text-sm md:text-base font-medium text-bor-primary-600 dark:text-bor-primary-300 bg-bor-secondary/10 dark:bg-bor-secondary/5 py-5 px-8 rounded-3xl border border-bor-secondary/20 max-w-xl mx-auto text-left w-full shadow-sm">
+                            {heroContent[activeTab].features.map((feature, idx) => (
+                                <span key={idx} className="flex items-center gap-3 w-full">
+                                    <span className="text-[#86AA00] dark:text-[#E2FF65] text-xl font-bold">✓</span> {feature}
+                                </span>
+                            ))}
+                        </div>
+                    </motion.div>
+                </AnimatePresence>
 
                 {/* Tab Navigation */}
                 <div className="flex justify-center gap-2 mb-12">
@@ -273,26 +315,7 @@ const Pricing = () => {
                                 exit={{ opacity: 0, y: -20 }}
                                 className="flex flex-col gap-10"
                             >
-                                <div className="flex flex-col items-center mb-12">
-                                    <div className="inline-flex items-center gap-3 px-2 py-1.5 pr-5 rounded-full bg-white dark:bg-bor-primary-900/50 border border-bor-secondary/30 shadow-sm text-sm font-medium transition-all hover:border-bor-secondary/60 duration-300 text-center flex-wrap justify-center text-bor-primary-900 dark:text-white">
-                                        <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-bor-secondary text-bor-primary-900 text-xs font-bold tracking-wide uppercase">
-                                            <span className="h-1.5 w-1.5 rounded-full bg-bor-primary-900 animate-pulse"></span>
-                                            Kampanya
-                                        </span> 
-                                        <span>
-                                            İlk ay %20 daha fazla içerik üretimi <strong className="text-bor-secondary">ÜCRETSİZ</strong>
-                                        </span>
-                                    </div>
-                                    <div className="mt-6 text-center">
-                                        <h4 className="text-xl md:text-2xl font-bold font-display text-bor-primary-900 dark:text-white mb-3">
-                                            🎯 Markanıza özel içerik sistemi kurulumu HEDİYE
-                                        </h4>
-                                        <p className="text-base text-bor-primary-500 dark:text-bor-primary-400 max-w-xl mx-auto leading-relaxed">
-                                            Ürünlerinize ve markanıza uygun içerik sistemi kurulur. <br className="hidden md:block" />
-                                            Paylaşım yapmanız için hazır görseller düzenli olarak teslim edilir.
-                                        </p>
-                                    </div>
-                                </div>
+
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                                     {aiPlans.map((plan, i) => (
                                         <PricingCard key={i} plan={plan} />

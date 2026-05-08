@@ -17,7 +17,7 @@ interface SEOHeadProps {
 }
 
 const SITE_URL = 'https://pikselai.com'
-const DEFAULT_OG_IMAGE = `${SITE_URL}/branding/full-logo-dark-v2.webp`
+const DEFAULT_OG_IMAGE = `${SITE_URL}/assets/common/full-logo-dark-v2.webp`
 const SITE_NAME = 'Pikselai'
 
 export function SEOHead({
@@ -112,7 +112,7 @@ export function createArticleSchema({
             name: SITE_NAME,
             logo: {
                 '@type': 'ImageObject',
-                url: `${SITE_URL}/branding/logo-dark-v2.webp`
+                url: `${SITE_URL}/assets/common/logo-dark-v2.webp`
             }
         },
         mainEntityOfPage: {

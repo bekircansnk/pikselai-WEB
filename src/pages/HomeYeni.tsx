@@ -406,7 +406,7 @@ const Home = () => {
           '@type': 'Organization',
           'name': 'Pikselai',
           'url': 'https://pikselai.com',
-          'logo': 'https://pikselai.com/branding/logo-dark-v2.webp',
+          'logo': 'https://pikselai.com/assets/common/logo-dark-v2.webp',
           'description': 'Yapay zeka destekli kreatif üretim, e-ticaret yönetimi ve dijital çözümler sunan profesyonel dijital ajans.',
           'contactPoint': {
             '@type': 'ContactPoint',

@@ -7,22 +7,59 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { SEOHead } from '../components/seo/SEOHead';
 import { ChevronRight, MessageSquare, TrendingUp } from 'lucide-react';
 
-// Profesyonel Katalog Paketi (Sabit)
-const catalogPlan = {
-    name: 'Profesyonel Katalog',
-    price: '₺15.000',
-    suffix: '/ tek seferlik',
-    description: 'Kendi fotoğraflarını kullanmak isteyen işletmeler için profesyonel katalog çözümü.',
-    features: [
-        'Sınırsız albüm oluşturma',
-        'Mobil uyumlu modern tasarım',
-        'Hızlı arama ve filtreleme',
-        'Video ve medya desteği',
-        'PWA (uygulama olarak yükleme)',
-        'Tek seferlik ödeme – süresiz kullanım'
-    ],
-    cta: 'Paketi Seç'
-};
+// Katalog Üretim Paketleri
+const catalogPackages = [
+    {
+        name: 'Başlangıç',
+        price: '₺3.000',
+        suffix: '/ proje',
+        description: 'Butik koleksiyonlar için ideal stüdyo kalitesi.',
+        features: [
+            '20 Ürün / Varyasyon Üretimi (Ürün başı ₺150)',
+            'Seçili 1 Arka Plan Stüdyosu',
+            'Stüdyo Kalitesinde Çıktı'
+        ],
+        cta: 'Hemen Başla'
+    },
+    {
+        name: 'Popüler Katalog',
+        price: '₺9.000',
+        suffix: '/ proje',
+        description: 'Orta ölçekli lansmanlar için en çok tercih edilen paket.',
+        features: [
+            '75 Ürün / Varyasyon Üretimi (Ürün başı ₺120)',
+            'Seçili 2 Arka Plan Stüdyosu',
+            'Öncelikli Üretim Sırası'
+        ],
+        cta: 'Hemen Başla',
+        featured: true
+    },
+    {
+        name: 'Profesyonel',
+        price: '₺18.000',
+        suffix: '/ proje',
+        description: 'Kapsamlı sezon çekimleri ve geniş ürün ağları için.',
+        features: [
+            '200 Ürün / Varyasyon Üretimi (Ürün başı ₺90)',
+            'Sınırsız Seçili Arka Plan',
+            'Atanmış Kreatif Direktör'
+        ],
+        cta: 'Hemen Başla'
+    },
+    {
+        name: 'Kurumsal Üretim',
+        price: 'Özel Teklif',
+        suffix: '',
+        description: '200+ ürün ve tamamen size özel projelendirme.',
+        features: [
+            '200+ Ürün Üretimi',
+            'Size Özel Konsept Tasarımı',
+            'API ve Otomasyon Desteği'
+        ],
+        cta: 'Teklif Alın',
+        isPremium: true
+    }
+];
 
 // Sosyal Medya İçerik Paketleri
 const aiPlans = [
@@ -151,9 +188,9 @@ const creativePackages = [
 
 // SSS Verileri
 const catalogFaqs = [
-    { q: "Katalog paketi için ödeme tek seferlik mi?", a: "Evet, profesyonel katalog paketi için sadece bir kez ödeme yaparsınız. Sistem tarafımızdan kurulup size teslim edildikten sonra sınırsız ve süresiz kullanım hakkına sahip olursunuz." },
-    { q: "Kendi domainimi kullanabilir miyim?", a: "Kesinlikle! Hazırlanan dijital kataloğu kendi alan adınız (örn: katalog.markaniz.com) altında kullanabilirsiniz." },
-    { q: "Kaç ürün yükleyebilirim?", a: "Herhangi bir ürün veya görsel sınırımız yoktur. Google Drive altyapısını sisteminize entegre ediyoruz, böylece kendi Google Drive deponuzun kapasitesine göre sınırsız sayıda ürün ve kategori oluşturabilirsiniz." }
+    { q: "Seçili arka plan stüdyosu nedir?", a: "Katalog çekimleriniz için belirlediğiniz bir stüdyo ortamı veya konseptidir. Tüm ürünleriniz bu konseptte tutarlı olarak üretilir." },
+    { q: "Teslim süresi nedir?", a: "Paketin büyüklüğüne göre değişmekle birlikte, başlangıç paketleri genelde 48 saat içinde teslim edilmektedir." },
+    { q: "Ürün varyasyonları pakete dahil mi?", a: "Evet. Aynı ürünin farklı renk veya açıları, toplam ürün kotanızdan düşülerek üretilir." }
 ];
 
 const aiFaqs = [
@@ -207,12 +244,12 @@ const heroContent = {
         ]
     },
     katalog: {
-        title: "Profesyonel ve Sınırsız",
-        titleHighlight: "Dijital Katalog Çözümü",
-        description: "Ürünlerinizi en iyi şekilde sergileyebileceğiniz, PWA destekli ve mobil uyumlu dijital katalog sistemine tek seferlik ödemeyle sahip olun.",
+        title: "Stüdyo Kalitesinde",
+        titleHighlight: "Toplu Katalog Üretimi",
+        description: "Belirli bir arka plan konsepti seçin, ürünlerinizi stüdyo kalitesinde seri olarak üretelim. İhtiyacınıza uygun paketi seçin, stüdyo ve manken maliyetlerinden tasarruf edin.",
         features: [
-            "Sınırsız kategori, albüm ve görsel kapasitesi.",
-            "Herhangi bir aylık komisyon veya abonelik ücreti yok."
+            "Stüdyo kalitesinde seri üretim",
+            "Sınırsız ürün desteği ve revizyon imkanı"
         ]
     }
 };
@@ -301,8 +338,10 @@ const Pricing = () => {
                                 exit={{ opacity: 0, y: -20 }}
                                 className="flex flex-col items-center gap-10"
                             >
-                                <div className="w-full max-w-md">
-                                    <PricingCard plan={catalogPlan} />
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+                                    {catalogPackages.map((plan, i) => (
+                                        <PricingCard key={i} plan={plan} />
+                                    ))}
                                 </div>
                                 <FaqSection faqs={catalogFaqs} />
                             </motion.div>

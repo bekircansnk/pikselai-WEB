@@ -1063,6 +1063,116 @@ const Home = () => {
         </section>
 
 
+        {/* 11. FİYATLANDIRMA / PRICING */}
+        <section className={`py-20 md:py-32 border-b border-[#0b2117]/10 bg-[#0b2117]`}>
+          <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
+            <div className="text-center mb-16 max-w-3xl mx-auto">
+              <span className="text-[#caf265] text-xs font-bold uppercase tracking-widest mb-4 block">ŞEFFAF VE ÖLÇEKLENEBİLİR</span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-white leading-tight mb-6">
+                Stüdyo Kalitesinde <span className="italic text-[#caf265]">Katalog Üretimi</span>
+              </h2>
+              <p className="text-[#a8b8af] font-light text-lg">
+                Belirli bir arka plan konsepti seçin, ürünlerinizi stüdyo kalitesinde seri olarak üretelim. İhtiyacınıza uygun paketi seçin, stüdyo ve manken maliyetlerinden tasarruf edin.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* Başlangıç Katalog */}
+              <div className="bg-[#132a1f] rounded-[2rem] p-8 border border-white/10 hover:border-[#caf265]/50 transition-colors flex flex-col group">
+                <h3 className="text-2xl font-display text-white mb-2">Başlangıç Katalog</h3>
+                <div className="text-[#a8b8af] text-sm mb-6">Butik koleksiyonlar için ideal</div>
+                <div className="text-4xl font-bold text-white mb-2">₺3.000</div>
+                <div className="text-[#caf265] text-sm font-medium mb-8">Ürün başı ₺150</div>
+                <ul className="space-y-4 mb-8 flex-1">
+                  <li className="flex items-start gap-3 text-white/80 text-sm">
+                    <Check size={18} className="text-[#caf265] shrink-0 mt-0.5" />
+                    <span>20 Ürün / Varyasyon Üretimi</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-white/80 text-sm">
+                    <Check size={18} className="text-[#caf265] shrink-0 mt-0.5" />
+                    <span>Seçili 1 Arka Plan Stüdyosu</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-white/80 text-sm">
+                    <Check size={18} className="text-[#caf265] shrink-0 mt-0.5" />
+                    <span>Stüdyo Kalitesinde Çıktı</span>
+                  </li>
+                </ul>
+                <button onClick={() => navigate('/iletisim')} className="w-full py-4 rounded-xl border border-white/20 text-white group-hover:bg-[#caf265] group-hover:border-[#caf265] group-hover:text-black transition-colors font-bold">Hemen Başla</button>
+              </div>
+
+              {/* En Popüler Katalog */}
+              <div className="bg-[#caf265] rounded-[2rem] p-8 border border-[#caf265] shadow-[0_0_30px_rgba(202,242,101,0.15)] flex flex-col relative transform lg:-translate-y-4">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-[#caf265] px-4 py-1.5 rounded-full text-[10px] font-bold tracking-widest uppercase border border-[#caf265]">EN POPÜLER</div>
+                <h3 className="text-2xl font-display text-black mb-2">Popüler Katalog</h3>
+                <div className="text-black/60 text-sm mb-6">Orta ölçekli lansmanlar için</div>
+                <div className="text-4xl font-bold text-black mb-2">₺9.000</div>
+                <div className="text-black/70 text-sm font-bold mb-8">Ürün başı ₺120</div>
+                <ul className="space-y-4 mb-8 flex-1">
+                  <li className="flex items-start gap-3 text-black/80 text-sm">
+                    <Check size={18} className="text-black shrink-0 mt-0.5" />
+                    <span className="font-medium">75 Ürün / Varyasyon Üretimi</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-black/80 text-sm">
+                    <Check size={18} className="text-black shrink-0 mt-0.5" />
+                    <span className="font-medium">Seçili 2 Arka Plan Stüdyosu</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-black/80 text-sm">
+                    <Check size={18} className="text-black shrink-0 mt-0.5" />
+                    <span className="font-medium">Öncelikli Üretim Sırası</span>
+                  </li>
+                </ul>
+                <button onClick={() => navigate('/iletisim')} className="w-full py-4 rounded-xl bg-black text-[#caf265] hover:bg-[#132a1f] transition-colors font-bold shadow-lg">Hemen Başla</button>
+              </div>
+
+              {/* Profesyonel Katalog */}
+              <div className="bg-[#132a1f] rounded-[2rem] p-8 border border-white/10 hover:border-[#caf265]/50 transition-colors flex flex-col group">
+                <h3 className="text-2xl font-display text-white mb-2">Profesyonel</h3>
+                <div className="text-[#a8b8af] text-sm mb-6">Kapsamlı sezon çekimleri</div>
+                <div className="text-4xl font-bold text-white mb-2">₺18.000</div>
+                <div className="text-[#caf265] text-sm font-medium mb-8">Ürün başı ₺90</div>
+                <ul className="space-y-4 mb-8 flex-1">
+                  <li className="flex items-start gap-3 text-white/80 text-sm">
+                    <Check size={18} className="text-[#caf265] shrink-0 mt-0.5" />
+                    <span>200 Ürün / Varyasyon Üretimi</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-white/80 text-sm">
+                    <Check size={18} className="text-[#caf265] shrink-0 mt-0.5" />
+                    <span>Sınırsız Seçili Arka Plan</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-white/80 text-sm">
+                    <Check size={18} className="text-[#caf265] shrink-0 mt-0.5" />
+                    <span>Atanmış Kreatif Direktör</span>
+                  </li>
+                </ul>
+                <button onClick={() => navigate('/iletisim')} className="w-full py-4 rounded-xl border border-white/20 text-white group-hover:bg-[#caf265] group-hover:border-[#caf265] group-hover:text-black transition-colors font-bold">Hemen Başla</button>
+              </div>
+
+              {/* Toplu Üretim */}
+              <div className="bg-[#132a1f] rounded-[2rem] p-8 border border-white/10 hover:border-[#caf265]/50 transition-colors flex flex-col group">
+                <h3 className="text-2xl font-display text-white mb-2">Kurumsal Üretim</h3>
+                <div className="text-[#a8b8af] text-sm mb-6">200+ Ürün ve Özel Projeler</div>
+                <div className="text-4xl font-bold text-white mb-2">Özel Teklif</div>
+                <div className="text-[#caf265] text-sm font-medium mb-8">Size özel projelendirme</div>
+                <ul className="space-y-4 mb-8 flex-1">
+                  <li className="flex items-start gap-3 text-white/80 text-sm">
+                    <Check size={18} className="text-[#caf265] shrink-0 mt-0.5" />
+                    <span>200+ Ürün Üretimi</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-white/80 text-sm">
+                    <Check size={18} className="text-[#caf265] shrink-0 mt-0.5" />
+                    <span>Size Özel Konsept Tasarımı</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-white/80 text-sm">
+                    <Check size={18} className="text-[#caf265] shrink-0 mt-0.5" />
+                    <span>API ve Otomasyon Desteği</span>
+                  </li>
+                </ul>
+                <button onClick={() => navigate('/iletisim')} className="w-full py-4 rounded-xl bg-white text-[#0b2117] hover:bg-gray-200 transition-colors font-bold">Teklif Alın</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* 12. SSS – FREQUENTLY ASKED QUESTIONS */}
         <section className={`py-20 md:py-32 border-b border-[#0b2117]/10 bg-[#F4EFE6]`}>
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">

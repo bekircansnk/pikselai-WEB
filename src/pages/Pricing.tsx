@@ -7,7 +7,7 @@ import { ChevronRight, MessageSquare, TrendingUp, Check } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 // Katalog Üretim Paketleri
-const catalogPackages = [
+const urunFotografciligiPackages = [
     {
         name: 'Başlangıç',
         price: '₺3.000',
@@ -59,6 +59,23 @@ const catalogPackages = [
         isPremium: true
     }
 ];
+
+// Profesyonel Katalog Paketi (Sabit)
+const dijitalKatalogPlan = {
+    name: 'Profesyonel Katalog',
+    price: '₺15.000',
+    suffix: '/ tek seferlik',
+    description: 'Kendi fotoğraflarını kullanmak isteyen işletmeler için profesyonel dijital katalog çözümü.',
+    features: [
+        'Sınırsız albüm oluşturma',
+        'Mobil uyumlu modern tasarım',
+        'Hızlı arama ve filtreleme',
+        'Video ve medya desteği',
+        'PWA (uygulama olarak yükleme)',
+        'Tek seferlik ödeme – süresiz kullanım'
+    ],
+    cta: 'Paketi Seç'
+};
 
 // Sosyal Medya İçerik Paketleri
 const aiPlans = [
@@ -186,6 +203,12 @@ const creativePackages = [
 ];
 
 // SSS Verileri
+const dijitalKatalogFaqs = [
+    { q: "Katalog paketi için ödeme tek seferlik mi?", a: "Evet, profesyonel katalog paketi için sadece bir kez ödeme yaparsınız. Sistem tarafımızdan kurulup size teslim edildikten sonra sınırsız ve süresiz kullanım hakkına sahip olursunuz." },
+    { q: "Kendi domainimi kullanabilir miyim?", a: "Kesinlikle! Hazırlanan dijital kataloğu kendi alan adınız (örn: katalog.markaniz.com) altında kullanabilirsiniz." },
+    { q: "Kaç ürün yükleyebilirim?", a: "Herhangi bir ürün veya görsel sınırımız yoktur. Google Drive altyapısını sisteminize entegre ediyoruz, böylece kendi Google Drive deponuzun kapasitesine göre sınırsız sayıda ürün ve kategori oluşturabilirsiniz." }
+];
+
 const catalogFaqs = [
     { q: "Seçili arka plan stüdyosu nedir?", a: "Katalog çekimleriniz için belirlediğiniz bir stüdyo ortamı veya konseptidir. Tüm ürünleriniz bu konseptte tutarlı olarak üretilir." },
     { q: "Teslim süresi nedir?", a: "Paketin büyüklüğüne göre değişmekle birlikte, başlangıç paketleri genelde 48 saat içinde teslim edilmektedir." },
@@ -242,19 +265,28 @@ const heroContent = {
             "Yüksek performanslı, hızlı ve SEO uyumlu altyapı."
         ]
     },
-    katalog: {
+    urun_fotografciligi: {
         title: "Stüdyo Kalitesinde",
-        titleHighlight: "Toplu Katalog Üretimi",
+        titleHighlight: "Toplu Ürün Fotoğrafçılığı",
         description: "Belirli bir arka plan konsepti seçin, ürünlerinizi stüdyo kalitesinde seri olarak üretelim. İhtiyacınıza uygun paketi seçin, stüdyo ve manken maliyetlerinden tasarruf edin.",
         features: [
             "Stüdyo kalitesinde seri üretim",
             "Sınırsız ürün desteği ve revizyon imkanı"
         ]
+    },
+    katalog: {
+        title: "Profesyonel ve Sınırsız",
+        titleHighlight: "Dijital Katalog Çözümü",
+        description: "Ürünlerinizi en iyi şekilde sergileyebileceğiniz, PWA destekli ve mobil uyumlu dijital katalog sistemine tek seferlik ödemeyle sahip olun.",
+        features: [
+            "Sınırsız kategori, albüm ve görsel kapasitesi.",
+            "Herhangi bir aylık komisyon veya abonelik ücreti yok."
+        ]
     }
 };
 
 const Pricing = () => {
-    const [activeTab, setActiveTab] = useState<'katalog' | 'ai' | 'eticaret' | 'kreatif'>('ai');
+    const [activeTab, setActiveTab] = useState<'urun_fotografciligi' | 'katalog' | 'ai' | 'eticaret' | 'kreatif'>('urun_fotografciligi');
 
     return (
         <MainLayout>
@@ -295,11 +327,18 @@ const Pricing = () => {
                 {/* Tab Navigation */}
                 <div className="flex justify-center gap-2 mb-12 flex-wrap">
                     <Button
+                        variant={activeTab === 'urun_fotografciligi' ? 'primary' : 'outline'}
+                        onClick={() => setActiveTab('urun_fotografciligi')}
+                        className={`rounded-full ${activeTab === 'urun_fotografciligi' ? 'bg-[#0b2117] text-[#F4EFE6] hover:bg-[#132a1f]' : 'text-[#0b2117] border-[#0b2117]/20 hover:bg-[#0b2117]/5'}`}
+                    >
+                        Ürün Fotoğrafçılığı
+                    </Button>
+                    <Button
                         variant={activeTab === 'katalog' ? 'primary' : 'outline'}
                         onClick={() => setActiveTab('katalog')}
                         className={`rounded-full ${activeTab === 'katalog' ? 'bg-[#0b2117] text-[#F4EFE6] hover:bg-[#132a1f]' : 'text-[#0b2117] border-[#0b2117]/20 hover:bg-[#0b2117]/5'}`}
                     >
-                        Katalog
+                        Dijital Katalog
                     </Button>
                     <Button
                         variant={activeTab === 'ai' ? 'primary' : 'outline'}
@@ -329,10 +368,10 @@ const Pricing = () => {
             <div className="w-full">
                     <AnimatePresence mode="wait">
 
-                        {/* Katalog Tab */}
-                        {activeTab === 'katalog' && (
+                        {/* Urun Fotografciligi Tab */}
+                        {activeTab === 'urun_fotografciligi' && (
                             <motion.div
-                                key="katalog"
+                                key="urun_fotografciligi"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -20 }}
@@ -342,7 +381,7 @@ const Pricing = () => {
                                 <div className="bg-[#0b2117] w-full py-20">
                                     <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
                                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                                            {catalogPackages.map((plan, i) => (
+                                            {urunFotografciligiPackages.map((plan, i) => (
                                                 <PricingCard key={i} plan={plan} />
                                             ))}
                                         </div>
@@ -353,6 +392,33 @@ const Pricing = () => {
                                 <div className="bg-[#F4EFE6] w-full py-20">
                                     <div className="max-w-4xl mx-auto px-6 md:px-16 lg:px-24">
                                         <FaqSection faqs={catalogFaqs} />
+                                    </div>
+                                </div>
+                            </motion.div>
+                        )}
+
+                        {/* Katalog Tab (Dijital Katalog) */}
+                        {activeTab === 'katalog' && (
+                            <motion.div
+                                key="katalog"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -20 }}
+                                className="w-full"
+                            >
+                                {/* Dark Pricing Packages Section */}
+                                <div className="bg-[#0b2117] w-full py-20">
+                                    <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 flex justify-center">
+                                        <div className="w-full max-w-md">
+                                            <PricingCard plan={dijitalKatalogPlan} />
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                {/* Light FAQ Section */}
+                                <div className="bg-[#F4EFE6] w-full py-20">
+                                    <div className="max-w-4xl mx-auto px-6 md:px-16 lg:px-24">
+                                        <FaqSection faqs={dijitalKatalogFaqs} />
                                     </div>
                                 </div>
                             </motion.div>

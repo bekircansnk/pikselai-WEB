@@ -295,28 +295,28 @@ const Pricing = () => {
                 {/* Tab Navigation */}
                 <div className="flex justify-center gap-2 mb-12 flex-wrap">
                     <Button
-                        variant={activeTab === 'katalog' ? 'default' : 'outline'}
+                        variant={activeTab === 'katalog' ? 'primary' : 'outline'}
                         onClick={() => setActiveTab('katalog')}
                         className={`rounded-full ${activeTab === 'katalog' ? 'bg-[#0b2117] text-[#F4EFE6] hover:bg-[#132a1f]' : 'text-[#0b2117] border-[#0b2117]/20 hover:bg-[#0b2117]/5'}`}
                     >
                         Katalog
                     </Button>
                     <Button
-                        variant={activeTab === 'ai' ? 'default' : 'outline'}
+                        variant={activeTab === 'ai' ? 'primary' : 'outline'}
                         onClick={() => setActiveTab('ai')}
                         className={`rounded-full ${activeTab === 'ai' ? 'bg-[#0b2117] text-[#F4EFE6] hover:bg-[#132a1f]' : 'text-[#0b2117] border-[#0b2117]/20 hover:bg-[#0b2117]/5'}`}
                     >
                         Sosyal Medya Görsel Üretimi
                     </Button>
                     <Button
-                        variant={activeTab === 'eticaret' ? 'default' : 'outline'}
+                        variant={activeTab === 'eticaret' ? 'primary' : 'outline'}
                         onClick={() => setActiveTab('eticaret')}
                         className={`rounded-full ${activeTab === 'eticaret' ? 'bg-[#0b2117] text-[#F4EFE6] hover:bg-[#132a1f]' : 'text-[#0b2117] border-[#0b2117]/20 hover:bg-[#0b2117]/5'}`}
                     >
                         E-Ticaret
                     </Button>
                     <Button
-                        variant={activeTab === 'kreatif' ? 'default' : 'outline'}
+                        variant={activeTab === 'kreatif' ? 'primary' : 'outline'}
                         onClick={() => setActiveTab('kreatif')}
                         className={`rounded-full ${activeTab === 'kreatif' ? 'bg-[#0b2117] text-[#F4EFE6] hover:bg-[#132a1f]' : 'text-[#0b2117] border-[#0b2117]/20 hover:bg-[#0b2117]/5'}`}
                     >

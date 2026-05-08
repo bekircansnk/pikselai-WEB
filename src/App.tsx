@@ -29,6 +29,7 @@ const VenusCaseStudy = lazy(() => import('./pages/musteri-hikayeleri/VenusCaseSt
 const CampAndMapCaseStudy = lazy(() => import('./pages/musteri-hikayeleri/CampAndMapCaseStudy'))
 
 // Blog — Yapay Zeka Yaratıcılık
+const UrunFotografciligiRehberi = lazy(() => import('./pages/blog/yapay-zeka-yaraticilik/UrunFotografciligiRehberi'))
 const GizliAiOzellikleri = lazy(() => import('./pages/blog/yapay-zeka-yaraticilik/GizliAiOzellikleri'))
 const AiTasarimTrendleri = lazy(() => import('./pages/blog/yapay-zeka-yaraticilik/AiTasarimTrendleri'))
 const AiTasarimAraclari = lazy(() => import('./pages/blog/yapay-zeka-yaraticilik/AiTasarimAraclari'))
@@ -126,6 +127,7 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             
             {/* Blog — Yapay Zeka Yaratıcılık */}
+            <Route path="/blog/yapay-zeka-yaraticilik/urun-fotografciligi-rehberi" element={<UrunFotografciligiRehberi />} />
             <Route path="/blog/yapay-zeka-yaraticilik/gizli-ai-ozellikleri" element={<GizliAiOzellikleri />} />
             <Route path="/blog/yapay-zeka-yaraticilik/ai-tasarim-trendleri" element={<AiTasarimTrendleri />} />
             <Route path="/blog/yapay-zeka-yaraticilik/ai-tasarim-araclari" element={<AiTasarimAraclari />} />

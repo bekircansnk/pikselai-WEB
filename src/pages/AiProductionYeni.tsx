@@ -652,8 +652,8 @@ const AiProduction = () => {
   return (
     <div className={`font-sans min-h-screen selection:bg-[#0b2117] selection:text-[#0b2117]`}>
       <SEOHead
-        title="Yapay Zeka Destekli Ürün Fotoğrafçılığı — AI Prodüksiyon"
-        description="Stüdyo olmadan profesyonel ürün görselleri, sanal manken çekimleri ve ghost mannequin hizmeti. PikselAI ile 48 saatte teslim."
+        title="Yapay Zeka Destekli Ürün Fotoğrafçılığı | PikselAI"
+        description="Stüdyo olmadan profesyonel ürün görselleri, sanal manken çekimleri ve ürün fotoğrafçılığı hizmeti. PikselAI ile yüksek dönüşümlü ürün fotoğraflarına 48 saatte ulaşın."
         canonical="/ai-produksiyon"
       />
       <Header />
@@ -927,6 +927,29 @@ const AiProduction = () => {
             </div>
           </div>
         </section>
+        {/* 9. SSS (SEO ODAKLI) */}
+        <section className={`py-16 md:py-24 bg-[#F4EFE6]`}>
+          <div className="max-w-[1000px] mx-auto px-6 md:px-16 lg:px-24 w-full">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-display font-normal italic text-[#0b2117] mb-6">Sıkça Sorulan <span className="not-italic font-normal">Sorular</span></h2>
+              <p className="text-[#0b2117] opacity-60 text-lg">Yapay zeka ile ürün fotoğrafçılığı hakkında en çok merak edilenler.</p>
+            </div>
+            <div className="space-y-6">
+              {[
+                { q: "Yapay zeka ile ürün fotoğrafçılığı ne kadar gerçekçi?", a: "Sistemimiz ürünlerinizin dokusunu, ışık yansımalarını ve gölgelerini tamamen fizik kanunlarına uygun olarak hesaplar. Ortaya çıkan ürün fotoğrafçılığı görselleri, gerçek stüdyo çekimlerinden ayırt edilemeyecek kadar kusursuzdur." },
+                { q: "Ürün fotoğrafçılığı maliyetleri ne kadar?", a: "Geleneksel stüdyo, dekor, model ve ışık ekibi kiralama masraflarını ortadan kaldırdığı için yapay zeka ile ürün fotoğrafçılığı %60 ile %80 arasında bir maliyet avantajı sağlar. Detaylı ürün fotoğrafçılığı maliyetleri için bizimle iletişime geçebilirsiniz." },
+                { q: "Sanal mankenler bizim markamıza özel mi oluyor?", a: "Evet. Manken kütüphanemizdeki yüzler veya sadece markanıza özel tasarlanacak sanal mankenler ile çalışabilirsiniz. Bu sayede her ürün çekiminde aynı istikrarlı marka yüzüne sahip olursunuz." },
+                { q: "Sürecin tamamlanması kaç gün sürer?", a: "Geleneksel fotoğraf stüdyolarında haftalar sürebilen çekim ve rötüş süreçlerini, teknolojik altyapımız sayesinde 48 saate kadar indiriyoruz." }
+              ].map((faq, i) => (
+                <div key={i} className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-[#0b2117]/5 hover:shadow-xl transition-shadow">
+                  <h3 className="text-xl md:text-2xl font-bold text-[#0b2117] mb-4">{faq.q}</h3>
+                  <p className="text-[#0b2117] opacity-70 font-light leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
       </main>
 
       <Footer />

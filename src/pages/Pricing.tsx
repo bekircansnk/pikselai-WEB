@@ -210,9 +210,10 @@ const dijitalKatalogFaqs = [
 ];
 
 const catalogFaqs = [
-    { q: "Seçili arka plan stüdyosu nedir?", a: "Katalog çekimleriniz için belirlediğiniz bir stüdyo ortamı veya konseptidir. Tüm ürünleriniz bu konseptte tutarlı olarak üretilir." },
-    { q: "Teslim süresi nedir?", a: "Paketin büyüklüğüne göre değişmekle birlikte, başlangıç paketleri genelde 48 saat içinde teslim edilmektedir." },
-    { q: "Ürün varyasyonları pakete dahil mi?", a: "Evet. Aynı ürünin farklı renk veya açıları, toplam ürün kotanızdan düşülerek üretilir." }
+    { q: "Seçili arka plan stüdyosu nedir?", a: "Ürün fotoğrafçılığı projeleriniz için belirlediğiniz bir stüdyo ortamı veya konseptidir. Tüm ürünleriniz bu konseptte tutarlı olarak üretilir." },
+    { q: "Katalog çekimi ve ürün fotoğrafçılığı maliyetleri nasıl hesaplanıyor?", a: "Ürün fotoğrafçılığı maliyetleri, çekilecek ürün sayısına, kullanılacak konsept sayısına (stüdyo veya AI) ve revizyon taleplerine göre hesaplanır. Yapay zeka destekli süreçlerimiz sayesinde 2026 yılı geleneksel stüdyo çekimlerine kıyasla %80'e varan fiyat avantajı sunarız." },
+    { q: "Teslim süresi nedir?", a: "Paketin büyüklüğüne göre değişmekle birlikte, standart ürün fotoğrafçılığı paketleri genelde 48 saat içinde teslim edilmektedir." },
+    { q: "Ürün varyasyonları pakete dahil mi?", a: "Evet. Aynı ürünün farklı renk veya açıları, toplam ürün kotanızdan düşülerek üretilir. Bu sayede katalog çekimi fiyatları konusunda sürprizlerle karşılaşmazsınız." }
 ];
 
 const aiFaqs = [

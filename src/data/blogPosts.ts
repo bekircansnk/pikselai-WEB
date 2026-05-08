@@ -13,6 +13,17 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
     {
+        id: "urun-fotografciligi-rehberi",
+        cat: "AI Destekli Yaratıcılık",
+        catId: "yapay-zeka-yaraticilik",
+        title: "Ürün Fotoğrafçılığı Rehberi: Maliyetler, Yapay Zeka ve Stüdyo Çekimleri",
+        desc: "Ürün fotoğrafçılığı maliyetleri, katalog çekimi fiyatları ve yapay zeka ile ürün fotoğrafçılığı hakkında bilmeniz gereken her şey. En iyi ürün fotoğrafçılığı markası ile satışlarınızı artırın.",
+        img: "/assets/pages/blog/urun_fotografciligi_kapak.webp",
+        link: "/blog/yapay-zeka-yaraticilik/urun-fotografciligi-rehberi",
+        time: "12 dk",
+        date: "09 Mayıs 2026"
+    },
+    {
         id: "gizli-ai-ozellikleri",
         cat: "AI Destekli Yaratıcılık",
         catId: "yapay-zeka-yaraticilik",

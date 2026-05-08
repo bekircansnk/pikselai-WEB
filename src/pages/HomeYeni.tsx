@@ -388,8 +388,8 @@ const Home = () => {
   return (
     <MainLayout transparentHeader={true} headerLightText={true}>
       <SEOHead
-        title="Yapay Zeka Destekli Kreatif Üretim, E-Ticaret ve Dijital Çözümler"
-        description="Yapay zeka ile ürün fotoğrafçılığı, sanal manken tasarımı, e-ticaret yönetimi ve sosyal medya. Stüdyo yok, manken yok — tek çatı altında dijital çözümler."
+        title="Yapay Zeka ile Profesyonel Ürün Fotoğrafçılığı ve E-Ticaret Çözümleri | PikselAI"
+        description="Geleneksel stüdyo maliyetlerini unutun. PikselAI ile yapay zeka destekli, düşük maliyetli ve yüksek kaliteli ürün fotoğrafçılığı hizmetlerini hemen keşfedin."
         canonical="/"
         jsonLd={[{
           '@context': 'https://schema.org',
@@ -1076,9 +1076,10 @@ const Home = () => {
               <div className="space-y-4">
                 {[
                   { q: "Minimum sipariş veya görsel miktarı var mı?", a: "Hayır, tek bir ürün görseli için bile çalışabiliriz. Esnek kampanya paketlerimiz e-ticaret satıcılarından büyük moda devlerine kadar her ölçeğe hitap etmektedir." },
+                  { q: "Ürün fotoğrafçılığı maliyetleri nasıl hesaplanıyor?", a: "Geleneksel stüdyo çekimlerine göre %80'e varan fiyat avantajı sunuyoruz. Ürün fotoğrafçılığı hizmeti maliyetleri çekilecek ürün sayısına ve konsept özelliklerine göre hesaplanır." },
                   { q: "Teslim süresi ortalama ne kadardır?", a: "Sezon veya konsept yenilemeleri genelde aynı gün veya 48 saat içinde teslim edilmektedir. Proje başlamadan önce kesin teslimat takvimini belirliyoruz." },
                   { q: "Yapay zeka ile üretilen mankenli fotoğraflar gerçekten inandırıcı mı?", a: "Evet. Özel eğitim yapılmış, kumaş dokusunu bozmayan ve anatomik bütünlüğü (eller, yüz vb.) tamamen doğru işleyen kurumsal AI mimarimiz sayesinde dünyanın en iyi dergi çekimlerinden farksız sonuçlar alırsınız." },
-                  { q: "Kendi ürünümü stüdyonuzda fiziki olarak çektirebilir miyim?", a: "PikselAI olarak dijital prodüksiyon (sanal fotoğrafçılık) haricinde, kendi e-ticaret stüdyomuzda klasik ürün çekim, ghost mannequin ve video hizmetlerini de fiziksel olarak sunuyoruz." }
+                  { q: "Kendi ürünümü stüdyonuzda fiziki olarak çektirebilir miyim?", a: "PikselAI olarak dijital prodüksiyon (sanal ürün fotoğrafçılığı) haricinde, kendi e-ticaret stüdyomuzda klasik ürün çekim, ghost mannequin ve video hizmetlerini de fiziksel olarak sunuyoruz." }
                 ].map((faq, idx) => (
                   <FaqItem key={idx} question={faq.q} answer={faq.a} />
                 ))}

@@ -80,7 +80,6 @@ export default function MusteriHikayeleri() {
                     description: 'Yapay zeka ile dönüşüm yaşayan markaların başarı öyküleri ve vaka çalışmaları.',
                     url: 'https://pikselai.com/musteri-hikayeleri',
                     mainEntity: {
-                        '@type': 'Organization',
                         ...createOrganizationSchema(),
                         aggregateRating: {
                             '@type': 'AggregateRating',

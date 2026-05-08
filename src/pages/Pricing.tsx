@@ -286,7 +286,7 @@ const heroContent = {
 };
 
 const Pricing = () => {
-    const [activeTab, setActiveTab] = useState<'urun_fotografciligi' | 'katalog' | 'ai' | 'eticaret' | 'kreatif'>('katalog');
+    const [activeTab, setActiveTab] = useState<'urun_fotografciligi' | 'katalog' | 'ai' | 'eticaret' | 'kreatif'>('ai');
 
     return (
         <MainLayout>

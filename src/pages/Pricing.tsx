@@ -240,7 +240,7 @@ const heroContent = {
     ai: {
         title: "Sosyal Medyanız İçin",
         titleHighlight: "Her Gün Hazır İçerik",
-        description: "Her gün paylaşım yapabilmeniz için ihtiyacınız olan tüm görselleri düzenli olarak üretiyoruz.",
+        description: "Panel kullandırmıyoruz; ürünlerinizi alıp görsel stilini oluşturuyor, üretimi yönetiyor, kontrol ediyor ve doğrudan paylaşıma hazır teslim ediyoruz.",
         features: [
             "Günlük paylaşım için hazır içerikler",
             "Her içerik için 4 alternatif görsel",
@@ -268,7 +268,7 @@ const heroContent = {
     urun_fotografciligi: {
         title: "Stüdyo Kalitesinde",
         titleHighlight: "Toplu Ürün Fotoğrafçılığı",
-        description: "Belirli bir arka plan konsepti seçin, ürünlerinizi stüdyo kalitesinde seri olarak üretelim. İhtiyacınıza uygun paketi seçin, stüdyo ve manken maliyetlerinden tasarruf edin.",
+        description: "Panel kullandırmıyoruz; ürünlerinizi alıp görsel stilini oluşturuyor, üretimi yönetiyor, kontrol ediyor ve stüdyo kalitesinde seri olarak teslim ediyoruz.",
         features: [
             "Stüdyo kalitesinde seri üretim",
             "Sınırsız ürün desteği ve revizyon imkanı"

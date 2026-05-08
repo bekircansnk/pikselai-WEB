@@ -696,7 +696,7 @@ const Home = () => {
               <div className="text-center mb-4 md:mb-6 shrink-0 mt-0 lg:mt-4">
                 <span className="text-[#caf265] text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1 md:mb-2 block">BASİT VE ETKİLİ</span>
                 <h2 className="text-3xl md:text-5xl lg:text-5xl font-display text-white mb-2 leading-tight">Sürecimiz Nasıl <span className="italic">İşliyor?</span></h2>
-                <p className="text-[#a8b8af] font-light text-xs md:text-sm lg:text-base max-w-2xl mx-auto">Sadece ürün görselini yükleyin, karmaşık promptlar ve teknik detaylarla biz ilgilenelim.</p>
+                <p className="text-[#a8b8af] font-light text-xs md:text-sm lg:text-base max-w-2xl mx-auto">Panel kullandırmıyoruz; ürünlerinizi alıp görsel stilini oluşturuyor, üretimi yönetiyor, kontrol ediyor ve doğrudan kullanıma hazır teslim ediyoruz.</p>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 items-center">

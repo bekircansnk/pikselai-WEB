@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { createPortal } from "react-dom"
 import { motion, AnimatePresence } from "framer-motion"
 import { Link, useLocation } from "react-router-dom"
-import { ChevronRight, X, Sparkles, ShoppingBag, Palette, BookOpen, Layers, Briefcase, Phone, Zap } from "lucide-react"
+import { ChevronRight, X, Sparkles, ShoppingBag, Palette, BookOpen, Layers, Briefcase, Phone, Zap, Store, Share2 } from "lucide-react"
 import { Button } from "../ui/Button"
 import { cn } from "../../lib/utils"
 
@@ -79,6 +79,19 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                         {/* Linkler Kısmı (Scrollable) */}
                         <div className="flex-1 overflow-y-auto px-6 py-6 pb-24">
                             <nav className="flex flex-col gap-6">
+                                {/* Hizmetler Kategorileri */}
+                                <div>
+                                    <h4 className="text-xs font-bold uppercase tracking-wider text-bor-primary-400 mb-4 ml-2">Hizmetlerimiz</h4>
+                                    <div className="space-y-2">
+                                        <MobileSubLink title="AI Prodüksiyon" href="/hizmetler/ai-produksiyon" icon={<Sparkles size={18} />} onClose={onClose} />
+                                        <MobileSubLink title="E-Ticaret" href="/hizmetler/e-ticaret" icon={<Store size={18} />} onClose={onClose} />
+                                        <MobileSubLink title="Sosyal Medya" href="/hizmetler/sosyal-medya" icon={<Share2 size={18} />} onClose={onClose} />
+                                        <MobileSubLink title="Kreatif Tasarım" href="/hizmetler/kreatif-tasarim" icon={<Palette size={18} />} onClose={onClose} />
+                                    </div>
+                                </div>
+
+                                <div className="h-px w-full bg-bor-primary-200/50 dark:bg-bor-primary-800/50" />
+
                                 {/* Ana Linkler */}
                                 <div className="space-y-1">
                                     <MobileMainLink title="Ana Sayfa" href="/" icon={<Zap size={20} />} onClose={onClose} />
@@ -86,18 +99,6 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                                     <MobileMainLink title="Ücretler" href="/ucretler" icon={<ShoppingBag size={20} />} onClose={onClose} />
                                     <MobileMainLink title="Hakkımızda" href="/hakkimizda" icon={<Layers size={20} />} onClose={onClose} />
                                     <MobileMainLink title="İletişim" href="/iletisim" icon={<Phone size={20} />} onClose={onClose} />
-                                </div>
-
-                                <div className="h-px w-full bg-bor-primary-200/50 dark:bg-bor-primary-800/50" />
-
-                                {/* Hizmetler Kategorileri */}
-                                <div>
-                                    <h4 className="text-xs font-bold uppercase tracking-wider text-bor-primary-400 mb-4 ml-2">Hizmetlerimiz</h4>
-                                    <div className="space-y-2">
-                                        <MobileSubLink title="AI Prodüksiyon" href="/hizmetler/ai-produksiyon" icon={<Sparkles size={18} />} onClose={onClose} />
-                                        <MobileSubLink title="E-Ticaret & Sosyal Medya" href="/hizmetler/e-ticaret" icon={<ShoppingBag size={18} />} onClose={onClose} />
-                                        <MobileSubLink title="Kreatif Tasarım" href="/hizmetler/kreatif-tasarim" icon={<Palette size={18} />} onClose={onClose} />
-                                    </div>
                                 </div>
 
                                 <div className="h-px w-full bg-bor-primary-200/50 dark:bg-bor-primary-800/50" />

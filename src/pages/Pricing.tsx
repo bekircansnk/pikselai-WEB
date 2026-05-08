@@ -286,7 +286,7 @@ const heroContent = {
 };
 
 const Pricing = () => {
-    const [activeTab, setActiveTab] = useState<'urun_fotografciligi' | 'katalog' | 'ai' | 'eticaret' | 'kreatif'>('urun_fotografciligi');
+    const [activeTab, setActiveTab] = useState<'urun_fotografciligi' | 'katalog' | 'ai' | 'eticaret' | 'kreatif'>('katalog');
 
     return (
         <MainLayout>
@@ -327,18 +327,18 @@ const Pricing = () => {
                 {/* Tab Navigation */}
                 <div className="flex justify-center gap-2 mb-12 flex-wrap">
                     <Button
-                        variant={activeTab === 'urun_fotografciligi' ? 'primary' : 'outline'}
-                        onClick={() => setActiveTab('urun_fotografciligi')}
-                        className={`rounded-full ${activeTab === 'urun_fotografciligi' ? 'bg-[#0b2117] text-[#F4EFE6] hover:bg-[#132a1f]' : 'text-[#0b2117] border-[#0b2117]/20 hover:bg-[#0b2117]/5'}`}
-                    >
-                        Ürün Fotoğrafçılığı
-                    </Button>
-                    <Button
                         variant={activeTab === 'katalog' ? 'primary' : 'outline'}
                         onClick={() => setActiveTab('katalog')}
                         className={`rounded-full ${activeTab === 'katalog' ? 'bg-[#0b2117] text-[#F4EFE6] hover:bg-[#132a1f]' : 'text-[#0b2117] border-[#0b2117]/20 hover:bg-[#0b2117]/5'}`}
                     >
                         Dijital Katalog
+                    </Button>
+                    <Button
+                        variant={activeTab === 'urun_fotografciligi' ? 'primary' : 'outline'}
+                        onClick={() => setActiveTab('urun_fotografciligi')}
+                        className={`rounded-full ${activeTab === 'urun_fotografciligi' ? 'bg-[#0b2117] text-[#F4EFE6] hover:bg-[#132a1f]' : 'text-[#0b2117] border-[#0b2117]/20 hover:bg-[#0b2117]/5'}`}
+                    >
+                        Ürün Fotoğrafçılığı
                     </Button>
                     <Button
                         variant={activeTab === 'ai' ? 'primary' : 'outline'}

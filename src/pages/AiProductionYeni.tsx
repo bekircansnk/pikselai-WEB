@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence, useMotionValue, type Variants } from 'framer-motion';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
-import { SEOHead } from '../components/seo/SEOHead';
+import { SEOHead, createServiceSchema } from '../components/seo/SEOHead';
 import {
   ArrowRight,
   Camera,
@@ -340,7 +340,7 @@ const ExpandableProductShowcase = () => {
               layoutId={`img-${project.id}`}
               src={project.mainImg}
               className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700"
-              alt=""
+              alt={`PikselAI ${project.title} - yapay zeka ile üretilmiş profesyonel ürün fotoğrafı`}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
 
@@ -517,8 +517,8 @@ const GhostShowcase = () => {
             {/* Tekli Büyük Ürün Gösterimi */}
             <div className="flex flex-col items-center group scale-100 md:scale-[1.1] lg:scale-[1.25] transform w-full px-4 md:px-0">
               <div className="flex w-full items-center justify-center gap-4 md:gap-8 drop-shadow-2xl">
-                <img src={current.img1} className="w-[45%] md:w-[40%] h-auto max-h-[500px] md:max-h-[650px] object-contain drop-shadow-2xl" alt="" />
-                <img src={current.img2} className="w-[45%] md:w-[40%] h-auto max-h-[500px] md:max-h-[650px] object-contain drop-shadow-2xl" alt="" />
+                <img src={current.img1} className="w-[45%] md:w-[40%] h-auto max-h-[500px] md:max-h-[650px] object-contain drop-shadow-2xl" alt="AI ghost mannequin ürün görseli - ön yüz" />
+                <img src={current.img2} className="w-[45%] md:w-[40%] h-auto max-h-[500px] md:max-h-[650px] object-contain drop-shadow-2xl" alt="AI ghost mannequin ürün görseli - arka yüz" />
               </div>
             </div>
           </motion.div>
@@ -572,7 +572,7 @@ const LifestyleShowcase = () => {
           transition={{ duration: 0.7 }}
           className="col-span-1 row-span-2 rounded-[2rem] md:rounded-[3.5rem] overflow-hidden shadow-2xl"
         >
-          <img src={imgs[0]} className="w-full h-full object-cover" alt="" />
+          <img src={imgs[0]} className="w-full h-full object-cover" alt={`${project.name} - AI destekli lifestyle ürün fotoğrafı`} />
         </motion.div>
       </AnimatePresence>
 
@@ -585,7 +585,7 @@ const LifestyleShowcase = () => {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-xl"
         >
-          <img src={imgs[1 % imgs.length]} className="w-full h-full object-cover" alt="" />
+          <img src={imgs[1 % imgs.length]} className="w-full h-full object-cover" alt={`${project.name} - yapay zeka ile üretilmiş konsept görsel`} />
         </motion.div>
       </AnimatePresence>
 
@@ -598,7 +598,7 @@ const LifestyleShowcase = () => {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-xl border-2 border-[#caf265]/30"
         >
-          <img src={imgs[2 % imgs.length]} className="w-full h-full object-cover" alt="" />
+          <img src={imgs[2 % imgs.length]} className="w-full h-full object-cover" alt={`${project.name} - AI prodüksiyon kreatif görsel`} />
         </motion.div>
       </AnimatePresence>
     </div>
@@ -655,6 +655,13 @@ const AiProduction = () => {
         title="Yapay Zeka Destekli Ürün Fotoğrafçılığı | PikselAI"
         description="Stüdyo olmadan profesyonel ürün görselleri, sanal manken çekimleri ve ürün fotoğrafçılığı hizmeti. PikselAI ile yüksek dönüşümlü ürün fotoğraflarına 48 saatte ulaşın."
         canonical="/ai-produksiyon"
+        jsonLd={[
+          createServiceSchema({
+            name: 'Yapay Zeka Ürün Fotoğrafçılığı ve Sanal Manken',
+            description: 'Stüdyo veya mankene ihtiyaç duymadan, ürünleriniz için AI destekli yüksek kaliteli katalog, kampanya ve konsept görselleri üretiyoruz.',
+            serviceType: 'PhotographyService'
+          })
+        ]}
       />
       <Header />
 

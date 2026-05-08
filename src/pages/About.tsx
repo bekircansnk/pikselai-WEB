@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Zap, Eye, HandHeart, Lightbulb, TrendingUp, Users } from 'lucide-react';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
-import { SEOHead } from '../components/seo/SEOHead';
+import { SEOHead, createOrganizationSchema } from '../components/seo/SEOHead';
 
 const About = () => {
     const navigate = useNavigate();
@@ -18,6 +18,7 @@ const About = () => {
                 title="Hakkımızda — Yapay Zeka Destekli Dijital Ajans"
                 description="Pikselai, yapay zeka destekli kreatif üretim, e-ticaret yönetimi ve dijital çözümler sunan profesyonel bir dijital ajanstır. Markanızı gözle görülür yapıyoruz."
                 canonical="/hakkimizda"
+                jsonLd={[createOrganizationSchema()]}
             />
             {/* Header */}
             <div className="bg-[#0b2117]">

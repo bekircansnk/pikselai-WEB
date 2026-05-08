@@ -152,3 +152,192 @@ export function createFAQSchema(faqs: { question: string; answer: string }[]) {
         }))
     }
 }
+
+// ─── Yardımcı: Organization JSON-LD üreteci (Entity bağlantılı) ───
+export function createOrganizationSchema() {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        '@id': `${SITE_URL}/#organization`,
+        name: SITE_NAME,
+        url: SITE_URL,
+        logo: `${SITE_URL}/assets/common/logo-dark-v2.webp`,
+        description: 'Yapay zeka destekli kreatif üretim, ürün fotoğrafçılığı, e-ticaret yönetimi ve dijital çözümler sunan profesyonel dijital ajans.',
+        foundingDate: '2024',
+        sameAs: [
+            'https://www.instagram.com/pikselai',
+            'https://www.linkedin.com/company/pikselai',
+            'https://twitter.com/pikselai'
+        ],
+        contactPoint: {
+            '@type': 'ContactPoint',
+            telephone: '+905531832344',
+            contactType: 'customer service',
+            areaServed: 'TR',
+            availableLanguage: 'Turkish'
+        },
+        knowsAbout: [
+            'Yapay Zeka ile Ürün Fotoğrafçılığı',
+            'AI Sanal Manken Üretimi',
+            'Ghost Mannequin (Hayalet Manken)',
+            'E-Ticaret Görsel Üretimi',
+            'Shopify Mağaza Kurulumu',
+            'Sosyal Medya İçerik Üretimi',
+            'Dijital Katalog Yönetimi',
+            'Marka Kimliği Tasarımı',
+            'Reklam Kreatifi Üretimi'
+        ],
+        hasOfferCatalog: {
+            '@type': 'OfferCatalog',
+            name: 'PikselAI Hizmetleri',
+            itemListElement: [
+                {
+                    '@type': 'OfferCatalog',
+                    name: 'AI Ürün Fotoğrafçılığı',
+                    itemListElement: [
+                        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Ürün Fotoğrafçılığı' } },
+                        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Sanal Manken Üretimi' } },
+                        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Ghost Mannequin' } }
+                    ]
+                },
+                {
+                    '@type': 'OfferCatalog',
+                    name: 'E-Ticaret Çözümleri',
+                    itemListElement: [
+                        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Shopify Mağaza Kurulumu' } },
+                        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'E-Ticaret Danışmanlığı' } }
+                    ]
+                },
+                {
+                    '@type': 'OfferCatalog',
+                    name: 'Sosyal Medya',
+                    itemListElement: [
+                        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'İçerik Üretimi' } },
+                        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Topluluk Yönetimi' } }
+                    ]
+                }
+            ]
+        }
+    }
+}
+
+// ─── Yardımcı: LocalBusiness JSON-LD üreteci (İletişim sayfası) ───
+export function createLocalBusinessSchema() {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'ProfessionalService',
+        '@id': `${SITE_URL}/#localbusiness`,
+        name: SITE_NAME,
+        url: SITE_URL,
+        logo: `${SITE_URL}/assets/common/logo-dark-v2.webp`,
+        image: `${SITE_URL}/assets/common/full-logo-dark-v2.webp`,
+        telephone: '+905531832344',
+        email: 'bilgi@pikselai.com',
+        address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'Başakşehir',
+            addressRegion: 'İstanbul',
+            addressCountry: 'TR'
+        },
+        openingHoursSpecification: [
+            {
+                '@type': 'OpeningHoursSpecification',
+                dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+                opens: '09:00',
+                closes: '18:00'
+            },
+            {
+                '@type': 'OpeningHoursSpecification',
+                dayOfWeek: 'Saturday',
+                opens: '10:00',
+                closes: '14:00'
+            }
+        ],
+        priceRange: '₺₺',
+        areaServed: {
+            '@type': 'Country',
+            name: 'TR'
+        }
+    }
+}
+
+// ─── Yardımcı: Service JSON-LD üreteci ───
+export function createServiceSchema({
+    name,
+    description,
+    provider = SITE_NAME,
+    serviceType
+}: {
+    name: string
+    description: string
+    provider?: string
+    serviceType: string
+}) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name,
+        description,
+        provider: {
+            '@type': 'Organization',
+            '@id': `${SITE_URL}/#organization`,
+            name: provider
+        },
+        serviceType,
+        areaServed: { '@type': 'Country', name: 'TR' }
+    }
+}
+
+// ─── Yardımcı: Product JSON-LD üreteci ───
+export function createProductSchema({
+    name,
+    description,
+    image,
+    price,
+    priceCurrency = 'TRY'
+}: {
+    name: string
+    description: string
+    image: string
+    price: string
+    priceCurrency?: string
+}) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        name,
+        description,
+        image: image.startsWith('http') ? image : `${SITE_URL}${image}`,
+        offers: {
+            '@type': 'Offer',
+            price,
+            priceCurrency,
+            availability: 'https://schema.org/InStock',
+            seller: {
+                '@type': 'Organization',
+                name: SITE_NAME
+            }
+        }
+    }
+}
+
+// ─── Yardımcı: SoftwareApplication JSON-LD üreteci ───
+export function createSoftwareApplicationSchema({
+    name,
+    description,
+    applicationCategory
+}: {
+    name: string
+    description: string
+    applicationCategory: string
+}) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'SoftwareApplication',
+        name,
+        description,
+        applicationCategory,
+        operatingSystem: 'Web'
+    }
+}
+

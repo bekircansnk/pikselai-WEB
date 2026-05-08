@@ -5,7 +5,7 @@ import type { Variants } from 'framer-motion';
 import { MainLayout } from '../layouts/MainLayout';
 import { ArrowRight, ChevronDown, Zap, Play, Box, TrendingUp, Layers, Sparkles, Check, Camera, MoveRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import HeroAlternatives from '../components/sections/HeroAlternatives';
-import { SEOHead } from '../components/seo/SEOHead';
+import { SEOHead, createOrganizationSchema, createFAQSchema } from '../components/seo/SEOHead';
 
 const colors = {
   beige: "bg-[#F4EFE6]",
@@ -391,35 +391,16 @@ const Home = () => {
         title="Yapay Zeka ile Profesyonel Ürün Fotoğrafçılığı ve E-Ticaret Çözümleri | PikselAI"
         description="Geleneksel stüdyo maliyetlerini unutun. PikselAI ile yapay zeka destekli, düşük maliyetli ve yüksek kaliteli ürün fotoğrafçılığı hizmetlerini hemen keşfedin."
         canonical="/"
-        jsonLd={[{
-          '@context': 'https://schema.org',
-          '@type': 'WebSite',
-          'name': 'Pikselai',
-          'url': 'https://pikselai.com',
-          'potentialAction': {
-            '@type': 'SearchAction',
-            'target': 'https://pikselai.com/blog?q={search_term_string}',
-            'query-input': 'required name=search_term_string'
-          }
-        }, {
-          '@context': 'https://schema.org',
-          '@type': 'Organization',
-          'name': 'Pikselai',
-          'url': 'https://pikselai.com',
-          'logo': 'https://pikselai.com/assets/common/logo-dark-v2.webp',
-          'description': 'Yapay zeka destekli kreatif üretim, e-ticaret yönetimi ve dijital çözümler sunan profesyonel dijital ajans.',
-          'contactPoint': {
-            '@type': 'ContactPoint',
-            'telephone': '+905531832344',
-            'contactType': 'customer service',
-            'areaServed': 'TR',
-            'availableLanguage': 'Turkish'
-          },
-          'sameAs': [
-            'https://www.instagram.com/pikselai',
-            'https://www.linkedin.com/company/pikselai'
-          ]
-        }]}
+        jsonLd={[
+          createOrganizationSchema(),
+          createFAQSchema([
+            { question: "Minimum sipariş veya görsel miktarı var mı?", answer: "Hayır, tek bir ürün görseli için bile çalışabiliriz. Esnek kampanya paketlerimiz e-ticaret satıcılarından büyük moda devlerine kadar her ölçeğe hitap etmektedir." },
+            { question: "Ürün fotoğrafçılığı maliyetleri nasıl hesaplanıyor?", answer: "Geleneksel stüdyo çekimlerine göre %80'e varan fiyat avantajı sunuyoruz. Ürün fotoğrafçılığı hizmeti maliyetleri çekilecek ürün sayısına ve konsept özelliklerine göre hesaplanır." },
+            { question: "Teslim süresi ortalama ne kadardır?", answer: "Sezon veya konsept yenilemeleri genelde aynı gün veya 48 saat içinde teslim edilmektedir." },
+            { question: "Yapay zeka ile üretilen mankenli fotoğraflar gerçekten inandırıcı mı?", answer: "Evet. Özel eğitim yapılmış kurumsal AI mimarimiz sayesinde dünyanın en iyi dergi çekimlerinden farksız sonuçlar alırsınız." },
+            { question: "Kendi ürünümü stüdyonuzda fiziki olarak çektirebilir miyim?", answer: "PikselAI olarak dijital prodüksiyon haricinde, kendi e-ticaret stüdyomuzda klasik ürün çekim, ghost mannequin ve video hizmetlerini de fiziksel olarak sunuyoruz." }
+          ])
+        ]}
       />
       <main className="bg-[#0b2117] min-h-screen font-sans selection:bg-[#caf265] selection:text-[#0b2117]">
 

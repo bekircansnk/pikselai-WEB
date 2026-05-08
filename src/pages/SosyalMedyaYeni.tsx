@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence, useMotionValue, type Variants } from 'framer-motion';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
-import { SEOHead } from '../components/seo/SEOHead';
+import { SEOHead, createServiceSchema, createFAQSchema } from '../components/seo/SEOHead';
 import {
   ArrowRight,
   CheckCircle2,
@@ -223,6 +223,14 @@ const SosyalMedyaYeni = () => {
         title="Sosyal Medya Yönetimi ve İçerik Üretimi — Kreatif Ajans"
         description="PikselAI ile sosyal medya içerik üretimi, video kurgu, reklam kreatifi ve topluluk yönetimi. Yüksek etkileşimli, dönüşüm odaklı içerikler."
         canonical="/sosyal-medya"
+        jsonLd={[
+          createServiceSchema({
+            name: 'Sosyal Medya İçerik Üretimi ve Yönetimi',
+            description: 'Reklam kreatifi, video kurgu, reels, story ve feed görselleri üretimi. Topluluk yönetimi ve haftalık içerik teslimatı. Yapay zeka destekli hızlı üretim.',
+            serviceType: 'SocialMediaManagement'
+          }),
+          createFAQSchema(faqs)
+        ]}
       />
       {/* Header */}
       <div className={`${colors.darkGreen}`}>
@@ -299,7 +307,7 @@ const SosyalMedyaYeni = () => {
                       "/assets/pages/sosyalmedyayeni/image7.webp"
                     ].map((src, i) => (
                       <div key={`col1-${i}`} className="rounded-2xl overflow-hidden shadow-2xl relative border-2 border-white/5 bg-white/5 backdrop-blur-sm">
-                        <img src={src} className="w-full object-cover scale-[1.02]" alt="" />
+                        <img src={src} className="w-full object-cover scale-[1.02]" alt="PikselAI sosyal medya içerik üretimi örnek görseli" />
                       </div>
                     ))}
                   </motion.div>
@@ -319,7 +327,7 @@ const SosyalMedyaYeni = () => {
                       "/assets/pages/sosyalmedyayeni/image3.webp"
                     ].map((src, i) => (
                       <div key={`col2-${i}`} className="rounded-2xl overflow-hidden shadow-xl relative border-2 border-white/5 bg-white/5 backdrop-blur-sm">
-                        <img src={src} className="w-full object-cover scale-[1.02]" alt="" />
+                        <img src={src} className="w-full object-cover scale-[1.02]" alt="PikselAI sosyal medya içerik üretimi örnek görseli" />
                       </div>
                     ))}
                   </motion.div>
@@ -339,7 +347,7 @@ const SosyalMedyaYeni = () => {
                       "/assets/common/image1.webp"
                     ].map((src, i) => (
                       <div key={`col3-${i}`} className="rounded-2xl overflow-hidden shadow-2xl relative border-2 border-white/5 bg-white/5 backdrop-blur-sm">
-                        <img src={src} className="w-full object-cover scale-[1.02]" alt="" />
+                        <img src={src} className="w-full object-cover scale-[1.02]" alt="PikselAI sosyal medya içerik üretimi örnek görseli" />
                       </div>
                     ))}
                   </motion.div>

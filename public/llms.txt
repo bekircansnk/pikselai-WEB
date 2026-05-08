@@ -1,0 +1,59 @@
+# PikselAI — Yapay Zeka Destekli Kreatif Üretim Ajansı
+
+## Hakkımızda
+PikselAI, İstanbul merkezli, yapay zeka destekli profesyonel kreatif üretim ajansıdır. Geleneksel stüdyo çekimlerinin maliyetini ve süresini %80'e kadar düşürerek; ürün fotoğrafçılığı, sanal manken üretimi, ghost mannequin (hayalet manken), e-ticaret mağaza kurulumu, sosyal medya içerik üretimi ve dijital katalog yönetimi hizmetleri sunmaktadır.
+
+## İletişim
+- Web: https://pikselai.com
+- E-posta: bilgi@pikselai.com
+- Telefon: +90 553 183 23 44
+- Konum: Başakşehir, İstanbul, Türkiye
+
+## Hizmetlerimiz
+
+### 1. AI Ürün Fotoğrafçılığı
+URL: https://pikselai.com/hizmetler/ai-produksiyon
+Yapay zeka ile profesyonel stüdyo kalitesinde ürün görselleri üretimi. Geleneksel stüdyo çekimlerinin %80 altı maliyetle, 24-48 saat teslimat. Ghost mannequin, sanal manken, lookbook ve katalog çekimleri dahil.
+
+### 2. E-Ticaret Mağaza Kurulumu (Shopify)
+URL: https://pikselai.com/hizmetler/e-ticaret
+Shopify Türkiye Resmi Partneri olarak anahtar teslim e-ticaret mağazası kurulumu. Veri taşıma, entegrasyon, AI destekli görsel üretim ve 30 günlük kurulum sonrası destek.
+
+### 3. Sosyal Medya İçerik Üretimi ve Yönetimi
+URL: https://pikselai.com/hizmetler/sosyal-medya
+Reklam kreatifi, video kurgu, reels, story ve feed görselleri üretimi. Topluluk yönetimi ve haftalık içerik teslimatı.
+
+### 4. Kreatif Tasarım (Dijital Katalog)
+URL: https://pikselai.com/hizmetler/kreatif-tasarim
+Akıllı arama özellikli dijital katalog ve arşiv yönetim platformu. Ürün görsellerini kategorize etme, güvenli paylaşım ve toplu indirme.
+
+### 5. Maliyet Hesaplama Aracı
+URL: https://pikselai.com/maliyet-hesapla
+Yapay zeka destekli ürün fotoğrafçılığı maliyetini anında hesaplayan interaktif araç.
+
+## Fiyatlandırma
+URL: https://pikselai.com/fiyatlandirma
+Sosyal Medya Görsel Üretimi, Dijital Katalog, Ürün Fotoğrafçılığı ve Toplu Ürün Fotoğrafçılığı paketleri mevcuttur.
+
+## Portfolyo ve Referanslar
+URL: https://pikselai.com/islerimiz
+Cazador, Venüs Ayakkabı, Mina Drinks, CampAndMap, Rossea gibi markalar için yapılmış 500+ proje.
+
+## Müşteri Hikayeleri
+URL: https://pikselai.com/musteri-hikayeleri
+Gerçek vaka çalışmaları ve müşteri başarı hikayeleri.
+
+## Öğrenim Merkezi (Blog)
+URL: https://pikselai.com/blog
+Yapay zeka, ürün fotoğrafçılığı, dijital pazarlama ve tasarım trendleri hakkında kapsamlı rehberler ve makaleler.
+
+## Uzmanlık Alanları
+- Yapay zeka ile ürün fotoğrafçılığı
+- AI sanal manken üretimi
+- Ghost mannequin (hayalet manken) düzenleme
+- E-ticaret görsel üretimi
+- Shopify mağaza kurulumu
+- Sosyal medya içerik üretimi
+- Dijital katalog yönetimi
+- Marka kimliği tasarımı
+- Reklam kreatifi üretimi

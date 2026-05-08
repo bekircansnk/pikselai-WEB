@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { MainLayout } from '../layouts/MainLayout';
 import { Button } from '../components/ui/Button';
 import { AnimatePresence, motion } from 'framer-motion';
-import { SEOHead } from '../components/seo/SEOHead';
+import { SEOHead, createProductSchema } from '../components/seo/SEOHead';
 import { ChevronRight, MessageSquare, TrendingUp, Check } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
@@ -295,6 +295,20 @@ const Pricing = () => {
                 title="Fiyatlandırma — Şeffaf ve Esnek Paketler"
                 description="PikselAI hizmet ücretleri: AI fotoğraf üretimi, Shopify e-ticaret kurulumu, sosyal medya yönetimi ve kreatif tasarım paketleri. Gizli ücret yok."
                 canonical="/fiyatlandirma"
+                jsonLd={[
+                    createProductSchema({
+                        name: 'Yapay Zeka Destekli Ürün Fotoğrafçılığı Başlangıç Paketi',
+                        description: 'Butik koleksiyonlar için ideal, 20 ürün ve varyasyon üretimini içeren stüdyo kalitesinde başlangıç paketi.',
+                        image: '/assets/common/image1.webp',
+                        price: '3000'
+                    }),
+                    createProductSchema({
+                        name: 'Shopify E-Ticaret Kurulumu Temel Paketi',
+                        description: 'Satışa hazır standart Shopify mağaza kurulumu ve temel entegrasyonlar.',
+                        image: '/assets/pages/eticaretyeni/shopify_setup.webp',
+                        price: '29000'
+                    })
+                ]}
             />
 
             {/* Hero Section - Creamy Background */}

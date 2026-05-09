@@ -2,8 +2,7 @@ import { SEOHead } from '../components/seo/SEOHead';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
 import { Section } from '../components/ui/Section';
-import { motion } from 'framer-motion';
-import { ArrowRight, Instagram, Linkedin, Mail, Twitter } from 'lucide-react';
+import { ArrowRight, Instagram, Linkedin, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const AuthorBio = () => {

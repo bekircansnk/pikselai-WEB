@@ -28,11 +28,9 @@ const urunFotografciligiPackages = [
         features: [
             '75 Ürün / Varyasyon Üretimi (Ürün başı ₺120)',
             'Seçili 2 Arka Plan Stüdyosu',
-            '5 adet revizyon hakkı',
-            'Öncelikli Üretim Sırası'
+            '5 adet revizyon hakkı'
         ],
-        cta: 'Hemen Başla',
-        featured: true
+        cta: 'Hemen Başla'
     },
     {
         name: 'Profesyonel',
@@ -42,9 +40,11 @@ const urunFotografciligiPackages = [
         features: [
             '200 Ürün / Varyasyon Üretimi (Ürün başı ₺95)',
             'Belirli 3 adet arka plan',
-            '15 adet revizyon hakkı'
+            '15 adet revizyon hakkı',
+            'Öncelikli Üretim Sırası'
         ],
-        cta: 'Hemen Başla'
+        cta: 'Hemen Başla',
+        featured: true
     },
     {
         name: 'Kurumsal Üretim',
@@ -211,10 +211,10 @@ const dijitalKatalogFaqs = [
 ];
 
 const catalogFaqs = [
+    { q: "Her ürün için oluşturulan 4 farklı poz (açı) nasıl belirleniyor?", a: "Sizin belirleyeceğiniz arka planlarla fotoğraflar oluşturulacaktır. Yakın çekim, detay veya genel görünüm gibi istediğiniz 4 farklı fotoğraf açısını tamamen sizin belirlediğiniz poz şekline göre üretiyoruz." },
     { q: "Seçili arka plan stüdyosu nedir?", a: "Ürün fotoğrafçılığı projeleriniz için belirlediğiniz bir stüdyo ortamı veya konseptidir. Tüm ürünleriniz bu konseptte tutarlı olarak üretilir." },
-    { q: "Katalog çekimi ve ürün fotoğrafçılığı maliyetleri nasıl hesaplanıyor?", a: "Ürün fotoğrafçılığı maliyetleri, çekilecek ürün sayısına, kullanılacak konsept sayısına (stüdyo veya AI) ve revizyon taleplerine göre hesaplanır. Yapay zeka destekli süreçlerimiz sayesinde 2026 yılı geleneksel stüdyo çekimlerine kıyasla %80'e varan fiyat avantajı sunarız." },
-    { q: "Teslim süresi nedir?", a: "Paketin büyüklüğüne göre değişmekle birlikte, standart ürün fotoğrafçılığı paketleri genelde 48 saat içinde teslim edilmektedir." },
-    { q: "Ürün varyasyonları pakete dahil mi?", a: "Evet. Aynı ürünün farklı renk veya açıları, toplam ürün kotanızdan düşülerek üretilir. Bu sayede katalog çekimi fiyatları konusunda sürprizlerle karşılaşmazsınız." }
+    { q: "Katalog çekimi ve ürün fotoğrafçılığı maliyetleri nasıl hesaplanıyor?", a: "Ürün fotoğrafçılığı maliyetleri, çekilecek ürün sayısına, kullanılacak konsept sayısına (stüdyo veya AI) ve revizyon taleplerine göre hesaplanır. Yapay zeka destekli süreçlerimiz sayesinde geleneksel stüdyo çekimlerine kıyasla %80'e varan fiyat avantajı sunarız." },
+    { q: "Teslim süresi nedir?", a: "Adetler fazla olacağı için teslimat süresi paketin büyüklüğüne göre değişmektedir ama genelde minimum 3 gün içinde teslim edilmektedir." }
 ];
 
 const aiFaqs = [
@@ -273,7 +273,7 @@ const heroContent = {
         description: "Panel kullandırmıyoruz; ürünlerinizi alıp görsel stilini oluşturuyor, üretimi yönetiyor, kontrol ediyor ve stüdyo kalitesinde seri olarak teslim ediyoruz.",
         features: [
             "Stüdyo kalitesinde seri üretim",
-            "Her ürün için 4 alternatif görsel (poz)",
+            "Kendi belirlediğiniz açılarda 4 farklı poz",
             "Geniş ürün kapasitesi ve pakete özel revizyon hakları"
         ]
     },

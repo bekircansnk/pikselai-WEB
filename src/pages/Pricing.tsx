@@ -28,6 +28,7 @@ const urunFotografciligiPackages = [
         features: [
             '75 Ürün / Varyasyon Üretimi (Ürün başı ₺120)',
             'Seçili 2 Arka Plan Stüdyosu',
+            '5 adet revizyon hakkı',
             'Öncelikli Üretim Sırası'
         ],
         cta: 'Hemen Başla',
@@ -40,8 +41,8 @@ const urunFotografciligiPackages = [
         description: 'Kapsamlı sezon çekimleri ve geniş ürün ağları için.',
         features: [
             '200 Ürün / Varyasyon Üretimi (Ürün başı ₺95)',
-            'Sınırsız Seçili Arka Plan',
-            'Atanmış Kreatif Direktör'
+            'Belirli 3 adet arka plan',
+            '15 adet revizyon hakkı'
         ],
         cta: 'Hemen Başla'
     },
@@ -272,7 +273,8 @@ const heroContent = {
         description: "Panel kullandırmıyoruz; ürünlerinizi alıp görsel stilini oluşturuyor, üretimi yönetiyor, kontrol ediyor ve stüdyo kalitesinde seri olarak teslim ediyoruz.",
         features: [
             "Stüdyo kalitesinde seri üretim",
-            "Sınırsız ürün desteği ve revizyon imkanı"
+            "Her ürün için 4 alternatif görsel (poz)",
+            "Geniş ürün kapasitesi ve pakete özel revizyon hakları"
         ]
     },
     katalog: {

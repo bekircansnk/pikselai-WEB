@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { MainLayout } from '../layouts/MainLayout';
 import { Button } from '../components/ui/Button';
 import { AnimatePresence, motion } from 'framer-motion';
 import { SEOHead, createProductSchema, createBreadcrumbSchema } from '../components/seo/SEOHead';
 import { ChevronRight, MessageSquare, TrendingUp, Check } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 // Katalog Üretim Paketleri
 const urunFotografciligiPackages = [
@@ -39,7 +39,7 @@ const urunFotografciligiPackages = [
         suffix: '/ proje',
         description: 'Kapsamlı sezon çekimleri ve geniş ürün ağları için.',
         features: [
-            '200 Ürün / Varyasyon Üretimi (Ürün başı ₺90)',
+            '200 Ürün / Varyasyon Üretimi (Ürün başı ₺95)',
             'Sınırsız Seçili Arka Plan',
             'Atanmış Kreatif Direktör'
         ],
@@ -287,7 +287,27 @@ const heroContent = {
 };
 
 const Pricing = () => {
-    const [activeTab, setActiveTab] = useState<'urun_fotografciligi' | 'katalog' | 'ai' | 'eticaret' | 'kreatif'>('ai');
+    const location = useLocation();
+
+    const getInitialTab = () => {
+        const hash = location.hash.replace('#', '');
+        const validTabs = ['urun_fotografciligi', 'katalog', 'ai', 'eticaret', 'kreatif'];
+        return validTabs.includes(hash) ? (hash as any) : 'ai';
+    };
+
+    const [activeTab, setActiveTab] = useState<'urun_fotografciligi' | 'katalog' | 'ai' | 'eticaret' | 'kreatif'>(getInitialTab);
+
+    useEffect(() => {
+        window.history.replaceState(null, '', `#${activeTab}`);
+    }, [activeTab]);
+
+    useEffect(() => {
+        const hash = location.hash.replace('#', '');
+        const validTabs = ['urun_fotografciligi', 'katalog', 'ai', 'eticaret', 'kreatif'];
+        if (validTabs.includes(hash) && hash !== activeTab) {
+            setActiveTab(hash as any);
+        }
+    }, [location.hash]);
 
     return (
         <MainLayout>

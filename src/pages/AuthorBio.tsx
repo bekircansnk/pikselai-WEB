@@ -10,22 +10,22 @@ const AuthorBio = () => {
     return (
         <div className="min-h-screen bg-[#F4EFE6] selection:bg-[#caf265] selection:text-[#0b2117]">
             <SEOHead
-                title="Bekir Sağnak — Kurucu & Kreatif Direktör | PikselAI"
-                description="PikselAI Kurucusu Bekir Sağnak'ın biyografisi, yapay zeka destekli ürün fotoğrafçılığı ve e-ticaret deneyimleri."
-                canonical="/yazar/bekir-sagnak"
+                title="Bekircan Sağnak — Kurucu & Kreatif Direktör | PikselAI"
+                description="PikselAI Kurucusu Bekir Can Sağnak'ın biyografisi, yapay zeka destekli ürün fotoğrafçılığı ve e-ticaret deneyimleri."
+                canonical="/yazar/bekircan-sagnak"
                 jsonLd={{
                     "@context": "https://schema.org",
                     "@type": "ProfilePage",
                     "mainEntity": {
                         "@type": "Person",
-                        "name": "Bekir Sağnak",
+                        "name": "Bekircan Sağnak",
                         "alternateName": "Bekir Can Sağnak",
                         "jobTitle": "Kurucu & Kreatif Direktör",
                         "worksFor": {
                             "@type": "Organization",
                             "name": "PikselAI"
                         },
-                        "url": "https://pikselai.com/yazar/bekir-sagnak",
+                        "url": "https://pikselai.com/yazar/bekircan-sagnak",
                         "image": "https://pikselai.com/assets/common/bekir-sagnak.webp",
                         "sameAs": [
                             "https://www.linkedin.com/in/bekircansnk",
@@ -53,7 +53,7 @@ const AuthorBio = () => {
                                     BS
                                 </div>
                             </div>
-                            <h1 className="text-3xl font-display italic text-[#0b2117] mb-2 text-center md:text-left">Bekir Sağnak</h1>
+                            <h1 className="text-3xl font-display italic text-[#0b2117] mb-2 text-center md:text-left">Bekircan Sağnak</h1>
                             <p className="text-lg text-[#0b2117]/60 mb-6 text-center md:text-left">Kurucu & Kreatif Direktör</p>
                             
                             <div className="flex gap-4">
@@ -76,7 +76,7 @@ const AuthorBio = () => {
                                 Yapay zeka devrimini e-ticaret ve dijital üretim süreçlerine entegre eden PikselAI'ın kurucusu ve kreatif direktörü. Yıllardır markaların dijital görünürlüğünü, dönüşüm odaklı tasarım ve yapay zeka üretim teknikleriyle en üst düzeye çıkarmak için çalışıyor.
                             </p>
                             <p>
-                                Özellikle "Yapay Zeka ile Ürün Fotoğrafçılığı" ve "Sanal Manken" teknolojilerinde öncü çözümler geliştirerek, stüdyo maliyetlerini düşürürken üretim hızını artıran sistemler inşa etti. E-ticaret dünyasında görselliğin gücüne inanan Bekir, markalara sadece fotoğraf değil, kapsamlı bir görsel kimlik stratejisi sunuyor.
+                                Özellikle "Yapay Zeka ile Ürün Fotoğrafçılığı" ve "Sanal Manken" teknolojilerinde öncü çözümler geliştirerek, stüdyo maliyetlerini düşürürken üretim hızını artıran sistemler inşa etti. E-ticaret dünyasında görselliğin gücüne inanan Bekircan, markalara sadece fotoğraf değil, kapsamlı bir görsel kimlik stratejisi sunuyor.
                             </p>
                             
                             <h3>Uzmanlık Alanları</h3>

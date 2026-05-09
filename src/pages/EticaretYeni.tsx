@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion, type Variants } from 'framer-motion';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
-import { SEOHead, createServiceSchema, createFAQSchema } from '../components/seo/SEOHead';
+import { SEOHead, createServiceSchema, createFAQSchema, createBreadcrumbSchema } from '../components/seo/SEOHead';
 import {
   ShieldCheck,
   ChevronRight,
@@ -97,7 +97,12 @@ const EticaretYeni = () => {
             description: 'Shopify Türkiye Resmi Partneri olarak anahtar teslim e-ticaret mağazası kurulumu. Veri taşıma, ödeme ve kargo entegrasyonları, AI destekli ürün görseli üretimi ve 30 günlük kurulum sonrası destek.',
             serviceType: 'ECommerceService'
           }),
-          createFAQSchema(faqs)
+          createFAQSchema(faqs),
+          createBreadcrumbSchema([
+            { name: 'Anasayfa', url: '/' },
+            { name: 'Hizmetler', url: '/hizmetler' },
+            { name: 'E-Ticaret Yönetimi', url: '/hizmetler/e-ticaret' }
+          ])
         ]}
       />
       {/* Header (Saydam/Dark) */}

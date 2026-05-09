@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Check, Settings, Image as ImageIcon, Box, PieChart, Info, Copy, Zap } from "lucide-react";
 import { Header } from "../components/layout/Header";
 import { Footer } from "../components/layout/Footer";
-import { SEOHead, createSoftwareApplicationSchema } from "../components/seo/SEOHead";
+import { SEOHead, createSoftwareApplicationSchema, createBreadcrumbSchema } from "../components/seo/SEOHead";
 import {
   DEFAULT_SOCIAL,
   DEFAULT_BANNERS,
@@ -135,7 +135,11 @@ Genel Toplam Bütçe: $${overallCost.toFixed(2)}
                   name: 'PikselAI Proje Maliyet Hesaplayıcı',
                   description: 'Yapay zeka destekli kreatif ajans hizmetlerinin (ürün fotoğrafçılığı, e-ticaret vb.) proje maliyetlerini hesaplayan etkileşimli bir araç.',
                   applicationCategory: 'BusinessApplication'
-              })
+              }),
+              createBreadcrumbSchema([
+                  { name: 'Anasayfa', url: '/' },
+                  { name: 'Maliyet Hesapla', url: '/fiyat-hesapla' }
+              ])
           ]}
       />
       <Header />

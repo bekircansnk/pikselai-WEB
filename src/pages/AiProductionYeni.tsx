@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence, useMotionValue, type Variants } from 'framer-motion';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
-import { SEOHead, createServiceSchema } from '../components/seo/SEOHead';
+import { SEOHead, createServiceSchema, createBreadcrumbSchema } from '../components/seo/SEOHead';
 import {
   ArrowRight,
   Camera,
@@ -660,7 +660,12 @@ const AiProduction = () => {
             name: 'Yapay Zeka Ürün Fotoğrafçılığı ve Sanal Manken',
             description: 'Stüdyo veya mankene ihtiyaç duymadan, ürünleriniz için AI destekli yüksek kaliteli katalog, kampanya ve konsept görselleri üretiyoruz.',
             serviceType: 'PhotographyService'
-          })
+          }),
+          createBreadcrumbSchema([
+            { name: 'Anasayfa', url: '/' },
+            { name: 'Hizmetler', url: '/hizmetler' },
+            { name: 'Yapay Zeka Prodüksiyon', url: '/hizmetler/ai-produksiyon' }
+          ])
         ]}
       />
       <Header />

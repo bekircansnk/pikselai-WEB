@@ -105,7 +105,7 @@ export function createArticleSchema({
         author: {
             '@type': author === 'Pikselai Ekibi' ? 'Organization' : 'Person',
             name: author,
-            url: author === 'Bekir Sağnak' ? `${SITE_URL}/yazar/bekir-sagnak` : SITE_URL
+            url: author === 'Bekircan Sağnak' ? `${SITE_URL}/yazar/bekircan-sagnak` : SITE_URL
         },
         publisher: {
             '@type': 'Organization',

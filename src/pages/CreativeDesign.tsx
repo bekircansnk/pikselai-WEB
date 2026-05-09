@@ -4,7 +4,7 @@ import { MainLayout } from '../layouts/MainLayout';
 import { Footer } from '../components/layout/Footer';
 import { Section } from '../components/ui/Section';
 import { Button } from '../components/ui/Button';
-import { SEOHead, createServiceSchema } from '../components/seo/SEOHead';
+import { SEOHead, createServiceSchema, createBreadcrumbSchema } from '../components/seo/SEOHead';
 
 export default function CreativeDesign() {
 
@@ -14,11 +14,18 @@ export default function CreativeDesign() {
                 title="Dijital Katalog ve Arşiv Yönetimi — Akıllı Ürün Platformu"
                 description="PikselAI Katalog sistemi ile ürün görsellerinizi yönetin, akıllı arama ile anında bulun ve müşterilerinizle profesyonelce paylaşın."
                 canonical="/katalog"
-                jsonLd={createServiceSchema({
-                    name: 'Dijital Katalog ve Arşiv Yönetim Platformu',
-                    description: 'Akıllı arama özellikli dijital katalog ve arşiv yönetim sistemi. Ürün görsellerini kategorize etme, güvenli paylaşım, toplu indirme ve dahili medya oynatıcı.',
-                    serviceType: 'DigitalCatalogService'
-                })}
+                jsonLd={[
+                    createServiceSchema({
+                        name: 'Dijital Katalog ve Arşiv Yönetim Platformu',
+                        description: 'Akıllı arama özellikli dijital katalog ve arşiv yönetim sistemi. Ürün görsellerini kategorize etme, güvenli paylaşım, toplu indirme ve dahili medya oynatıcı.',
+                        serviceType: 'DigitalCatalogService'
+                    }),
+                    createBreadcrumbSchema([
+                        { name: 'Anasayfa', url: '/' },
+                        { name: 'Hizmetler', url: '/hizmetler' },
+                        { name: 'Kreatif Tasarım (Katalog)', url: '/hizmetler/kreatif-tasarim' }
+                    ])
+                ]}
             />
             {/* ═══════════════════════════════════════════
        1. HERO SECTION — Koyu Arka Plan & Animasyonlu Başlık

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { MainLayout } from '../layouts/MainLayout';
 import { Button } from '../components/ui/Button';
 import { AnimatePresence, motion } from 'framer-motion';
-import { SEOHead, createProductSchema } from '../components/seo/SEOHead';
+import { SEOHead, createProductSchema, createBreadcrumbSchema } from '../components/seo/SEOHead';
 import { ChevronRight, MessageSquare, TrendingUp, Check } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
@@ -307,7 +307,11 @@ const Pricing = () => {
                         description: 'Satışa hazır standart Shopify mağaza kurulumu ve temel entegrasyonlar.',
                         image: '/assets/pages/eticaretyeni/shopify_setup.webp',
                         price: '29000'
-                    })
+                    }),
+                    createBreadcrumbSchema([
+                        { name: 'Anasayfa', url: '/' },
+                        { name: 'Fiyatlandırma', url: '/fiyatlandirma' }
+                    ])
                 ]}
             />
 

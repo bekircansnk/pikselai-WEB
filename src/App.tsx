@@ -192,7 +192,7 @@ function App() {
             <Route path="/gizlilik-politikasi" element={<PrivacyPolicy />} />
             <Route path="/kullanim-kosullari" element={<TermsOfService />} />
             <Route path="/kvkk" element={<KvkkPolicy />} />
-            <Route path="/yazar/bekir-sagnak" element={<AuthorBio />} />
+            <Route path="/yazar/bekircan-sagnak" element={<AuthorBio />} />
 
             <Route path="/test-panel" element={<TestPanel />} />
             <Route path="*" element={<NotFound />} />

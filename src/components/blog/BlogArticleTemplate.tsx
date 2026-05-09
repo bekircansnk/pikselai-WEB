@@ -119,7 +119,7 @@ export function BlogArticleTemplate({
     metaDescription,
     category,
     categoryId,
-    author = "Pikselai Ekibi",
+    author = "Bekircan Sağnak",
     readTime,
     publishDate,
     heroImage,
@@ -183,12 +183,21 @@ export function BlogArticleTemplate({
                     </h1>
 
                     <div className="flex flex-wrap items-center justify-center gap-4 text-[#0b2117]/80 font-medium text-base">
-                        <span className="flex items-center gap-2.5">
-                            <div className="w-9 h-9 rounded-full bg-[#0b2117] text-[#D8FF85] flex items-center justify-center font-bold text-sm shadow-sm">
-                                {author.charAt(0)}
-                            </div>
-                            {author}
-                        </span>
+                        {author === "Bekircan Sağnak" ? (
+                            <Link to="/yazar/bekircan-sagnak" className="flex items-center gap-2.5 text-[#0b2117]/80 hover:text-[#0b2117] transition-colors">
+                                <div className="w-9 h-9 rounded-full bg-[#0b2117] text-[#D8FF85] flex items-center justify-center font-bold text-sm shadow-sm">
+                                    {author.charAt(0)}
+                                </div>
+                                <span className="underline decoration-1 underline-offset-4 decoration-[#0b2117]/30 hover:decoration-[#0b2117]">{author}</span>
+                            </Link>
+                        ) : (
+                            <span className="flex items-center gap-2.5">
+                                <div className="w-9 h-9 rounded-full bg-[#0b2117] text-[#D8FF85] flex items-center justify-center font-bold text-sm shadow-sm">
+                                    {author.charAt(0)}
+                                </div>
+                                {author}
+                            </span>
+                        )}
                         <span className="text-[#0b2117]/20">|</span>
                         <span>{category}</span>
                         <span className="text-[#0b2117]/20">|</span>

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence, useMotionValue, type Variants } from 'framer-motion';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
-import { SEOHead, createServiceSchema, createFAQSchema } from '../components/seo/SEOHead';
+import { SEOHead, createServiceSchema, createFAQSchema, createBreadcrumbSchema } from '../components/seo/SEOHead';
 import {
   ArrowRight,
   CheckCircle2,
@@ -229,7 +229,12 @@ const SosyalMedyaYeni = () => {
             description: 'Reklam kreatifi, video kurgu, reels, story ve feed görselleri üretimi. Topluluk yönetimi ve haftalık içerik teslimatı. Yapay zeka destekli hızlı üretim.',
             serviceType: 'SocialMediaManagement'
           }),
-          createFAQSchema(faqs)
+          createFAQSchema(faqs),
+          createBreadcrumbSchema([
+            { name: 'Anasayfa', url: '/' },
+            { name: 'Hizmetler', url: '/hizmetler' },
+            { name: 'Sosyal Medya', url: '/hizmetler/sosyal-medya' }
+          ])
         ]}
       />
       {/* Header */}

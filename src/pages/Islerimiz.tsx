@@ -3,7 +3,7 @@ import { motion, AnimatePresence, useMotionValue } from 'framer-motion';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
 import { Section } from '../components/ui/Section';
-import { SEOHead, createOrganizationSchema } from '../components/seo/SEOHead';
+import { SEOHead, createOrganizationSchema, createBreadcrumbSchema } from '../components/seo/SEOHead';
 import { X, Play, Pause, ChevronRight, MessageSquare, TrendingUp } from 'lucide-react';
 
 /* ── Types ── */
@@ -244,14 +244,20 @@ const Islerimiz = () => {
                 title="İşlerimiz — PikselAI Portfolyo"
                 description="Yapay zeka prodüksiyon süreçlerimizle hazırlanan en son projelerimiz, vaka çalışmaları ve yaratıcı çözümlerimiz."
                 canonical="/islerimiz"
-                jsonLd={{
-                    '@context': 'https://schema.org',
-                    '@type': 'CollectionPage',
-                    name: 'PikselAI Portfolyo — İşlerimiz',
-                    description: 'Yapay zeka destekli profesyonel ürün fotoğrafçılığı, sosyal medya ve e-ticaret projelerimiz.',
-                    url: 'https://pikselai.com/islerimiz',
-                    provider: createOrganizationSchema()
-                }}
+                jsonLd={[
+                    {
+                        '@context': 'https://schema.org',
+                        '@type': 'CollectionPage',
+                        name: 'PikselAI Portfolyo — İşlerimiz',
+                        description: 'Yapay zeka destekli profesyonel ürün fotoğrafçılığı, sosyal medya ve e-ticaret projelerimiz.',
+                        url: 'https://pikselai.com/islerimiz',
+                        provider: createOrganizationSchema()
+                    },
+                    createBreadcrumbSchema([
+                        { name: 'Anasayfa', url: '/' },
+                        { name: 'İşlerimiz', url: '/islerimiz' }
+                    ])
+                ]}
             />
             
             <div className="bg-[#0b2117]">

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import { Header } from "../components/layout/Header"
 import { Footer } from "../components/layout/Footer"
 import { BottomCTA } from "../components/sections/BottomCTA"
-import { SEOHead, createOrganizationSchema } from "../components/seo/SEOHead"
+import { SEOHead, createOrganizationSchema, createBreadcrumbSchema } from "../components/seo/SEOHead"
 // Gerçek case study'ler
 const caseStudies = [
     {
@@ -73,22 +73,28 @@ export default function MusteriHikayeleri() {
                 title="Müşteri Hikayeleri — Referans Projeler ve Başarı Öyküleri"
                 description="PikselAI ile dijital dönüşüm yaşayan markaların başarı hikayeleri. Cazador, Venüs, Mina Drinks ve daha fazlası."
                 canonical="/musteri-hikayeleri"
-                jsonLd={{
-                    '@context': 'https://schema.org',
-                    '@type': 'WebPage',
-                    name: 'PikselAI Müşteri Hikayeleri',
-                    description: 'Yapay zeka ile dönüşüm yaşayan markaların başarı öyküleri ve vaka çalışmaları.',
-                    url: 'https://pikselai.com/musteri-hikayeleri',
-                    mainEntity: {
-                        ...createOrganizationSchema(),
-                        aggregateRating: {
-                            '@type': 'AggregateRating',
-                            ratingValue: '4.9',
-                            reviewCount: '47',
-                            bestRating: '5'
+                jsonLd={[
+                    {
+                        '@context': 'https://schema.org',
+                        '@type': 'WebPage',
+                        name: 'PikselAI Müşteri Hikayeleri',
+                        description: 'Yapay zeka ile dönüşüm yaşayan markaların başarı öyküleri ve vaka çalışmaları.',
+                        url: 'https://pikselai.com/musteri-hikayeleri',
+                        mainEntity: {
+                            ...createOrganizationSchema(),
+                            aggregateRating: {
+                                '@type': 'AggregateRating',
+                                ratingValue: '4.9',
+                                reviewCount: '47',
+                                bestRating: '5'
+                            }
                         }
-                    }
-                }}
+                    },
+                    createBreadcrumbSchema([
+                        { name: 'Anasayfa', url: '/' },
+                        { name: 'Müşteri Hikayeleri', url: '/musteri-hikayeleri' }
+                    ])
+                ]}
             />
             <Header transparent={false} lightText={false} />
 

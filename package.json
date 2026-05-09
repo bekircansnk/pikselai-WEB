@@ -9,7 +9,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "prepare": "husky"
+    "prepare": "husky",
+    "indexnow": "node scripts/submit-indexnow.js"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.18",

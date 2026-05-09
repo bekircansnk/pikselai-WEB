@@ -22,6 +22,7 @@ const TermsOfService = lazy(() => import('./pages/legal/TermsOfService'))
 const KvkkPolicy = lazy(() => import('./pages/legal/KvkkPolicy'))
 
 const TestPanel = lazy(() => import('./pages/TestPanel'))
+const AuthorBio = lazy(() => import('./pages/AuthorBio'))
 
 
 const MinaDrinksCaseStudy = lazy(() => import('./pages/musteri-hikayeleri/MinaDrinksCaseStudy'))
@@ -191,6 +192,7 @@ function App() {
             <Route path="/gizlilik-politikasi" element={<PrivacyPolicy />} />
             <Route path="/kullanim-kosullari" element={<TermsOfService />} />
             <Route path="/kvkk" element={<KvkkPolicy />} />
+            <Route path="/yazar/bekir-sagnak" element={<AuthorBio />} />
 
             <Route path="/test-panel" element={<TestPanel />} />
             <Route path="*" element={<NotFound />} />

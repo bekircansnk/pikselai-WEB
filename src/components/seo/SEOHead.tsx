@@ -103,9 +103,9 @@ export function createArticleSchema({
         url: `${SITE_URL}${url}`,
         datePublished: datePublished || new Date().toISOString().split('T')[0],
         author: {
-            '@type': 'Organization',
+            '@type': author === 'Pikselai Ekibi' ? 'Organization' : 'Person',
             name: author,
-            url: SITE_URL
+            url: author === 'Bekir Sağnak' ? `${SITE_URL}/yazar/bekir-sagnak` : SITE_URL
         },
         publisher: {
             '@type': 'Organization',
@@ -320,6 +320,46 @@ export function createProductSchema({
         }
     }
 }
+
+// ─── Yardımcı: VideoObject JSON-LD üreteci ───
+export function createVideoSchema({
+    name,
+    description,
+    thumbnailUrl,
+    uploadDate,
+    contentUrl,
+    embedUrl,
+    duration
+}: {
+    name: string
+    description: string
+    thumbnailUrl: string
+    uploadDate: string
+    contentUrl?: string
+    embedUrl?: string
+    duration?: string // Format: PT00H00M00S
+}) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'VideoObject',
+        name,
+        description,
+        thumbnailUrl: thumbnailUrl.startsWith('http') ? thumbnailUrl : `${SITE_URL}${thumbnailUrl}`,
+        uploadDate,
+        ...(contentUrl && { contentUrl: contentUrl.startsWith('http') ? contentUrl : `${SITE_URL}${contentUrl}` }),
+        ...(embedUrl && { embedUrl }),
+        ...(duration && { duration }),
+        publisher: {
+            '@type': 'Organization',
+            name: SITE_NAME,
+            logo: {
+                '@type': 'ImageObject',
+                url: `${SITE_URL}/assets/common/logo-dark-v2.webp`
+            }
+        }
+    }
+}
+
 
 // ─── Yardımcı: SoftwareApplication JSON-LD üreteci ───
 export function createSoftwareApplicationSchema({

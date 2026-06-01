@@ -391,6 +391,7 @@ const Home = () => {
         title="Yapay Zeka ile Profesyonel Ürün Fotoğrafçılığı ve E-Ticaret Çözümleri | PikselAI"
         description="Geleneksel stüdyo maliyetlerini unutun. PikselAI ile yapay zeka destekli, düşük maliyetli ve yüksek kaliteli ürün fotoğrafçılığı hizmetlerini hemen keşfedin."
         canonical="/"
+        ogImage="/assets/common/katalog_hero.webp"
         jsonLd={[
           createOrganizationSchema(),
           createFAQSchema([

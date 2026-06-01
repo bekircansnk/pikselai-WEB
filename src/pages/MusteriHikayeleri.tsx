@@ -73,6 +73,7 @@ export default function MusteriHikayeleri() {
                 title="Müşteri Hikayeleri — Referans Projeler ve Başarı Öyküleri"
                 description="PikselAI ile dijital dönüşüm yaşayan markaların başarı hikayeleri. Cazador, Venüs, Mina Drinks ve daha fazlası."
                 canonical="/musteri-hikayeleri"
+                ogImage="/assets/common/ca.webp"
                 jsonLd={[
                     {
                         '@context': 'https://schema.org',

@@ -317,6 +317,7 @@ const Pricing = () => {
                 title="Fiyatlandırma — Şeffaf ve Esnek Paketler"
                 description="PikselAI hizmet ücretleri: AI fotoğraf üretimi, Shopify e-ticaret kurulumu, sosyal medya yönetimi ve kreatif tasarım paketleri. Gizli ücret yok."
                 canonical="/fiyatlandirma"
+                ogImage="/assets/common/full-logo-dark-v2.webp"
                 jsonLd={[
                     createProductSchema({
                         name: 'Yapay Zeka Destekli Ürün Fotoğrafçılığı Başlangıç Paketi',

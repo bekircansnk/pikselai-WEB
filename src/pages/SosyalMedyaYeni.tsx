@@ -223,6 +223,7 @@ const SosyalMedyaYeni = () => {
         title="Sosyal Medya Yönetimi ve İçerik Üretimi — Kreatif Ajans"
         description="PikselAI ile sosyal medya içerik üretimi, video kurgu, reklam kreatifi ve topluluk yönetimi. Yüksek etkileşimli, dönüşüm odaklı içerikler."
         canonical="/sosyal-medya"
+        ogImage="/assets/common/mina_drink_1.webp"
         jsonLd={[
           createServiceSchema({
             name: 'Sosyal Medya İçerik Üretimi ve Yönetimi',

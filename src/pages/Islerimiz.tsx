@@ -244,6 +244,7 @@ const Islerimiz = () => {
                 title="İşlerimiz — PikselAI Portfolyo"
                 description="Yapay zeka prodüksiyon süreçlerimizle hazırlanan en son projelerimiz, vaka çalışmaları ve yaratıcı çözümlerimiz."
                 canonical="/islerimiz"
+                ogImage="/assets/common/ca.webp"
                 jsonLd={[
                     {
                         '@context': 'https://schema.org',

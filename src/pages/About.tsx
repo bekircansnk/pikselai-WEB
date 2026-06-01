@@ -18,6 +18,7 @@ const About = () => {
                 title="Hakkımızda — Yapay Zeka Destekli Dijital Ajans"
                 description="Pikselai, yapay zeka destekli kreatif üretim, e-ticaret yönetimi ve dijital çözümler sunan profesyonel bir dijital ajanstır. Markanızı gözle görülür yapıyoruz."
                 canonical="/hakkimizda"
+                ogImage="/assets/common/full-logo-dark-v2.webp"
                 jsonLd={[
                     createOrganizationSchema(),
                     createBreadcrumbSchema([

@@ -14,6 +14,7 @@ export default function CreativeDesign() {
                 title="Dijital Katalog ve Arşiv Yönetimi — Akıllı Ürün Platformu"
                 description="PikselAI Katalog sistemi ile ürün görsellerinizi yönetin, akıllı arama ile anında bulun ve müşterilerinizle profesyonelce paylaşın."
                 canonical="/katalog"
+                ogImage="/assets/common/katalog_hero.webp"
                 jsonLd={[
                     createServiceSchema({
                         name: 'Dijital Katalog ve Arşiv Yönetim Platformu',

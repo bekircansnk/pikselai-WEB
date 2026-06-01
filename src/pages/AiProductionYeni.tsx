@@ -655,6 +655,7 @@ const AiProduction = () => {
         title="Yapay Zeka Destekli Ürün Fotoğrafçılığı | PikselAI"
         description="Stüdyo olmadan profesyonel ürün görselleri, sanal manken çekimleri ve ürün fotoğrafçılığı hizmeti. PikselAI ile yüksek dönüşümlü ürün fotoğraflarına 48 saatte ulaşın."
         canonical="/ai-produksiyon"
+        ogImage="/assets/common/anna_imaj_1.webp"
         jsonLd={[
           createServiceSchema({
             name: 'Yapay Zeka Ürün Fotoğrafçılığı ve Sanal Manken',

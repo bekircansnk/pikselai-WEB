@@ -82,6 +82,7 @@ const Contact = () => {
                 title="İletişim — Ücretsiz Demo ve Teklif Alın"
                 description="PikselAI ile iletişime geçin. Yapay zeka destekli ürün fotoğrafçılığı, e-ticaret ve sosyal medya hizmetleri için ücretsiz demo talep edin."
                 canonical="/iletisim"
+                ogImage="/assets/common/full-logo-dark-v2.webp"
                 jsonLd={[
                     createLocalBusinessSchema(),
                     createBreadcrumbSchema([

@@ -91,6 +91,7 @@ const EticaretYeni = () => {
         title="Shopify E-Ticaret Danışmanlığı — Anahtar Teslim Mağaza Kurulumu"
         description="Shopify Türkiye Resmi Partneri PikselAI ile anahtar teslim e-ticaret mağazası kurun. AI destekli görsel üretim, veri taşıma ve entegrasyon hizmetleri."
         canonical="/e-ticaret"
+        ogImage="/assets/common/katalog_hero.webp"
         jsonLd={[
           createServiceSchema({
             name: 'Shopify E-Ticaret Mağaza Kurulumu ve Danışmanlığı',

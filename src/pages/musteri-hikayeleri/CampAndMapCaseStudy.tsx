@@ -26,6 +26,7 @@ const CampAndMapCaseStudy = () => {
             <Helmet>
                 <title>Campandmap Dijital Ürün Prodüksiyonu | Pikselai</title>
                 <meta name="description" content="Campandmap'in Pikselai ile gerçekleştirdiği yapay zeka destekli outdoor ürün fotoğrafçılığı başarı hikayesi." />
+                <link rel="canonical" href="https://pikselai.com/musteri-hikayeleri/campandmap" />
             </Helmet>
 
             <section className="bg-[#F4EFE6] border-b border-[#e0dcd3]">

@@ -131,7 +131,7 @@ export function BlogArticleTemplate({
     slug
 }: BlogArticleTemplateProps) {
     const active = useActiveSection(sections.map(s => s.id))
-    const articleUrl = slug || ''
+    const articleUrl = slug || window.location.pathname
 
     // JSON-LD yapısal veri
     const articleSchema = createArticleSchema({

@@ -38,6 +38,7 @@ const CazadorCaseStudy = () => {
             <Helmet>
                 <title>Cazador Dijital Dönüşüm Hikayesi | Pikselai</title>
                 <meta name="description" content="Cazador'un Pikselai ile gerçekleştirdiği yapay zeka destekli dijital dönüşüm, katalog ve sosyal medya başarı hikayesi." />
+                <link rel="canonical" href="https://pikselai.com/musteri-hikayeleri/cazador" />
             </Helmet>
 
             {/* Hero */}

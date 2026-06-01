@@ -24,6 +24,7 @@ const MinaDrinksCaseStudy = () => {
             <Helmet>
                 <title>Mina Drinks Dijital Dönüşüm Hikayesi | Pikselai</title>
                 <meta name="description" content="Mina Drinks'in Pikselai ile gerçekleştirdiği yapay zeka destekli ürün prodüksiyonu başarı hikayesi." />
+                <link rel="canonical" href="https://pikselai.com/musteri-hikayeleri/mina-drinks" />
             </Helmet>
 
             <section className="bg-[#F4EFE6] border-b border-[#e0dcd3]">

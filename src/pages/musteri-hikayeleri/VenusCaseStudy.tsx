@@ -26,6 +26,7 @@ const VenusCaseStudy = () => {
             <Helmet>
                 <title>Venüs Giyim Sanal Manken Hikayesi | Pikselai</title>
                 <meta name="description" content="Venüs Giyim'in Pikselai ile gerçekleştirdiği yapay zeka manken devrimi ve katalog başarı hikayesi." />
+                <link rel="canonical" href="https://pikselai.com/musteri-hikayeleri/venus" />
             </Helmet>
 
             <section className="bg-[#F4EFE6] border-b border-[#e0dcd3]">

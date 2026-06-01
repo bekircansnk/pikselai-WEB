@@ -117,13 +117,13 @@ function App() {
           <Routes>
             <Route path="/" element={<HomeYeni />} />
 
-            <Route path="/hizmetler/ai-produksiyon" element={<AiProductionYeni />} />
-            <Route path="/hizmetler/e-ticaret" element={<EticaretYeni />} />
-            <Route path="/hizmetler/sosyal-medya" element={<SosyalMedyaYeni />} />
+            <Route path="/ai-produksiyon" element={<AiProductionYeni />} />
+            <Route path="/e-ticaret" element={<EticaretYeni />} />
+            <Route path="/sosyal-medya" element={<SosyalMedyaYeni />} />
             <Route path="/hizmetler/kreatif-tasarim" element={<CreativeDesign />} />
             <Route path="/hakkimizda" element={<About />} />
             <Route path="/iletisim" element={<Contact />} />
-            <Route path="/ucretler" element={<Pricing />} />
+            <Route path="/fiyatlandirma" element={<Pricing />} />
             <Route path="/islerimiz" element={<Islerimiz />} />
             <Route path="/blog" element={<Blog />} />
             
@@ -176,6 +176,11 @@ function App() {
             <Route path="/blog/pikselainin-icinden/tasarim-is-akisi-otomasyon" element={<TasarimIsAkisiOtomasyon />} />
 
             {/* Eski Yönlendirmeler (Fallback) */}
+            <Route path="/hizmetler/ai-produksiyon" element={<Navigate to="/ai-produksiyon" replace />} />
+            <Route path="/hizmetler/e-ticaret" element={<Navigate to="/e-ticaret" replace />} />
+            <Route path="/hizmetler/sosyal-medya" element={<Navigate to="/sosyal-medya" replace />} />
+            <Route path="/ucretler" element={<Navigate to="/fiyatlandirma" replace />} />
+            <Route path="/fiyat-hesapla" element={<Navigate to="/maliyet-hesapla" replace />} />
             <Route path="/blog/referanslar" element={<Navigate to="/musteri-hikayeleri" replace />} />
             <Route path="/musteri-hikayeleri/referanslar" element={<Navigate to="/musteri-hikayeleri/cazador" replace />} />
             <Route path="/profesyonel-katalog" element={<Navigate to="/hizmetler/kreatif-tasarim" replace />} />
@@ -188,7 +193,7 @@ function App() {
             <Route path="/musteri-hikayeleri/venus" element={<VenusCaseStudy />} />
             <Route path="/musteri-hikayeleri/campandmap" element={<CampAndMapCaseStudy />} />
             
-            <Route path="/fiyat-hesapla" element={<CostCalculator />} />
+            <Route path="/maliyet-hesapla" element={<CostCalculator />} />
             <Route path="/gizlilik-politikasi" element={<PrivacyPolicy />} />
             <Route path="/kullanim-kosullari" element={<TermsOfService />} />
             <Route path="/kvkk" element={<KvkkPolicy />} />

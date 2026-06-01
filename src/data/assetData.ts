@@ -199,6 +199,35 @@ export const ASSET_DATA = {
       ]
     },
     
+    
+    "yeni_set_9": {
+      "files": [
+        "/assets/pages/yeni_set/pikselai_set9_01.webp",
+        "/assets/pages/yeni_set/pikselai_set9_02.webp",
+        "/assets/pages/yeni_set/pikselai_set9_03.webp",
+        "/assets/pages/yeni_set/pikselai_set9_04.webp",
+        "/assets/pages/yeni_set/pikselai_set9_05.webp",
+        "/assets/pages/yeni_set/pikselai_set9_06.webp",
+        "/assets/pages/yeni_set/pikselai_set9_07.webp",
+        "/assets/pages/yeni_set/pikselai_set9_08.webp",
+        "/assets/pages/yeni_set/pikselai_set9_09.webp",
+        "/assets/pages/yeni_set/pikselai_set9_10.webp"
+      ]
+    },
+
+    "yeni_set_10": {
+      "files": [
+        "/assets/pages/yeni_set/pikselai_set10_01.webp",
+        "/assets/pages/yeni_set/pikselai_set10_02.webp",
+        "/assets/pages/yeni_set/pikselai_set10_03.webp",
+        "/assets/pages/yeni_set/pikselai_set10_04.webp",
+        "/assets/pages/yeni_set/pikselai_set10_05.webp",
+        "/assets/pages/yeni_set/pikselai_set10_06.webp",
+        "/assets/pages/yeni_set/pikselai_set10_07.webp",
+        "/assets/pages/yeni_set/pikselai_set10_08.webp",
+        "/assets/pages/yeni_set/pikselai_set10_09.webp"
+      ]
+    },
     "yeni_set_1": {
       "files": [
         "/assets/pages/yeni_set/pikselai_set1_01.webp",

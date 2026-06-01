@@ -352,6 +352,38 @@ const projects: Project[] = [
         description: "Mistik orman zeminleri ve cam fanuslar içinde sergilenen niche parfümler ve botanik serum şişeleri.",
         tags: ['Kozmetik', 'Parfüm', 'Serum'],
         bgColor: '#080c08'
+    },
+    {
+        id: 19,
+        title: 'Kreatif AI - Minimalist Sofra Sanatı',
+        client: 'PikselAI Lab',
+        category: 'Ürün Fotoğrafçılığı',
+        thumbnail: '/assets/pages/yeni_set/pikselai_set9_01.webp',
+        thumbnailType: 'single',
+        images: (ASSET_DATA.pages.yeni_set_9?.files || []).map((url, index) => ({
+            url,
+            type: 'image' as const,
+            aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
+        })),
+        description: "Wabi-sabi esintili el yapımı seramik bardaklar, sunum tabakları ve keten peçetelerle bezenmiş lüks sofra sanatı.",
+        tags: ['Seramik', 'Sofra Sanatı', 'Organik'],
+        bgColor: '#0a0908'
+    },
+    {
+        id: 20,
+        title: 'Kreatif AI - Niche Parfüm Serisi',
+        client: 'PikselAI Lab',
+        category: 'Ürün Fotoğrafçılığı',
+        thumbnail: '/assets/pages/yeni_set/pikselai_set10_01.webp',
+        thumbnailType: 'single',
+        images: (ASSET_DATA.pages.yeni_set_10?.files || []).map((url, index) => ({
+            url,
+            type: 'image' as const,
+            aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
+        })),
+        description: "Mistik ormanlar ve obsidyen taşlar üzerinde sergilenen lüks fütüristik parfüm ve kozmetik şişeleri.",
+        tags: ['Parfüm', 'Kozmetik', 'Lüks'],
+        bgColor: '#080c09'
     }
 ];
 

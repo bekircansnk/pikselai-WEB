@@ -62,29 +62,6 @@ const projects: Project[] = [
         bgColor: '#1a2a1f'
     },
     {
-        id: 2,
-        title: 'E-Ticaret Dönüşümü',
-        client: 'Cazador',
-        category: 'E-Ticaret',
-        thumbnail: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/cazador1.webp',
-        thumbnailType: 'single',
-        images: [
-            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/cazador1.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/1_n.webp', type: 'image', aspect: 'square' },
-            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/1_arka.webp', type: 'image', aspect: 'square' },
-            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/cazador3.webp', type: 'image', aspect: 'wide' },
-            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/cazador2.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/cazador4.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/3_n.webp', type: 'image', aspect: 'square' },
-            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/3_arka.webp', type: 'image', aspect: 'square' },
-            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/5_n.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/e_ticaret/cazador_donusum/5_arka.webp', type: 'image', aspect: 'tall' }
-        ],
-        description: "Cazador'un e-ticaret platformu için hazırlanan ürün görselleri. Ghost mannequin tekniği ve stüdyo çekimlerini kapsayan kapsamlı görsel prodüksiyon.",
-        tags: ['E-Ticaret', 'Katalog', 'Stüdyo'],
-        bgColor: '#0a1628'
-    },
-    {
         id: 3,
         title: 'Sosyal Medya İçerikleri',
         client: 'Mina Drinks',
@@ -98,8 +75,7 @@ const projects: Project[] = [
             { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina3.webp', type: 'image', aspect: 'wide' },
             { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina2.webp', type: 'image', aspect: 'tall' },
             { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina4.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina_drink_4.webp', type: 'image', aspect: 'wide' },
-            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/ca.webp', type: 'image', aspect: 'tall' }
+            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina_drink_4.webp', type: 'image', aspect: 'wide' }
         ],
         description: "Mina Drinks içecek markası için hazırlanan AI destekli sosyal medya içerik paketleri. Reels, story ve feed görselleri dahil.",
         tags: ['Sosyal Medya', 'İçecek', 'Konsept'],
@@ -119,7 +95,6 @@ const projects: Project[] = [
             { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina_drink_4.webp', type: 'image', aspect: 'wide' },
             { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina1.webp', type: 'image', aspect: 'tall' },
             { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina2.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/ca.webp', type: 'image', aspect: 'wide' },
             { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina4.webp', type: 'image', aspect: 'tall' }
         ],
         description: "Mina Drinks için hazırlanan yaratıcı ürün fotoğrafçılığı. Doğal ortam ve konsept stüdyo çekimleri.",
@@ -169,23 +144,21 @@ const projects: Project[] = [
     },
     {
         id: 7,
-        title: 'Ghost Mannequin Sistemleri',
-        client: 'Cazador',
+        title: 'Hayalet Manken Çekimleri',
+        client: 'Ghost Mannequin',
         category: 'Hayalet Çekim',
         thumbnail: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/1_n.webp',
         thumbnailType: 'single',
         images: [
             { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/1_n.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/l0000000751458__1.webp', type: 'image', aspect: 'square' },
-            { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/l0000000746579__1.webp', type: 'image', aspect: 'square' },
             { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/1_arka.webp', type: 'image', aspect: 'wide' },
             { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/3_n.webp', type: 'image', aspect: 'tall' },
             { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/3_arka.webp', type: 'image', aspect: 'tall' },
             { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/5_n.webp', type: 'image', aspect: 'tall' },
             { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/5_arka.webp', type: 'image', aspect: 'tall' }
         ],
-        description: "Markaların e-ticaret siteleri için hazırlanan, kıyafet formlarını 3 boyutlu gösteren kusursuz profesyonel ghost mannequin (hayalet manken) çekimleri.",
-        tags: ['Ghost', 'Katalog', 'E-Ticaret'],
+        description: "Markaların e-ticaret siteleri ve katalogları için hazırlanan, kıyafet formlarını 3 boyutlu ve gerçekçi gösteren kusursuz hayalet manken çekimleri.",
+        tags: ['Ghost', 'Katalog', 'E-Ticaret', 'Hayalet Manken'],
         bgColor: '#1a1a1a'
     },
     {

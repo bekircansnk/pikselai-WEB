@@ -4,10 +4,17 @@
 <head>
   <meta charset="UTF-8" />
 
+  <!-- Standart ve Arama Motoru Uyumlu Favicon Tanımları -->
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.webp" />
+
   <!-- Dinamik Favicon'lar - ThemeContext tarafından güncellenir -->
-  <link id="favicon-32" rel="icon" type="image/webp" sizes="32x32" href="/dark/favicon-32x32.webp" />
-  <link id="favicon-16" rel="icon" type="image/webp" sizes="16x16" href="/dark/favicon-16x16.webp" />
-  <link id="apple-icon" rel="apple-touch-icon" sizes="180x180" href="/dark/apple-icon-180x180.webp" />
+  <link id="favicon-32" rel="icon" type="image/webp" sizes="32x32" href="/assets/common/favicon_32x32.webp" />
+  <link id="favicon-16" rel="icon" type="image/webp" sizes="16x16" href="/assets/common/favicon_16x16.webp" />
+  <link id="apple-icon" rel="apple-touch-icon" sizes="180x180" href="/assets/common/apple_icon_180x180.webp" />
+
+  <!-- PWA Site Manifestosu -->
+  <link rel="manifest" href="/site.webmanifest" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#000000" />
@@ -21,6 +28,10 @@
   <meta name="author" content="Pikselai" />
   <meta name="robots" content="index, follow" />
 
+  <!-- Performans İyileştirmesi: LCP (Largest Contentful Paint) için Hero Görsellerini Preload et -->
+  <link rel="preload" as="image" href="/assets/pages/homeyeni/hayalet_oncesi_sonrasi/l0000000751458__1.webp" type="image/webp" />
+  <link rel="preload" as="image" href="/assets/pages/homeyeni/hayalet_oncesi_sonrasi/l0000000751458__2.webp" type="image/webp" />
+
   <!-- Arama Motoru Doğrulama -->
   <meta name="msvalidate.01" content="754796BEE9929704663E6E1514D6A332" />
   <!-- Google Search Console doğrulama kodunuzu buraya ekleyin: -->
@@ -31,28 +42,32 @@
   <meta property="og:title" content="PikselAI | AI Destekli Kreatif Üretim, E-Ticaret ve Dijital Çözümler" />
   <meta property="og:description"
     content="Yapay zeka ile ürün fotoğrafçılığı, sanal manken tasarımı, e-ticaret yönetimi ve sosyal medya. Tek çatı altında dijital çözümler." />
-  <meta property="og:image" content="https://pikselai.com/branding/full-logo-dark-v2.webp" />
+  <meta property="og:image" content="https://pikselai.com/assets/common/full-logo-dark-v2.webp" />
   <meta property="og:locale" content="tr_TR" />
 
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://pikselai.com/" />
   <meta property="twitter:title" content="PikselAI | AI Destekli Kreatif Üretim ve Dijital Çözümler" />
   <meta property="twitter:description" content="Yapay zeka ile ürün fotoğrafçılığı, sanal manken tasarımı ve e-ticaret çözümleri. Tek çatı altında." />
-  <meta property="twitter:image" content="https://pikselai.com/branding/full-logo-dark-v2.webp" />
+  <meta property="twitter:image" content="https://pikselai.com/assets/common/full-logo-dark-v2.webp" />
 
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
+      "@id": "https://pikselai.com/#organization",
       "name": "PikselAI",
       "url": "https://pikselai.com",
-      "logo": "https://pikselai.com/branding/logo-dark-v2.webp",
-      "description": "Yapay zeka destekli kreatif üretim, e-ticaret yönetimi ve dijital çözümler sunan profesyonel dijital ajans.",
+      "logo": "https://pikselai.com/assets/common/logo-dark-v2.webp",
+      "image": "https://pikselai.com/assets/common/full-logo-dark-v2.webp",
+      "description": "Yapay zeka destekli kreatif üretim, ürün fotoğrafçılığı, e-ticaret yönetimi ve dijital çözümler sunan profesyonel dijital ajans.",
+      "foundingDate": "2024",
       "telephone": "+905531832344",
-      "email": "info@pikselai.com",
+      "email": "bilgi@pikselai.com",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "İstanbul",
+        "addressLocality": "Başakşehir",
+        "addressRegion": "İstanbul",
         "addressCountry": "TR"
       },
       "sameAs": [
@@ -66,6 +81,39 @@
         "telephone": "+905531832344",
         "areaServed": "TR",
         "availableLanguage": "Turkish"
+      },
+      "knowsAbout": [
+        "Yapay Zeka ile Ürün Fotoğrafçılığı",
+        "AI Sanal Manken Üretimi",
+        "Ghost Mannequin (Hayalet Manken)",
+        "E-Ticaret Görsel Üretimi",
+        "Shopify Mağaza Kurulumu",
+        "Sosyal Medya İçerik Üretimi",
+        "Dijital Katalog Yönetimi",
+        "Marka Kimliği Tasarımı",
+        "Reklam Kreatifi Üretimi"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "PikselAI Hizmetleri",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "AI Ürün Fotoğrafçılığı" }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Shopify E-Ticaret Kurulumu" }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Sosyal Medya İçerik Üretimi" }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Dijital Katalog Yönetimi" }
+          }
+        ]
       }
     }
     </script>
@@ -75,10 +123,10 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
     rel="stylesheet">
-  <script type="module" crossorigin src="/assets/index-0EnuHiec.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/vendor-react-BYb68g0a.js">
-  <link rel="modulepreload" crossorigin href="/assets/vendor-ui-Cl8ltzRa.js">
-  <link rel="stylesheet" crossorigin href="/assets/index-C0tFRwfD.css">
+  <script type="module" crossorigin src="/assets/index-CPZ4dVET.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-react-CTMLQyfb.js">
+  <link rel="modulepreload" crossorigin href="/assets/vendor-ui-B18veqh1.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-BCWxqyoK.css">
 </head>
 
 <body>

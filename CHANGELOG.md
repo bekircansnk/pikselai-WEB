@@ -2,6 +2,14 @@
 
 Projedeki tüm önemli değişiklikler bu dosyada belgelenecektir.
 
+## [2026-06-01] - İşlerimiz Portfolyo Düzeltmeleri ve Temizliği
+
+### 🧹 Temizlenenler & Düzeltilenler (Removed & Fixed)
+- **Mükerrer Projeler Temizlendi:** `Islerimiz.tsx` sayfasındaki projelerden mükerrer ve hatalı görsel karışımı olan `E-Ticaret Dönüşümü - Cazador` projesi tamamen portfolyodan kaldırıldı.
+- **Cazador Markası Sadeleştirildi:** Portfolyoda sadece tek bir Cazador projesi (`Kış Kampanyası`) bırakıldı. En alttaki `Ghost Mannequin Sistemleri` projesinin Cazador ile bağı koparılarak `Ghost Mannequin` adıyla bağımsız bir projeye dönüştürüldü ve başlığı `Hayalet Manken Çekimleri` yapıldı.
+- **Kırık Görsel Linkleri Düzeltildi:** Ghost Mannequin projesindeki dizinde fiziksel olarak bulunmayan `l0000000751458__1.webp` ve `l0000000746579__1.webp` kırık görsel bağlantıları temizlendi.
+- **Alakasız Görseller Taşındı:** "Mina Drinks" portfolyo projelerinin (Sosyal Medya ve Ürün Çekimleri) sonunda yer alan ve Camp/Cazador projesine ait olan alakasız `ca.webp` görselleri portfolyodan kaldırıldı ve `.silinecekler_cop_kutusu/` klasörüne taşındı.
+
 ## [2026-03-30] - Medya Optimizasyon & Yeni Sayfa Entegrasyonları
 
 ### ✨ Eklenenler (Added)

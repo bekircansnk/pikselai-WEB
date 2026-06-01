@@ -1,308 +1,623 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
    <url>
       <loc>https://pikselai.com/</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
       <loc>https://pikselai.com/ai-produksiyon</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.9</priority>
    </url>
    <url>
       <loc>https://pikselai.com/e-ticaret</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.9</priority>
    </url>
    <url>
       <loc>https://pikselai.com/sosyal-medya</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.9</priority>
    </url>
    <url>
       <loc>https://pikselai.com/hizmetler/kreatif-tasarim</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.9</priority>
    </url>
    <url>
       <loc>https://pikselai.com/fiyatlandirma</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
       <loc>https://pikselai.com/maliyet-hesapla</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/hakkimizda</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/iletisim</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/islerimiz</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_01.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_02.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_03.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_04.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_05.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_06.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_07.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_08.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_09.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_10.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_11.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_12.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_13.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_14.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_15.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_16.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_17.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_18.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_19.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_20.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_21.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_22.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_23.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_24.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_25.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_26.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_27.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_28.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_29.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_30.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_31.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_32.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_33.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_34.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_35.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_36.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_37.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_38.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_39.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_40.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_41.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_42.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_43.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_44.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_45.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_46.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_47.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_48.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_49.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_50.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_51.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_52.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_53.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_54.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_55.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_56.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_57.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_58.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_59.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_60.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_61.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_62.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_63.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_64.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_65.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_66.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_67.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_68.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_69.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_70.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_71.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_72.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_73.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_74.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_75.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_76.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
+      <image:image>
+         <image:loc>https://pikselai.com/assets/pages/yeni_icerik/pikselai_creative_77.webp</image:loc>
+         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>
+      </image:image>
    </url>
    <url>
       <loc>https://pikselai.com/blog</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
       <loc>https://pikselai.com/musteri-hikayeleri</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
+      <loc>https://pikselai.com/blog/yapay-zeka-yaraticilik/urun-fotografciligi-rehberi</loc>
+      <lastmod>2026-06-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>
+   <url>
       <loc>https://pikselai.com/blog/yapay-zeka-yaraticilik/gizli-ai-ozellikleri</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/dijital-pazarlama/ai-pazarlama-kampanyalari</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/yapay-zeka-yaraticilik/ai-tasarim-trendleri</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/yapay-zeka-yaraticilik/ai-tasarim-araclari</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/yapay-zeka-yaraticilik/ai-gorsel-uretimi-ornekleri</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/yaratici-liderlik/ai-telif-haklari</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/yaratici-liderlik/tasarimda-ai-gelecegi</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/pikselainin-icinden/tasarim-is-akisi-otomasyon</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/marka-rehberi/ai-marka-rehberleri</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/video-pazarlama/ai-video-pazarlama</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/yapay-zeka-yaraticilik/tasarimda-yapay-zeka</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/dijital-pazarlama/sosyal-medya-icerik-donusturme</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/marka-rehberi/marka-kimligi-rehberi</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/yaratici-liderlik/tasarimci-ise-alma-rehberi</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/dijital-pazarlama/ai-reklam-gorselleri</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/dijital-pazarlama/reklam-yaraticilik-trendleri</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/dijital-pazarlama/ai-reklam-gorseli-olusturma</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/marka-rehberi/marka-tasarim-trendleri</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/marka-rehberi/markalasma-rehberi</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/yaratici-liderlik/yaratici-liderlik</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/marka-rehberi/tasarim-sistemleri</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/marka-rehberi/eticaret-web-tasarimi</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/video-pazarlama/video-pazarlama-stratejisi</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/video-pazarlama/motion-grafik-ornekleri</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/video-pazarlama/ai-video-olusturma-araclari</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/dijital-pazarlama/ai-eposta-pazarlama</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/dijital-pazarlama/sosyal-medya-kampanyalari</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/marka-rehberi/ambalaj-tasarimi</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/marka-rehberi/logo-tasarim-ipuclari</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/yaratici-liderlik/olceklenebilir-yaraticilik</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/yapay-zeka-yaraticilik/ai-destekli-ajanslar</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/dijital-pazarlama/icerik-pazarlamasi-ornekleri</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/video-pazarlama/ai-video-nasil-olusturulur</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/marka-rehberi/renklerin-gucu</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/blog/dijital-pazarlama/dijital-pazarlama-trendleri</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
    <url>
       <loc>https://pikselai.com/musteri-hikayeleri/cazador</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
       <loc>https://pikselai.com/musteri-hikayeleri/mina-drinks</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
       <loc>https://pikselai.com/musteri-hikayeleri/venus</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
       <loc>https://pikselai.com/musteri-hikayeleri/campandmap</loc>
-      <lastmod>2026-04-28</lastmod>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>

@@ -2,9 +2,10 @@
 
 Projedeki tüm önemli değişiklikler bu dosyada belgelenecektir.
 
-## [2026-06-01] - İşlerimiz Portfolyo İstatistik & Metin Sadeleştirmesi
+## [2026-06-01] - İşlerimiz Portfolyo İstatistik, Metin & Görsel Uyum Düzeltmeleri
 
 ### ⚡ Değiştirilenler & Optimize Edilenler (Changed)
+- **Görsel & Başlık Kayma Hataları Çözüldü:** Kreatif AI serilerindeki (set1 ile set10 arasındaki) tüm görsel-başlık eşleşme kaymaları giderildi. Çanta, Mücevher, Saat, Seramik ve Activewear projelerinin yanlış resim kümeleriyle açılması hatası düzeltilerek; görseller kendi asıl konseptlerine ve açıklamalarına (örneğin mücevher seti mücevher başlığına, activewear spor giyime) kusursuzca bağlandı.
 - **Gerçekçi Metrikler Entegre Edildi:** "İşlerimiz" sayfasındaki abartılı veriler (500+ tamamlanan proje, 50+ mutlu marka) kaldırılarak; dürüst, yapay zeka odaklı ve performansa dayalı "10x Üretim Hızı" ve "7/24 Kesintisiz Üretim" gibi gerçekçi metrikler eklendi.
 - **Alt Başlık Sadeleştirildi:** "Türkiye'nin lider markalarına..." şeklinde başlayan ve gerçekçi olmayan giriş metni, "Yapay zeka destekli yaratıcı prodüksiyon süreçlerimizle..." şeklinde daha dürüst ve marka odaklı bir ifadeyle güncellendi.
 

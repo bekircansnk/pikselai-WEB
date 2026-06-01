@@ -39,54 +39,7 @@ const stats = [
 ];
 
 const projects: Project[] = [
-    {
-        id: 11,
-        title: 'Kreatif AI - İstanbul Sokak Modası',
-        client: 'PikselAI Lab',
-        category: 'Kampanya',
-        thumbnail: '/assets/pages/yeni_set/pikselai_set1_01.webp',
-        thumbnailType: 'single',
-        images: (ASSET_DATA.pages.yeni_set_1?.files || []).map((url, index) => ({
-            url,
-            type: 'image' as const,
-            aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
-        })),
-        description: "İstanbul'un tarihi Galata, Kuzguncuk, Karaköy ve Balat sokaklarında, sinematik gün batımı ışığı ve doğal dokularla harmanlanmış sokak modası ve activewear çekimleri.",
-        tags: ['Sokak Modası', 'İstanbul', 'Kampanya', 'Activewear'],
-        bgColor: '#080c09'
-    },
-    {
-        id: 12,
-        title: 'Kreatif AI - Dünya Metropolleri & Seyahat',
-        client: 'PikselAI Lab',
-        category: 'Kampanya',
-        thumbnail: '/assets/pages/yeni_set/pikselai_set2_01.webp',
-        thumbnailType: 'single',
-        images: (ASSET_DATA.pages.yeni_set_2?.files || []).map((url, index) => ({
-            url,
-            type: 'image' as const,
-            aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
-        })),
-        description: "Paris, Londra, New York, Roma, Milano ve Kopenhag gibi dünya moda başkentlerinde, özgün mevsimsel dokularla hazırlanan küresel seyahat ve kış şıklığı kampanyaları.",
-        tags: ['Küresel Kampanya', 'Seyahat', 'Kış Şıklığı', 'Sanal Manken'],
-        bgColor: '#0c0b08'
-    },
-    {
-        id: 13,
-        title: 'Kreatif AI - Artistik Atölyeler & Mimari',
-        client: 'PikselAI Lab',
-        category: 'Kampanya',
-        thumbnail: '/assets/pages/yeni_set/pikselai_set3_01.webp',
-        thumbnailType: 'single',
-        images: (ASSET_DATA.pages.yeni_set_3?.files || []).map((url, index) => ({
-            url,
-            type: 'image' as const,
-            aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
-        })),
-        description: "Resim ve seramik atölyeleri, brutalist beton yapılar, ayna labirentleri ve Kapadokya gün doğumu eşliğinde sanatsal ve entelektüel lifestyle çekimler.",
-        tags: ['Artistik Çekim', 'Mimari', 'Kültür', 'Kampanya'],
-        bgColor: '#09090c'
-    },
+    // ── Klasik Marka Prodüksiyonları ──
     {
         id: 1,
         title: 'Kış Kampanyası',
@@ -110,52 +63,44 @@ const projects: Project[] = [
         bgColor: '#1a2a1f'
     },
     {
-        id: 14,
-        title: 'Kreatif AI - Lüks Çanta Serisi',
-        client: 'PikselAI Lab',
-        category: 'Ürün Fotoğrafçılığı',
-        thumbnail: '/assets/pages/yeni_set/pikselai_set4_01.webp',
+        id: 3,
+        title: 'Sosyal Medya İçerikleri',
+        client: 'Mina Drinks',
+        category: 'Sosyal Medya',
+        thumbnail: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina1.webp',
         thumbnailType: 'single',
-        images: (ASSET_DATA.pages.yeni_set_4?.files || []).map((url, index) => ({
-            url,
-            type: 'image' as const,
-            aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
-        })),
-        description: "Asimetrik beyaz mermer bloklar, fütüristik stüdyolar ve ham beton geometrik yapılar üzerinde sergilenen premium deri çanta tasarımları.",
-        tags: ['Çanta', 'Aksesuar', 'Lüks', 'Ürün'],
-        bgColor: '#0c0908'
+        images: [
+            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina1.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina_drink_1.webp', type: 'image', aspect: 'square' },
+            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina_drink_2.webp', type: 'image', aspect: 'square' },
+            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina3.webp', type: 'image', aspect: 'wide' },
+            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina2.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina4.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina_drink_4.webp', type: 'image', aspect: 'wide' }
+        ],
+        description: "Mina Drinks içecek markası için hazırlanan AI destekli sosyal medya içerik paketleri. Reels, story ve feed görselleri dahil.",
+        tags: ['Sosyal Medya', 'İçecek', 'Konsept'],
+        bgColor: '#1c3a13'
     },
     {
-        id: 15,
-        title: 'Kreatif AI - Wabi-Sabi Seramik & Sofra Sanatı',
-        client: 'PikselAI Lab',
+        id: 4,
+        title: 'Mina Drinks Ürün Çekimi',
+        client: 'Mina Drinks',
         category: 'Ürün Fotoğrafçılığı',
-        thumbnail: '/assets/pages/yeni_set/pikselai_set5_01.webp',
+        thumbnail: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina3.webp',
         thumbnailType: 'single',
-        images: (ASSET_DATA.pages.yeni_set_5?.files || []).map((url, index) => ({
-            url,
-            type: 'image' as const,
-            aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
-        })),
-        description: "Wabi-sabi tarzı ham kilden üretilen kupalar, el boyaması porselen tabaklar ve organik sofra sunum sanatının eşsiz harmonisi.",
-        tags: ['Seramik', 'Sofra Tasarımı', 'Artisanal', 'Ürün'],
-        bgColor: '#080808'
-    },
-    {
-        id: 16,
-        title: 'Kreatif AI - Gastronomi & Gurme İçecekler',
-        client: 'PikselAI Lab',
-        category: 'Ürün Fotoğrafçılığı',
-        thumbnail: '/assets/pages/yeni_set/pikselai_set6_01.webp',
-        thumbnailType: 'single',
-        images: (ASSET_DATA.pages.yeni_set_6?.files || []).map((url, index) => ({
-            url,
-            type: 'image' as const,
-            aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
-        })),
-        description: "Buz küpleri, dinamik meyve patlamaları, uçan nane yaprakları ve niche ambalaj tasarımları ile sunulan canlandırıcı premium içecek konseptleri.",
-        tags: ['Gastronomi', 'İçecek', 'Sıvı Simülasyonu', 'Ürün'],
-        bgColor: '#080a08'
+        images: [
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina3.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina_drink_1.webp', type: 'image', aspect: 'square' },
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina_drink_2.webp', type: 'image', aspect: 'square' },
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina_drink_4.webp', type: 'image', aspect: 'wide' },
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina1.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina2.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina4.webp', type: 'image', aspect: 'tall' }
+        ],
+        description: "Mina Drinks için hazırlanan yaratıcı ürün fotoğrafçılığı. Doğal ortam ve konsept stüdyo çekimleri.",
+        tags: ['Ürün', 'İçecek', 'Stüdyo'],
+        bgColor: '#1c3a13'
     },
     {
         id: 5,
@@ -180,6 +125,123 @@ const projects: Project[] = [
         bgColor: '#1a2612'
     },
     {
+        id: 6,
+        title: 'Rossea Eşarp Kampanyası',
+        client: 'Rossea',
+        category: 'Kampanya',
+        thumbnail: '/assets/pages/islerimiz/kampanya/rossea_esarp_kampanya/esarp_1.webp',
+        thumbnailType: 'single',
+        images: [
+            { url: '/assets/pages/islerimiz/kampanya/rossea_esarp_kampanya/esarp_1.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/kampanya/rossea_esarp_kampanya/esarp_2.webp', type: 'image', aspect: 'square' },
+            { url: '/assets/pages/islerimiz/kampanya/rossea_esarp_kampanya/esarp_3.webp', type: 'image', aspect: 'square' },
+            { url: '/assets/pages/islerimiz/kampanya/rossea_esarp_kampanya/esarp_4.webp', type: 'image', aspect: 'wide' },
+            { url: '/assets/pages/islerimiz/kampanya/rossea_esarp_kampanya/esarp_5.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/kampanya/rossea_esarp_kampanya/esarp_6.webp', type: 'image', aspect: 'tall' }
+        ],
+        description: "Rossea eşarp markası için yapay zeka ile üretilen kampanya görselleri. Otantik Türk lokasyonlarında editorial tarz sanal manken çekimleri.",
+        tags: ['Eşarp', 'Kampanya', 'Moda'],
+        bgColor: '#2e1a1a'
+    },
+
+    // ── Kreatif AI (PikselAI Lab) Vitrini ──
+    {
+        id: 11,
+        title: 'Kreatif AI - Lüks Çanta Serisi',
+        client: 'PikselAI Lab',
+        category: 'Ürün Fotoğrafçılığı',
+        thumbnail: '/assets/pages/yeni_set/pikselai_set1_01.webp',
+        thumbnailType: 'single',
+        images: (ASSET_DATA.pages.yeni_set_1?.files || []).map((url, index) => ({
+            url,
+            type: 'image' as const,
+            aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
+        })),
+        description: "Ayna labirentleri, cam yansımaları ve fütüristik stüdyolarda sunulan lüks çanta tasarımları.",
+        tags: ['Çanta', 'Aksesuar', 'Lüks', 'Ürün'],
+        bgColor: '#080c09'
+    },
+    {
+        id: 12,
+        title: 'Kreatif AI - İstanbul & Dünya Seyahat Modası',
+        client: 'PikselAI Lab',
+        category: 'Kampanya',
+        thumbnail: '/assets/pages/yeni_set/pikselai_set2_01.webp',
+        thumbnailType: 'single',
+        images: (ASSET_DATA.pages.yeni_set_2?.files || []).map((url, index) => ({
+            url,
+            type: 'image' as const,
+            aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
+        })),
+        description: "Galata sokakları, Paris, Londra ve New York gibi dünya moda başkentlerinde, özgün mevsimsel dokularla hazırlanan küresel seyahat ve kış şıklığı sanal manken kampanyaları.",
+        tags: ['Sokak Modası', 'Seyahat', 'Kış Şıklığı', 'Sanal Manken'],
+        bgColor: '#0c0b08'
+    },
+    {
+        id: 13,
+        title: 'Kreatif AI - Yüksek Mücevherat & Pırlanta',
+        client: 'PikselAI Lab',
+        category: 'Ürün Fotoğrafçılığı',
+        thumbnail: '/assets/pages/yeni_set/pikselai_set3_01.webp',
+        thumbnailType: 'single',
+        images: (ASSET_DATA.pages.yeni_set_3?.files || []).map((url, index) => ({
+            url,
+            type: 'image' as const,
+            aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
+        })),
+        description: "Altın kumlar, kristal mağaralar ve su altı ışık kırılmaları altında parıldayan pırlanta yüzük, zümrüt kolye ve lüks takı serisi.",
+        tags: ['Mücevher', 'Pırlanta', 'Aksesuar', 'Ürün'],
+        bgColor: '#09090c'
+    },
+    {
+        id: 14,
+        title: 'Kreatif AI - Artistik Atölyeler & Mimari',
+        client: 'PikselAI Lab',
+        category: 'Kampanya',
+        thumbnail: '/assets/pages/yeni_set/pikselai_set4_01.webp',
+        thumbnailType: 'single',
+        images: (ASSET_DATA.pages.yeni_set_4?.files || []).map((url, index) => ({
+            url,
+            type: 'image' as const,
+            aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
+        })),
+        description: "Resim ve seramik atölyeleri, brutalist beton yapılar, ayna labirentleri ve Kapadokya gün doğumu eşliğinde sanatsal ve entelektüel lifestyle çekimler.",
+        tags: ['Artistik Çekim', 'Mimari', 'Kültür', 'Kampanya'],
+        bgColor: '#0c0908'
+    },
+    {
+        id: 15,
+        title: 'Kreatif AI - Wabi-Sabi Seramik & Sofra Sanatı',
+        client: 'PikselAI Lab',
+        category: 'Ürün Fotoğrafçılığı',
+        thumbnail: '/assets/pages/yeni_set/pikselai_set5_01.webp',
+        thumbnailType: 'single',
+        images: (ASSET_DATA.pages.yeni_set_5?.files || []).map((url, index) => ({
+            url,
+            type: 'image' as const,
+            aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
+        })),
+        description: "Wabi-sabi tarzı ham kilden üretilen seramik kupalar, el boyaması porselen tabaklar ve organik sofra sunum sanatının eşsiz harmonisi.",
+        tags: ['Seramik', 'Sofra Tasarımı', 'Artisanal', 'Ürün'],
+        bgColor: '#080808'
+    },
+    {
+        id: 16,
+        title: 'Kreatif AI - Gastronomi & Gurme İçecekler',
+        client: 'PikselAI Lab',
+        category: 'Ürün Fotoğrafçılığı',
+        thumbnail: '/assets/pages/yeni_set/pikselai_set6_01.webp',
+        thumbnailType: 'single',
+        images: (ASSET_DATA.pages.yeni_set_6?.files || []).map((url, index) => ({
+            url,
+            type: 'image' as const,
+            aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
+        })),
+        description: "Buz küpleri, dinamik meyve patlamaları, uçan nane yaprakları ve niche ambalaj tasarımları ile sunulan canlandırıcı premium gurme içecek kutuları.",
+        tags: ['Gastronomi', 'İçecek', 'Sıvı Simülasyonu', 'Ürün'],
+        bgColor: '#080a08'
+    },
+    {
         id: 17,
         title: 'Kreatif AI - Lüks İsviçre Saatleri (Stüdyo)',
         client: 'PikselAI Lab',
@@ -191,7 +253,7 @@ const projects: Project[] = [
             type: 'image' as const,
             aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
         })),
-        description: "Sıvı metal / cıva dalgaları, fütüristik minimalist zeminler ve kusursuz yansımalar altında sergilenen lüks İsviçre mekanik saat stüdyo çekimleri.",
+        description: "Sıvı cıva dalgaları, fütüristik minimalist zeminler ve kusursuz yansımalar altında sergilenen lüks İsviçre mekanik saat stüdyo çekimleri.",
         tags: ['Saat', 'Mekanik', 'Stüdyo', 'Ürün'],
         bgColor: '#090808'
     },
@@ -213,7 +275,7 @@ const projects: Project[] = [
     },
     {
         id: 19,
-        title: 'Kreatif AI - Yüksek Mücevherat & Pırlanta',
+        title: 'Kreatif AI - Premium Parfüm & Kozmetik',
         client: 'PikselAI Lab',
         category: 'Ürün Fotoğrafçılığı',
         thumbnail: '/assets/pages/yeni_set/pikselai_set9_01.webp',
@@ -223,33 +285,13 @@ const projects: Project[] = [
             type: 'image' as const,
             aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
         })),
-        description: "Altın kumlar, su altı ışık kırılmaları ve mistik kristal zeminler üzerinde parıldayan pırlanta yüzük ve lüks takı tasarımları.",
-        tags: ['Mücevher', 'Pırlanta', 'Aksesuar', 'Ürün'],
+        description: "Mistik orman zeminleri, cam fanuslar, obsidyen taşlar ve bitkisel laboratuvarlarda sergilenen lüks niche parfüm ve serum şişeleri.",
+        tags: ['Kozmetik', 'Parfüm', 'Serum', 'Ürün'],
         bgColor: '#0a0908'
     },
     {
-        id: 3,
-        title: 'Sosyal Medya İçerikleri',
-        client: 'Mina Drinks',
-        category: 'Sosyal Medya',
-        thumbnail: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina1.webp',
-        thumbnailType: 'single',
-        images: [
-            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina1.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina_drink_1.webp', type: 'image', aspect: 'square' },
-            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina_drink_2.webp', type: 'image', aspect: 'square' },
-            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina3.webp', type: 'image', aspect: 'wide' },
-            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina2.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina4.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/sosyal_medya/mina_drinks_konsept/mina_drink_4.webp', type: 'image', aspect: 'wide' }
-        ],
-        description: "Mina Drinks içecek markası için hazırlanan AI destekli sosyal medya içerik paketleri. Reels, story ve feed görselleri dahil.",
-        tags: ['Sosyal Medya', 'İçecek', 'Konsept'],
-        bgColor: '#1c3a13'
-    },
-    {
         id: 20,
-        title: 'Kreatif AI - Premium Parfüm & Kozmetik',
+        title: 'Kreatif AI - Lüks Activewear & Spor Giyim',
         client: 'PikselAI Lab',
         category: 'Ürün Fotoğrafçılığı',
         thumbnail: '/assets/pages/yeni_set/pikselai_set10_01.webp',
@@ -259,10 +301,12 @@ const projects: Project[] = [
             type: 'image' as const,
             aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
         })),
-        description: "Mistik orman zeminleri, cam fanuslar, obsidyen taşlar ve bitkisel laboratuvarlarda sergilenen lüks niche parfüm ve kozmetik şişeleri.",
-        tags: ['Kozmetik', 'Parfüm', 'Serum', 'Ürün'],
+        description: "Metropol neonları ve İzlanda buzulları fonunda sergilenen fütüristik ve teknik activewear mont, tayt ve teknik spor giyim serisi.",
+        tags: ['Activewear', 'Teknik Giyim', 'Spor', 'Ürün'],
         bgColor: '#080c09'
     },
+
+    // ── Kreatif AI (Eski İçerikler) Vitrini ──
     {
         id: 8,
         title: 'Kreatif AI - Ürün Fotoğrafçılığı',
@@ -275,7 +319,7 @@ const projects: Project[] = [
             type: 'image' as const,
             aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
         })),
-        description: "PikselAI laboratuvarlarında üretilen lüks kozmetik, parfüm ve premium içeceklerin yer aldığı yapay zeka tabanlı e-ticaret ürün fotoğrafçılığı çekimleri.",
+        description: "PikselAI laboratuvarlarında üretilen lüks kozmetik, parfüm ve premium içeceklerin yer aldığı yapay zeka tabareti ürün fotoğrafçılığı çekimleri.",
         tags: ['Kreatif AI', 'Ürün Fotoğrafı', 'Stüdyo'],
         bgColor: '#080c0a'
     },
@@ -296,26 +340,6 @@ const projects: Project[] = [
         bgColor: '#0d0714'
     },
     {
-        id: 4,
-        title: 'Mina Drinks Ürün Çekimi',
-        client: 'Mina Drinks',
-        category: 'Ürün Fotoğrafçılığı',
-        thumbnail: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina3.webp',
-        thumbnailType: 'single',
-        images: [
-            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina3.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina_drink_1.webp', type: 'image', aspect: 'square' },
-            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina_drink_2.webp', type: 'image', aspect: 'square' },
-            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina_drink_4.webp', type: 'image', aspect: 'wide' },
-            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina1.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina2.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/urun_fotografciligi/mina_drinks_urun/mina4.webp', type: 'image', aspect: 'tall' }
-        ],
-        description: "Mina Drinks için hazırlanan yaratıcı ürün fotoğrafçılığı. Doğal ortam ve konsept stüdyo çekimleri.",
-        tags: ['Ürün', 'İçecek', 'Stüdyo'],
-        bgColor: '#1c3a13'
-    },
-    {
         id: 10,
         title: 'Kreatif AI - Yüksek Moda & Kampanya',
         client: 'PikselAI Lab',
@@ -331,25 +355,8 @@ const projects: Project[] = [
         tags: ['Kreatif AI', 'Sanal Manken', 'Moda'],
         bgColor: '#0a0d14'
     },
-    {
-        id: 6,
-        title: 'Rossea Eşarp Kampanyası',
-        client: 'Rossea',
-        category: 'Kampanya',
-        thumbnail: '/assets/pages/islerimiz/kampanya/rossea_esarp_kampanya/esarp_1.webp',
-        thumbnailType: 'single',
-        images: [
-            { url: '/assets/pages/islerimiz/kampanya/rossea_esarp_kampanya/esarp_1.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/kampanya/rossea_esarp_kampanya/esarp_2.webp', type: 'image', aspect: 'square' },
-            { url: '/assets/pages/islerimiz/kampanya/rossea_esarp_kampanya/esarp_3.webp', type: 'image', aspect: 'square' },
-            { url: '/assets/pages/islerimiz/kampanya/rossea_esarp_kampanya/esarp_4.webp', type: 'image', aspect: 'wide' },
-            { url: '/assets/pages/islerimiz/kampanya/rossea_esarp_kampanya/esarp_5.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/kampanya/rossea_esarp_kampanya/esarp_6.webp', type: 'image', aspect: 'tall' }
-        ],
-        description: "Rossea eşarp markası için yapay zeka ile üretilen kampanya görselleri. Otantik Türk lokasyonlarında editorial tarz sanal manken çekimleri.",
-        tags: ['Eşarp', 'Kampanya', 'Moda'],
-        bgColor: '#2e1a1a'
-    },
+
+    // ── Hayalet Çekimler ──
     {
         id: 7,
         title: 'Hayalet Manken Çekimleri',

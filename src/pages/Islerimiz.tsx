@@ -190,19 +190,51 @@ const projects: Project[] = [
     },
     {
         id: 8,
-        title: 'Kreatif AI & Geleceğin Sanatı',
+        title: 'Kreatif AI - Ürün Fotoğrafçılığı',
         client: 'PikselAI Lab',
-        category: 'Kampanya',
+        category: 'Ürün Fotoğrafçılığı',
         thumbnail: '/assets/pages/yeni_icerik/pikselai_creative_01.webp',
         thumbnailType: 'single',
-        images: (ASSET_DATA.pages.yeni_icerik?.files || []).map((url, index) => ({
+        images: (ASSET_DATA.pages.yeni_icerik_urun?.files || []).map((url, index) => ({
             url,
             type: 'image' as const,
             aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
         })),
-        description: "PikselAI laboratuvarlarında üretilen fütüristik, soyut ve hyper-realistic görsel sanat eserleri. En son yapay zeka modelleri ve hassas prompt mühendisliğiyle hazırlanan 77 adet kreatif şaheser.",
-        tags: ['Kreatif AI', 'Yapay Zeka', 'Sanat'],
-        bgColor: '#0d0d0d'
+        description: "PikselAI laboratuvarlarında üretilen lüks kozmetik, parfüm ve premium içeceklerin yer aldığı yapay zeka tabanlı e-ticaret ürün fotoğrafçılığı çekimleri.",
+        tags: ['Kreatif AI', 'Ürün Fotoğrafı', 'Stüdyo'],
+        bgColor: '#080c0a'
+    },
+    {
+        id: 9,
+        title: 'Kreatif AI - Fütüristik & Soyut Sanat',
+        client: 'PikselAI Lab',
+        category: 'Kampanya',
+        thumbnail: '/assets/pages/yeni_icerik/pikselai_creative_26.webp',
+        thumbnailType: 'single',
+        images: (ASSET_DATA.pages.yeni_icerik_creative?.files || []).map((url, index) => ({
+            url,
+            type: 'image' as const,
+            aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
+        })),
+        description: "PikselAI stüdyolarında üretilen fütüristik neon akışlar, holografik tasarımlar ve sürreal mimari AI sanat eserleri.",
+        tags: ['Kreatif AI', 'Yapay Zeka', 'Soyut Sanat'],
+        bgColor: '#0d0714'
+    },
+    {
+        id: 10,
+        title: 'Kreatif AI - Yüksek Moda & Kampanya',
+        client: 'PikselAI Lab',
+        category: 'Kampanya',
+        thumbnail: '/assets/pages/yeni_icerik/pikselai_creative_51.webp',
+        thumbnailType: 'single',
+        images: (ASSET_DATA.pages.yeni_icerik_moda?.files || []).map((url, index) => ({
+            url,
+            type: 'image' as const,
+            aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
+        })),
+        description: "Farklı dünya metropollerinde, Leica ve Fujifilm film dokusuyla üretilmiş hiper gerçekçi sanal manken yüksek moda çekimleri.",
+        tags: ['Kreatif AI', 'Sanal Manken', 'Moda'],
+        bgColor: '#0a0d14'
     }
 ];
 

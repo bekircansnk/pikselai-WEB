@@ -198,14 +198,12 @@ export const ASSET_DATA = {
         "/assets/pages/eticaretyeni/shopify_setup.webp"
       ]
     },
-    "yeni_icerik": {
+    "yeni_icerik_urun": {
       "files": [
         "/assets/pages/yeni_icerik/pikselai_creative_01.webp",
         "/assets/pages/yeni_icerik/pikselai_creative_02.webp",
         "/assets/pages/yeni_icerik/pikselai_creative_03.webp",
-        "/assets/pages/yeni_icerik/pikselai_creative_04.webp",
         "/assets/pages/yeni_icerik/pikselai_creative_05.webp",
-        "/assets/pages/yeni_icerik/pikselai_creative_06.webp",
         "/assets/pages/yeni_icerik/pikselai_creative_07.webp",
         "/assets/pages/yeni_icerik/pikselai_creative_08.webp",
         "/assets/pages/yeni_icerik/pikselai_creative_09.webp",
@@ -224,7 +222,11 @@ export const ASSET_DATA = {
         "/assets/pages/yeni_icerik/pikselai_creative_22.webp",
         "/assets/pages/yeni_icerik/pikselai_creative_23.webp",
         "/assets/pages/yeni_icerik/pikselai_creative_24.webp",
-        "/assets/pages/yeni_icerik/pikselai_creative_25.webp",
+        "/assets/pages/yeni_icerik/pikselai_creative_25.webp"
+      ]
+    },
+    "yeni_icerik_creative": {
+      "files": [
         "/assets/pages/yeni_icerik/pikselai_creative_26.webp",
         "/assets/pages/yeni_icerik/pikselai_creative_27.webp",
         "/assets/pages/yeni_icerik/pikselai_creative_28.webp",
@@ -249,7 +251,11 @@ export const ASSET_DATA = {
         "/assets/pages/yeni_icerik/pikselai_creative_47.webp",
         "/assets/pages/yeni_icerik/pikselai_creative_48.webp",
         "/assets/pages/yeni_icerik/pikselai_creative_49.webp",
-        "/assets/pages/yeni_icerik/pikselai_creative_50.webp",
+        "/assets/pages/yeni_icerik/pikselai_creative_50.webp"
+      ]
+    },
+    "yeni_icerik_moda": {
+      "files": [
         "/assets/pages/yeni_icerik/pikselai_creative_51.webp",
         "/assets/pages/yeni_icerik/pikselai_creative_52.webp",
         "/assets/pages/yeni_icerik/pikselai_creative_53.webp",

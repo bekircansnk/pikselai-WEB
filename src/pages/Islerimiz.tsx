@@ -455,7 +455,22 @@ const Islerimiz = () => {
                         name: 'PikselAI Portfolyo — İşlerimiz',
                         description: 'Yapay zeka destekli profesyonel ürün fotoğrafçılığı, sosyal medya ve e-ticaret projelerimiz.',
                         url: 'https://pikselai.com/islerimiz',
-                        provider: createOrganizationSchema()
+                        provider: createOrganizationSchema(),
+                        about: projects.map(proj => ({
+                            '@type': 'CreativeWork',
+                            name: proj.title,
+                            creator: {
+                                '@type': 'Organization',
+                                name: 'PikselAI'
+                            },
+                            provider: {
+                                '@type': 'Organization',
+                                name: proj.client
+                            },
+                            description: proj.description,
+                            image: proj.thumbnail,
+                            keywords: proj.tags.join(', ')
+                        }))
                     },
                     createBreadcrumbSchema([
                         { name: 'Anasayfa', url: '/' },

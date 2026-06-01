@@ -208,6 +208,150 @@ const projects: Project[] = [
         description: "Farklı dünya metropollerinde, Leica ve Fujifilm film dokusuyla üretilmiş hiper gerçekçi sanal manken yüksek moda çekimleri.",
         tags: ['Kreatif AI', 'Sanal Manken', 'Moda'],
         bgColor: '#0a0d14'
+    },
+    {
+        id: 10,
+        title: 'Kreatif AI - Yüksek Moda & Kampanya',
+        client: 'PikselAI Lab',
+        category: 'Kampanya',
+        thumbnail: '/assets/pages/yeni_icerik/pikselai_creative_51.webp',
+        thumbnailType: 'single',
+        images: (ASSET_DATA.pages.yeni_icerik_moda?.files || []).map((url, index) => ({
+            url,
+            type: 'image' as const,
+            aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
+        })),
+        description: "Farklı dünya metropollerinde, Leica ve Fujifilm film dokusuyla üretilmiş hiper gerçekçi sanal manken yüksek moda çekimleri.",
+        tags: ['Kreatif AI', 'Sanal Manken', 'Moda'],
+        bgColor: '#0a0d14'
+    },
+    {
+        id: 11,
+        title: 'Kreatif AI - Lüks Çanta Serisi',
+        client: 'PikselAI Lab',
+        category: 'Ürün Fotoğrafçılığı',
+        thumbnail: '/assets/pages/yeni_set/pikselai_set1_01.webp',
+        thumbnailType: 'single',
+        images: (ASSET_DATA.pages.yeni_set_1?.files || []).map((url, index) => ({
+            url,
+            type: 'image' as const,
+            aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
+        })),
+        description: "Ayna labirentleri, cam yansımaları ve fütüristik stüdyolarda sunulan lüks çanta tasarımları.",
+        tags: ['Çanta', 'Aksesuar', 'Lüks'],
+        bgColor: '#080c09'
+    },
+    {
+        id: 12,
+        title: 'Kreatif AI - Yüksek Mücevherat & Pırlanta',
+        client: 'PikselAI Lab',
+        category: 'Ürün Fotoğrafçılığı',
+        thumbnail: '/assets/pages/yeni_set/pikselai_set2_01.webp',
+        thumbnailType: 'single',
+        images: (ASSET_DATA.pages.yeni_set_2?.files || []).map((url, index) => ({
+            url,
+            type: 'image' as const,
+            aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
+        })),
+        description: "Altın kumlar, kristal mağaralar ve su altı ışık kırılmaları altında parıldayan pırlantalar ve lüks takı serisi.",
+        tags: ['Mücevher', 'Pırlanta', 'Aksesuar'],
+        bgColor: '#0c0b08'
+    },
+    {
+        id: 13,
+        title: 'Kreatif AI - Lüks İsviçre Saatleri',
+        client: 'PikselAI Lab',
+        category: 'Ürün Fotoğrafçılığı',
+        thumbnail: '/assets/pages/yeni_set/pikselai_set3_01.webp',
+        thumbnailType: 'single',
+        images: (ASSET_DATA.pages.yeni_set_3?.files || []).map((url, index) => ({
+            url,
+            type: 'image' as const,
+            aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
+        })),
+        description: "Sıvı cıva dalgaları ve minimalist beton bloklar üzerinde sergilenen lüks İsviçre mekanik saatleri.",
+        tags: ['Saat', 'Mekanik', 'Stüdyo'],
+        bgColor: '#09090c'
+    },
+    {
+        id: 14,
+        title: 'Kreatif AI - Wabi-Sabi Seramik & Sofra',
+        client: 'PikselAI Lab',
+        category: 'Ürün Fotoğrafçılığı',
+        thumbnail: '/assets/pages/yeni_set/pikselai_set4_01.webp',
+        thumbnailType: 'single',
+        images: (ASSET_DATA.pages.yeni_set_4?.files || []).map((url, index) => ({
+            url,
+            type: 'image' as const,
+            aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
+        })),
+        description: "El boyaması porselen tabaklar ve wabi-sabi tarzı ham kilden üretilen seramik sofra sanatı serisi.",
+        tags: ['Sofra Tasarımı', 'Seramik', 'Artisanal'],
+        bgColor: '#0c0908'
+    },
+    {
+        id: 15,
+        title: 'Kreatif AI - Lüks Activewear & Spor Giyim',
+        client: 'PikselAI Lab',
+        category: 'Ürün Fotoğrafçılığı',
+        thumbnail: '/assets/pages/yeni_set/pikselai_set5_01.webp',
+        thumbnailType: 'single',
+        images: (ASSET_DATA.pages.yeni_set_5?.files || []).map((url, index) => ({
+            url,
+            type: 'image' as const,
+            aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
+        })),
+        description: "Metropol neonları ve İzlanda buzulları fonunda sergilenen fütüristik ve teknik activewear mont ve tayt serisi.",
+        tags: ['Activewear', 'Teknik Moda', 'Mont'],
+        bgColor: '#080808'
+    },
+    {
+        id: 16,
+        title: 'Kreatif AI - Gastronomi & Gurme İçecekler',
+        client: 'PikselAI Lab',
+        category: 'Ürün Fotoğrafçılığı',
+        thumbnail: '/assets/pages/yeni_set/pikselai_set6_01.webp',
+        thumbnailType: 'single',
+        images: (ASSET_DATA.pages.yeni_set_6?.files || []).map((url, index) => ({
+            url,
+            type: 'image' as const,
+            aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
+        })),
+        description: "Buz küpleri, meyve patlamaları ve lüks ambalaj tasarımları arasında sunulan niche gurme içecek kutuları.",
+        tags: ['Gastronomi', 'İçecek', 'Gastronomi'],
+        bgColor: '#080a08'
+    },
+    {
+        id: 17,
+        title: 'Kreatif AI - Minimalist Ev Dekorasyonu',
+        client: 'PikselAI Lab',
+        category: 'Ürün Fotoğrafçılığı',
+        thumbnail: '/assets/pages/yeni_set/pikselai_set7_01.webp',
+        thumbnailType: 'single',
+        images: (ASSET_DATA.pages.yeni_set_7?.files || []).map((url, index) => ({
+            url,
+            type: 'image' as const,
+            aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
+        })),
+        description: "Brutalist beton nişler, modern abajurlar ve lüks keten sofralarla tasarlanmış minimalist ev aksesuarları.",
+        tags: ['Ev Dekorasyon', 'Minimalist', 'Tasarım'],
+        bgColor: '#090808'
+    },
+    {
+        id: 18,
+        title: 'Kreatif AI - Premium Parfüm & Kozmetik',
+        client: 'PikselAI Lab',
+        category: 'Ürün Fotoğrafçılığı',
+        thumbnail: '/assets/pages/yeni_set/pikselai_set8_01.webp',
+        thumbnailType: 'single',
+        images: (ASSET_DATA.pages.yeni_set_8?.files || []).map((url, index) => ({
+            url,
+            type: 'image' as const,
+            aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
+        })),
+        description: "Mistik orman zeminleri ve cam fanuslar içinde sergilenen niche parfümler ve botanik serum şişeleri.",
+        tags: ['Kozmetik', 'Parfüm', 'Serum'],
+        bgColor: '#080c08'
     }
 ];
 

@@ -69,7 +69,10 @@ function generateSitemap() {
 
     // Yeni üretilen optimize WebP görsellerini sitemap için oku
     const yeniIcerikDir = path.resolve('./public/assets/pages/yeni_icerik');
+    const yeniSetDir = path.resolve('./public/assets/pages/yeni_set');
     let imagesXml = '';
+    let totalImages = 0;
+
     if (fs.existsSync(yeniIcerikDir)) {
         const files = fs.readdirSync(yeniIcerikDir).filter(f => f.endsWith('.webp'));
         files.forEach(f => {
@@ -78,8 +81,20 @@ function generateSitemap() {
             imagesXml += `         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>\n`;
             imagesXml += `      </image:image>\n`;
         });
-        console.log(`${files.length} adet kreatif görsel sitemap.xml'e eklendi.`);
+        totalImages += files.length;
     }
+
+    if (fs.existsSync(yeniSetDir)) {
+        const files = fs.readdirSync(yeniSetDir).filter(f => f.endsWith('.webp'));
+        files.forEach(f => {
+            imagesXml += `      <image:image>\n`;
+            imagesXml += `         <image:loc>${SITE_URL}/assets/pages/yeni_set/${f}</image:loc>\n`;
+            imagesXml += `         <image:title>PikselAI E-Ticaret Yapay Zeka Urun Gorseli Kampanya Çekimi</image:title>\n`;
+            imagesXml += `      </image:image>\n`;
+        });
+        totalImages += files.length;
+    }
+    console.log(`${totalImages} adet kreatif görsel sitemap.xml'e eklendi.`);
 
     urls.forEach(page => {
         xml += `   <url>\n`;

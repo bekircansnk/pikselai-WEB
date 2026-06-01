@@ -198,6 +198,126 @@ export const ASSET_DATA = {
         "/assets/pages/eticaretyeni/shopify_setup.webp"
       ]
     },
+    
+    "yeni_set_1": {
+      "files": [
+        "/assets/pages/yeni_set/pikselai_set1_01.webp",
+        "/assets/pages/yeni_set/pikselai_set1_02.webp",
+        "/assets/pages/yeni_set/pikselai_set1_03.webp",
+        "/assets/pages/yeni_set/pikselai_set1_04.webp",
+        "/assets/pages/yeni_set/pikselai_set1_05.webp",
+        "/assets/pages/yeni_set/pikselai_set1_06.webp",
+        "/assets/pages/yeni_set/pikselai_set1_07.webp",
+        "/assets/pages/yeni_set/pikselai_set1_08.webp",
+        "/assets/pages/yeni_set/pikselai_set1_09.webp",
+        "/assets/pages/yeni_set/pikselai_set1_10.webp"
+      ]
+    },
+
+    "yeni_set_2": {
+      "files": [
+        "/assets/pages/yeni_set/pikselai_set2_01.webp",
+        "/assets/pages/yeni_set/pikselai_set2_02.webp",
+        "/assets/pages/yeni_set/pikselai_set2_03.webp",
+        "/assets/pages/yeni_set/pikselai_set2_04.webp",
+        "/assets/pages/yeni_set/pikselai_set2_05.webp",
+        "/assets/pages/yeni_set/pikselai_set2_06.webp",
+        "/assets/pages/yeni_set/pikselai_set2_07.webp",
+        "/assets/pages/yeni_set/pikselai_set2_08.webp",
+        "/assets/pages/yeni_set/pikselai_set2_09.webp",
+        "/assets/pages/yeni_set/pikselai_set2_10.webp"
+      ]
+    },
+
+    "yeni_set_3": {
+      "files": [
+        "/assets/pages/yeni_set/pikselai_set3_01.webp",
+        "/assets/pages/yeni_set/pikselai_set3_02.webp",
+        "/assets/pages/yeni_set/pikselai_set3_03.webp",
+        "/assets/pages/yeni_set/pikselai_set3_04.webp",
+        "/assets/pages/yeni_set/pikselai_set3_05.webp",
+        "/assets/pages/yeni_set/pikselai_set3_06.webp",
+        "/assets/pages/yeni_set/pikselai_set3_07.webp",
+        "/assets/pages/yeni_set/pikselai_set3_08.webp",
+        "/assets/pages/yeni_set/pikselai_set3_09.webp",
+        "/assets/pages/yeni_set/pikselai_set3_10.webp"
+      ]
+    },
+
+    "yeni_set_4": {
+      "files": [
+        "/assets/pages/yeni_set/pikselai_set4_01.webp",
+        "/assets/pages/yeni_set/pikselai_set4_02.webp",
+        "/assets/pages/yeni_set/pikselai_set4_03.webp",
+        "/assets/pages/yeni_set/pikselai_set4_04.webp",
+        "/assets/pages/yeni_set/pikselai_set4_05.webp",
+        "/assets/pages/yeni_set/pikselai_set4_06.webp",
+        "/assets/pages/yeni_set/pikselai_set4_07.webp",
+        "/assets/pages/yeni_set/pikselai_set4_08.webp",
+        "/assets/pages/yeni_set/pikselai_set4_09.webp",
+        "/assets/pages/yeni_set/pikselai_set4_10.webp"
+      ]
+    },
+
+    "yeni_set_5": {
+      "files": [
+        "/assets/pages/yeni_set/pikselai_set5_01.webp",
+        "/assets/pages/yeni_set/pikselai_set5_02.webp",
+        "/assets/pages/yeni_set/pikselai_set5_03.webp",
+        "/assets/pages/yeni_set/pikselai_set5_04.webp",
+        "/assets/pages/yeni_set/pikselai_set5_05.webp",
+        "/assets/pages/yeni_set/pikselai_set5_06.webp",
+        "/assets/pages/yeni_set/pikselai_set5_07.webp",
+        "/assets/pages/yeni_set/pikselai_set5_08.webp",
+        "/assets/pages/yeni_set/pikselai_set5_09.webp",
+        "/assets/pages/yeni_set/pikselai_set5_10.webp"
+      ]
+    },
+
+    "yeni_set_6": {
+      "files": [
+        "/assets/pages/yeni_set/pikselai_set6_01.webp",
+        "/assets/pages/yeni_set/pikselai_set6_02.webp",
+        "/assets/pages/yeni_set/pikselai_set6_03.webp",
+        "/assets/pages/yeni_set/pikselai_set6_04.webp",
+        "/assets/pages/yeni_set/pikselai_set6_05.webp",
+        "/assets/pages/yeni_set/pikselai_set6_06.webp",
+        "/assets/pages/yeni_set/pikselai_set6_07.webp",
+        "/assets/pages/yeni_set/pikselai_set6_08.webp",
+        "/assets/pages/yeni_set/pikselai_set6_09.webp",
+        "/assets/pages/yeni_set/pikselai_set6_10.webp"
+      ]
+    },
+
+    "yeni_set_7": {
+      "files": [
+        "/assets/pages/yeni_set/pikselai_set7_01.webp",
+        "/assets/pages/yeni_set/pikselai_set7_02.webp",
+        "/assets/pages/yeni_set/pikselai_set7_03.webp",
+        "/assets/pages/yeni_set/pikselai_set7_04.webp",
+        "/assets/pages/yeni_set/pikselai_set7_05.webp",
+        "/assets/pages/yeni_set/pikselai_set7_06.webp",
+        "/assets/pages/yeni_set/pikselai_set7_07.webp",
+        "/assets/pages/yeni_set/pikselai_set7_08.webp",
+        "/assets/pages/yeni_set/pikselai_set7_09.webp",
+        "/assets/pages/yeni_set/pikselai_set7_10.webp"
+      ]
+    },
+
+    "yeni_set_8": {
+      "files": [
+        "/assets/pages/yeni_set/pikselai_set8_01.webp",
+        "/assets/pages/yeni_set/pikselai_set8_02.webp",
+        "/assets/pages/yeni_set/pikselai_set8_03.webp",
+        "/assets/pages/yeni_set/pikselai_set8_04.webp",
+        "/assets/pages/yeni_set/pikselai_set8_05.webp",
+        "/assets/pages/yeni_set/pikselai_set8_06.webp",
+        "/assets/pages/yeni_set/pikselai_set8_07.webp",
+        "/assets/pages/yeni_set/pikselai_set8_08.webp",
+        "/assets/pages/yeni_set/pikselai_set8_09.webp",
+        "/assets/pages/yeni_set/pikselai_set8_10.webp"
+      ]
+    },
     "yeni_icerik_urun": {
       "files": [
         "/assets/pages/yeni_icerik/pikselai_creative_01.webp",

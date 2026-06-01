@@ -355,15 +355,29 @@ const projects: Project[] = [
         title: 'Hayalet Manken Çekimleri',
         client: 'Ghost Mannequin',
         category: 'Hayalet Çekim',
-        thumbnail: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/1_n.webp',
+        thumbnail: '/assets/pages/islerimiz/hayalet_cekim/ghost_1_n.webp',
         thumbnailType: 'single',
         images: [
-            { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/1_n.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/1_arka.webp', type: 'image', aspect: 'wide' },
-            { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/3_n.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/3_arka.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/5_n.webp', type: 'image', aspect: 'tall' },
-            { url: '/assets/pages/islerimiz/hayalet_cekim/cazador_ghost_set/5_arka.webp', type: 'image', aspect: 'tall' }
+            { url: '/assets/pages/islerimiz/hayalet_cekim/ghost_1_n.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/ghost_1_arka.webp', type: 'image', aspect: 'wide' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/ghost_2_n.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/ghost_2_arka.webp', type: 'image', aspect: 'wide' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/ghost_3_n.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/ghost_3_arka.webp', type: 'image', aspect: 'wide' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/ghost_4_n.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/ghost_4_arka.webp', type: 'image', aspect: 'wide' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/ghost_5_n.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/ghost_5_arka.webp', type: 'image', aspect: 'wide' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/ghost_6_n.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/ghost_6_arka.webp', type: 'image', aspect: 'wide' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/ghost_7_n.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/ghost_7_arka.webp', type: 'image', aspect: 'wide' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/ghost_8_n.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/ghost_8_arka.webp', type: 'image', aspect: 'wide' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/ghost_9_n.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/ghost_9_arka.webp', type: 'image', aspect: 'wide' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/ghost_10_n.webp', type: 'image', aspect: 'tall' },
+            { url: '/assets/pages/islerimiz/hayalet_cekim/ghost_10_arka.webp', type: 'image', aspect: 'wide' }
         ],
         description: "Markaların e-ticaret siteleri ve katalogları için hazırlanan, kıyafet formlarını 3 boyutlu ve gerçekçi gösteren kusursuz hayalet manken çekimleri.",
         tags: ['Ghost', 'Katalog', 'E-Ticaret', 'Hayalet Manken'],
@@ -662,24 +676,72 @@ const Islerimiz = () => {
                                             const imgs = [...selectedProject.images];
                                             let imgIndex = 0;
                                             let patternIdx = 0;
-                                            const pattern = ['big', 'stacked', 'wide', 'stacked'];
-
-                                            while (imgIndex < imgs.length) {
-                                                const currentPattern = pattern[patternIdx % pattern.length];
-                                                if (currentPattern === 'stacked' && imgIndex + 1 < imgs.length) {
-                                                    columns.push({ type: 'stacked', images: [imgs[imgIndex], imgs[imgIndex + 1]], startIndex: imgIndex });
-                                                    imgIndex += 2;
-                                                } else {
-                                                    columns.push({ type: currentPattern === 'stacked' ? 'big' : currentPattern, images: [imgs[imgIndex]], startIndex: imgIndex });
-                                                    imgIndex += 1;
+                                            
+                                            if (selectedProject.id === 7) {
+                                                // Hayalet Manken Çekimleri için özel ikili çift gruplaması (Ön ve Arka)
+                                                let pairIdx = 0;
+                                                while (imgIndex < imgs.length) {
+                                                    if (imgIndex + 1 < imgs.length) {
+                                                        const isDouble = pairIdx % 2 === 0;
+                                                        columns.push({
+                                                            type: isDouble ? 'double' : 'stacked',
+                                                            images: [imgs[imgIndex], imgs[imgIndex + 1]],
+                                                            startIndex: imgIndex
+                                                        });
+                                                        imgIndex += 2;
+                                                        pairIdx++;
+                                                    } else {
+                                                        columns.push({
+                                                            type: 'big',
+                                                            images: [imgs[imgIndex]],
+                                                            startIndex: imgIndex
+                                                        });
+                                                        imgIndex += 1;
+                                                    }
                                                 }
-                                                patternIdx++;
+                                            } else {
+                                                // Standart asimetrik yerleşim (diğer tüm projeler için)
+                                                const pattern = ['big', 'stacked', 'wide', 'stacked'];
+                                                while (imgIndex < imgs.length) {
+                                                    const currentPattern = pattern[patternIdx % pattern.length];
+                                                    if (currentPattern === 'stacked' && imgIndex + 1 < imgs.length) {
+                                                        columns.push({ type: 'stacked', images: [imgs[imgIndex], imgs[imgIndex + 1]], startIndex: imgIndex });
+                                                        imgIndex += 2;
+                                                    } else {
+                                                        columns.push({ type: currentPattern === 'stacked' ? 'big' : currentPattern, images: [imgs[imgIndex]], startIndex: imgIndex });
+                                                        imgIndex += 1;
+                                                    }
+                                                    patternIdx++;
+                                                }
                                             }
 
                                             return columns.map((col, colIndex) => (
-                                                <div key={colIndex} className={`h-full shrink-0 flex flex-col ${col.type === 'stacked' ? 'w-[220px] md:w-[320px] space-y-3 md:space-y-6' : col.type === 'wide' ? 'w-[350px] md:w-[650px]' : 'w-[260px] md:w-[400px]'}`}>
+                                                <div 
+                                                    key={colIndex} 
+                                                    className={`h-full shrink-0 flex ${
+                                                        col.type === 'double' 
+                                                            ? 'w-[520px] md:w-[800px] flex-row space-x-3 md:space-x-6' 
+                                                            : col.type === 'stacked' 
+                                                                ? 'w-[220px] md:w-[320px] flex-col space-y-3 md:space-y-6' 
+                                                                : col.type === 'wide' 
+                                                                    ? 'w-[350px] md:w-[650px] flex-col space-y-3 md:space-y-6' 
+                                                                    : 'w-[260px] md:w-[400px] flex-col space-y-3 md:space-y-6'
+                                                    }`}
+                                                >
                                                     {col.images.map((img, subIdx) => (
-                                                        <motion.div key={`${colIndex}-${subIdx}`} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 * (col.startIndex + subIdx) }} className={`relative rounded-2xl md:rounded-[2.5rem] overflow-hidden group/img ${col.type === 'stacked' ? 'flex-1' : 'h-full'}`}>
+                                                        <motion.div 
+                                                            key={`${colIndex}-${subIdx}`} 
+                                                            initial={{ opacity: 0, y: 20 }} 
+                                                            animate={{ opacity: 1, y: 0 }} 
+                                                            transition={{ delay: 0.05 * (col.startIndex + subIdx) }} 
+                                                            className={`relative rounded-2xl md:rounded-[2.5rem] overflow-hidden group/img ${
+                                                                col.type === 'stacked' 
+                                                                    ? 'flex-1' 
+                                                                    : col.type === 'double' 
+                                                                        ? 'flex-1 h-full' 
+                                                                        : 'h-full'
+                                                            }`}
+                                                        >
                                                             <img src={img.url} alt={`${selectedProject.title} ${col.startIndex + subIdx}`} className="w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-110" loading="lazy" />
                                                             {col.startIndex === 0 && subIdx === 0 && (
                                                                 <>

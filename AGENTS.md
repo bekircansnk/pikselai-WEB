@@ -48,3 +48,6 @@ Vercel deployment hatalarını sıfıra indirmek için:
 - **Unused Variable Temizliği:** Kullanılmayan hiçbir `import`, `variable` veya `function` kod içerisinde bırakılmayacaktır.
 - **Commit Öncesi Onay:** Ajan, build'in başarılı olduğundan emin olmadan asla `git push` yapmayacaktır.
 
+## 6. Script Arşivleme ve Belgeleme Standardı 📜
+- Projede geliştirilen tüm yardımcı, geçici veya otomasyon amaçlı Python/JavaScript betikleri silinmek yerine MUTLAKA `scripts/archive/` klasörü altında saklanacaktır.
+- `scripts/archive/README.md` dosyası her yeni betik eklendiğinde güncellenecek; betiğin adı, amacı ve kullanım talimatları Türkçe olarak belgelenecektir. Bu sayede kurumsal hafıza korunarak kodların yeniden kullanımı sağlanacaktır.

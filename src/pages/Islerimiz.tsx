@@ -32,10 +32,10 @@ interface Project {
 const categories = ['Tümü', 'E-Ticaret', 'Sosyal Medya', 'Ürün Fotoğrafçılığı', 'Kampanya', 'Hayalet Çekim'];
 
 const stats = [
-    { value: '500+', label: 'Tamamlanan Proje' },
-    { value: '50+', label: 'Mutlu Marka' },
+    { value: '10x', label: 'Üretim Hızı' },
     { value: '%80', label: 'Maliyet Tasarrufu' },
     { value: '24-48s', label: 'Teslimat Süresi' },
+    { value: '7/24', label: 'Kesintisiz Üretim' },
 ];
 
 const projects: Project[] = [
@@ -192,22 +192,6 @@ const projects: Project[] = [
         description: "PikselAI stüdyolarında üretilen fütüristik neon akışlar, holografik tasarımlar ve sürreal mimari AI sanat eserleri.",
         tags: ['Kreatif AI', 'Yapay Zeka', 'Soyut Sanat'],
         bgColor: '#0d0714'
-    },
-    {
-        id: 10,
-        title: 'Kreatif AI - Yüksek Moda & Kampanya',
-        client: 'PikselAI Lab',
-        category: 'Kampanya',
-        thumbnail: '/assets/pages/yeni_icerik/pikselai_creative_51.webp',
-        thumbnailType: 'single',
-        images: (ASSET_DATA.pages.yeni_icerik_moda?.files || []).map((url, index) => ({
-            url,
-            type: 'image' as const,
-            aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
-        })),
-        description: "Farklı dünya metropollerinde, Leica ve Fujifilm film dokusuyla üretilmiş hiper gerçekçi sanal manken yüksek moda çekimleri.",
-        tags: ['Kreatif AI', 'Sanal Manken', 'Moda'],
-        bgColor: '#0a0d14'
     },
     {
         id: 10,
@@ -522,8 +506,8 @@ const Islerimiz = () => {
                         transition={{ duration: 0.8 }}
                         className="text-lg md:text-xl font-light text-bor-primary-600 leading-relaxed text-center"
                     >
-                        Türkiye'nin lider markalarına, AI destekli yaratıcı çözümlerle
-                        hız ve kalitede fark yaratan prodüksiyonlar sunuyoruz — konseptten
+                        Yapay zeka destekli yaratıcı prodüksiyon süreçlerimizle, markanız için
+                        hız ve kalitede fark yaratan çözümler sunuyoruz — konseptten
                         uygulamaya, sonuca kadar.
                     </motion.p>
                 </Section>

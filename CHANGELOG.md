@@ -2,6 +2,12 @@
 
 Projedeki tüm önemli değişiklikler bu dosyada belgelenecektir.
 
+## [2026-06-01] - İşlerimiz Portfolyo İstatistik & Metin Sadeleştirmesi
+
+### ⚡ Değiştirilenler & Optimize Edilenler (Changed)
+- **Gerçekçi Metrikler Entegre Edildi:** "İşlerimiz" sayfasındaki abartılı veriler (500+ tamamlanan proje, 50+ mutlu marka) kaldırılarak; dürüst, yapay zeka odaklı ve performansa dayalı "10x Üretim Hızı" ve "7/24 Kesintisiz Üretim" gibi gerçekçi metrikler eklendi.
+- **Alt Başlık Sadeleştirildi:** "Türkiye'nin lider markalarına..." şeklinde başlayan ve gerçekçi olmayan giriş metni, "Yapay zeka destekli yaratıcı prodüksiyon süreçlerimizle..." şeklinde daha dürüst ve marka odaklı bir ifadeyle güncellendi.
+
 ## [2026-06-01] - İşlerimiz Portfolyo Düzeltmeleri ve Temizliği
 
 ### 🧹 Temizlenenler & Düzeltilenler (Removed & Fixed)

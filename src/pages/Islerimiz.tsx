@@ -5,6 +5,7 @@ import { Footer } from '../components/layout/Footer';
 import { Section } from '../components/ui/Section';
 import { SEOHead, createOrganizationSchema, createBreadcrumbSchema } from '../components/seo/SEOHead';
 import { X, Play, Pause, ChevronRight, MessageSquare, TrendingUp } from 'lucide-react';
+import { ASSET_DATA } from '../data/assetData';
 
 /* ── Types ── */
 interface ProjectImage {
@@ -186,6 +187,22 @@ const projects: Project[] = [
         description: "Markaların e-ticaret siteleri için hazırlanan, kıyafet formlarını 3 boyutlu gösteren kusursuz profesyonel ghost mannequin (hayalet manken) çekimleri.",
         tags: ['Ghost', 'Katalog', 'E-Ticaret'],
         bgColor: '#1a1a1a'
+    },
+    {
+        id: 8,
+        title: 'Kreatif AI & Geleceğin Sanatı',
+        client: 'PikselAI Lab',
+        category: 'Kampanya',
+        thumbnail: '/assets/pages/yeni_icerik/pikselai_creative_01.webp',
+        thumbnailType: 'single',
+        images: (ASSET_DATA.pages.yeni_icerik?.files || []).map((url, index) => ({
+            url,
+            type: 'image' as const,
+            aspect: (index % 3 === 0 ? 'tall' : index % 3 === 1 ? 'square' : 'wide') as 'tall' | 'square' | 'wide'
+        })),
+        description: "PikselAI laboratuvarlarında üretilen fütüristik, soyut ve hyper-realistic görsel sanat eserleri. En son yapay zeka modelleri ve hassas prompt mühendisliğiyle hazırlanan 77 adet kreatif şaheser.",
+        tags: ['Kreatif AI', 'Yapay Zeka', 'Sanat'],
+        bgColor: '#0d0d0d'
     }
 ];
 

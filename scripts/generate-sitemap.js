@@ -64,7 +64,22 @@ function generateSitemap() {
 
     // Sitemap XML Oluştur
     let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
-    xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
+    xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n`;
+    xml += `        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n`;
+
+    // Yeni üretilen optimize WebP görsellerini sitemap için oku
+    const yeniIcerikDir = path.resolve('./public/assets/pages/yeni_icerik');
+    let imagesXml = '';
+    if (fs.existsSync(yeniIcerikDir)) {
+        const files = fs.readdirSync(yeniIcerikDir).filter(f => f.endsWith('.webp'));
+        files.forEach(f => {
+            imagesXml += `      <image:image>\n`;
+            imagesXml += `         <image:loc>${SITE_URL}/assets/pages/yeni_icerik/${f}</image:loc>\n`;
+            imagesXml += `         <image:title>PikselAI Yapay Zeka Kreatif AI Tasarimi ve Fotograf Uretimi</image:title>\n`;
+            imagesXml += `      </image:image>\n`;
+        });
+        console.log(`${files.length} adet kreatif görsel sitemap.xml'e eklendi.`);
+    }
 
     urls.forEach(page => {
         xml += `   <url>\n`;
@@ -72,6 +87,12 @@ function generateSitemap() {
         xml += `      <lastmod>${today}</lastmod>\n`;
         xml += `      <changefreq>${page.changefreq}</changefreq>\n`;
         xml += `      <priority>${page.priority}</priority>\n`;
+        
+        // Eğer sayfa '/islerimiz' ise, görselleri bu URL'in altına bağla
+        if (page.url === '/islerimiz' && imagesXml) {
+            xml += imagesXml;
+        }
+        
         xml += `   </url>\n`;
     });
 

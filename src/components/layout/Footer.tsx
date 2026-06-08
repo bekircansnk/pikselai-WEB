@@ -92,18 +92,7 @@ const legalLinks = [
     { label: 'KVKK', to: '/kvkk' },
 ];
 
-// Piksel/nokta SVG ikonu (logo başındaki kare piksel motifi)
-function PixelIcon({ size = 16, color = '#0a0f0a' }: { size?: number; color?: string }) {
-    return (
-        <svg width={size} height={size} viewBox="0 0 14 14" fill="none">
-            <rect x="1" y="1" width="4" height="4" rx="0.5" fill={color} />
-            <rect x="9" y="1" width="4" height="4" rx="0.5" fill={color} />
-            <rect x="1" y="9" width="4" height="4" rx="0.5" fill={color} />
-            <rect x="9" y="9" width="4" height="4" rx="0.5" fill={color} />
-            <rect x="5" y="5" width="4" height="4" rx="0.5" fill={color} />
-        </svg>
-    );
-}
+
 
 export function Footer() {
     const currentYear = new Date().getFullYear();
@@ -198,10 +187,7 @@ export function Footer() {
 
                         {/* Sol: Logo + telif */}
                         <div className="flex flex-col gap-2 items-start min-w-[200px]">
-                            <Link to="/" className="inline-flex items-center gap-2 group">
-                                <span className="w-7 h-7 rounded-sm bg-[#a8ff57] flex items-center justify-center">
-                                    <PixelIcon size={16} color="#0a0f0a" />
-                                </span>
+                            <Link to="/" className="group">
                                 <span className="text-xl font-bold font-display tracking-tight text-white group-hover:text-[#a8ff57] transition-colors">
                                     pikselai
                                 </span>
@@ -254,13 +240,15 @@ export function Footer() {
                                 </svg>
                             </SocialIcon>
 
-                            {/* Branded pikselai ikonu (Superside'daki "S" kutusu gibi) */}
+                            {/* Branded pikselai p harfi ikonu */}
                             <Link
                                 to="/"
                                 aria-label="PikselAI Ana Sayfa"
                                 className="w-11 h-11 rounded-full bg-[#a8ff57] flex items-center justify-center hover:bg-[#8fe041] transition-colors"
                             >
-                                <PixelIcon size={18} color="#0a0f0a" />
+                                <span className="font-display italic font-bold text-lg text-[#0a0f0a] leading-none select-none">
+                                    p
+                                </span>
                             </Link>
                         </div>
                     </div>

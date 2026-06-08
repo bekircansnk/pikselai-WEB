@@ -23,6 +23,7 @@ const KvkkPolicy = lazy(() => import('./pages/legal/KvkkPolicy'))
 
 const TestPanel = lazy(() => import('./pages/TestPanel'))
 const AuthorBio = lazy(() => import('./pages/AuthorBio'))
+const LogoGenerator = lazy(() => import('./pages/LogoGenerator'))
 
 
 const MinaDrinksCaseStudy = lazy(() => import('./pages/musteri-hikayeleri/MinaDrinksCaseStudy'))
@@ -194,6 +195,8 @@ function App() {
             <Route path="/musteri-hikayeleri/campandmap" element={<CampAndMapCaseStudy />} />
             
             <Route path="/maliyet-hesapla" element={<CostCalculator />} />
+            <Route path="/logo-olusturucu" element={<LogoGenerator />} />
+            <Route path="/logo-tasarla" element={<LogoGenerator />} />
             <Route path="/gizlilik-politikasi" element={<PrivacyPolicy />} />
             <Route path="/kullanim-kosullari" element={<TermsOfService />} />
             <Route path="/kvkk" element={<KvkkPolicy />} />

@@ -80,6 +80,7 @@ const navColumns: FooterColumn[] = [
         links: [
             { label: 'Blog', to: '/blog' },
             { label: 'Müşteri Hikayeleri', to: '/musteri-hikayeleri' },
+            { label: 'Logo Oluşturucu', to: '/logo-olusturucu' },
         ],
     },
 ];
@@ -201,7 +202,7 @@ export function Footer() {
                                 <span className="w-7 h-7 rounded-sm bg-[#a8ff57] flex items-center justify-center">
                                     <PixelIcon size={16} color="#0a0f0a" />
                                 </span>
-                                <span className="text-xl font-bold tracking-tight text-white group-hover:text-[#a8ff57] transition-colors">
+                                <span className="text-xl font-bold font-display tracking-tight text-white group-hover:text-[#a8ff57] transition-colors">
                                     pikselai
                                 </span>
                             </Link>

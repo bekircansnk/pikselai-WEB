@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { Link } from "react-router-dom"
+import { Palette, Calculator } from "lucide-react"
 
 
 
@@ -25,9 +26,8 @@ export function ResourcesMenu({ isOpen, activeMenu, onClose }: ResourcesMenuProp
                 >
                     <div className="max-w-7xl mx-auto px-6 py-6">
                         {activeMenu === "kaynaklar" && (
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-bor-primary-100 dark:border-bor-primary-800">
-
-                                {/* Sütun 1: Müşteri Hikayeleri (1/2) */}
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-bor-primary-100 dark:border-bor-primary-800">
+                                {/* Sütun 1: Müşteri Hikayeleri (1/3) */}
                                 <div className="pr-8 border-r border-bor-primary-100 dark:border-bor-primary-800">
                                     <MenuHeader title="Müşteri Hikayeleri" href="/musteri-hikayeleri" onClose={onClose} />
                                     <div className="mt-4 space-y-3">
@@ -58,8 +58,8 @@ export function ResourcesMenu({ isOpen, activeMenu, onClose }: ResourcesMenuProp
                                     </div>
                                 </div>
 
-                                {/* Sütun 2: Öğrenim Merkezi & Blog (1/2) */}
-                                <div className="pl-8">
+                                {/* Sütun 2: Öğrenim Merkezi & Blog (2/3) */}
+                                <div className="px-8 border-r border-bor-primary-100 dark:border-bor-primary-800">
                                     <MenuHeader title="Öğrenim Merkezi & Blog" href="/blog#katalog" onClose={onClose} />
                                     <div className="mt-4 space-y-3">
                                         <ImageCard
@@ -89,6 +89,26 @@ export function ResourcesMenu({ isOpen, activeMenu, onClose }: ResourcesMenuProp
                                     </div>
                                 </div>
 
+                                {/* Sütun 3: Tasarım & Planlama Araçları (3/3) */}
+                                <div className="pl-8">
+                                    <MenuHeader title="Ücretsiz Araçlar" href="/logo-olusturucu" onClose={onClose} />
+                                    <div className="mt-4 space-y-3">
+                                        <ToolCard
+                                            icon={Palette}
+                                            title="Logo & Favicon Oluşturucu"
+                                            description="Metinlerinizi Instrument Serif fontuyla logolara ve favicon setlerine dönüştürün."
+                                            href="/logo-olusturucu"
+                                            onClose={onClose}
+                                        />
+                                        <ToolCard
+                                            icon={Calculator}
+                                            title="Maliyet Hesaplayıcı"
+                                            description="AI prodüksiyon ve kreatif süreçlerin bütçe/maliyet planlamasını yapın."
+                                            href="/maliyet-hesapla"
+                                            onClose={onClose}
+                                        />
+                                    </div>
+                                </div>
                             </div>
                         )}
                     </div>
@@ -132,3 +152,24 @@ function ImageCard({ image, title, href, onClose }: { image: string, title: stri
     )
 }
 
+function ToolCard({ icon: Icon, title, description, href, onClose }: { icon: any, title: string, description: string, href: string, onClose: () => void }) {
+    return (
+        <Link
+            to={href}
+            className="group flex items-start gap-4 p-3 -mx-2.5 rounded-2xl hover:bg-white dark:hover:bg-bor-primary-800 transition-all duration-300 hover:shadow-lg hover:shadow-bor-primary-200/50"
+            onClick={onClose}
+        >
+            <div className="w-10 h-10 flex-shrink-0 rounded-xl bg-bor-secondary/10 dark:bg-bor-secondary/20 flex items-center justify-center text-bor-secondary transition-transform duration-300 group-hover:scale-110">
+                <Icon size={20} />
+            </div>
+            <div>
+                <h4 className="font-bold text-[15px] text-bor-primary-900 dark:text-white group-hover:text-bor-secondary transition-colors leading-tight tracking-tight">
+                    {title}
+                </h4>
+                <p className="text-xs text-bor-primary-500 dark:text-bor-primary-400 mt-1 leading-snug">
+                    {description}
+                </p>
+            </div>
+        </Link>
+    )
+}

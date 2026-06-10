@@ -41,6 +41,13 @@ Bu dizin, PikselAI platformundaki portfolyo yönetimi, Google Drive API entegras
   python3 scripts/archive/import_yeni_set2.py
   ```
 
+### 4. `generate_download_png.py` (Kullanıcı İndirmeleri İçin PNG Logo Üretici)
+* **Amacı:** Instrument Serif fontuyla pikselai marka logosunun yüksek çözünürlüklü koyu ve açık renkli PNG varyasyonlarını üretip kullanıcının İndirilenler (`/Users/bekir/Downloads/`) klasörüne kaydeder.
+* **Çalıştırma:**
+  ```bash
+  python3 scripts/archive/generate_download_png.py
+  ```
+
 ---
 
 ## 📜 Sistem Kuralları Entegrasyonu
